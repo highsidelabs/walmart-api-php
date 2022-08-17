@@ -1,0 +1,28 @@
+{
+    "name": "highsidelabs/walmart-api",
+    "description": "A PHP client for Walmart's APIs",
+    "type": "library",
+    "license": "BSD-3-Clause",
+    "autoload": {
+        "psr-4": {
+            "Walmart\\": "generated/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jesse Evers",
+            "email": "jesse@jesseevers.com"
+        }
+    ],
+    "require-dev": {
+        "jane-php/open-api-3": "^7.3",
+        "friendsofphp/php-cs-fixer": "^3.9"
+    },
+    "require": {
+        "jane-php/open-api-runtime": "^7.3",
+        "guzzlehttp/guzzle": "^7.4"
+    },
+    "scripts": {
+        "generate": "php vendor/bin/jane-openapi generate"
+    }
+}

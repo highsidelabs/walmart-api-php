@@ -1,0 +1,7 @@
+<?php
+
+return [
+    'openapi-file' => __DIR__ . '/../models/_build/openapi.yaml',
+    'namespace' => 'Walmart',
+    'directory' => __DIR__ . '/generated',
+];
