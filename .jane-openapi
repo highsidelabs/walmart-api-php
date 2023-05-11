@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'openapi-file' => __DIR__ . '/../models/_build/openapi.yaml',
+    'openapi-file' => __DIR__ . '/schemas/us/mp/auth.json',
     'namespace' => 'Walmart',
-    'directory' => __DIR__ . '/generated',
+    'directory' => __DIR__ . '/jane-generated',
 ];

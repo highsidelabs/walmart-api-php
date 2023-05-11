@@ -15,14 +15,21 @@
         }
     ],
     "require-dev": {
-        "jane-php/open-api-3": "^7.3",
+        "jane-php/open-api-3": "^7.5",
         "friendsofphp/php-cs-fixer": "^3.9"
     },
     "require": {
-        "jane-php/open-api-runtime": "^7.3",
-        "guzzlehttp/guzzle": "^7.4"
+        "jane-php/open-api-runtime": "^7.5",
+        "guzzlehttp/guzzle": "^7.4",
+        "symfony/uid": "^6.1"
     },
     "scripts": {
+        "download-schemas": "php utils/download-schemas.php",
         "generate": "php vendor/bin/jane-openapi generate"
+    },
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
     }
 }

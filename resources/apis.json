@@ -1,0 +1,163 @@
+[
+  {
+    "name": "Content Providers",
+    "code": "cp",
+    "apis": [
+      {
+        "name": "Content Feeds",
+        "code": "feeds",
+        "countries:": ["us"]
+      }
+    ]
+  },
+  {
+    "name": "Drop Ship Vendors",
+    "code": "dsv",
+    "apis": [
+      {
+        "name": "Cost",
+        "code": "cost",
+        "countries": ["us"]
+      },
+      {
+        "name": "Feeds",
+        "code": "feeds",
+        "countries": ["us"]
+      },
+      {
+        "name": "Inventory",
+        "code": "inventory",
+        "countries": ["us"]
+      },
+      {
+        "name": "Items",
+        "code": "items",
+        "countries": ["us"]
+      },
+      {
+        "name": "Lag Time",
+        "code": "lagtime",
+        "countries": ["us"]
+      },
+      {
+        "name": "Orders",
+        "code": "orders",
+        "countries": ["us"]
+      },
+      {
+        "name": "Reports",
+        "code": "reports",
+        "countries": ["us"]
+      }
+    ]
+  },
+  {
+    "name": "Marketplace Partners",
+    "code": "mp",
+    "apis": [
+      {
+        "name": "Authentication & Authorization",
+        "code": "auth",
+        "countries": ["mx", "us"]
+      },
+      {
+        "name": "Feeds",
+        "code": "feeds",
+        "countries": ["ca", "us"]
+      },
+      {
+        "name": "Walmart Fulfillment Services",
+        "code": "fulfillment",
+        "countries": ["us"]
+      },
+      {
+        "name": "Insights",
+        "code": "insights",
+        "countries": ["us"]
+      },
+      {
+        "name": "Inventory",
+        "code": "inventory",
+        "countries": ["ca", "us"]
+      },
+      {
+        "name": "Items",
+        "code": "items",
+        "countries": ["ca", "us"]
+      },
+      {
+        "name": "Lag Time",
+        "code": "lagtime",
+        "countries": ["us"]
+      },
+      {
+        "name": "Notifications",
+        "code": "notifications",
+        "countries": ["us"]
+      },
+      {
+        "name": "On-request Reports",
+        "code": "onrequestreports",
+        "countries": ["us"]
+      },
+      {
+        "name": "Orders",
+        "code": "orders",
+        "countries": ["ca", "us"]
+      },
+      {
+        "name": "Prices",
+        "code": "price",
+        "countries": ["ca", "us"]
+      },
+      {
+        "name": "Promotions",
+        "code": "promotion",
+        "countries": ["ca", "us"]
+      },
+      {
+        "name": "Pre-generated Reports",
+        "code": "reports",
+        "countries": ["ca", "us"]
+      },
+      {
+        "name": "Returns",
+        "code": "returns",
+        "countries": ["us"]
+      },
+      {
+        "name": "Rules",
+        "code": "rules",
+        "countries": ["us"]
+      },
+      {
+        "name": "Settings",
+        "code": "settings",
+        "countries": ["us"]
+      },
+      {
+        "name": "Utilities",
+        "code": "utilities",
+        "countries": ["us"]
+      }
+    ]
+  },
+  {
+    "name": "Warehouse Suppliers",
+    "code": "warehouse",
+    "apis": [
+      {
+        "name": "Feeds",
+        "code": "feeds"
+      },
+      {
+        "name": "Items",
+        "code": "items"
+      },
+      {
+        "name": "Reports",
+        "code": "reports"
+      }
+    ]
+  }
+]
