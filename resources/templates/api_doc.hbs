@@ -1,0 +1,118 @@
+# Walmart\Api\
+{{~ classname}}  {{! classname is on a new line to avoid the backslash after Api being treated as a block escape }}
+{{#if description}}
+
+{{{description}}}
+{{~/if ~}}
+
+All URIs are relative to {{basePath}}, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+{{#operations~}}
+{{#operation}}| [**{{operationId}}()**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}} |
+{{/operation}}{{~/operations~}}
+{{~#operations}}{{#operation}}
+
+## `{{{operationId}}}()`
+
+```php
+{{{operationId}}}({{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}){{#if returnType}}: {{{returnType}}}{{/if}}
+```
+{{#each servers}}
+{{#if @first}}
+### URI(s):
+{{/if}}
+- {{{url}}} {{#if description}}{{{description}}}{{/if}}{{#each variables}}
+{{#if @first}}
+    - Variables:
+{{/if}}
+      - {{{name}}}: {{#if description}}{{{description}}}{{else}} No description provided{{/if}}
+
+{{~#each enumValues}}
+{{#if @first}}
+        - Allowed values:
+{{/if}}
+          - {{{this}}}{{/each}}{{#if defaultValue}}
+        - Default value: {{{defaultValue}}}
+{{/if}}{{/each}}{{/each}}
+{{{summary}}}
+{{~#if notes}}
+
+{{{notes}}}
+{{~/if}}
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+{{> php_doc_auth_partial ~}}
+$apiInstance = new {{invokerPackage}}\Api\
+{{~ classname}}(  {{! classname is on a new line to avoid the backslash after Api being treated as a block escape }}
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(){{#hasAuthMethods}},
+    $config{{/hasAuthMethods}}
+);
+{{#if vendorExtensions.x-group-parameters}}
+$associative_array = [
+{{#allParams}}    '{{paramName}}' => {{{example}}}, // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
+{{/allParams ~}}
+
+{{#each servers ~}}
+{{#if @first}}
+    'hostIndex' => 0,
+    $variables = [{{#variables}}
+        '{{{name}}}' => '{{{default}}}{{#unless default}}YOUR_VALUE{{/unless}}',{{/variables}}
+    ],
+{{/if ~}}
+{{/each ~}}
+];
+
+{{else}}
+{{#allParams}}${{paramName}} = {{{example}}}; // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
+{{/allParams}}{{#each servers}}{{#if @first}}
+$hostIndex = 0;
+$variables = [{{#with variables}}
+    '{{{name}}}' => '{{{default}}}{{#unless default}}YOUR_VALUE{{/unless}}',{{/with}}
+];
+{{/if}}{{/each}}{{/if}}
+try {
+    {{#if returnType}}$result = {{/if}}$apiInstance->{{{operationId}}}({{#if vendorExtensions.x-group-parameters}}$associate_array{{else}}{{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}{{#each servers}}{{#if @first}}{{#allParams}}{{#if @first}}, {{/if}}{{/allParams}}$hostIndex, $variables{{/if}}{{/each}}{{/if}});{{#if returnType}}
+    print_r($result);{{/if}}
+} catch (Exception $e) {
+    echo "Exception when calling {{classname}}->{{operationId}}: {$e->getMessage()}\n";
+}
+```
+
+### Parameters
+
+{{~#if vendorExtensions.x-group-parameters~}}
+Note: the input parameter is an associative array with the keys listed as the parameter names below.
+
+{{~/if~}}
+{{#unless allParams}}This endpoint does not need any parameter.{{/unless}}{{#each allParams}}{{#if @last}}| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |{{/if}}{{/each}}
+{{#allParams}}| **{{paramName}}** | {{#if isFile}}**{{{dataType}}}**{{/if}}{{#if isPrimitiveType}}**{{{dataType}}}**{{else}}{{#unless isFile}}[**{{{dataType}}}**](../Model/{{baseType}}.md){{/unless}}{{/if}}| {{{description}}} |{{#unless required}} [optional]{{/unless}}{{#if defaultValue}} [default to {{{defaultValue}}}]{{/if}} |
+{{/allParams}}{{#each servers}}{{#if @first}}| hostIndex | null|int | Host index. Defaults to null. If null, then the library will use $this->hostIndex instead | [optional] |
+| variables | array | Associative array of variables to pass to the host. Defaults to empty array. | [optional] |{{/if}}
+{{/each}}
+
+### Return type
+
+{{#if returnType}}{{#if returnTypeIsPrimitive}}**{{{returnType}}}**{{else}}[**{{{returnType}}}**](../Model/{{returnBaseType}}.md){{/if}}{{else}}void (empty response body){{/if}}
+
+### Authorization
+
+{{#unless authMethods}}No authorization required{{/unless}}{{#each authMethods}}[{{{name}}}](../../README.md#{{{name}}}){{#unless @last}}, {{/unless}}{{/each}}
+
+### HTTP request headers
+
+- **Content-Type**: {{#each consumes}}`{{{mediaType}}}`{{#unless @last}}, {{/unless}}{{/each}}{{#unless consumes}}Not defined{{/unless}}
+- **Accept**: {{#each produces}}`{{{mediaType}}}`{{#unless @last}}, {{/unless}}{{/each}}{{#unless produces}}Not defined{{/unless}}
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md){{/operation}}{{/operations}}

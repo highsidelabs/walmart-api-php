@@ -1,0 +1,36 @@
+{{~#if summary}}
+     *
+     * {{summary}}
+{{~/if}}
+     *
+{{~#if description~}}
+     * {{{description}}}
+     *
+{{~/if~}}
+{{#if vendorExtensions.x-group-parameters~}}
+     * Note: the input parameter is an associative array with the keys listed as the parameter name below
+     *
+{{~/if~}}
+{{#each servers~}}
+{{#if @first~}}
+     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
+     * if needed, use the 'variables' parameter to pass variables to the host.
+{{~/if~}}
+     * URL: {{{url}}}
+{{#each variables~}}
+{{#if @first~}}
+     *  Variables:
+{{~/if~}}
+     *    - {{{name}}}: {{{description}}}{{#unless description}} No description provided{{/unless}}{{#each enumValues}}
+{{#if @first~}}
+     *      Allowed values:
+{{~/if~}}
+     *        - {{{this}}}{{/each}}
+{{~/each~}}
+{{#if @last}}
+     *
+{{~/if~}}
+{{/each~}}
+{{#allParams}}
+     * @param  {{{dataType}}} ${{paramName}}{{#if description}} {{{description}}}{{else}} {{paramName}}{{/if}} {{#if required}}(required){{else}}(optional{{#if defaultValue}}, default to {{{defaultValue}}}{{/if}}){{/if}}{{#if isDeprecated}} (deprecated){{/if}}
+{{~/allParams~}}

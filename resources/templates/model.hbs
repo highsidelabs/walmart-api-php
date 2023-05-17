@@ -1,0 +1,45 @@
+<?php
+{{#models}}
+{{#model}}
+/**
+ * {{classname}}
+ *
+ * PHP version 7.4
+ *
+ * @category Class
+ * @package  {{invokerPackage}}
+ * @author   Jesse Evers
+ * @link     https://highsidelabs.co
+ * @email    jesse@highsidelabs.co
+ */
+
+{{>partials/partial_header}}
+
+namespace {{modelPackage}};
+{{#unless isEnum}}
+{{#unless parentSchema}}
+
+use \ArrayAccess;
+{{/unless}}
+{{/unless}}
+use \
+{{~invokerPackage}}\ObjectSerializer;
+{{! invokerPackage is on a new line to avoid the backslash after Api being treated as a block escape }}
+
+/**
+ * {{classname}} Class Doc Comment
+ *
+ * @category Class
+{{#if description}}
+ * @description {{{description}}}
+{{/if}}
+ * @package  {{invokerPackage}}
+ * @author   Jesse Evers
+ * @link     https://highsidelabs.co
+ * @email    jesse@highsidelabs.co
+{{#unless isEnum}}
+ * @implements \ArrayAccess<string, mixed>
+{{/unless}}
+ */
+{{#if isEnum}}{{>model_enum}}{{else}}{{>model_generic}}{{/if}}
+{{/model}}{{/models}}

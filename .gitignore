@@ -1,5 +1,20 @@
 vendor/
-schemas/ca
-schemas/mx
-schemas/us
 
+# Build folder
+build/*
+!build/.openapi-generator-ignore
+
+# OpenAPI cache
+src/.openapi-generator/
+
+# PHP CS Fixer cache
+.php-cs-fixer.cache
+
+# PHPUnit cache
+.phpunit.result.cache
+
+# IDE
+.vscode
+
+# OS X
+**/.DS_Store

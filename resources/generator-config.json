@@ -1,0 +1,28 @@
+{
+  "artifactVersion": "0.1.0",
+
+  "disallowAdditionalPropertiesIfNotPresent": false,
+  "variableNamingConvention": "camelCase",
+
+  "gitUserId": "highsidelabs",
+  "gitRepoId": "walmart-sdk-php",
+
+  "packagePath": "generated",
+  "srcBasePath": "src",
+
+  "apiPackage": "Api",
+  "invokerPackage": "Walmart",
+
+  "files": {
+    "ModelInterface.mustache": {
+      "folder": "src/Model",
+      "destinationFilename": "ModelInterface.php",
+      "templateType": "SupportingFiles"
+    },
+    "BaseModel.mustache": {
+      "folder": "src/Model",
+      "destinationFilename": "BaseModel.php",
+      "templateType": "SupportingFiles"
+    }
+  }
+}
