@@ -4,6 +4,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\RequestOptions;
 
 const BASE_SCHEMA_DOWNLOAD_URL = 'https://developer.walmart.com/api/detail';
 
@@ -56,8 +57,10 @@ function downloadSchemas(
     $client = new Client([
         'base_uri' => BASE_SCHEMA_DOWNLOAD_URL,
         'headers' => [
-            'Accept' => 'application/json',
+            'Accept' => '*/*',
             'Content-Type' => 'application/json',
+            // Walmart seems to have blocked Guzzle's default user agent
+            'User-Agent' => 'highsidelabs/walmart-api-client',
         ],
     ]);
 
@@ -90,12 +93,12 @@ function downloadSchemas(
                 $contents = null;
                 try {
                     $res = $client->post('', [
-                        'json' => [
+                        RequestOptions::JSON => [
                             'params' => [
                                 'category' => $cat['code'],
                                 'country' => $country,
                                 'apiName' => $api['code'],
-                            ],    
+                            ],
                         ],
                     ]);
                     $contents = json_decode($res->getBody()->getContents());
