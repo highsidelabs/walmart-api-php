@@ -12,12 +12,16 @@
 
 {{>partials/partial_header}}
 
-namespace {{apiPackage}};
+namespace {{apiPackage}}\
+{{~x-walmart-country}}\
+{{~x-walmart-api-category}};
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
+use {{apiPackage}}\BaseApi;
 use {{invokerPackage}}\ApiException;
 use {{invokerPackage}}\ObjectSerializer;
 
@@ -53,7 +57,6 @@ class {{classname}} extends BaseApi
      *
 {{~/if~}}
 {{~/each}}
-     *
      * @throws \
         {{~invokerPackage}}\ApiException on non-2xx response{{! invokerPackage is on a new line to avoid the backslash after Api being treated as a block escape }}
      * @throws \InvalidArgumentException
@@ -90,7 +93,6 @@ class {{classname}} extends BaseApi
      *
 {{~/if~}}
 {{~/each}}
-     *
      * @throws \
 {{~invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -102,7 +104,7 @@ class {{classname}} extends BaseApi
     protected function {{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}})
+    {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}}
     {
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
 
@@ -228,7 +230,6 @@ class {{classname}} extends BaseApi
      *
 {{~/if~}}
 {{~/each}}
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
     {{~#if isDeprecated~}}
@@ -238,7 +239,7 @@ class {{classname}} extends BaseApi
     public function {{operationId}}Async({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-        {{/each}}{{/if}})
+        {{/each}}{{/if}}): PromiseInterface
     {
         return $this->{{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}})
             ->then(
@@ -268,7 +269,6 @@ class {{classname}} extends BaseApi
      *
 {{~/if~}}
 {{~/each}}
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
     {{~#if isDeprecated~}}
@@ -278,7 +278,7 @@ class {{classname}} extends BaseApi
     protected function {{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}})
+    {{/each}}{{/if}}): PromiseInterface
     {
         $returnType = '{{{returnType}}}';
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
@@ -325,8 +325,7 @@ class {{classname}} extends BaseApi
 
     /**
      * Create request for operation '{{{operationId}}}'
-     *
-{{#if vendorExtensions.x-group-parameters~}}
+     *{{#if vendorExtensions.x-group-parameters~}}
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
 {{~/if~}}
@@ -336,7 +335,6 @@ class {{classname}} extends BaseApi
      *
 {{~/if~}}
 {{~/each}}
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
     {{~#if isDeprecated~}}
@@ -346,7 +344,7 @@ class {{classname}} extends BaseApi
     protected function {{operationId}}Request({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}})
+    {{/each}}{{/if}}): Request
     {
         {{~#if vendorExtensions.x-group-parameters~}}
         // unbox the parameters from the associative array
@@ -367,7 +365,7 @@ class {{classname}} extends BaseApi
         if ({{#unless required}}${{paramName}} !== null && {{/unless}}strlen(${{paramName}}) > {{maxLength}}) {
             throw new \InvalidArgumentException('invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.');
         }
-        {{~/if}}
+        {{~/if~}}
         {{#if minLength~}}
         if ({{#unless required}}${{paramName}} !== null && {{/unless}}strlen(${{paramName}}) < {{minLength}}) {
             throw new \InvalidArgumentException('invalid length for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.');
@@ -377,27 +375,27 @@ class {{classname}} extends BaseApi
         if ({{#unless required}}${{paramName}} !== null && {{/unless}}${{paramName}} >{{#if exclusiveMaximum}}={{/if}} {{maximum}}) {
             throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be smaller than {{#unless exclusiveMaximum}}or equal to {{/unless}}{{maximum}}.');
         }
-        {{~/if}}
+        {{~/if~}}
         {{#if minimum~}}
         if ({{#unless required}}${{paramName}} !== null && {{/unless}}${{paramName}} <{{#if exclusiveMinimum}}={{/if}} {{minimum}}) {
             throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, must be bigger than {{#unless exclusiveMinimum}}or equal to {{/unless}}{{minimum}}.');
         }
-        {{~/if}}
+        {{~/if~}}
         {{#if pattern~}}
         if ({{#unless required}}${{paramName}} !== null && {{/unless}}!preg_match("{{{pattern}}}", ${{paramName}})) {
             throw new \InvalidArgumentException("invalid value for \"{{paramName}}\" when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.");
         }
-        {{~/if}}
+        {{~/if~}}
         {{#if maxItems~}}
         if ({{#unless required}}${{paramName}} !== null && {{/unless}}count(${{paramName}}) > {{maxItems}}) {
             throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be less than or equal to {{maxItems}}.');
         }
-        {{~/if}}
+        {{~/if~}}
         {{#if minItems~}}
         if ({{#unless required}}${{paramName}} !== null && {{/unless}}count(${{paramName}}) < {{minItems}}) {
             throw new \InvalidArgumentException('invalid value for "${{paramName}}" when calling {{classname}}.{{operationId}}, number of items must be greater than or equal to {{minItems}}.');
         }
-        {{/if}}
+        {{/if~}}
         {{/if}}{{/allParams}}
         $resourcePath = '{{{path}}}';
         $formParams = [];
@@ -405,8 +403,9 @@ class {{classname}} extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        {{~#if queryParams}}
 
-        {{#if queryParams}}// query params
+        // query params
         $queryParams = [
         {{~#queryParams}}
             ObjectSerializer::toQueryValue(
@@ -419,10 +418,12 @@ class {{classname}} extends BaseApi
             ) ?? [],
         {{~/queryParams}}
         ];
-        {{~/if}}
+        {{~/if~}}
 
-        {{#if headerParams}}// header params{{/if}}
-        {{~#headerParams}}
+        {{#if headerParams}}
+
+        // header params{{/if~}}
+        {{#headerParams}}
         {{~#if collectionFormat~}}
         if (is_array(${{paramName}})) {
             ${{paramName}} = ObjectSerializer::serializeCollection(${{paramName}}, '{{collectionFormat}}');
@@ -433,8 +434,10 @@ class {{classname}} extends BaseApi
         }
         {{~/headerParams~}}
 
-        {{#if pathParams}}// path params{{/if}}
-        {{#pathParams~}}
+        {{#if pathParams}}
+
+        // path params{{/if~}}
+        {{#pathParams}}
         {{~#if collectionFormat~}}
         if (is_array(${{paramName}})) {
             ${{paramName}} = ObjectSerializer::serializeCollection(${{paramName}}, '{{collectionFormat}}');
@@ -449,8 +452,10 @@ class {{classname}} extends BaseApi
         }
         {{~/pathParams~}}
 
-        {{#if formParams}}// form params{{/if}}
-        {{#formParams~}}
+        {{#if formParams}}
+
+        // form params{{/if~}}
+        {{#formParams}}
         if (${{paramName}} !== null) {
             {{~#if isFile~}}
             $multipart = true;
@@ -466,8 +471,8 @@ class {{classname}} extends BaseApi
             $formParams['{{baseName}}'] = ObjectSerializer::toFormValue(${{paramName}});
             {{~/if~}}
         }
-        {{~/formParams~}}
 
+        {{/formParams~}}
         $headers = $this->headerSelector->selectHeaders(
             [{{#each produces}}'{{{mediaType}}}'{{#unless @last}}, {{/unless}}{{/each}}],
             $multipart

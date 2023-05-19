@@ -41,6 +41,9 @@ function openApiGenerator(string $name, string $category, string $country): void
     $templateDir = RESOURCE_DIR . '/templates';
     $logFile = BUILD_DIR . '/build.log';
 
+    $categoryCaps = strtoupper($category);
+    $countryCaps = strtoupper($country);
+
     // Ensure output files are prettified
     putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix');
 
@@ -53,6 +56,7 @@ function openApiGenerator(string $name, string $category, string $country): void
         --engine handlebars \
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-sdk-php/$version \
+        --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps\" \
         2>&1";
 
     $resultCode = 0;

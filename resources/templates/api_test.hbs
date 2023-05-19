@@ -12,7 +12,9 @@
 
 {{>partials/partial_header}}
 
-namespace {{invokerPackage}}\Test\Api;
+namespace {{invokerPackage}}\Test\Api\
+{{~x-walmart-country}}\
+{{~x-walmart-api-category}};
 
 use \
 {{~invokerPackage}}\Configuration;{{! invokerPackage is on a new line to avoid the backslash after Api being treated as a block escape }}

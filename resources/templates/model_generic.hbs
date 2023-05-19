@@ -1,4 +1,4 @@
-class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}}implements ModelInterface, ArrayAccess, \JsonSerializable{{/if}}
+class {{classname}} extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = {{#if discriminator}}'{{discriminatorName}}'{{else}}null{{/if}};
 
@@ -191,18 +191,17 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
     {
         return self::$openAPIModelName;
     }
-
-    {{#vars}}
-    {{#if isEnum}}
-    {{#allowableValues}}
+    {{#vars~}}
+    {{#if isEnum~}}
+    {{#allowableValues~}}
     {{#enumVars}}
     public const {{enumName}}_{{{name}}} = {{{value}}};
-    {{/enumVars}}
-    {{/allowableValues}}
-    {{/if}}
-    {{/vars}}
+    {{/enumVars~}}
+    {{/allowableValues~}}
+    {{/if~}}
+    {{/vars~}}
 
-    {{#vars}}
+    {{#vars~}}
     {{#if isEnum}}
     /**
      * Gets allowable values of the enum
@@ -217,17 +216,8 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
         ];
     }
 
-    {{/if}}
-    {{/vars}}
-    {{#unless parentSchema}}
-    /**
-     * Associative array for storing property values
-     *
-     * @var mixed[]
-     */
-    protected $container = [];
-    {{/unless}}
-
+    {{/if~}}
+    {{/vars~}}
     /**
      * Constructor
      *
@@ -236,36 +226,14 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
      */
     public function __construct(array $data = null)
     {
-        {{#if parentSchema}}
-        parent::__construct($data);
-
-        {{/if}}
-        {{#vars}}
+        {{#vars~}}
         $this->setIfExists('{{name}}', $data ?? [], {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}});
-        {{/vars}}
-        {{#if discriminator}}
+        {{/vars~}}
+        {{~#if discriminator}}
 
         // Initialize discriminator property with the model name.
         $this->container['{{discriminatorName}}'] = static::$openAPIModelName;
-        {{/if}}
-    }
-
-    /**
-    * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
-    * is nullable and its value is set to null in the $fields array, then mark it as "set to null" in the
-    * $this->openAPINullablesSetToNull array
-    *
-    * @param string $variableName
-    * @param array  $fields
-    * @param mixed  $defaultValue
-    */
-    private function setIfExists(string $variableName, array $fields, $defaultValue): void
-    {
-        if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
-            $this->openAPINullablesSetToNull[] = $variableName;
-        }
-
-        $this->container[$variableName] = $fields[$variableName] ?? $defaultValue;
+        {{~/if~}}
     }
 
     /**
@@ -275,20 +243,16 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
      */
     public function listInvalidProperties()
     {
-        {{#if parentSchema}}
-        $invalidProperties = parent::listInvalidProperties();
-        {{else}}
         $invalidProperties = [];
-        {{/if}}
 
-        {{#vars}}
-        {{#if required}}
+        {{#vars~}}
+        {{#if required~}}
         if ($this->container['{{name}}'] === null) {
             $invalidProperties[] = "'{{name}}' can't be null";
         }
-        {{/if}}
-        {{#if isEnum}}
-        {{#unless isContainer}}
+        {{/if~}}
+        {{#if isEnum~}}
+        {{#unless isContainer~}}
         $allowedValues = $this->{{getter}}AllowableValues();
         if (!is_null($this->container['{{name}}']) && !in_array($this->container['{{name}}'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -298,69 +262,56 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
             );
         }
 
-        {{/unless}}
-        {{/if}}
-        {{#if hasValidation}}
-        {{#if maxLength}}
+        {{/unless~}}
+        {{/if~}}
+        {{#if hasValidation~}}
+        {{#if maxLength~}}
         if ({{#unless required}}!is_null($this->container['{{name}}']) && {{/unless}}(mb_strlen($this->container['{{name}}']) > {{maxLength}})) {
             $invalidProperties[] = "invalid value for '{{name}}', the character length must be smaller than or equal to {{{maxLength}}}.";
         }
 
         {{/if}}
-        {{#if minLength}}
+        {{#if minLength~}}
         if ({{#unless required}}!is_null($this->container['{{name}}']) && {{/unless}}(mb_strlen($this->container['{{name}}']) < {{minLength}})) {
             $invalidProperties[] = "invalid value for '{{name}}', the character length must be bigger than or equal to {{{minLength}}}.";
         }
 
         {{/if}}
-        {{#if maximum}}
+        {{#if maximum~}}
         if ({{#unless required}}!is_null($this->container['{{name}}']) && {{/unless}}($this->container['{{name}}'] >{{#if exclusiveMaximum}}={{/if}} {{maximum}})) {
             $invalidProperties[] = "invalid value for '{{name}}', must be smaller than {{#unless exclusiveMaximum}}or equal to {{/unless}}{{maximum}}.";
         }
 
         {{/if}}
-        {{#if minimum}}
+        {{#if minimum~}}
         if ({{#unless required}}!is_null($this->container['{{name}}']) && {{/unless}}($this->container['{{name}}'] <{{#if exclusiveMinimum}}={{/if}} {{minimum}})) {
             $invalidProperties[] = "invalid value for '{{name}}', must be bigger than {{#unless exclusiveMinimum}}or equal to {{/unless}}{{minimum}}.";
         }
 
         {{/if}}
-        {{#if pattern}}
+        {{#if pattern~}}
         if ({{#unless required}}!is_null($this->container['{{name}}']) && {{/unless}}!preg_match("{{{pattern}}}", $this->container['{{name}}'])) {
             $invalidProperties[] = "invalid value for '{{name}}', must be conform to the pattern {{{pattern}}}.";
         }
 
         {{/if}}
-        {{#if maxItems}}
+        {{#if maxItems~}}
         if ({{#unless required}}!is_null($this->container['{{name}}']) && {{/unless}}(count($this->container['{{name}}']) > {{maxItems}})) {
             $invalidProperties[] = "invalid value for '{{name}}', number of items must be less than or equal to {{{maxItems}}}.";
         }
 
         {{/if}}
-        {{#if minItems}}
+        {{#if minItems~}}
         if ({{#unless required}}!is_null($this->container['{{name}}']) && {{/unless}}(count($this->container['{{name}}']) < {{minItems}})) {
             $invalidProperties[] = "invalid value for '{{name}}', number of items must be greater than or equal to {{{minItems}}}.";
         }
 
-        {{/if}}
-        {{/if}}
+        {{~/if~}}
+        {{/if~}}
         {{/vars}}
         return $invalidProperties;
     }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid()
-    {
-        return count($this->listInvalidProperties()) === 0;
-    }
-
     {{#vars}}
-
     /**
      * Gets {{name}}
      *
@@ -386,7 +337,7 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
      */
     public function {{setter}}(${{name}})
     {
-        {{#if isNullable}}
+        {{#if isNullable~}}
         if (is_null(${{name}})) {
             array_push($this->openAPINullablesSetToNull, '{{name}}');
         } else {
@@ -397,14 +348,14 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        {{else}}
+        {{~else~}}
         if (is_null(${{name}})) {
             throw new \InvalidArgumentException('non-nullable {{name}} cannot be null');
         }
-        {{/if}}
-        {{#if isEnum}}
+        {{/if~}}
+        {{#if isEnum~}}
         $allowedValues = $this->{{getter}}AllowableValues();
-        {{#if isContainer}}
+        {{#if isContainer~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}array_diff(${{{name}}}, $allowedValues)) {
             throw new \InvalidArgumentException(
                 sprintf(
@@ -413,7 +364,7 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
                 )
             );
         }
-        {{else}}
+        {{~else~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}!in_array(${{{name}}}, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
@@ -423,134 +374,45 @@ class {{classname}} {{#if parentSchema}}extends {{{parentSchema.parent}}}{{else}
                 )
             );
         }
-        {{/if}}
-        {{/if}}
-        {{#if hasValidation}}
-        {{#if maxLength}}
+        {{/if~}}
+        {{/if~}}
+        {{#if hasValidation~}}
+        {{#if maxLength~}}
         if ({{#isNullable}}!is_null(${{name}}) && {{/isNullable}}(mb_strlen(${{name}}) > {{maxLength}})) {
             throw new \InvalidArgumentException('invalid length for ${{name}} when calling {{classname}}.{{operationId}}, must be smaller than or equal to {{maxLength}}.');
         }{{/if}}
-        {{#if minLength}}
+        {{#if minLength~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}(mb_strlen(${{name}}) < {{minLength}})) {
             throw new \InvalidArgumentException('invalid length for ${{name}} when calling {{classname}}.{{operationId}}, must be bigger than or equal to {{minLength}}.');
         }
         {{/if}}
-        {{#if maximum}}
+        {{#if maximum~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}(${{name}} >{{#if exclusiveMaximum}}={{/if}} {{maximum}})) {
             throw new \InvalidArgumentException('invalid value for ${{name}} when calling {{classname}}.{{operationId}}, must be smaller than {{#unless exclusiveMaximum}}or equal to {{/unless}}{{maximum}}.');
         }
         {{/if}}
-        {{#if minimum}}
+        {{#if minimum~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}(${{name}} <{{#if exclusiveMinimum}}={{/if}} {{minimum}})) {
             throw new \InvalidArgumentException('invalid value for ${{name}} when calling {{classname}}.{{operationId}}, must be bigger than {{#unless exclusiveMinimum}}or equal to {{/unless}}{{minimum}}.');
         }
         {{/if}}
-        {{#if pattern}}
+        {{#if pattern~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}(!preg_match("{{{pattern}}}", ${{name}}))) {
             throw new \InvalidArgumentException("invalid value for \${{name}} when calling {{classname}}.{{operationId}}, must conform to the pattern {{{pattern}}}.");
         }
         {{/if}}
-        {{#if maxItems}}
+        {{#if maxItems~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}(count(${{name}}) > {{maxItems}})) {
             throw new \InvalidArgumentException('invalid value for ${{name}} when calling {{classname}}.{{operationId}}, number of items must be less than or equal to {{maxItems}}.');
         }{{/if}}
-        {{#if minItems}}
+        {{#if minItems~}}
         if ({{#if isNullable}}!is_null(${{name}}) && {{/if}}(count(${{name}}) < {{minItems}})) {
             throw new \InvalidArgumentException('invalid length for ${{name}} when calling {{classname}}.{{operationId}}, number of items must be greater than or equal to {{minItems}}.');
         }
-        {{/if}}
+        {{/if~}}
         {{/if}}
         $this->container['{{name}}'] = ${{name}};
-
         return $this;
     }
-    {{/vars}}
-    /**
-     * Returns true if offset exists. False otherwise.
-     *
-     * @param integer $offset Offset
-     *
-     * @return boolean
-     */
-    public function offsetExists($offset): bool
-    {
-        return isset($this->container[$offset]);
-    }
-
-    /**
-     * Gets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return mixed|null
-     */
-    #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
-    {
-        return $this->container[$offset] ?? null;
-    }
-
-    /**
-     * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
-     *
-     * @return void
-     */
-    public function offsetSet($offset, $value): void
-    {
-        if (is_null($offset)) {
-            $this->container[] = $value;
-        } else {
-            $this->container[$offset] = $value;
-        }
-    }
-
-    /**
-     * Unsets offset.
-     *
-     * @param integer $offset Offset
-     *
-     * @return void
-     */
-    public function offsetUnset($offset): void
-    {
-        unset($this->container[$offset]);
-    }
-
-    /**
-     * Serializes the object to a value that can be serialized natively by json_encode().
-     *
-     * @return mixed Returns data which can be serialized by json_encode(), which is a value
-     * of any type other than a resource.
-     */
-    #[\ReturnTypeWillChange]
-    public function jsonSerialize()
-    {
-       return ObjectSerializer::sanitizeForSerialization($this);
-    }
-
-    /**
-     * Gets the string presentation of the object
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return json_encode(
-            ObjectSerializer::sanitizeForSerialization($this),
-            JSON_PRETTY_PRINT
-        );
-    }
-
-    /**
-     * Gets a header-safe presentation of the object
-     *
-     * @return string
-     */
-    public function toHeaderValue()
-    {
-        return json_encode(ObjectSerializer::sanitizeForSerialization($this));
-    }
+    {{/vars~}}
 }
