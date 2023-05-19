@@ -1,163 +1,166 @@
-[
-  {
+{
+  "cp": {
     "name": "Content Providers",
     "code": "cp",
-    "apis": [
-      {
+    "apis": {
+      "feeds": {
         "name": "Content Feeds",
         "code": "feeds",
-        "countries:": ["us"]
+        "countries": ["us"]
       }
-    ]
+    }
   },
-  {
+  "dsv": {
     "name": "Drop Ship Vendors",
     "code": "dsv",
-    "apis": [
-      {
+    "apis": {
+      "cost": {
         "name": "Cost",
         "code": "cost",
         "countries": ["us"]
       },
-      {
+      "feeds": {
         "name": "Feeds",
         "code": "feeds",
         "countries": ["us"]
       },
-      {
+      "inventory": {
         "name": "Inventory",
         "code": "inventory",
         "countries": ["us"]
       },
-      {
+      "items": {
         "name": "Items",
         "code": "items",
         "countries": ["us"]
       },
-      {
+      "lagtime": {
         "name": "Lag Time",
         "code": "lagtime",
         "countries": ["us"]
       },
-      {
+      "orders": {
         "name": "Orders",
         "code": "orders",
         "countries": ["us"]
       },
-      {
+      "reports": {
         "name": "Reports",
         "code": "reports",
         "countries": ["us"]
       }
-    ]
+    }
   },
-  {
+  "mp": {
     "name": "Marketplace Partners",
     "code": "mp",
-    "apis": [
-      {
+    "apis": {
+      "auth": {
         "name": "Authentication & Authorization",
         "code": "auth",
         "countries": ["mx", "us"]
       },
-      {
+      "feeds": {
         "name": "Feeds",
         "code": "feeds",
         "countries": ["ca", "us"]
       },
-      {
+      "fulfillment": {
         "name": "Walmart Fulfillment Services",
         "code": "fulfillment",
         "countries": ["us"]
       },
-      {
+      "insights": {
         "name": "Insights",
         "code": "insights",
         "countries": ["us"]
       },
-      {
+      "inventory": {
         "name": "Inventory",
         "code": "inventory",
         "countries": ["ca", "us"]
       },
-      {
+      "items": {
         "name": "Items",
         "code": "items",
         "countries": ["ca", "us"]
       },
-      {
+      "lagtime": {
         "name": "Lag Time",
         "code": "lagtime",
         "countries": ["us"]
       },
-      {
+      "notifications": {
         "name": "Notifications",
         "code": "notifications",
         "countries": ["us"]
       },
-      {
+      "onrequestreports": {
         "name": "On-request Reports",
         "code": "onrequestreports",
         "countries": ["us"]
       },
-      {
+      "orders": {
         "name": "Orders",
         "code": "orders",
         "countries": ["ca", "us"]
       },
-      {
+      "price": {
         "name": "Prices",
         "code": "price",
         "countries": ["ca", "us"]
       },
-      {
+      "promotion": {
         "name": "Promotions",
         "code": "promotion",
         "countries": ["ca", "us"]
       },
-      {
+      "reports": {
         "name": "Pre-generated Reports",
         "code": "reports",
         "countries": ["ca", "us"]
       },
-      {
+      "returns": {
         "name": "Returns",
         "code": "returns",
         "countries": ["us"]
       },
-      {
+      "rules": {
         "name": "Rules",
         "code": "rules",
         "countries": ["us"]
       },
-      {
+      "settings": {
         "name": "Settings",
         "code": "settings",
         "countries": ["us"]
       },
-      {
+      "utilities": {
         "name": "Utilities",
         "code": "utilities",
         "countries": ["us"]
       }
-    ]
+    }
   },
-  {
+  "ws": {
     "name": "Warehouse Suppliers",
-    "code": "warehouse",
-    "apis": [
-      {
+    "code": "ws",
+    "apis": {
+      "feeds": {
         "name": "Feeds",
-        "code": "feeds"
+        "code": "feeds",
+        "countries": ["us"]
       },
-      {
+      "items": {
         "name": "Items",
-        "code": "items"
+        "code": "items",
+        "countries": ["us"]
       },
-      {
+      "reports": {
         "name": "Reports",
-        "code": "reports"
+        "code": "reports",
+        "countries": ["us"]
       }
-    ]
+    }
   }
-]
+}

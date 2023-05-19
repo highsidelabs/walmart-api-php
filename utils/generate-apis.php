@@ -1,26 +1,50 @@
 <?php
 
-const RESOURCE_DIR = __DIR__ . '/../resources';
+require_once __DIR__ . '/../src/constants.php';
+
 const OUT_DIR = __DIR__ . '/../src';
 const API_OUT_DIR = OUT_DIR . '/api';
 const MODEL_OUT_DIR = OUT_DIR . '/model';
 
+/**
+ * Generate the SDK based on the schemas that fit the given options.
+ *
+ * @param array $categories The Walmart API categories for which to generate code.
+ * @param array $countries The countries for which to generate code.
+ * @param array $names The individual schema codes for which to generate code.
+ * @return void 
+ */
+function generateApis(array $categories, array $countries, array $names): void
+{
+    $schemas = schemas($categories, $countries, $names);
+    foreach ($schemas as $schema) {
+        openApiGenerator($schema['apiName'], $schema['category'], $schema['country']);
+    }
+}
+
+
+/**
+ * Generate the SDK for the given schema.
+ *
+ * @param string $name 
+ * @param string $category 
+ * @param string $country 
+ * @return void 
+ */
 function openApiGenerator(string $name, string $category, string $country): void
 {
     $version = libVersion();
     $fullSchemaPath = RESOURCE_DIR . "/schemas/$country/$category/$name.json";
-    $buildDir = __DIR__ . '/../build';
     $configPath = RESOURCE_DIR . '/generator-config.json';
     $templateDir = RESOURCE_DIR . '/templates';
-    $logFile = $buildDir . '/build.log';
+    $logFile = BUILD_DIR . '/build.log';
 
     // Ensure output files are prettified
-    // $_ENV['PHP_POST_PROCESS_FILE'] = __DIR__ . '/../vendor/bin/php_cs_fixer fix src';
     putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix');
 
     $generateCmd = "openapi-generator generate \
         --input-spec $fullSchemaPath \
-        --output $buildDir \
+        --output " . BUILD_DIR . " \
         --template-dir $templateDir \
         --generator-name php \
         --config $configPath \
@@ -44,12 +68,5 @@ function openApiGenerator(string $name, string $category, string $country): void
     }
 }
 
-// Get the library version
-function libVersion(): string
-{
-    $configPath = RESOURCE_DIR . '/generator-config.json';
-    $config = json_decode(file_get_contents($configPath), true);
-    return $config['artifactVersion'];
-}
-
-openApiGenerator('feeds', 'mp', 'us');
+$opts = handleSchemaOpts();
+generateApis(...$opts);

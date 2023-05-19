@@ -19,10 +19,12 @@
     },
     "require": {
         "guzzlehttp/guzzle": "^7.4",
-        "symfony/uid": "^6.1"
+        "symfony/uid": "^6.1",
+        "ramsey/uuid": "^4.7"
     },
     "scripts": {
         "download-schemas": "php utils/download-schemas.php",
-        "generate": "php utils/generate-api.php"
+        "customize-schemas": "php utils/customize-schemas.php",
+        "generate": "php utils/generate-apis.php"
     }
 }
