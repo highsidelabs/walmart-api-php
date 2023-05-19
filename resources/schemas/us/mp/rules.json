@@ -108,9 +108,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/exceptions": {
@@ -154,9 +156,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "put": {
                 "tags": [
@@ -245,9 +249,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "post": {
                 "tags": [
@@ -336,9 +342,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/assortment": {
@@ -402,9 +410,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/activate": {
@@ -494,9 +504,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/actions": {
@@ -747,9 +759,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/": {
@@ -954,9 +968,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "put": {
                 "tags": [
@@ -1199,9 +1215,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/create": {
@@ -1393,9 +1411,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/{ruleId}\/status\/{ruleStatus}": {
@@ -1572,9 +1592,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/{ruleId}\/status\/{ruleStatus}\/simulationcount": {
@@ -1636,9 +1658,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/{ruleId}\/status\/{ruleStatus}\/simulation": {
@@ -1677,9 +1701,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/subcategories": {
@@ -1773,9 +1799,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/downloadexceptions": {
@@ -1800,9 +1828,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/areas": {
@@ -2672,9 +2702,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/rules\/{ruleId}\/status\/{ruleStatus}\/": {
@@ -2731,9 +2763,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         }
     },
@@ -4056,7 +4090,7 @@
             }
         },
         "securitySchemes": {
-            "apiKeyAuth": {
+            "accessTokenScheme": {
                 "type": "apiKey",
                 "in": "header",
                 "name": "WM_SEC.ACCESS_TOKEN"

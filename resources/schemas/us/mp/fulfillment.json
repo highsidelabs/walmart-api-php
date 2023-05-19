@@ -240,9 +240,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/items\/onhold\/search": {
@@ -539,9 +541,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/shipment-tracking": {
@@ -742,9 +746,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/shipment-label": {
@@ -811,9 +817,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/orders-fulfillments": {
@@ -1143,9 +1151,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/orders-fulfillments\/fetchOrderPromiseOptions": {
@@ -1882,9 +1892,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/orders-fulfillments\/cancel": {
@@ -2068,9 +2080,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/inbound-shipments": {
@@ -2594,9 +2608,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "post": {
                 "tags": [
@@ -2913,9 +2929,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/inbound-preview": {
@@ -3406,9 +3424,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/carrier-rate-quotes": {
@@ -3849,9 +3869,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "post": {
                 "tags": [
@@ -4346,9 +4368,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/carrier-rate-quote\/confirm": {
@@ -4518,9 +4542,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/carrier-label\/{shipmentId}": {
@@ -4700,9 +4726,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/feeds": {
@@ -4930,9 +4958,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/report\/wfs\/getInventoryHealthReport": {
@@ -4961,9 +4991,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/orders-fulfillments\/status": {
@@ -5559,9 +5591,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/label\/{shipmentId}": {
@@ -5595,9 +5629,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/inventory-log": {
@@ -5807,9 +5843,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/inbound-shipment-items": {
@@ -6032,9 +6070,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/inbound-shipment-errors": {
@@ -6391,9 +6431,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/inbound-shipments\/{inboundOrderId}": {
@@ -6561,9 +6603,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/carrier-rate-quote\/{shipmentId}": {
@@ -6724,9 +6768,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         }
     },
@@ -15626,7 +15672,7 @@
             }
         },
         "securitySchemes": {
-            "apiKeyAuth": {
+            "accessTokenScheme": {
                 "type": "apiKey",
                 "in": "header",
                 "name": "WM_SEC.ACCESS_TOKEN"

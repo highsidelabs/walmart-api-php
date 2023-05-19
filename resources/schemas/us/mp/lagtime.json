@@ -249,25 +249,15 @@
                                 "example": {
                                     "feedId": "E7BB7DBAF3FF461AB63A2169F3BEAADE@AVQBAgA"
                                 }
-                            },
-                            "application\/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the Feed File."
-                                        }
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>76D440717BFD429DAD28AC01D42AE90D@AR0BAQA<\/ns2:feedId>\n<\/ns2:FeedAcknowledgement>"
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/lagtime": {
@@ -325,43 +315,15 @@
                                     "sku": "183688",
                                     "fulfillmentLagTime": 0
                                 }
-                            },
-                            "application\/xml": {
-                                "schema": {
-                                    "required": [
-                                        "fulfillmentLagTime",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID. Response will have decoded value.",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        },
-                                        "fulfillmentLagTime": {
-                                            "type": "integer",
-                                            "description": "The number of days between when the item is ordered and when it is shipped",
-                                            "format": "int32",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "lagTime"
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<lagTime xmlns=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/lagTime>"
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         }
     },
@@ -642,7 +604,7 @@
             }
         },
         "securitySchemes": {
-            "apiKeyAuth": {
+            "accessTokenScheme": {
                 "type": "apiKey",
                 "in": "header",
                 "name": "WM_SEC.ACCESS_TOKEN"

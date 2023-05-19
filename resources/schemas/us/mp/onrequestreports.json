@@ -329,9 +329,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "post": {
                 "tags": [
@@ -696,9 +698,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/reports\/reportRequests\/{requestId}": {
@@ -875,9 +879,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/reports\/downloadReport": {
@@ -988,9 +994,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         }
     },
@@ -1755,7 +1763,7 @@
             }
         },
         "securitySchemes": {
-            "apiKeyAuth": {
+            "accessTokenScheme": {
                 "type": "apiKey",
                 "in": "header",
                 "name": "WM_SEC.ACCESS_TOKEN"

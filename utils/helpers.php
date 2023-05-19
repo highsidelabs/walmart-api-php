@@ -60,7 +60,7 @@ function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
         }
     
         if (empty($apis)) {
-            throw new InvalidArgumentException("No matching API names found in the {$apiData[$cat]['name']} category.");
+            echo "No matching API names found in the {$apiData[$cat]['name']} category. Skipping category...\n";
         }
 
         foreach ($apis as $api) {

@@ -98,53 +98,15 @@
                                         "amount": 10
                                     }
                                 }
-                            },
-                            "application\/xml": {
-                                "schema": {
-                                    "required": [
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID. Response will have decoded value."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "Inventory Count"
-                                                }
-                                            },
-                                            "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "inventory"
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<inventory xmlns=\"http:\/\/walmart.com\/\">\n    <sku>97964_KFTest<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>10<\/amount>\n    <\/quantity>\n<\/inventory>"
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "put": {
                 "tags": [
@@ -314,53 +276,15 @@
                                         "amount": 10
                                     }
                                 }
-                            },
-                            "application\/xml": {
-                                "schema": {
-                                    "required": [
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID. Response will have decoded value."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "Inventory Count"
-                                                }
-                                            },
-                                            "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "inventory"
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<inventory xmlns=\"http:\/\/walmart.com\/\">\n    <sku>97964_KFTest<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>3<\/amount>\n    <\/quantity>\n<\/inventory>"
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/inventories\/{sku}": {
@@ -579,9 +503,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "put": {
                 "tags": [
@@ -805,9 +731,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/feeds": {
@@ -966,33 +894,15 @@
                                 "example": {
                                     "feedId": "FFE538D9B25A4000AD2A067ACEDCF4C4@AUoBAQA"
                                 }
-                            },
-                            "application\/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>884C20C71B7E42FAA41FABFA52596A62@AUoBAQA<\/ns2:feedId>\n<\/ns2:FeedAcknowledgement>"
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/inventories": {
@@ -1211,9 +1121,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/fulfillment\/inventory": {
@@ -1350,9 +1262,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         }
     },
@@ -2855,7 +2769,7 @@
             }
         },
         "securitySchemes": {
-            "apiKeyAuth": {
+            "accessTokenScheme": {
                 "type": "apiKey",
                 "in": "header",
                 "name": "WM_SEC.ACCESS_TOKEN"

@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/../src/constants.php';
 
 const OUT_DIR = __DIR__ . '/../src';
@@ -11,12 +12,13 @@ const MODEL_OUT_DIR = OUT_DIR . '/model';
  *
  * @param array $categories The Walmart API categories for which to generate code.
  * @param array $countries The countries for which to generate code.
- * @param array $names The individual schema codes for which to generate code.
+ * @param array $apiNames The individual schema codes for which to generate code.
  * @return void 
  */
-function generateApis(array $categories, array $countries, array $names): void
+function generateApis(array $categories, array $countries, array $apiNames): void
 {
-    $schemas = schemas($categories, $countries, $names);
+    $schemas = schemas($categories, $countries, $apiNames);
+
     foreach ($schemas as $schema) {
         openApiGenerator($schema['apiName'], $schema['category'], $schema['country']);
     }

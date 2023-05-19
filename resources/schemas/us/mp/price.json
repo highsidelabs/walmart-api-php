@@ -145,9 +145,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             },
             "delete": {
                 "tags": [
@@ -175,9 +177,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/price": {
@@ -468,145 +472,15 @@
                                         "sku": "97964_KFTest"
                                     }
                                 }
-                            },
-                            "application\/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "errors": {
-                                            "type": "array",
-                                            "xml": {
-                                                "name": "error"
-                                            },
-                                            "items": {
-                                                "required": [
-                                                    "code"
-                                                ],
-                                                "type": "object",
-                                                "properties": {
-                                                    "code": {
-                                                        "type": "string"
-                                                    },
-                                                    "field": {
-                                                        "type": "string"
-                                                    },
-                                                    "description": {
-                                                        "type": "string"
-                                                    },
-                                                    "info": {
-                                                        "type": "string"
-                                                    },
-                                                    "severity": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "INFO",
-                                                            "WARN",
-                                                            "ERROR"
-                                                        ]
-                                                    },
-                                                    "category": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "APPLICATION",
-                                                            "SYSTEM",
-                                                            "REQUEST",
-                                                            "DATA"
-                                                        ]
-                                                    },
-                                                    "causes": {
-                                                        "type": "array",
-                                                        "xml": {
-                                                            "wrapped": true
-                                                        },
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "code": {
-                                                                    "type": "string"
-                                                                },
-                                                                "field": {
-                                                                    "type": "string"
-                                                                },
-                                                                "type": {
-                                                                    "type": "string"
-                                                                },
-                                                                "description": {
-                                                                    "type": "string"
-                                                                }
-                                                            },
-                                                            "xml": {
-                                                                "name": "Cause"
-                                                            }
-                                                        }
-                                                    },
-                                                    "errorIdentifiers": {
-                                                        "type": "object",
-                                                        "additionalProperties": {
-                                                            "type": "object"
-                                                        }
-                                                    },
-                                                    "component": {
-                                                        "type": "string"
-                                                    },
-                                                    "type": {
-                                                        "type": "string"
-                                                    },
-                                                    "serviceName": {
-                                                        "type": "string"
-                                                    },
-                                                    "gatewayErrorCategory": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "INTERNAL_DATA_ERROR",
-                                                            "EXTERNAL_DATA_ERROR",
-                                                            "SYSTEM_ERROR"
-                                                        ]
-                                                    }
-                                                },
-                                                "xml": {
-                                                    "name": "GatewayError"
-                                                }
-                                            }
-                                        },
-                                        "statusCode": {
-                                            "type": "integer",
-                                            "format": "int32"
-                                        },
-                                        "mart": {
-                                            "type": "string",
-                                            "description": "Marketplace name. Example: Walmart-US",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        },
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item.",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        },
-                                        "message": {
-                                            "type": "string",
-                                            "description": "A message of acknowledgement for a price update",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "ItemPriceResponse",
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:ItemPriceResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:mart>WALMART_US<\/ns2:mart>\n    <ns2:sku>97964_KFTest<\/ns2:sku>\n    <ns2:message>Thank you. Your price has been updated. Please allow up to five minutes for this change to be reflected on the site.<\/ns2:message>\n<\/ns2:ItemPriceResponse>\n"
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/repricerFeeds": {
@@ -708,9 +582,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/repricer\/strategy": {
@@ -837,9 +713,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/feeds": {
@@ -959,33 +837,15 @@
                                 "example": {
                                     "feedId": "14066B6642344B76A8B77AC094F8C63B@AVMBAgA"
                                 }
-                            },
-                            "application\/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>55DE8A53B09F41BBBF261C1AB5FB2BC8@AVMBAgA<\/ns2:feedId>\n<\/ns2:FeedAcknowledgement>"
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/cppreference": {
@@ -1053,9 +913,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/repricer\/strategies": {
@@ -1143,9 +1005,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         }
     },
@@ -2160,7 +2024,7 @@
             }
         },
         "securitySchemes": {
-            "apiKeyAuth": {
+            "accessTokenScheme": {
                 "type": "apiKey",
                 "in": "header",
                 "name": "WM_SEC.ACCESS_TOKEN"

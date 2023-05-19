@@ -53,19 +53,15 @@
                                     "type": "string",
                                     "description": "The data will be streamed in a .CSV file in your folder.\nThe response to a successful call includes a header as an attachment called Content-Disposition.\nThe Content-Disposition header contains the name of the report. As an example, attachment: filename=10000000354_2016-01-15T23:09:54.438+0000.zip. The title includes your partner ID (in this case, 10000000354) and the timestamp when the file was generated.\nThe attachment contains the report in a compressed zip format.\nThe java code example demonstrates the use of the header and the body when processing the response\nThe report is regenerated periodically. We recommend that you not retrieve the report more frequently than once every two hours."
                                 }
-                            },
-                            "application\/octet-stream": {
-                                "schema": {
-                                    "type": "string",
-                                    "description": "The data will be streamed in a .CSV file in your folder.\nThe response to a successful call includes a header as an attachment called Content-Disposition.\nThe Content-Disposition header contains the name of the report. As an example, attachment: filename=10000000354_2016-01-15T23:09:54.438+0000.zip. The title includes your partner ID (in this case, 10000000354) and the timestamp when the file was generated.\nThe attachment contains the report in a compressed zip format.\nThe java code example demonstrates the use of the header and the body when processing the response\nThe report is regenerated periodically. We recommend that you not retrieve the report more frequently than once every two hours."
-                                }
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/report\/reconreport\/reconFile?reportVersion=v1": {
@@ -109,19 +105,15 @@
                                     "type": "string",
                                     "description": "The data will be streamed in a .CSV file in your folder.\nThe response to a successful call includes a header as an attachment called Content-Disposition.\nThe Content-Disposition header contains the name of the report. As an example, attachment: filename=10000000354_2016-01-15T23:09:54.438+0000.zip. The title includes your partner ID (in this case, 10000000354) and the timestamp when the file was generated.\nThe attachment contains the report in a compressed zip format.\nThe java code example demonstrates the use of the header and the body when processing the response\nThe report is regenerated periodically. We recommend that you not retrieve the report more frequently than once every two hours."
                                 }
-                            },
-                            "application\/octet-stream": {
-                                "schema": {
-                                    "type": "string",
-                                    "description": "The data will be streamed in a .CSV file in your folder.\nThe response to a successful call includes a header as an attachment called Content-Disposition.\nThe Content-Disposition header contains the name of the report. As an example, attachment: filename=10000000354_2016-01-15T23:09:54.438+0000.zip. The title includes your partner ID (in this case, 10000000354) and the timestamp when the file was generated.\nThe attachment contains the report in a compressed zip format.\nThe java code example demonstrates the use of the header and the body when processing the response\nThe report is regenerated periodically. We recommend that you not retrieve the report more frequently than once every two hours."
-                                }
                             }
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/report\/reconreport\/availableReconFiles": {
@@ -173,9 +165,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/report\/reconreport\/availableReconFiles?reportVersion=v1": {
@@ -213,9 +207,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/report\/payment\/statement": {
@@ -583,9 +579,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         },
         "\/v3\/report\/payment\/performance": {
@@ -811,9 +809,11 @@
                         }
                     }
                 },
-                "security": {
-                    "apiKey": []
-                }
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
             }
         }
     },
@@ -1955,7 +1955,7 @@
             }
         },
         "securitySchemes": {
-            "apiKeyAuth": {
+            "accessTokenScheme": {
                 "type": "apiKey",
                 "in": "header",
                 "name": "WM_SEC.ACCESS_TOKEN"
