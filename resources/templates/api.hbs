@@ -13,16 +13,11 @@
 
 namespace {{apiPackage}};
 
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
 use {{invokerPackage}}\ApiException;
-use {{invokerPackage}}\Configuration;
-use {{invokerPackage}}\HeaderSelector;
 use {{invokerPackage}}\ObjectSerializer;
 
 /**
@@ -35,82 +30,8 @@ use {{invokerPackage}}\ObjectSerializer;
  * @email    jesse@highsidelabs.co
  */
 {{#operations~}}
-class {{classname}}
+class {{classname}} extends BaseApi
 {
-    /**
-     * @var ClientInterface
-     */
-    protected $client;
-
-    /**
-     * @var Configuration
-     */
-    protected $config;
-
-    /**
-     * @var HeaderSelector
-     */
-    protected $headerSelector;
-
-    /**
-     * @var int Host index
-     */
-    protected $hostIndex;
-
-    /** @var string[] $contentTypes **/
-    public const contentTypes = [{{#operation}}
-        '{{{operationId}}}' => [{{#consumes}}
-            '{{{mediaType}}}',{{/consumes}}
-            {{#unless consumes~}}'application/json',{{/unless}}
-        ],{{/operation}}
-    ];
-
-    /**
-     * @param ClientInterface $client
-     * @param Configuration   $config
-     * @param HeaderSelector  $selector
-     * @param int             $hostIndex (Optional) host index to select the list of hosts if defined in the OpenAPI spec
-     */
-    public function __construct(
-        ClientInterface $client = null,
-        Configuration $config = null,
-        HeaderSelector $selector = null,
-        $hostIndex = 0
-    ) {
-        $this->client = $client ?: new Client();
-        $this->config = $config ?: new Configuration();
-        $this->headerSelector = $selector ?: new HeaderSelector();
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Set the host index
-     *
-     * @param int $hostIndex Host index (required)
-     */
-    public function setHostIndex($hostIndex): void
-    {
-        $this->hostIndex = $hostIndex;
-    }
-
-    /**
-     * Get the host index
-     *
-     * @return int Host index
-     */
-    public function getHostIndex()
-    {
-        return $this->hostIndex;
-    }
-
-    /**
-     * @return Configuration
-     */
-    public function getConfig()
-    {
-        return $this->config;
-    }
-
 {{~#operation}}
     /**
      * Operation {{{operationId}}}
@@ -125,41 +46,12 @@ class {{classname}}
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
 {{~/if~}}
-{{#each servers~}}
-{{#if @first~}}
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-{{~/if~}}
-     * URL: {{{url}}}
-{{~#variables~}}
-{{#if @first~}}
-     *  Variables:
-{{~/if~}}
-     *    - {{{name}}}: {{{description}}}{{#unless description}} No description provided{{/unless}}
-{{#each enumValues~}}
-{{~#if @first~}}
-     *      Allowed values:
-{{~/if~}}
-     *        - {{{this}}}
-{{~/each~}}
-{{~/variables~}}
-{{#if @last~}}
-     *
-{{/if~}}
-{{/each~}}
 {{#each allParams}}
      * @param  {{{dataType}}} ${{paramName}}{{#if description}} {{{description}}}{{/if}} {{#if required}}(required){{else}}(optional{{#if defaultValue}}, default to {{{defaultValue}}}{{/if}}){{/if}}{{#if isDeprecated}} (deprecated){{/if}}
 {{~#if @last}}
      *
 {{~/if~}}
-{{~/each~}}
-{{#each servers~}}
-{{#if @first~}}
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-{{~/if~}}
-{{/each}}
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['{{{operationId}}}'] to see the possible values for this operation
+{{~/each}}
      *
      * @throws \
         {{~invokerPackage}}\ApiException on non-2xx response{{! invokerPackage is on a new line to avoid the backslash after Api being treated as a block escape }}
@@ -169,9 +61,12 @@ class {{classname}}
      * @deprecated
     {{/if}}
      */
-    public function {{operationId}}({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}, {{/allParams}}{{#each servers}}{{#if @first}}?int $hostIndex = null, array $variables = [], {{/if}}{{/each}}string $contentType = self::contentTypes['{{{operationId}}}'][0]{{/if}})
+    public function {{operationId}}({{#if vendorExtensions.x-group-parameters}}
+        array $associative_array{{else}}{{#each allParams}}
+        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
+    {{/each}})
     {
-        {{#if returnType}}list($response) = {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{#each servers}}{{#if @first}}$hostIndex, $variables, {{/if}}{{/each}}$contentType{{/if}});{{#if returnType}}
+        {{#if returnType}}list($response) = {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});{{#if returnType}}
         return $response;{{/if}}
     }
 
@@ -188,41 +83,12 @@ class {{classname}}
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
 {{~/if~}}
-{{#each servers~}}
-{{#if @first~}}
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-{{~/if~}}
-     * URL: {{{url}}}
-{{~#variables~}}
-{{#if @first~}}
-     *  Variables:
-{{~/if~}}
-     *    - {{{name}}}: {{{description}}}{{#unless description}} No description provided{{/unless}}
-{{#each enumValues~}}
-{{~#if @first~}}
-     *      Allowed values:
-{{~/if~}}
-     *        - {{{this}}}
-{{~/each~}}
-{{~/variables~}}
-{{#if @last~}}
-     *
-{{/if~}}
-{{/each~}}
 {{#each allParams}}
      * @param  {{{dataType}}} ${{paramName}}{{#if description}} {{{description}}}{{/if}} {{#if required}}(required){{else}}(optional{{#if defaultValue}}, default to {{{defaultValue}}}{{/if}}){{/if}}{{#if isDeprecated}} (deprecated){{/if}}
 {{~#if @last}}
      *
 {{~/if~}}
-{{~/each~}}
-{{#each servers~}}
-{{#if @first~}}
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-{{~/if~}}
-{{/each}}
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['{{{operationId}}}'] to see the possible values for this operation
+{{~/each}}
      *
      * @throws \
 {{~invokerPackage}}\ApiException on non-2xx response
@@ -232,9 +98,12 @@ class {{classname}}
      * @deprecated
     {{~/if}}
      */
-    protected function {{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}, {{/allParams}}{{#each servers}}{{#if @first}}?int $hostIndex = null, array $variables = [], {{/if}}{{/each}}string $contentType = self::contentTypes['{{{operationId}}}'][0]{{/if}})
+    protected function {{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}
+        array $associative_array{{else}}{{#each allParams}}
+        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
+    {{/each}}{{/if}})
     {
-        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{#each servers}}{{#if @first}}$hostIndex, $variables, {{/if}}{{/each}}$contentType{{/if}});
+        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
 
         try {
             $options = $this->createHttpClientOption();
@@ -352,41 +221,12 @@ class {{classname}}
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
 {{~/if~}}
-{{#each servers~}}
-{{#if @first~}}
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-{{~/if~}}
-     * URL: {{{url}}}
-{{~#variables~}}
-{{#if @first~}}
-     *  Variables:
-{{~/if~}}
-     *    - {{{name}}}: {{{description}}}{{#unless description}} No description provided{{/unless}}
-{{#each enumValues~}}
-{{~#if @first~}}
-     *      Allowed values:
-{{~/if~}}
-     *        - {{{this}}}
-{{~/each~}}
-{{~/variables~}}
-{{#if @last~}}
-     *
-{{/if~}}
-{{/each~}}
 {{#each allParams}}
      * @param  {{{dataType}}} ${{paramName}}{{#if description}} {{{description}}}{{/if}} {{#if required}}(required){{else}}(optional{{#if defaultValue}}, default to {{{defaultValue}}}{{/if}}){{/if}}{{#if isDeprecated}} (deprecated){{/if}}
 {{~#if @last}}
      *
 {{~/if~}}
-{{~/each~}}
-{{#each servers~}}
-{{#if @first~}}
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-{{~/if~}}
-{{/each}}
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['{{{operationId}}}'] to see the possible values for this operation
+{{~/each}}
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -394,9 +234,12 @@ class {{classname}}
      * @deprecated
     {{~/if}}
      */
-    public function {{operationId}}Async({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}, {{/allParams}}{{#each servers}}{{#if @first}}?int $hostIndex = null, array $variables = [], {{/if}}{{/each}}string $contentType = self::contentTypes['{{{operationId}}}'][0]{{/if}})
+    public function {{operationId}}Async({{#if vendorExtensions.x-group-parameters}}
+        array $associative_array{{else}}{{#each allParams}}
+        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
+        {{/each}}{{/if}})
     {
-        return $this->{{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{#each servers}}{{#if @first}}$hostIndex, $variables, {{/if}}{{/each}}$contentType{{/if}})
+        return $this->{{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}})
             ->then(
                 function ($response) {
                     return $response[0];
@@ -418,41 +261,12 @@ class {{classname}}
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
 {{~/if~}}
-{{#each servers~}}
-{{#if @first~}}
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-{{~/if~}}
-     * URL: {{{url}}}
-{{~#variables~}}
-{{#if @first~}}
-     *  Variables:
-{{~/if~}}
-     *    - {{{name}}}: {{{description}}}{{#unless description}} No description provided{{/unless}}
-{{#each enumValues~}}
-{{~#if @first~}}
-     *      Allowed values:
-{{~/if~}}
-     *        - {{{this}}}
-{{~/each~}}
-{{~/variables~}}
-{{#if @last~}}
-     *
-{{/if~}}
-{{/each~}}
 {{#each allParams}}
      * @param  {{{dataType}}} ${{paramName}}{{#if description}} {{{description}}}{{/if}} {{#if required}}(required){{else}}(optional{{#if defaultValue}}, default to {{{defaultValue}}}{{/if}}){{/if}}{{#if isDeprecated}} (deprecated){{/if}}
 {{~#if @last}}
      *
 {{~/if~}}
-{{~/each~}}
-{{#each servers~}}
-{{#if @first~}}
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-{{~/if~}}
-{{/each}}
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['{{{operationId}}}'] to see the possible values for this operation
+{{~/each}}
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -460,10 +274,13 @@ class {{classname}}
      * @deprecated
     {{~/if}}
      */
-    protected function {{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}, {{/allParams}}{{#each servers}}{{#if @first}}?int $hostIndex = null, array $variables = [], {{/if}}{{/each}}string $contentType = self::contentTypes['{{{operationId}}}'][0]{{/if}})
+    protected function {{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}
+        array $associative_array{{else}}{{#each allParams}}
+        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
+    {{/each}}{{/if}})
     {
         $returnType = '{{{returnType}}}';
-        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{#each servers}}{{#if @first}}$hostIndex, $variables, {{/if}}{{/each}}$contentType{{/if}});
+        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -512,41 +329,12 @@ class {{classname}}
      * Note: the input parameter is an associative array with the keys listed as the parameter name below
      *
 {{~/if~}}
-{{#each servers~}}
-{{#if @first~}}
-     * This operation contains host(s) defined in the OpenAPI spec. Use 'hostIndex' to select the host.
-     * if needed, use the 'variables' parameter to pass variables to the host.
-{{~/if~}}
-     * URL: {{{url}}}
-{{~#variables~}}
-{{#if @first~}}
-     *  Variables:
-{{~/if~}}
-     *    - {{{name}}}: {{{description}}}{{#unless description}} No description provided{{/unless}}
-{{#each enumValues~}}
-{{~#if @first~}}
-     *      Allowed values:
-{{~/if~}}
-     *        - {{{this}}}
-{{~/each~}}
-{{~/variables~}}
-{{#if @last~}}
-     *
-{{/if~}}
-{{/each~}}
 {{#each allParams}}
      * @param  {{{dataType}}} ${{paramName}}{{#if description}} {{{description}}}{{/if}} {{#if required}}(required){{else}}(optional{{#if defaultValue}}, default to {{{defaultValue}}}{{/if}}){{/if}}{{#if isDeprecated}} (deprecated){{/if}}
 {{~#if @last}}
      *
 {{~/if~}}
-{{~/each~}}
-{{#each servers~}}
-{{#if @first~}}
-     * @param  null|int $hostIndex Host index. Defaults to null. If null, then the library will use $this->hostIndex instead
-     * @param  array $variables Associative array of variables to pass to the host. Defaults to empty array.
-{{~/if~}}
-{{/each}}
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['{{{operationId}}}'] to see the possible values for this operation
+{{~/each}}
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -554,17 +342,16 @@ class {{classname}}
      * @deprecated
     {{~/if}}
      */
-    protected function {{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}, {{/allParams}}{{#each servers}}{{#if @first}}?int $hostIndex = null, array $variables = [], {{/if}}{{/each}}string $contentType = self::contentTypes['{{{operationId}}}'][0]{{/if}})
+    protected function {{operationId}}Request({{#if vendorExtensions.x-group-parameters}}
+        array $associative_array{{else}}{{#each allParams}}
+        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
+    {{/each}}{{/if}})
     {
         {{~#if vendorExtensions.x-group-parameters~}}
         // unbox the parameters from the associative array
 {{~#allParams~}}
         ${{paramName}} = array_key_exists('{{paramName}}', $associative_array) ? $associative_array['{{paramName}}'] : {{{defaultValue}}}{{#unless defaultValue}}null{{/unless}};
-{{~/allParams}}{{#if servers.0~}}
-        $hostIndex = $associative_array['hostIndex'];
-        $variables = array_key_exists('variables', $associative_array) ? $associative_array['variables'] : [];
-{{~/if~}}
-        $contentType = $associative_array['contentType'] ?? self::contentTypes['{{{operationId}}}'][0];
+{{~/allParams}}
         {{~/if}}{{#allParams~}}
         {{#if required}}
         // verify the required parameter '{{paramName}}' is set
@@ -682,7 +469,6 @@ class {{classname}}
 
         $headers = $this->headerSelector->selectHeaders(
             [{{#each produces}}'{{{mediaType}}}'{{#unless @last}}, {{/unless}}{{/each}}],
-            $contentType,
             $multipart
         );
 
@@ -765,21 +551,7 @@ class {{classname}}
             $headers
         );
 
-        {{#if servers.0~}}
-        # Preserve the original behavior of server indexing.
-        if ($hostIndex === null) {
-            $hostIndex = $this->hostIndex;
-        }
-
-        $hostSettings = $this->getHostSettingsFor{{operationId}}();
-
-        if ($hostIndex < 0 || $hostIndex >= count($hostSettings)) {
-            throw new \InvalidArgumentException("Invalid index {$hostIndex} when selecting the host. Must be less than ".count($hostSettings));
-        }
-        $operationHost = Configuration::getHostString($hostSettings, $hostIndex, $variables);
-        {{else~}}
         $operationHost = $this->config->getHost();
-        {{/if~}}
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             '{{httpMethod}}',
@@ -788,65 +560,6 @@ class {{classname}}
             $httpBody
         );
     }
-
-    {{#if servers.0~}}
-    /**
-     * Returns an array of host settings for Operation {{operationId}}
-     *
-     * @return array an array of host settings
-     */
-    protected function getHostSettingsFor{{operationId}}(): array
-    {
-        return [
-        {{#servers}}
-            [
-                "url" => "{{{url}}}",
-                "description" => "{{{description}}}{{#unless description}}No description provided{{/unless}}",
-                {{#each variables}}
-                {{#if @first}}
-                "variables" => [
-                {{/if}}
-                    "{{{name}}}" => [
-                    "description" => "{{{description}}}{{#unless description}}No description provided{{/unless}}",
-                    "default_value" => "{{{defaultValue}}}",
-                    {{~#each enumValues~}}
-                    {{#if @first~}}
-                    "enum_values" => [
-                    {{~/if~}}
-                        "{{{this}}}",
-                    {{~#if @last~}}
-                    ]
-                    {{~/if~}}
-                    {{/each~}}
-                    ]{{#unless @last}},{{/unless}}
-                {{~#if @last~}}
-                ]
-                {{~/if~}}
-                {{/each~}}
-            ]{{#unless @last}},{{/unless}}
-        {{~/servers~}}
-        ];
-    }
-
-    {{~/if~}}
     {{/operation~}}
-    /**
-     * Create http client option
-     *
-     * @throws \RuntimeException on file opening failure
-     * @return array of http client options
-     */
-    protected function createHttpClientOption()
-    {
-        $options = [];
-        if ($this->config->getDebug()) {
-            $options[RequestOptions::DEBUG] = fopen($this->config->getDebugFile(), 'a');
-            if (!$options[RequestOptions::DEBUG]) {
-                throw new \RuntimeException('Failed to open the debug file: ' . $this->config->getDebugFile());
-            }
-        }
-
-        return $options;
-    }
 }
 {{/operations}}

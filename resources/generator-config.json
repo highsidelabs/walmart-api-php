@@ -14,12 +14,17 @@
   "invokerPackage": "Walmart",
 
   "files": {
-    "ModelInterface.mustache": {
+    "BaseApi.hbs": {
+      "folder": "src/Api",
+      "destinationFilename": "BaseApi.php",
+      "templateType": "SupportingFiles"
+    },
+    "ModelInterface.hbs": {
       "folder": "src/Model",
       "destinationFilename": "ModelInterface.php",
       "templateType": "SupportingFiles"
     },
-    "BaseModel.mustache": {
+    "BaseModel.hbs": {
       "folder": "src/Model",
       "destinationFilename": "BaseModel.php",
       "templateType": "SupportingFiles"

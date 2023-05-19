@@ -19,23 +19,6 @@ All URIs are relative to {{basePath}}, except if the operation defines another b
 ```php
 {{{operationId}}}({{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}){{#if returnType}}: {{{returnType}}}{{/if}}
 ```
-{{#each servers}}
-{{#if @first}}
-### URI(s):
-{{/if}}
-- {{{url}}} {{#if description}}{{{description}}}{{/if}}{{#each variables}}
-{{#if @first}}
-    - Variables:
-{{/if}}
-      - {{{name}}}: {{#if description}}{{{description}}}{{else}} No description provided{{/if}}
-
-{{~#each enumValues}}
-{{#if @first}}
-        - Allowed values:
-{{/if}}
-          - {{{this}}}{{/each}}{{#if defaultValue}}
-        - Default value: {{{defaultValue}}}
-{{/if}}{{/each}}{{/each}}
 {{{summary}}}
 {{~#if notes}}
 
@@ -61,26 +44,13 @@ $associative_array = [
 {{#allParams}}    '{{paramName}}' => {{{example}}}, // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
 {{/allParams ~}}
 
-{{#each servers ~}}
-{{#if @first}}
-    'hostIndex' => 0,
-    $variables = [{{#variables}}
-        '{{{name}}}' => '{{{default}}}{{#unless default}}YOUR_VALUE{{/unless}}',{{/variables}}
-    ],
-{{/if ~}}
-{{/each ~}}
 ];
 
 {{else}}
 {{#allParams}}${{paramName}} = {{{example}}}; // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
-{{/allParams}}{{#each servers}}{{#if @first}}
-$hostIndex = 0;
-$variables = [{{#with variables}}
-    '{{{name}}}' => '{{{default}}}{{#unless default}}YOUR_VALUE{{/unless}}',{{/with}}
-];
-{{/if}}{{/each}}{{/if}}
+{{/allParams}}{{/if}}
 try {
-    {{#if returnType}}$result = {{/if}}$apiInstance->{{{operationId}}}({{#if vendorExtensions.x-group-parameters}}$associate_array{{else}}{{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}{{#each servers}}{{#if @first}}{{#allParams}}{{#if @first}}, {{/if}}{{/allParams}}$hostIndex, $variables{{/if}}{{/each}}{{/if}});{{#if returnType}}
+    {{#if returnType}}$result = {{/if}}$apiInstance->{{{operationId}}}({{#if vendorExtensions.x-group-parameters}}$associate_array{{else}}{{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}});{{#if returnType}}
     print_r($result);{{/if}}
 } catch (Exception $e) {
     echo "Exception when calling {{classname}}->{{operationId}}: {$e->getMessage()}\n";
@@ -96,9 +66,7 @@ Note: the input parameter is an associative array with the keys listed as the pa
 {{#unless allParams}}This endpoint does not need any parameter.{{/unless}}{{#each allParams}}{{#if @last}}| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |{{/if}}{{/each}}
 {{#allParams}}| **{{paramName}}** | {{#if isFile}}**{{{dataType}}}**{{/if}}{{#if isPrimitiveType}}**{{{dataType}}}**{{else}}{{#unless isFile}}[**{{{dataType}}}**](../Model/{{baseType}}.md){{/unless}}{{/if}}| {{{description}}} |{{#unless required}} [optional]{{/unless}}{{#if defaultValue}} [default to {{{defaultValue}}}]{{/if}} |
-{{/allParams}}{{#each servers}}{{#if @first}}| hostIndex | null|int | Host index. Defaults to null. If null, then the library will use $this->hostIndex instead | [optional] |
-| variables | array | Associative array of variables to pass to the host. Defaults to empty array. | [optional] |{{/if}}
-{{/each}}
+{{/allParams}}
 
 ### Return type
 

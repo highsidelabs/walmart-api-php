@@ -34,25 +34,6 @@ class Configuration
     public const BOOLEAN_FORMAT_STRING = 'string';
 
     /**
-     * @var Configuration
-     */
-    private static $defaultConfiguration;
-
-    /**
-     * Associate array to store API key(s)
-     *
-     * @var string[]
-     */
-    protected $apiKeys = [];
-
-    /**
-     * Associate array to store API prefix (e.g. Bearer)
-     *
-     * @var string[]
-     */
-    protected $apiKeyPrefixes = [];
-
-    /**
      * Access token for OAuth/Bearer authentication
      *
      * @var string
@@ -113,7 +94,7 @@ class Configuration
      *
      * @var string
      */
-    protected $tempFolderPath;
+    protected $tempFolderPath = null;
 
     /**
      * Constructor
@@ -121,58 +102,6 @@ class Configuration
     public function __construct()
     {
         $this->tempFolderPath = sys_get_temp_dir();
-    }
-
-    /**
-     * Sets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $key              API key or token
-     *
-     * @return $this
-     */
-    public function setApiKey($apiKeyIdentifier, $key)
-    {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
-        return $this;
-    }
-
-    /**
-     * Gets API key
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return null|string API key or token
-     */
-    public function getApiKey($apiKeyIdentifier)
-    {
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
-    }
-
-    /**
-     * Sets the prefix for API key (e.g. Bearer)
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     * @param string $prefix           API key prefix, e.g. Bearer
-     *
-     * @return $this
-     */
-    public function setApiKeyPrefix($apiKeyIdentifier, $prefix)
-    {
-        $this->apiKeyPrefixes[$apiKeyIdentifier] = $prefix;
-        return $this;
-    }
-
-    /**
-     * Gets API key prefix
-     *
-     * @param string $apiKeyIdentifier API key identifier (authentication scheme)
-     *
-     * @return null|string
-     */
-    public function getApiKeyPrefix($apiKeyIdentifier)
-    {
-        return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
     }
 
     /**
@@ -386,162 +315,5 @@ class Configuration
     public function getTempFolderPath()
     {
         return $this->tempFolderPath;
-    }
-
-    /**
-     * Gets the default configuration instance
-     *
-     * @return Configuration
-     */
-    public static function getDefaultConfiguration()
-    {
-        if (self::$defaultConfiguration === null) {
-            self::$defaultConfiguration = new Configuration();
-        }
-
-        return self::$defaultConfiguration;
-    }
-
-    /**
-     * Sets the default configuration instance
-     *
-     * @param Configuration $config An instance of the Configuration Object
-     *
-     * @return void
-     */
-    public static function setDefaultConfiguration(Configuration $config)
-    {
-        self::$defaultConfiguration = $config;
-    }
-
-    /**
-     * Gets the essential information for debugging
-     *
-     * @return string The report for debugging
-     */
-    public static function toDebugReport()
-    {
-        $report  = 'PHP SDK ({{invokerPackage}}) Debug Report:' . PHP_EOL;
-        $report .= '    OS: ' . php_uname() . PHP_EOL;
-        $report .= '    PHP Version: ' . PHP_VERSION . PHP_EOL;
-        $report .= '    The version of the OpenAPI document: {{version}}' . PHP_EOL;
-	    {{~#if artifactVersion}}
-        $report .= '    SDK Package Version: {{artifactVersion}}' . PHP_EOL;
-    	{{/if ~}}
-        $report .= '    Temp Folder Path: ' . self::getDefaultConfiguration()->getTempFolderPath() . PHP_EOL;
-
-        return $report;
-    }
-
-    /**
-     * Get API key (with prefix if set)
-     *
-     * @param  string $apiKeyIdentifier name of apikey
-     *
-     * @return null|string API key with the prefix
-     */
-    public function getApiKeyWithPrefix($apiKeyIdentifier)
-    {
-        $prefix = $this->getApiKeyPrefix($apiKeyIdentifier);
-        $apiKey = $this->getApiKey($apiKeyIdentifier);
-
-        if ($apiKey === null) {
-            return null;
-        }
-
-        if ($prefix === null) {
-            $keyWithPrefix = $apiKey;
-        } else {
-            $keyWithPrefix = $prefix . ' ' . $apiKey;
-        }
-
-        return $keyWithPrefix;
-    }
-
-    /**
-     * Returns an array of host settings
-     *
-     * @return array an array of host settings
-     */
-    public function getHostSettings()
-    {
-        return [
-        {{~#servers}}
-            [
-                "url" => "{{{url}}}",
-                "description" => "{{{description}}}{{^description}}No description provided{{/description}}",
-                {{~#each variables~}}
-                {{#if @first~}}
-                "variables" => [
-                {{~/if~}}
-                    "{{{name}}}" => [
-                        "description" => "{{{description}}}{{^description}}No description provided{{/description}}",
-                        "default_value" => "{{{defaultValue}}}",
-                        {{~#each enumValues~}}
-                        {{#if @first~}}
-                        "enum_values" => [
-                        {{~/if~}}
-                            "{{{.}}}"{{#unless @last}},{{/unless}}
-                        {{~#if @last~}}
-                        ]
-                        {{~/if~}}
-                        {{~/each}}
-                    ]{{#unless @last}},{{/unless}}
-                {{#if @last}}
-                ]{{/if~}}
-                {{~/each}}
-            ]{{#unless @last}},{{/unless}}{{/servers}}
-        ];
-    }
-
-    /**
-    * Returns URL based on host settings, index and variables
-    *
-    * @param array      $hostSettings array of host settings, generated from getHostSettings() or equivalent from the API clients
-    * @param int        $hostIndex    index of the host settings
-    * @param array|null $variables    hash of variable and the corresponding value (optional)
-    * @return string URL based on host settings
-    */
-    public static function getHostString(array $hostsSettings, $hostIndex, array $variables = null)
-    {
-        if (null === $variables) {
-            $variables = [];
-        }
-
-        // check array index out of bound
-        if ($hostIndex < 0 || $hostIndex >= count($hostsSettings)) {
-            throw new \InvalidArgumentException("Invalid index $hostIndex when selecting the host. Must be less than ".count($hostsSettings));
-        }
-
-        $host = $hostsSettings[$hostIndex];
-        $url = $host["url"];
-
-        // go through variable and assign a value
-        foreach ($host["variables"] ?? [] as $name => $variable) {
-            if (array_key_exists($name, $variables)) { // check to see if it's in the variables provided by the user
-                if (!isset($variable['enum_values']) || in_array($variables[$name], $variable["enum_values"], true)) { // check to see if the value is in the enum
-                    $url = str_replace("{".$name."}", $variables[$name], $url);
-                } else {
-                    throw new \InvalidArgumentException("The variable `$name` in the host URL has invalid value ".$variables[$name].". Must be ".join(',', $variable["enum_values"]).".");
-                }
-            } else {
-                // use default value
-                $url = str_replace("{".$name."}", $variable["default_value"], $url);
-            }
-        }
-
-        return $url;
-    }
-
-    /**
-     * Returns URL based on the index and variables
-     *
-     * @param int        $index     index of the host settings
-     * @param array|null $variables hash of variable and the corresponding value (optional)
-     * @return string URL based on host settings
-     */
-    public function getHostFromSettings($index, $variables = null)
-    {
-        return self::getHostString($this->getHostSettings(), $index, $variables);
     }
 }

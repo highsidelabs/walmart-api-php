@@ -27,11 +27,10 @@ class HeaderSelector
 {
     /**
      * @param string[] $accept
-     * @param string   $contentType
      * @param bool     $isMultipart
      * @return string[]
      */
-    public function selectHeaders(array $accept, string $contentType, bool $isMultipart): array
+    public function selectHeaders(array $accept, bool $isMultipart): array
     {
         $headers = [];
 
@@ -41,11 +40,7 @@ class HeaderSelector
         }
 
         if (!$isMultipart) {
-            if($contentType === '') {
-                $contentType = 'application/json';
-            }
-
-            $headers['Content-Type'] = $contentType;
+            $headers['Content-Type'] = 'application/json';
         }
 
         return $headers;
