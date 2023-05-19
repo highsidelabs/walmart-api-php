@@ -2,7 +2,8 @@
     "openapi": "3.0.1",
     "info": {
         "title": "Item Management",
-        "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process"
+        "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
+        "version": "v3"
     },
     "servers": [
         {
@@ -11,86 +12,25 @@
         }
     ],
     "paths": {
-        "\/v3\/ca\/items": {
-            "get": {
+        "\/v3\/ca\/feeds": {
+            "post": {
                 "tags": [
                     "Items"
                 ],
-                "summary": "Get all items",
-                "description": "Displays a list of all items by using either nextCursor or offset and limit query parameters.\n\n\nThere are two ways of pagination for this API\n\n* Using nextCursor query parameter\nFirst call will have the value of nextCursor as '*'. If a call to the endpoint results in a large number of items being returned, the results are sent back in pages. The element nextCursor which is returned in the response is required for pagination.\n\n The nextCursor element contains the string that should be send as a query parameter to the subsequent GET call to get the next page of results.\n\n A missing or empty nextCursor element in the response means that there are no more items left to retrieve.\nThe totalCount returns the total number of available items. Therefore, analysis of the totalCount provides the number of pages to be retrieved to get the whole list of items.\n\n* Using offset and limit query parameter\nFirst call to the API using offset=0 will return the first page of the list of items. The full list can be retrieved by subsequent requests to the same API with successively larger values of offset.\n\nIf a SKU is included, this request is semantically identical to Get an Item request. It will return only one item and hence pagination is not required.",
-                "operationId": "getAllItems",
-                "parameters": [
-                    {
-                        "name": "nextCursor",
+                "summary": "Bulk upload",
+                "description": "You can upload items in bulk. If the items are successfully uploaded, it returns a feed ID. Use the returned feed ID to retrieve a feed status.\nYou can use the Bulk Item Setup API for any of the following item spec versions, just specify the corresponding feed type as a query parameter. Please ensure the WFS onboarding is complete before using WFS Specs or converting items to WFS\n*   Item spec feed type: item\n*   WFS Item spec feed type: OMNI_WFSSETUP \n* Item spec feed type for 4.x spec: MP_ITEM_INTL \n*   Convert an existing item to WFS feed type : OMNI_WFSCONVERT \n",
+                "operationId": "bulkItemSetupCA",
+                "parameters": {
+                    "0": {
+                        "name": "feedType",
                         "in": "query",
-                        "description": "Used for pagination when more than 200 items are retrieved.",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "*"
-                        }
-                    },
-                    {
-                        "name": "sku",
-                        "in": "query",
-                        "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item.",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "name": "offset",
-                        "in": "query",
-                        "description": "The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true.",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "0"
-                        }
-                    },
-                    {
-                        "name": "limit",
-                        "in": "query",
-                        "description": "The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.",
-                        "required": false,
-                        "schema": {
-                            "type": "string",
-                            "default": "20"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                        "description": "The feed Type",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
+                    "4": {
                         "name": "WM_SEC.TIMESTAMP",
                         "in": "header",
                         "description": "The Epoch timestamp",
@@ -100,7 +40,7 @@
                         },
                         "example": "1443748249449"
                     },
-                    {
+                    "5": {
                         "name": "WM_SEC.AUTH_SIGNATURE",
                         "in": "header",
                         "description": "The vendor's digital signature, generated by running the JAR file or custom generation code",
@@ -110,7 +50,7 @@
                         },
                         "example": "9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg="
                     },
-                    {
+                    "6": {
                         "name": "WM_CONSUMER.ID",
                         "in": "header",
                         "description": "A unique ID required to access the API",
@@ -120,7 +60,200 @@
                         },
                         "example": "Get the Consumer ID from Developer Center after logging in"
                     }
+                },
+                "requestBody": {
+                    "content": {
+                        "multipart\/form-data": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "description": "Feed file to upload",
+                                        "format": "binary"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "MP_ITEM_INTL": {
+                                    "value": {
+                                        "MPItemFeedHeader": {
+                                            "subCategory": "clothing_other",
+                                            "sellingChannel": "marketplace",
+                                            "processMode": "REPLACE",
+                                            "mart": "WALMART_CA",
+                                            "locale": [
+                                                "en",
+                                                "fr"
+                                            ],
+                                            "version": "3.15",
+                                            "subset": "EXTERNAL"
+                                        },
+                                        "MPItem": [
+                                            {
+                                                "Orderable": {
+                                                    "sku": "CLOTHING_22112022_C101",
+                                                    "shortDescription": {
+                                                        "en": "Test001 - Good in quality and reliability Popular brand names like Under Armour, American Eagle, Tommy Hilfiger had no issues with marketing their brand names because all of them are started before the internet era and with less competition in the field they succeed with their business field."
+                                                    },
+                                                    "keyFeatures": [
+                                                        {
+                                                            "en": "Famous dress which can be used casual - 001"
+                                                        }
+                                                    ],
+                                                    "shipsInOriginalPackaging": "No",
+                                                    "MustShipAlone": "No",
+                                                    "price": 60,
+                                                    "startDate": "2023-01-06",
+                                                    "endDate": "2049-12-31",
+                                                    "productSecondaryImageURL": [
+                                                        "https:\/\/i5-qa.walmartimages.com\/asr\/f2b29a73-019f-47a3-9d24-38781ca43866.5b35e8c32dc2e35919d0700cb2f2a32f.jpeg"
+                                                    ],
+                                                    "productIdentifiers": {
+                                                        "productIdType": "GTIN",
+                                                        "productId": "00213656080788"
+                                                    },
+                                                    "productName": {
+                                                        "en": "Rest in peace after wearing the product Aqua 4 Swimwear for all the participants commonly"
+                                                    },
+                                                    "mainImageUrl": "https:\/\/i5-qa.walmartimages.com\/asr\/7b32a240-42f6-4369-84e3-0cc5d9aeb4c5.a3a8d9b3e63400c147a289ca77fad35a.jpeg",
+                                                    "brand": {
+                                                        "en": "M&M"
+                                                    },
+                                                    "productTaxCode": 12345678,
+                                                    "ShippingWeight": {
+                                                        "unit": "lb",
+                                                        "measure": 8
+                                                    }
+                                                },
+                                                "Visible": {
+                                                    "Clothing": []
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "xml": {
+                                    "value": "<MPItemFeed xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <MPItemFeedHeader>\n        <version>3.2<\/version>\n        <requestId>HP_REQUEST<\/requestId>\n        <requestBatchId>HP_REQUEST_BATCH<\/requestBatchId>\n        <feedDate>2007-10-25T23:36:28<\/feedDate>\n        <mart>WALMART_CA<\/mart>\n        <locale>en_CA<\/locale>\n    <\/MPItemFeedHeader>\n    <MPItem>\n        <feedDate>2006-08-19T10:27:14-07:00<\/feedDate>\n        <sku>weiMong14447994161<\/sku>\n        <productIdentifiers>\n            <productIdentifier>\n                <productIdType>GTIN<\/productIdType>\n                <productId>04894444699847<\/productId>\n            <\/productIdentifier>\n            <productIdentifier>\n                <productIdType>GTIN<\/productIdType>\n                <productId>04894456887522<\/productId>\n            <\/productIdentifier>\n            <productIdentifier>\n                <productIdType>GTIN<\/productIdType>\n                <productId>04894456887621<\/productId>\n            <\/productIdentifier>\n        <\/productIdentifiers>\n        <MPProduct>\n            <SkuUpdate>No<\/SkuUpdate>\n            <msrp>100.00<\/msrp>\n            <productName>HP_CLOTHING_CATEGORY_PRODUCT_NAME<\/productName>\n            <additionalProductAttributes>\n                <additionalProductAttribute>\n                    <productAttributeName>string<\/productAttributeName>\n                    <productAttributeValue>string<\/productAttributeValue>\n                <\/additionalProductAttribute>\n            <\/additionalProductAttributes>\n            <ProductIdUpdate>Yes<\/ProductIdUpdate>\n            <category>\n                <ClothingCategory>\n                    <!--You have a CHOICE of the next 1 items at this level-->\n                    <Clothing>\n                        <shortDescription>SHORT DESCRIPTION OF CLOTHING<\/shortDescription>\n                        <keyFeatures>\n                            <keyFeaturesValue>string<\/keyFeaturesValue>\n                        <\/keyFeatures>\n                        <manufacturer>string<\/manufacturer>\n                        <manufacturerPartNumber>string<\/manufacturerPartNumber>\n                        <multipackQuantity>100<\/multipackQuantity>\n                        <countPerPack>10<\/countPerPack>\n                        <count>string<\/count>\n                        <pieceCount>10<\/pieceCount>\n                        <modelNumber>string<\/modelNumber>\n                        <mainImageUrl>\n                            https:\/\/us-i5.tb.wal.co\/asr\/d9850336-e05e-46c5-9120-23640271cd81_2.51e629fa54cb4ccfd1ef6e666f0dc27c.jpeg\n                        <\/mainImageUrl>\n                        <productSecondaryImageURL>\n                            <productSecondaryImageURLValue>\n                                https:\/\/us-i5.tb.wal.co\/asr\/d9850336-e05e-46c5-9120-23640271cd81_2.51e629fa54cb4ccfd1ef6e666f0dc27c.jpeg\n                            <\/productSecondaryImageURLValue>\n                        <\/productSecondaryImageURL>\n                        <color>string<\/color>\n                        <colorCategory>\n                            <colorCategoryValue>Blue<\/colorCategoryValue>\n                        <\/colorCategory>\n                        <pattern>string<\/pattern>\n                        <material>string<\/material>\n                        <gender>Unisex<\/gender>\n                        <ageGroup>\n                            <ageGroupValue>Tween<\/ageGroupValue>\n                        <\/ageGroup>\n                        <clothingSizeGroup>Young Men\u2019s<\/clothingSizeGroup>\n                        <clothingSize>string<\/clothingSize>\n                        <isSet>Yes<\/isSet>\n                        <variantGroupId>string<\/variantGroupId>\n                        <variantAttributeNames>\n                            <variantAttributeName>clothingSize<\/variantAttributeName>\n                        <\/variantAttributeNames>\n                        <isPrimaryVariant>No<\/isPrimaryVariant>\n                        <isProp65WarningRequired>No<\/isProp65WarningRequired>\n                        <prop65WarningText>string<\/prop65WarningText>\n                        <smallPartsWarnings>\n                            <smallPartsWarning>5<\/smallPartsWarning>\n                        <\/smallPartsWarnings>\n                        <requiresTextileActLabeling>No<\/requiresTextileActLabeling>\n                        <countryOfOriginTextiles>USA or Imported<\/countryOfOriginTextiles>\n                        <batteryTechnologyType>Lead Acid (Nonspillable)<\/batteryTechnologyType>\n                        <hasWarranty>No<\/hasWarranty>\n                        <warrantyURL>http:\/\/www.sample.com\/aris\/coniunx<\/warrantyURL>\n                        <warrantyText>string<\/warrantyText>\n                        <clothingTopStyle>string<\/clothingTopStyle>\n                        <dressShirtSize>string<\/dressShirtSize>\n                        <sleeveStyle>string<\/sleeveStyle>\n                        <sleeveLengthStyle>Short Sleeve<\/sleeveLengthStyle>\n                        <shirtNeckStyle>string<\/shirtNeckStyle>\n                        <collarType>string<\/collarType>\n                        <jacketStyle>string<\/jacketStyle>\n                        <suitBreastingStyle>double-breasted<\/suitBreastingStyle>\n                        <sweaterStyle>string<\/sweaterStyle>\n                        <scarfStyle>string<\/scarfStyle>\n                        <upperBodyStrapConfiguration>string<\/upperBodyStrapConfiguration>\n                        <hatSize>8<\/hatSize>\n                        <hatStyle>string<\/hatStyle>\n                        <braStyle>string<\/braStyle>\n                        <braSize>string<\/braSize>\n                        <chestSize>\n                            <measure>1000.00<\/measure>\n                            <unit>cm<\/unit>\n                        <\/chestSize>\n                        <pantRise>string<\/pantRise>\n                        <waistStyle>string<\/waistStyle>\n                        <waistSize>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/waistSize>\n                        <pantySize>12<\/pantySize>\n                        <skirtLength>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/skirtLength>\n                        <legOpeningCut>high-cut<\/legOpeningCut>\n                        <pantLegCut>string<\/pantLegCut>\n                        <jeanStyle>string<\/jeanStyle>\n                        <jeanWash>string<\/jeanWash>\n                        <jeanFinish>string<\/jeanFinish>\n                        <pantSize>string<\/pantSize>\n                        <pantFit>string<\/pantFit>\n                        <pantStyle>string<\/pantStyle>\n                        <beltStyle>string<\/beltStyle>\n                        <beltBuckleStyle>string<\/beltBuckleStyle>\n                        <pantyStyle>string<\/pantyStyle>\n                        <shortsStyle>string<\/shortsStyle>\n                        <skirtAndDressCut>string<\/skirtAndDressCut>\n                        <skirtLengthStyle>string<\/skirtLengthStyle>\n                        <hosieryStyle>string<\/hosieryStyle>\n                        <tightsSheerness>sheer<\/tightsSheerness>\n                        <underwearStyle>string<\/underwearStyle>\n                        <sockSize>string<\/sockSize>\n                        <sockStyle>string<\/sockStyle>\n                        <sockRise>thigh-high<\/sockRise>\n                        <fabricContent>\n                            <fabricContentValue>\n                                <materialName>string<\/materialName>\n                                <materialPercentage>1000.00<\/materialPercentage>\n                            <\/fabricContentValue>\n                        <\/fabricContent>\n                        <fabricCareInstructions>\n                            <fabricCareInstruction>string<\/fabricCareInstruction>\n                        <\/fabricCareInstructions>\n                        <accentColor>string<\/accentColor>\n                        <clothingWeight>lightweight<\/clothingWeight>\n                        <clothingStyle>string<\/clothingStyle>\n                        <clothingFit>string<\/clothingFit>\n                        <clothingCut>string<\/clothingCut>\n                        <clothingLengthStyle>string<\/clothingLengthStyle>\n                        <fastenerType>string<\/fastenerType>\n                        <swimsuitStyle>string<\/swimsuitStyle>\n                        <dressStyle>string<\/dressStyle>\n                        <gotsCertification>No<\/gotsCertification>\n                        <theme>string<\/theme>\n                        <character>string<\/character>\n                        <globalBrandLicense>\n                            <globalBrandLicenseValue>string<\/globalBrandLicenseValue>\n                        <\/globalBrandLicense>\n                        <sportsLeague>string<\/sportsLeague>\n                        <sportsTeam>string<\/sportsTeam>\n                        <occasion>string<\/occasion>\n                        <activity>string<\/activity>\n                        <sport>string<\/sport>\n                        <season>string<\/season>\n                        <weather>string<\/weather>\n                        <isMaternity>No<\/isMaternity>\n                        <academicInstitution>string<\/academicInstitution>\n                        <athlete>string<\/athlete>\n                        <autographedBy>string<\/autographedBy>\n                        <braBandSize>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/braBandSize>\n                        <braCupSize>string<\/braCupSize>\n                        <neckSize>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/neckSize>\n                        <sleeveLength>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/sleeveLength>\n                        <inseam>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/inseam>\n                        <isMadeFromRecycledMaterial>No<\/isMadeFromRecycledMaterial>\n                        <recycledMaterialContent>\n                            <recycledMaterialContentValue>\n                                <recycledMaterial>string<\/recycledMaterial>\n                                <percentageOfRecycledMaterial>1000.00<\/percentageOfRecycledMaterial>\n                            <\/recycledMaterialContentValue>\n                        <\/recycledMaterialContent>\n                        <features>\n                            <feature>string<\/feature>\n                        <\/features>\n                        <keywords>string<\/keywords>\n                        <swatchImages>\n                            <swatchImage>\n                                <swatchVariantAttribute>inseam<\/swatchVariantAttribute>\n                                <swatchImageUrl>https:\/\/us-i5.tb.wal.co\/asr\/d9850336-e05e-46c5-9120-23640271cd81_2.51e629fa54cb4ccfd1ef6e666f0dc27c.jpeg<\/swatchImageUrl>\n                            <\/swatchImage>\n                        <\/swatchImages>\n                    <\/Clothing>\n                <\/ClothingCategory>\n            <\/category>\n        <\/MPProduct>\n        <MPOffer>\n            <price>90.00<\/price>\n            <MinimumAdvertisedPrice>90.00<\/MinimumAdvertisedPrice>\n            <StartDate>2017-03-10<\/StartDate>\n            <EndDate>2017-03-15<\/EndDate>\n            <MustShipAlone>Yes<\/MustShipAlone>\n            <ShippingWeight>\n                <measure>10.00<\/measure>\n                <unit>lb<\/unit>\n            <\/ShippingWeight>\n            <ProductTaxCode>100<\/ProductTaxCode>\n            <shipsInOriginalPackaging>Yes<\/shipsInOriginalPackaging>\n            <additionalOfferAttributes>\n                <additionalOfferAttribute>\n                    <additionalOfferAttributeName>string<\/additionalOfferAttributeName>\n                    <additionalOfferAttributeValue>string<\/additionalOfferAttributeValue>\n                <\/additionalOfferAttribute>\n            <\/additionalOfferAttributes>\n            <ShippingOverrides>\n                <ShippingOverrideAction>REPLACE_ALL<\/ShippingOverrideAction>\n                <shippingOverride>\n                    <ShippingOverrideIsShippingAllowed>Yes<\/ShippingOverrideIsShippingAllowed>\n                    <ShippingOverrideShipMethod>ONE_DAY<\/ShippingOverrideShipMethod>\n                    <ShippingOverrideShipRegion>STREET_URBAN_ON<\/ShippingOverrideShipRegion>\n                    <ShippingOverrideshipPrice>100.00<\/ShippingOverrideshipPrice>\n                <\/shippingOverride>\n            <\/ShippingOverrides>\n        <\/MPOffer>\n    <\/MPItem>\n<\/MPItemFeed>"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "feedId": {
+                                            "type": "string",
+                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
+                                        },
+                                        "additionalAttributes": {
+                                            "type": "object",
+                                            "nullable": true
+                                        },
+                                        "errors": {
+                                            "type": "object",
+                                            "nullable": true
+                                        }
+                                    }
+                                },
+                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>"
+                            }
+                        }
+                    }
+                },
+                "security": {
+                    "basicAuth": []
+                }
+            }
+        },
+        "\/v3\/ca\/items": {
+            "get": {
+                "tags": [
+                    "Items"
                 ],
+                "summary": "Get all items",
+                "description": "Displays a list of all items by using either nextCursor or offset and limit query parameters.\n\n\nThere are two ways of pagination for this API\n\n* Using nextCursor query parameter\nFirst call will have the value of nextCursor as '*'. If a call to the endpoint results in a large number of items being returned, the results are sent back in pages. The element nextCursor which is returned in the response is required for pagination.\n\n The nextCursor element contains the string that should be send as a query parameter to the subsequent GET call to get the next page of results.\n\n A missing or empty nextCursor element in the response means that there are no more items left to retrieve.\nThe totalCount returns the total number of available items. Therefore, analysis of the totalCount provides the number of pages to be retrieved to get the whole list of items.\n\n* Using offset and limit query parameter\nFirst call to the API using offset=0 will return the first page of the list of items. The full list can be retrieved by subsequent requests to the same API with successively larger values of offset.\n\nIf a SKU is included, this request is semantically identical to Get an Item request. It will return only one item and hence pagination is not required.",
+                "operationId": "getAllItems",
+                "parameters": {
+                    "0": {
+                        "name": "nextCursor",
+                        "in": "query",
+                        "description": "Used for pagination when more than 200 items are retrieved.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "*"
+                        }
+                    },
+                    "1": {
+                        "name": "sku",
+                        "in": "query",
+                        "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    "2": {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    "3": {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "20"
+                        }
+                    },
+                    "7": {
+                        "name": "WM_SEC.TIMESTAMP",
+                        "in": "header",
+                        "description": "The Epoch timestamp",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "1443748249449"
+                    },
+                    "8": {
+                        "name": "WM_SEC.AUTH_SIGNATURE",
+                        "in": "header",
+                        "description": "The vendor's digital signature, generated by running the JAR file or custom generation code",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg="
+                    },
+                    "9": {
+                        "name": "WM_CONSUMER.ID",
+                        "in": "header",
+                        "description": "A unique ID required to access the API",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "Get the Consumer ID from Developer Center after logging in"
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -487,6 +620,9 @@
                             }
                         }
                     }
+                },
+                "security": {
+                    "basicAuth": []
                 }
             }
         },
@@ -498,8 +634,8 @@
                 "summary": "Get an item",
                 "description": "Retrieves an item and displays the item details shown in the response sample.",
                 "operationId": "getAnItem",
-                "parameters": [
-                    {
+                "parameters": {
+                    "0": {
                         "name": "sku",
                         "in": "path",
                         "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. ",
@@ -508,38 +644,7 @@
                             "type": "string"
                         }
                     },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
+                    "4": {
                         "name": "WM_SEC.TIMESTAMP",
                         "in": "header",
                         "description": "The Epoch timestamp",
@@ -549,7 +654,7 @@
                         },
                         "example": "1443748249449"
                     },
-                    {
+                    "5": {
                         "name": "WM_SEC.AUTH_SIGNATURE",
                         "in": "header",
                         "description": "The vendor's digital signature, generated by running the JAR file or custom generation code",
@@ -559,7 +664,7 @@
                         },
                         "example": "9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg="
                     },
-                    {
+                    "6": {
                         "name": "WM_CONSUMER.ID",
                         "in": "header",
                         "description": "A unique ID required to access the API",
@@ -569,7 +674,7 @@
                         },
                         "example": "Get the Consumer ID from Developer Center after logging in"
                     }
-                ],
+                },
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -814,6 +919,9 @@
                             }
                         }
                     }
+                },
+                "security": {
+                    "basicAuth": []
                 }
             }
         },
@@ -825,8 +933,8 @@
                 "summary": "Retire an item",
                 "description": "Completely deactivates and unpublishes an item from the site.\n\nRetired items are not displayed on Walmart.com, but their content stays intact in our system. You can republish an item by providing future discontinue date for the item.\n\n---\n**Note**\n\nYou can't reuse the SKU or Product ID from a retired item. If you need to change the SKU or Product ID, see Product ID & SKU section.\n\n---",
                 "operationId": "retireAnItem",
-                "parameters": [
-                    {
+                "parameters": {
+                    "0": {
                         "name": "SKU",
                         "in": "path",
                         "description": "SKU",
@@ -835,38 +943,7 @@
                             "type": "string"
                         }
                     },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
+                    "4": {
                         "name": "WM_SEC.TIMESTAMP",
                         "in": "header",
                         "description": "The Epoch timestamp",
@@ -876,7 +953,7 @@
                         },
                         "example": "1443748249449"
                     },
-                    {
+                    "5": {
                         "name": "WM_SEC.AUTH_SIGNATURE",
                         "in": "header",
                         "description": "The vendor's digital signature, generated by running the JAR file or custom generation code",
@@ -886,7 +963,7 @@
                         },
                         "example": "9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg="
                     },
-                    {
+                    "6": {
                         "name": "WM_CONSUMER.ID",
                         "in": "header",
                         "description": "A unique ID required to access the API",
@@ -896,7 +973,7 @@
                         },
                         "example": "Get the Consumer ID from Developer Center after logging in"
                     }
-                ],
+                },
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -1020,144 +1097,32 @@
                             }
                         }
                     }
-                }
-            }
-        },
-        "\/v3\/ca\/feeds": {
-            "post": {
-                "tags": [
-                    "Items"
-                ],
-                "summary": "Bulk upload",
-                "description": "You can upload items in bulk. If the items successfully uploaded, it returns a feed ID. Use the returned feed ID to retrieve a feed status.",
-                "operationId": "bulkItemSetupCA",
-                "parameters": [
-                    {
-                        "name": "feedType",
-                        "in": "query",
-                        "description": "The feed Type",
-                        "required": true,
-                        "schema": {
-                            "type": "string",
-                            "default": "item"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "name": "WM_SEC.TIMESTAMP",
-                        "in": "header",
-                        "description": "The Epoch timestamp",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "1443748249449"
-                    },
-                    {
-                        "name": "WM_SEC.AUTH_SIGNATURE",
-                        "in": "header",
-                        "description": "The vendor's digital signature, generated by running the JAR file or custom generation code",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "9fg3TPeRt0WSGbXNGGj4kSQ9L6PMBX.....9Zj5aDyg="
-                    },
-                    {
-                        "name": "WM_CONSUMER.ID",
-                        "in": "header",
-                        "description": "A unique ID required to access the API",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Get the Consumer ID from Developer Center after logging in"
-                    }
-                ],
-                "requestBody": {
-                    "description": "Feed file to upload",
-                    "content": {
-                        "multipart\/form-data": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "file": {
-                                        "type": "string",
-                                        "format": "binary"
-                                    }
-                                }
-                            },
-                            "examples": {
-                                "xml1": {
-                                    "value": "<MPItemFeed xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <MPItemFeedHeader>\n        <version>3.2<\/version>\n        <requestId>HP_REQUEST<\/requestId>\n        <requestBatchId>HP_REQUEST_BATCH<\/requestBatchId>\n        <feedDate>2007-10-25T23:36:28<\/feedDate>\n        <mart>WALMART_CA<\/mart>\n        <locale>en_CA<\/locale>\n    <\/MPItemFeedHeader>\n    <MPItem>\n        <feedDate>2006-08-19T10:27:14-07:00<\/feedDate>\n        <sku>weiMong14447994161<\/sku>\n        <productIdentifiers>\n            <productIdentifier>\n                <productIdType>GTIN<\/productIdType>\n                <productId>04894444699847<\/productId>\n            <\/productIdentifier>\n            <productIdentifier>\n                <productIdType>GTIN<\/productIdType>\n                <productId>04894456887522<\/productId>\n            <\/productIdentifier>\n            <productIdentifier>\n                <productIdType>GTIN<\/productIdType>\n                <productId>04894456887621<\/productId>\n            <\/productIdentifier>\n        <\/productIdentifiers>\n        <MPProduct>\n            <SkuUpdate>No<\/SkuUpdate>\n            <msrp>100.00<\/msrp>\n            <productName>HP_CLOTHING_CATEGORY_PRODUCT_NAME<\/productName>\n            <additionalProductAttributes>\n                <additionalProductAttribute>\n                    <productAttributeName>string<\/productAttributeName>\n                    <productAttributeValue>string<\/productAttributeValue>\n                <\/additionalProductAttribute>\n            <\/additionalProductAttributes>\n            <ProductIdUpdate>Yes<\/ProductIdUpdate>\n            <category>\n                <ClothingCategory>\n                    <!--You have a CHOICE of the next 1 items at this level-->\n                    <Clothing>\n                        <shortDescription>SHORT DESCRIPTION OF CLOTHING<\/shortDescription>\n                        <keyFeatures>\n                            <keyFeaturesValue>string<\/keyFeaturesValue>\n                        <\/keyFeatures>\n                        <manufacturer>string<\/manufacturer>\n                        <manufacturerPartNumber>string<\/manufacturerPartNumber>\n                        <multipackQuantity>100<\/multipackQuantity>\n                        <countPerPack>10<\/countPerPack>\n                        <count>string<\/count>\n                        <pieceCount>10<\/pieceCount>\n                        <modelNumber>string<\/modelNumber>\n                        <mainImageUrl>\n                            https:\/\/us-i5.tb.wal.co\/asr\/d9850336-e05e-46c5-9120-23640271cd81_2.51e629fa54cb4ccfd1ef6e666f0dc27c.jpeg\n                        <\/mainImageUrl>\n                        <productSecondaryImageURL>\n                            <productSecondaryImageURLValue>\n                                https:\/\/us-i5.tb.wal.co\/asr\/d9850336-e05e-46c5-9120-23640271cd81_2.51e629fa54cb4ccfd1ef6e666f0dc27c.jpeg\n                            <\/productSecondaryImageURLValue>\n                        <\/productSecondaryImageURL>\n                        <color>string<\/color>\n                        <colorCategory>\n                            <colorCategoryValue>Blue<\/colorCategoryValue>\n                        <\/colorCategory>\n                        <pattern>string<\/pattern>\n                        <material>string<\/material>\n                        <gender>Unisex<\/gender>\n                        <ageGroup>\n                            <ageGroupValue>Tween<\/ageGroupValue>\n                        <\/ageGroup>\n                        <clothingSizeGroup>Young Men\u2019s<\/clothingSizeGroup>\n                        <clothingSize>string<\/clothingSize>\n                        <isSet>Yes<\/isSet>\n                        <variantGroupId>string<\/variantGroupId>\n                        <variantAttributeNames>\n                            <variantAttributeName>clothingSize<\/variantAttributeName>\n                        <\/variantAttributeNames>\n                        <isPrimaryVariant>No<\/isPrimaryVariant>\n                        <isProp65WarningRequired>No<\/isProp65WarningRequired>\n                        <prop65WarningText>string<\/prop65WarningText>\n                        <smallPartsWarnings>\n                            <smallPartsWarning>5<\/smallPartsWarning>\n                        <\/smallPartsWarnings>\n                        <requiresTextileActLabeling>No<\/requiresTextileActLabeling>\n                        <countryOfOriginTextiles>USA or Imported<\/countryOfOriginTextiles>\n                        <batteryTechnologyType>Lead Acid (Nonspillable)<\/batteryTechnologyType>\n                        <hasWarranty>No<\/hasWarranty>\n                        <warrantyURL>http:\/\/www.sample.com\/aris\/coniunx<\/warrantyURL>\n                        <warrantyText>string<\/warrantyText>\n                        <clothingTopStyle>string<\/clothingTopStyle>\n                        <dressShirtSize>string<\/dressShirtSize>\n                        <sleeveStyle>string<\/sleeveStyle>\n                        <sleeveLengthStyle>Short Sleeve<\/sleeveLengthStyle>\n                        <shirtNeckStyle>string<\/shirtNeckStyle>\n                        <collarType>string<\/collarType>\n                        <jacketStyle>string<\/jacketStyle>\n                        <suitBreastingStyle>double-breasted<\/suitBreastingStyle>\n                        <sweaterStyle>string<\/sweaterStyle>\n                        <scarfStyle>string<\/scarfStyle>\n                        <upperBodyStrapConfiguration>string<\/upperBodyStrapConfiguration>\n                        <hatSize>8<\/hatSize>\n                        <hatStyle>string<\/hatStyle>\n                        <braStyle>string<\/braStyle>\n                        <braSize>string<\/braSize>\n                        <chestSize>\n                            <measure>1000.00<\/measure>\n                            <unit>cm<\/unit>\n                        <\/chestSize>\n                        <pantRise>string<\/pantRise>\n                        <waistStyle>string<\/waistStyle>\n                        <waistSize>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/waistSize>\n                        <pantySize>12<\/pantySize>\n                        <skirtLength>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/skirtLength>\n                        <legOpeningCut>high-cut<\/legOpeningCut>\n                        <pantLegCut>string<\/pantLegCut>\n                        <jeanStyle>string<\/jeanStyle>\n                        <jeanWash>string<\/jeanWash>\n                        <jeanFinish>string<\/jeanFinish>\n                        <pantSize>string<\/pantSize>\n                        <pantFit>string<\/pantFit>\n                        <pantStyle>string<\/pantStyle>\n                        <beltStyle>string<\/beltStyle>\n                        <beltBuckleStyle>string<\/beltBuckleStyle>\n                        <pantyStyle>string<\/pantyStyle>\n                        <shortsStyle>string<\/shortsStyle>\n                        <skirtAndDressCut>string<\/skirtAndDressCut>\n                        <skirtLengthStyle>string<\/skirtLengthStyle>\n                        <hosieryStyle>string<\/hosieryStyle>\n                        <tightsSheerness>sheer<\/tightsSheerness>\n                        <underwearStyle>string<\/underwearStyle>\n                        <sockSize>string<\/sockSize>\n                        <sockStyle>string<\/sockStyle>\n                        <sockRise>thigh-high<\/sockRise>\n                        <fabricContent>\n                            <fabricContentValue>\n                                <materialName>string<\/materialName>\n                                <materialPercentage>1000.00<\/materialPercentage>\n                            <\/fabricContentValue>\n                        <\/fabricContent>\n                        <fabricCareInstructions>\n                            <fabricCareInstruction>string<\/fabricCareInstruction>\n                        <\/fabricCareInstructions>\n                        <accentColor>string<\/accentColor>\n                        <clothingWeight>lightweight<\/clothingWeight>\n                        <clothingStyle>string<\/clothingStyle>\n                        <clothingFit>string<\/clothingFit>\n                        <clothingCut>string<\/clothingCut>\n                        <clothingLengthStyle>string<\/clothingLengthStyle>\n                        <fastenerType>string<\/fastenerType>\n                        <swimsuitStyle>string<\/swimsuitStyle>\n                        <dressStyle>string<\/dressStyle>\n                        <gotsCertification>No<\/gotsCertification>\n                        <theme>string<\/theme>\n                        <character>string<\/character>\n                        <globalBrandLicense>\n                            <globalBrandLicenseValue>string<\/globalBrandLicenseValue>\n                        <\/globalBrandLicense>\n                        <sportsLeague>string<\/sportsLeague>\n                        <sportsTeam>string<\/sportsTeam>\n                        <occasion>string<\/occasion>\n                        <activity>string<\/activity>\n                        <sport>string<\/sport>\n                        <season>string<\/season>\n                        <weather>string<\/weather>\n                        <isMaternity>No<\/isMaternity>\n                        <academicInstitution>string<\/academicInstitution>\n                        <athlete>string<\/athlete>\n                        <autographedBy>string<\/autographedBy>\n                        <braBandSize>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/braBandSize>\n                        <braCupSize>string<\/braCupSize>\n                        <neckSize>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/neckSize>\n                        <sleeveLength>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/sleeveLength>\n                        <inseam>\n                            <measure>1000.00<\/measure>\n                            <unit>in<\/unit>\n                        <\/inseam>\n                        <isMadeFromRecycledMaterial>No<\/isMadeFromRecycledMaterial>\n                        <recycledMaterialContent>\n                            <recycledMaterialContentValue>\n                                <recycledMaterial>string<\/recycledMaterial>\n                                <percentageOfRecycledMaterial>1000.00<\/percentageOfRecycledMaterial>\n                            <\/recycledMaterialContentValue>\n                        <\/recycledMaterialContent>\n                        <features>\n                            <feature>string<\/feature>\n                        <\/features>\n                        <keywords>string<\/keywords>\n                        <swatchImages>\n                            <swatchImage>\n                                <swatchVariantAttribute>inseam<\/swatchVariantAttribute>\n                                <swatchImageUrl>https:\/\/us-i5.tb.wal.co\/asr\/d9850336-e05e-46c5-9120-23640271cd81_2.51e629fa54cb4ccfd1ef6e666f0dc27c.jpeg<\/swatchImageUrl>\n                            <\/swatchImage>\n                        <\/swatchImages>\n                    <\/Clothing>\n                <\/ClothingCategory>\n            <\/category>\n        <\/MPProduct>\n        <MPOffer>\n            <price>90.00<\/price>\n            <MinimumAdvertisedPrice>90.00<\/MinimumAdvertisedPrice>\n            <StartDate>2017-03-10<\/StartDate>\n            <EndDate>2017-03-15<\/EndDate>\n            <MustShipAlone>Yes<\/MustShipAlone>\n            <ShippingWeight>\n                <measure>10.00<\/measure>\n                <unit>lb<\/unit>\n            <\/ShippingWeight>\n            <ProductTaxCode>100<\/ProductTaxCode>\n            <shipsInOriginalPackaging>Yes<\/shipsInOriginalPackaging>\n            <additionalOfferAttributes>\n                <additionalOfferAttribute>\n                    <additionalOfferAttributeName>string<\/additionalOfferAttributeName>\n                    <additionalOfferAttributeValue>string<\/additionalOfferAttributeValue>\n                <\/additionalOfferAttribute>\n            <\/additionalOfferAttributes>\n            <ShippingOverrides>\n                <ShippingOverrideAction>REPLACE_ALL<\/ShippingOverrideAction>\n                <shippingOverride>\n                    <ShippingOverrideIsShippingAllowed>Yes<\/ShippingOverrideIsShippingAllowed>\n                    <ShippingOverrideShipMethod>ONE_DAY<\/ShippingOverrideShipMethod>\n                    <ShippingOverrideShipRegion>STREET_URBAN_ON<\/ShippingOverrideShipRegion>\n                    <ShippingOverrideshipPrice>100.00<\/ShippingOverrideshipPrice>\n                <\/shippingOverride>\n            <\/ShippingOverrides>\n        <\/MPOffer>\n    <\/MPItem>\n<\/MPItemFeed>"
-                                }
-                            }
-                        }
-                    },
-                    "required": true
                 },
-                "responses": {
-                    "200": {
-                        "description": "Successful Operation",
-                        "content": {
-                            "application\/xml": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    }
-                                },
-                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>"
-                            }
-                        }
-                    }
+                "security": {
+                    "basicAuth": []
                 }
             }
         }
     },
     "components": {
         "schemas": {
+            "FeedId": {
+                "type": "object",
+                "properties": {
+                    "feedId": {
+                        "type": "string",
+                        "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
+                    },
+                    "additionalAttributes": {
+                        "type": "object",
+                        "nullable": true
+                    },
+                    "errors": {
+                        "type": "object",
+                        "nullable": true
+                    }
+                }
+            },
             "Cause": {
                 "type": "object",
                 "properties": {
@@ -2157,23 +2122,6 @@
                 "xml": {
                     "name": "ItemRetireResponse"
                 }
-            },
-            "FeedId": {
-                "type": "object",
-                "properties": {
-                    "feedId": {
-                        "type": "string",
-                        "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                    },
-                    "additionalAttributes": {
-                        "type": "object",
-                        "nullable": true
-                    },
-                    "errors": {
-                        "type": "object",
-                        "nullable": true
-                    }
-                }
             }
         },
         "parameters": {
@@ -2245,6 +2193,13 @@
                     "type": "string"
                 },
                 "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "apiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_SEC.ACCESS_TOKEN"
             }
         }
     }

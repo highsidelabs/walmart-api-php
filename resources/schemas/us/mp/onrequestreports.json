@@ -2,7 +2,8 @@
     "openapi": "3.0.1",
     "info": {
         "title": "On-request Report Management",
-        "description": "The On-request Reports API allows you to request reports immediately about your items for faster retrieval. You can request the report, check status on the report availability, and then download the report URL when report is ready. You can also get a list of all reports requested."
+        "description": "The On-request Reports API allows you to request reports immediately about your items for faster retrieval. You can request the report, check status on the report availability, and then download the report URL when report is ready. You can also get a list of all reports requested.",
+        "version": "v3"
     },
     "servers": [
         {
@@ -28,8 +29,8 @@
                 "summary": "Get All Report Requests",
                 "description": "Fetches a list of all report requests for specified search criteria by using query parameters.\n\nYou can fetch details of report requests created in the last 30 days only.",
                 "operationId": "getRequestsStatus",
-                "parameters": [
-                    {
+                "parameters": {
+                    "0": {
                         "name": "reportType",
                         "in": "query",
                         "description": "Type of report for which the request is created. Example, ITEM for Item Report.",
@@ -46,11 +47,13 @@
                                 "RETURN_OVERRIDES",
                                 "CPA",
                                 "SHIPPING_CONFIGURATION",
-                                "SHIPPING_PROGRAM"
+                                "SHIPPING_PROGRAM",
+                                "FITMENT_MISSING_ATTR",
+                                "FITMENT_ACES_COVERAGE"
                             ]
                         }
                     },
-                    {
+                    "1": {
                         "name": "reportVersion",
                         "in": "query",
                         "description": "Version of report for which the request is created. Example, v1.",
@@ -59,7 +62,7 @@
                             "type": "string"
                         }
                     },
-                    {
+                    "2": {
                         "name": "requestStatus",
                         "in": "query",
                         "description": "Status of report request. Possible values are RECEIVED, INPROGRESS, READY, ERROR.",
@@ -74,7 +77,7 @@
                             ]
                         }
                     },
-                    {
+                    "3": {
                         "name": "requestSubmissionStartDate",
                         "in": "query",
                         "description": "Report request submittal start date for range of reports requested, in format: YYYY-MM-DDTHH:mm:ssZ",
@@ -83,7 +86,7 @@
                             "type": "string"
                         }
                     },
-                    {
+                    "4": {
                         "name": "requestSubmissionEndDate",
                         "in": "query",
                         "description": "Report request submittal end date for range of reports requested, in format YYYY-MM-DDTHH:mm:ssZ",
@@ -92,59 +95,7 @@
                             "type": "string"
                         }
                     },
-                    {
-                        "in": "header",
-                        "name": "Authorization",
-                        "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Basic YzcyOTFjNmItNzI5MC00....",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SEC.ACCESS_TOKEN",
-                        "description": "The access token retrieved in the Token API call",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
+                    "9": {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -154,7 +105,7 @@
                         },
                         "example": "application\/json"
                     }
-                ],
+                },
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -308,7 +259,8 @@
                                                                     "description": "Columns to exclude from report"
                                                                 }
                                                             }
-                                                        }
+                                                        },
+                                                        "description": "Request Payload"
                                                     },
                                                     "reportGenerationDate": {
                                                         "type": "string",
@@ -376,6 +328,9 @@
                             }
                         }
                     }
+                },
+                "security": {
+                    "apiKey": []
                 }
             },
             "post": {
@@ -389,8 +344,8 @@
                     "url": "\/doc\/us\/mp\/us-mp-onrequestreports\/#4180"
                 },
                 "operationId": "generateReport",
-                "parameters": [
-                    {
+                "parameters": {
+                    "0": {
                         "name": "reportType",
                         "in": "query",
                         "description": "Specifies the report type for the request. For example, reportType=ITEM creates an Item Report.",
@@ -407,72 +362,22 @@
                                 "RETURN_OVERRIDES",
                                 "CPA",
                                 "SHIPPING_CONFIGURATION",
-                                "SHIPPING_PROGRAM"
+                                "SHIPPING_PROGRAM",
+                                "FITMENT_MISSING_ATTR",
+                                "FITMENT_ACES_COVERAGE"
                             ]
                         }
                     },
-                    {
+                    "1": {
                         "name": "reportVersion",
                         "in": "query",
-                        "description": "Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3' for the following reportType(s): ITEM.",
+                        "description": "Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM.",
                         "required": true,
                         "schema": {
                             "type": "string"
                         }
                     },
-                    {
-                        "in": "header",
-                        "name": "Authorization",
-                        "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Basic YzcyOTFjNmItNzI5MC00....",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SEC.ACCESS_TOKEN",
-                        "description": "The access token retrieved in the Token API call",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
+                    "6": {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -482,7 +387,7 @@
                         },
                         "example": "application\/json"
                     },
-                    {
+                    "7": {
                         "in": "header",
                         "name": "Content-Type",
                         "description": "Only supported Media Type : application\/json",
@@ -492,7 +397,7 @@
                         },
                         "example": "application\/json"
                     }
-                ],
+                },
                 "requestBody": {
                     "description": "Request body",
                     "content": {
@@ -578,7 +483,8 @@
                                             "description": "Columns to exclude from report"
                                         }
                                     }
-                                }
+                                },
+                                "description": "Request Payload"
                             },
                             "example": {
                                 "rowFilters": [
@@ -742,7 +648,8 @@
                                                         "description": "Columns to exclude from report"
                                                     }
                                                 }
-                                            }
+                                            },
+                                            "description": "Request Payload"
                                         }
                                     }
                                 },
@@ -788,6 +695,9 @@
                             }
                         }
                     }
+                },
+                "security": {
+                    "apiKey": []
                 }
             }
         },
@@ -803,8 +713,8 @@
                     "url": "\/doc\/us\/mp\/us-mp-onrequestreports\/#4180"
                 },
                 "operationId": "getSingleRequestStatus",
-                "parameters": [
-                    {
+                "parameters": {
+                    "0": {
                         "name": "requestId",
                         "in": "path",
                         "description": "Automated ID generated by system that uniquely identifies the report request.",
@@ -813,59 +723,7 @@
                             "type": "string"
                         }
                     },
-                    {
-                        "in": "header",
-                        "name": "Authorization",
-                        "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Basic YzcyOTFjNmItNzI5MC00....",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SEC.ACCESS_TOKEN",
-                        "description": "The access token retrieved in the Token API call",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
+                    "5": {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -875,7 +733,7 @@
                         },
                         "example": "application\/json"
                     }
-                ],
+                },
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -1004,7 +862,8 @@
                                                         "description": "Columns to exclude from report"
                                                     }
                                                 }
-                                            }
+                                            },
+                                            "description": "Request Payload"
                                         },
                                         "reportGenerationDate": {
                                             "type": "string",
@@ -1015,6 +874,9 @@
                             }
                         }
                     }
+                },
+                "security": {
+                    "apiKey": []
                 }
             }
         },
@@ -1030,8 +892,8 @@
                     "url": "\/doc\/us\/mp\/us-mp-onrequestreports\/#4180"
                 },
                 "operationId": "downloadReport",
-                "parameters": [
-                    {
+                "parameters": {
+                    "0": {
                         "name": "requestId",
                         "in": "query",
                         "description": "Automated ID generated by system that uniquely identifies the report request.",
@@ -1040,59 +902,7 @@
                             "type": "string"
                         }
                     },
-                    {
-                        "in": "header",
-                        "name": "Authorization",
-                        "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Basic YzcyOTFjNmItNzI5MC00....",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SEC.ACCESS_TOKEN",
-                        "description": "The access token retrieved in the Token API call",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_CONSUMER.CHANNEL.TYPE",
-                        "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
-                        "required": false,
-                        "schema": {
-                            "type": "string"
-                        }
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_QOS.CORRELATION_ID",
-                        "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "b3261d2d-028a-4ef7-8602-633c23200af6",
-                        "x-jane-skip-validation": true
-                    },
-                    {
-                        "in": "header",
-                        "name": "WM_SVC.NAME",
-                        "description": "Walmart Service Name",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "Walmart Service Name",
-                        "x-jane-skip-validation": true
-                    },
-                    {
+                    "5": {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -1102,7 +912,7 @@
                         },
                         "example": "application\/json"
                     }
-                ],
+                },
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -1177,6 +987,9 @@
                             }
                         }
                     }
+                },
+                "security": {
+                    "apiKey": []
                 }
             }
         }
@@ -1294,6 +1107,135 @@
                             "description": "Columns to exclude from report"
                         }
                     }
+                },
+                "description": "Request Payload"
+            },
+            "GenerateReportResponse": {
+                "type": "object",
+                "properties": {
+                    "requestId": {
+                        "type": "string",
+                        "description": "Automated ID generated by system that uniquely identifies the report request.",
+                        "format": "uuid"
+                    },
+                    "requestStatus": {
+                        "type": "string",
+                        "description": "Status of report request. Possible values are RECEIVED, INPROGRESS, READY, ERROR.",
+                        "enum": [
+                            "RECEIVED",
+                            "INPROGRESS",
+                            "READY",
+                            "ERROR"
+                        ]
+                    },
+                    "requestSubmissionDate": {
+                        "type": "string",
+                        "description": "Date and time on which the report request is submitted."
+                    },
+                    "reportType": {
+                        "type": "string",
+                        "description": "Type of report for which the request is created. Example, ITEM for Item Report.",
+                        "enum": [
+                            "ITEM",
+                            "INVENTORY",
+                            "CANCELLATION",
+                            "DELIVERY_DEFECT",
+                            "ITEM_PERFORMANCE",
+                            "PROMO",
+                            "RETURN_OVERRIDES",
+                            "CPA",
+                            "SHIPPING_CONFIGURATION",
+                            "SHIPPING_PROGRAM"
+                        ]
+                    },
+                    "reportVersion": {
+                        "type": "string",
+                        "description": "Version of report for which the request is created. Example, v1."
+                    },
+                    "payload": {
+                        "type": "object",
+                        "properties": {
+                            "rowFilters": {
+                                "type": "array",
+                                "description": "Row Level filters",
+                                "items": {
+                                    "type": "object",
+                                    "description": "Supertype of all row filters.",
+                                    "anyOf": [
+                                        {
+                                            "title": "EnumFilter",
+                                            "required": [
+                                                "columnName",
+                                                "type"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "values": {
+                                                    "type": "array",
+                                                    "description": "Enum filter values which has to be included in report",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "Enum filter values which has to be included in report"
+                                                    }
+                                                },
+                                                "columnName": {
+                                                    "type": "string",
+                                                    "description": "Column on which filter has to be applied"
+                                                },
+                                                "type": {
+                                                    "type": "string",
+                                                    "description": "Type of the filter",
+                                                    "enum": [
+                                                        "rangeFilter",
+                                                        "enumFilter"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "title": "RangeFilter",
+                                            "required": [
+                                                "columnName",
+                                                "rowFilterType"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "from": {
+                                                    "type": "string",
+                                                    "description": "Filter range start"
+                                                },
+                                                "to": {
+                                                    "type": "string",
+                                                    "description": "Filter range end"
+                                                },
+                                                "rowFilterType": {
+                                                    "type": "string",
+                                                    "description": "Type of the filter",
+                                                    "enum": [
+                                                        "rangeFilter",
+                                                        "enumFilter"
+                                                    ]
+                                                },
+                                                "columnName": {
+                                                    "type": "string",
+                                                    "description": "Column on which filter has to be applied"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            "excludeColumns": {
+                                "type": "array",
+                                "description": "Columns to exclude from report",
+                                "items": {
+                                    "type": "string",
+                                    "description": "Columns to exclude from report"
+                                }
+                            }
+                        },
+                        "description": "Request Payload"
+                    }
                 }
             },
             "RangeFilter": {
@@ -1325,6 +1267,72 @@
                         "description": "Column on which filter has to be applied"
                     }
                 }
+            },
+            "RowFilter": {
+                "type": "object",
+                "description": "Supertype of all row filters.",
+                "anyOf": [
+                    {
+                        "title": "EnumFilter",
+                        "required": [
+                            "columnName",
+                            "type"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "values": {
+                                "type": "array",
+                                "description": "Enum filter values which has to be included in report",
+                                "items": {
+                                    "type": "string",
+                                    "description": "Enum filter values which has to be included in report"
+                                }
+                            },
+                            "columnName": {
+                                "type": "string",
+                                "description": "Column on which filter has to be applied"
+                            },
+                            "type": {
+                                "type": "string",
+                                "description": "Type of the filter",
+                                "enum": [
+                                    "rangeFilter",
+                                    "enumFilter"
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "title": "RangeFilter",
+                        "required": [
+                            "columnName",
+                            "rowFilterType"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "from": {
+                                "type": "string",
+                                "description": "Filter range start"
+                            },
+                            "to": {
+                                "type": "string",
+                                "description": "Filter range end"
+                            },
+                            "rowFilterType": {
+                                "type": "string",
+                                "description": "Type of the filter",
+                                "enum": [
+                                    "rangeFilter",
+                                    "enumFilter"
+                                ]
+                            },
+                            "columnName": {
+                                "type": "string",
+                                "description": "Column on which filter has to be applied"
+                            }
+                        }
+                    }
+                ]
             },
             "RequestStatusResponse": {
                 "type": "object",
@@ -1449,7 +1457,8 @@
                                     "description": "Columns to exclude from report"
                                 }
                             }
-                        }
+                        },
+                        "description": "Request Payload"
                     },
                     "reportGenerationDate": {
                         "type": "string",
@@ -1605,7 +1614,8 @@
                                                 "description": "Columns to exclude from report"
                                             }
                                         }
-                                    }
+                                    },
+                                    "description": "Request Payload"
                                 },
                                 "reportGenerationDate": {
                                     "type": "string",
@@ -1615,72 +1625,6 @@
                         }
                     }
                 }
-            },
-            "RowFilter": {
-                "type": "object",
-                "description": "Supertype of all row filters.",
-                "anyOf": [
-                    {
-                        "title": "EnumFilter",
-                        "required": [
-                            "columnName",
-                            "type"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "values": {
-                                "type": "array",
-                                "description": "Enum filter values which has to be included in report",
-                                "items": {
-                                    "type": "string",
-                                    "description": "Enum filter values which has to be included in report"
-                                }
-                            },
-                            "columnName": {
-                                "type": "string",
-                                "description": "Column on which filter has to be applied"
-                            },
-                            "type": {
-                                "type": "string",
-                                "description": "Type of the filter",
-                                "enum": [
-                                    "rangeFilter",
-                                    "enumFilter"
-                                ]
-                            }
-                        }
-                    },
-                    {
-                        "title": "RangeFilter",
-                        "required": [
-                            "columnName",
-                            "rowFilterType"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "from": {
-                                "type": "string",
-                                "description": "Filter range start"
-                            },
-                            "to": {
-                                "type": "string",
-                                "description": "Filter range end"
-                            },
-                            "rowFilterType": {
-                                "type": "string",
-                                "description": "Type of the filter",
-                                "enum": [
-                                    "rangeFilter",
-                                    "enumFilter"
-                                ]
-                            },
-                            "columnName": {
-                                "type": "string",
-                                "description": "Column on which filter has to be applied"
-                            }
-                        }
-                    }
-                ]
             },
             "DownloadReportResponse": {
                 "type": "object",
@@ -1735,133 +1679,6 @@
                     "reportGenerationDate": {
                         "type": "string",
                         "description": "Date and time on which the report is generated. Attribute is available only if report is generated."
-                    }
-                }
-            },
-            "GenerateReportResponse": {
-                "type": "object",
-                "properties": {
-                    "requestId": {
-                        "type": "string",
-                        "description": "Automated ID generated by system that uniquely identifies the report request.",
-                        "format": "uuid"
-                    },
-                    "requestStatus": {
-                        "type": "string",
-                        "description": "Status of report request. Possible values are RECEIVED, INPROGRESS, READY, ERROR.",
-                        "enum": [
-                            "RECEIVED",
-                            "INPROGRESS",
-                            "READY",
-                            "ERROR"
-                        ]
-                    },
-                    "requestSubmissionDate": {
-                        "type": "string",
-                        "description": "Date and time on which the report request is submitted."
-                    },
-                    "reportType": {
-                        "type": "string",
-                        "description": "Type of report for which the request is created. Example, ITEM for Item Report.",
-                        "enum": [
-                            "ITEM",
-                            "INVENTORY",
-                            "CANCELLATION",
-                            "DELIVERY_DEFECT",
-                            "ITEM_PERFORMANCE",
-                            "PROMO",
-                            "RETURN_OVERRIDES",
-                            "CPA",
-                            "SHIPPING_CONFIGURATION",
-                            "SHIPPING_PROGRAM"
-                        ]
-                    },
-                    "reportVersion": {
-                        "type": "string",
-                        "description": "Version of report for which the request is created. Example, v1."
-                    },
-                    "payload": {
-                        "type": "object",
-                        "properties": {
-                            "rowFilters": {
-                                "type": "array",
-                                "description": "Row Level filters",
-                                "items": {
-                                    "type": "object",
-                                    "description": "Supertype of all row filters.",
-                                    "anyOf": [
-                                        {
-                                            "title": "EnumFilter",
-                                            "required": [
-                                                "columnName",
-                                                "type"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "values": {
-                                                    "type": "array",
-                                                    "description": "Enum filter values which has to be included in report",
-                                                    "items": {
-                                                        "type": "string",
-                                                        "description": "Enum filter values which has to be included in report"
-                                                    }
-                                                },
-                                                "columnName": {
-                                                    "type": "string",
-                                                    "description": "Column on which filter has to be applied"
-                                                },
-                                                "type": {
-                                                    "type": "string",
-                                                    "description": "Type of the filter",
-                                                    "enum": [
-                                                        "rangeFilter",
-                                                        "enumFilter"
-                                                    ]
-                                                }
-                                            }
-                                        },
-                                        {
-                                            "title": "RangeFilter",
-                                            "required": [
-                                                "columnName",
-                                                "rowFilterType"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "from": {
-                                                    "type": "string",
-                                                    "description": "Filter range start"
-                                                },
-                                                "to": {
-                                                    "type": "string",
-                                                    "description": "Filter range end"
-                                                },
-                                                "rowFilterType": {
-                                                    "type": "string",
-                                                    "description": "Type of the filter",
-                                                    "enum": [
-                                                        "rangeFilter",
-                                                        "enumFilter"
-                                                    ]
-                                                },
-                                                "columnName": {
-                                                    "type": "string",
-                                                    "description": "Column on which filter has to be applied"
-                                                }
-                                            }
-                                        }
-                                    ]
-                                }
-                            },
-                            "excludeColumns": {
-                                "type": "array",
-                                "description": "Columns to exclude from report",
-                                "items": {
-                                    "type": "string",
-                                    "description": "Columns to exclude from report"
-                                }
-                            }
-                        }
                     }
                 }
             }
@@ -1938,12 +1755,10 @@
             }
         },
         "securitySchemes": {
-            "basicScheme": {
-                "type": "http",
-                "description": "",
-                "name": "Authorization",
+            "apiKeyAuth": {
+                "type": "apiKey",
                 "in": "header",
-                "scheme": "basic"
+                "name": "WM_SEC.ACCESS_TOKEN"
             }
         }
     }
