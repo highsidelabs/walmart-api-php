@@ -1,11 +1,9 @@
 {
-    {{#if composerPackageName}}
-    "name": "{{composerPackageName}}",
-    {{/if}}
-    {{#if artifactVersion}}
+    "name": "highsidelabs/walmart-api",
+    {{#if artifactVersion~}}
     "version": "{{artifactVersion}}",
-    {{/if}}
-    "description": "{{{appDescription}}}",
+    {{/if~}}
+    "description": "A PHP client for Walmart's Marketplace, Content Provider, Drop Ship Vendor, and Warehouse Supplier APIs.",
     "keywords": [
         "walmart",
         "walmart-api",
@@ -18,25 +16,32 @@
         "rest",
         "api"
     ],
-    "homepage": "https://openapi-generator.tech",
-    "license": "unlicense",
+    "license": "BSD-3-Clause",
     "authors": [
         {
-            "name": "OpenAPI-Generator contributors",
-            "homepage": "https://openapi-generator.tech"
+            "name": "Highside Labs",
+            "homepage": "https://highsidelabs.co",
+            "email": "jesse@highsidelabs.co"
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^7.4 || >=8.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^7.3",
-        "guzzlehttp/psr7": "^1.7 || ^2.0"
+        "guzzlehttp/guzzle": "^7.4",
+        "guzzlehttp/psr7": "^1.7 || ^2.0",
+        "ramsey/uuid": "^4.7",
+        "symfony/uid": "^6.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0 || ^9.0",
-        "friendsofphp/php-cs-fixer": "^3.5"
+        "friendsofphp/php-cs-fixer": "^3.9",
+        "phpunit/phpunit": "^8.0 || ^9.0"
+    },
+    "scripts": {
+        "download-schemas": "php utils/download-schemas.php",
+        "customize-schemas": "php utils/customize-schemas.php",
+        "generate": "php utils/generate-apis.php"
     },
     "autoload": {
         "psr-4": { "{{escapedInvokerPackage}}\\" : "{{srcBasePath}}/" }

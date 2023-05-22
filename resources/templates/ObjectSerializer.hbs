@@ -15,7 +15,9 @@
 
 namespace {{invokerPackage}};
 
+use DateTime;
 use GuzzleHttp\Psr7\Utils;
+use InvalidArgumentException;
 use {{modelPackage}}\ModelInterface;
 
 /**
@@ -30,14 +32,16 @@ use {{modelPackage}}\ModelInterface;
 class ObjectSerializer
 {
     /** @var string */
-    private static $dateTimeFormat = \DateTime::ATOM;
+    private static $dateTimeFormat = DateTime::ATOM;
 
     /**
      * Change the date format
      *
      * @param string $format   the new date format to use
+     *
+     * @return void
      */
-    public static function setDateTimeFormat($format)
+    public static function setDateTimeFormat($format): void
     {
         self::$dateTimeFormat = $format;
     }
@@ -45,19 +49,19 @@ class ObjectSerializer
     /**
      * Serialize data
      *
-     * @param mixed  $data   the data to serialize
-     * @param string $type   the OpenAPIToolsType of the data
-     * @param string $format the format of the OpenAPITools type of the data
+     * @param mixed       $data   the data to serialize
+     * @param string|null $type   the OpenAPIToolsType of the data
+     * @param string|null $format the format of the OpenAPITools type of the data
      *
      * @return scalar|object|array|null serialized form of $data
      */
-    public static function sanitizeForSerialization($data, $type = null, $format = null)
+    public static function sanitizeForSerialization($data, ?string $type, ?string $format)
     {
         if (is_scalar($data) || null === $data) {
             return $data;
         }
 
-        if ($data instanceof \DateTime) {
+        if ($data instanceof DateTime) {
             return ($format === 'date') ? $data->format('Y-m-d') : $data->format(self::$dateTimeFormat);
         }
 
@@ -82,7 +86,7 @@ class ObjectSerializer
                             $allowedEnumTypes = $callable();
                             if (!in_array($value, $allowedEnumTypes, true)) {
                                 $imploded = implode("', '", $allowedEnumTypes);
-                                throw new \InvalidArgumentException("Invalid value for enum '$openAPIType', must be one of: '$imploded'");
+                                throw new InvalidArgumentException("Invalid value for enum '$openAPIType', must be one of: '$imploded'");
                             }
                         }
                     }
@@ -109,7 +113,7 @@ class ObjectSerializer
      *
      * @return string the sanitized filename
      */
-    public static function sanitizeFilename($filename)
+    public static function sanitizeFilename(string $filename): string
     {
         if (preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
             return $match[1];
@@ -125,7 +129,7 @@ class ObjectSerializer
      *
      * @return string the shorten timestamp
      */
-    public static function sanitizeTimestamp($timestamp)
+    public static function sanitizeTimestamp(string $timestamp): string
     {
         if (!is_string($timestamp)) return $timestamp;
 
@@ -140,7 +144,7 @@ class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toPathValue($value)
+    public static function toPathValue($value): string
     {
         return rawurlencode(self::toString($value));
     }
@@ -223,7 +227,7 @@ class ObjectSerializer
         }
 
         # Handle DateTime objects in query
-        if($openApiType === "\\DateTime" && $value instanceof \DateTime) {
+        if($openApiType === "\\DateTime" && $value instanceof DateTime) {
             return ["{$paramName}" => $value->format(self::$dateTimeFormat)];
         }
 
@@ -326,13 +330,13 @@ class ObjectSerializer
      * If it's a datetime object, format it in ISO8601
      * If it's a boolean, convert it to "true" or "false".
      *
-     * @param string|bool|\DateTime $value the value of the parameter
+     * @param string|bool|DateTime $value the value of the parameter
      *
      * @return string the header string
      */
     public static function toString($value)
     {
-        if ($value instanceof \DateTime) { // datetime in ISO8601 format
+        if ($value instanceof DateTime) { // datetime in ISO8601 format
             return $value->format(self::$dateTimeFormat);
         } elseif (is_bool($value)) {
             return $value ? 'true' : 'false';
@@ -384,7 +388,6 @@ class ObjectSerializer
      * @param mixed    $data          object or primitive to be deserialized
      * @param string   $class         class name is passed as a string
      * @param string[] $httpHeaders   HTTP headers
-     * @param string   $discriminator discriminator if polymorphism is used
      *
      * @return object|array|null a single or an array of $class instances
      */
@@ -398,7 +401,7 @@ class ObjectSerializer
             $data = is_string($data) ? json_decode($data) : $data;
 
             if (!is_array($data)) {
-                throw new \InvalidArgumentException("Invalid array '$class'");
+                throw new InvalidArgumentException("Invalid array '$class'");
             }
 
             $subClass = substr($class, 0, -2);
@@ -441,12 +444,12 @@ class ObjectSerializer
             // this graceful.
             if (!empty($data)) {
                 try {
-                    return new \DateTime($data);
+                    return new DateTime($data);
                 } catch (\Exception $exception) {
                     // Some APIs return a date-time with too high nanosecond
                     // precision for php's DateTime to handle.
                     // With provided regexp 6 digits of microseconds saved
-                    return new \DateTime(self::sanitizeTimestamp($data));
+                    return new DateTime(self::sanitizeTimestamp($data));
                 }
             } else {
                 return null;
@@ -488,7 +491,7 @@ class ObjectSerializer
         if (method_exists($class, 'getAllowableEnumValues')) {
             if (!in_array($data, $class::getAllowableEnumValues(), true)) {
                 $imploded = implode("', '", $class::getAllowableEnumValues());
-                throw new \InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
+                throw new InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
             }
             return $data;
         } else {

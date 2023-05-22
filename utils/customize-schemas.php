@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__ . '/helpers.php';
-require_once __DIR__ . '/../src/constants.php';
+require_once __DIR__ . '/constants.php';
 
 const MP_AUTH_API_TAG = 'Authentication';
 

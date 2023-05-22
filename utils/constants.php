@@ -13,10 +13,11 @@ const API_VERSION = 'v3';
 
 const VALID_OPTS = ['category::', 'country::', 'api-name::', 'help'];
 
-const BUILD_DIR = __DIR__ . '/../build';
 const RESOURCE_DIR = __DIR__ . '/../resources';
 const SCHEMA_DIR = RESOURCE_DIR . '/schemas';
 const TEMPLATE_DIR = RESOURCE_DIR . '/templates';
+
+const LOGFILE = __DIR__ . '/generate.log';
 
 const BASIC_SCHEME_HEADER = 'Authorization';
 const ACCESS_TOKEN_HEADER = 'WM_SEC.ACCESS_TOKEN';

@@ -1,11 +1,10 @@
 vendor/
 
-# Build folder
-build/*
-!build/.openapi-generator-ignore
+# Log files
+**/*.log
 
 # OpenAPI cache
-src/.openapi-generator/
+.openapi-generator/
 
 # PHP CS Fixer cache
 .php-cs-fixer.cache

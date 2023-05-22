@@ -3,3 +3,4 @@ phpunit.xml.dist
 README.md
 .travis.yml
 .php-cs-fixer.dist.php
+.gitignore

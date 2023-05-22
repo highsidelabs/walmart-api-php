@@ -12,16 +12,14 @@
 
 {{>partials/partial_header}}
 
-namespace {{apiPackage}}\
-{{~x-walmart-country}}\
-{{~x-walmart-api-category}};
+namespace {{apiPackage}};
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use {{apiPackage}}\BaseApi;
+use {{invokerPackage}}\Api\BaseApi;
 use {{invokerPackage}}\ApiException;
 use {{invokerPackage}}\ObjectSerializer;
 
@@ -107,19 +105,31 @@ class {{classname}} extends BaseApi
     {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}}
     {
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
+        $signedRequest = $this->config->signRequest($request);
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         try {
             $options = $this->createHttpClientOption();
             try {
-                $response = $this->client->send($request, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+                $response = $this->client->send($signedRequest, $options);
             } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+
                 throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
+                    "[{$e->getCode()}] {$body}",
                     (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                    $hasResponse ? $e->getResponse()->getHeaders() : null,
+                    $body
                 );
             } catch (ConnectException $e) {
+                $this->writeDebug($e->getMessage());
+
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
                     (int) $e->getCode(),
@@ -135,7 +145,7 @@ class {{classname}} extends BaseApi
                     sprintf(
                         '[%d] Error connecting to the API (%s)',
                         $statusCode,
-                        (string) $request->getUri()
+                        (string) $signedRequest->getUri()
                     ),
                     $statusCode,
                     $response->getHeaders(),
@@ -146,7 +156,7 @@ class {{classname}} extends BaseApi
             {{#each responses~}}
             {{#if @first~}}
 
-            switch($statusCode) {
+            switch ($statusCode) {
             {{~/if~}}
             {{#if dataType}}
                 {{#unless isRange~}}
@@ -160,11 +170,7 @@ class {{classname}} extends BaseApi
                         }
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, '{{{dataType}}}', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, '{{{dataType}}}', $response->getHeaders());
                 {{~/unless~}}
             {{/if~}}
             {{#if @last}}
@@ -207,6 +213,8 @@ class {{classname}} extends BaseApi
             {{/if~}}
         {{/responses}}
             }
+
+            $this->writeDebug($e);
             throw $e;
         }
     }
@@ -282,9 +290,13 @@ class {{classname}} extends BaseApi
     {
         $returnType = '{{{returnType}}}';
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
+        $signedRequest = $this->config->signRequest($request);
+
+        $this->writeDebug($signedRequest);
+        $this->writeDebug((string) $signedRequest->getBody());
 
         return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
+            ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     {{~#if returnType~}}
@@ -297,18 +309,18 @@ class {{classname}} extends BaseApi
                         }
                     }
 
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
                     {{~else~}}
                     return [null, $response->getStatusCode(), $response->getHeaders()];
                     {{~/if~}}
                 },
                 function ($exception) {
                     $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+
                     throw new ApiException(
                         sprintf(
                             '[%d] Error connecting to the API (%s)',
@@ -317,7 +329,7 @@ class {{classname}} extends BaseApi
                         ),
                         $statusCode,
                         $response->getHeaders(),
-                        (string) $response->getBody()
+                        $body,
                     );
                 }
             );

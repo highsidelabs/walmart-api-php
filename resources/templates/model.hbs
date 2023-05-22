@@ -16,18 +16,12 @@
 
 {{>partials/partial_header}}
 
-namespace {{modelPackage}}\
-{{~x-walmart-country}}\
-{{~x-walmart-api-category}};
+namespace {{modelPackage}};
 
 {{~#unless isEnum~}}
 
-use \ArrayAccess;
-use {{modelPackage}}\BaseModel;
-use {{modelPackage}}\ModelInterface;
+use {{invokerPackage}}\Model\BaseModel;
 {{/unless~}}
-use \
-{{~invokerPackage}}\ObjectSerializer;
 {{! invokerPackage is on a new line to avoid the backslash after Api being treated as a block escape }}
 
 /**
@@ -41,9 +35,6 @@ use \
  * @author   Jesse Evers
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
-{{#unless isEnum}}
- * @implements \ArrayAccess<string, mixed>
-{{/unless}}
  */
 {{#if isEnum}}{{>model_enum}}{{else}}{{>model_generic}}{{/if}}
 {{/model}}{{/models}}

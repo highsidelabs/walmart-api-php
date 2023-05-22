@@ -11,19 +11,26 @@
 namespace {{invokerPackage}}\Model;
 
 use Exception;
+use ArrayAccess;
+use JsonSerializable;
+use Traversable;
 use {{invokerPackage}}\ObjectSerializer;
 
 /**
  * Basic model functionality that is needed by all non-enum models.
  *
  * @package {{invokerPackage}}\Model
+ *
+ * @implements \ArrayAccess<string, mixed>
+ * @implements \JsonSerializable
+ * @implements \{{invokerPackage}}\Model\ModelInterface
  */
-abstract class BaseModel implements ModelInterface
+abstract class BaseModel implements ArrayAccess, JsonSerializable, ModelInterface
 {
     /**
       * If a nullable field gets set to null, insert it here
       *
-      * @var boolean[]
+      * @var bool[]
       */
     protected array $openAPINullablesSetToNull = [];
 
@@ -102,7 +109,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return array
      */
-    public static function openAPITypes()
+    public static function openAPITypes(): array
     {
         return static::$openAPITypes;
     }
@@ -112,7 +119,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return array
      */
-    public static function openAPIFormats()
+    public static function openAPIFormats(): array
     {
         return static::$openAPIFormats;
     }
@@ -123,7 +130,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return array
      */
-    public static function attributeMap()
+    public static function attributeMap(): array
     {
         return static::$attributeMap;
     }
@@ -133,7 +140,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return array
      */
-    public static function setters()
+    public static function setters(): array
     {
         return static::$setters;
     }
@@ -143,7 +150,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return array
      */
-    public static function getters()
+    public static function getters(): array
     {
         return static::$getters;
     }
@@ -153,7 +160,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return string
      */
-    public function getModelName()
+    public function getModelName(): string
     {
         return static::$openAPIModelName;
     }
@@ -172,12 +179,11 @@ abstract class BaseModel implements ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
+     * @param mixed $offset Offset
      *
-     * @return boolean
+     * @return bool
      */
-    #[\ReturnTypeWillChange]
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->container[$offset]);
     }
@@ -185,7 +191,7 @@ abstract class BaseModel implements ModelInterface
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
+     * @param mixed $offset Offset
      *
      * @return mixed|null
      */
@@ -198,13 +204,12 @@ abstract class BaseModel implements ModelInterface
     /**
      * Sets value based on offset.
      *
-     * @param int|null $offset Offset
+     * @param mixed|null $offset Offset
      * @param mixed    $value  Value to be set
      *
      * @return void
      */
-    #[\ReturnTypeWillChange]
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -216,12 +221,12 @@ abstract class BaseModel implements ModelInterface
     /**
      * Unsets offset.
      *
-     * @param integer $offset Offset
+     * @param mixed $offset Offset
      *
      * @return void
      */
     #[\ReturnTypeWillChange]
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->container[$offset]);
     }
@@ -243,7 +248,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return string
      */
-    public function __toString()
+    public function __toString(): string
     {
         return json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
@@ -256,7 +261,7 @@ abstract class BaseModel implements ModelInterface
      *
      * @return string
      */
-    public function toHeaderValue()
+    public function toHeaderValue(): string
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
@@ -264,9 +269,9 @@ abstract class BaseModel implements ModelInterface
     /**
      * Enable iterating over all of the model's attributes in $key => $value format
      *
-     * @return \Traversable
+     * @return Traversable
      */
-    public function getIterator(): \Traversable
+    public function getIterator(): Traversable
     {
         return (function () {
             foreach ($this->container as $key => $value) {

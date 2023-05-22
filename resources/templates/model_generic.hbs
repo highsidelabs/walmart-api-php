@@ -1,4 +1,4 @@
-class {{classname}} extends BaseModel implements ModelInterface, ArrayAccess, \JsonSerializable
+class {{classname}} extends BaseModel
 {
     public const DISCRIMINATOR = {{#if discriminator}}'{{discriminatorName}}'{{else}}null{{/if}};
 
@@ -42,85 +42,6 @@ class {{classname}} extends BaseModel implements ModelInterface, ArrayAccess, \J
     ];
 
     /**
-      * If a nullable field gets set to null, insert it here
-      *
-      * @var boolean[]
-      */
-    protected array $openAPINullablesSetToNull = [];
-
-    /**
-     * Array of property to type mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPITypes()
-    {
-        return self::$openAPITypes{{#if parentSchema}} + parent::openAPITypes(){{/if}};
-    }
-
-    /**
-     * Array of property to format mappings. Used for (de)serialization
-     *
-     * @return array
-     */
-    public static function openAPIFormats()
-    {
-        return self::$openAPIFormats{{#if parentSchema}} + parent::openAPIFormats(){{/if}};
-    }
-
-    /**
-     * Array of nullable properties
-     *
-     * @return array
-     */
-    protected static function openAPINullables(): array
-    {
-        return self::$openAPINullables{{#if parentSchema}} + parent::openAPINullables(){{/if}};
-    }
-
-    /**
-     * Array of nullable field names deliberately set to null
-     *
-     * @return boolean[]
-     */
-    private function getOpenAPINullablesSetToNull(): array
-    {
-        return $this->openAPINullablesSetToNull;
-    }
-
-    /**
-     * Setter - Array of nullable field names deliberately set to null
-     *
-     * @param boolean[] $openAPINullablesSetToNull
-     */
-    private function setOpenAPINullablesSetToNull(array $openAPINullablesSetToNull): void
-    {
-        $this->openAPINullablesSetToNull = $openAPINullablesSetToNull;
-    }
-
-    /**
-     * Checks if a property is nullable
-     *
-     * @param string $property
-     * @return bool
-     */
-    public static function isNullable(string $property): bool
-    {
-        return self::openAPINullables()[$property] ?? false;
-    }
-
-    /**
-     * Checks if a nullable property is set to null.
-     *
-     * @param string $property
-     * @return bool
-     */
-    public function isNullableSetToNull(string $property): bool
-    {
-        return in_array($property, $this->getOpenAPINullablesSetToNull(), true);
-    }
-
-    /**
      * Array of attributes where the key is the local name,
      * and the value is the original name
      *
@@ -151,46 +72,6 @@ class {{classname}} extends BaseModel implements ModelInterface, ArrayAccess, \J
         {{/unless}}{{/each}}
     ];
 
-    /**
-     * Array of attributes where the key is the local name,
-     * and the value is the original name
-     *
-     * @return array
-     */
-    public static function attributeMap()
-    {
-        return {{#if parentSchema}}parent::attributeMap() + {{/if}}self::$attributeMap;
-    }
-
-    /**
-     * Array of attributes to setter functions (for deserialization of responses)
-     *
-     * @return array
-     */
-    public static function setters()
-    {
-        return {{#if parentSchema}}parent::setters() + {{/if}}self::$setters;
-    }
-
-    /**
-     * Array of attributes to getter functions (for serialization of requests)
-     *
-     * @return array
-     */
-    public static function getters()
-    {
-        return {{#if parentSchema}}parent::getters() + {{/if}}self::$getters;
-    }
-
-    /**
-     * The original name of the model.
-     *
-     * @return string
-     */
-    public function getModelName()
-    {
-        return self::$openAPIModelName;
-    }
     {{#vars~}}
     {{#if isEnum~}}
     {{#allowableValues~}}

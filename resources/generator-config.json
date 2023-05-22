@@ -10,7 +10,6 @@
   "packagePath": "generated",
   "srcBasePath": "src",
 
-  "apiPackage": "Api",
   "invokerPackage": "Walmart",
 
   "files": {

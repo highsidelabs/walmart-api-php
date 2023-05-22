@@ -1,11 +1,7 @@
 <?php
 
 require_once __DIR__ . '/helpers.php';
-require_once __DIR__ . '/../src/constants.php';
-
-const OUT_DIR = __DIR__ . '/../src';
-const API_OUT_DIR = OUT_DIR . '/api';
-const MODEL_OUT_DIR = OUT_DIR . '/model';
+require_once __DIR__ . '/constants.php';
 
 /**
  * Generate the SDK based on the schemas that fit the given options.
@@ -22,6 +18,8 @@ function generateApis(array $categories, array $countries, array $apiNames): voi
     foreach ($schemas as $schema) {
         openApiGenerator($schema['apiName'], $schema['category'], $schema['country']);
     }
+
+    generateSupportingFiles();
 }
 
 
@@ -36,10 +34,8 @@ function generateApis(array $categories, array $countries, array $apiNames): voi
 function openApiGenerator(string $name, string $category, string $country): void
 {
     $version = libVersion();
-    $fullSchemaPath = RESOURCE_DIR . "/schemas/$country/$category/$name.json";
+    $schemaPath = SCHEMA_DIR . "/$country/$category/$name.json";
     $configPath = RESOURCE_DIR . '/generator-config.json';
-    $templateDir = RESOURCE_DIR . '/templates';
-    $logFile = BUILD_DIR . '/build.log';
 
     $categoryCaps = strtoupper($category);
     $countryCaps = strtoupper($country);
@@ -48,29 +44,57 @@ function openApiGenerator(string $name, string $category, string $country): void
     putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix');
 
     $generateCmd = "openapi-generator generate \
-        --input-spec $fullSchemaPath \
-        --output " . BUILD_DIR . " \
-        --template-dir $templateDir \
+        --input-spec $schemaPath \
+        --template-dir " . TEMPLATE_DIR . " \
         --generator-name php \
         --config $configPath \
         --engine handlebars \
+        --global-property apis,models \
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-sdk-php/$version \
+        --api-package \"Api\\$categoryCaps\\$countryCaps\" \
+        --model-package \"Model\\$categoryCaps\\$countryCaps\" \
         --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps\" \
         2>&1";
 
+    execAndLog($generateCmd);
+}
+
+function generateSupportingFiles(): void
+{
+    $version = libVersion();
+    $configPath = RESOURCE_DIR . '/generator-config.json';
+    // Static path -- this won't actually be used since we're only generating supporting files
+    $schemaPath = SCHEMA_DIR . '/us/mp/auth.json';
+
+    // Ensure output files are prettified
+    putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix');
+
+    $generateCmd = "openapi-generator generate \
+        --input-spec $schemaPath \
+        --template-dir " . TEMPLATE_DIR . " \
+        --generator-name php \
+        --config $configPath \
+        --engine handlebars \
+        --global-property supportingFiles \
+        --enable-post-process-file \
+        --http-user-agent highsidelabs/walmart-sdk-php/$version \
+        2>&1";
+    
+    execAndLog($generateCmd);
+}
+
+function execAndLog(string $cmd): void
+{
     $resultCode = 0;
     $output = [];
-    exec($generateCmd, $output, $resultCode);
+    exec($cmd, $output, $resultCode);
 
-    // Error code 1 means there were warnings, but no errors
-    if ($resultCode > 1) {
-        echo "Error generating $category/$name schema for country $country\n";
-        echo implode("\n", $output);
+    file_put_contents(LOGFILE, implode("\n", $output) . "\n", FILE_APPEND);
+
+    if ($resultCode > 0) {
+        echo "Error executing command\n";
         exit(1);
-    } else {
-        echo "Generated $category/$name schema for country $country\n";
-        file_put_contents($logFile, implode("\n", $output) . "\n", FILE_APPEND);
     }
 }
 
