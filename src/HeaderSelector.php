@@ -32,10 +32,11 @@ class HeaderSelector
 {
     /**
      * @param string[] $accept
+     * @param string   $contentType
      * @param bool     $isMultipart
      * @return string[]
      */
-    public function selectHeaders(array $accept, bool $isMultipart): array
+    public function selectHeaders(array $accept, string $contentType, bool $isMultipart): array
     {
         $headers = [];
 
@@ -45,7 +46,11 @@ class HeaderSelector
         }
 
         if (!$isMultipart) {
-            $headers['Content-Type'] = 'application/json';
+            if (is_null($contentType) || $contentType === '') {
+                $contentType = 'application/json';
+            }
+
+            $headers['Content-Type'] = $contentType;
         }
 
         return $headers;
@@ -167,8 +172,7 @@ class HeaderSelector
 
         $acceptHeaders = [];
         foreach ($headers as $index => $header) {
-            if($index > 0 && $headers[$index - 1]['weight'] > $header['weight'])
-            {
+            if($index > 0 && $headers[$index - 1]['weight'] > $header['weight']) {
                 $currentWeight = $this->getNextWeight($currentWeight, $hasMoreThan28Headers);
             }
 
@@ -228,6 +232,6 @@ class HeaderSelector
             return $currentWeight - 1;
         }
 
-        return $currentWeight - 10 ** floor( log10($currentWeight - 1) );
+        return $currentWeight - 10 ** floor(log10($currentWeight - 1));
     }
 }

@@ -17,6 +17,7 @@ namespace {{apiPackage}};
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\RequestOptions;
+use Ramsey\Uuid\Uuid;
 use {{invokerPackage}}\Configuration;
 use {{invokerPackage}}\HeaderSelector;
 
@@ -72,6 +73,23 @@ class BaseApi
     public function getConfig()
     {
         return $this->config;
+    }
+
+    /**
+     * Add standard headers to the request
+     *
+     * @return array
+     */
+    protected function getDefaultHeaders(): array
+    {
+        return [
+            'WM_SVC.NAME' => 'highsidelabs/walmart-api/{{artifactVersion}}',
+            'WM_QOS.CORRELATION_ID' => Uuid::uuid4()->toString(),
+            // These aren't required by every endpoint, but many use them and passing the when they're
+            // not needed doesn't adversely affect the request
+            'WM_MARKET' => strtoupper($this->config->getCountry()),
+            'WM_TIMESTAMP' => time(),
+        ];
     }
 
     /**

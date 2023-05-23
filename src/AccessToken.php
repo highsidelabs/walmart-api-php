@@ -1,6 +1,6 @@
 <?php
 
-namespace Walmart\Auth;
+namespace Walmart;
 
 use DateTime;
 
