@@ -40,9 +40,8 @@ function customizeSchema(string $path, string $category): void
         ],
         // Used by some endpoints in most APIs
         ACCESS_TOKEN_SCHEME_NAME => [
-            'type' => 'apiKey',
-            'in' => 'header',
-            'name' => ACCESS_TOKEN_HEADER,
+            'type' => 'http',
+            'scheme' => 'bearer',
         ],
         CONSUMER_ID_SCHEME_NAME => [
             'type' => 'apiKey',

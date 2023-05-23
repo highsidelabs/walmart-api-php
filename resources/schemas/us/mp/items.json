@@ -8050,9 +8050,8 @@
         },
         "securitySchemes": {
             "accessTokenScheme": {
-                "type": "apiKey",
-                "in": "header",
-                "name": "WM_SEC.ACCESS_TOKEN"
+                "type": "http",
+                "scheme": "bearer"
             }
         }
     }
