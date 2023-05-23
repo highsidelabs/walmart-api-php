@@ -29,8 +29,8 @@
                 "summary": "Get All Report Requests",
                 "description": "Fetches a list of all report requests for specified search criteria by using query parameters.\n\nYou can fetch details of report requests created in the last 30 days only.",
                 "operationId": "getRequestsStatus",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "reportType",
                         "in": "query",
                         "description": "Type of report for which the request is created. Example, ITEM for Item Report.",
@@ -53,7 +53,7 @@
                             ]
                         }
                     },
-                    "1": {
+                    {
                         "name": "reportVersion",
                         "in": "query",
                         "description": "Version of report for which the request is created. Example, v1.",
@@ -62,7 +62,7 @@
                             "type": "string"
                         }
                     },
-                    "2": {
+                    {
                         "name": "requestStatus",
                         "in": "query",
                         "description": "Status of report request. Possible values are RECEIVED, INPROGRESS, READY, ERROR.",
@@ -77,7 +77,7 @@
                             ]
                         }
                     },
-                    "3": {
+                    {
                         "name": "requestSubmissionStartDate",
                         "in": "query",
                         "description": "Report request submittal start date for range of reports requested, in format: YYYY-MM-DDTHH:mm:ssZ",
@@ -86,7 +86,7 @@
                             "type": "string"
                         }
                     },
-                    "4": {
+                    {
                         "name": "requestSubmissionEndDate",
                         "in": "query",
                         "description": "Report request submittal end date for range of reports requested, in format YYYY-MM-DDTHH:mm:ssZ",
@@ -95,7 +95,7 @@
                             "type": "string"
                         }
                     },
-                    "9": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -105,7 +105,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -346,8 +346,8 @@
                     "url": "\/doc\/us\/mp\/us-mp-onrequestreports\/#4180"
                 },
                 "operationId": "generateReport",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "reportType",
                         "in": "query",
                         "description": "Specifies the report type for the request. For example, reportType=ITEM creates an Item Report.",
@@ -370,7 +370,7 @@
                             ]
                         }
                     },
-                    "1": {
+                    {
                         "name": "reportVersion",
                         "in": "query",
                         "description": "Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM.",
@@ -379,7 +379,7 @@
                             "type": "string"
                         }
                     },
-                    "6": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -389,7 +389,7 @@
                         },
                         "example": "application\/json"
                     },
-                    "7": {
+                    {
                         "in": "header",
                         "name": "Content-Type",
                         "description": "Only supported Media Type : application\/json",
@@ -399,7 +399,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "requestBody": {
                     "description": "Request body",
                     "content": {
@@ -717,8 +717,8 @@
                     "url": "\/doc\/us\/mp\/us-mp-onrequestreports\/#4180"
                 },
                 "operationId": "getSingleRequestStatus",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "requestId",
                         "in": "path",
                         "description": "Automated ID generated by system that uniquely identifies the report request.",
@@ -727,7 +727,7 @@
                             "type": "string"
                         }
                     },
-                    "5": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -737,7 +737,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -898,8 +898,8 @@
                     "url": "\/doc\/us\/mp\/us-mp-onrequestreports\/#4180"
                 },
                 "operationId": "downloadReport",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "requestId",
                         "in": "query",
                         "description": "Automated ID generated by system that uniquely identifies the report request.",
@@ -908,7 +908,7 @@
                             "type": "string"
                         }
                     },
-                    "5": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -918,7 +918,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",

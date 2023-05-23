@@ -29,18 +29,7 @@
                 "summary": "Update a price",
                 "description": "Updates the regular price for a given item.",
                 "operationId": "updatePrice",
-                "parameters": [
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/xml": {
@@ -220,16 +209,6 @@
                         "schema": {
                             "type": "string",
                             "default": "price"
-                        }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
                         }
                     }
                 ],

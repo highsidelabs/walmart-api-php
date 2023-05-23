@@ -15,6 +15,7 @@ function customizeSchema(string $path, string $category): void
         ACCESS_TOKEN_HEADER,
         CONSUMER_ID_HEADER,
         AUTH_SIG_HEADER,
+        MARKET_HEADER,
         'WM_QOS.CORRELATION_ID',
         'WM_SVC.NAME',
         'WM_CONSUMER.CHANNEL.TYPE',

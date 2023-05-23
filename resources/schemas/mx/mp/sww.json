@@ -29,18 +29,8 @@
                 "summary": "Create label",
                 "description": "Create shipping label for items. The response to a successful call are of json,pdf or image type based on the media type passed in Accept header.\nFor eg. 'Accept'='application\/json,application\/pdf' will result in pdf media type and\n'Accept'='application\/json,image\/png' as image media type and 'Accept'='application\/json' as json response.",
                 "operationId": "createLabel",
-                "parameters": {
-                    "0": {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
-                    },
-                    "6": {
+                "parameters": [
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -50,7 +40,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "requestBody": {
                     "description": "Label fields",
                     "content": {
@@ -421,8 +411,8 @@
                 "summary": "Labels detail by purchase order id",
                 "description": "Retrieves tracking details for a Purchase Order Id",
                 "operationId": "getLabel",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "purchaseOrderId",
                         "in": "path",
                         "description": "purchaseOrderId",
@@ -431,17 +421,7 @@
                             "type": "string"
                         }
                     },
-                    "1": {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
-                    },
-                    "7": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -451,7 +431,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -624,18 +604,8 @@
                 "summary": "Supported carriers",
                 "description": "This API retrieves all carriers supported by Ship With Walmart. Note that currently we are only supporting FedEx but stay tuned for more carrier options.",
                 "operationId": "getCarriers",
-                "parameters": {
-                    "0": {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
-                    },
-                    "6": {
+                "parameters": [
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -645,7 +615,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -759,8 +729,8 @@
                 "summary": "Download label",
                 "description": "Download label by carrier and trackingNoThe response to a successful call contains the tracking number with the pdf or image type based on the media type passed in Accept header.\nFor eg. 'Accept'='application\/json,application\/pdf' will result in pdf media type ,\n'Accept'='application\/json,image\/png' as image media type as Accept'='application\/json as json response.",
                 "operationId": "getLabelByTrackingAndCarrier",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "carrierShortName",
                         "in": "path",
                         "description": "carrierShortName from getCarriers API",
@@ -769,7 +739,7 @@
                             "type": "string"
                         }
                     },
-                    "1": {
+                    {
                         "name": "trackingNo",
                         "in": "path",
                         "description": "trackingNo",
@@ -778,17 +748,7 @@
                             "type": "string"
                         }
                     },
-                    "2": {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
-                    },
-                    "8": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -798,7 +758,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -832,8 +792,8 @@
                 "summary": "Discard label",
                 "description": "Discard label by carrier and trackingNo",
                 "operationId": "discardLabel",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "carrierShortName",
                         "in": "path",
                         "description": "carrierShortName from getCarriers API",
@@ -842,7 +802,7 @@
                             "type": "string"
                         }
                     },
-                    "1": {
+                    {
                         "name": "trackingNo",
                         "in": "path",
                         "description": "trackingNo",
@@ -851,17 +811,7 @@
                             "type": "string"
                         }
                     },
-                    "2": {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
-                    },
-                    "8": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -871,7 +821,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -961,8 +911,8 @@
                 "summary": "Supported carrier package types",
                 "description": "This API retrieves all supported package types for the selected carrier.",
                 "operationId": "getCarrierPackageTypes",
-                "parameters": {
-                    "0": {
+                "parameters": [
+                    {
                         "name": "carrierShortName",
                         "in": "path",
                         "description": "carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers",
@@ -971,17 +921,7 @@
                             "type": "string"
                         }
                     },
-                    "1": {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
-                    },
-                    "7": {
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -991,7 +931,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",

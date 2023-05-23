@@ -38,16 +38,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
                     }
                 ],
                 "requestBody": {
@@ -463,16 +453,6 @@
                             "type": "string",
                             "default": "20"
                         }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
                     }
                 ],
                 "responses": {
@@ -867,16 +847,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
                     }
                 ],
                 "responses": {
@@ -1148,16 +1118,6 @@
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
                         }
                     }
                 ],

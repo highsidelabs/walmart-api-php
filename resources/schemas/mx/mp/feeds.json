@@ -58,16 +58,6 @@
                             "type": "string",
                             "default": "50"
                         }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
                     }
                 ],
                 "responses": {
@@ -371,16 +361,6 @@
                         "schema": {
                             "type": "string",
                             "default": "50"
-                        }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
                         }
                     }
                 ],

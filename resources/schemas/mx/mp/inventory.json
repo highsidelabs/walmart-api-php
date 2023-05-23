@@ -38,16 +38,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
                     }
                 ],
                 "responses": {
@@ -122,16 +112,6 @@
                         "required": true,
                         "schema": {
                             "type": "string"
-                        }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
                         }
                     }
                 ],
@@ -296,16 +276,6 @@
                         "schema": {
                             "type": "string",
                             "default": "inventory"
-                        }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
                         }
                     }
                 ],

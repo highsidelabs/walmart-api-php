@@ -41,16 +41,6 @@
                                 "item_mx"
                             ]
                         }
-                    },
-                    {
-                        "name": "WM_MARKET",
-                        "in": "header",
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "mx"
-                            ]
-                        }
                     }
                 ],
                 "responses": {

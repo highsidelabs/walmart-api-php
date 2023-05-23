@@ -255,8 +255,8 @@
                 "summary": "Hazmat Items On hold",
                 "description": "Use this API to see a list of items that are on hold for hazmat compliance review, including items with an In Review, Action Needed, and Prohibited status. Also use this API to review your Action Needed error descriptions and understand how to correct them for further assessment.",
                 "operationId": "wercsFeedback",
-                "parameters": {
-                    "4": {
+                "parameters": [
+                    {
                         "in": "header",
                         "name": "Accept",
                         "description": "Only supported Media Type : application\/json",
@@ -266,7 +266,7 @@
                         },
                         "example": "application\/json"
                     }
-                },
+                ],
                 "requestBody": {
                     "description": "Request fields",
                     "content": {
