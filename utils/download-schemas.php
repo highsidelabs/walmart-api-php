@@ -28,14 +28,14 @@ function downloadSchemas(?array $categories, ?array $countries, ?array $apiNames
         $category = $schema['category'];
         $country = $schema['country'];
         $apiName = $schema['apiName'];
-        
+
         $savePath = SCHEMA_DIR . "/$country/{$category}";
         if (!file_exists($savePath)) {
             mkdir($savePath, 0755, true);
         }
-    
+
         echo 'Retrieving ' . strtoupper($country) . " schemas for $category category {$apiName}\n";
-    
+
         $contents = null;
         try {
             $res = $client->post('', [

@@ -67,7 +67,7 @@ function customizeSchema(string $path, string $category): void
             $security = [];
             // Update each operation's parameters and auth information
             foreach ($verb['parameters'] as $i => $parameter) {    
-                if ($parameter['in'] === 'header' && in_array($parameter['name'], $ignoreHeaders)) {
+                if ($parameter['in'] === 'header' && in_array($parameter['name'], $ignoreHeaders, true)) {
 
                     // Apply all relevant security schemes to the endpoint
                     $schemeName = match ($parameter['name']) {
@@ -85,7 +85,7 @@ function customizeSchema(string $path, string $category): void
                         $security[$schemeName] = [];
 
                         // Track which security schemes have been used so we can add them to the overall schema
-                        if (!in_array($schemeName, $usedSecuritySchemes)) {
+                        if (!in_array($schemeName, $usedSecuritySchemes, true)) {
                             $usedSecuritySchemes[] = $schemeName;
                         }
                     }
@@ -93,6 +93,9 @@ function customizeSchema(string $path, string $category): void
                     unset($verb['parameters'][$i]);
                 }
             }
+            // If non-consecutive parameters were removed, there will be non-sequential keys in the parameters,
+            // which leads to weird JSON serialization
+            $verb['parameters'] = array_values($verb['parameters']);
             $verb['security'] = [$security];
 
             // Update endpoint responses
@@ -100,7 +103,7 @@ function customizeSchema(string $path, string $category): void
                 // Some endpoints have multiple response content types, but we only care about the JSON response if it exists,
                 // and we only want to have one content type per response because OpenAPI doesn't support multiple content types
                 // in PHP
-                if (count($response['content']) > 1) {
+                if (isset($response['content']) && count($response['content']) > 1) {
                     $jsonResponse = $response['content']['application/json'] ?? null;
 
                     // If there is a JSON response, use it and remove the other content types

@@ -5,10 +5,6 @@ const DROP_SHIP_VENDOR_API_CODE = 'dsv';
 const MARKETPLACE_API_CODE = 'mp';
 const WAREHOUSE_API_CODE = 'ws';
 
-const COUNTRY_CA = 'ca';
-const COUNTRY_MX = 'mx';
-const COUNTRY_US = 'us';
-
 const API_VERSION = 'v3';
 
 const VALID_OPTS = ['category::', 'country::', 'api-name::', 'help'];

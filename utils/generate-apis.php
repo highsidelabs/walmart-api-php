@@ -80,7 +80,7 @@ function generateSupportingFiles(): void
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-sdk-php/$version \
         2>&1";
-    
+
     execAndLog($generateCmd);
 }
 

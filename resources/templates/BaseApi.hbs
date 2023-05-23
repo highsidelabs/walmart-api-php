@@ -87,4 +87,17 @@ class BaseApi
 
         return $options;
     }
+
+    /**
+     * Writes to the debug log file
+     *
+     * @param any $data
+     * @return void
+     */
+    private function writeDebug($data)
+    {
+        if ($this->config->getDebug()) {
+            file_put_contents($this->config->getDebugFile(), '[' . date('Y-m-d H:i:s') . ']: ' . print_r($data, true) . "\n", FILE_APPEND);
+        }
+    }
 }

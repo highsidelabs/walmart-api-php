@@ -23,6 +23,8 @@ use {{invokerPackage}}\Api\BaseApi;
 use {{invokerPackage}}\ApiException;
 use {{invokerPackage}}\ObjectSerializer;
 
+require_once __DIR__ . '/../../../../vendor/autoload.php';
+
 /**
  * {{classname}} Class Doc Comment
  *
@@ -63,11 +65,10 @@ class {{classname}} extends BaseApi
      * @deprecated
     {{/if}}
      */
-    public function {{operationId}}({{#if vendorExtensions.x-group-parameters}}
-        array $associative_array{{else}}{{#each allParams}}
-        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}}
-    {
+    public function {{operationId}}({{#if vendorExtensions.x-group-parameters}}array $associative_array{{else}}
+        {{#each allParams}}{{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
+        {{/each}}
+    {{~/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
         {{#if returnType}}list($response) = {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});{{#if returnType}}
         return $response;{{/if}}
     }
@@ -102,8 +103,7 @@ class {{classname}} extends BaseApi
     protected function {{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}}
-    {
+    {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
         $signedRequest = $this->config->signRequest($request);
         $this->writeDebug($signedRequest);
@@ -112,9 +112,9 @@ class {{classname}} extends BaseApi
         try {
             $options = $this->createHttpClientOption();
             try {
+                $response = $this->client->send($signedRequest, $options);
                 $this->writeDebug($response);
                 $this->writeDebug((string) $response->getBody());
-                $response = $this->client->send($signedRequest, $options);
             } catch (RequestException $e) {
                 $hasResponse = !empty($e->hasResponse());
                 $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
@@ -247,8 +247,7 @@ class {{classname}} extends BaseApi
     public function {{operationId}}Async({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-        {{/each}}{{/if}}): PromiseInterface
-    {
+        {{/each}}{{/if}}): PromiseInterface {
         return $this->{{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}})
             ->then(
                 function ($response) {
@@ -286,8 +285,7 @@ class {{classname}} extends BaseApi
     protected function {{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}}): PromiseInterface
-    {
+    {{/each}}{{/if}}): PromiseInterface {
         $returnType = '{{{returnType}}}';
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
         $signedRequest = $this->config->signRequest($request);
@@ -299,6 +297,9 @@ class {{classname}} extends BaseApi
             ->sendAsync($signedRequest, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $this->writeDebug((string) $response->getBody());
+
                     {{~#if returnType~}}
                     if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
@@ -356,8 +357,7 @@ class {{classname}} extends BaseApi
     protected function {{operationId}}Request({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}}): Request
-    {
+    {{/each}}{{/if}}): Request {
         {{~#if vendorExtensions.x-group-parameters~}}
         // unbox the parameters from the associative array
 {{~#allParams~}}
@@ -415,7 +415,7 @@ class {{classname}} extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-        {{~#if queryParams}}
+        {{#if queryParams}}
 
         // query params
         $queryParams = [
@@ -430,8 +430,7 @@ class {{classname}} extends BaseApi
             ) ?? [],
         {{~/queryParams}}
         ];
-        {{~/if~}}
-
+        {{/if~}}
         {{#if headerParams}}
 
         // header params{{/if~}}
@@ -444,11 +443,11 @@ class {{classname}} extends BaseApi
         if (${{paramName}} !== null) {
             $headerParams['{{baseName}}'] = ObjectSerializer::toHeaderValue(${{paramName}});
         }
-        {{~/headerParams~}}
-
+        {{~/headerParams}}
         {{#if pathParams}}
 
-        // path params{{/if~}}
+        // path params
+        {{/if~}}
         {{#pathParams}}
         {{~#if collectionFormat~}}
         if (is_array(${{paramName}})) {
@@ -462,8 +461,7 @@ class {{classname}} extends BaseApi
                 $resourcePath
             );
         }
-        {{~/pathParams~}}
-
+        {{~/pathParams}}
         {{#if formParams}}
 
         // form params{{/if~}}

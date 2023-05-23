@@ -60,10 +60,15 @@
         "code": "auth",
         "countries": ["mx", "us"]
       },
+      "events": {
+        "name": "Events",
+        "code": "events",
+        "countries": ["ca"]
+      },
       "feeds": {
         "name": "Feeds",
         "code": "feeds",
-        "countries": ["ca", "us"]
+        "countries": ["ca", "mx", "us"]
       },
       "fulfillment": {
         "name": "Walmart Fulfillment Services",
@@ -75,15 +80,20 @@
         "code": "insights",
         "countries": ["us"]
       },
+      "cbt": {
+        "name": "International Shipping",
+        "code": "cbt",
+        "countries": ["ca"]
+      },
       "inventory": {
         "name": "Inventory",
         "code": "inventory",
-        "countries": ["ca", "us"]
+        "countries": ["ca", "mx", "us"]
       },
       "items": {
         "name": "Items",
         "code": "items",
-        "countries": ["ca", "us"]
+        "countries": ["ca", "mx", "us"]
       },
       "lagtime": {
         "name": "Lag Time",
@@ -103,12 +113,12 @@
       "orders": {
         "name": "Orders",
         "code": "orders",
-        "countries": ["ca", "us"]
+        "countries": ["ca", "mx", "us"]
       },
       "price": {
         "name": "Prices",
         "code": "price",
-        "countries": ["ca", "us"]
+        "countries": ["ca", "mx", "us"]
       },
       "promotion": {
         "name": "Promotions",
@@ -118,12 +128,12 @@
       "reports": {
         "name": "Pre-generated Reports",
         "code": "reports",
-        "countries": ["ca", "us"]
+        "countries": ["ca", "us", "mx"]
       },
       "returns": {
         "name": "Returns",
         "code": "returns",
-        "countries": ["us"]
+        "countries": ["us", "mx"]
       },
       "rules": {
         "name": "Rules",
@@ -134,6 +144,11 @@
         "name": "Settings",
         "code": "settings",
         "countries": ["us"]
+      },
+      "sww": {
+        "name": "International Shipping",
+        "code": "sww",
+        "countries": ["mx"]
       },
       "utilities": {
         "name": "Utilities",

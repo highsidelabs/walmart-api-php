@@ -1,0 +1,2673 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "International Shipping",
+        "description": "The International Shipping API enables sellers to use the Ship with Walmart (SWW) International shipping programs to ship their goods from the US to Canada. These APIs provide support for two SWW Programs : SWW Express & SWW Ground",
+        "version": "v3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        }
+    ],
+    "paths": {
+        "\/v3\/ca\/shipping\/labels": {
+            "post": {
+                "tags": [
+                    "International Shipping"
+                ],
+                "summary": "Create label",
+                "description": "Create shipping label for items. The response to a successful call are of json or pdf type based on the media type passed in Accept header.\nFor eg. 'Accept'='application\/json,application\/pdf' will result in pdf media type and\n'Accept'='application\/json' as json response.",
+                "operationId": "createLabel",
+                "parameters": [
+                    {
+                        "name": "WM.TEST_MODE",
+                        "in": "header",
+                        "description": "For sellers\/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Label fields",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "required": [
+                                    "boxDimensions",
+                                    "boxItems",
+                                    "carrierName",
+                                    "fromAddress",
+                                    "packageType",
+                                    "purchaseOrderId"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "packageType": {
+                                        "type": "string",
+                                        "description": "Package Type. Supported Package Types are - 'CUSTOM_PACKAGE', 'FEDEX_ENVELOPE', 'FEDEX_PAK'"
+                                    },
+                                    "boxDimensions": {
+                                        "required": [
+                                            "boxWeight",
+                                            "boxWeightUnit"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "boxDimensionUnit": {
+                                                "type": "string",
+                                                "description": "Box Dimension Unit [CM, IN]. Mandatory for CUSTOM_PACKAGE type, otherwise not required",
+                                                "enum": [
+                                                    "CM",
+                                                    "IN"
+                                                ]
+                                            },
+                                            "boxWeightUnit": {
+                                                "type": "string",
+                                                "description": "Box Weight Unit [LB, KG]",
+                                                "enum": [
+                                                    "LB",
+                                                    "KG"
+                                                ]
+                                            },
+                                            "boxWeight": {
+                                                "type": "number",
+                                                "description": "Box Weight"
+                                            },
+                                            "boxLength": {
+                                                "type": "number",
+                                                "description": "Box Length. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                                            },
+                                            "boxWidth": {
+                                                "type": "number",
+                                                "description": "Box Width. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                                            },
+                                            "boxHeight": {
+                                                "type": "number",
+                                                "description": "Box Height. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                                            }
+                                        },
+                                        "description": "Box Dimensions"
+                                    },
+                                    "boxItems": {
+                                        "type": "array",
+                                        "description": "Box Items",
+                                        "items": {
+                                            "required": [
+                                                "quantity",
+                                                "sku"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "sku": {
+                                                    "type": "string",
+                                                    "description": "sku of an item"
+                                                },
+                                                "quantity": {
+                                                    "type": "integer",
+                                                    "description": "Quantity of Item",
+                                                    "format": "int32"
+                                                }
+                                            },
+                                            "description": "Box Items"
+                                        }
+                                    },
+                                    "fromAddress": {
+                                        "required": [
+                                            "addressLine1",
+                                            "city",
+                                            "contactName",
+                                            "country",
+                                            "phone",
+                                            "postalCode",
+                                            "state"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "contactName": {
+                                                "type": "string",
+                                                "description": "Contact name"
+                                            },
+                                            "companyName": {
+                                                "type": "string",
+                                                "description": "Company name"
+                                            },
+                                            "addressLine1": {
+                                                "type": "string",
+                                                "description": "Address Line 1"
+                                            },
+                                            "addressLine2": {
+                                                "type": "string",
+                                                "description": "Address Line 2"
+                                            },
+                                            "city": {
+                                                "type": "string",
+                                                "description": "city"
+                                            },
+                                            "state": {
+                                                "type": "string",
+                                                "description": "state"
+                                            },
+                                            "postalCode": {
+                                                "type": "string",
+                                                "description": "postal code"
+                                            },
+                                            "country": {
+                                                "type": "string",
+                                                "description": "country"
+                                            },
+                                            "phone": {
+                                                "type": "string",
+                                                "description": "phone"
+                                            },
+                                            "email": {
+                                                "type": "string",
+                                                "description": "email"
+                                            }
+                                        },
+                                        "description": "From Address"
+                                    },
+                                    "purchaseOrderId": {
+                                        "type": "string",
+                                        "description": "Purchase Order Id"
+                                    },
+                                    "carrierName": {
+                                        "type": "string",
+                                        "description": "Carrier Name. For now, supported carriers are - 'FedEx' and 'PUROLATOR'"
+                                    },
+                                    "carrierServiceType": {
+                                        "type": "string",
+                                        "description": "Carrier Service Type. For now, supported values for FedEx are - 'FEDEX_INTERNATIONAL_PRIORITY' for fedExPak\/fedExEnvelope package types, 'FEDEX_INTERNATIONAL_ECONOMY' and 'FEDEX_INTERNATIONAL_GROUND'. Not required for PUROLATOR."
+                                    },
+                                    "labelSize": {
+                                        "type": "string",
+                                        "description": "Label Size e.g. A6, LETTER_SIZE or A4 for PDF response"
+                                    }
+                                }
+                            },
+                            "example": {
+                                "packageType": "CUSTOM_PACKAGE",
+                                "boxDimensions": {
+                                    "boxDimensionUnit": "IN",
+                                    "boxWeightUnit": "LB",
+                                    "boxWeight": 1,
+                                    "boxLength": 100,
+                                    "boxWidth": 1,
+                                    "boxHeight": 1
+                                },
+                                "boxItems": [
+                                    {
+                                        "sku": "SKU_28072021",
+                                        "quantity": 1
+                                    }
+                                ],
+                                "fromAddress": {
+                                    "contactName": "Test",
+                                    "companyName": "Walmart",
+                                    "addressLine1": "Add1",
+                                    "addressLine2": "Add2",
+                                    "city": "Anchorage",
+                                    "state": "AK",
+                                    "postalCode": "99501",
+                                    "country": "US",
+                                    "phone": "12253",
+                                    "email": "test@walmart.com"
+                                },
+                                "purchaseOrderId": "P100569013",
+                                "carrierName": "FedEx",
+                                "carrierServiceType": "FEDEX_INTERNATIONAL_ECONOMY",
+                                "labelSize": "A6"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "purchaseOrderId": {
+                                                    "type": "string",
+                                                    "description": "Purchase Order Id "
+                                                },
+                                                "id": {
+                                                    "type": "string",
+                                                    "description": "shipmentId "
+                                                },
+                                                "trackingNo": {
+                                                    "type": "string",
+                                                    "description": "Tracking Number"
+                                                },
+                                                "boxItems": {
+                                                    "type": "array",
+                                                    "description": "Box Items",
+                                                    "items": {
+                                                        "required": [
+                                                            "quantity",
+                                                            "sku"
+                                                        ],
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "sku": {
+                                                                "type": "string",
+                                                                "description": "sku of an item"
+                                                            },
+                                                            "quantity": {
+                                                                "type": "integer",
+                                                                "description": "Quantity of Item",
+                                                                "format": "int32"
+                                                            }
+                                                        },
+                                                        "description": "Box Items"
+                                                    }
+                                                },
+                                                "carrierName": {
+                                                    "type": "string",
+                                                    "description": "Carrier Short Name"
+                                                },
+                                                "carrierFullName": {
+                                                    "type": "string",
+                                                    "description": "Carrier Full Name"
+                                                },
+                                                "carrierServiceType": {
+                                                    "type": "string",
+                                                    "description": "Carrier Service Type. It wont be present for Purolator."
+                                                },
+                                                "trackingUrl": {
+                                                    "type": "string",
+                                                    "description": "Tracking URL"
+                                                },
+                                                "shippingDocuments": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "documentFormat": {
+                                                            "type": "string"
+                                                        },
+                                                        "documentType": {
+                                                            "type": "string"
+                                                        },
+                                                        "base64EncodedDocument": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "description": "Shipping Documents"
+                                                }
+                                            },
+                                            "description": "data"
+                                        },
+                                        "errors": {
+                                            "type": "array",
+                                            "description": "errors",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "info": {
+                                                        "type": "string",
+                                                        "description": "error info"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "error code"
+                                                    },
+                                                    "field": {
+                                                        "type": "string",
+                                                        "description": "field"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "error description"
+                                                    },
+                                                    "severity": {
+                                                        "type": "string",
+                                                        "description": "error severity",
+                                                        "enum": [
+                                                            "EMERG",
+                                                            "ALERT",
+                                                            "CRITICAL",
+                                                            "ERROR",
+                                                            "WARN"
+                                                        ]
+                                                    },
+                                                    "category": {
+                                                        "type": "string",
+                                                        "description": "error category",
+                                                        "enum": [
+                                                            "APPLICATION",
+                                                            "SERVICE",
+                                                            "REQUEST",
+                                                            "DATA"
+                                                        ]
+                                                    },
+                                                    "httpStatus": {
+                                                        "type": "integer",
+                                                        "description": "error http status",
+                                                        "format": "int32"
+                                                    }
+                                                },
+                                                "description": "errors"
+                                            }
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": {
+                                        "id": "877E846379A00000C8C48F11",
+                                        "purchaseOrderId": "P100569013",
+                                        "trackingNo": "019154094082",
+                                        "boxItems": [
+                                            {
+                                                "sku": "SKU_28072021",
+                                                "quantity": 1
+                                            }
+                                        ],
+                                        "carrierName": "FedEx",
+                                        "carrierFullName": "FedEx",
+                                        "carrierServiceType": "FedEx International Priority",
+                                        "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?action=track&tracknumbers=019154094082&locale=en_US&cntry_code=us",
+                                        "shippingDocuments": [
+                                            {
+                                                "documentFormat": "PDF",
+                                                "documentType": "LABEL",
+                                                "base64EncodedDocument": "JVBERi0xLjQKJdPr6eEKMSAwIG9iago8PC9BdXRob3IgKE5lb2R5bmFtaWMgXCh3d3cubmVvZHluYW1pYy5jb21cKSkKL0NyZWF0b3IgKFpQTFByaW50ZXIgRW11bGF0b3IgU0RLIDQuMC4yMi40MjApCi9Qcm9kdWNlciAoWlBMUHJpbnRlciBFbXVsYXRvciBTREsgNC4wLjIyLjQyMCkKL1Byb2R1Y3Rpb25MaWJyYXJ5IChTa2lhL1BERiBtNjApCi9DcmVhdGlvbkRhdGUgKEQ6MjAyMzAzMTQxNDIwMjcrMDAnMDAnKT4"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/shipping\/labels\/shipment\/international\/consolidation": {
+            "get": {
+                "tags": [
+                    "Consolidation"
+                ],
+                "summary": "Get consolidation details",
+                "description": "Use this API to get consolidation details for the shipment. Provide the domestic Tracking Number and Carrier Id. The synchronous API call returns a list of packages consolidated under that tracking number in response. In case of any failure, the client has to retry.",
+                "operationId": "getConsolidation",
+                "parameters": [
+                    {
+                        "name": "domesticTrackingNo",
+                        "in": "query",
+                        "description": "Domestic TrackingNo.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "domesticCarrierId",
+                        "in": "query",
+                        "description": "Domestic CarrierId.",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "consolidationId": {
+                                                    "type": "integer",
+                                                    "description": "ConsolidationId.",
+                                                    "format": "int64"
+                                                },
+                                                "shipmentIds": {
+                                                    "type": "array",
+                                                    "description": "ShipmentIds.",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "ShipmentIds."
+                                                    }
+                                                },
+                                                "domesticTrackingNo": {
+                                                    "type": "string",
+                                                    "description": "Domestic Tracking No."
+                                                },
+                                                "domesticCarrierId": {
+                                                    "type": "integer",
+                                                    "description": "Domestic CarrierId.",
+                                                    "format": "int32"
+                                                }
+                                            },
+                                            "description": "data"
+                                        },
+                                        "errors": {
+                                            "type": "array",
+                                            "description": "errors",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "info": {
+                                                        "type": "string",
+                                                        "description": "error info"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "error code"
+                                                    },
+                                                    "field": {
+                                                        "type": "string",
+                                                        "description": "field"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "error description"
+                                                    },
+                                                    "severity": {
+                                                        "type": "string",
+                                                        "description": "error severity",
+                                                        "enum": [
+                                                            "EMERG",
+                                                            "ALERT",
+                                                            "CRITICAL",
+                                                            "ERROR",
+                                                            "WARN"
+                                                        ]
+                                                    },
+                                                    "category": {
+                                                        "type": "string",
+                                                        "description": "error category",
+                                                        "enum": [
+                                                            "APPLICATION",
+                                                            "SERVICE",
+                                                            "REQUEST",
+                                                            "DATA"
+                                                        ]
+                                                    },
+                                                    "httpStatus": {
+                                                        "type": "integer",
+                                                        "description": "error http status",
+                                                        "format": "int32"
+                                                    }
+                                                },
+                                                "description": "errors"
+                                            }
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": {
+                                        "consolidationId": 1873,
+                                        "shipmentIds": [
+                                            "875F143972000000CA8020EA"
+                                        ],
+                                        "domesticTrackingNo": "1234",
+                                        "domesticCarrierId": 1003
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Consolidation"
+                ],
+                "summary": "Create consolidation",
+                "description": "Use this API to consolidate shipments. Provide the list of packages that form part of the consolidation and its corresponding domestic tracking number and carrier. The synchronous API call returns the status of the operation and a correlation ID in response. Use the correlation ID to connect via email to the IMD team in case of issues pertaining to the consolidation call. In case of any failure, the client has to retry.",
+                "operationId": "createConsolidation",
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "requestBody": {
+                    "description": "Consolidation Request",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "required": [
+                                    "domesticCarrierId",
+                                    "domesticTrackingNo",
+                                    "shipmentIds"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "domesticCarrierId": {
+                                        "type": "integer",
+                                        "description": "Domestic CarrierId.",
+                                        "format": "int32"
+                                    },
+                                    "domesticTrackingNo": {
+                                        "type": "string",
+                                        "description": "Domestic Tracking No."
+                                    },
+                                    "shipmentIds": {
+                                        "type": "array",
+                                        "description": "List of Shipment Ids (id from Get labels by PO call)",
+                                        "items": {
+                                            "type": "string",
+                                            "description": "List of Shipment Ids (id from Get labels by PO call)"
+                                        }
+                                    }
+                                }
+                            },
+                            "example": {
+                                "domesticCarrierId": 1000,
+                                "domesticTrackingNo": "20128590000367",
+                                "shipmentIds": [
+                                    "875F143972000000CA8020EA"
+                                ]
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "object",
+                                            "properties": {
+                                                "consolidationId": {
+                                                    "type": "integer",
+                                                    "description": "ConsolidationId.",
+                                                    "format": "int64"
+                                                },
+                                                "shipmentIds": {
+                                                    "type": "array",
+                                                    "description": "ShipmentIds.",
+                                                    "items": {
+                                                        "type": "string",
+                                                        "description": "ShipmentIds."
+                                                    }
+                                                },
+                                                "domesticTrackingNo": {
+                                                    "type": "string",
+                                                    "description": "Domestic Tracking No."
+                                                },
+                                                "domesticCarrierId": {
+                                                    "type": "integer",
+                                                    "description": "Domestic CarrierId.",
+                                                    "format": "int32"
+                                                }
+                                            },
+                                            "description": "data"
+                                        },
+                                        "errors": {
+                                            "type": "array",
+                                            "description": "errors",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "info": {
+                                                        "type": "string",
+                                                        "description": "error info"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "error code"
+                                                    },
+                                                    "field": {
+                                                        "type": "string",
+                                                        "description": "field"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "error description"
+                                                    },
+                                                    "severity": {
+                                                        "type": "string",
+                                                        "description": "error severity",
+                                                        "enum": [
+                                                            "EMERG",
+                                                            "ALERT",
+                                                            "CRITICAL",
+                                                            "ERROR",
+                                                            "WARN"
+                                                        ]
+                                                    },
+                                                    "category": {
+                                                        "type": "string",
+                                                        "description": "error category",
+                                                        "enum": [
+                                                            "APPLICATION",
+                                                            "SERVICE",
+                                                            "REQUEST",
+                                                            "DATA"
+                                                        ]
+                                                    },
+                                                    "httpStatus": {
+                                                        "type": "integer",
+                                                        "description": "error http status",
+                                                        "format": "int32"
+                                                    }
+                                                },
+                                                "description": "errors"
+                                            }
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": {
+                                        "consolidationId": 1873,
+                                        "shipmentIds": [
+                                            "875F143972000000CA8020EA"
+                                        ],
+                                        "domesticTrackingNo": "1234",
+                                        "domesticCarrierId": 1003
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/shipping\/labels\/purchase-orders\/{purchaseOrderId}": {
+            "get": {
+                "tags": [
+                    "International Shipping"
+                ],
+                "summary": "Labels by purchase order id",
+                "description": "Retrieves tracking details for a Purchase Order Id",
+                "operationId": "getLabel",
+                "parameters": [
+                    {
+                        "name": "purchaseOrderId",
+                        "in": "path",
+                        "description": "purchaseOrderId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "description": "data",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "purchaseOrderId": {
+                                                        "type": "string",
+                                                        "description": "Purchase Order Id "
+                                                    },
+                                                    "id": {
+                                                        "type": "string",
+                                                        "description": "shipmentId "
+                                                    },
+                                                    "trackingNo": {
+                                                        "type": "string",
+                                                        "description": "Tracking Number"
+                                                    },
+                                                    "boxItems": {
+                                                        "type": "array",
+                                                        "description": "Box Items",
+                                                        "items": {
+                                                            "required": [
+                                                                "quantity",
+                                                                "sku"
+                                                            ],
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "sku": {
+                                                                    "type": "string",
+                                                                    "description": "sku of an item"
+                                                                },
+                                                                "quantity": {
+                                                                    "type": "integer",
+                                                                    "description": "Quantity of Item",
+                                                                    "format": "int32"
+                                                                }
+                                                            },
+                                                            "description": "Box Items"
+                                                        }
+                                                    },
+                                                    "carrierName": {
+                                                        "type": "string",
+                                                        "description": "Carrier Short Name"
+                                                    },
+                                                    "carrierFullName": {
+                                                        "type": "string",
+                                                        "description": "Carrier Full Name"
+                                                    },
+                                                    "carrierServiceType": {
+                                                        "type": "string",
+                                                        "description": "Carrier Service Type. It wont be present for Purolator."
+                                                    },
+                                                    "trackingUrl": {
+                                                        "type": "string",
+                                                        "description": "Tracking URL"
+                                                    },
+                                                    "shippingDocuments": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "documentFormat": {
+                                                                "type": "string"
+                                                            },
+                                                            "documentType": {
+                                                                "type": "string"
+                                                            },
+                                                            "base64EncodedDocument": {
+                                                                "type": "string"
+                                                            }
+                                                        },
+                                                        "description": "Shipping Documents"
+                                                    }
+                                                },
+                                                "description": "data"
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "array",
+                                            "description": "errors",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "info": {
+                                                        "type": "string",
+                                                        "description": "error info"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "error code"
+                                                    },
+                                                    "field": {
+                                                        "type": "string",
+                                                        "description": "field"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "error description"
+                                                    },
+                                                    "severity": {
+                                                        "type": "string",
+                                                        "description": "error severity",
+                                                        "enum": [
+                                                            "EMERG",
+                                                            "ALERT",
+                                                            "CRITICAL",
+                                                            "ERROR",
+                                                            "WARN"
+                                                        ]
+                                                    },
+                                                    "category": {
+                                                        "type": "string",
+                                                        "description": "error category",
+                                                        "enum": [
+                                                            "APPLICATION",
+                                                            "SERVICE",
+                                                            "REQUEST",
+                                                            "DATA"
+                                                        ]
+                                                    },
+                                                    "httpStatus": {
+                                                        "type": "integer",
+                                                        "description": "error http status",
+                                                        "format": "int32"
+                                                    }
+                                                },
+                                                "description": "errors"
+                                            }
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": "877E846379A00000C8C48F11",
+                                            "purchaseOrderId": "108725127025138",
+                                            "trackingNo": "019154094288",
+                                            "boxItems": [
+                                                {
+                                                    "sku": "PRECISE3PGLASS6",
+                                                    "quantity": 1
+                                                }
+                                            ],
+                                            "carrierName": "FedEx",
+                                            "carrierFullName": "FedEx",
+                                            "carrierServiceType": "FedEx 2Day",
+                                            "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?action=track&tracknumbers=019154094082&locale=en_US&cntry_code=us\""
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/shipping\/labels\/carriers": {
+            "get": {
+                "tags": [
+                    "International Shipping"
+                ],
+                "summary": "Supported carriers",
+                "description": "This API retrieves all carriers supported by Ship With Walmart.",
+                "operationId": "getCarriers",
+                "parameters": [
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "carriers": {
+                                            "type": "array",
+                                            "description": "carriers",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "carrierId": {
+                                                        "type": "string",
+                                                        "description": "The carried Id"
+                                                    },
+                                                    "shortName": {
+                                                        "type": "string",
+                                                        "description": "The carried short name"
+                                                    },
+                                                    "carrierName": {
+                                                        "type": "string",
+                                                        "description": "The carried name"
+                                                    }
+                                                },
+                                                "description": "carriers"
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "array",
+                                            "description": "errors",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "info": {
+                                                        "type": "string",
+                                                        "description": "error info"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "error code"
+                                                    },
+                                                    "field": {
+                                                        "type": "string",
+                                                        "description": "field"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "error description"
+                                                    },
+                                                    "severity": {
+                                                        "type": "string",
+                                                        "description": "error severity",
+                                                        "enum": [
+                                                            "EMERG",
+                                                            "ALERT",
+                                                            "CRITICAL",
+                                                            "ERROR",
+                                                            "WARN"
+                                                        ]
+                                                    },
+                                                    "category": {
+                                                        "type": "string",
+                                                        "description": "error category",
+                                                        "enum": [
+                                                            "APPLICATION",
+                                                            "SERVICE",
+                                                            "REQUEST",
+                                                            "DATA"
+                                                        ]
+                                                    },
+                                                    "httpStatus": {
+                                                        "type": "integer",
+                                                        "description": "error http status",
+                                                        "format": "int32"
+                                                    }
+                                                },
+                                                "description": "errors"
+                                            }
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "carriers": [
+                                        {
+                                            "carrierId": "1000",
+                                            "shortName": "FedEx",
+                                            "carrierName": "FedEx"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/shipping\/labels\/carriers\/{carrierShortName}\/trackings\/{trackingNo}": {
+            "get": {
+                "tags": [
+                    "International Shipping"
+                ],
+                "summary": "Download label",
+                "description": "Download label by carrier and trackingNoThe response to a successful call contains the tracking number with the pdf or image type based on the media type passed in Accept header.\nFor eg. 'Accept'='application\/json,application\/pdf' will result in pdf media type and\n'Accept'='application\/json,image\/png' as image media type.",
+                "operationId": "getLabelByTrackingAndCarrier",
+                "parameters": [
+                    {
+                        "name": "carrierShortName",
+                        "in": "path",
+                        "description": "carrierShortName from getCarriers API",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "trackingNo",
+                        "in": "path",
+                        "description": "trackingNo",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/pdf": {
+                                "schema": {
+                                    "type": "string",
+                                    "format": "binary"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "International Shipping"
+                ],
+                "summary": "Discard label",
+                "description": "Discard label by carrier and trackingNo",
+                "operationId": "discardLabel",
+                "parameters": [
+                    {
+                        "name": "carrierShortName",
+                        "in": "path",
+                        "description": "carrierShortName from getCarriers API",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "trackingNo",
+                        "in": "path",
+                        "description": "trackingNo",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "boolean",
+                                            "description": "data"
+                                        },
+                                        "errors": {
+                                            "type": "array",
+                                            "description": "errors",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "info": {
+                                                        "type": "string",
+                                                        "description": "error info"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "error code"
+                                                    },
+                                                    "field": {
+                                                        "type": "string",
+                                                        "description": "field"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "error description"
+                                                    },
+                                                    "severity": {
+                                                        "type": "string",
+                                                        "description": "error severity",
+                                                        "enum": [
+                                                            "EMERG",
+                                                            "ALERT",
+                                                            "CRITICAL",
+                                                            "ERROR",
+                                                            "WARN"
+                                                        ]
+                                                    },
+                                                    "category": {
+                                                        "type": "string",
+                                                        "description": "error category",
+                                                        "enum": [
+                                                            "APPLICATION",
+                                                            "SERVICE",
+                                                            "REQUEST",
+                                                            "DATA"
+                                                        ]
+                                                    },
+                                                    "httpStatus": {
+                                                        "type": "integer",
+                                                        "description": "error http status",
+                                                        "format": "int32"
+                                                    }
+                                                },
+                                                "description": "errors"
+                                            }
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": "true"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/shipping\/labels\/carriers\/{carrierShortName}\/package-types": {
+            "get": {
+                "tags": [
+                    "International Shipping"
+                ],
+                "summary": "Supported carrier package types",
+                "description": "This API retrieves all supported package types for the selected carrier.",
+                "operationId": "getCarrierPackageTypes",
+                "parameters": [
+                    {
+                        "name": "carrierShortName",
+                        "in": "path",
+                        "description": "carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "Accept",
+                        "in": "header",
+                        "description": "Accept Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "in": "header",
+                        "description": "Content-Type Header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "application\/json"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "description": "data",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string",
+                                                        "description": "The carrier package Id"
+                                                    },
+                                                    "packageTypeShortName": {
+                                                        "type": "string",
+                                                        "description": "The carrier package short name"
+                                                    },
+                                                    "packageTypeDisplayName": {
+                                                        "type": "string",
+                                                        "description": "The carrier package display name"
+                                                    },
+                                                    "length": {
+                                                        "type": "integer",
+                                                        "description": "The package length",
+                                                        "format": "int32"
+                                                    },
+                                                    "width": {
+                                                        "type": "integer",
+                                                        "description": "The package width",
+                                                        "format": "int32"
+                                                    },
+                                                    "height": {
+                                                        "type": "integer",
+                                                        "description": "The package height",
+                                                        "format": "int32"
+                                                    },
+                                                    "dimensionUnit": {
+                                                        "type": "string",
+                                                        "description": "The package dimension unit"
+                                                    }
+                                                },
+                                                "description": "data"
+                                            }
+                                        },
+                                        "errors": {
+                                            "type": "array",
+                                            "description": "errors",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "info": {
+                                                        "type": "string",
+                                                        "description": "error info"
+                                                    },
+                                                    "code": {
+                                                        "type": "string",
+                                                        "description": "error code"
+                                                    },
+                                                    "field": {
+                                                        "type": "string",
+                                                        "description": "field"
+                                                    },
+                                                    "description": {
+                                                        "type": "string",
+                                                        "description": "error description"
+                                                    },
+                                                    "severity": {
+                                                        "type": "string",
+                                                        "description": "error severity",
+                                                        "enum": [
+                                                            "EMERG",
+                                                            "ALERT",
+                                                            "CRITICAL",
+                                                            "ERROR",
+                                                            "WARN"
+                                                        ]
+                                                    },
+                                                    "category": {
+                                                        "type": "string",
+                                                        "description": "error category",
+                                                        "enum": [
+                                                            "APPLICATION",
+                                                            "SERVICE",
+                                                            "REQUEST",
+                                                            "DATA"
+                                                        ]
+                                                    },
+                                                    "httpStatus": {
+                                                        "type": "integer",
+                                                        "description": "error http status",
+                                                        "format": "int32"
+                                                    }
+                                                },
+                                                "description": "errors"
+                                            }
+                                        }
+                                    }
+                                },
+                                "example": {
+                                    "data": [
+                                        {
+                                            "id": "DBF09762-C2B1-4D92-B159-41FC4C7BF3FD",
+                                            "packageTypeShortName": "CUSTOM_PACKAGE",
+                                            "packageTypeDisplayName": "Custom Package",
+                                            "length": 0,
+                                            "width": 0,
+                                            "height": 0,
+                                            "dimensionUnit": "IN"
+                                        },
+                                        {
+                                            "id": "A26CFAA3-D3F3-4647-9180-F344A7736996",
+                                            "packageTypeShortName": "FEDEX_ENVELOPE",
+                                            "packageTypeDisplayName": "FedEx Envelope",
+                                            "length": 12.5,
+                                            "width": 9.5,
+                                            "height": 0,
+                                            "dimensionUnit": "IN"
+                                        },
+                                        {
+                                            "id": "98120D70-7BCB-44BB-9912-F4655CC05A7D",
+                                            "packageTypeShortName": "FEDEX_PAK",
+                                            "packageTypeDisplayName": "FedEx Pak",
+                                            "length": 12.75,
+                                            "width": 10.25,
+                                            "height": 0,
+                                            "dimensionUnit": "IN"
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Address": {
+                "required": [
+                    "addressLine1",
+                    "city",
+                    "contactName",
+                    "country",
+                    "phone",
+                    "postalCode",
+                    "state"
+                ],
+                "type": "object",
+                "properties": {
+                    "contactName": {
+                        "type": "string",
+                        "description": "Contact name"
+                    },
+                    "companyName": {
+                        "type": "string",
+                        "description": "Company name"
+                    },
+                    "addressLine1": {
+                        "type": "string",
+                        "description": "Address Line 1"
+                    },
+                    "addressLine2": {
+                        "type": "string",
+                        "description": "Address Line 2"
+                    },
+                    "city": {
+                        "type": "string",
+                        "description": "city"
+                    },
+                    "state": {
+                        "type": "string",
+                        "description": "state"
+                    },
+                    "postalCode": {
+                        "type": "string",
+                        "description": "postal code"
+                    },
+                    "country": {
+                        "type": "string",
+                        "description": "country"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "phone"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "email"
+                    }
+                },
+                "description": "From Address"
+            },
+            "BoxDimensions": {
+                "required": [
+                    "boxWeight",
+                    "boxWeightUnit"
+                ],
+                "type": "object",
+                "properties": {
+                    "boxDimensionUnit": {
+                        "type": "string",
+                        "description": "Box Dimension Unit [CM, IN]. Mandatory for CUSTOM_PACKAGE type, otherwise not required",
+                        "enum": [
+                            "CM",
+                            "IN"
+                        ]
+                    },
+                    "boxWeightUnit": {
+                        "type": "string",
+                        "description": "Box Weight Unit [LB, KG]",
+                        "enum": [
+                            "LB",
+                            "KG"
+                        ]
+                    },
+                    "boxWeight": {
+                        "type": "number",
+                        "description": "Box Weight"
+                    },
+                    "boxLength": {
+                        "type": "number",
+                        "description": "Box Length. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                    },
+                    "boxWidth": {
+                        "type": "number",
+                        "description": "Box Width. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                    },
+                    "boxHeight": {
+                        "type": "number",
+                        "description": "Box Height. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                    }
+                },
+                "description": "Box Dimensions"
+            },
+            "CABoxItem": {
+                "required": [
+                    "quantity",
+                    "sku"
+                ],
+                "type": "object",
+                "properties": {
+                    "sku": {
+                        "type": "string",
+                        "description": "sku of an item"
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "description": "Quantity of Item",
+                        "format": "int32"
+                    }
+                },
+                "description": "Box Items"
+            },
+            "LabelGenerationRequestCa": {
+                "required": [
+                    "boxDimensions",
+                    "boxItems",
+                    "carrierName",
+                    "fromAddress",
+                    "packageType",
+                    "purchaseOrderId"
+                ],
+                "type": "object",
+                "properties": {
+                    "packageType": {
+                        "type": "string",
+                        "description": "Package Type. Supported Package Types are - 'CUSTOM_PACKAGE', 'FEDEX_ENVELOPE', 'FEDEX_PAK'"
+                    },
+                    "boxDimensions": {
+                        "required": [
+                            "boxWeight",
+                            "boxWeightUnit"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "boxDimensionUnit": {
+                                "type": "string",
+                                "description": "Box Dimension Unit [CM, IN]. Mandatory for CUSTOM_PACKAGE type, otherwise not required",
+                                "enum": [
+                                    "CM",
+                                    "IN"
+                                ]
+                            },
+                            "boxWeightUnit": {
+                                "type": "string",
+                                "description": "Box Weight Unit [LB, KG]",
+                                "enum": [
+                                    "LB",
+                                    "KG"
+                                ]
+                            },
+                            "boxWeight": {
+                                "type": "number",
+                                "description": "Box Weight"
+                            },
+                            "boxLength": {
+                                "type": "number",
+                                "description": "Box Length. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                            },
+                            "boxWidth": {
+                                "type": "number",
+                                "description": "Box Width. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                            },
+                            "boxHeight": {
+                                "type": "number",
+                                "description": "Box Height. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
+                            }
+                        },
+                        "description": "Box Dimensions"
+                    },
+                    "boxItems": {
+                        "type": "array",
+                        "description": "Box Items",
+                        "items": {
+                            "required": [
+                                "quantity",
+                                "sku"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "sku": {
+                                    "type": "string",
+                                    "description": "sku of an item"
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "Quantity of Item",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "Box Items"
+                        }
+                    },
+                    "fromAddress": {
+                        "required": [
+                            "addressLine1",
+                            "city",
+                            "contactName",
+                            "country",
+                            "phone",
+                            "postalCode",
+                            "state"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "contactName": {
+                                "type": "string",
+                                "description": "Contact name"
+                            },
+                            "companyName": {
+                                "type": "string",
+                                "description": "Company name"
+                            },
+                            "addressLine1": {
+                                "type": "string",
+                                "description": "Address Line 1"
+                            },
+                            "addressLine2": {
+                                "type": "string",
+                                "description": "Address Line 2"
+                            },
+                            "city": {
+                                "type": "string",
+                                "description": "city"
+                            },
+                            "state": {
+                                "type": "string",
+                                "description": "state"
+                            },
+                            "postalCode": {
+                                "type": "string",
+                                "description": "postal code"
+                            },
+                            "country": {
+                                "type": "string",
+                                "description": "country"
+                            },
+                            "phone": {
+                                "type": "string",
+                                "description": "phone"
+                            },
+                            "email": {
+                                "type": "string",
+                                "description": "email"
+                            }
+                        },
+                        "description": "From Address"
+                    },
+                    "purchaseOrderId": {
+                        "type": "string",
+                        "description": "Purchase Order Id"
+                    },
+                    "carrierName": {
+                        "type": "string",
+                        "description": "Carrier Name. For now, supported carriers are - 'FedEx' and 'PUROLATOR'"
+                    },
+                    "carrierServiceType": {
+                        "type": "string",
+                        "description": "Carrier Service Type. For now, supported values for FedEx are - 'FEDEX_INTERNATIONAL_PRIORITY' for fedExPak\/fedExEnvelope package types, 'FEDEX_INTERNATIONAL_ECONOMY' and 'FEDEX_INTERNATIONAL_GROUND'. Not required for PUROLATOR."
+                    },
+                    "labelSize": {
+                        "type": "string",
+                        "description": "Label Size e.g. A6, LETTER_SIZE or A4 for PDF response"
+                    }
+                }
+            },
+            "CommonResponseLabelGenerationResponseCa": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "purchaseOrderId": {
+                                "type": "string",
+                                "description": "Purchase Order Id "
+                            },
+                            "id": {
+                                "type": "string",
+                                "description": "shipmentId "
+                            },
+                            "trackingNo": {
+                                "type": "string",
+                                "description": "Tracking Number"
+                            },
+                            "boxItems": {
+                                "type": "array",
+                                "description": "Box Items",
+                                "items": {
+                                    "required": [
+                                        "quantity",
+                                        "sku"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "sku": {
+                                            "type": "string",
+                                            "description": "sku of an item"
+                                        },
+                                        "quantity": {
+                                            "type": "integer",
+                                            "description": "Quantity of Item",
+                                            "format": "int32"
+                                        }
+                                    },
+                                    "description": "Box Items"
+                                }
+                            },
+                            "carrierName": {
+                                "type": "string",
+                                "description": "Carrier Short Name"
+                            },
+                            "carrierFullName": {
+                                "type": "string",
+                                "description": "Carrier Full Name"
+                            },
+                            "carrierServiceType": {
+                                "type": "string",
+                                "description": "Carrier Service Type. It wont be present for Purolator."
+                            },
+                            "trackingUrl": {
+                                "type": "string",
+                                "description": "Tracking URL"
+                            },
+                            "shippingDocuments": {
+                                "type": "object",
+                                "properties": {
+                                    "documentFormat": {
+                                        "type": "string"
+                                    },
+                                    "documentType": {
+                                        "type": "string"
+                                    },
+                                    "base64EncodedDocument": {
+                                        "type": "string"
+                                    }
+                                },
+                                "description": "Shipping Documents"
+                            }
+                        },
+                        "description": "data"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "errors",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "info": {
+                                    "type": "string",
+                                    "description": "error info"
+                                },
+                                "code": {
+                                    "type": "string",
+                                    "description": "error code"
+                                },
+                                "field": {
+                                    "type": "string",
+                                    "description": "field"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "error description"
+                                },
+                                "severity": {
+                                    "type": "string",
+                                    "description": "error severity",
+                                    "enum": [
+                                        "EMERG",
+                                        "ALERT",
+                                        "CRITICAL",
+                                        "ERROR",
+                                        "WARN"
+                                    ]
+                                },
+                                "category": {
+                                    "type": "string",
+                                    "description": "error category",
+                                    "enum": [
+                                        "APPLICATION",
+                                        "SERVICE",
+                                        "REQUEST",
+                                        "DATA"
+                                    ]
+                                },
+                                "httpStatus": {
+                                    "type": "integer",
+                                    "description": "error http status",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "errors"
+                        }
+                    }
+                }
+            },
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "info": {
+                        "type": "string",
+                        "description": "error info"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "error code"
+                    },
+                    "field": {
+                        "type": "string",
+                        "description": "field"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "error description"
+                    },
+                    "severity": {
+                        "type": "string",
+                        "description": "error severity",
+                        "enum": [
+                            "EMERG",
+                            "ALERT",
+                            "CRITICAL",
+                            "ERROR",
+                            "WARN"
+                        ]
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "error category",
+                        "enum": [
+                            "APPLICATION",
+                            "SERVICE",
+                            "REQUEST",
+                            "DATA"
+                        ]
+                    },
+                    "httpStatus": {
+                        "type": "integer",
+                        "description": "error http status",
+                        "format": "int32"
+                    }
+                },
+                "description": "errors"
+            },
+            "LabelGenerationResponseCa": {
+                "type": "object",
+                "properties": {
+                    "purchaseOrderId": {
+                        "type": "string",
+                        "description": "Purchase Order Id "
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "shipmentId "
+                    },
+                    "trackingNo": {
+                        "type": "string",
+                        "description": "Tracking Number"
+                    },
+                    "boxItems": {
+                        "type": "array",
+                        "description": "Box Items",
+                        "items": {
+                            "required": [
+                                "quantity",
+                                "sku"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "sku": {
+                                    "type": "string",
+                                    "description": "sku of an item"
+                                },
+                                "quantity": {
+                                    "type": "integer",
+                                    "description": "Quantity of Item",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "Box Items"
+                        }
+                    },
+                    "carrierName": {
+                        "type": "string",
+                        "description": "Carrier Short Name"
+                    },
+                    "carrierFullName": {
+                        "type": "string",
+                        "description": "Carrier Full Name"
+                    },
+                    "carrierServiceType": {
+                        "type": "string",
+                        "description": "Carrier Service Type. It wont be present for Purolator."
+                    },
+                    "trackingUrl": {
+                        "type": "string",
+                        "description": "Tracking URL"
+                    },
+                    "shippingDocuments": {
+                        "type": "object",
+                        "properties": {
+                            "documentFormat": {
+                                "type": "string"
+                            },
+                            "documentType": {
+                                "type": "string"
+                            },
+                            "base64EncodedDocument": {
+                                "type": "string"
+                            }
+                        },
+                        "description": "Shipping Documents"
+                    }
+                },
+                "description": "data"
+            },
+            "ShippingDocument": {
+                "type": "object",
+                "properties": {
+                    "documentFormat": {
+                        "type": "string"
+                    },
+                    "documentType": {
+                        "type": "string"
+                    },
+                    "base64EncodedDocument": {
+                        "type": "string"
+                    }
+                },
+                "description": "Shipping Documents"
+            },
+            "ConsolidationRequest": {
+                "required": [
+                    "domesticCarrierId",
+                    "domesticTrackingNo",
+                    "shipmentIds"
+                ],
+                "type": "object",
+                "properties": {
+                    "domesticCarrierId": {
+                        "type": "integer",
+                        "description": "Domestic CarrierId.",
+                        "format": "int32"
+                    },
+                    "domesticTrackingNo": {
+                        "type": "string",
+                        "description": "Domestic Tracking No."
+                    },
+                    "shipmentIds": {
+                        "type": "array",
+                        "description": "List of Shipment Ids (id from Get labels by PO call)",
+                        "items": {
+                            "type": "string",
+                            "description": "List of Shipment Ids (id from Get labels by PO call)"
+                        }
+                    }
+                }
+            },
+            "CommonResponseConsolidationResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "consolidationId": {
+                                "type": "integer",
+                                "description": "ConsolidationId.",
+                                "format": "int64"
+                            },
+                            "shipmentIds": {
+                                "type": "array",
+                                "description": "ShipmentIds.",
+                                "items": {
+                                    "type": "string",
+                                    "description": "ShipmentIds."
+                                }
+                            },
+                            "domesticTrackingNo": {
+                                "type": "string",
+                                "description": "Domestic Tracking No."
+                            },
+                            "domesticCarrierId": {
+                                "type": "integer",
+                                "description": "Domestic CarrierId.",
+                                "format": "int32"
+                            }
+                        },
+                        "description": "data"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "errors",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "info": {
+                                    "type": "string",
+                                    "description": "error info"
+                                },
+                                "code": {
+                                    "type": "string",
+                                    "description": "error code"
+                                },
+                                "field": {
+                                    "type": "string",
+                                    "description": "field"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "error description"
+                                },
+                                "severity": {
+                                    "type": "string",
+                                    "description": "error severity",
+                                    "enum": [
+                                        "EMERG",
+                                        "ALERT",
+                                        "CRITICAL",
+                                        "ERROR",
+                                        "WARN"
+                                    ]
+                                },
+                                "category": {
+                                    "type": "string",
+                                    "description": "error category",
+                                    "enum": [
+                                        "APPLICATION",
+                                        "SERVICE",
+                                        "REQUEST",
+                                        "DATA"
+                                    ]
+                                },
+                                "httpStatus": {
+                                    "type": "integer",
+                                    "description": "error http status",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "errors"
+                        }
+                    }
+                }
+            },
+            "ConsolidationResponse": {
+                "type": "object",
+                "properties": {
+                    "consolidationId": {
+                        "type": "integer",
+                        "description": "ConsolidationId.",
+                        "format": "int64"
+                    },
+                    "shipmentIds": {
+                        "type": "array",
+                        "description": "ShipmentIds.",
+                        "items": {
+                            "type": "string",
+                            "description": "ShipmentIds."
+                        }
+                    },
+                    "domesticTrackingNo": {
+                        "type": "string",
+                        "description": "Domestic Tracking No."
+                    },
+                    "domesticCarrierId": {
+                        "type": "integer",
+                        "description": "Domestic CarrierId.",
+                        "format": "int32"
+                    }
+                },
+                "description": "data"
+            },
+            "CommonResponseListLabelGenerationResponseCa": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "description": "data",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "purchaseOrderId": {
+                                    "type": "string",
+                                    "description": "Purchase Order Id "
+                                },
+                                "id": {
+                                    "type": "string",
+                                    "description": "shipmentId "
+                                },
+                                "trackingNo": {
+                                    "type": "string",
+                                    "description": "Tracking Number"
+                                },
+                                "boxItems": {
+                                    "type": "array",
+                                    "description": "Box Items",
+                                    "items": {
+                                        "required": [
+                                            "quantity",
+                                            "sku"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "sku": {
+                                                "type": "string",
+                                                "description": "sku of an item"
+                                            },
+                                            "quantity": {
+                                                "type": "integer",
+                                                "description": "Quantity of Item",
+                                                "format": "int32"
+                                            }
+                                        },
+                                        "description": "Box Items"
+                                    }
+                                },
+                                "carrierName": {
+                                    "type": "string",
+                                    "description": "Carrier Short Name"
+                                },
+                                "carrierFullName": {
+                                    "type": "string",
+                                    "description": "Carrier Full Name"
+                                },
+                                "carrierServiceType": {
+                                    "type": "string",
+                                    "description": "Carrier Service Type. It wont be present for Purolator."
+                                },
+                                "trackingUrl": {
+                                    "type": "string",
+                                    "description": "Tracking URL"
+                                },
+                                "shippingDocuments": {
+                                    "type": "object",
+                                    "properties": {
+                                        "documentFormat": {
+                                            "type": "string"
+                                        },
+                                        "documentType": {
+                                            "type": "string"
+                                        },
+                                        "base64EncodedDocument": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "description": "Shipping Documents"
+                                }
+                            },
+                            "description": "data"
+                        }
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "errors",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "info": {
+                                    "type": "string",
+                                    "description": "error info"
+                                },
+                                "code": {
+                                    "type": "string",
+                                    "description": "error code"
+                                },
+                                "field": {
+                                    "type": "string",
+                                    "description": "field"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "error description"
+                                },
+                                "severity": {
+                                    "type": "string",
+                                    "description": "error severity",
+                                    "enum": [
+                                        "EMERG",
+                                        "ALERT",
+                                        "CRITICAL",
+                                        "ERROR",
+                                        "WARN"
+                                    ]
+                                },
+                                "category": {
+                                    "type": "string",
+                                    "description": "error category",
+                                    "enum": [
+                                        "APPLICATION",
+                                        "SERVICE",
+                                        "REQUEST",
+                                        "DATA"
+                                    ]
+                                },
+                                "httpStatus": {
+                                    "type": "integer",
+                                    "description": "error http status",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "errors"
+                        }
+                    }
+                }
+            },
+            "CarrierCommonResponseListCarrierResponse": {
+                "type": "object",
+                "properties": {
+                    "carriers": {
+                        "type": "array",
+                        "description": "carriers",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "carrierId": {
+                                    "type": "string",
+                                    "description": "The carried Id"
+                                },
+                                "shortName": {
+                                    "type": "string",
+                                    "description": "The carried short name"
+                                },
+                                "carrierName": {
+                                    "type": "string",
+                                    "description": "The carried name"
+                                }
+                            },
+                            "description": "carriers"
+                        }
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "errors",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "info": {
+                                    "type": "string",
+                                    "description": "error info"
+                                },
+                                "code": {
+                                    "type": "string",
+                                    "description": "error code"
+                                },
+                                "field": {
+                                    "type": "string",
+                                    "description": "field"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "error description"
+                                },
+                                "severity": {
+                                    "type": "string",
+                                    "description": "error severity",
+                                    "enum": [
+                                        "EMERG",
+                                        "ALERT",
+                                        "CRITICAL",
+                                        "ERROR",
+                                        "WARN"
+                                    ]
+                                },
+                                "category": {
+                                    "type": "string",
+                                    "description": "error category",
+                                    "enum": [
+                                        "APPLICATION",
+                                        "SERVICE",
+                                        "REQUEST",
+                                        "DATA"
+                                    ]
+                                },
+                                "httpStatus": {
+                                    "type": "integer",
+                                    "description": "error http status",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "errors"
+                        }
+                    }
+                }
+            },
+            "CarrierResponse": {
+                "type": "object",
+                "properties": {
+                    "carrierId": {
+                        "type": "string",
+                        "description": "The carried Id"
+                    },
+                    "shortName": {
+                        "type": "string",
+                        "description": "The carried short name"
+                    },
+                    "carrierName": {
+                        "type": "string",
+                        "description": "The carried name"
+                    }
+                },
+                "description": "carriers"
+            },
+            "CarrierPackageResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The carrier package Id"
+                    },
+                    "packageTypeShortName": {
+                        "type": "string",
+                        "description": "The carrier package short name"
+                    },
+                    "packageTypeDisplayName": {
+                        "type": "string",
+                        "description": "The carrier package display name"
+                    },
+                    "length": {
+                        "type": "integer",
+                        "description": "The package length",
+                        "format": "int32"
+                    },
+                    "width": {
+                        "type": "integer",
+                        "description": "The package width",
+                        "format": "int32"
+                    },
+                    "height": {
+                        "type": "integer",
+                        "description": "The package height",
+                        "format": "int32"
+                    },
+                    "dimensionUnit": {
+                        "type": "string",
+                        "description": "The package dimension unit"
+                    }
+                },
+                "description": "data"
+            },
+            "CommonResponseListCarrierPackageResponse": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "description": "data",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "description": "The carrier package Id"
+                                },
+                                "packageTypeShortName": {
+                                    "type": "string",
+                                    "description": "The carrier package short name"
+                                },
+                                "packageTypeDisplayName": {
+                                    "type": "string",
+                                    "description": "The carrier package display name"
+                                },
+                                "length": {
+                                    "type": "integer",
+                                    "description": "The package length",
+                                    "format": "int32"
+                                },
+                                "width": {
+                                    "type": "integer",
+                                    "description": "The package width",
+                                    "format": "int32"
+                                },
+                                "height": {
+                                    "type": "integer",
+                                    "description": "The package height",
+                                    "format": "int32"
+                                },
+                                "dimensionUnit": {
+                                    "type": "string",
+                                    "description": "The package dimension unit"
+                                }
+                            },
+                            "description": "data"
+                        }
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "errors",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "info": {
+                                    "type": "string",
+                                    "description": "error info"
+                                },
+                                "code": {
+                                    "type": "string",
+                                    "description": "error code"
+                                },
+                                "field": {
+                                    "type": "string",
+                                    "description": "field"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "error description"
+                                },
+                                "severity": {
+                                    "type": "string",
+                                    "description": "error severity",
+                                    "enum": [
+                                        "EMERG",
+                                        "ALERT",
+                                        "CRITICAL",
+                                        "ERROR",
+                                        "WARN"
+                                    ]
+                                },
+                                "category": {
+                                    "type": "string",
+                                    "description": "error category",
+                                    "enum": [
+                                        "APPLICATION",
+                                        "SERVICE",
+                                        "REQUEST",
+                                        "DATA"
+                                    ]
+                                },
+                                "httpStatus": {
+                                    "type": "integer",
+                                    "description": "error http status",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "errors"
+                        }
+                    }
+                }
+            },
+            "CommonResponseBoolean": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "boolean",
+                        "description": "data"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "description": "errors",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "info": {
+                                    "type": "string",
+                                    "description": "error info"
+                                },
+                                "code": {
+                                    "type": "string",
+                                    "description": "error code"
+                                },
+                                "field": {
+                                    "type": "string",
+                                    "description": "field"
+                                },
+                                "description": {
+                                    "type": "string",
+                                    "description": "error description"
+                                },
+                                "severity": {
+                                    "type": "string",
+                                    "description": "error severity",
+                                    "enum": [
+                                        "EMERG",
+                                        "ALERT",
+                                        "CRITICAL",
+                                        "ERROR",
+                                        "WARN"
+                                    ]
+                                },
+                                "category": {
+                                    "type": "string",
+                                    "description": "error category",
+                                    "enum": [
+                                        "APPLICATION",
+                                        "SERVICE",
+                                        "REQUEST",
+                                        "DATA"
+                                    ]
+                                },
+                                "httpStatus": {
+                                    "type": "integer",
+                                    "description": "error http status",
+                                    "format": "int32"
+                                }
+                            },
+                            "description": "errors"
+                        }
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "consumerIdScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.ID"
+            },
+            "signatureScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_SEC.AUTH_SIGNATURE"
+            }
+        }
+    }
+}

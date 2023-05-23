@@ -20,13 +20,11 @@
     },
     "ModelInterface.hbs": {
       "folder": "src/Model",
-      "destinationFilename": "ModelInterface.php",
-      "templateType": "SupportingFiles"
+      "destinationFilename": "ModelInterface.php"
     },
     "BaseModel.hbs": {
       "folder": "src/Model",
-      "destinationFilename": "BaseModel.php",
-      "templateType": "SupportingFiles"
+      "destinationFilename": "BaseModel.php"
     }
   }
 }

@@ -11,6 +11,7 @@ const COUNTRIES_DATA_FILE = RESOURCE_DIR . '/countries.json';
  * @param array|null $categories 
  * @param array|null $countries 
  * @param array|null $apiCodes 
+ * @throws InvalidArgumentException 
  * @return array All the schemas that match the given filters.
  *      Associative array, where each subarray is formatted like so:
  *      [
@@ -19,7 +20,6 @@ const COUNTRIES_DATA_FILE = RESOURCE_DIR . '/countries.json';
  *          'country' => string,
  *          'apiCode' => string,
  *      ]
- * @throws InvalidArgumentException 
  */
 function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
 {
@@ -58,7 +58,7 @@ function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
         } else {
             $apis = array_intersect($allCatApis, $apiCodes);
         }
-    
+
         if (empty($apis)) {
             echo "No matching API names found in the {$apiData[$cat]['name']} category. Skipping category...\n";
         }
@@ -66,7 +66,7 @@ function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
         foreach ($apis as $api) {
             foreach ($ctrys as $ctry) {
                 // Not all countries are eligible for all APIs
-                if (!in_array($ctry, $apiData[$cat]['apis'][$api]['countries'])) {
+                if (!in_array($ctry, $apiData[$cat]['apis'][$api]['countries'], true)) {
                     continue;
                 }
 
