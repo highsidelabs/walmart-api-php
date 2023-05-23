@@ -111,14 +111,13 @@ class {{classname}} extends BaseApi
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
     {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
-        $signedRequest = $this->config->signRequest($request);
-        $this->writeDebug($signedRequest);
-        $this->writeDebug((string) $signedRequest->getBody());
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
 
         try {
             $options = $this->createHttpClientOption();
             try {
-                $response = $this->client->send($signedRequest, $options);
+                $response = $this->client->send($request, $options);
                 $this->writeDebug($response);
                 $this->writeDebug((string) $response->getBody());
             } catch (RequestException $e) {
@@ -151,7 +150,7 @@ class {{classname}} extends BaseApi
                     sprintf(
                         '[%d] Error connecting to the API (%s)',
                         $statusCode,
-                        (string) $signedRequest->getUri()
+                        (string) $request->getUri()
                     ),
                     $statusCode,
                     $response->getHeaders(),
@@ -294,13 +293,11 @@ class {{classname}} extends BaseApi
     {{/each}}{{/if}}): PromiseInterface {
         $returnType = '{{{returnType}}}';
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
-        $signedRequest = $this->config->signRequest($request);
-
-        $this->writeDebug($signedRequest);
-        $this->writeDebug((string) $signedRequest->getBody());
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
 
         return $this->client
-            ->sendAsync($signedRequest, $this->createHttpClientOption())
+            ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
@@ -423,7 +420,7 @@ class {{classname}} extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
-        {{#if queryParams}}
+        {{~#if queryParams}}
 
         // query params
         $queryParams = [
@@ -438,11 +435,11 @@ class {{classname}} extends BaseApi
             ) ?? [],
         {{~/queryParams}}
         ];
-        {{/if~}}
-        {{#if headerParams}}
+        {{~/if}}
+        {{~#if headerParams}}
 
         // header params{{/if~}}
-        {{#headerParams}}
+        {{#headerParams~}}
         {{~#if collectionFormat~}}
         if (is_array(${{paramName}})) {
             ${{paramName}} = ObjectSerializer::serializeCollection(${{paramName}}, '{{collectionFormat}}');
@@ -452,16 +449,15 @@ class {{classname}} extends BaseApi
             $headerParams['{{baseName}}'] = ObjectSerializer::toHeaderValue(${{paramName}});
         }
         {{~/headerParams}}
-        {{#if pathParams}}
+        {{~#if pathParams}}
 
-        // path params
-        {{/if~}}
-        {{#pathParams}}
-        {{~#if collectionFormat~}}
+        // path params{{/if}}
+        {{~#pathParams~}}
+        {{~#if collectionFormat}}
         if (is_array(${{paramName}})) {
             ${{paramName}} = ObjectSerializer::serializeCollection(${{paramName}}, '{{collectionFormat}}');
         }
-        {{~/if~}}
+        {{/if}}
         if (${{paramName}} !== null) {
             $resourcePath = str_replace(
                 '{' . '{{baseName}}' . '}',
@@ -470,7 +466,7 @@ class {{classname}} extends BaseApi
             );
         }
         {{~/pathParams}}
-        {{#if formParams}}
+        {{~#if formParams}}
 
         // form params{{/if~}}
         {{#formParams}}
@@ -506,7 +502,7 @@ class {{classname}} extends BaseApi
             } else {
                 $httpBody = ${{paramName}};
         }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
         {{~/each~}}
         {{#unless bodyParams}}
         if (count($formParams) > 0) {
@@ -533,21 +529,19 @@ class {{classname}} extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-
-        {{~#if authMethods~}}
+        {{#each authMethods}}
         {{#if isApiKey~}}
-        // this endpoint requires API key authentication
-        $apiKey = $this->config->getApiKeyWithPrefix('{{keyParamName}}');
-        if ($apiKey !== null) {
-            {{~#if isKeyInHeader}}$headers['{{keyParamName}}'] = $apiKey;{{/if}}
-            {{~#if isKeyInQuery}}$queryParams['{{keyParamName}}'] = $apiKey;{{/if}}
+        ${{name}}ApiKey = $this->config->getApiKey('{{name}}');
+        if (${{name}}ApiKey !== null) {
+            {{#if isKeyInHeader}}$headers['{{keyParamName}}'] = ${{name}}ApiKey;{{/if~}}
+            {{#if isKeyInQuery}}$queryParams['{{keyParamName}}'] = ${{name}}ApiKey;{{/if}}
         }
         {{/if~}}
         {{#if isBasic~}}
         {{#if isBasicBasic~}}
         // this endpoint requires HTTP basic authentication
-        if (!empty($this->config->getUsername()) || !(empty($this->config->getPassword()))) {
-            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getUsername() . ":" . $this->config->getPassword());
+        if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
+            $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
         }
         {{/if~}}
         {{#if isBasicBearer~}}
@@ -563,9 +557,8 @@ class {{classname}} extends BaseApi
             $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
         }
         {{/if~}}
-        {{/if}}
-
-        $defaultHeaders = [];
+        {{/each}}
+        $defaultHeaders = parent::getDefaultHeaders();
         if ($this->config->getUserAgent()) {
             $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
         }
