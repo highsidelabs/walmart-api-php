@@ -40,8 +40,7 @@ function openApiGenerator(string $name, string $category, string $country): void
     $categoryCaps = strtoupper($category);
     $countryCaps = strtoupper($country);
 
-    // Ensure output files are prettified
-    putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix');
+    setPrettifyEnv();
 
     $generateCmd = "openapi-generator generate \
         --input-spec $schemaPath \
@@ -67,8 +66,7 @@ function generateSupportingFiles(): void
     // Static path -- this won't actually be used since we're only generating supporting files
     $schemaPath = SCHEMA_DIR . '/us/mp/auth.json';
 
-    // Ensure output files are prettified
-    putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix');
+    setPrettifyEnv();
 
     $generateCmd = "openapi-generator generate \
         --input-spec $schemaPath \
@@ -96,6 +94,12 @@ function execAndLog(string $cmd): void
         echo "Error executing command\n";
         exit(1);
     }
+}
+
+function setPrettifyEnv(): void
+{
+    // Ensure OpenAPI generator's output files are prettified
+    putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix --allow-risky=yes --config ' . __DIR__ . '/../.php-cs-fixer.dist.php');
 }
 
 $opts = handleSchemaOpts();

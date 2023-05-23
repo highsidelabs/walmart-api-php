@@ -37,7 +37,13 @@ require_once __DIR__ . '/../../../../vendor/autoload.php';
 {{#operations~}}
 class {{classname}} extends BaseApi
 {
-{{~#operation}}
+    /**
+     * @var string[] $contentTypes
+     */
+    public const contentTypes = [{{!-- We only support a single content type per request --}}
+        {{#each operation}}'{{{operationId}}}' => '{{#if consumes.[0]}}{{{consumes.[0].mediaType}}}{{else}}application/json{{/if}}',
+    {{#unless @last}}    {{/unless}}{{/each}}];
+{{#operation}}
     /**
      * Operation {{{operationId}}}
      *{{#if summary}}
@@ -363,7 +369,9 @@ class {{classname}} extends BaseApi
 {{~#allParams~}}
         ${{paramName}} = array_key_exists('{{paramName}}', $associative_array) ? $associative_array['{{paramName}}'] : {{{defaultValue}}}{{#unless defaultValue}}null{{/unless}};
 {{~/allParams}}
-        {{~/if}}{{#allParams~}}
+        {{~/if}}
+        $contentType = self::contentTypes['{{{operationId}}}'];
+        {{#allParams~}}
         {{#if required}}
         // verify the required parameter '{{paramName}}' is set
         if (${{paramName}} === null || (is_array(${{paramName}}) && count(${{paramName}}) === 0)) {
@@ -481,10 +489,11 @@ class {{classname}} extends BaseApi
             $formParams['{{baseName}}'] = ObjectSerializer::toFormValue(${{paramName}});
             {{~/if~}}
         }
+        {{~/formParams}}
 
-        {{/formParams~}}
         $headers = $this->headerSelector->selectHeaders(
             [{{#each produces}}'{{{mediaType}}}'{{#unless @last}}, {{/unless}}{{/each}}],
+            $contentType,
             $multipart
         );
 

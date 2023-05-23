@@ -47,6 +47,11 @@ class BaseApi
     protected $headerSelector;
 
     /**
+     * @var string[] $contentTypes
+     */
+    public const contentTypes = [];
+
+    /**
      * @param Configuration   $config
      * @param ClientInterface $client
      * @param HeaderSelector  $selector

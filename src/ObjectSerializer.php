@@ -136,7 +136,9 @@ class ObjectSerializer
      */
     public static function sanitizeTimestamp(string $timestamp): string
     {
-        if (!is_string($timestamp)) return $timestamp;
+        if (!is_string($timestamp)) {
+            return $timestamp;
+        }
 
         return preg_replace('/(:\d{2}.\d{6})\d*/', '$1', $timestamp);
     }
@@ -242,7 +244,9 @@ class ObjectSerializer
         // since \GuzzleHttp\Psr7\Query::build fails with nested arrays
         // need to flatten array first
         $flattenArray = function ($arr, $name, &$result = []) use (&$flattenArray, $style, $explode) {
-            if (!is_array($arr)) return $arr;
+            if (!is_array($arr)) {
+                return $arr;
+            }
 
             foreach ($arr as $k => $v) {
                 $prop = ($style === 'deepObject') ? $prop = "{$name}[{$k}]" : $k;
@@ -281,15 +285,11 @@ class ObjectSerializer
      *
      * @param bool $value Boolean value
      *
-     * @return int|string Boolean value in format
+     * @return string Boolean value in format
      */
-    public static function convertBoolToQueryStringFormat(bool $value)
+    public static function convertBoolToQueryStringFormat(bool $value): string
     {
-        if (Configuration::BOOLEAN_FORMAT_STRING == Configuration::getDefaultConfiguration()->getBooleanFormatForQueryString()) {
-            return $value ? 'true' : 'false';
-        }
-
-        return (int) $value;
+        return $value ? 'true' : 'false';
     }
 
     /**
@@ -472,9 +472,9 @@ class ObjectSerializer
                 && array_key_exists('Content-Disposition', $httpHeaders) 
                 && preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)
             ) {
-                $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . DIRECTORY_SEPARATOR . self::sanitizeFilename($match[1]);
+                $filename = Configuration::getTempFolderPath() . DIRECTORY_SEPARATOR . self::sanitizeFilename($match[1]);
             } else {
-                $filename = tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');
+                $filename = tempnam(Configuration::getTempFolderPath(), '');
             }
 
             $file = fopen($filename, 'w');
@@ -510,7 +510,7 @@ class ObjectSerializer
             $discriminator = $class::DISCRIMINATOR;
             if (!empty($discriminator) && isset($data->{$discriminator}) && is_string($data->{$discriminator})) {
                 $subclass = '\Walmart\Model\\' . $data->{$discriminator};
-                    
+
                 if (is_subclass_of($subclass, $class)) {
                     $class = $subclass;
                 }
