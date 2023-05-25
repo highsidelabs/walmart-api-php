@@ -3,9 +3,16 @@
 require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/constants.php';
 
-const MP_AUTH_API_TAG = 'Authentication';
-
-function customizeSchema(string $path, string $category): void
+/**
+ * Customize Walmart's JSON schemas to be spec-conformant and standardized, so that we can more easily generate
+ * code from them
+ *
+ * @param string $path The path to the schema file
+ * @param string $category The category code for the schema
+ * @param string $name The human-readable API name for the schema
+ * @return void
+ */
+function customizeSchema(string $path, string $category, string $name): void
 {
     // There are auth headers that are the same on (nearly) every request, but which Walmart includes in every
     // single request schema. We remove them so that the SDK is easier to use, and will pass them in during the
@@ -27,10 +34,6 @@ function customizeSchema(string $path, string $category): void
     if (!isset($schema['info']['version'])) {
         $schema['info']['version'] = API_VERSION;
     }
-
-    $firstPath = $schema['paths'][array_key_first($schema['paths'])];
-    $firstVerb = $firstPath[array_key_first($firstPath)];
-    $tag = $firstVerb['tags'][0];
 
     $allSecuritySchemes = [
         // Used by all endpoints
@@ -59,7 +62,7 @@ function customizeSchema(string $path, string $category): void
     foreach ($schema['paths'] as $p => $apiPath) {
         if (strpos($p, '/' . API_VERSION . '/') === false) {
             unset($schema['paths'][$p]);
-            echo "Removed path $p from $tag schema in $category category, only /" . API_VERSION . "/ API paths are supported\n";
+            echo "Removed path $p from $name schema in $category category, only /" . API_VERSION . "/ API paths are supported\n";
             continue;
         }
 
@@ -74,6 +77,10 @@ function customizeSchema(string $path, string $category): void
 
         foreach ($apiPath as $x => $verb) {
             $security = [];
+
+            // Standardize tags based on our internal naming convention (derived from resources/apis.json)
+            $verb['tags'] = [$name];
+
             // Update each operation's parameters and auth information
             foreach ($verb['parameters'] as $i => $parameter) {    
                 if ($parameter['in'] === 'header' && in_array($parameter['name'], $ignoreHeaders, true)) {
@@ -173,11 +180,11 @@ function customizeSchema(string $path, string $category): void
 /**
  * Prepares schemas for api/model generation using janephp.
  */
-function customizeSchemas(array $categories, array $countries, array $apiNames): void
+function customizeSchemas(array $categories, array $countries, array $apiCodes): void
 {
-    $schemas = schemas($categories, $countries, $apiNames);
+    $schemas = schemas($categories, $countries, $apiCodes);
     foreach ($schemas as $schemaInfo) {
-        customizeSchema($schemaInfo['path'], $schemaInfo['category']);
+        customizeSchema($schemaInfo['path'], $schemaInfo['category'], $schemaInfo['api']['name']);
     }
 }
 

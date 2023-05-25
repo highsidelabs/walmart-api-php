@@ -24,7 +24,7 @@
         "\/v3\/returns\/{returnOrderId}\/refund": {
             "post": {
                 "tags": [
-                    "Returns\/Refunds"
+                    "Returns"
                 ],
                 "summary": "Refund Order Lines",
                 "description": "Refunds one or more order lines that have been shipped. The response to a successful call contains the order with the refunded line item",
@@ -308,7 +308,7 @@
         "\/v3\/returns": {
             "get": {
                 "tags": [
-                    "Returns\/Refunds"
+                    "Returns"
                 ],
                 "summary": "Get Returns",
                 "description": "Retrieves the details of all return orders for the specified filter criteria. The same API can be used to search a single order based on returnOrderId\/ customerOrderId This API supports only upto an offset of 1000 in response with max limit 100 orders. If you want to fetch more than 1000 then you can use the cursor API.",
@@ -1381,7 +1381,7 @@
         "\/v3\/returns\/cursor": {
             "get": {
                 "tags": [
-                    "Returns\/Refunds"
+                    "Returns"
                 ],
                 "summary": "Get all returns with cursor mark",
                 "description": "Retrieves the details of all return orders for the specified filter criteria. With this API you can get all orders in response, it returns nextCursorMark for the next 100 orders so on and so forth upto the last order. The same API can be used to search a single order based on returnOrderId\/ customerOrderId.",

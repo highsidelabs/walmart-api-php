@@ -15,8 +15,7 @@
         "\/v3\/getReport": {
             "get": {
                 "tags": [
-                    "Reports",
-                    "getItemReport"
+                    "Reports"
                 ],
                 "summary": "Item Report",
                 "description": "This API is used to generate the Item Report for DSVs. It returns all the information associated with vendor items that are set up on Walmart\u2019s platform.",

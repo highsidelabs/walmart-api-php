@@ -8,15 +8,15 @@ require_once __DIR__ . '/constants.php';
  *
  * @param array $categories The Walmart API categories for which to generate code.
  * @param array $countries The countries for which to generate code.
- * @param array $apiNames The individual schema codes for which to generate code.
+ * @param array $apiCodes The individual schema codes for which to generate code.
  * @return void 
  */
-function generateApis(array $categories, array $countries, array $apiNames): void
+function generateApis(array $categories, array $countries, array $apiCodes): void
 {
-    $schemas = schemas($categories, $countries, $apiNames);
+    $schemas = schemas($categories, $countries, $apiCodes);
 
     foreach ($schemas as $schema) {
-        openApiGenerator($schema['apiName'], $schema['category'], $schema['country']);
+        openApiGenerator($schema['api']['code'], $schema['api']['name'], $schema['category'], $schema['country']);
     }
 
     generateSupportingFiles();
@@ -26,15 +26,16 @@ function generateApis(array $categories, array $countries, array $apiNames): voi
 /**
  * Generate the SDK for the given schema.
  *
- * @param string $name 
- * @param string $category 
- * @param string $country 
+ * @param string $code The schema code
+ * @param string $name The human-readable schema name
+ * @param string $category The schema's category code
+ * @param string $country The country the schema applies to
  * @return void 
  */
-function openApiGenerator(string $name, string $category, string $country): void
+function openApiGenerator(string $code, string $name, string $category, string $country): void
 {
     $version = libVersion();
-    $schemaPath = SCHEMA_DIR . "/$country/$category/$name.json";
+    $schemaPath = SCHEMA_DIR . "/$country/$category/$code.json";
     $configPath = RESOURCE_DIR . '/generator-config.json';
 
     $categoryCaps = strtoupper($category);
@@ -42,6 +43,7 @@ function openApiGenerator(string $name, string $category, string $country): void
 
     setPrettifyEnv();
 
+    $compressedSchemaName = str_replace(' ', '', $name);
     $generateCmd = "openapi-generator generate \
         --input-spec $schemaPath \
         --template-dir " . TEMPLATE_DIR . " \
@@ -52,7 +54,7 @@ function openApiGenerator(string $name, string $category, string $country): void
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-sdk-php/$version \
         --api-package \"Api\\$categoryCaps\\$countryCaps\" \
-        --model-package \"Model\\$categoryCaps\\$countryCaps\" \
+        --model-package \"Model\\$categoryCaps\\$countryCaps\\$compressedSchemaName\" \
         --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps\" \
         2>&1";
 

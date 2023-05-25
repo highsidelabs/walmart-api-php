@@ -24,7 +24,7 @@
         "\/v3\/returns\/{returnOrderId}\/refund": {
             "post": {
                 "tags": [
-                    "Returns\/Refunds"
+                    "Returns"
                 ],
                 "summary": "Issue refund",
                 "description": "This API allows sellers to issue refund against a return order. Multiple return order lines can be refunded in one request.\n\nNote: Sellers can use the Refund Order Lines API for all non-exception category items, including adjustments that seller needs to determine a partial refund amount. Especially for exception category items: HAZMAT, OTHER and FREIGHT that are not eligible for the Marketplace Returns Program. ",
@@ -151,7 +151,7 @@
         "\/v3\/feeds": {
             "post": {
                 "tags": [
-                    "Returns\/Refunds"
+                    "Returns"
                 ],
                 "summary": "Return Item Overrides",
                 "description": "Sellers can specify global settings for returns in Seller Center, and they can override individual item level settings using this API.\n\nEmpty values for the settings will remove the existing overriden values and revert them to global settings.\n\nFor more details, see the announcement for\u00a0[Bulk Return Rules](https:\/\/sellerhelp.walmart.com\/s\/guide?article=000008197).",
@@ -281,7 +281,7 @@
         "\/v3\/returns": {
             "get": {
                 "tags": [
-                    "Returns\/Refunds"
+                    "Returns"
                 ],
                 "summary": "Returns",
                 "description": "Retrieves the details of return orders for the specified filter criteria.",

@@ -24,7 +24,7 @@
         "\/v3\/insights\/items\/listingQuality\/items": {
             "post": {
                 "tags": [
-                    "Insight"
+                    "Insights"
                 ],
                 "summary": "Item Listing Quality Details",
                 "description": "Get each item's listing quality details including: item quality score, offer score, content score and issues, and item performance.",
@@ -1289,8 +1289,7 @@
         "\/v3\/insights\/prosellerbadge": {
             "get": {
                 "tags": [
-                    "Insight",
-                    "Listing Quality"
+                    "Insights"
                 ],
                 "summary": "Pro Seller Badge Status",
                 "description": "The Pro Seller badge status will provide you with information regarding your current badge status as well as the progress you've made in meeting the criteria.",
@@ -1443,7 +1442,7 @@
         "\/v3\/insights\/items\/unpublished\/items": {
             "get": {
                 "tags": [
-                    "Insight"
+                    "Insights"
                 ],
                 "summary": "Unpublished Items",
                 "description": "Get Unpublished Items",
@@ -1771,7 +1770,7 @@
         "\/v3\/insights\/items\/unpublished\/counts": {
             "get": {
                 "tags": [
-                    "Insight"
+                    "Insights"
                 ],
                 "summary": "Unpublished Item Counts",
                 "description": "Get Count for Unpubished Item",
@@ -1861,7 +1860,7 @@
         "\/v3\/insights\/items\/trending": {
             "get": {
                 "tags": [
-                    "Insight"
+                    "Insights"
                 ],
                 "summary": "Top Trending Items",
                 "description": "Get Trending Item List",
@@ -2079,8 +2078,7 @@
         "\/v3\/insights\/items\/listingQuality\/score": {
             "get": {
                 "tags": [
-                    "Insight",
-                    "Listing Quality"
+                    "Insights"
                 ],
                 "summary": "Seller Listing Quality Score",
                 "description": "Get the total Listing Quality Score for a seller's entire item catalog.",
@@ -2196,8 +2194,7 @@
         "\/v3\/insights\/items\/listingQuality\/count": {
             "get": {
                 "tags": [
-                    "Insight",
-                    "Listing Quality"
+                    "Insights"
                 ],
                 "summary": "Item count with listing quality issues",
                 "description": "Get a list of all item categories that have items with listing quality issues or brands for a seller.",

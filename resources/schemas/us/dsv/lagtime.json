@@ -15,7 +15,7 @@
         "\/v3\/feeds": {
             "post": {
                 "tags": [
-                    ""
+                    "Lag Time"
                 ],
                 "summary": "Update Lag Time",
                 "description": "This request updates the lag time for items in bulk. Lag time is the number of days between when an item is ordered and when it is shipped. This feature is only available for select drop ship vendor (DSV) suppliers. For more on how to request permission, see the <a href=\"https:\/\/developer.walmart.com\/doc\/us\/us-dsv\/us-dsv-lagtime\/\">guide overview<\/a>.\n\nTwo versions of this feed type exist:\n* v2.x: Uses global trade item number (GTIN) as the primary item identifier (JSON only). Suppliers can update lag time of multiple items across multiple nodes.\n* v1.0: Uses the stock keeping unit (SKU) as the primary item identifier (XML and JSON). v1.0 is in the process of being deprecated.",
@@ -223,7 +223,7 @@
         "\/v3\/lagtime": {
             "get": {
                 "tags": [
-                    ""
+                    "Lag Time"
                 ],
                 "summary": "Lag Time",
                 "description": "This request retrieves the lag time for an item with a given product identifier\u2014such as a stock keeping unit (SKU) or global trade item number (GTIN)\u2014and ship node. Lag time is the number of days between when an item is ordered and when it is shipped.\n\nDrop ship vendor (DSV) suppliers are expected to ship items the day they receive the purchase order (PO). In certain exceptions, those suppliers can have items with extended lag times. Use GET Lag Time to see the lag time of an item at a node. For more information about order processing and shipping channels, see <a href=\"https:\/\/supplierhelp.walmart.com\/s\/faq?articlenumber=000008139&article=DSV_Order_Processing_and_Shipping&channel=Drop%20Ship\">DSV Order Processing and Shipping Channel reference material<\/a>.",

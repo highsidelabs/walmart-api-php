@@ -10627,8 +10627,7 @@
         "\/v3\/ca\/orders\/released": {
             "get": {
                 "tags": [
-                    "Orders",
-                    "Released Orders"
+                    "Orders"
                 ],
                 "summary": "Get all released orders",
                 "description": "Retrieves all the orders with line items that are in the \"created\" status, that is, these orders have been released from the Walmart Order Management System to the seller for processing. The released orders are the orders that are ready for a seller to fulfill.\n\n\n\n---\n**Note**\n\nThere is a maximum limit of 2000 orders that can be downloaded at a time. Attempting to download more than 2000 orders will return an error.\n\n---",

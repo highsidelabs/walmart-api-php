@@ -15,7 +15,7 @@
         "\/v3\/inventory": {
             "get": {
                 "tags": [
-                    ""
+                    "Inventory"
                 ],
                 "summary": "Inventory",
                 "description": "This request retrieves the inventory count for a single item for one specific ship node.",
@@ -118,7 +118,7 @@
             },
             "put": {
                 "tags": [
-                    ""
+                    "Inventory"
                 ],
                 "summary": "Update Inventory",
                 "description": "This request updates the inventory for an item, with the item global trade item number (GTIN) as the primary item identifier. Use an availability code to identify how inventory quantity is managed for an item.\n\nThe following are valid availability codes:\n\nAC: Use for standard or normal inventory updates.\n\nAA: Use for an item with infinite or unlimited inventory. Quantity is not required when set to AA.\n\nThe drop ship vendor (DSV) supplier sends the `onHand` quantity in the amount field as one whole quantity (unit and value).",
@@ -329,7 +329,7 @@
         "\/v3\/feeds": {
             "post": {
                 "tags": [
-                    ""
+                    "Inventory"
                 ],
                 "summary": "Bulk Update Inventory",
                 "description": "This request updates inventory for items in bulk. The seller can either use feed type 'DSV_INVENTORY' or 'inventory'.\n\nDSV_INVENTORY: This feed type updates inventory across multiple ship nodes across multiple products. There are two versions: v2.x and v1.5. \n* For v2.x, these updates are global trade item number (GTIN) based and have a flat data structure for enhanced processing. \n* For v1.5, these updates are stock keeping unit (SKU) based and have a complex data structure. \n\nThe multi-node inventory update feed (feedType=DSV_INVENTORY) supports JSON requests and responses only.\n\ninventory: This feed type supports updating inventory across multiple ship nodes across multiple products. There is one version: v1.4.\n* v1.4 supports updating inventory at multiple ship nodes across multiple products.\n\nFor more information about feed types, see the <a href=\"https:\/\/developer.walmart.com\/doc\/us\/us-dsv\/us-dsv-inventory\/\">guide section<\/a>.\n\nRate limits apply to file feeds. Rate limits are 20 calls per hour. The maximum limit of 10,000 items per hour per `shipNode` combinations. The file size limit is 1MB.",
@@ -665,7 +665,7 @@
         "\/v3\/inventories\/{id}": {
             "get": {
                 "tags": [
-                    ""
+                    "Inventory"
                 ],
                 "summary": "Single Item Inventory Across Ship Nodes",
                 "description": "This request retrieves the inventory count for an item across multiple ship nodes or for one specific ship node. Users can specify the ship node(s) for which they want to fetch the inventory.",

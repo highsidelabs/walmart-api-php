@@ -18,7 +18,10 @@ const COUNTRIES_DATA_FILE = RESOURCE_DIR . '/countries.json';
  *          'path' => string,
  *          'category' => string,
  *          'country' => string,
- *          'apiCode' => string,
+ *          'api' => [
+ *              'code' => string,
+ *              'name' => string,
+ *          ]
  *      ]
  */
 function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
@@ -74,7 +77,10 @@ function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
                     'path' => SCHEMA_DIR . "/$ctry/$cat/$api.json",
                     'category' => $cat,
                     'country' => $ctry,
-                    'apiName' => $api,
+                    'api' => [
+                        'code' => $api,
+                        'name' => $apiData[$cat]['apis'][$api]['name'],
+                    ],
                 ];
             }
         }
@@ -89,18 +95,18 @@ function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
  *
  * @return array Filtered categories, countries, and names. If there are no values
  *               for a given filter, the array will be empty. Format:
- *               ['categories' => [...], 'countries' => [...], 'names' => [...]]
+ *               ['categories' => [...], 'countries' => [...], 'apiCodes' => [...]]
  */
 function handleSchemaOpts(): array
 {
     $opts = getopt('', VALID_OPTS);
 
     if (array_key_exists('help', $opts)) {
-        echo "\nUsage: generate-api.php --category=cat1,cat2 --country=ca,mx,us --name=name1,name2,name3
+        echo "\nUsage: generate-api.php --category=cat1,cat2 --country=ca,mx,us --api-code=code1,code2,code3
         --category: A comma-separated list of the Walmart API categories to generate. If this flag is not passed, all categories will be generated.
             Can be one or more of:
                 * cp (Content Provider)
-                * mp (Marketplace)
+                * mp (Marketplace)apis
                 * dsv (Drop Ship Vendor)
                 * ws (Warehouse Supplier)
         --country: A comma-separated list of the countries to generate schemas for. If this flag is not passed, all countries will be generated.
@@ -108,7 +114,7 @@ function handleSchemaOpts(): array
                 * ca (Canada)
                 * mx (Mexico)
                 * us (United States)
-        --api-name: A comma-separated list of the schema names to generate, based on the schema filenames in resources/schemas. If this flag is not passed, all schemas will be generated.\n\n";
+        --api-code: A comma-separated list of the schema codes to generate, based on the schema filenames in resources/schemas. If this flag is not passed, all schemas will be generated.\n\n";
         exit(1);
     }
 
@@ -121,14 +127,14 @@ function handleSchemaOpts(): array
         $countries = is_array($opts['country']) ? $opts['country'] : explode(',', $opts['country']);
     }
     $names = [];
-    if (array_key_exists('api-name', $opts)) {
-        $names = is_array($opts['api-name']) ? $opts['api-name'] : explode(',', $opts['api-name']);
+    if (array_key_exists('api-code', $opts)) {
+        $names = is_array($opts['api-code']) ? $opts['api-code'] : explode(',', $opts['api-code']);
     }
 
     return [
         'categories' => $categories,
         'countries' => $countries,
-        'apiNames' => $names,
+        'apiCodes' => $names,
     ];
 }
 

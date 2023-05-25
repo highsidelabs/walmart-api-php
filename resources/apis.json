@@ -4,7 +4,7 @@
     "code": "cp",
     "apis": {
       "feeds": {
-        "name": "Content Feeds",
+        "name": "Feeds",
         "code": "feeds",
         "countries": ["us"]
       }
@@ -56,7 +56,7 @@
     "code": "mp",
     "apis": {
       "auth": {
-        "name": "Authentication & Authorization",
+        "name": "Authentication",
         "code": "auth",
         "countries": ["mx", "us"]
       },
@@ -71,7 +71,7 @@
         "countries": ["ca", "mx", "us"]
       },
       "fulfillment": {
-        "name": "Walmart Fulfillment Services",
+        "name": "Fulfillment",
         "code": "fulfillment",
         "countries": ["us"]
       },
@@ -106,7 +106,7 @@
         "countries": ["us"]
       },
       "onrequestreports": {
-        "name": "On-request Reports",
+        "name": "On Request Reports",
         "code": "onrequestreports",
         "countries": ["us"]
       },
@@ -126,7 +126,7 @@
         "countries": ["ca", "us"]
       },
       "reports": {
-        "name": "Pre-generated Reports",
+        "name": "Reports",
         "code": "reports",
         "countries": ["ca", "us", "mx"]
       },

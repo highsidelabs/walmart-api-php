@@ -420,7 +420,7 @@
         "\/v3\/ca\/shipping\/labels\/shipment\/international\/consolidation": {
             "get": {
                 "tags": [
-                    "Consolidation"
+                    "International Shipping"
                 ],
                 "summary": "Get consolidation details",
                 "description": "Use this API to get consolidation details for the shipment. Provide the domestic Tracking Number and Carrier Id. The synchronous API call returns a list of packages consolidated under that tracking number in response. In case of any failure, the client has to retry.",
@@ -580,7 +580,7 @@
             },
             "post": {
                 "tags": [
-                    "Consolidation"
+                    "International Shipping"
                 ],
                 "summary": "Create consolidation",
                 "description": "Use this API to consolidate shipments. Provide the list of packages that form part of the consolidation and its corresponding domestic tracking number and carrier. The synchronous API call returns the status of the operation and a correlation ID in response. Use the correlation ID to connect via email to the IMD team in case of issues pertaining to the consolidation call. In case of any failure, the client has to retry.",

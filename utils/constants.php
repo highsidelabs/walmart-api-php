@@ -7,7 +7,7 @@ const WAREHOUSE_API_CODE = 'ws';
 
 const API_VERSION = 'v3';
 
-const VALID_OPTS = ['category::', 'country::', 'api-name::', 'help'];
+const VALID_OPTS = ['category::', 'country::', 'api-code::', 'help'];
 
 const RESOURCE_DIR = __DIR__ . '/../resources';
 const SCHEMA_DIR = RESOURCE_DIR . '/schemas';

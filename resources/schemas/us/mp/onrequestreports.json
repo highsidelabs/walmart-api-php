@@ -24,7 +24,7 @@
         "\/v3\/reports\/reportRequests": {
             "get": {
                 "tags": [
-                    "On-Request Report"
+                    "On Request Reports"
                 ],
                 "summary": "Get All Report Requests",
                 "description": "Fetches a list of all report requests for specified search criteria by using query parameters.\n\nYou can fetch details of report requests created in the last 30 days only.",
@@ -338,7 +338,7 @@
             },
             "post": {
                 "tags": [
-                    "On-Request Report"
+                    "On Request Reports"
                 ],
                 "summary": "Create Report Request",
                 "description": "Creates a new request for report by specifying the reportType and reportVersion.",
@@ -710,7 +710,7 @@
         "\/v3\/reports\/reportRequests\/{requestId}": {
             "get": {
                 "tags": [
-                    "On-Request Report"
+                    "On Request Reports"
                 ],
                 "summary": "Report Request Status",
                 "description": "Fetches status and other details of a report request by providing a requestID.\n\nYou can fetch details of report request created in the last 30 days only.",
@@ -892,7 +892,7 @@
         "\/v3\/reports\/downloadReport": {
             "get": {
                 "tags": [
-                    "On-Request Report"
+                    "On Request Reports"
                 ],
                 "summary": "Download Report URL",
                 "description": "Fetches URL to download a generated report.",
