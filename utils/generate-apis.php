@@ -60,12 +60,14 @@ function openApiGenerator(string $code, string $name, string $category, string $
 
     execAndLog($generateCmd);
 
+    $defaultApiDocsPath = DOCS_DIR . '/' . DEFAULT_API_DIR;
+    $defaultModelDocsPath = DOCS_DIR . '/' . DEFAULT_MODEL_DIR;
     // There is currently no way to change the docs output directories with the OpenAPI generator
-    $apiDocSrcPath = DOCS_DIR . "/Api/{$compressedSchemaName}Api.md";
-    $modelDocSrcPath = DOCS_DIR . '/Model/*.md';
+    $apiDocSrcPath = "$defaultApiDocsPath/{$compressedSchemaName}Api.md";
+    $modelDocSrcPath = "$defaultModelDocsPath/*.md";
 
-    $apiDocDestPath = DOCS_DIR . "/Apis/$categoryCaps/$countryCaps/";
-    $modelDocDestPath = DOCS_DIR . "/Models/$categoryCaps/$countryCaps/$compressedSchemaName/";
+    $apiDocDestPath = DOCS_DIR . '/' . CUSTOM_API_DIR . "/$categoryCaps/$countryCaps/";
+    $modelDocDestPath = DOCS_DIR . '/' . CUSTOM_MODEL_DIR . "/$categoryCaps/$countryCaps/$compressedSchemaName/";
 
     // Create the documentation directories if they don't exist
     if (!file_exists($apiDocDestPath)) {
@@ -84,12 +86,18 @@ function openApiGenerator(string $code, string $name, string $category, string $
         echo "No model documentation found for $name in category $category/country $country\n";
     }
 
-    // Delete default documentation directories since they are not in use
-    if (count(scandir(DEFAULT_APIDOC_DIR)) == 2) { // 2 because of . and ..
-        rmdir(DEFAULT_APIDOC_DIR);
+    // Delete default documentation directories if they are not in use
+    if (
+        DEFAULT_API_DIR !== CUSTOM_API_DIR
+        && count(scandir($defaultApiDocsPath)) == 2  // 2 because of . and ..
+    ) {
+        rmdir($defaultApiDocsPath);
     }
-    if (count(scandir(DEFAULT_MODELDOC_DIR)) == 2) {
-        rmdir(DEFAULT_MODELDOC_DIR);
+    if (
+        DEFAULT_MODEL_DIR !== CUSTOM_MODEL_DIR
+        && count(scandir($defaultModelDocsPath)) == 2
+    ) {
+        rmdir($defaultModelDocsPath);
     }
 }
 
@@ -111,6 +119,8 @@ function generateSupportingFiles(): void
         --global-property supportingFiles \
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-sdk-php/$version \
+        --api-package Apis \
+        --model-package Models \
         --openapi-normalizer KEEP_ONLY_FIRST_TAG_IN_OPERATION=true \
         2>&1";
 
