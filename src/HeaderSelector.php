@@ -172,7 +172,7 @@ class HeaderSelector
 
         $acceptHeaders = [];
         foreach ($headers as $index => $header) {
-            if($index > 0 && $headers[$index - 1]['weight'] > $header['weight']) {
+            if ($index > 0 && $headers[$index - 1]['weight'] > $header['weight']) {
                 $currentWeight = $this->getNextWeight($currentWeight, $hasMoreThan28Headers);
             }
 

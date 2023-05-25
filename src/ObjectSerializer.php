@@ -60,7 +60,7 @@ class ObjectSerializer
      *
      * @return scalar|object|array|null serialized form of $data
      */
-    public static function sanitizeForSerialization($data, ?string $type, ?string $format)
+    public static function sanitizeForSerialization($data, ?string $type = null, ?string $format = null)
     {
         if (is_scalar($data) || null === $data) {
             return $data;

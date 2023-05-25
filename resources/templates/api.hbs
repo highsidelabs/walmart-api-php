@@ -75,8 +75,7 @@ class {{classname}} extends BaseApi
         {{#each allParams}}{{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
         {{/each}}
     {{~/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
-        {{#if returnType}}list($response) = {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});{{#if returnType}}
-        return $response;{{/if}}
+        {{#if returnType}}return {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
     }
 
     /**
@@ -101,7 +100,7 @@ class {{classname}} extends BaseApi
      * @throws \
 {{~invokerPackage}}\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of {{#if returnType}}{{#each responses}}{{#if dataType}}{{#unless @first}}|{{/unless}}{{/if}}{{{dataType}}}{{/each}}{{else}}null{{/if}}, HTTP status code, HTTP response headers (array of strings)
+     * @return {{#if returnType}}{{#each responses}}{{#if dataType}}{{#unless @first}}|{{/unless}}{{/if}}{{{dataType}}}{{/each}}{{else}}null{{/if}}
     {{~#if isDeprecated}}
      * @deprecated
     {{~/if}}
@@ -192,11 +191,7 @@ class {{classname}} extends BaseApi
                 }
             }
 
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
             {{~else~}}
 
             return [null, $statusCode, $response->getHeaders()];
@@ -546,15 +541,17 @@ class {{classname}} extends BaseApi
         {{/if~}}
         {{#if isBasicBearer~}}
         // this endpoint requires Bearer{{#if bearerFormat}} ({{{bearerFormat}}}){{/if}} authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        $token = $this->config->getAccessToken();
+        if ($token) {
+            $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
         {{/if~}}
         {{/if~}}
         {{#if isOAuth~}}
         // this endpoint requires OAuth (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        $token = $this->config->getAccessToken();
+        if ($token) {
+            $headers['Authorization'] = 'Bearer ' . $token->accessToken;
         }
         {{/if~}}
         {{/each}}
