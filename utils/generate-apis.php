@@ -53,12 +53,34 @@ function openApiGenerator(string $code, string $name, string $category, string $
         --global-property apis,models \
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-sdk-php/$version \
-        --api-package \"Api\\$categoryCaps\\$countryCaps\" \
-        --model-package \"Model\\$categoryCaps\\$countryCaps\\$compressedSchemaName\" \
+        --api-package \"Apis\\$categoryCaps\\$countryCaps\" \
+        --model-package \"Models\\$categoryCaps\\$countryCaps\\$compressedSchemaName\" \
         --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps\" \
         2>&1";
 
     execAndLog($generateCmd);
+
+    $apiDocSrcPath = DOCS_DIR . "/Apis/{$compressedSchemaName}Api.md";
+    $apiDocDestPath = DOCS_DIR . "/Apis/$categoryCaps/$countryCaps/";
+    $modelDocSrcPath = DOCS_DIR . '/Models/*.md';
+    $modelDocDestPath = DOCS_DIR . "/Models/$categoryCaps/$countryCaps/$compressedSchemaName/";
+
+    // Create the documentation directories if they don't exist
+    if (!file_exists($apiDocDestPath)) {
+        mkdir($apiDocDestPath, 0755, true);
+    }
+    if (!file_exists($modelDocDestPath)) {
+        mkdir($modelDocDestPath, 0755, true);
+    }
+
+    // Move the generated documentation to the correct directories
+    execAndLog("mv $apiDocSrcPath $apiDocDestPath");
+
+    if (count(glob($modelDocSrcPath)) > 0) {
+        execAndLog("mv $modelDocSrcPath $modelDocDestPath");
+    } else {
+        echo "No model documentation found for $name in category $category/country $country\n";
+    }
 }
 
 function generateSupportingFiles(): void
@@ -85,6 +107,13 @@ function generateSupportingFiles(): void
     execAndLog($generateCmd);
 }
 
+/**
+ * Execute a command. If it succeeds, return. Otherwise exit with command's exit code.
+ * Logs the command's output to the log file.
+ *
+ * @param string $cmd The command to execute
+ * @return void
+ */
 function execAndLog(string $cmd): void
 {
     $resultCode = 0;
@@ -95,7 +124,7 @@ function execAndLog(string $cmd): void
 
     if ($resultCode > 0) {
         echo "Error executing command\n";
-        exit(1);
+        exit($resultCode);
     }
 }
 
