@@ -140,7 +140,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -186,7 +187,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -232,7 +234,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -323,7 +326,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -369,7 +373,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -415,7 +420,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -541,7 +547,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -587,7 +594,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -633,7 +641,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -754,7 +763,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -800,7 +810,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -846,7 +857,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -911,7 +923,8 @@
                         "content": {
                             "application\/octet-stream": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -919,7 +932,11 @@
                     "400": {
                         "description": "Failure Operation",
                         "content": {
-                            "application\/json": []
+                            "application\/json": {
+                                "schema": {
+                                    "x-expose-headers": true
+                                }
+                            }
                         }
                     },
                     "500": {
@@ -963,7 +980,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1576,7 +1594,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -2852,7 +2871,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -2898,7 +2918,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -3485,7 +3506,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -4025,7 +4047,8 @@
                         "content": {
                             "application\/octet-stream": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4071,7 +4094,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4117,7 +4141,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4734,7 +4759,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -6819,7 +6845,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -6865,7 +6892,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }

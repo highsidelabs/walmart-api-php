@@ -349,7 +349,8 @@
                                         "modifiedDate": {
                                             "type": "number"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91235658274476033",
@@ -6062,7 +6063,8 @@
                                         "modifiedDate": {
                                             "type": "number"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91235658274476033",
@@ -6225,7 +6227,8 @@
                                             "type": "string",
                                             "description": "Shipping Template ID"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91233632243720193"
@@ -6502,7 +6505,8 @@
                                                 "description": "Calendar day promise details. For examples, please refer to 'Sample 2 - Calendar Day Configurations' in request & response samples."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Sample 1": {
@@ -7416,7 +7420,8 @@
                                             },
                                             "description": "Calendar day promise details. For examples, please refer to 'Sample 2 - Calendar Day Configurations' in request & response samples."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Sample 1": {
@@ -8122,7 +8127,8 @@
                                                 "description": "Calendar day promise details. For examples, please refer to 'Sample 2 - Calendar Day Configurations' in request & response samples."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Sample 1": {
@@ -8312,7 +8318,8 @@
                                             "type": "number",
                                             "description": "Total Number of records in the response of the API"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "shippingTemplates": [
@@ -15008,7 +15015,8 @@
                                         "modifiedDate": {
                                             "type": "number"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "id": "91233632243720193",
@@ -15214,7 +15222,8 @@
                                                 "description": "Status of fulfillment center. Allowed values: ACTIVE, INACTIVE."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -15262,6 +15271,14 @@
                                                 "partnerStoreId": {
                                                     "type": "string",
                                                     "description": "Partner\/Seller ID for Walmart store URL"
+                                                },
+                                                "businessRegNumber": {
+                                                    "type": "string",
+                                                    "description": " A registered distinct identifier such as US Tax ID \/ Foreign Tax ID"
+                                                },
+                                                "countryOfIncorporation": {
+                                                    "type": "string",
+                                                    "description": "The country from where seller conducts their business | ISO 3166 Country code"
                                                 }
                                             },
                                             "description": "Details of partner"
@@ -15312,7 +15329,8 @@
                                                 ]
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "partner": {
@@ -15379,7 +15397,8 @@
                                             "type": "number",
                                             "description": "Activation Status Last Modified Date"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "activationStatus": "ACTIVATED",
@@ -15433,7 +15452,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": [
                                     {
@@ -15516,7 +15536,8 @@
                                                 "description": "A description for the method carrier."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": [
                                     {
@@ -15577,7 +15598,8 @@
                                                 "description": "Name of the fulfillment center."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": [
                                     {
@@ -15635,6 +15657,14 @@
                                                 "partnerStoreId": {
                                                     "type": "string",
                                                     "description": "Partner\/Seller ID for Walmart store URL"
+                                                },
+                                                "businessRegNumber": {
+                                                    "type": "string",
+                                                    "description": " A registered distinct identifier such as US Tax ID \/ Foreign Tax ID"
+                                                },
+                                                "countryOfIncorporation": {
+                                                    "type": "string",
+                                                    "description": "The country from where seller conducts their business | ISO 3166 Country code"
                                                 }
                                             },
                                             "description": "Details of partner"
@@ -15782,14 +15812,17 @@
                                                 ]
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "partner": {
                                         "partnerId": "100009",
                                         "partnerName": "The seller's legal name",
                                         "partnerDisplayName": "The seller name shown on walmart.com",
-                                        "partnerStoreId": "Partner\/Seller ID for Walmart store URL"
+                                        "partnerStoreId": "Partner\/Seller ID for Walmart store URL ",
+                                        "businessRegNumber": "A registered distinct identifier such as US Tax ID \/ Foreign Tax ID",
+                                        "countryOfIncorporation": "The country from where seller conducts their business | ISO 3166 Country code"
                                     },
                                     "configurations": [
                                         {
@@ -20126,6 +20159,14 @@
                     "partnerStoreId": {
                         "type": "string",
                         "description": "Partner\/Seller ID for Walmart store URL"
+                    },
+                    "businessRegNumber": {
+                        "type": "string",
+                        "description": " A registered distinct identifier such as US Tax ID \/ Foreign Tax ID"
+                    },
+                    "countryOfIncorporation": {
+                        "type": "string",
+                        "description": "The country from where seller conducts their business | ISO 3166 Country code"
                     }
                 },
                 "description": "Details of partner"
@@ -20193,6 +20234,14 @@
                             "partnerStoreId": {
                                 "type": "string",
                                 "description": "Partner\/Seller ID for Walmart store URL"
+                            },
+                            "businessRegNumber": {
+                                "type": "string",
+                                "description": " A registered distinct identifier such as US Tax ID \/ Foreign Tax ID"
+                            },
+                            "countryOfIncorporation": {
+                                "type": "string",
+                                "description": "The country from where seller conducts their business | ISO 3166 Country code"
                             }
                         },
                         "description": "Details of partner"
@@ -20949,6 +20998,14 @@
                             "partnerStoreId": {
                                 "type": "string",
                                 "description": "Partner\/Seller ID for Walmart store URL"
+                            },
+                            "businessRegNumber": {
+                                "type": "string",
+                                "description": " A registered distinct identifier such as US Tax ID \/ Foreign Tax ID"
+                            },
+                            "countryOfIncorporation": {
+                                "type": "string",
+                                "description": "The country from where seller conducts their business | ISO 3166 Country code"
                             }
                         },
                         "description": "Details of partner"

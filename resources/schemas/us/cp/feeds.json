@@ -62,7 +62,8 @@
                                             "type": "string",
                                             "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ns2:FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedid>039F4AEA0B3A4E1FBEF0A6403507B18C@AQQBAQA<\/ns2:feedid>\n<\/ns2:FeedAcknowledgement>"
                             }

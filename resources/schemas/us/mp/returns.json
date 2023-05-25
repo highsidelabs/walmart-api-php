@@ -125,7 +125,8 @@
                                                 "description": "Array of refund lines."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "returnOrderId": "106152711271982880",
@@ -260,7 +261,8 @@
                                             "type": "string",
                                             "description": "A unique ID, returned from the Bulk Upload API, used for tracking the Feed File."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "C0771C26FF1A4282A73C6F3EB659D9BF@ATgBAQA"
@@ -994,7 +996,8 @@
                                                 "description": "List of returns for the seller."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {

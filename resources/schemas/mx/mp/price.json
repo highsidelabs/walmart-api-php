@@ -173,7 +173,8 @@
                                     "xml": {
                                         "name": "ItemPriceResponse",
                                         "namespace": "http:\/\/walmart.com\/"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemPriceResponse": {
@@ -192,7 +193,9 @@
                         "accessTokenScheme": []
                     }
                 ]
-            },
+            }
+        },
+        "\/v3\/feeds": {
             "post": {
                 "tags": [
                     "Prices"
@@ -256,7 +259,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "970302799B194D309B4DBA5471DCEF19@AQYBCgA"

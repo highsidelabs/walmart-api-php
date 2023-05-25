@@ -98,7 +98,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "message": "Rules are inactivated: [39, 44]",
@@ -143,7 +144,8 @@
                                         "status": {
                                             "type": "string"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "skuIds": [
@@ -239,7 +241,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "5ED712C698FD43B999EC5EEFD5C63655@ATgBAQA",
@@ -332,7 +335,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "5ED712C698FD43B999EC5EEFD5C63655@ATgBAQA",
@@ -398,7 +402,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -494,7 +499,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "message": "Rules are activated: [39, 44]",
@@ -714,7 +720,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -873,7 +880,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -1172,7 +1180,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -1381,7 +1390,8 @@
                                         "status": {
                                             "type": "string"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -1544,7 +1554,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "rules": [
@@ -1647,7 +1658,8 @@
                                             "type": "string",
                                             "description": "Number of items that would be set for two-day if the rule gets activated."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ruleId": "677",
@@ -1697,7 +1709,11 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/octet-stream": []
+                            "application\/octet-stream": {
+                                "schema": {
+                                    "x-expose-headers": true
+                                }
+                            }
                         }
                     }
                 },
@@ -1758,7 +1774,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -1822,7 +1839,8 @@
                             "application\/octet-stream": {
                                 "schema": {
                                     "type": "string",
-                                    "description": "The data will be streamed in CSV format."
+                                    "description": "The data will be streamed in CSV format.",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1905,7 +1923,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -2753,7 +2772,8 @@
                                             "type": "string",
                                             "description": "status"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",

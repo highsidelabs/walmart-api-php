@@ -158,7 +158,8 @@
                                     },
                                     "xml": {
                                         "name": "MpItemPriceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ns2:ItemPriceResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:mart>WALMART_US<\/ns2:mart>\n    <ns2:sku>VEX1437_9507240_9507247<\/ns2:sku>\n    <ns2:currency>USD<\/ns2:currency>\n    <ns2:amount>10.000<\/ns2:amount>\n    <ns2:message>Thank you. Your price has been updated. Please allow up to five minutes for this change to be reflected on the site.<\/ns2:message>\n<\/ns2:ItemPriceResponse>"
                             }
@@ -236,7 +237,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>55DE8A53B09F41BBBF261C1AB5FB2BC8@AVMBAgA<\/ns2:feedId>\n<\/ns2:FeedAcknowledgement>"
                             }

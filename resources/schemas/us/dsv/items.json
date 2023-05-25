@@ -68,7 +68,8 @@
                                             "type": "string",
                                             "description": "Indicates an identifier, returned from the Bulk Upload API, used for tracking the feed file."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>\n"
                             }
@@ -472,7 +473,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemResponses"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<ItemResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ItemResponse>\n        <mart>WALMART_US<\/mart>\n        <sku>379third908<\/sku>\n        <gtin>00313159099947<\/gtin>\n        <productName>Carex Soft Grip Folding Cane - Black Walking Cane<\/productName>\n        <productType>Walking Canes<\/productType>\n        <price>\n            <currency>USD<\/currency>\n            <amount>13.27<\/amount>\n        <\/price>\n        <publishedStatus>IN_PROGRESS<\/publishedStatus>\n    <\/ItemResponse >\n    <ItemResponse >\n        <mart>WALMART_US<\/mart>\n        <sku>prodtest1571<\/sku>\n        <upc>889296686590<\/upc>\n        <gtin>00889296686590<\/gtin>\n        <productName>REFURBISHED HP 250 G3 15.6 Notebook, Intel 4th Gen i3, 4GB RAM, 500GB HDD, Win 8.1, M5G69UTABA<\/productName>\n        <productType>RAM Memory<\/productType>\n        <price>\n            <currency>USD<\/currency>\n            <amount>329.99<\/amount>\n        <\/price>\n        <publishedStatus>PUBLISHED<\/publishedStatus>\n    <\/ItemResponse>\n<\/ItemResponse>\n\n"
                             }
@@ -744,7 +746,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<ItemResponse>\n    <mart>WALMART_US<\/mart>\n    <sku>prodtest1571<\/sku>\n    <upc>889296686590<\/upc>\n    <gtin>00889296686590<\/gtin>\n    <productName>REFURBISHED HP 250 G3 15.6 Notebook, Intel 4th Gen i3, 4GB RAM, 500GB HDD, Win 8.1, M5G69UTABA<\/productName>\n    <productType>RAM Memory<\/productType>\n    <price>\n        <currency>USD<\/currency>\n        <amount>329.99<\/amount>\n    <\/price>\n    <publishedStatus>PUBLISHED<\/publishedStatus>\n<\/ItemResponse>\n"
                             }

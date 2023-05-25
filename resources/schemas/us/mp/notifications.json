@@ -139,7 +139,8 @@
                                             "type": "string",
                                             "description": "Message confirming that the eventURL is validated"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "message": "Eventurl successfully validated"
@@ -298,7 +299,8 @@
                                                 "description": "List of events"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "sample1": {
@@ -726,7 +728,8 @@
                                             }
                                         }
                                     },
-                                    "description": "List of events"
+                                    "description": "List of events",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "events": [
@@ -786,7 +789,8 @@
                                             "type": "string",
                                             "description": "Message confirming that the subscription has been deleted"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "subscriptionId": "subscriptionId",
@@ -1003,7 +1007,8 @@
                                             }
                                         }
                                     },
-                                    "description": "List of events"
+                                    "description": "List of events",
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "eventType": "OFFER_UNPUBLISHED",
@@ -1077,7 +1082,8 @@
                                                 "description": "List of event types"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "events": [

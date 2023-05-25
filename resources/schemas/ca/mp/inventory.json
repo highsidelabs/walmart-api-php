@@ -83,7 +83,8 @@
                                     },
                                     "xml": {
                                         "name": "inventory"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/inventory>"
                             }
@@ -225,7 +226,8 @@
                                     },
                                     "xml": {
                                         "name": "inventory"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/inventory>"
                             }
@@ -304,7 +306,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>"
                             }

@@ -324,7 +324,8 @@
                                     "xml": {
                                         "name": "ItemPriceResponse",
                                         "namespace": "http:\/\/walmart.com\/"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemPriceResponse": {
@@ -397,7 +398,8 @@
                                             "type": "string",
                                             "description": "A unique ID, returned from the Bulk Upload API, used for tracking the Feed File."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "609B1E4C0B3E48989690263DEAC85C63@AVUBAQA"
@@ -1003,7 +1005,8 @@
                                         "status": {
                                             "type": "string"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",

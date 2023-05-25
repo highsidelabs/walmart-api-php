@@ -139,7 +139,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -171,7 +172,8 @@
                                             "type": "string",
                                             "example": "Strategy with Strategy Collection Id : 41678999-a088-4fd8-9eb4-55f8d8ed4ac8 deleted successfully"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -463,7 +465,8 @@
                                     "xml": {
                                         "name": "ItemPriceResponse",
                                         "namespace": "http:\/\/walmart.com\/"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemPriceResponse": {
@@ -576,7 +579,8 @@
                                             "type": "string",
                                             "example": "AFEE4EEC9C3541B6A7B58E694416EC82@AUoBAwA"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -707,7 +711,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -832,7 +837,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "14066B6642344B76A8B77AC094F8C63B@AVMBAgA"
@@ -907,7 +913,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -999,7 +1006,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }

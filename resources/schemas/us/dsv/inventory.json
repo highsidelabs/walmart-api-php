@@ -94,7 +94,8 @@
                                     },
                                     "xml": {
                                         "name": "Inventory"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "1487132332472",
@@ -302,7 +303,8 @@
                                     },
                                     "xml": {
                                         "name": "Inventory"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "1487132332472",
@@ -642,7 +644,8 @@
                                             "type": "string",
                                             "description": "Indicates an identifier, returned from the Bulk Upload API, used for tracking the feed file.\""
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "991B8779687C4D5DBC06DF18DB167192@AQkBAQA"
@@ -794,7 +797,8 @@
                                                 "description": "Indicates an array for nodes, to include ship node and allocated quantity."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "AR-CTIX-0092",

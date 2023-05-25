@@ -100,20 +100,28 @@ function customizeSchema(string $path, string $category): void
 
             // Update endpoint responses
             foreach ($verb['responses'] as $code => $response) {
-                // Some endpoints have multiple response content types, but we only care about the JSON response if it exists,
-                // and we only want to have one content type per response because OpenAPI doesn't support multiple content types
-                // in PHP
-                if (isset($response['content']) && count($response['content']) > 1) {
-                    $jsonResponse = $response['content']['application/json'] ?? null;
-
-                    // If there is a JSON response, use it and remove the other content types
-                    if (!is_null($jsonResponse)) {
-                        $verb['responses'][$code]['content'] = ['application/json' => $jsonResponse];
-                    } else {  // Otherwise, only keep the first content type
+                if (isset($response['content'])) {
+                    /*
+                     * Some endpoints have multiple response content types, but we only care about the JSON response if it exists,
+                     * and we only want to have one content type per response because OpenAPI doesn't support multiple content types
+                     * in PHP
+                     */
+                    $contentType = 'application/json';
+                    if (!array_key_exists('application/json', $response['content'])) {
                         $contentType = array_key_first($response['content']);
-                        $verb['responses'][$code]['content'][$contentType] = $response['content'][$contentType];
                     }
+                    if (count($response['content']) > 1) {
+                        // If there is a JSON response, use it and remove the other content types. Otherwise, use the first content type
+                        $response['content'] = [$contentType => $response['content'][$contentType]];
+                    }
+
+                    // All responses need to have their headers accessible, but the JSON models don't typically include headers
+                    // as one of the properties of the response model, so we mark the responses with a custom attribute that tells
+                    // the generator to expose a headers attribute
+                    $response['content'][$contentType]['schema']['x-expose-headers'] = true;
                 }
+
+                $verb['responses'][$code] = $response;
             }
 
             $apiPath[$x] = $verb;

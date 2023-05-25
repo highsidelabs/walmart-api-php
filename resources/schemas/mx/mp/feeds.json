@@ -254,7 +254,8 @@
                                     },
                                     "xml": {
                                         "name": "list"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "totalResults": 163,
@@ -632,7 +633,8 @@
                                     },
                                     "xml": {
                                         "name": "PartnerFeedResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "2601163173CF4F8290898F1F7256793F@AQMBAQA",

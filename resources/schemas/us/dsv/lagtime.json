@@ -202,7 +202,8 @@
                                             "type": "string",
                                             "description": "Indicates an identifier, returned from the Bulk Upload API, used for tracking the feed file."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "E7BB7DBAF3FF461AB63A2169F3BEAADE@AVQBAgA"
@@ -294,7 +295,8 @@
                                     },
                                     "xml": {
                                         "name": "lagTime"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "06194456252572",

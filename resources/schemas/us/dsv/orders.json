@@ -2224,7 +2224,8 @@
                                     "description": "Information about the purchase order",
                                     "xml": {
                                         "name": "order"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -4391,7 +4392,8 @@
                                     "description": "Information about the purchase order",
                                     "xml": {
                                         "name": "order"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -6309,7 +6311,8 @@
                                     "description": "Information about the purchase order",
                                     "xml": {
                                         "name": "order"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -7841,7 +7844,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {
@@ -9883,7 +9887,8 @@
                                     "description": "Information about the purchase order",
                                     "xml": {
                                         "name": "order"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -11406,7 +11411,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {

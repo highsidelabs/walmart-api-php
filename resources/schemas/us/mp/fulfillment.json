@@ -231,7 +231,8 @@
                                     },
                                     "xml": {
                                         "name": "ServiceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK"
@@ -502,7 +503,8 @@
                                     },
                                     "xml": {
                                         "name": "ServiceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -737,7 +739,8 @@
                                     },
                                     "xml": {
                                         "name": "ServiceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK"
@@ -811,7 +814,8 @@
                         "content": {
                             "application\/pdf": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1133,7 +1137,8 @@
                                             },
                                             "description": "response payload"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -1791,7 +1796,8 @@
                                             },
                                             "description": "Response payload."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -2062,7 +2068,8 @@
                                             },
                                             "description": "response payload"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -2329,7 +2336,8 @@
                                                 "description": "response payload"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "headers": {
@@ -2901,7 +2909,8 @@
                                                 "description": "response payload"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -3328,7 +3337,8 @@
                                                 "description": "Response payload."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -3863,7 +3873,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4362,7 +4373,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4536,7 +4548,8 @@
                                     },
                                     "xml": {
                                         "name": "ServiceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4720,7 +4733,8 @@
                                     },
                                     "xml": {
                                         "name": "ServiceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -4949,7 +4963,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "FFE538D9B25A4000AD2A067ACEDCF4C4@AUoBAQA"
@@ -4985,7 +5000,8 @@
                             "application\/octet-stream": {
                                 "schema": {
                                     "type": "string",
-                                    "description": "The data will be returned in a .csv file in your folder.\nThe response to a successful call includes a header as an attachment called Content-Disposition.\nThe Content-Disposition header contains the name of the report. As an example, attachment: filename=WFSInventoryHealthReport_2021-07-15T06_42_13.766Z.csv. The title includes the timestamp when the file was generated.\nThe attachment contains the report in a csv format.\nThe java code example demonstrates the use of the header and the body when processing the response\nThe report is regenerated periodically. We recommend that you not retrieve the report more frequently than once every one hour."
+                                    "description": "The data will be returned in a .csv file in your folder.\nThe response to a successful call includes a header as an attachment called Content-Disposition.\nThe Content-Disposition header contains the name of the report. As an example, attachment: filename=WFSInventoryHealthReport_2021-07-15T06_42_13.766Z.csv. The title includes the timestamp when the file was generated.\nThe attachment contains the report in a csv format.\nThe java code example demonstrates the use of the header and the body when processing the response\nThe report is regenerated periodically. We recommend that you not retrieve the report more frequently than once every one hour.",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -5473,7 +5489,8 @@
                                                 "description": "Order details"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK",
@@ -5623,7 +5640,8 @@
                         "content": {
                             "application\/pdf": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -5837,7 +5855,8 @@
                                             },
                                             "description": "Payload Section"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -5995,7 +6014,8 @@
                                                 "description": "response payload"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "headers": {
@@ -6365,7 +6385,8 @@
                                                 "description": "response payload"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "headers": {
@@ -6594,7 +6615,8 @@
                                     },
                                     "xml": {
                                         "name": "ServiceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "OK"
@@ -6762,7 +6784,8 @@
                                     },
                                     "xml": {
                                         "name": "ServiceResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }

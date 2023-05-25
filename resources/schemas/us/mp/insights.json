@@ -480,7 +480,8 @@
                                         "status": {
                                             "type": "string"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Query for SKU": {
@@ -1401,7 +1402,8 @@
                                             },
                                             "description": "Recommendations on how to increase chances of Pro Seller Badge eligibility"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "hasBadge": true,
@@ -1653,7 +1655,8 @@
                                             },
                                             "description": "Gross Merchandise Value of the total result set"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": [
@@ -1817,7 +1820,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": [
@@ -2005,7 +2009,8 @@
                                         "status": {
                                             "type": "string"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -2159,7 +2164,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "payload": {
@@ -2306,7 +2312,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Categories With Issues": {

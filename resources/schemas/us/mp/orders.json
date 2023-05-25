@@ -2610,7 +2610,8 @@
                                                 "name": "order"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -5745,7 +5746,8 @@
                                                 "name": "order"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -8060,7 +8062,8 @@
                                                 "name": "order"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -10085,7 +10088,8 @@
                                                 "name": "order"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "order": {
@@ -12377,7 +12381,8 @@
                                                 "name": "list"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {
@@ -15088,7 +15093,8 @@
                                     "description": "Information about the purchase order",
                                     "xml": {
                                         "name": "order"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "ORDER": {
@@ -17504,7 +17510,8 @@
                                                 "name": "list"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "list": {

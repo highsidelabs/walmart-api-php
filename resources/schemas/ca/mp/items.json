@@ -133,7 +133,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>"
                             }
@@ -557,7 +558,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemResponses"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ItemResponses xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ItemResponse>\n        <mart>WALMART_CA<\/mart>\n        <sku>379third908<\/sku>\n        <gtin>00313159099947<\/gtin>\n        <productName>Carex Soft Grip Folding Cane - Black Walking Cane<\/productName>\n        <productType>Walking Canes<\/productType>\n        <price>\n            <currency>CAD<\/currency>\n            <amount>13.27<\/amount>\n        <\/price>\n        <publishedStatus>IN_PROGRESS<\/publishedStatus>\n    <\/ItemResponse>\n    <ItemResponse>\n        <mart>WALMART_US<\/mart>\n        <sku>prodtest1571<\/sku>\n        <upc>889296686590<\/upc>\n        <gtin>00889296686590<\/gtin>\n        <productName>REFURBISHED: HP 250 G3 15.6\" Notebook, Intel 4th Gen i3, 4GB RAM, 500GB HDD, Win 8.1, M5G69UT#ABA<\/productName>\n        <productType>RAM Memory<\/productType>\n        <price>\n            <currency>CAD<\/currency>\n            <amount>329.99<\/amount>\n        <\/price>\n        <publishedStatus>PUBLISHED<\/publishedStatus>\n    <\/ItemResponse>\n<\/ItemResponses>"
                             }
@@ -829,7 +831,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ItemResponses>\n  <ItemResponse>\n    <mart>WALMART_CA<\/mart>\n    <wpid>4W1AF6YU04F5<\/wpid>\n    <upc>735732770692<\/upc>\n    <gtin>00735732770692<\/gtin>\n    <productName>Victoria Classics Vista Paisley 8-Piece Bedding Comforter Set<\/productName>\n    <productType>Bedding Sets<\/productType>\n    <price>\n      <currency>CAD<\/currency>\n      <amount>13.27<\/amount>\n    <\/price>\n    <publishedStatus>IN_PROGRESS<\/publishedStatus>\n  <\/ItemResponse>\n<\/ItemResponses>"
                             }
@@ -980,7 +983,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemRetireResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ItemRetireResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <sku>34931712<\/sku>\n    <message>Thank you. Your item has been submitted for retirement from Walmart Catalog. Please note that it can take up to 48 hours for items to be retired from our catalog.<\/message>\n<\/ItemRetireResponse>"
                             }

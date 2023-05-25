@@ -523,7 +523,8 @@
                                             "type": "string",
                                             "writeOnly": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Search Items": {
@@ -972,7 +973,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "items": [
@@ -1604,7 +1606,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "F129C19240844B97A3C6AD8F1A2C4997@AU8BAQA"
@@ -2250,7 +2253,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemResponses"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "Get All Items": {
@@ -3163,7 +3167,8 @@
                                                 "name": "ItemResponse"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "ItemResponse": [
@@ -3379,7 +3384,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "items": [
@@ -3547,7 +3553,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -3644,7 +3651,8 @@
                                                 "description": "Items included in the response list"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "status": 200,
@@ -3715,7 +3723,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 },
                                 "examples": {
                                     "ALL": {
@@ -3786,7 +3795,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemRetireResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "97964_KFTest",

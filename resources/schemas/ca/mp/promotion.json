@@ -56,7 +56,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:ItemPriceResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:mart>1<\/ns2:mart>\n    <ns2:sku>16246494<\/ns2:sku>\n    <ns2:message>Thank you. Your price has been updated. Please allow up to five minutes for this change to be reflected on the site.<\/ns2:message>\n<\/ns2:ItemPriceResponse>"
                             }
@@ -138,7 +139,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>"
                             }
@@ -178,7 +180,8 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ServiceResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <status>OK<\/status>\n    <errors\/>\n    <header>\n        <headerAttributes\/>\n    <\/header>\n    <payload xmlns:xsi=\"http:\/\/www.w3.org\/2001\/XMLSchema-instance\" xsi:type=\"ns2:itemPriceType\">\n        <ns2:itemIdentifier>\n            <ns2:sku>WGU-002 Standalone<\/ns2:sku>\n        <\/ns2:itemIdentifier>\n        <ns2:pricingList>\n            <ns2:pricing effectiveDate=\"2016-09-04T01:26:44.296Z\" expirationDate=\"2016-09-05T01:26:44.296Z\" promoId=\"889b4d96-2e00-4a4a-8152-42d101b99192\">\n                <ns2:currentPrice>\n                    <ns2:value amount=\"24\"><\/ns2:value>\n                <\/ns2:currentPrice>\n                <ns2:currentPriceType>CLEARANCE<\/ns2:currentPriceType>\n                <ns2:comparisonPrice>\n                    <ns2:value amount=\"86\"><\/ns2:value>\n                <\/ns2:comparisonPrice>\n            <\/ns2:pricing>\n        <\/ns2:pricingList>\n    <\/payload>\n<\/ServiceResponse>"
                             }

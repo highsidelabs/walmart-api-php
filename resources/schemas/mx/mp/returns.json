@@ -196,7 +196,8 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -242,7 +243,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -288,7 +290,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -796,7 +799,8 @@
                                                 "description": "List of returns for the seller."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -1312,7 +1316,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1358,7 +1363,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -1869,7 +1875,8 @@
                                                 "description": "List of returns for the seller."
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -2883,7 +2890,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -2929,7 +2937,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }

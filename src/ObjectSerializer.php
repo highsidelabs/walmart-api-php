@@ -538,6 +538,11 @@ class ObjectSerializer
                     $instance->$propertySetter(self::deserialize($propertyValue, $type, null));
                 }
             }
+
+            if ($httpHeaders && method_exists($instance, 'setHeaders')) {
+                $instance->setHeaders($httpHeaders);
+            }
+
             return $instance;
         }
     }

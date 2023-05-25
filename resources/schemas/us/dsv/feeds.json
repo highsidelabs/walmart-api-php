@@ -241,7 +241,8 @@
                                     },
                                     "xml": {
                                         "name": "list"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<list>\n    <totalresults>1<\/totalresults>\n    <offset>0<\/offset>\n    <limit>50<\/limit>\n    <results>\n        <feed>\n            <feedid>2D4DB32BC1174C7491720C9EBEB56163@AQMBAAA<\/feedid>\n            <feedsource>WALMART_SC<\/feedsource>\n            <feedtype>SUPPLIER_FULL_ITEM<\/feedtype>\n            <partnerid>721407<\/partnerid>\n            <itemsreceived>1<\/itemsreceived>\n            <itemssucceeded>1<\/itemssucceeded>\n            <itemsfailed>0<\/itemsfailed>\n            <itemsprocessing>0<\/itemsprocessing>\n            <feedstatus>PROCESSED<\/feedstatus>\n            <feeddate>2017-03-16T21:37:41.686Z<\/feeddate>\n            <batchid>HP_SHUTDOWN_HOOK_PQA_AM_009<\/batchid>\n            <modifieddtm>2017-03-16T21:37:47.509Z<\/modifieddtm>\n            <filename>Clothing_XSD_0_13_fromHarshal.XML<\/filename>\n            <itemdataerrorcount>0<\/itemdataerrorcount>\n            <itemsystemerrorcount>0<\/itemsystemerrorcount>\n            <itemtimeouterrorcount>0<\/itemtimeouterrorcount>\n        <\/feed>\n    <\/results>\n<\/list>\n"
                             }
@@ -573,7 +574,8 @@
                                     },
                                     "xml": {
                                         "name": "PartnerFeedResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:PartnerFeedResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>B99CF2503C894C388C5D1AECC486386C@ARcBAQA<\/ns2:feedId>\n    <ns2:feedStatus>PROCESSED<\/ns2:feedStatus>\n    <ns2:feedSubmissionDate>2018-02-23T18:08:57.910Z<\/ns2:feedSubmissionDate>\n    <ns2:ingestionErrors\/>\n    <ns2:itemsReceived>1<\/ns2:itemsReceived>\n    <ns2:itemsSucceeded>1<\/ns2:itemsSucceeded>\n    <ns2:itemsFailed>0<\/ns2:itemsFailed>\n    <ns2:itemsProcessing>0<\/ns2:itemsProcessing>\n    <ns2:offset>0<\/ns2:offset>\n    <ns2:limit>50<\/ns2:limit>\n    <ns2:itemDetails>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>MS95-005-076-03<\/ns2:sku>\n            <ns2:wpid>7FB26Z1GC3GK<\/ns2:wpid>\n            <ns2:index>0<\/ns2:index>\n            <ns2:itemid>340712325<\/ns2:itemid>\n            <ns2:productIdentifiers>\n                <ns2:productIdentifier>\n                    <ns2:productIdType>GTIN<\/ns2:productIdType>\n                    <ns2:productId>06959576601002<\/ns2:productId>\n                <\/ns2:productIdentifier>\n            <\/ns2:productIdentifiers>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n    <\/ns2:itemDetails>\n<\/ns2:PartnerFeedResponse>\n"
                             }

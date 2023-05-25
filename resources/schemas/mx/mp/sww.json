@@ -366,7 +366,8 @@
                                                 "description": "errors"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": {
@@ -564,7 +565,8 @@
                                                 "description": "errors"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": [
@@ -698,7 +700,8 @@
                                                 "description": "errors"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "carriers": [
@@ -766,13 +769,8 @@
                             "application\/pdf": {
                                 "schema": {
                                     "type": "string",
-                                    "format": "binary"
-                                }
-                            },
-                            "image\/png": {
-                                "schema": {
-                                    "type": "string",
-                                    "format": "binary"
+                                    "format": "binary",
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -886,7 +884,8 @@
                                                 "description": "errors"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": "true"
@@ -1033,7 +1032,8 @@
                                                 "description": "errors"
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "data": [

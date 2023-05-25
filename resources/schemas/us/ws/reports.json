@@ -187,7 +187,8 @@
                                             "type": "string",
                                             "description": "The number of items in stock"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }

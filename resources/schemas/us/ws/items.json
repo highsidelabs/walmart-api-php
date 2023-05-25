@@ -68,7 +68,8 @@
                                             "type": "string",
                                             "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>\n"
                             }
@@ -350,7 +351,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:ItemResponses xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_US<\/ns2:mart>\n        <ns2:sku>DFAE2MBW0431<\/ns2:sku>\n        <ns2:wpid>DFEW345WTE<\/ns2:wpid>\n        <ns2:upc>2332545436<\/ns2:upc>\n        <ns2:gtin>55465646576<\/ns2:gtin>\n        <ns2:productName>Bin Warehouse <\/ns2:productName>\n        <ns2:productType>Shelves &amp; Shelf Units<\/ns2:productType>\n        <ns2:price>\n            <ns2:currency>USD<\/ns2:currency>\n            <ns2:amount>232<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>UNPUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_US<\/ns2:mart>\n        <ns2:sku>EFWT34636-06<\/ns2:sku>\n        <ns2:wpid>2354TREYGRGST4<\/ns2:wpid>\n        <ns2:upc>3252463565<\/ns2:upc>\n        <ns2:gtin>2352465746<\/ns2:gtin>\n        <ns2:productName>Atmor 6.5kW\/240-Volt <\/ns2:productName>\n        <ns2:productType>Water Heaters<\/ns2:productType>\n        <ns2:price>\n            <ns2:currency>USD<\/ns2:currency>\n            <ns2:amount>234235.95<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>STAGE<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:totalItems>507<\/ns2:totalItems>\n    <ns2:nextCursor>WETRGFgtyry53wrqgfhghdghsadRR354W\/4354YTEAFSreret5y455362531<\/ns2:nextCursor>\n<\/ns2:ItemResponses>\n"
                             }
@@ -622,7 +624,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:ItemResponses xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_US<\/ns2:mart>\n        <ns2:sku>08F8DYUHDSJBSHW4R<\/ns2:sku>\n        <ns2:wpid>2342TWFEFGR4T<\/ns2:wpid>\n        <ns2:upc>12415246356<\/ns2:upc>\n        <ns2:gtin>135246354764<\/ns2:gtin>\n        <ns2:productName>Seagate 8TB <\/ns2:productName>\n        <ns2:productType>Hard Drives<\/ns2:productType>\n        <ns2:price>\n            <ns2:currency>USD<\/ns2:currency>\n            <ns2:amount>23.95<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:totalItems>1<\/ns2:totalItems>\n<\/ns2:ItemResponses>\n"
                             }

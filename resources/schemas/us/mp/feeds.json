@@ -254,7 +254,8 @@
                                     },
                                     "xml": {
                                         "name": "list"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "totalResults": 115,
@@ -1510,7 +1511,8 @@
                                     },
                                     "xml": {
                                         "name": "PartnerFeedResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "F129C19240844B97A3C6AD8F1A2C4997@AU8BAQA",
@@ -1599,13 +1601,21 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/octet-stream": []
+                            "application\/octet-stream": {
+                                "schema": {
+                                    "x-expose-headers": true
+                                }
+                            }
                         }
                     },
                     "204": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/octet-stream": []
+                            "application\/octet-stream": {
+                                "schema": {
+                                    "x-expose-headers": true
+                                }
+                            }
                         }
                     }
                 },

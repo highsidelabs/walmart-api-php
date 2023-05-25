@@ -67,10 +67,20 @@ class {{classname}} extends BaseModel
      *
      * @var string[]
      */
-    protected static $getters = [
+    protected static array $getters = [
         {{#each vars}}'{{name}}' => '{{getter}}'{{#unless @last}},
         {{/unless}}{{/each}}
     ];
+
+    {{~#if vendorExtensions.x-expose-headers}}
+    /**
+     * Array of response headers returned by the API
+     *
+     * @var string[][]
+     */
+    protected array $headers = [];
+
+    {{/if~}}
 
     {{#vars~}}
     {{#if isEnum~}}
@@ -192,6 +202,32 @@ class {{classname}} extends BaseModel
         {{/vars}}
         return $invalidProperties;
     }
+    {{~#if vendorExtensions.x-expose-headers}}
+
+    /**
+     * Gets API response headers (only relevant to response models)
+     *
+     * @return string[][]
+     */
+    public function getHeaders(): array
+    {
+        return $this->headers;
+    }
+
+    /**
+     * Sets API response headers (only relevant to response models)
+     *
+     * @param array[string => string[]] $headers Associative array of response headers.
+     *
+     * @return self
+     */
+    public function setHeaders(array $headers): static
+    {
+        $this->headers = $headers;
+        return $this;
+    }
+
+    {{/if~}}
     {{#vars}}
     /**
      * Gets {{name}}

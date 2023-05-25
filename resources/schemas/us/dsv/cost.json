@@ -100,7 +100,8 @@
                                         "error": {
                                             "type": "string"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }

@@ -50,7 +50,8 @@
                             "application\/octet-stream": {
                                 "schema": {
                                     "type": "string",
-                                    "description": "The data will be streamed in a .CSV file in your folder. A zip file will be downloaded in your folder with the .csv"
+                                    "description": "The data will be streamed in a .CSV file in your folder. A zip file will be downloaded in your folder with the .csv",
+                                    "x-expose-headers": true
                                 }
                             }
                         }

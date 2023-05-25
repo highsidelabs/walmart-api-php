@@ -89,7 +89,8 @@
                                     },
                                     "xml": {
                                         "name": "inventory"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "97964_KFTest",
@@ -267,7 +268,8 @@
                                     },
                                     "xml": {
                                         "name": "inventory"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "97964_KFTest",
@@ -477,7 +479,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "AR-CTIX-0092",
@@ -712,7 +715,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "00757642886669_test_01",
@@ -889,7 +893,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "FFE538D9B25A4000AD2A067ACEDCF4C4@AUoBAQA"
@@ -1050,7 +1055,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "meta": {
@@ -1256,7 +1262,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }

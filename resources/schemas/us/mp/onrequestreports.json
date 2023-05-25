@@ -269,7 +269,8 @@
                                                 }
                                             }
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "page": 1,
@@ -653,7 +654,8 @@
                                             },
                                             "description": "Request Payload"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "requestId": "98884f2c-46c7-48c6-8e19-0946ff371442",
@@ -873,7 +875,8 @@
                                             "type": "string",
                                             "description": "Date and time on which the report is generated. Attribute is available only if report is generated."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -978,7 +981,8 @@
                                             "type": "string",
                                             "description": "Date and time on which the report is generated. Attribute is available only if report is generated."
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "requestSubmissionDate": "2020-09-24T05:36:24",

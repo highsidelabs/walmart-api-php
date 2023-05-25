@@ -45,7 +45,11 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/xml": []
+                            "application\/xml": {
+                                "schema": {
+                                    "x-expose-headers": true
+                                }
+                            }
                         }
                     }
                 },

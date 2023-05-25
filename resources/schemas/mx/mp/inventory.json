@@ -77,7 +77,8 @@
                                             },
                                             "description": "Information about the quantity in inventory"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "sku-e2e-0723x",
@@ -238,7 +239,8 @@
                                             },
                                             "description": "Information about the quantity in inventory"
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "sku": "sku-e2e-0723x",
@@ -353,7 +355,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "feedId": "3B6F0372F68949A0AB2DD89CE0726FCB@AQkBAQA"

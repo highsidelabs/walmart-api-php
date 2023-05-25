@@ -245,7 +245,8 @@
                                     },
                                     "xml": {
                                         "name": "list"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 }
                             }
                         }
@@ -321,7 +322,8 @@
                                             "type": "object",
                                             "nullable": true
                                         }
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>\n"
                             }
@@ -653,7 +655,8 @@
                                     },
                                     "xml": {
                                         "name": "PartnerFeedResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:PartnerFeedResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>640787F441ASSFF1C4FB7BB749E20C0A3<\/ns2:feedId>\n    <ns2:feedStatus>PROCESSED<\/ns2:feedStatus>\n    <ns2:feedSubmissionDate>2018-07-20T21:56:12.605Z<\/ns2:feedSubmissionDate>\n    <ns2:itemsReceived>1<\/ns2:itemsReceived>\n    <ns2:itemsSucceeded>1<\/ns2:itemsSucceeded>\n    <ns2:itemsFailed>0<\/ns2:itemsFailed>\n    <ns2:itemsProcessing>0<\/ns2:itemsProcessing>\n    <ns2:offset>0<\/ns2:offset>\n    <ns2:limit>50<\/ns2:limit>\n    <ns2:itemDetails>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>234325346-8fbf-4fa0-a70c-2424rfwefq<\/ns2:sku>\n            <ns2:wpid>7K69FC732QRRE5KTFS<\/ns2:wpid>\n            <ns2:index>0<\/ns2:index>\n            <ns2:itemid>24234<\/ns2:itemid>\n            <ns2:productIdentifiers>\n                <ns2:productIdentifier>\n                    <ns2:productIdType>GTIN<\/ns2:productIdType>\n                    <ns2:productId>086756453<\/ns2:productId>\n                <\/ns2:productIdentifier>\n                <ns2:productIdentifier>\n                    <ns2:productIdType>ISBN<\/ns2:productIdType>\n                    <ns2:productId>13432543634<\/ns2:productId>\n                <\/ns2:productIdentifier>\n            <\/ns2:productIdentifiers>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n        <\/ns2:itemIngestionStatus>\n    <\/ns2:itemDetails>\n<\/ns2:PartnerFeedResponse>"
                             }

@@ -62,7 +62,8 @@
                                     },
                                     "xml": {
                                         "name": "UploadResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "response": "Promo Items Uploaded Successfully"
@@ -112,7 +113,8 @@
                                     },
                                     "xml": {
                                         "name": "UploadResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "response": "Feed Uploaded Successfully, feed ID: 6D4B0EDB4A3B4DD2B422B098F8ACFC4E@AREBAwA"
@@ -224,7 +226,8 @@
                                     },
                                     "xml": {
                                         "name": "ItemCountResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "eventId": "a7f561e2-5f5f-450f-8c58-5b022f680ec0",
@@ -373,7 +376,8 @@
                                     },
                                     "xml": {
                                         "name": "PromoItemResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "eventId": "718012a5-a4a6-40d8-a8be-4b8e6b3ac08b",
@@ -520,7 +524,8 @@
                                     },
                                     "xml": {
                                         "name": "EventResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "lastupdateddate": "",
@@ -679,7 +684,8 @@
                                     },
                                     "xml": {
                                         "name": "PromoItemResponse"
-                                    }
+                                    },
+                                    "x-expose-headers": true
                                 },
                                 "example": {
                                     "eventId": "e44631ea-ccc5-44b6-99c0-d0364607be2d",
