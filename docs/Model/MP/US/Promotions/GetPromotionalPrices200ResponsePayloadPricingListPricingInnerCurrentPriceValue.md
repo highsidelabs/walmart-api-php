@@ -1,0 +1,12 @@
+# #US\MP\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**value** | **string** |  | [optional]
+**currency** | **string** |  | [optional]
+**amount** | **float** |  | [optional]
+
+
+[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

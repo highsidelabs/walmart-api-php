@@ -1,0 +1,12 @@
+# #US\MP\PromiseOrderRequestPayload
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**requestId** | **string** | The identifier to identify the request. |
+**destinations** | [**\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[]**](PromiseFulfillmentsRequestPayloadDestinationsInner.md) | Customer order destination details. |
+**offerSelections** | [**\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]**](PromiseFulfillmentsRequestPayloadOfferSelectionsInner.md) | Offer Selection details. List of offers - number of offer inside offer selection should be less than or equal to 30. |
+
+
+[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

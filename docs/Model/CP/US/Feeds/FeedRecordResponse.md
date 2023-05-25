@@ -1,0 +1,14 @@
+# #US\CP\FeedRecordResponse
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**errors** | [**\Walmart\Model\CP\US\Feeds\FeedRecordResponseErrorsInner[]**](FeedRecordResponseErrorsInner.md) |  | [optional]
+**totalResults** | **int** | Total number of feeds returned | [optional]
+**offset** | **int** | The object response to the starting number, where 0 is the first available | [optional]
+**limit** | **int** | The number of items to be returned | [optional]
+**results** | [**\Walmart\Model\CP\US\Feeds\FeedRecordResponseResultsInner[]**](FeedRecordResponseResultsInner.md) |  | [optional]
+
+
+[[Back to Model list]](../) [[Back to API list]](../../Api/US/CP) [[Back to README]](../../README.md)

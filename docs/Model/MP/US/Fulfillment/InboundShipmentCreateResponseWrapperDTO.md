@@ -1,0 +1,11 @@
+# #US\MP\InboundShipmentCreateResponseWrapperDTO
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**status** | **string** |  | [optional]
+**payload** | [**\Walmart\Model\MP\US\Fulfillment\CreateShipment200ResponsePayloadInner[]**](CreateShipment200ResponsePayloadInner.md) | response payload | [optional]
+
+
+[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

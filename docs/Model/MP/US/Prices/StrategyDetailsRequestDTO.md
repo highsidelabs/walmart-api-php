@@ -1,0 +1,10 @@
+# #US\MP\StrategyDetailsRequestDTO
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**strategy** | [**\Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy**](GetRepricerFeedRequestItemInnerStrategy.md) |  | [optional]
+
+
+[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

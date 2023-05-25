@@ -1,0 +1,11 @@
+# #MX\MP\GetCarrierPackageTypes200Response
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**data** | [**\Walmart\Model\MP\MX\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]**](GetCarrierPackageTypes200ResponseDataInner.md) | data | [optional]
+**errors** | [**\Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]**](CreateLabel200ResponseErrorsInner.md) | errors | [optional]
+
+
+[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
