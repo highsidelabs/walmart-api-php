@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner Class Doc Comment
@@ -53,12 +53,12 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     protected static array $openAPITypes = [
         'chargeCategory' => 'string',
         'chargeName' => 'string',
-        'chargePerUnit' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
+        'chargePerUnit' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
         'isDiscount' => 'bool',
         'isBillable' => 'bool',
-        'tax' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]',
-        'excessCharge' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
-        'references' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]'
+        'tax' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]',
+        'excessCharge' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
+        'references' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]'
     ];
 
     /**
@@ -233,7 +233,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Gets chargePerUnit
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
     
      */
     public function getChargePerUnit()
@@ -244,7 +244,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Sets chargePerUnit
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $chargePerUnit chargePerUnit
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $chargePerUnit chargePerUnit
      *
      * @return self
     
@@ -320,7 +320,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Gets tax
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null
     
      */
     public function getTax()
@@ -331,7 +331,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Sets tax
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null $tax Taxes for each charge
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null $tax Taxes for each charge
      *
      * @return self
     
@@ -349,7 +349,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Gets excessCharge
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
     
      */
     public function getExcessCharge()
@@ -360,7 +360,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Sets excessCharge
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $excessCharge excessCharge
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $excessCharge excessCharge
      *
      * @return self
     
@@ -378,7 +378,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Gets references
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null
     
      */
     public function getReferences()
@@ -389,7 +389,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Sets references
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null $references Used only for OG
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null $references Used only for OG
      *
      * @return self
     

@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\MX;
+namespace Walmart\Apis\MP\MX;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -66,7 +66,7 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response
+     * @return \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response
      */
     public function getAllReturnsUsingCursor(
         ?string $returnCreationStartDate = 'NOW-180DAYS',
@@ -77,7 +77,7 @@ class ReturnsApi extends BaseApi
         ?string $returnOrderId = null,
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null
-    ): \Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response {
+    ): \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response {
         return $this->getAllReturnsUsingCursorWithHttpInfo($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
     }
 
@@ -97,7 +97,7 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response
+     * @return \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response
      */
     protected function getAllReturnsUsingCursorWithHttpInfo(
         ?string $returnCreationStartDate = 'NOW-180DAYS',
@@ -108,7 +108,7 @@ class ReturnsApi extends BaseApi
         ?string $returnOrderId = null,
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null,
-    ): \Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response {
+    ): \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response {
         $request = $this->getAllReturnsUsingCursorRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -158,41 +158,41 @@ class ReturnsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response', $response->getHeaders());
                 case 400:
-                    if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
                 case 500:
-                    if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response';
+            $returnType = '\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -208,7 +208,7 @@ class ReturnsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response',
+                        '\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -216,7 +216,7 @@ class ReturnsApi extends BaseApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response',
+                        '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -224,7 +224,7 @@ class ReturnsApi extends BaseApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response',
+                        '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -299,7 +299,7 @@ class ReturnsApi extends BaseApi
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response';
+        $returnType = '\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response';
         $request = $this->getAllReturnsUsingCursorRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -522,7 +522,7 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response
      */
     public function getReturns(
         ?string $returnCreationStartDate = 'NOW-180DAYS',
@@ -533,7 +533,7 @@ class ReturnsApi extends BaseApi
         ?string $returnOrderId = null,
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null
-    ): \Walmart\Model\MP\MX\Returns\GetReturns200Response {
+    ): \Walmart\Models\MP\MX\Returns\GetReturns200Response {
         return $this->getReturnsWithHttpInfo($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
     }
 
@@ -553,7 +553,7 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response
      */
     protected function getReturnsWithHttpInfo(
         ?string $returnCreationStartDate = 'NOW-180DAYS',
@@ -564,7 +564,7 @@ class ReturnsApi extends BaseApi
         ?string $returnOrderId = null,
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null,
-    ): \Walmart\Model\MP\MX\Returns\GetReturns200Response {
+    ): \Walmart\Models\MP\MX\Returns\GetReturns200Response {
         $request = $this->getReturnsRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -614,41 +614,41 @@ class ReturnsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\MX\Returns\GetReturns200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\GetReturns200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\GetReturns200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\GetReturns200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\GetReturns200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\GetReturns200Response', $response->getHeaders());
                 case 400:
-                    if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
                 case 500:
-                    if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\MX\Returns\GetReturns200Response';
+            $returnType = '\Walmart\Models\MP\MX\Returns\GetReturns200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -664,7 +664,7 @@ class ReturnsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\GetReturns200Response',
+                        '\Walmart\Models\MP\MX\Returns\GetReturns200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -672,7 +672,7 @@ class ReturnsApi extends BaseApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response',
+                        '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -680,7 +680,7 @@ class ReturnsApi extends BaseApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response',
+                        '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -755,7 +755,7 @@ class ReturnsApi extends BaseApi
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\MX\Returns\GetReturns200Response';
+        $returnType = '\Walmart\Models\MP\MX\Returns\GetReturns200Response';
         $request = $this->getReturnsRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -968,15 +968,15 @@ class ReturnsApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $returnOrderId returnOrderId (required)
-     * @param  \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
+     * @param  \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return string|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response
+     * @return string|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response
      */
     public function refundOrderLines(
         string $returnOrderId,
-        \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest
+        \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest
     ): string {
         return $this->refundOrderLinesWithHttpInfo($returnOrderId, $refundOrderLinesRequest);
     }
@@ -987,15 +987,15 @@ class ReturnsApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $returnOrderId returnOrderId (required)
-     * @param  \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
+     * @param  \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return string|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response
+     * @return string|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response|\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response
      */
     protected function refundOrderLinesWithHttpInfo(
         string $returnOrderId,
-        \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest,
+        \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest,
     ): string {
         $request = $this->refundOrderLinesRequest($returnOrderId, $refundOrderLinesRequest, );
         $this->writeDebug($request);
@@ -1057,27 +1057,27 @@ class ReturnsApi extends BaseApi
 
                     return ObjectSerializer::deserialize($content, 'string', $response->getHeaders());
                 case 400:
-                    if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
                 case 500:
-                    if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response', $response->getHeaders());
             }
 
             $returnType = 'string';
@@ -1104,7 +1104,7 @@ class ReturnsApi extends BaseApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response',
+                        '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1112,7 +1112,7 @@ class ReturnsApi extends BaseApi
                 case 500:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Returns\RefundOrderLines400Response',
+                        '\Walmart\Models\MP\MX\Returns\RefundOrderLines400Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1130,14 +1130,14 @@ class ReturnsApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $returnOrderId returnOrderId (required)
-     * @param  \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
+     * @param  \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function refundOrderLinesAsync(
         string $returnOrderId,
-        \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest
+        \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest
     ): PromiseInterface {
         return $this->refundOrderLinesAsyncWithHttpInfo($returnOrderId, $refundOrderLinesRequest)
             ->then(
@@ -1154,14 +1154,14 @@ class ReturnsApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $returnOrderId returnOrderId (required)
-     * @param  \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
+     * @param  \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function refundOrderLinesAsyncWithHttpInfo(
         string $returnOrderId,
-        \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest,
+        \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest,
     ): PromiseInterface {
         $returnType = 'string';
         $request = $this->refundOrderLinesRequest($returnOrderId, $refundOrderLinesRequest, );
@@ -1210,14 +1210,14 @@ class ReturnsApi extends BaseApi
      * Create request for operation 'refundOrderLines'
      *
      * @param  string $returnOrderId returnOrderId (required)
-     * @param  \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
+     * @param  \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest OrderRefund request body (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function refundOrderLinesRequest(
         string $returnOrderId,
-        \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest,
+        \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest $refundOrderLinesRequest,
     ): Request {
         $contentType = self::contentTypes['refundOrderLines'];
 

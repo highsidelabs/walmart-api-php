@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * PromotionalPriceResponse Class Doc Comment
@@ -49,8 +49,8 @@ class PromotionalPriceResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'payload' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayload',
-        'header' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponseHeader',
+        'payload' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayload',
+        'header' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponseHeader',
         'status' => 'string'
     ];
 
@@ -138,7 +138,7 @@ class PromotionalPriceResponse extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayload|null
     
      */
     public function getPayload()
@@ -149,7 +149,7 @@ class PromotionalPriceResponse extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayload|null $payload payload
      *
      * @return self
     
@@ -167,7 +167,7 @@ class PromotionalPriceResponse extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponseHeader|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponseHeader|null
     
      */
     public function getHeader()
@@ -178,7 +178,7 @@ class PromotionalPriceResponse extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponseHeader|null $header header
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponseHeader|null $header header
      *
      * @return self
     

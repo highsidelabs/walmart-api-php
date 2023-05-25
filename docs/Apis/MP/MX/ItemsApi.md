@@ -1,4 +1,4 @@
-# Walmart\Api\MX\MPItemsApi  
+# Walmart\Apis\MX\MPItemsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,7 +12,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `bulkItemSetup()`
 
 ```php
-bulkItemSetup($feedType, $file): \Walmart\Model\MP\MX\Items\BulkItemSetup200Response
+bulkItemSetup($feedType, $file): \Walmart\Models\MP\MX\Items\BulkItemSetup200Response
 ```
 Bulk Item Setup
 
@@ -30,7 +30,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ItemsApi(  
+$apiInstance = new Walmart\Apis\ItemsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -56,7 +56,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Items\BulkItemSetup200Response**](../Model/BulkItemSetup200Response.md)
+[**\Walmart\Models\MP\MX\Items\BulkItemSetup200Response**](../Model/BulkItemSetup200Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ try {
 ## `getAllItems()`
 
 ```php
-getAllItems($nextCursor, $sku, $offset, $limit): \Walmart\Model\MP\MX\Items\GetAllItems200Response
+getAllItems($nextCursor, $sku, $offset, $limit): \Walmart\Models\MP\MX\Items\GetAllItems200Response
 ```
 Get all items
 
@@ -92,7 +92,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ItemsApi(  
+$apiInstance = new Walmart\Apis\ItemsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
+[**\Walmart\Models\MP\MX\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ try {
 ## `getAnItem()`
 
 ```php
-getAnItem($sku): \Walmart\Model\MP\MX\Items\GetAnItem200Response
+getAnItem($sku): \Walmart\Models\MP\MX\Items\GetAnItem200Response
 ```
 Get an item
 
@@ -158,7 +158,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ItemsApi(  
+$apiInstance = new Walmart\Apis\ItemsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -182,7 +182,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Items\GetAnItem200Response**](../Model/GetAnItem200Response.md)
+[**\Walmart\Models\MP\MX\Items\GetAnItem200Response**](../Model/GetAnItem200Response.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ try {
 ## `retireAnItem()`
 
 ```php
-retireAnItem($sKU): \Walmart\Model\MP\MX\Items\RetireAnItem200Response
+retireAnItem($sKU): \Walmart\Models\MP\MX\Items\RetireAnItem200Response
 ```
 Retire an item
 
@@ -218,7 +218,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ItemsApi(  
+$apiInstance = new Walmart\Apis\ItemsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -242,7 +242,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Items\RetireAnItem200Response**](../Model/RetireAnItem200Response.md)
+[**\Walmart\Models\MP\MX\Items\RetireAnItem200Response**](../Model/RetireAnItem200Response.md)
 
 ### Authorization
 

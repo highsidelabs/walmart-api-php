@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemDetailsLQRequestPayload Class Doc Comment
@@ -49,8 +49,8 @@ class ItemDetailsLQRequestPayload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'query' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequestQuery',
-        'filters' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]'
+        'query' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestQuery',
+        'filters' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Gets query
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequestQuery|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestQuery|null
     
      */
     public function getQuery()
@@ -142,7 +142,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Sets query
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequestQuery|null $query query
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestQuery|null $query query
      *
      * @return self
     
@@ -160,7 +160,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Gets filters
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]|null
     
      */
     public function getFilters()
@@ -171,7 +171,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Sets filters
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]|null $filters filters
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]|null $filters filters
      *
      * @return self
     

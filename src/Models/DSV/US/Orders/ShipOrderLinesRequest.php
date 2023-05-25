@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipOrderLinesRequest Class Doc Comment
@@ -51,7 +51,7 @@ class ShipOrderLinesRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLines' => '\Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLines'
+        'orderLines' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLines'
     ];
 
     /**
@@ -129,7 +129,7 @@ class ShipOrderLinesRequest extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLines
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLines
     
      */
     public function getOrderLines()
@@ -140,7 +140,7 @@ class ShipOrderLinesRequest extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLines $orderLines orderLines
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLines $orderLines orderLines
      *
      * @return self
     

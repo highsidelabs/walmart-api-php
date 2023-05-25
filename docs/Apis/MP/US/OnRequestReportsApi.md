@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPOnRequestReportsApi  
+# Walmart\Apis\US\MPOnRequestReportsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,7 +12,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `downloadReport()`
 
 ```php
-downloadReport($requestId, $accept): \Walmart\Model\MP\US\OnRequestReports\DownloadReport200Response
+downloadReport($requestId, $accept): \Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response
 ```
 Download Report URL
 
@@ -28,7 +28,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OnRequestReportsApi(  
+$apiInstance = new Walmart\Apis\OnRequestReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -54,7 +54,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\OnRequestReports\DownloadReport200Response**](../Model/DownloadReport200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response**](../Model/DownloadReport200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ try {
 ## `generateReport()`
 
 ```php
-generateReport($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload): \Walmart\Model\MP\US\OnRequestReports\GenerateReport200Response
+generateReport($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload): \Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response
 ```
 Create Report Request
 
@@ -88,7 +88,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OnRequestReportsApi(  
+$apiInstance = new Walmart\Apis\OnRequestReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -99,7 +99,7 @@ $reportType = 'reportType_example'; // string | Specifies the report type for th
 $reportVersion = 'reportVersion_example'; // string | Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM.
 $accept = application/json; // string | Only supported Media Type : application/json
 $contentType = application/json; // string | Only supported Media Type : application/json
-$getRequestsStatus200ResponseRequestsInnerPayload = {"rowFilters":[{"type":"rangeFilter","columnName":"Offer Start Date","from":"2020-03-16"},{"type":"rangeFilter","columnName":"Offer End Date","to":"2021-06-16"},{"type":"rangeFilter","columnName":"Price","from":"10","to":"100"},{"type":"enumFilter","columnName":"Publish Status","values":["PUBLISHED"]}],"excludeColumns":["Average Rating","Shelf Name"]}; // \Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload | Request body
+$getRequestsStatus200ResponseRequestsInnerPayload = {"rowFilters":[{"type":"rangeFilter","columnName":"Offer Start Date","from":"2020-03-16"},{"type":"rangeFilter","columnName":"Offer End Date","to":"2021-06-16"},{"type":"rangeFilter","columnName":"Price","from":"10","to":"100"},{"type":"enumFilter","columnName":"Publish Status","values":["PUBLISHED"]}],"excludeColumns":["Average Rating","Shelf Name"]}; // \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload | Request body
 
 try {
     $result = $apiInstance->generateReport($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload);
@@ -115,12 +115,12 @@ try {
 | **reportVersion** | **string**| Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. | |
 | **accept** | **string**| Only supported Media Type : application/json | |
 | **contentType** | **string**| Only supported Media Type : application/json | |
-| **getRequestsStatus200ResponseRequestsInnerPayload** | [**\Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload**](../Model/GetRequestsStatus200ResponseRequestsInnerPayload.md)| Request body | [optional] |
+| **getRequestsStatus200ResponseRequestsInnerPayload** | [**\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload**](../Model/GetRequestsStatus200ResponseRequestsInnerPayload.md)| Request body | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\OnRequestReports\GenerateReport200Response**](../Model/GenerateReport200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response**](../Model/GenerateReport200Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ try {
 ## `getRequestsStatus()`
 
 ```php
-getRequestsStatus($reportType, $accept, $reportVersion, $requestStatus, $requestSubmissionStartDate, $requestSubmissionEndDate): \Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200Response
+getRequestsStatus($reportType, $accept, $reportVersion, $requestStatus, $requestSubmissionStartDate, $requestSubmissionEndDate): \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response
 ```
 Get All Report Requests
 
@@ -154,7 +154,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OnRequestReportsApi(  
+$apiInstance = new Walmart\Apis\OnRequestReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -188,7 +188,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200Response**](../Model/GetRequestsStatus200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response**](../Model/GetRequestsStatus200Response.md)
 
 ### Authorization
 
@@ -206,7 +206,7 @@ try {
 ## `getSingleRequestStatus()`
 
 ```php
-getSingleRequestStatus($requestId, $accept): \Walmart\Model\MP\US\OnRequestReports\GetSingleRequestStatus200Response
+getSingleRequestStatus($requestId, $accept): \Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response
 ```
 Report Request Status
 
@@ -222,7 +222,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OnRequestReportsApi(  
+$apiInstance = new Walmart\Apis\OnRequestReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -248,7 +248,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\OnRequestReports\GetSingleRequestStatus200Response**](../Model/GetSingleRequestStatus200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response**](../Model/GetSingleRequestStatus200Response.md)
 
 ### Authorization
 

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses Class Doc Comment
@@ -51,7 +51,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses exte
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLineStatus' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]'
+        'orderLineStatus' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses exte
     /**
      * Gets orderLineStatus
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null
     
      */
     public function getOrderLineStatus()
@@ -137,7 +137,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses exte
     /**
      * Sets orderLineStatus
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null $orderLineStatus Details about the Order Line status
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null $orderLineStatus Details about the Order Line status
      *
      * @return self
     

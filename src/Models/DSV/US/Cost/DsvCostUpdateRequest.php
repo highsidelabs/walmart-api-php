@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Cost;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Cost;
+use Walmart\Models\BaseModel;
 
 /**
  * DsvCostUpdateRequest Class Doc Comment
@@ -49,8 +49,8 @@ class DsvCostUpdateRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestHeader',
-        'cost' => '\Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestCostInner[]'
+        'header' => '\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestHeader',
+        'cost' => '\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class DsvCostUpdateRequest extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestHeader|null
+     * @return \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestHeader|null
     
      */
     public function getHeader()
@@ -142,7 +142,7 @@ class DsvCostUpdateRequest extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestHeader|null $header header
+     * @param \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestHeader|null $header header
      *
      * @return self
     
@@ -160,7 +160,7 @@ class DsvCostUpdateRequest extends BaseModel
     /**
      * Gets cost
      *
-     * @return \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestCostInner[]|null
+     * @return \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInner[]|null
     
      */
     public function getCost()
@@ -171,7 +171,7 @@ class DsvCostUpdateRequest extends BaseModel
     /**
      * Sets cost
      *
-     * @param \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestCostInner[]|null $cost cost
+     * @param \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInner[]|null $cost cost
      *
      * @return self
     

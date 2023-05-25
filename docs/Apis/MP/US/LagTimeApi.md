@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPLagTimeApi  
+# Walmart\Apis\US\MPLagTimeApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getLagTime()`
 
 ```php
-getLagTime($sku): \Walmart\Model\MP\US\LagTime\GetLagTime200Response
+getLagTime($sku): \Walmart\Models\MP\US\LagTime\GetLagTime200Response
 ```
 Lag Time
 
@@ -26,7 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\LagTimeApi(  
+$apiInstance = new Walmart\Apis\LagTimeApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -50,7 +50,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\LagTime\GetLagTime200Response**](../Model/GetLagTime200Response.md)
+[**\Walmart\Models\MP\US\LagTime\GetLagTime200Response**](../Model/GetLagTime200Response.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ try {
 ## `updateLagTimeBulk()`
 
 ```php
-updateLagTimeBulk($feedType, $updateLagTimeBulkRequest): \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulk200Response
+updateLagTimeBulk($feedType, $updateLagTimeBulkRequest): \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response
 ```
 Update lag time
 
@@ -84,7 +84,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\LagTimeApi(  
+$apiInstance = new Walmart\Apis\LagTimeApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -92,7 +92,7 @@ $apiInstance = new Walmart\Api\LagTimeApi(
 );
 
 $feedType = 'feedType_example'; // string | Use 'lagtime'
-$updateLagTimeBulkRequest = {"LagTimeHeader":{"version":"1.0"},"lagTime":[{"sku":"30348_KFTest","fulfillmentLagTime":"1"}]}; // \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequest | File fields
+$updateLagTimeBulkRequest = {"LagTimeHeader":{"version":"1.0"},"lagTime":[{"sku":"30348_KFTest","fulfillmentLagTime":"1"}]}; // \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest | File fields
 
 try {
     $result = $apiInstance->updateLagTimeBulk($feedType, $updateLagTimeBulkRequest);
@@ -105,12 +105,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Use 'lagtime' | |
-| **updateLagTimeBulkRequest** | [**\Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequest**](../Model/UpdateLagTimeBulkRequest.md)| File fields | |
+| **updateLagTimeBulkRequest** | [**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest**](../Model/UpdateLagTimeBulkRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\LagTime\UpdateLagTimeBulk200Response**](../Model/UpdateLagTimeBulk200Response.md)
+[**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response**](../Model/UpdateLagTimeBulk200Response.md)
 
 ### Authorization
 

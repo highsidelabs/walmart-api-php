@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundShipmentUpdateQtyWrapper Class Doc Comment
@@ -51,7 +51,7 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
         'shipmentId' => 'string',
-        'orderItems' => '\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]'
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]'
     ];
 
     /**
@@ -214,7 +214,7 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]|null
     
      */
     public function getOrderItems()
@@ -225,7 +225,7 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]|null $orderItems update shipment qty line items
+     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]|null $orderItems update shipment qty line items
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * GetCarriers200Response Class Doc Comment
@@ -49,8 +49,8 @@ class GetCarriers200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'carriers' => '\Walmart\Model\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]',
-        'errors' => '\Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'carriers' => '\Walmart\Models\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]',
+        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class GetCarriers200Response extends BaseModel
     /**
      * Gets carriers
      *
-     * @return \Walmart\Model\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null
     
      */
     public function getCarriers()
@@ -175,7 +175,7 @@ class GetCarriers200Response extends BaseModel
     /**
      * Sets carriers
      *
-     * @param \Walmart\Model\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null $carriers carriers
+     * @param \Walmart\Models\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null $carriers carriers
      *
      * @return self
     
@@ -193,7 +193,7 @@ class GetCarriers200Response extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -204,7 +204,7 @@ class GetCarriers200Response extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

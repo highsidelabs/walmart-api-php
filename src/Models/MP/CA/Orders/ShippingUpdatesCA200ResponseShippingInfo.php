@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseShippingInfo Class Doc Comment
@@ -55,7 +55,7 @@ class ShippingUpdatesCA200ResponseShippingInfo extends BaseModel
         'estimatedDeliveryDate' => '\DateTime',
         'estimatedShipDate' => '\DateTime',
         'methodCode' => 'string',
-        'postalAddress' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfoPostalAddress'
+        'postalAddress' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfoPostalAddress'
     ];
 
     /**
@@ -334,7 +334,7 @@ class ShippingUpdatesCA200ResponseShippingInfo extends BaseModel
     /**
      * Gets postalAddress
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfoPostalAddress
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfoPostalAddress
     
      */
     public function getPostalAddress()
@@ -345,7 +345,7 @@ class ShippingUpdatesCA200ResponseShippingInfo extends BaseModel
     /**
      * Sets postalAddress
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfoPostalAddress $postalAddress postalAddress
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfoPostalAddress $postalAddress postalAddress
      *
      * @return self
     

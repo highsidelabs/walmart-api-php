@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPUtilitiesApi  
+# Walmart\Apis\US\MPUtilitiesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,7 +12,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getApiPlatformStatus()`
 
 ```php
-getApiPlatformStatus(): \Walmart\Model\MP\US\Utilities\GetApiPlatformStatus200Response
+getApiPlatformStatus(): \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response
 ```
 API Platform Status
 
@@ -28,7 +28,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
+$apiInstance = new Walmart\Apis\UtilitiesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -49,7 +49,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Utilities\GetApiPlatformStatus200Response**](../Model/GetApiPlatformStatus200Response.md)
+[**\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response**](../Model/GetApiPlatformStatus200Response.md)
 
 ### Authorization
 
@@ -67,7 +67,7 @@ try {
 ## `getCategories()`
 
 ```php
-getCategories($departmentId): \Walmart\Model\MP\US\Utilities\GetCategories200Response
+getCategories($departmentId): \Walmart\Models\MP\US\Utilities\GetCategories200Response
 ```
 All Categories
 
@@ -83,7 +83,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
+$apiInstance = new Walmart\Apis\UtilitiesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -107,7 +107,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Utilities\GetCategories200Response**](../Model/GetCategories200Response.md)
+[**\Walmart\Models\MP\US\Utilities\GetCategories200Response**](../Model/GetCategories200Response.md)
 
 ### Authorization
 
@@ -125,7 +125,7 @@ try {
 ## `getDepartmentList()`
 
 ```php
-getDepartmentList(): \Walmart\Model\MP\US\Utilities\GetDepartmentList200Response
+getDepartmentList(): \Walmart\Models\MP\US\Utilities\GetDepartmentList200Response
 ```
 All Departments
 
@@ -141,7 +141,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
+$apiInstance = new Walmart\Apis\UtilitiesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -162,7 +162,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Utilities\GetDepartmentList200Response**](../Model/GetDepartmentList200Response.md)
+[**\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response**](../Model/GetDepartmentList200Response.md)
 
 ### Authorization
 
@@ -180,7 +180,7 @@ try {
 ## `getTaxonomyResponse()`
 
 ```php
-getTaxonomyResponse($feedType, $version): \Walmart\Model\MP\US\Utilities\GetTaxonomyResponse200Response
+getTaxonomyResponse($feedType, $version): \Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response
 ```
 Taxonomy by spec
 
@@ -196,7 +196,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
+$apiInstance = new Walmart\Apis\UtilitiesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -222,7 +222,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Utilities\GetTaxonomyResponse200Response**](../Model/GetTaxonomyResponse200Response.md)
+[**\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response**](../Model/GetTaxonomyResponse200Response.md)
 
 ### Authorization
 

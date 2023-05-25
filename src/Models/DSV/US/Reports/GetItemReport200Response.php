@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Reports;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Reports;
+use Walmart\Models\BaseModel;
 
 /**
  * GetItemReport200Response Class Doc Comment

@@ -1,4 +1,4 @@
-# Walmart\Api\CA\MPPricesApi  
+# Walmart\Apis\CA\MPPricesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `priceBulkUploads()`
 
 ```php
-priceBulkUploads($feedType, $file): \Walmart\Model\MP\CA\Prices\PriceBulkUploads200Response
+priceBulkUploads($feedType, $file): \Walmart\Models\MP\CA\Prices\PriceBulkUploads200Response
 ```
 Update bulk prices
 
@@ -27,7 +27,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Prices\PriceBulkUploads200Response**](../Model/PriceBulkUploads200Response.md)
+[**\Walmart\Models\MP\CA\Prices\PriceBulkUploads200Response**](../Model/PriceBulkUploads200Response.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `updatePriceCA()`
 
 ```php
-updatePriceCA($body): \Walmart\Model\MP\CA\Prices\UpdatePriceCA200Response
+updatePriceCA($body): \Walmart\Models\MP\CA\Prices\UpdatePriceCA200Response
 ```
 Update a price
 
@@ -88,7 +88,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Prices\UpdatePriceCA200Response**](../Model/UpdatePriceCA200Response.md)
+[**\Walmart\Models\MP\CA\Prices\UpdatePriceCA200Response**](../Model/UpdatePriceCA200Response.md)
 
 ### Authorization
 

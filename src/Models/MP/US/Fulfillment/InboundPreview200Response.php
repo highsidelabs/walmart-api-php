@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundPreview200Response Class Doc Comment
@@ -50,7 +50,7 @@ class InboundPreview200Response extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]'
     ];
 
     /**
@@ -193,7 +193,7 @@ class InboundPreview200Response extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -204,7 +204,7 @@ class InboundPreview200Response extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]|null $payload Response payload.
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]|null $payload Response payload.
      *
      * @return self
     

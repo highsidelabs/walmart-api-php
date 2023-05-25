@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateFulfillmentRequest Class Doc Comment
@@ -49,8 +49,8 @@ class CreateFulfillmentRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayload'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayload'
     ];
 
     /**
@@ -137,7 +137,7 @@ class CreateFulfillmentRequest extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader
     
      */
     public function getHeader()
@@ -148,7 +148,7 @@ class CreateFulfillmentRequest extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader $header header
      *
      * @return self
     
@@ -166,7 +166,7 @@ class CreateFulfillmentRequest extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayload
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayload
     
      */
     public function getPayload()
@@ -177,7 +177,7 @@ class CreateFulfillmentRequest extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayload $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayload $payload payload
      *
      * @return self
     

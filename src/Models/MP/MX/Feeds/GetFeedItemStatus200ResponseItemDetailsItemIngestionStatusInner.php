@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner Class Doc Comment
@@ -56,7 +56,7 @@ class GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner extends Ba
         'wpid' => 'string',
         'index' => 'int',
         'ingestionStatus' => 'string',
-        'ingestionErrors' => '\Walmart\Model\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors'
+        'ingestionErrors' => '\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors'
     ];
 
     /**
@@ -355,7 +355,7 @@ class GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner extends Ba
     /**
      * Gets ingestionErrors
      *
-     * @return \Walmart\Model\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null
+     * @return \Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null
     
      */
     public function getIngestionErrors()
@@ -366,7 +366,7 @@ class GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner extends Ba
     /**
      * Sets ingestionErrors
      *
-     * @param \Walmart\Model\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null $ingestionErrors ingestionErrors
+     * @param \Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null $ingestionErrors ingestionErrors
      *
      * @return self
     

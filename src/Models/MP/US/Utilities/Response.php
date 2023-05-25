@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Utilities;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Utilities;
+use Walmart\Models\BaseModel;
 
 /**
  * Response Class Doc Comment
@@ -51,7 +51,7 @@ class Response extends BaseModel
     protected static array $openAPITypes = [
         'departmentName' => 'string',
         'departmentId' => 'string',
-        'category' => '\Walmart\Model\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]'
+        'category' => '\Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]'
     ];
 
     /**
@@ -196,7 +196,7 @@ class Response extends BaseModel
     /**
      * Gets category
      *
-     * @return \Walmart\Model\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]|null
+     * @return \Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]|null
     
      */
     public function getCategory()
@@ -207,7 +207,7 @@ class Response extends BaseModel
     /**
      * Sets category
      *
-     * @param \Walmart\Model\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]|null $category category
+     * @param \Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]|null $category category
      *
      * @return self
     

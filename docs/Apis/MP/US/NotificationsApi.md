@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPNotificationsApi  
+# Walmart\Apis\US\MPNotificationsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -14,7 +14,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createSubscription()`
 
 ```php
-createSubscription($createSubscriptionRequest): \Walmart\Model\MP\US\Notifications\CreateSubscription200Response
+createSubscription($createSubscriptionRequest): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
 ```
 Create subscription
 
@@ -30,14 +30,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
+$apiInstance = new Walmart\Apis\NotificationsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createSubscriptionRequest = {"events":[{"eventType":"OFFER_UNPUBLISHED","eventVersion":"V1","resourceName":"ITEM","eventUrl":"https://example.com/events","status":"ACTIVE"},{"eventType":"PO_CREATED","eventVersion":"V1","resourceName":"ORDER","eventUrl":"https://example.com/orders","status":"ACTIVE"}]}; // \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest | Request fields
+$createSubscriptionRequest = {"events":[{"eventType":"OFFER_UNPUBLISHED","eventVersion":"V1","resourceName":"ITEM","eventUrl":"https://example.com/events","status":"ACTIVE"},{"eventType":"PO_CREATED","eventVersion":"V1","resourceName":"ORDER","eventUrl":"https://example.com/orders","status":"ACTIVE"}]}; // \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest | Request fields
 
 try {
     $result = $apiInstance->createSubscription($createSubscriptionRequest);
@@ -49,12 +49,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createSubscriptionRequest** | [**\Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)| Request fields | |
+| **createSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Notifications\CreateSubscription200Response**](../Model/CreateSubscription200Response.md)
+[**\Walmart\Models\MP\US\Notifications\CreateSubscription200Response**](../Model/CreateSubscription200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ try {
 ## `deleteSubscription()`
 
 ```php
-deleteSubscription($subscriptionId): \Walmart\Model\MP\US\Notifications\DeleteSubscription200Response
+deleteSubscription($subscriptionId): \Walmart\Models\MP\US\Notifications\DeleteSubscription200Response
 ```
 Delete Subscription
 
@@ -88,7 +88,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
+$apiInstance = new Walmart\Apis\NotificationsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -112,7 +112,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Notifications\DeleteSubscription200Response**](../Model/DeleteSubscription200Response.md)
+[**\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response**](../Model/DeleteSubscription200Response.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ try {
 ## `getAllSubscriptions()`
 
 ```php
-getAllSubscriptions($subscriptionId, $eventType, $resourceName, $status): \Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response
+getAllSubscriptions($subscriptionId, $eventType, $resourceName, $status): \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response
 ```
 All subscriptions
 
@@ -146,7 +146,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
+$apiInstance = new Walmart\Apis\NotificationsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -176,7 +176,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response**](../Model/GetAllSubscriptions200Response.md)
+[**\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response**](../Model/GetAllSubscriptions200Response.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ try {
 ## `getEventTypes()`
 
 ```php
-getEventTypes(): \Walmart\Model\MP\US\Notifications\GetEventTypes200Response
+getEventTypes(): \Walmart\Models\MP\US\Notifications\GetEventTypes200Response
 ```
 Event Types
 
@@ -210,7 +210,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
+$apiInstance = new Walmart\Apis\NotificationsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -231,7 +231,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Notifications\GetEventTypes200Response**](../Model/GetEventTypes200Response.md)
+[**\Walmart\Models\MP\US\Notifications\GetEventTypes200Response**](../Model/GetEventTypes200Response.md)
 
 ### Authorization
 
@@ -249,7 +249,7 @@ try {
 ## `testNotification()`
 
 ```php
-testNotification($testNotificationRequest): \Walmart\Model\MP\US\Notifications\TestNotification200Response
+testNotification($testNotificationRequest): \Walmart\Models\MP\US\Notifications\TestNotification200Response
 ```
 Test Notification
 
@@ -265,14 +265,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
+$apiInstance = new Walmart\Apis\NotificationsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$testNotificationRequest = {"eventType":"OFFER_UNPUBLISHED","eventVersion":"V1","resourceName":"ITEM","eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"headers":{"content-type":"application/json"}}; // \Walmart\Model\MP\US\Notifications\TestNotificationRequest | Request fields
+$testNotificationRequest = {"eventType":"OFFER_UNPUBLISHED","eventVersion":"V1","resourceName":"ITEM","eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"headers":{"content-type":"application/json"}}; // \Walmart\Models\MP\US\Notifications\TestNotificationRequest | Request fields
 
 try {
     $result = $apiInstance->testNotification($testNotificationRequest);
@@ -284,12 +284,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testNotificationRequest** | [**\Walmart\Model\MP\US\Notifications\TestNotificationRequest**](../Model/TestNotificationRequest.md)| Request fields | |
+| **testNotificationRequest** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequest**](../Model/TestNotificationRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Notifications\TestNotification200Response**](../Model/TestNotification200Response.md)
+[**\Walmart\Models\MP\US\Notifications\TestNotification200Response**](../Model/TestNotification200Response.md)
 
 ### Authorization
 
@@ -307,7 +307,7 @@ try {
 ## `updateSubscription()`
 
 ```php
-updateSubscription($subscriptionId, $updateSubscriptionRequest): \Walmart\Model\MP\US\Notifications\CreateSubscription200Response
+updateSubscription($subscriptionId, $updateSubscriptionRequest): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
 ```
 Update Subscription
 
@@ -323,7 +323,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
+$apiInstance = new Walmart\Apis\NotificationsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -331,7 +331,7 @@ $apiInstance = new Walmart\Api\NotificationsApi(
 );
 
 $subscriptionId = 'subscriptionId_example'; // string | Unique ID for the subscription
-$updateSubscriptionRequest = {"eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"status":"ACTIVE"}; // \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest | Request fields
+$updateSubscriptionRequest = {"eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"status":"ACTIVE"}; // \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest | Request fields
 
 try {
     $result = $apiInstance->updateSubscription($subscriptionId, $updateSubscriptionRequest);
@@ -344,12 +344,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Unique ID for the subscription | |
-| **updateSubscriptionRequest** | [**\Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest**](../Model/UpdateSubscriptionRequest.md)| Request fields | |
+| **updateSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest**](../Model/UpdateSubscriptionRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Notifications\CreateSubscription200Response**](../Model/CreateSubscription200Response.md)
+[**\Walmart\Models\MP\US\Notifications\CreateSubscription200Response**](../Model/CreateSubscription200Response.md)
 
 ### Authorization
 

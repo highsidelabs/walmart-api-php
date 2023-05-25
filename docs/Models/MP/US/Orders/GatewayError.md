@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **info** | **string** |  | [optional]
 **severity** | **string** |  | [optional]
 **category** | **string** |  | [optional]
-**causes** | [**\Walmart\Model\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]**](GetAllOrders200ResponseListErrorsInnerCausesInner.md) |  | [optional]
+**causes** | [**\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]**](GetAllOrders200ResponseListErrorsInnerCausesInner.md) |  | [optional]
 **errorIdentifiers** | **array<string,object>** |  | [optional]
 **component** | **string** |  | [optional]
 **type** | **string** |  | [optional]

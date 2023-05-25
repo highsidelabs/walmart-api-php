@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * ReturnOrderLine Class Doc Comment
@@ -57,14 +57,14 @@ class ReturnOrderLine extends BaseModel
         'reasonCode' => 'string',
         'purchaseOrderId' => 'string',
         'purchaseOrderLineNumber' => 'string',
-        'item' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem',
-        'charges' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]',
-        'unitPrice' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice',
-        'chargeTotals' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]',
-        'quantity' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerQuantity',
+        'item' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem',
+        'charges' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]',
+        'unitPrice' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice',
+        'chargeTotals' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]',
+        'quantity' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerQuantity',
         'status' => 'string',
         'statusTime' => 'string',
-        'refundAmount' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerRefundAmount',
+        'refundAmount' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerRefundAmount',
         'soPrimeLineSubLineNo' => 'string',
         'isWFSEnabled' => 'string'
     ];
@@ -593,7 +593,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets item
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem|null
     
      */
     public function getItem()
@@ -604,7 +604,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets item
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem|null $item item
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem|null $item item
      *
      * @return self
     
@@ -622,7 +622,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets charges
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]|null
     
      */
     public function getCharges()
@@ -633,7 +633,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets charges
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]|null $charges Information relating to the charge for the orderLine
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]|null $charges Information relating to the charge for the orderLine
      *
      * @return self
     
@@ -651,7 +651,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets unitPrice
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice|null
     
      */
     public function getUnitPrice()
@@ -662,7 +662,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets unitPrice
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice|null $unitPrice unitPrice
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice|null $unitPrice unitPrice
      *
      * @return self
     
@@ -680,7 +680,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets chargeTotals
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]|null
     
      */
     public function getChargeTotals()
@@ -691,7 +691,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets chargeTotals
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]|null $chargeTotals Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges).
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]|null $chargeTotals Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges).
      *
      * @return self
     
@@ -709,7 +709,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerQuantity|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerQuantity|null
     
      */
     public function getQuantity()
@@ -720,7 +720,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerQuantity|null $quantity quantity
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerQuantity|null $quantity quantity
      *
      * @return self
     
@@ -796,7 +796,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets refundAmount
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerRefundAmount|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerRefundAmount|null
     
      */
     public function getRefundAmount()
@@ -807,7 +807,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets refundAmount
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerRefundAmount|null $refundAmount refundAmount
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerRefundAmount|null $refundAmount refundAmount
      *
      * @return self
     

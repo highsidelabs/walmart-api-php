@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * MxOrderWithCursor Class Doc Comment
@@ -49,9 +49,9 @@ class MxOrderWithCursor extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Model\MP\MX\Orders\GetAllOrdersUsingCursor200ResponseMeta',
-        'order' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]',
-        'error' => '\Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseError'
+        'meta' => '\Walmart\Models\MP\MX\Orders\GetAllOrdersUsingCursor200ResponseMeta',
+        'order' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]',
+        'error' => '\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError'
     ];
 
     /**
@@ -138,7 +138,7 @@ class MxOrderWithCursor extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrdersUsingCursor200ResponseMeta|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrdersUsingCursor200ResponseMeta|null
     
      */
     public function getMeta()
@@ -149,7 +149,7 @@ class MxOrderWithCursor extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrdersUsingCursor200ResponseMeta|null $meta meta
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrdersUsingCursor200ResponseMeta|null $meta meta
      *
      * @return self
     
@@ -167,7 +167,7 @@ class MxOrderWithCursor extends BaseModel
     /**
      * Gets order
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]|null
     
      */
     public function getOrder()
@@ -178,7 +178,7 @@ class MxOrderWithCursor extends BaseModel
     /**
      * Sets order
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]|null $order Information about the purchase order
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]|null $order Information about the purchase order
      *
      * @return self
     
@@ -196,7 +196,7 @@ class MxOrderWithCursor extends BaseModel
     /**
      * Gets error
      *
-     * @return \Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseError|null
+     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null
     
      */
     public function getError()
@@ -207,7 +207,7 @@ class MxOrderWithCursor extends BaseModel
     /**
      * Sets error
      *
-     * @param \Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseError|null $error error
+     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null $error error
      *
      * @return self
     

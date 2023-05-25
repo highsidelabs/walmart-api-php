@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInner Class Doc Comment
@@ -50,7 +50,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInner extends BaseMod
       */
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
-        'orderLineStatuses' => '\Walmart\Model\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuses'
+        'orderLineStatuses' => '\Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuses'
     ];
 
     /**
@@ -166,7 +166,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInner extends BaseMod
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuses
+     * @return \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuses
     
      */
     public function getOrderLineStatuses()
@@ -177,7 +177,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInner extends BaseMod
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
      *
      * @return self
     

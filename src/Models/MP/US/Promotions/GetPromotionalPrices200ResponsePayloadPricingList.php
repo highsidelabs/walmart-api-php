@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadPricingList Class Doc Comment
@@ -50,7 +50,7 @@ class GetPromotionalPrices200ResponsePayloadPricingList extends BaseModel
       */
     protected static array $openAPITypes = [
         'replaceAll' => 'bool',
-        'pricing' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[]'
+        'pricing' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[]'
     ];
 
     /**
@@ -163,7 +163,7 @@ class GetPromotionalPrices200ResponsePayloadPricingList extends BaseModel
     /**
      * Gets pricing
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[]
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[]
     
      */
     public function getPricing()
@@ -174,7 +174,7 @@ class GetPromotionalPrices200ResponsePayloadPricingList extends BaseModel
     /**
      * Sets pricing
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[] $pricing pricing
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[] $pricing pricing
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner Class Doc Comment
@@ -55,7 +55,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]',
+        'causes' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]',
         'errorIdentifiers' => 'array<string,object>'
     ];
 
@@ -433,7 +433,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
     /**
      * Gets causes
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]|null
     
      */
     public function getCauses()
@@ -444,7 +444,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
     /**
      * Sets causes
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]|null $causes causes
      *
      * @return self
     

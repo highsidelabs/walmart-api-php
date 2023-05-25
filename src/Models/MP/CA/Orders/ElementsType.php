@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ElementsType Class Doc Comment
@@ -51,7 +51,7 @@ class ElementsType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'order' => '\Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseElementsOrderInner[]'
+        'order' => '\Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseElementsOrderInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ElementsType extends BaseModel
     /**
      * Gets order
      *
-     * @return \Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseElementsOrderInner[]|null
+     * @return \Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseElementsOrderInner[]|null
     
      */
     public function getOrder()
@@ -137,7 +137,7 @@ class ElementsType extends BaseModel
     /**
      * Sets order
      *
-     * @param \Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseElementsOrderInner[]|null $order List of orders
+     * @param \Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseElementsOrderInner[]|null $order List of orders
      *
      * @return self
     

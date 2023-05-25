@@ -1,4 +1,4 @@
-# Walmart\Api\MX\MPOrdersApi  
+# Walmart\Apis\MX\MPOrdersApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -35,7 +35,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -43,7 +43,7 @@ $apiInstance = new Walmart\Api\OrdersApi(
 );
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$acknowledgeOrdersRequest = {"orderAcknowledge":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Acknowledged","statusQuantity":{"unitOfMeasurement":"EACH","amount":"4"}}]}}]}}}; // \Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequest
+$acknowledgeOrdersRequest = {"orderAcknowledge":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Acknowledged","statusQuantity":{"unitOfMeasurement":"EACH","amount":"4"}}]}}]}}}; // \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequest
 
 try {
     $result = $apiInstance->acknowledgeOrders($purchaseOrderId, $acknowledgeOrdersRequest);
@@ -56,7 +56,7 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **acknowledgeOrdersRequest** | [**\Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequest**](../Model/AcknowledgeOrdersRequest.md)|  | |
+| **acknowledgeOrdersRequest** | [**\Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequest**](../Model/AcknowledgeOrdersRequest.md)|  | |
 
 
 ### Return type
@@ -97,7 +97,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -105,7 +105,7 @@ $apiInstance = new Walmart\Api\OrdersApi(
 );
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$cancelOrderLinesRequest = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"5","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequest | File fields
+$cancelOrderLinesRequest = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"5","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequest | File fields
 
 try {
     $result = $apiInstance->cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest);
@@ -118,7 +118,7 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **cancelOrderLinesRequest** | [**\Walmart\Model\MP\MX\Orders\CancelOrderLinesRequest**](../Model/CancelOrderLinesRequest.md)| File fields | |
+| **cancelOrderLinesRequest** | [**\Walmart\Models\MP\MX\Orders\CancelOrderLinesRequest**](../Model/CancelOrderLinesRequest.md)| File fields | |
 
 
 ### Return type
@@ -159,7 +159,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -167,7 +167,7 @@ $apiInstance = new Walmart\Api\OrdersApi(
 );
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$deliveryUpdatesRequest = {"packages":[{"trackingNo":"P100011150a","eventTime":"1540845015000","eventName":"DELIVERY_UPDATE","purchaseOrderNo":"P100011150","packageNo":"144553632_123456"}]}; // \Walmart\Model\MP\MX\Orders\DeliveryUpdatesRequest | File fields
+$deliveryUpdatesRequest = {"packages":[{"trackingNo":"P100011150a","eventTime":"1540845015000","eventName":"DELIVERY_UPDATE","purchaseOrderNo":"P100011150","packageNo":"144553632_123456"}]}; // \Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequest | File fields
 
 try {
     $result = $apiInstance->deliveryUpdates($purchaseOrderId, $deliveryUpdatesRequest);
@@ -180,7 +180,7 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **deliveryUpdatesRequest** | [**\Walmart\Model\MP\MX\Orders\DeliveryUpdatesRequest**](../Model/DeliveryUpdatesRequest.md)| File fields | |
+| **deliveryUpdatesRequest** | [**\Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequest**](../Model/DeliveryUpdatesRequest.md)| File fields | |
 
 
 ### Return type
@@ -203,7 +203,7 @@ try {
 ## `getAllOrders()`
 
 ```php
-getAllOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $purchaseOrderId, $statusCodeFilter): \Walmart\Model\MP\MX\Orders\GetAllOrders200Response
+getAllOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $purchaseOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\GetAllOrders200Response
 ```
 Get all orders
 
@@ -221,7 +221,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -257,7 +257,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\MX\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ try {
 ## `getAllOrdersUsingCursor()`
 
 ```php
-getAllOrdersUsingCursor($statusCodeFilter, $createdStartDate, $createdEndDate, $limit, $cursorMark, $customerOrderId, $purchaseOrderId): \Walmart\Model\MP\MX\Orders\GetAllOrdersUsingCursor200Response
+getAllOrdersUsingCursor($statusCodeFilter, $createdStartDate, $createdEndDate, $limit, $cursorMark, $customerOrderId, $purchaseOrderId): \Walmart\Models\MP\MX\Orders\GetAllOrdersUsingCursor200Response
 ```
 Get all orders using cursor mark
 
@@ -293,7 +293,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -329,7 +329,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Orders\GetAllOrdersUsingCursor200Response**](../Model/GetAllOrdersUsingCursor200Response.md)
+[**\Walmart\Models\MP\MX\Orders\GetAllOrdersUsingCursor200Response**](../Model/GetAllOrdersUsingCursor200Response.md)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ try {
 ## `getAllWFSOrders()`
 
 ```php
-getAllWFSOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $statusCodeFilter): \Walmart\Model\MP\MX\Orders\GetAllWFSOrders200Response
+getAllWFSOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\GetAllWFSOrders200Response
 ```
 Get all WFS orders
 
@@ -365,7 +365,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -399,7 +399,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Orders\GetAllWFSOrders200Response**](../Model/GetAllWFSOrders200Response.md)
+[**\Walmart\Models\MP\MX\Orders\GetAllWFSOrders200Response**](../Model/GetAllWFSOrders200Response.md)
 
 ### Authorization
 
@@ -435,7 +435,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -495,14 +495,14 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$postBulkShippingLabelRequest = {"trackingNumbers":["499903935503","477502530976"]}; // \Walmart\Model\MP\MX\Orders\PostBulkShippingLabelRequest | Request body with list of tracking numbers
+$postBulkShippingLabelRequest = {"trackingNumbers":["499903935503","477502530976"]}; // \Walmart\Models\MP\MX\Orders\PostBulkShippingLabelRequest | Request body with list of tracking numbers
 $fORMAT = 'ZIP'; // string | format in which you want to download bulk labels, expected values are ZIP/ PDF only
 
 try {
@@ -515,7 +515,7 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postBulkShippingLabelRequest** | [**\Walmart\Model\MP\MX\Orders\PostBulkShippingLabelRequest**](../Model/PostBulkShippingLabelRequest.md)| Request body with list of tracking numbers | |
+| **postBulkShippingLabelRequest** | [**\Walmart\Models\MP\MX\Orders\PostBulkShippingLabelRequest**](../Model/PostBulkShippingLabelRequest.md)| Request body with list of tracking numbers | |
 | **fORMAT** | **string**| format in which you want to download bulk labels, expected values are ZIP/ PDF only | [optional] [default to 'ZIP'] |
 
 
@@ -557,7 +557,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -565,7 +565,7 @@ $apiInstance = new Walmart\Api\OrdersApi(
 );
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$shippingUpdatesRequest = {"shipments":[{"shipmentLines":[{"primeLineNo":"2","shipmentLineNo":"2","quantity":{"unitOfMeasurement":"EACH","amount":"2"}}],"trackingNumber":"12345","trackingURL":"http://www.otherCarrier.com","carrier":"Other"}]}; // \Walmart\Model\MP\MX\Orders\ShippingUpdatesRequest | File fields
+$shippingUpdatesRequest = {"shipments":[{"shipmentLines":[{"primeLineNo":"2","shipmentLineNo":"2","quantity":{"unitOfMeasurement":"EACH","amount":"2"}}],"trackingNumber":"12345","trackingURL":"http://www.otherCarrier.com","carrier":"Other"}]}; // \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest | File fields
 
 try {
     $result = $apiInstance->shippingUpdates($purchaseOrderId, $shippingUpdatesRequest);
@@ -578,7 +578,7 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **shippingUpdatesRequest** | [**\Walmart\Model\MP\MX\Orders\ShippingUpdatesRequest**](../Model/ShippingUpdatesRequest.md)| File fields | |
+| **shippingUpdatesRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest**](../Model/ShippingUpdatesRequest.md)| File fields | |
 
 
 ### Return type

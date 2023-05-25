@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner Class Doc Comment
@@ -53,7 +53,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     protected static array $openAPITypes = [
         'fulfillmentMode' => 'string',
         'accessType' => 'string',
-        'fulfillments' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]',
+        'fulfillments' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]',
         'fulfillmentType' => 'string',
         'default' => 'bool'
     ];
@@ -212,7 +212,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets fulfillments
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]|null
     
      */
     public function getFulfillments()
@@ -223,7 +223,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets fulfillments
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]|null $fulfillments Fulfillment details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]|null $fulfillments Fulfillment details.
      *
      * @return self
     

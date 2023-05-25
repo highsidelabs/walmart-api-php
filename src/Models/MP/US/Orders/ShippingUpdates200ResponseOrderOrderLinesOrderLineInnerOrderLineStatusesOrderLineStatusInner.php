@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -52,10 +52,10 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'statusQuantity' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
         'cancellationReason' => 'string',
-        'trackingInfo' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo',
-        'returnCenterAddress' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress'
+        'trackingInfo' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo',
+        'returnCenterAddress' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress'
     ];
 
     /**
@@ -238,7 +238,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
     
      */
     public function getStatusQuantity()
@@ -249,7 +249,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
      *
      * @return self
     
@@ -296,7 +296,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
     /**
      * Gets trackingInfo
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
     
      */
     public function getTrackingInfo()
@@ -307,7 +307,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
     /**
      * Sets trackingInfo
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
      *
      * @return self
     
@@ -325,7 +325,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
     /**
      * Gets returnCenterAddress
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null
     
      */
     public function getReturnCenterAddress()
@@ -336,7 +336,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
     /**
      * Sets returnCenterAddress
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null $returnCenterAddress returnCenterAddress
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null $returnCenterAddress returnCenterAddress
      *
      * @return self
     

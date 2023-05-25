@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillmentsRequestPayload Class Doc Comment
@@ -52,8 +52,8 @@ class PromiseFulfillmentsRequestPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'requestId' => 'string',
-        'destinations' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[]',
-        'offerSelections' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]'
+        'destinations' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[]',
+        'offerSelections' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]'
     ];
 
     /**
@@ -178,7 +178,7 @@ class PromiseFulfillmentsRequestPayload extends BaseModel
     /**
      * Gets destinations
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[]
     
      */
     public function getDestinations()
@@ -189,7 +189,7 @@ class PromiseFulfillmentsRequestPayload extends BaseModel
     /**
      * Sets destinations
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[] $destinations Customer order destination details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[] $destinations Customer order destination details.
      *
      * @return self
     
@@ -207,7 +207,7 @@ class PromiseFulfillmentsRequestPayload extends BaseModel
     /**
      * Gets offerSelections
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]
     
      */
     public function getOfferSelections()
@@ -218,7 +218,7 @@ class PromiseFulfillmentsRequestPayload extends BaseModel
     /**
      * Sets offerSelections
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[] $offerSelections Offer Selection details. List of offers - number of offer inside offer selection should be less than or equal to 30.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[] $offerSelections Offer Selection details. List of offers - number of offer inside offer selection should be less than or equal to 30.
      *
      * @return self
     

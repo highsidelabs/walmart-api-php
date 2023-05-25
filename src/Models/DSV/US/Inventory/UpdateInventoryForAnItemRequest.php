@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateInventoryForAnItemRequest Class Doc Comment
@@ -51,7 +51,7 @@ class UpdateInventoryForAnItemRequest extends BaseModel
     protected static array $openAPITypes = [
         'gtin' => 'string',
         'availabilityCode' => 'string',
-        'quantity' => '\Walmart\Model\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity'
+        'quantity' => '\Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity'
     ];
 
     /**
@@ -242,7 +242,7 @@ class UpdateInventoryForAnItemRequest extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Model\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity
+     * @return \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity
     
      */
     public function getQuantity()
@@ -253,7 +253,7 @@ class UpdateInventoryForAnItemRequest extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Model\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity $quantity quantity
+     * @param \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity $quantity quantity
      *
      * @return self
     

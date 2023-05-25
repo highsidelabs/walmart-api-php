@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * GetCategoriesList200ResponsePayloadInner Class Doc Comment
@@ -51,7 +51,7 @@ class GetCategoriesList200ResponsePayloadInner extends BaseModel
     protected static array $openAPITypes = [
         'name' => 'string',
         'count' => 'int',
-        'productType' => '\Walmart\Model\MP\US\Insights\GetCategoriesList200ResponsePayloadInnerProductTypeInner[]'
+        'productType' => '\Walmart\Models\MP\US\Insights\GetCategoriesList200ResponsePayloadInnerProductTypeInner[]'
     ];
 
     /**
@@ -196,7 +196,7 @@ class GetCategoriesList200ResponsePayloadInner extends BaseModel
     /**
      * Gets productType
      *
-     * @return \Walmart\Model\MP\US\Insights\GetCategoriesList200ResponsePayloadInnerProductTypeInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\GetCategoriesList200ResponsePayloadInnerProductTypeInner[]|null
     
      */
     public function getProductType()
@@ -207,7 +207,7 @@ class GetCategoriesList200ResponsePayloadInner extends BaseModel
     /**
      * Sets productType
      *
-     * @param \Walmart\Model\MP\US\Insights\GetCategoriesList200ResponsePayloadInnerProductTypeInner[]|null $productType productType is only applicable for categories
+     * @param \Walmart\Models\MP\US\Insights\GetCategoriesList200ResponsePayloadInnerProductTypeInner[]|null $productType productType is only applicable for categories
      *
      * @return self
     

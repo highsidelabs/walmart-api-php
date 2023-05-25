@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * ServiceResponse Class Doc Comment
@@ -50,8 +50,8 @@ class ServiceResponse extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'header' => '\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader',
-        'errors' => '\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]',
+        'header' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader',
+        'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]',
         'payload' => 'object'
     ];
 
@@ -283,7 +283,7 @@ class ServiceResponse extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader|null
+     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader|null
     
      */
     public function getHeader()
@@ -294,7 +294,7 @@ class ServiceResponse extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader|null $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader|null $header header
      *
      * @return self
     
@@ -312,7 +312,7 @@ class ServiceResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -323,7 +323,7 @@ class ServiceResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **productName** | **string** | A seller-specified, alphanumeric string uniquely identifying the product name. Example: 'Sterling Silver Blue Diamond Heart Pendant with 18in Chain' | [optional]
 **shelf** | **string** | Walmart assigned item shelf name | [optional]
 **productType** | **string** | A seller-specified, alphanumeric string uniquely identifying the Product Type. Example: 'Diamond' | [optional]
-**price** | [**\Walmart\Model\MP\CA\Items\GetAllItems200ResponseItemResponseInnerPrice**](GetAllItems200ResponseItemResponseInnerPrice.md) |  | [optional]
+**price** | [**\Walmart\Models\MP\CA\Items\GetAllItems200ResponseItemResponseInnerPrice**](GetAllItems200ResponseItemResponseInnerPrice.md) |  | [optional]
 **publishedStatus** | **string** | The published status of an item describes where the item is in the submission process. Examples of allowed values are PUBLISHED, UNPUBLISHED. | [optional]
 
 

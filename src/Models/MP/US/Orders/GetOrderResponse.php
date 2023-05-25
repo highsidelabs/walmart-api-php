@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetOrderResponse Class Doc Comment
@@ -49,7 +49,7 @@ class GetOrderResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'order' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrder'
+        'order' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrder'
     ];
 
     /**
@@ -124,7 +124,7 @@ class GetOrderResponse extends BaseModel
     /**
      * Gets order
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrder|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrder|null
     
      */
     public function getOrder()
@@ -135,7 +135,7 @@ class GetOrderResponse extends BaseModel
     /**
      * Sets order
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrder|null $order order
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrder|null $order order
      *
      * @return self
     

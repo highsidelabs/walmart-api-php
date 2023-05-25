@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * ChangeAssortmentResponse Class Doc Comment
@@ -50,7 +50,7 @@ class ChangeAssortmentResponse extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Rules\ChangeAssortmentType200ResponsePayload'
+        'payload' => '\Walmart\Models\MP\US\Rules\ChangeAssortmentType200ResponsePayload'
     ];
 
     /**
@@ -160,7 +160,7 @@ class ChangeAssortmentResponse extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Rules\ChangeAssortmentType200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Rules\ChangeAssortmentType200ResponsePayload|null
     
      */
     public function getPayload()
@@ -171,7 +171,7 @@ class ChangeAssortmentResponse extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Rules\ChangeAssortmentType200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Rules\ChangeAssortmentType200ResponsePayload|null $payload payload
      *
      * @return self
     

@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **carrierServiceCode** | **string** | Shipment carrier service code | [optional]
 **packageId** | **string** | Shipment package Id | [optional]
 **lastModified** | **string** | Shipment lastModified date | [optional]
-**shipmentLines** | [**\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner.md) | Shipment line details | [optional]
-**shipmentDates** | [**\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner.md) | Shipment dates | [optional]
+**shipmentLines** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner.md) | Shipment line details | [optional]
+**shipmentDates** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner.md) | Shipment dates | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

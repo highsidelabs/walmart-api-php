@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * GetCarrierPackageTypes200Response Class Doc Comment
@@ -49,8 +49,8 @@ class GetCarrierPackageTypes200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'data' => '\Walmart\Model\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]',
-        'errors' => '\Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'data' => '\Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]',
+        'errors' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class GetCarrierPackageTypes200Response extends BaseModel
     /**
      * Gets data
      *
-     * @return \Walmart\Model\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]|null
     
      */
     public function getData()
@@ -175,7 +175,7 @@ class GetCarrierPackageTypes200Response extends BaseModel
     /**
      * Sets data
      *
-     * @param \Walmart\Model\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]|null $data data
+     * @param \Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]|null $data data
      *
      * @return self
     
@@ -193,7 +193,7 @@ class GetCarrierPackageTypes200Response extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -204,7 +204,7 @@ class GetCarrierPackageTypes200Response extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

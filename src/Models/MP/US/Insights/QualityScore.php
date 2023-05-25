@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * QualityScore Class Doc Comment
@@ -50,7 +50,7 @@ class QualityScore extends BaseModel
       */
     protected static array $openAPITypes = [
         'score' => 'float',
-        'values' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner[]'
+        'values' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class QualityScore extends BaseModel
     /**
      * Gets values
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner[]|null
     
      */
     public function getValues()
@@ -171,7 +171,7 @@ class QualityScore extends BaseModel
     /**
      * Sets values
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner[]|null $values values
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner[]|null $values values
      *
      * @return self
     

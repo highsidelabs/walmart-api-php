@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderLinesType Class Doc Comment
@@ -51,7 +51,7 @@ class OrderLinesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLine' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInner[]'
+        'orderLine' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class OrderLinesType extends BaseModel
     /**
      * Gets orderLine
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInner[]|null
     
      */
     public function getOrderLine()
@@ -137,7 +137,7 @@ class OrderLinesType extends BaseModel
     /**
      * Sets orderLine
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInner[]|null $orderLine Purchase Order line information for each item
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInner[]|null $orderLine Purchase Order line information for each item
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemResponseJson Class Doc Comment
@@ -49,7 +49,7 @@ class ItemResponseJson extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'responseRecord' => '\Walmart\Model\MP\US\Items\GetAnItem200ResponseResponseRecord'
+        'responseRecord' => '\Walmart\Models\MP\US\Items\GetAnItem200ResponseResponseRecord'
     ];
 
     /**
@@ -124,7 +124,7 @@ class ItemResponseJson extends BaseModel
     /**
      * Gets responseRecord
      *
-     * @return \Walmart\Model\MP\US\Items\GetAnItem200ResponseResponseRecord|null
+     * @return \Walmart\Models\MP\US\Items\GetAnItem200ResponseResponseRecord|null
     
      */
     public function getResponseRecord()
@@ -135,7 +135,7 @@ class ItemResponseJson extends BaseModel
     /**
      * Sets responseRecord
      *
-     * @param \Walmart\Model\MP\US\Items\GetAnItem200ResponseResponseRecord|null $responseRecord responseRecord
+     * @param \Walmart\Models\MP\US\Items\GetAnItem200ResponseResponseRecord|null $responseRecord responseRecord
      *
      * @return self
     

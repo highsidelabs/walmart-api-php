@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * PickupPerson Class Doc Comment
@@ -51,8 +51,8 @@ class PickupPerson extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'name' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerName',
-        'phone' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone'
+        'name' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerName',
+        'phone' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone'
     ];
 
     /**
@@ -133,7 +133,7 @@ class PickupPerson extends BaseModel
     /**
      * Gets name
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerName|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerName|null
     
      */
     public function getName()
@@ -144,7 +144,7 @@ class PickupPerson extends BaseModel
     /**
      * Sets name
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerName|null $name name
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerName|null $name name
      *
      * @return self
     
@@ -162,7 +162,7 @@ class PickupPerson extends BaseModel
     /**
      * Gets phone
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone|null
     
      */
     public function getPhone()
@@ -173,7 +173,7 @@ class PickupPerson extends BaseModel
     /**
      * Sets phone
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone|null $phone phone
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone|null $phone phone
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200Response Class Doc Comment
@@ -49,8 +49,8 @@ class GetAllOrders200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseMeta',
-        'elements' => '\Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseElements'
+        'meta' => '\Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseMeta',
+        'elements' => '\Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseElements'
     ];
 
     /**
@@ -170,7 +170,7 @@ class GetAllOrders200Response extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseMeta
+     * @return \Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseMeta
     
      */
     public function getMeta()
@@ -181,7 +181,7 @@ class GetAllOrders200Response extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseMeta $meta meta
+     * @param \Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseMeta $meta meta
      *
      * @return self
     
@@ -199,7 +199,7 @@ class GetAllOrders200Response extends BaseModel
     /**
      * Gets elements
      *
-     * @return \Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseElements
+     * @return \Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseElements
     
      */
     public function getElements()
@@ -210,7 +210,7 @@ class GetAllOrders200Response extends BaseModel
     /**
      * Sets elements
      *
-     * @param \Walmart\Model\MP\CA\Orders\GetAllOrders200ResponseElements $elements elements
+     * @param \Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseElements $elements elements
      *
      * @return self
     

@@ -1,4 +1,4 @@
-# Walmart\Api\CA\MPInventoryApi  
+# Walmart\Apis\CA\MPInventoryApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getInventory()`
 
 ```php
-getInventory($sku): \Walmart\Model\MP\CA\Inventory\GetInventory200Response
+getInventory($sku): \Walmart\Models\MP\CA\Inventory\GetInventory200Response
 ```
 Inventory
 
@@ -28,7 +28,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InventoryApi(  
+$apiInstance = new Walmart\Apis\InventoryApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -52,7 +52,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\CA\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ try {
 ## `updateBulkInventory()`
 
 ```php
-updateBulkInventory($feedType, $file): \Walmart\Model\MP\CA\Inventory\UpdateBulkInventory200Response
+updateBulkInventory($feedType, $file): \Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response
 ```
 Bulk update
 
@@ -87,7 +87,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InventoryApi(  
+$apiInstance = new Walmart\Apis\InventoryApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -113,7 +113,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Inventory\UpdateBulkInventory200Response**](../Model/UpdateBulkInventory200Response.md)
+[**\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response**](../Model/UpdateBulkInventory200Response.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ try {
 ## `updateInventoryForAnItemCA()`
 
 ```php
-updateInventoryForAnItemCA($sku, $updateInventoryForAnItemCARequest): \Walmart\Model\MP\CA\Inventory\GetInventory200Response
+updateInventoryForAnItemCA($sku, $updateInventoryForAnItemCARequest): \Walmart\Models\MP\CA\Inventory\GetInventory200Response
 ```
 Update inventory
 
@@ -148,7 +148,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InventoryApi(  
+$apiInstance = new Walmart\Apis\InventoryApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -164,7 +164,7 @@ $updateInventoryForAnItemCARequest = <?xml version="1.0" encoding="UTF-8"?>
         <amount>3</amount>
     </quantity>
     <fulfillmentLagTime>1</fulfillmentLagTime>
-</inventory>; // \Walmart\Model\MP\CA\Inventory\UpdateInventoryForAnItemCARequest | File fields
+</inventory>; // \Walmart\Models\MP\CA\Inventory\UpdateInventoryForAnItemCARequest | File fields
 
 try {
     $result = $apiInstance->updateInventoryForAnItemCA($sku, $updateInventoryForAnItemCARequest);
@@ -177,12 +177,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
-| **updateInventoryForAnItemCARequest** | [**\Walmart\Model\MP\CA\Inventory\UpdateInventoryForAnItemCARequest**](../Model/UpdateInventoryForAnItemCARequest.md)| File fields | |
+| **updateInventoryForAnItemCARequest** | [**\Walmart\Models\MP\CA\Inventory\UpdateInventoryForAnItemCARequest**](../Model/UpdateInventoryForAnItemCARequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\CA\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
 
 ### Authorization
 

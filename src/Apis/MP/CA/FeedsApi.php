@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\CA;
+namespace Walmart\Apis\MP\CA;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -60,12 +60,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response
+     * @return \Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response
      */
     public function bulkContentSetup(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response {
+    ): \Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response {
         return $this->bulkContentSetupWithHttpInfo($feedType, $file);
     }
 
@@ -79,12 +79,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response
+     * @return \Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response
      */
     protected function bulkContentSetupWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response {
+    ): \Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response {
         $request = $this->bulkContentSetupRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -134,19 +134,19 @@ class FeedsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response';
+            $returnType = '\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -162,7 +162,7 @@ class FeedsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response',
+                        '\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -213,7 +213,7 @@ class FeedsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response';
+        $returnType = '\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response';
         $request = $this->bulkContentSetupRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -387,13 +387,13 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response
+     * @return \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response
      */
     public function getAllFeedStatuses(
         ?string $feedId = null,
         ?string $offset = '0',
         ?string $limit = '50'
-    ): \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response {
+    ): \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response {
         return $this->getAllFeedStatusesWithHttpInfo($feedId, $offset, $limit);
     }
 
@@ -408,13 +408,13 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response
+     * @return \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response
      */
     protected function getAllFeedStatusesWithHttpInfo(
         ?string $feedId = null,
         ?string $offset = '0',
         ?string $limit = '50',
-    ): \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response {
+    ): \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response {
         $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -464,19 +464,19 @@ class FeedsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response';
+            $returnType = '\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -492,7 +492,7 @@ class FeedsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response',
+                        '\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -547,7 +547,7 @@ class FeedsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '50',
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response';
+        $returnType = '\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response';
         $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -715,14 +715,14 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response
+     * @return \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response
      */
     public function getFeedItemStatus(
         string $feedId,
         ?string $includeDetails = 'false',
         ?string $offset = '0',
         ?string $limit = '50'
-    ): \Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response {
+    ): \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response {
         return $this->getFeedItemStatusWithHttpInfo($feedId, $includeDetails, $offset, $limit);
     }
 
@@ -738,14 +738,14 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response
+     * @return \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response
      */
     protected function getFeedItemStatusWithHttpInfo(
         string $feedId,
         ?string $includeDetails = 'false',
         ?string $offset = '0',
         ?string $limit = '50',
-    ): \Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response {
+    ): \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response {
         $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -795,19 +795,19 @@ class FeedsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response';
+            $returnType = '\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -823,7 +823,7 @@ class FeedsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response',
+                        '\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -882,7 +882,7 @@ class FeedsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '50',
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response';
+        $returnType = '\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response';
         $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

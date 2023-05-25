@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInner Class Doc Comment
@@ -52,15 +52,15 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
-        'item' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerItem',
-        'charges' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges',
-        'orderLineQuantity' => '\Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'item' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerItem',
+        'charges' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges',
+        'orderLineQuantity' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
         'statusDate' => '\DateTime',
-        'orderLineStatuses' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses',
-        'refund' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund',
+        'orderLineStatuses' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses',
+        'refund' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund',
         'originalCarrierMethod' => 'string',
         'referenceLineId' => 'string',
-        'fulfillment' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment',
+        'fulfillment' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment',
         'intentToCancel' => 'string',
         'configId' => 'string'
     ];
@@ -250,7 +250,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets item
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerItem
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerItem
     
      */
     public function getItem()
@@ -261,7 +261,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets item
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerItem $item item
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerItem $item item
      *
      * @return self
     
@@ -279,7 +279,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets charges
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges
     
      */
     public function getCharges()
@@ -290,7 +290,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets charges
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges $charges charges
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges $charges charges
      *
      * @return self
     
@@ -308,7 +308,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets orderLineQuantity
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
     
      */
     public function getOrderLineQuantity()
@@ -319,7 +319,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets orderLineQuantity
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $orderLineQuantity orderLineQuantity
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $orderLineQuantity orderLineQuantity
      *
      * @return self
     
@@ -366,7 +366,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses
     
      */
     public function getOrderLineStatuses()
@@ -377,7 +377,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
      *
      * @return self
     
@@ -395,7 +395,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets refund
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund|null
     
      */
     public function getRefund()
@@ -406,7 +406,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets refund
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund|null $refund refund
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund|null $refund refund
      *
      * @return self
     
@@ -482,7 +482,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets fulfillment
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment|null
     
      */
     public function getFulfillment()
@@ -493,7 +493,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets fulfillment
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment|null $fulfillment fulfillment
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment|null $fulfillment fulfillment
      *
      * @return self
     

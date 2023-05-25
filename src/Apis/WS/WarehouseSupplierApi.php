@@ -1,8 +1,8 @@
 <?php
 
-namespace Walmart\Api\WS;
+namespace Walmart\Apis\WS;
 
-use Walmart\Api\WS\US;
+use Walmart\Apis\WS\US;
 use Walmart\Enums\Country;
 use Walmart\Walmart;
 

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Notifications;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Notifications;
+use Walmart\Models\BaseModel;
 
 /**
  * GetEventTypes200ResponseEventTypesInner Class Doc Comment

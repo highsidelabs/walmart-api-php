@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInner Class Doc Comment
@@ -51,7 +51,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'fulfillmentOptions' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]'
+        'fulfillmentOptions' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets fulfillmentOptions
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]|null
     
      */
     public function getFulfillmentOptions()
@@ -137,7 +137,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets fulfillmentOptions
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]|null $fulfillmentOptions Fulfillment options details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]|null $fulfillmentOptions Fulfillment options details.
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedRecordResponseJson Class Doc Comment
@@ -49,11 +49,11 @@ class FeedRecordResponseJson extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
         'totalResults' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'results' => '\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseResults'
+        'results' => '\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseResults'
     ];
 
     /**
@@ -152,7 +152,7 @@ class FeedRecordResponseJson extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -163,7 +163,7 @@ class FeedRecordResponseJson extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -268,7 +268,7 @@ class FeedRecordResponseJson extends BaseModel
     /**
      * Gets results
      *
-     * @return \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseResults|null
+     * @return \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseResults|null
     
      */
     public function getResults()
@@ -279,7 +279,7 @@ class FeedRecordResponseJson extends BaseModel
     /**
      * Sets results
      *
-     * @param \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseResults|null $results results
+     * @param \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseResults|null $results results
      *
      * @return self
     

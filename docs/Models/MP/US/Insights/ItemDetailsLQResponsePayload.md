@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **nextCursor** | **string** |  | [optional]
 **totalItems** | **string** |  | [optional]
-**payload** | [**\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]**](ItemsDetailsForListing200ResponsePayloadInner.md) |  | [optional]
+**payload** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]**](ItemsDetailsForListing200ResponsePayloadInner.md) |  | [optional]
 **status** | **string** |  | [optional]
 
 

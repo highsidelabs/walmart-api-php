@@ -1,4 +1,4 @@
-# Walmart\Api\CA\MPInternationalShippingApi  
+# Walmart\Apis\CA\MPInternationalShippingApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createConsolidation()`
 
 ```php
-createConsolidation($accept, $contentType, $createConsolidationRequest): \Walmart\Model\MP\CA\InternationalShipping\GetConsolidation200Response
+createConsolidation($accept, $contentType, $createConsolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response
 ```
 Create consolidation
 
@@ -33,7 +33,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -42,7 +42,7 @@ $apiInstance = new Walmart\Api\InternationalShippingApi(
 
 $accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
-$createConsolidationRequest = {"domesticCarrierId":1000,"domesticTrackingNo":"20128590000367","shipmentIds":["875F143972000000CA8020EA"]}; // \Walmart\Model\MP\CA\InternationalShipping\CreateConsolidationRequest | Consolidation Request
+$createConsolidationRequest = {"domesticCarrierId":1000,"domesticTrackingNo":"20128590000367","shipmentIds":["875F143972000000CA8020EA"]}; // \Walmart\Models\MP\CA\InternationalShipping\CreateConsolidationRequest | Consolidation Request
 
 try {
     $result = $apiInstance->createConsolidation($accept, $contentType, $createConsolidationRequest);
@@ -56,12 +56,12 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
-| **createConsolidationRequest** | [**\Walmart\Model\MP\CA\InternationalShipping\CreateConsolidationRequest**](../Model/CreateConsolidationRequest.md)| Consolidation Request | |
+| **createConsolidationRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\CreateConsolidationRequest**](../Model/CreateConsolidationRequest.md)| Consolidation Request | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\InternationalShipping\GetConsolidation200Response**](../Model/GetConsolidation200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response**](../Model/GetConsolidation200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ try {
 ## `createLabel()`
 
 ```php
-createLabel($accept, $contentType, $createLabelRequest, $wMTESTMODE): \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200Response
+createLabel($accept, $contentType, $createLabelRequest, $wMTESTMODE): \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200Response
 ```
 Create label
 
@@ -96,7 +96,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -105,7 +105,7 @@ $apiInstance = new Walmart\Api\InternationalShippingApi(
 
 $accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
-$createLabelRequest = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY","labelSize":"A6"}; // \Walmart\Model\MP\CA\InternationalShipping\CreateLabelRequest | Label fields
+$createLabelRequest = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY","labelSize":"A6"}; // \Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequest | Label fields
 $wMTESTMODE = false; // bool | For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned.
 
 try {
@@ -120,13 +120,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
-| **createLabelRequest** | [**\Walmart\Model\MP\CA\InternationalShipping\CreateLabelRequest**](../Model/CreateLabelRequest.md)| Label fields | |
+| **createLabelRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequest**](../Model/CreateLabelRequest.md)| Label fields | |
 | **wMTESTMODE** | **bool**| For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned. | [optional] [default to false] |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\InternationalShipping\CreateLabel200Response**](../Model/CreateLabel200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200Response**](../Model/CreateLabel200Response.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ try {
 ## `discardLabel()`
 
 ```php
-discardLabel($carrierShortName, $trackingNo, $accept, $contentType): \Walmart\Model\MP\CA\InternationalShipping\DiscardLabel200Response
+discardLabel($carrierShortName, $trackingNo, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\DiscardLabel200Response
 ```
 Discard label
 
@@ -161,7 +161,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -191,7 +191,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\InternationalShipping\DiscardLabel200Response**](../Model/DiscardLabel200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\DiscardLabel200Response**](../Model/DiscardLabel200Response.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ try {
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $accept, $contentType): \Walmart\Model\MP\CA\InternationalShipping\GetCarrierPackageTypes200Response
+getCarrierPackageTypes($carrierShortName, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200Response
 ```
 Supported carrier package types
 
@@ -226,7 +226,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -254,7 +254,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\InternationalShipping\GetCarrierPackageTypes200Response**](../Model/GetCarrierPackageTypes200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200Response**](../Model/GetCarrierPackageTypes200Response.md)
 
 ### Authorization
 
@@ -272,7 +272,7 @@ try {
 ## `getCarriers()`
 
 ```php
-getCarriers($accept, $contentType): \Walmart\Model\MP\CA\InternationalShipping\GetCarriers200Response
+getCarriers($accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetCarriers200Response
 ```
 Supported carriers
 
@@ -289,7 +289,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -315,7 +315,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\InternationalShipping\GetCarriers200Response**](../Model/GetCarriers200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\GetCarriers200Response**](../Model/GetCarriers200Response.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ try {
 ## `getConsolidation()`
 
 ```php
-getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType): \Walmart\Model\MP\CA\InternationalShipping\GetConsolidation200Response
+getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response
 ```
 Get consolidation details
 
@@ -350,7 +350,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -380,7 +380,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\InternationalShipping\GetConsolidation200Response**](../Model/GetConsolidation200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response**](../Model/GetConsolidation200Response.md)
 
 ### Authorization
 
@@ -398,7 +398,7 @@ try {
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $accept, $contentType): \Walmart\Model\MP\CA\InternationalShipping\GetLabel200Response
+getLabel($purchaseOrderId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetLabel200Response
 ```
 Labels by purchase order id
 
@@ -415,7 +415,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -443,7 +443,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\InternationalShipping\GetLabel200Response**](../Model/GetLabel200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\GetLabel200Response**](../Model/GetLabel200Response.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
+$apiInstance = new Walmart\Apis\InternationalShippingApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

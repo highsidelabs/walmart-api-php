@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner Class Doc Comment
@@ -51,7 +51,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'availableQuantity' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity',
+        'availableQuantity' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity',
         'fulfillmentChannel' => 'string[]',
         'lineId' => 'string'
     ];
@@ -140,7 +140,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets availableQuantity
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null
     
      */
     public function getAvailableQuantity()
@@ -151,7 +151,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets availableQuantity
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null $availableQuantity availableQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null $availableQuantity availableQuantity
      *
      * @return self
     

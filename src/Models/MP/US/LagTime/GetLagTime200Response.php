@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\LagTime;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\LagTime;
+use Walmart\Models\BaseModel;
 
 /**
  * GetLagTime200Response Class Doc Comment

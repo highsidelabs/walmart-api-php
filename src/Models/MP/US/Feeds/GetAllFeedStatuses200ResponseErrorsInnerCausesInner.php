@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFeedStatuses200ResponseErrorsInnerCausesInner Class Doc Comment

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\CP\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\CP\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * ContentProductFeed200Response Class Doc Comment

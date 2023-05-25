@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * Tax Class Doc Comment
@@ -52,8 +52,8 @@ class Tax extends BaseModel
       */
     protected static array $openAPITypes = [
         'taxName' => 'string',
-        'excessTax' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
-        'taxPerUnit' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount'
+        'excessTax' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
+        'taxPerUnit' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount'
     ];
 
     /**
@@ -169,7 +169,7 @@ class Tax extends BaseModel
     /**
      * Gets excessTax
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
     
      */
     public function getExcessTax()
@@ -180,7 +180,7 @@ class Tax extends BaseModel
     /**
      * Sets excessTax
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $excessTax excessTax
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $excessTax excessTax
      *
      * @return self
     
@@ -198,7 +198,7 @@ class Tax extends BaseModel
     /**
      * Gets taxPerUnit
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
     
      */
     public function getTaxPerUnit()
@@ -209,7 +209,7 @@ class Tax extends BaseModel
     /**
      * Sets taxPerUnit
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $taxPerUnit taxPerUnit
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $taxPerUnit taxPerUnit
      *
      * @return self
     

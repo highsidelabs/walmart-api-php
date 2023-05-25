@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * TaxType Class Doc Comment
@@ -52,7 +52,7 @@ class TaxType extends BaseModel
       */
     protected static array $openAPITypes = [
         'taxName' => 'string',
-        'taxAmount' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount'
+        'taxAmount' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount'
     ];
 
     /**
@@ -168,7 +168,7 @@ class TaxType extends BaseModel
     /**
      * Gets taxAmount
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
     
      */
     public function getTaxAmount()
@@ -179,7 +179,7 @@ class TaxType extends BaseModel
     /**
      * Sets taxAmount
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $taxAmount taxAmount
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $taxAmount taxAmount
      *
      * @return self
     

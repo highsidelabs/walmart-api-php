@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner Class Doc Comment
@@ -51,11 +51,11 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'regions' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[]',
+        'regions' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[]',
         'addressTypes' => 'string[]',
         'transitTime' => 'int',
-        'perShippingCharge' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge',
-        'tieredShippingCharges' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]'
+        'perShippingCharge' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge',
+        'tieredShippingCharges' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]'
     ];
 
     /**
@@ -184,7 +184,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Gets regions
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[]
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[]
     
      */
     public function getRegions()
@@ -195,7 +195,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Sets regions
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[] $regions Supported Regions includes 48 State Street, 48 State – Street Po Box/Street, AK and HI – Street etc
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[] $regions Supported Regions includes 48 State Street, 48 State – Street Po Box/Street, AK and HI – Street etc
      *
      * @return self
     
@@ -279,7 +279,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Gets perShippingCharge
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge|null
     
      */
     public function getPerShippingCharge()
@@ -290,7 +290,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Sets perShippingCharge
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge|null $perShippingCharge perShippingCharge
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge|null $perShippingCharge perShippingCharge
      *
      * @return self
     
@@ -308,7 +308,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Gets tieredShippingCharges
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]|null
     
      */
     public function getTieredShippingCharges()
@@ -319,7 +319,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Sets tieredShippingCharges
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]|null $tieredShippingCharges Tiered Shipping Charges
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]|null $tieredShippingCharges Tiered Shipping Charges
      *
      * @return self
     

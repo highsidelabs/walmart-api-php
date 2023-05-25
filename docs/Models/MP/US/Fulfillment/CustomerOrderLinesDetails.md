@@ -8,10 +8,10 @@ Name | Type | Description | Notes
 **lastModified** | **\DateTime** | Last modified date of the order lines | [optional]
 **shippingMethod** | **string** | Shipping method of the order lines | [optional]
 **shippingTier** | **string** | Shipping tier of the order lines | [optional]
-**orderLineQuantityInfo** | [**\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner.md) | Order line quantity information | [optional]
-**orderProduct** | [**\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderProduct**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderProduct.md) |  | [optional]
-**orderedQty** | [**\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity.md) |  | [optional]
-**customerShipToAddress** | [**\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress.md) |  | [optional]
+**orderLineQuantityInfo** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner.md) | Order line quantity information | [optional]
+**orderProduct** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderProduct**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderProduct.md) |  | [optional]
+**orderedQty** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity.md) |  | [optional]
+**customerShipToAddress** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress.md) |  | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * PriceDisplayCodes Class Doc Comment

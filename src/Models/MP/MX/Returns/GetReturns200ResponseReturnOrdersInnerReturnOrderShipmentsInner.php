@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner Class Doc Comment
@@ -51,7 +51,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner extends Ba
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipmentLines' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]',
+        'shipmentLines' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]',
         'shipmentNo' => 'string',
         'status' => 'string',
         'packageNo' => 'string',
@@ -62,7 +62,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner extends Ba
         'carrierMethodCode' => 'string',
         'trackingNumber' => 'string',
         'trackingUrl' => 'string',
-        'shipmentAdditionalDate' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate'
+        'shipmentAdditionalDate' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate'
     ];
 
     /**
@@ -203,7 +203,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner extends Ba
     /**
      * Gets shipmentLines
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]|null
     
      */
     public function getShipmentLines()
@@ -214,7 +214,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner extends Ba
     /**
      * Sets shipmentLines
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]|null $shipmentLines shipmentLines
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]|null $shipmentLines shipmentLines
      *
      * @return self
     
@@ -522,7 +522,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner extends Ba
     /**
      * Gets shipmentAdditionalDate
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate|null
     
      */
     public function getShipmentAdditionalDate()
@@ -533,7 +533,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner extends Ba
     /**
      * Sets shipmentAdditionalDate
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate|null $shipmentAdditionalDate shipmentAdditionalDate
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate|null $shipmentAdditionalDate shipmentAdditionalDate
      *
      * @return self
     

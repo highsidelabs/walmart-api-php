@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rebateAmt** | [**\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue**](GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue.md) |  |
+**rebateAmt** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue**](GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue.md) |  |
 **infoUrl** | **string** |  | [optional]
 **rebateType** | **string** |  | [optional]
 **startDate** | **\DateTime** |  | [optional]

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundPreviewRequest Class Doc Comment
@@ -49,8 +49,8 @@ class InboundPreviewRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestHeader',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestPayload'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestPayload'
     ];
 
     /**
@@ -137,7 +137,7 @@ class InboundPreviewRequest extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestHeader
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeader
     
      */
     public function getHeader()
@@ -148,7 +148,7 @@ class InboundPreviewRequest extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestHeader $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeader $header header
      *
      * @return self
     
@@ -166,7 +166,7 @@ class InboundPreviewRequest extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestPayload
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestPayload
     
      */
     public function getPayload()
@@ -177,7 +177,7 @@ class InboundPreviewRequest extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestPayload $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestPayload $payload payload
      *
      * @return self
     

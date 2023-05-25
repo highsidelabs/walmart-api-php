@@ -1,4 +1,4 @@
-# Walmart\Api\MX\MPReturnsApi  
+# Walmart\Apis\MX\MPReturnsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAllReturnsUsingCursor()`
 
 ```php
-getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response
+getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response
 ```
 Get all returns with cursor mark
 
@@ -29,7 +29,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
+$apiInstance = new Walmart\Apis\ReturnsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -67,7 +67,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200Response**](../Model/GetAllReturnsUsingCursor200Response.md)
+[**\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response**](../Model/GetAllReturnsUsingCursor200Response.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ try {
 ## `getReturns()`
 
 ```php
-getReturns($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Model\MP\MX\Returns\GetReturns200Response
+getReturns($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetReturns200Response
 ```
 Get Returns
 
@@ -103,7 +103,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
+$apiInstance = new Walmart\Apis\ReturnsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -141,7 +141,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Returns\GetReturns200Response**](../Model/GetReturns200Response.md)
+[**\Walmart\Models\MP\MX\Returns\GetReturns200Response**](../Model/GetReturns200Response.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
+$apiInstance = new Walmart\Apis\ReturnsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -185,7 +185,7 @@ $apiInstance = new Walmart\Api\ReturnsApi(
 );
 
 $returnOrderId = 'returnOrderId_example'; // string | returnOrderId
-$refundOrderLinesRequest = {"orderRefund":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Received","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest | OrderRefund request body
+$refundOrderLinesRequest = {"orderRefund":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Received","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest | OrderRefund request body
 
 try {
     $result = $apiInstance->refundOrderLines($returnOrderId, $refundOrderLinesRequest);
@@ -198,7 +198,7 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| returnOrderId | |
-| **refundOrderLinesRequest** | [**\Walmart\Model\MP\MX\Returns\RefundOrderLinesRequest**](../Model/RefundOrderLinesRequest.md)| OrderRefund request body | |
+| **refundOrderLinesRequest** | [**\Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest**](../Model/RefundOrderLinesRequest.md)| OrderRefund request body | |
 
 
 ### Return type

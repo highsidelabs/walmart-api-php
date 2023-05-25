@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Cost;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Cost;
+use Walmart\Models\BaseModel;
 
 /**
  * UnitCost Class Doc Comment

@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **buyerId** | **string** | Unique ID associated with the specified buyer | [optional]
 **mart** | **string** | Mart information | [optional]
 **isGuest** | **bool** | Indicates a guest customer | [optional]
-**shippingInfo** | [**\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo**](ShippingUpdates200ResponseOrderShippingInfo.md) |  |
-**orderLines** | [**\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines**](ShippingUpdates200ResponseOrderOrderLines.md) |  |
+**shippingInfo** | [**\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo**](ShippingUpdates200ResponseOrderShippingInfo.md) |  |
+**orderLines** | [**\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines**](ShippingUpdates200ResponseOrderOrderLines.md) |  |
 **paymentTypes** | **string[]** | Payment Types | [optional]
-**orderSummary** | [**\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary**](ShippingUpdates200ResponseOrderOrderSummary.md) |  | [optional]
-**pickupPersons** | [**\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]**](ShippingUpdates200ResponseOrderPickupPersonsInner.md) | List of pickup persons | [optional]
-**shipNode** | [**\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode**](ShippingUpdates200ResponseOrderShipNode.md) |  | [optional]
+**orderSummary** | [**\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary**](ShippingUpdates200ResponseOrderOrderSummary.md) |  | [optional]
+**pickupPersons** | [**\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]**](ShippingUpdates200ResponseOrderPickupPersonsInner.md) | List of pickup persons | [optional]
+**shipNode** | [**\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode**](ShippingUpdates200ResponseOrderShipNode.md) |  | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

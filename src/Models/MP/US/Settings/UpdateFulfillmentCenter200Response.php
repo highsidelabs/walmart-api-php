@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateFulfillmentCenter200Response Class Doc Comment
@@ -56,9 +56,9 @@ class UpdateFulfillmentCenter200Response extends BaseModel
         'timeZone' => 'string',
         'distributorSupportedServices' => 'string[]',
         'customNodeId' => 'string',
-        'postalAddress' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress',
-        'shippingDetails' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]',
-        'calendarDayConfiguration' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration'
+        'postalAddress' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress',
+        'shippingDetails' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]',
+        'calendarDayConfiguration' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration'
     ];
 
     /**
@@ -423,7 +423,7 @@ class UpdateFulfillmentCenter200Response extends BaseModel
     /**
      * Gets postalAddress
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress|null
     
      */
     public function getPostalAddress()
@@ -434,7 +434,7 @@ class UpdateFulfillmentCenter200Response extends BaseModel
     /**
      * Sets postalAddress
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress|null $postalAddress postalAddress
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress|null $postalAddress postalAddress
      *
      * @return self
     
@@ -452,7 +452,7 @@ class UpdateFulfillmentCenter200Response extends BaseModel
     /**
      * Gets shippingDetails
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]|null
     
      */
     public function getShippingDetails()
@@ -463,7 +463,7 @@ class UpdateFulfillmentCenter200Response extends BaseModel
     /**
      * Sets shippingDetails
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]|null $shippingDetails Shipping Details.
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]|null $shippingDetails Shipping Details.
      *
      * @return self
     
@@ -481,7 +481,7 @@ class UpdateFulfillmentCenter200Response extends BaseModel
     /**
      * Gets calendarDayConfiguration
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration|null
     
      */
     public function getCalendarDayConfiguration()
@@ -492,7 +492,7 @@ class UpdateFulfillmentCenter200Response extends BaseModel
     /**
      * Sets calendarDayConfiguration
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration|null $calendarDayConfiguration calendarDayConfiguration
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration|null $calendarDayConfiguration calendarDayConfiguration
      *
      * @return self
     

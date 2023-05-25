@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateItemRule200Response Class Doc Comment
@@ -49,7 +49,7 @@ class CreateItemRule200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rules' => '\Walmart\Model\MP\US\Rules\CreateItemRule200ResponseRulesInner[]',
+        'rules' => '\Walmart\Models\MP\US\Rules\CreateItemRule200ResponseRulesInner[]',
         'status' => 'string'
     ];
 
@@ -164,7 +164,7 @@ class CreateItemRule200Response extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Model\MP\US\Rules\CreateItemRule200ResponseRulesInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\CreateItemRule200ResponseRulesInner[]|null
     
      */
     public function getRules()
@@ -175,7 +175,7 @@ class CreateItemRule200Response extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Model\MP\US\Rules\CreateItemRule200ResponseRulesInner[]|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\CreateItemRule200ResponseRulesInner[]|null $rules rules
      *
      * @return self
     

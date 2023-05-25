@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress Class Doc Comment
@@ -51,8 +51,8 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerSh
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'address' => '\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress',
-        'name' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName'
+        'address' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress',
+        'name' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName'
     ];
 
     /**
@@ -133,7 +133,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerSh
     /**
      * Gets address
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress|null
     
      */
     public function getAddress()
@@ -144,7 +144,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerSh
     /**
      * Sets address
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress|null $address address
+     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress|null $address address
      *
      * @return self
     
@@ -162,7 +162,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerSh
     /**
      * Gets name
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null
     
      */
     public function getName()
@@ -173,7 +173,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerSh
     /**
      * Sets name
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null $name name
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null $name name
      *
      * @return self
     

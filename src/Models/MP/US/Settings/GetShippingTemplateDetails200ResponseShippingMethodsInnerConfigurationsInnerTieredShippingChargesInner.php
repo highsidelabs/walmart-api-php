@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner Class Doc Comment
@@ -53,7 +53,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     protected static array $openAPITypes = [
         'minLimit' => 'float',
         'maxLimit' => 'float',
-        'shipCharge' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInnerShipCharge'
+        'shipCharge' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInnerShipCharge'
     ];
 
     /**
@@ -204,7 +204,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Gets shipCharge
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInnerShipCharge|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInnerShipCharge|null
     
      */
     public function getShipCharge()
@@ -215,7 +215,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Sets shipCharge
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInnerShipCharge|null $shipCharge shipCharge
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInnerShipCharge|null $shipCharge shipCharge
      *
      * @return self
     

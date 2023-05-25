@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CustomerOrderDetailsResponseWrapperDTO Class Doc Comment
@@ -50,8 +50,8 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'header' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]'
     ];
 
     /**
@@ -167,7 +167,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader|null
     
      */
     public function getHeader()
@@ -178,7 +178,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader|null $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader|null $header header
      *
      * @return self
     
@@ -196,7 +196,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -207,7 +207,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]|null $payload Order details
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]|null $payload Order details
      *
      * @return self
     

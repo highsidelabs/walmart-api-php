@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**\Walmart\Model\MP\MX\Prices\UpdatePrice200ResponseErrorsInner[]**](UpdatePrice200ResponseErrorsInner.md) |  | [optional]
+**errors** | [**\Walmart\Models\MP\MX\Prices\UpdatePrice200ResponseErrorsInner[]**](UpdatePrice200ResponseErrorsInner.md) |  | [optional]
 **statusCode** | **int** |  | [optional]
 **mart** | **string** | Marketplace name. Example: mart: 7 | [optional]
 **sku** | **string** | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. | [optional]

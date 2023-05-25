@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * Package Class Doc Comment

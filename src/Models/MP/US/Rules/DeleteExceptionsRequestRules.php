@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * DeleteExceptionsRequestRules Class Doc Comment
@@ -49,7 +49,7 @@ class DeleteExceptionsRequestRules extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'skus' => '\Walmart\Model\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]'
+        'skus' => '\Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class DeleteExceptionsRequestRules extends BaseModel
     /**
      * Gets skus
      *
-     * @return \Walmart\Model\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]|null
     
      */
     public function getSkus()
@@ -135,7 +135,7 @@ class DeleteExceptionsRequestRules extends BaseModel
     /**
      * Sets skus
      *
-     * @param \Walmart\Model\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]|null $skus skus
+     * @param \Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]|null $skus skus
      *
      * @return self
     

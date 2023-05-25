@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Reports;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Reports;
+use Walmart\Models\BaseModel;
 
 /**
  * PartnerProgramStatementRes Class Doc Comment
@@ -53,7 +53,7 @@ class PartnerProgramStatementRes extends BaseModel
         'status' => 'string',
         'error' => 'string',
         'partnerId' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayload'
+        'payload' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayload'
     ];
 
     /**
@@ -268,7 +268,7 @@ class PartnerProgramStatementRes extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayload|null
     
      */
     public function getPayload()
@@ -279,7 +279,7 @@ class PartnerProgramStatementRes extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayload|null $payload payload
      *
      * @return self
     

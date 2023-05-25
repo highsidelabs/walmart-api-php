@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * CategoryPayload Class Doc Comment
@@ -50,7 +50,7 @@ class CategoryPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'category' => 'string',
-        'subcategory' => '\Walmart\Model\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner[]'
+        'subcategory' => '\Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class CategoryPayload extends BaseModel
     /**
      * Gets subcategory
      *
-     * @return \Walmart\Model\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner[]|null
     
      */
     public function getSubcategory()
@@ -171,7 +171,7 @@ class CategoryPayload extends BaseModel
     /**
      * Sets subcategory
      *
-     * @param \Walmart\Model\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner[]|null $subcategory Specific kind of category
+     * @param \Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner[]|null $subcategory Specific kind of category
      *
      * @return self
     

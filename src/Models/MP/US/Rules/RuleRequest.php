@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * RuleRequest Class Doc Comment
@@ -49,7 +49,7 @@ class RuleRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'conditions' => '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]',
+        'conditions' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]',
         'description' => 'string',
         'name' => 'string',
         'priority' => 'string'
@@ -145,7 +145,7 @@ class RuleRequest extends BaseModel
     /**
      * Gets conditions
      *
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null
     
      */
     public function getConditions()
@@ -156,7 +156,7 @@ class RuleRequest extends BaseModel
     /**
      * Sets conditions
      *
-     * @param \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null $conditions conditions
+     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null $conditions conditions
      *
      * @return self
     

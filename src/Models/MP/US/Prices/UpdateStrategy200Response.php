@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateStrategy200Response Class Doc Comment
@@ -53,7 +53,7 @@ class UpdateStrategy200Response extends BaseModel
         'strategyCollectionId' => 'string',
         'enabled' => 'bool',
         'enableRepricerForPromotion' => 'bool',
-        'strategies' => '\Walmart\Model\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]'
+        'strategies' => '\Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]'
     ];
 
     /**
@@ -301,7 +301,7 @@ class UpdateStrategy200Response extends BaseModel
     /**
      * Gets strategies
      *
-     * @return \Walmart\Model\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null
+     * @return \Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null
     
      */
     public function getStrategies()
@@ -312,7 +312,7 @@ class UpdateStrategy200Response extends BaseModel
     /**
      * Sets strategies
      *
-     * @param \Walmart\Model\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null $strategies strategies
+     * @param \Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null $strategies strategies
      *
      * @return self
     

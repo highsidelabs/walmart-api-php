@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * IngestionErrors Class Doc Comment
@@ -51,7 +51,7 @@ class IngestionErrors extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ingestionError' => '\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]'
+        'ingestionError' => '\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class IngestionErrors extends BaseModel
     /**
      * Gets ingestionError
      *
-     * @return \Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]|null
+     * @return \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]|null
     
      */
     public function getIngestionError()
@@ -137,7 +137,7 @@ class IngestionErrors extends BaseModel
     /**
      * Sets ingestionError
      *
-     * @param \Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]|null $ingestionError ingestionError
+     * @param \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]|null $ingestionError ingestionError
      *
      * @return self
     

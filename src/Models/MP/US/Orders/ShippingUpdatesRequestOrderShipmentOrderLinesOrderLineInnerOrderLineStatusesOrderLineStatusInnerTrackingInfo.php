@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo Class Doc Comment
@@ -52,7 +52,7 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
       */
     protected static array $openAPITypes = [
         'shipDateTime' => 'int',
-        'carrierName' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName',
+        'carrierName' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName',
         'methodCode' => 'string',
         'trackingNumber' => 'string',
         'trackingURL' => 'string'
@@ -234,7 +234,7 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
     /**
      * Gets carrierName
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName
     
      */
     public function getCarrierName()
@@ -245,7 +245,7 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
     /**
      * Sets carrierName
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName $carrierName carrierName
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName $carrierName carrierName
      *
      * @return self
     

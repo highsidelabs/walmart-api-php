@@ -1,4 +1,4 @@
-# Walmart\Api\MX\MPAuthenticationApi  
+# Walmart\Apis\MX\MPAuthenticationApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -25,7 +25,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 
-$apiInstance = new Walmart\Api\AuthenticationApi(  
+$apiInstance = new Walmart\Apis\AuthenticationApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -64,7 +64,7 @@ try {
 ## `tokenAPI()`
 
 ```php
-tokenAPI($grantType): \Walmart\Model\MP\MX\Authentication\TokenAPI200Response
+tokenAPI($grantType): \Walmart\Models\MP\MX\Authentication\TokenAPI200Response
 ```
 Get Access token
 
@@ -79,7 +79,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 // Configure HTTP basic authorization: basicScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
 
-$apiInstance = new Walmart\Api\AuthenticationApi(  
+$apiInstance = new Walmart\Apis\AuthenticationApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -103,7 +103,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\MX\Authentication\TokenAPI200Response**](../Model/TokenAPI200Response.md)
+[**\Walmart\Models\MP\MX\Authentication\TokenAPI200Response**](../Model/TokenAPI200Response.md)
 
 ### Authorization
 

@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPPricesApi  
+# Walmart\Apis\US\MPPricesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createStrategy()`
 
 ```php
-createStrategy($updateStrategyRequest): \Walmart\Model\MP\US\Prices\UpdateStrategy200Response
+createStrategy($updateStrategyRequest): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
 ```
 Create Repricer Strategy
 
@@ -32,14 +32,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$updateStrategyRequest = new \Walmart\Model\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Model\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
+$updateStrategyRequest = new \Walmart\Models\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Models\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
 
 try {
     $result = $apiInstance->createStrategy($updateStrategyRequest);
@@ -51,12 +51,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateStrategyRequest** | [**\Walmart\Model\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
+| **updateStrategyRequest** | [**\Walmart\Models\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\UpdateStrategy200Response**](../Model/UpdateStrategy200Response.md)
+[**\Walmart\Models\MP\US\Prices\UpdateStrategy200Response**](../Model/UpdateStrategy200Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ try {
 ## `deleteStrategy()`
 
 ```php
-deleteStrategy($strategyCollectionId): \Walmart\Model\MP\US\Prices\DeleteStrategy200Response
+deleteStrategy($strategyCollectionId): \Walmart\Models\MP\US\Prices\DeleteStrategy200Response
 ```
 Delete Repricer Strategy
 
@@ -90,7 +90,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -114,7 +114,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\DeleteStrategy200Response**](../Model/DeleteStrategy200Response.md)
+[**\Walmart\Models\MP\US\Prices\DeleteStrategy200Response**](../Model/DeleteStrategy200Response.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ try {
 ## `getRepricerFeed()`
 
 ```php
-getRepricerFeed($getRepricerFeedRequest): \Walmart\Model\MP\US\Prices\GetRepricerFeed200Response
+getRepricerFeed($getRepricerFeedRequest): \Walmart\Models\MP\US\Prices\GetRepricerFeed200Response
 ```
 Assign/Unassign items to/from Repricer Strategy
 
@@ -148,14 +148,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$getRepricerFeedRequest = new \Walmart\Model\MP\US\Prices\GetRepricerFeedRequest(); // \Walmart\Model\MP\US\Prices\GetRepricerFeedRequest
+$getRepricerFeedRequest = new \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest(); // \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest
 
 try {
     $result = $apiInstance->getRepricerFeed($getRepricerFeedRequest);
@@ -167,12 +167,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **getRepricerFeedRequest** | [**\Walmart\Model\MP\US\Prices\GetRepricerFeedRequest**](../Model/GetRepricerFeedRequest.md)|  | |
+| **getRepricerFeedRequest** | [**\Walmart\Models\MP\US\Prices\GetRepricerFeedRequest**](../Model/GetRepricerFeedRequest.md)|  | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\GetRepricerFeed200Response**](../Model/GetRepricerFeed200Response.md)
+[**\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response**](../Model/GetRepricerFeed200Response.md)
 
 ### Authorization
 
@@ -190,7 +190,7 @@ try {
 ## `getStrategies()`
 
 ```php
-getStrategies(): \Walmart\Model\MP\US\Prices\GetStrategies200Response
+getStrategies(): \Walmart\Models\MP\US\Prices\GetStrategies200Response
 ```
 List of Repricer Strategies
 
@@ -206,7 +206,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -227,7 +227,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\GetStrategies200Response**](../Model/GetStrategies200Response.md)
+[**\Walmart\Models\MP\US\Prices\GetStrategies200Response**](../Model/GetStrategies200Response.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ try {
 ## `optCapProgramInPrice()`
 
 ```php
-optCapProgramInPrice($optCapProgramInPriceRequest): \Walmart\Model\MP\US\Prices\OptCapProgramInPrice200Response
+optCapProgramInPrice($optCapProgramInPriceRequest): \Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response
 ```
 Set up CAP SKU All
 
@@ -261,14 +261,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$optCapProgramInPriceRequest = new \Walmart\Model\MP\US\Prices\OptCapProgramInPriceRequest(); // \Walmart\Model\MP\US\Prices\OptCapProgramInPriceRequest | Request fields
+$optCapProgramInPriceRequest = new \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest(); // \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest | Request fields
 
 try {
     $result = $apiInstance->optCapProgramInPrice($optCapProgramInPriceRequest);
@@ -280,12 +280,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **optCapProgramInPriceRequest** | [**\Walmart\Model\MP\US\Prices\OptCapProgramInPriceRequest**](../Model/OptCapProgramInPriceRequest.md)| Request fields | |
+| **optCapProgramInPriceRequest** | [**\Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest**](../Model/OptCapProgramInPriceRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\OptCapProgramInPrice200Response**](../Model/OptCapProgramInPrice200Response.md)
+[**\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response**](../Model/OptCapProgramInPrice200Response.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ try {
 ## `priceBulkUploads()`
 
 ```php
-priceBulkUploads($feedType, $file): \Walmart\Model\MP\US\Prices\PriceBulkUploads200Response
+priceBulkUploads($feedType, $file): \Walmart\Models\MP\US\Prices\PriceBulkUploads200Response
 ```
 Update bulk prices (Multiple)
 
@@ -319,7 +319,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -345,7 +345,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\PriceBulkUploads200Response**](../Model/PriceBulkUploads200Response.md)
+[**\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response**](../Model/PriceBulkUploads200Response.md)
 
 ### Authorization
 
@@ -363,7 +363,7 @@ try {
 ## `updatePrice()`
 
 ```php
-updatePrice($updatePriceRequest): \Walmart\Model\MP\US\Prices\UpdatePrice200Response
+updatePrice($updatePriceRequest): \Walmart\Models\MP\US\Prices\UpdatePrice200Response
 ```
 Update a price
 
@@ -379,14 +379,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$updatePriceRequest = {"sku":"97964_KFTest","pricing":[{"currentPriceType":"BASE","currentPrice":{"currency":"USD","amount":10}}]}; // \Walmart\Model\MP\US\Prices\UpdatePriceRequest | The request body consists of a Feed file attached to the request.
+$updatePriceRequest = {"sku":"97964_KFTest","pricing":[{"currentPriceType":"BASE","currentPrice":{"currency":"USD","amount":10}}]}; // \Walmart\Models\MP\US\Prices\UpdatePriceRequest | The request body consists of a Feed file attached to the request.
 
 try {
     $result = $apiInstance->updatePrice($updatePriceRequest);
@@ -398,12 +398,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updatePriceRequest** | [**\Walmart\Model\MP\US\Prices\UpdatePriceRequest**](../Model/UpdatePriceRequest.md)| The request body consists of a Feed file attached to the request. | |
+| **updatePriceRequest** | [**\Walmart\Models\MP\US\Prices\UpdatePriceRequest**](../Model/UpdatePriceRequest.md)| The request body consists of a Feed file attached to the request. | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\UpdatePrice200Response**](../Model/UpdatePrice200Response.md)
+[**\Walmart\Models\MP\US\Prices\UpdatePrice200Response**](../Model/UpdatePrice200Response.md)
 
 ### Authorization
 
@@ -421,7 +421,7 @@ try {
 ## `updateStrategy()`
 
 ```php
-updateStrategy($strategyCollectionId, $updateStrategyRequest): \Walmart\Model\MP\US\Prices\UpdateStrategy200Response
+updateStrategy($strategyCollectionId, $updateStrategyRequest): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
 ```
 Update Repricer Strategy
 
@@ -437,7 +437,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PricesApi(  
+$apiInstance = new Walmart\Apis\PricesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -445,7 +445,7 @@ $apiInstance = new Walmart\Api\PricesApi(
 );
 
 $strategyCollectionId = 'strategyCollectionId_example'; // string
-$updateStrategyRequest = new \Walmart\Model\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Model\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
+$updateStrategyRequest = new \Walmart\Models\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Models\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
 
 try {
     $result = $apiInstance->updateStrategy($strategyCollectionId, $updateStrategyRequest);
@@ -458,12 +458,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **strategyCollectionId** | **string**|  | |
-| **updateStrategyRequest** | [**\Walmart\Model\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
+| **updateStrategyRequest** | [**\Walmart\Models\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Prices\UpdateStrategy200Response**](../Model/UpdateStrategy200Response.md)
+[**\Walmart\Models\MP\US\Prices\UpdateStrategy200Response**](../Model/UpdateStrategy200Response.md)
 
 ### Authorization
 

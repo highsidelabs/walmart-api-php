@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * GetWFSInventoryLog200ResponsePayload Class Doc Comment
@@ -54,7 +54,7 @@ class GetWFSInventoryLog200ResponsePayload extends BaseModel
         'gtin' => 'string',
         'vendorSku' => 'string',
         'productName' => 'string',
-        'inventoryLog' => '\Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayloadInventoryLogInner[]'
+        'inventoryLog' => '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayloadInventoryLogInner[]'
     ];
 
     /**
@@ -234,7 +234,7 @@ class GetWFSInventoryLog200ResponsePayload extends BaseModel
     /**
      * Gets inventoryLog
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayloadInventoryLogInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayloadInventoryLogInner[]|null
     
      */
     public function getInventoryLog()
@@ -245,7 +245,7 @@ class GetWFSInventoryLog200ResponsePayload extends BaseModel
     /**
      * Sets inventoryLog
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayloadInventoryLogInner[]|null $inventoryLog Inventory Log records
+     * @param \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayloadInventoryLogInner[]|null $inventoryLog Inventory Log records
      *
      * @return self
     

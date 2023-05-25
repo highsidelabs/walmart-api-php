@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLines Class Doc Comment
@@ -51,7 +51,7 @@ class ShippingUpdates200ResponseOrderOrderLines extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLine' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInner[]'
+        'orderLine' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ShippingUpdates200ResponseOrderOrderLines extends BaseModel
     /**
      * Gets orderLine
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInner[]|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInner[]|null
     
      */
     public function getOrderLine()
@@ -137,7 +137,7 @@ class ShippingUpdates200ResponseOrderOrderLines extends BaseModel
     /**
      * Sets orderLine
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInner[]|null $orderLine A list of order lines in the order
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInner[]|null $orderLine A list of order lines in the order
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * GetProSellerBadgeInfo200ResponseRecommendations Class Doc Comment

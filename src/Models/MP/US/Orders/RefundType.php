@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * RefundType Class Doc Comment
@@ -53,7 +53,7 @@ class RefundType extends BaseModel
     protected static array $openAPITypes = [
         'refundId' => 'string',
         'refundComments' => 'string',
-        'refundCharges' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges'
+        'refundCharges' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges'
     ];
 
     /**
@@ -201,7 +201,7 @@ class RefundType extends BaseModel
     /**
      * Gets refundCharges
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges
     
      */
     public function getRefundCharges()
@@ -212,7 +212,7 @@ class RefundType extends BaseModel
     /**
      * Sets refundCharges
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges $refundCharges refundCharges
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges $refundCharges refundCharges
      *
      * @return self
     

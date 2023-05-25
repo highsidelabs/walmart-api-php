@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerRefunds Class Doc Comment
@@ -49,7 +49,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerRefunds extends 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'refund' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund[]'
+        'refund' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund[]'
     ];
 
     /**
@@ -127,7 +127,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerRefunds extends 
     /**
      * Gets refund
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund[]
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund[]
     
      */
     public function getRefund()
@@ -138,7 +138,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerRefunds extends 
     /**
      * Sets refund
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund[] $refund refund
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund[] $refund refund
      *
      * @return self
     

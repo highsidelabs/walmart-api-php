@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelLineStatusesType Class Doc Comment
@@ -51,7 +51,7 @@ class CancelLineStatusesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLineStatus' => '\Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]'
+        'orderLineStatus' => '\Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]'
     ];
 
     /**
@@ -129,7 +129,7 @@ class CancelLineStatusesType extends BaseModel
     /**
      * Gets orderLineStatus
      *
-     * @return \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]
+     * @return \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]
     
      */
     public function getOrderLineStatus()
@@ -140,7 +140,7 @@ class CancelLineStatusesType extends BaseModel
     /**
      * Sets orderLineStatus
      *
-     * @param \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[] $orderLineStatus List of details about the cancellation status update
+     * @param \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[] $orderLineStatus List of details about the cancellation status update
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration Class Doc Comment
@@ -51,9 +51,9 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration extends B
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'standardProcessingSchedule' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardProcessingSchedule',
+        'standardProcessingSchedule' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardProcessingSchedule',
         'additionalDaysOff' => 'string[]',
-        'carrierWeekendCalendar' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar'
+        'carrierWeekendCalendar' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar'
     ];
 
     /**
@@ -140,7 +140,7 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration extends B
     /**
      * Gets standardProcessingSchedule
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardProcessingSchedule|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardProcessingSchedule|null
     
      */
     public function getStandardProcessingSchedule()
@@ -151,7 +151,7 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration extends B
     /**
      * Sets standardProcessingSchedule
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardProcessingSchedule|null $standardProcessingSchedule standardProcessingSchedule
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardProcessingSchedule|null $standardProcessingSchedule standardProcessingSchedule
      *
      * @return self
     
@@ -198,7 +198,7 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration extends B
     /**
      * Gets carrierWeekendCalendar
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar|null
     
      */
     public function getCarrierWeekendCalendar()
@@ -209,7 +209,7 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration extends B
     /**
      * Sets carrierWeekendCalendar
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar|null $carrierWeekendCalendar carrierWeekendCalendar
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar|null $carrierWeekendCalendar carrierWeekendCalendar
      *
      * @return self
     

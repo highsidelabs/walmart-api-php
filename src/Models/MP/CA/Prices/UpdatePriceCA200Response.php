@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdatePriceCA200Response Class Doc Comment
@@ -49,7 +49,7 @@ class UpdatePriceCA200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]',
         'mart' => 'string',
         'sku' => 'string',
         'currency' => 'string',
@@ -192,7 +192,7 @@ class UpdatePriceCA200Response extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -203,7 +203,7 @@ class UpdatePriceCA200Response extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

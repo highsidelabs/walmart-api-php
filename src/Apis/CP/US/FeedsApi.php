@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\CP\US;
+namespace Walmart\Apis\CP\US;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -58,12 +58,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\CP\US\Feeds\ContentProductFeed200Response
+     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
      */
     public function contentProductFeed(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Model\CP\US\Feeds\ContentProductFeed200Response {
+    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
         return $this->contentProductFeedWithHttpInfo($feedType, $file);
     }
 
@@ -77,12 +77,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\CP\US\Feeds\ContentProductFeed200Response
+     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
      */
     protected function contentProductFeedWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Model\CP\US\Feeds\ContentProductFeed200Response {
+    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
         $request = $this->contentProductFeedRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -132,19 +132,19 @@ class FeedsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\CP\US\Feeds\ContentProductFeed200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\CP\US\Feeds\ContentProductFeed200Response' !== 'string') {
+                        if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\CP\US\Feeds\ContentProductFeed200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\CP\US\Feeds\ContentProductFeed200Response';
+            $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -160,7 +160,7 @@ class FeedsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\CP\US\Feeds\ContentProductFeed200Response',
+                        '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -211,7 +211,7 @@ class FeedsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\CP\US\Feeds\ContentProductFeed200Response';
+        $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
         $request = $this->contentProductFeedRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

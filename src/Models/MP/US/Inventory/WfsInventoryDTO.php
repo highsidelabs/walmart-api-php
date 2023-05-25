@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * WfsInventoryDTO Class Doc Comment
@@ -49,8 +49,8 @@ class WfsInventoryDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headers' => '\Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponseHeaders',
-        'payload' => '\Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponsePayload'
+        'headers' => '\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders',
+        'payload' => '\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayload'
     ];
 
     /**
@@ -131,7 +131,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponseHeaders|null
+     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders|null
     
      */
     public function getHeaders()
@@ -142,7 +142,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponseHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders|null $headers headers
      *
      * @return self
     
@@ -160,7 +160,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayload|null
     
      */
     public function getPayload()
@@ -171,7 +171,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayload|null $payload payload
      *
      * @return self
     

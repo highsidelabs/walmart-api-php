@@ -37,6 +37,7 @@ use Walmart\Traits\HasResponseHeaders;
 class TokenAPI200Response extends BaseModel
 {
     use HasResponseHeaders;
+
     public const DISCRIMINATOR = null;
 
     /**

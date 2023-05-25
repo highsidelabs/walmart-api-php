@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -50,7 +50,7 @@ class CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineS
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'statusQuantity' => '\Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
         'cancellationReason' => 'string'
     ];
 
@@ -167,7 +167,7 @@ class CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineS
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null
+     * @return \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null
     
      */
     public function getStatusQuantity()
@@ -178,7 +178,7 @@ class CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineS
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null $statusQuantity statusQuantity
      *
      * @return self
     

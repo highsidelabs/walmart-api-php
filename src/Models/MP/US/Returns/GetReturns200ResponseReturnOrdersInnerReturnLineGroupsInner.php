@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner Class Doc Comment
@@ -52,8 +52,8 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner extends BaseMo
       */
     protected static array $openAPITypes = [
         'groupNo' => 'int',
-        'returnLines' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]',
-        'labels' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]',
+        'returnLines' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]',
+        'labels' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]',
         'returnExpectedFlag' => 'bool'
     ];
 
@@ -176,7 +176,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner extends BaseMo
     /**
      * Gets returnLines
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]|null
     
      */
     public function getReturnLines()
@@ -187,7 +187,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner extends BaseMo
     /**
      * Sets returnLines
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]|null $returnLines Array of return lines
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]|null $returnLines Array of return lines
      *
      * @return self
     
@@ -205,7 +205,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner extends BaseMo
     /**
      * Gets labels
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]|null
     
      */
     public function getLabels()
@@ -216,7 +216,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner extends BaseMo
     /**
      * Sets labels
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]|null $labels Array of labels
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]|null $labels Array of labels
      *
      * @return self
     

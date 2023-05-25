@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdates400ResponseError Class Doc Comment
@@ -55,7 +55,7 @@ class ShippingUpdates400ResponseError extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'errorIdentifiers' => '\Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers'
+        'errorIdentifiers' => '\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers'
     ];
 
     /**
@@ -340,7 +340,7 @@ class ShippingUpdates400ResponseError extends BaseModel
     /**
      * Gets errorIdentifiers
      *
-     * @return \Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers|null
+     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers|null
     
      */
     public function getErrorIdentifiers()
@@ -351,7 +351,7 @@ class ShippingUpdates400ResponseError extends BaseModel
     /**
      * Sets errorIdentifiers
      *
-     * @param \Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers|null $errorIdentifiers errorIdentifiers
+     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers|null $errorIdentifiers errorIdentifiers
      *
      * @return self
     

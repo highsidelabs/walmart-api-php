@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * CarrierWeekendCalendar Class Doc Comment
@@ -51,8 +51,8 @@ class CarrierWeekendCalendar extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'sunday' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday',
-        'saturday' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday'
+        'sunday' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday',
+        'saturday' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday'
     ];
 
     /**
@@ -133,7 +133,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Gets sunday
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null
     
      */
     public function getSunday()
@@ -144,7 +144,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Sets sunday
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null $sunday sunday
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null $sunday sunday
      *
      * @return self
     
@@ -162,7 +162,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Gets saturday
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null
     
      */
     public function getSaturday()
@@ -173,7 +173,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Sets saturday
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null $saturday saturday
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null $saturday saturday
      *
      * @return self
     

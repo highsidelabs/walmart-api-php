@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Reports;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Reports;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerStatement200ResponsePayload Class Doc Comment
@@ -50,9 +50,9 @@ class GetPartnerStatement200ResponsePayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'outstandingMCABalance' => 'float',
-        'sellerInfo' => '\Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadSellerInfo',
-        'accountSummary' => '\Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadAccountSummary',
-        'transactionDetails' => '\Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetails'
+        'sellerInfo' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadSellerInfo',
+        'accountSummary' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadAccountSummary',
+        'transactionDetails' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetails'
     ];
 
     /**
@@ -174,7 +174,7 @@ class GetPartnerStatement200ResponsePayload extends BaseModel
     /**
      * Gets sellerInfo
      *
-     * @return \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadSellerInfo|null
+     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadSellerInfo|null
     
      */
     public function getSellerInfo()
@@ -185,7 +185,7 @@ class GetPartnerStatement200ResponsePayload extends BaseModel
     /**
      * Sets sellerInfo
      *
-     * @param \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadSellerInfo|null $sellerInfo sellerInfo
+     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadSellerInfo|null $sellerInfo sellerInfo
      *
      * @return self
     
@@ -203,7 +203,7 @@ class GetPartnerStatement200ResponsePayload extends BaseModel
     /**
      * Gets accountSummary
      *
-     * @return \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadAccountSummary|null
+     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadAccountSummary|null
     
      */
     public function getAccountSummary()
@@ -214,7 +214,7 @@ class GetPartnerStatement200ResponsePayload extends BaseModel
     /**
      * Sets accountSummary
      *
-     * @param \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadAccountSummary|null $accountSummary accountSummary
+     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadAccountSummary|null $accountSummary accountSummary
      *
      * @return self
     
@@ -232,7 +232,7 @@ class GetPartnerStatement200ResponsePayload extends BaseModel
     /**
      * Gets transactionDetails
      *
-     * @return \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetails|null
+     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetails|null
     
      */
     public function getTransactionDetails()
@@ -243,7 +243,7 @@ class GetPartnerStatement200ResponsePayload extends BaseModel
     /**
      * Sets transactionDetails
      *
-     * @param \Walmart\Model\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetails|null $transactionDetails transactionDetails
+     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetails|null $transactionDetails transactionDetails
      *
      * @return self
     

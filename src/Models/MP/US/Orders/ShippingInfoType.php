@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingInfoType Class Doc Comment
@@ -55,7 +55,7 @@ class ShippingInfoType extends BaseModel
         'estimatedDeliveryDate' => 'int',
         'estimatedShipDate' => 'int',
         'methodCode' => 'string',
-        'postalAddress' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfoPostalAddress'
+        'postalAddress' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfoPostalAddress'
     ];
 
     /**
@@ -334,7 +334,7 @@ class ShippingInfoType extends BaseModel
     /**
      * Gets postalAddress
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfoPostalAddress
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfoPostalAddress
     
      */
     public function getPostalAddress()
@@ -345,7 +345,7 @@ class ShippingInfoType extends BaseModel
     /**
      * Sets postalAddress
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfoPostalAddress $postalAddress postalAddress
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfoPostalAddress $postalAddress postalAddress
      *
      * @return self
     

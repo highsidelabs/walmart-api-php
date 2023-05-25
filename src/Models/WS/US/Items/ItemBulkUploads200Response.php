@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\WS\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\WS\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemBulkUploads200Response Class Doc Comment

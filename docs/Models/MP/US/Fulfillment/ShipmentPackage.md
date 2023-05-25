@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **height** | **float** |  |
 **width** | **float** |  |
 **lengthUOM** | **string** |  |
-**labelInformation** | [**\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInnerLabelInformation**](GetCarrierRateQuote200ResponseShipmentPackagesInnerLabelInformation.md) |  | [optional]
+**labelInformation** | [**\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInnerLabelInformation**](GetCarrierRateQuote200ResponseShipmentPackagesInnerLabelInformation.md) |  | [optional]
 **billingWeight** | **float** |  | [optional]
 **netCharge** | **float** |  | [optional]
 **nominalCharge** | **float** |  | [optional]

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Notifications;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Notifications;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateSubscriptionRequest Class Doc Comment
@@ -49,7 +49,7 @@ class CreateSubscriptionRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'events' => '\Walmart\Model\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]'
+        'events' => '\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class CreateSubscriptionRequest extends BaseModel
     /**
      * Gets events
      *
-     * @return \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]|null
+     * @return \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]|null
     
      */
     public function getEvents()
@@ -135,7 +135,7 @@ class CreateSubscriptionRequest extends BaseModel
     /**
      * Sets events
      *
-     * @param \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]|null $events events
+     * @param \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]|null $events events
      *
      * @return self
     

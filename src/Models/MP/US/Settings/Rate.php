@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * Rate Class Doc Comment
@@ -52,7 +52,7 @@ class Rate extends BaseModel
       */
     protected static array $openAPITypes = [
         'count' => 'int',
-        'replenishTimeWindow' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRateReplenishTimeWindow'
+        'replenishTimeWindow' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRateReplenishTimeWindow'
     ];
 
     /**
@@ -162,7 +162,7 @@ class Rate extends BaseModel
     /**
      * Gets replenishTimeWindow
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRateReplenishTimeWindow|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRateReplenishTimeWindow|null
     
      */
     public function getReplenishTimeWindow()
@@ -173,7 +173,7 @@ class Rate extends BaseModel
     /**
      * Sets replenishTimeWindow
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRateReplenishTimeWindow|null $replenishTimeWindow replenishTimeWindow
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRateReplenishTimeWindow|null $replenishTimeWindow replenishTimeWindow
      *
      * @return self
     

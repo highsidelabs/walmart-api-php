@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Notifications;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Notifications;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateSubscription200Response Class Doc Comment
@@ -51,7 +51,7 @@ class CreateSubscription200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'event' => '\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]'
+        'event' => '\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]'
     ];
 
     /**
@@ -159,7 +159,7 @@ class CreateSubscription200Response extends BaseModel
     /**
      * Gets event
      *
-     * @return \Walmart\Model\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]|null
+     * @return \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]|null
     
      */
     public function getEvent()
@@ -170,7 +170,7 @@ class CreateSubscription200Response extends BaseModel
     /**
      * Sets event
      *
-     * @param \Walmart\Model\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]|null $event event
+     * @param \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]|null $event event
      *
      * @return self
     

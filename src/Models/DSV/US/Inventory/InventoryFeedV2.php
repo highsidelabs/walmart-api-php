@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * InventoryFeedV2 Class Doc Comment
@@ -49,8 +49,8 @@ class InventoryFeedV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'inventoryFeedHeader' => '\Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader',
-        'inventory' => '\Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[]'
+        'inventoryFeedHeader' => '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader',
+        'inventory' => '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[]'
     ];
 
     /**
@@ -137,7 +137,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Gets inventoryFeedHeader
      *
-     * @return \Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader
+     * @return \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader
     
      */
     public function getInventoryFeedHeader()
@@ -148,7 +148,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Sets inventoryFeedHeader
      *
-     * @param \Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader $inventoryFeedHeader inventoryFeedHeader
+     * @param \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader $inventoryFeedHeader inventoryFeedHeader
      *
      * @return self
     
@@ -166,7 +166,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Gets inventory
      *
-     * @return \Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[]
+     * @return \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[]
     
      */
     public function getInventory()
@@ -177,7 +177,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Sets inventory
      *
-     * @param \Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[] $inventory Specifies an object for inventory information.
+     * @param \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[] $inventory Specifies an object for inventory information.
      *
      * @return self
     

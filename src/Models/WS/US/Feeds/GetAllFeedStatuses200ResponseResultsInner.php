@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\WS\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\WS\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFeedStatuses200ResponseResultsInner Class Doc Comment

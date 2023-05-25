@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner Class Doc Comment
@@ -50,10 +50,10 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
       */
     protected static array $openAPITypes = [
         'shipNode' => 'string',
-        'inputQty' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty',
-        'availToSellQty' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty',
-        'errors' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]',
-        'reservedQty' => '\Walmart\Model\MP\US\Inventory\GetInventory200ResponseQuantity'
+        'inputQty' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty',
+        'availToSellQty' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty',
+        'errors' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]',
+        'reservedQty' => '\Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity'
     ];
 
     /**
@@ -181,7 +181,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Gets inputQty
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty|null
     
      */
     public function getInputQty()
@@ -192,7 +192,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Sets inputQty
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty|null $inputQty inputQty
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty|null $inputQty inputQty
      *
      * @return self
     
@@ -210,7 +210,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Gets availToSellQty
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty|null
     
      */
     public function getAvailToSellQty()
@@ -221,7 +221,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Sets availToSellQty
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty|null $availToSellQty availToSellQty
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty|null $availToSellQty availToSellQty
      *
      * @return self
     
@@ -239,7 +239,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null
     
      */
     public function getErrors()
@@ -250,7 +250,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -268,7 +268,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Gets reservedQty
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetInventory200ResponseQuantity|null
+     * @return \Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity|null
     
      */
     public function getReservedQty()
@@ -279,7 +279,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
     /**
      * Sets reservedQty
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetInventory200ResponseQuantity|null $reservedQty reservedQty
+     * @param \Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity|null $reservedQty reservedQty
      *
      * @return self
     

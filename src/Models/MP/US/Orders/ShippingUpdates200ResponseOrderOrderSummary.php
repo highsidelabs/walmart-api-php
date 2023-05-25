@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderSummary Class Doc Comment
@@ -51,8 +51,8 @@ class ShippingUpdates200ResponseOrderOrderSummary extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'totalAmount' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount',
-        'orderSubTotals' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]'
+        'totalAmount' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount',
+        'orderSubTotals' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]'
     ];
 
     /**
@@ -133,7 +133,7 @@ class ShippingUpdates200ResponseOrderOrderSummary extends BaseModel
     /**
      * Gets totalAmount
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null
     
      */
     public function getTotalAmount()
@@ -144,7 +144,7 @@ class ShippingUpdates200ResponseOrderOrderSummary extends BaseModel
     /**
      * Sets totalAmount
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null $totalAmount totalAmount
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null $totalAmount totalAmount
      *
      * @return self
     
@@ -162,7 +162,7 @@ class ShippingUpdates200ResponseOrderOrderSummary extends BaseModel
     /**
      * Gets orderSubTotals
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]|null
     
      */
     public function getOrderSubTotals()
@@ -173,7 +173,7 @@ class ShippingUpdates200ResponseOrderOrderSummary extends BaseModel
     /**
      * Sets orderSubTotals
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]|null $orderSubTotals orderSubTotals
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]|null $orderSubTotals orderSubTotals
      *
      * @return self
     

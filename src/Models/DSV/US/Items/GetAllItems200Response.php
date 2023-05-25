@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllItems200Response Class Doc Comment
@@ -49,8 +49,8 @@ class GetAllItems200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\DSV\US\Items\GetAllItems200ResponseErrorsInner[]',
-        'itemResponse' => '\Walmart\Model\DSV\US\Items\GetAllItems200ResponseItemResponseInner[]',
+        'errors' => '\Walmart\Models\DSV\US\Items\GetAllItems200ResponseErrorsInner[]',
+        'itemResponse' => '\Walmart\Models\DSV\US\Items\GetAllItems200ResponseItemResponseInner[]',
         'totalItems' => 'int',
         'nextCursor' => 'string'
     ];
@@ -181,7 +181,7 @@ class GetAllItems200Response extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\DSV\US\Items\GetAllItems200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\DSV\US\Items\GetAllItems200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -192,7 +192,7 @@ class GetAllItems200Response extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\DSV\US\Items\GetAllItems200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\DSV\US\Items\GetAllItems200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -210,7 +210,7 @@ class GetAllItems200Response extends BaseModel
     /**
      * Gets itemResponse
      *
-     * @return \Walmart\Model\DSV\US\Items\GetAllItems200ResponseItemResponseInner[]
+     * @return \Walmart\Models\DSV\US\Items\GetAllItems200ResponseItemResponseInner[]
     
      */
     public function getItemResponse()
@@ -221,7 +221,7 @@ class GetAllItems200Response extends BaseModel
     /**
      * Sets itemResponse
      *
-     * @param \Walmart\Model\DSV\US\Items\GetAllItems200ResponseItemResponseInner[] $itemResponse Items included in the response list
+     * @param \Walmart\Models\DSV\US\Items\GetAllItems200ResponseItemResponseInner[] $itemResponse Items included in the response list
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * MultiNodeInventoryFetchResponseDTO Class Doc Comment
@@ -49,8 +49,8 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta',
-        'elements' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements'
+        'meta' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta',
+        'elements' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements'
     ];
 
     /**
@@ -131,7 +131,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta|null
     
      */
     public function getMeta()
@@ -142,7 +142,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta|null $meta meta
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta|null $meta meta
      *
      * @return self
     
@@ -160,7 +160,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Gets elements
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements|null
     
      */
     public function getElements()
@@ -171,7 +171,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Sets elements
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements|null $elements elements
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements|null $elements elements
      *
      * @return self
     

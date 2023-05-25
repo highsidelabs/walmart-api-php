@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * WercsFeedbackRequest Class Doc Comment
@@ -49,9 +49,9 @@ class WercsFeedbackRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'query' => '\Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestQuery',
-        'filters' => '\Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestFiltersInner[]',
-        'sort' => '\Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestSort'
+        'query' => '\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestQuery',
+        'filters' => '\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestFiltersInner[]',
+        'sort' => '\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestSort'
     ];
 
     /**
@@ -138,7 +138,7 @@ class WercsFeedbackRequest extends BaseModel
     /**
      * Gets query
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestQuery|null
+     * @return \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestQuery|null
     
      */
     public function getQuery()
@@ -149,7 +149,7 @@ class WercsFeedbackRequest extends BaseModel
     /**
      * Sets query
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestQuery|null $query query
+     * @param \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestQuery|null $query query
      *
      * @return self
     
@@ -167,7 +167,7 @@ class WercsFeedbackRequest extends BaseModel
     /**
      * Gets filters
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestFiltersInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestFiltersInner[]|null
     
      */
     public function getFilters()
@@ -178,7 +178,7 @@ class WercsFeedbackRequest extends BaseModel
     /**
      * Sets filters
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestFiltersInner[]|null $filters filters
+     * @param \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestFiltersInner[]|null $filters filters
      *
      * @return self
     
@@ -196,7 +196,7 @@ class WercsFeedbackRequest extends BaseModel
     /**
      * Gets sort
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestSort|null
+     * @return \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestSort|null
     
      */
     public function getSort()
@@ -207,7 +207,7 @@ class WercsFeedbackRequest extends BaseModel
     /**
      * Sets sort
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequestSort|null $sort sort
+     * @param \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequestSort|null $sort sort
      *
      * @return self
     

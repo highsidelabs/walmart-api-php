@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPFulfillmentApi  
+# Walmart\Apis\US\MPFulfillmentApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -31,7 +31,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `cancelFulfillment()`
 
 ```php
-cancelFulfillment($cancelFulfillmentRequest): \Walmart\Model\MP\US\Fulfillment\CreateFulfillment200Response
+cancelFulfillment($cancelFulfillmentRequest): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
 ```
 Cancel Customer Order
 
@@ -47,14 +47,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$cancelFulfillmentRequest = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"sellerOrderId":"301878911210253","orderItems":[{"sellerLineId":"1232456","qty":{"unitOfMeasure":"EACH","measurementValue":2}}]}}; // \Walmart\Model\MP\US\Fulfillment\CancelFulfillmentRequest | Request fields
+$cancelFulfillmentRequest = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"sellerOrderId":"301878911210253","orderItems":[{"sellerLineId":"1232456","qty":{"unitOfMeasure":"EACH","measurementValue":2}}]}}; // \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest | Request fields
 
 try {
     $result = $apiInstance->cancelFulfillment($cancelFulfillmentRequest);
@@ -66,12 +66,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cancelFulfillmentRequest** | [**\Walmart\Model\MP\US\Fulfillment\CancelFulfillmentRequest**](../Model/CancelFulfillmentRequest.md)| Request fields | |
+| **cancelFulfillmentRequest** | [**\Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest**](../Model/CancelFulfillmentRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\CreateFulfillment200Response**](../Model/CreateFulfillment200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response**](../Model/CreateFulfillment200Response.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ try {
 ## `cancelShipment()`
 
 ```php
-cancelShipment($inboundOrderId): \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+cancelShipment($inboundOrderId): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Cancel Inbound Shipment
 
@@ -105,7 +105,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `confirmCarrierRateQuote()`
 
 ```php
-confirmCarrierRateQuote($confirmCarrierRateQuoteRequest): \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+confirmCarrierRateQuote($confirmCarrierRateQuoteRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Confirm Carrier Rate Quote
 
@@ -163,14 +163,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$confirmCarrierRateQuoteRequest = new \Walmart\Model\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest(); // \Walmart\Model\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest | Request fields
+$confirmCarrierRateQuoteRequest = new \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest(); // \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest | Request fields
 
 try {
     $result = $apiInstance->confirmCarrierRateQuote($confirmCarrierRateQuoteRequest);
@@ -182,12 +182,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **confirmCarrierRateQuoteRequest** | [**\Walmart\Model\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest**](../Model/ConfirmCarrierRateQuoteRequest.md)| Request fields | |
+| **confirmCarrierRateQuoteRequest** | [**\Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest**](../Model/ConfirmCarrierRateQuoteRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ try {
 ## `convertItemForWfs()`
 
 ```php
-convertItemForWfs($feedType, $convertItemForWfsRequest): \Walmart\Model\MP\US\Fulfillment\ConvertItemForWfs200Response
+convertItemForWfs($feedType, $convertItemForWfsRequest): \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response
 ```
 Convert items for WFS
 
@@ -221,7 +221,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -229,7 +229,7 @@ $apiInstance = new Walmart\Api\FulfillmentApi(
 );
 
 $feedType = 'OMNI_WFS'; // string | Includes details of each entity in the feed. Do not set this parameter to true.
-$convertItemForWfsRequest = {"SupplierItemFeedHeader":{"subCategory":"baby_clothing","sellingChannel":"fbw","processMode":"REPLACE","locale":"en","version":"1.4","subset":"EXTERNAL"},"SupplierItem":[{"Visible":{"Baby Clothing":{"clothingSize":"S","color":["Pink"],"countryOfOriginTextiles":"USA","smallPartsWarnings":["0 - No warning applicable"],"mainImageUrl":"https://i5-qa.walmartimages.com/asr/549ecbe9-c874-475b-87d8-5e4cb19934ec.8f5d70e62bd0bb8abc6772c9ef1694e0.jpeg","prop65WarningText":"Warning","seasonYear":2020,"manufacturer":"Generic"}},"Orderable":{"productIdentifiers":{"productId":"05923239836453","productIdType":"GTIN"},"batteryTechnologyType":"Does Not Contain a Battery","electronicsIndicator":"No","endDate":"2040-01-01T00:00:00.000Z","price":10,"chemicalAerosolPesticide":"No","sku":"05923239836453","stateRestrictions":[{"stateRestrictionsText":"None"}],"brand":"Goodlife","productName":"Goodlife Corona_merge_split_19","startDate":"2020-06-15T00:00:00.000Z"},"TradeItem":{"countryOfOriginAssembly":["US - United States"],"innerPack":{"innerPackWidth":2,"innerPackHeight":3,"qtySellableItemsInnerPack":1,"innerPackGTIN":"05923239836453","innerPackWeight":2,"innerPackDepth":1},"sku":"05923239836453","orderableGTIN":"05923239836453"}}]}; // \Walmart\Model\MP\US\Fulfillment\ConvertItemForWfsRequest
+$convertItemForWfsRequest = {"SupplierItemFeedHeader":{"subCategory":"baby_clothing","sellingChannel":"fbw","processMode":"REPLACE","locale":"en","version":"1.4","subset":"EXTERNAL"},"SupplierItem":[{"Visible":{"Baby Clothing":{"clothingSize":"S","color":["Pink"],"countryOfOriginTextiles":"USA","smallPartsWarnings":["0 - No warning applicable"],"mainImageUrl":"https://i5-qa.walmartimages.com/asr/549ecbe9-c874-475b-87d8-5e4cb19934ec.8f5d70e62bd0bb8abc6772c9ef1694e0.jpeg","prop65WarningText":"Warning","seasonYear":2020,"manufacturer":"Generic"}},"Orderable":{"productIdentifiers":{"productId":"05923239836453","productIdType":"GTIN"},"batteryTechnologyType":"Does Not Contain a Battery","electronicsIndicator":"No","endDate":"2040-01-01T00:00:00.000Z","price":10,"chemicalAerosolPesticide":"No","sku":"05923239836453","stateRestrictions":[{"stateRestrictionsText":"None"}],"brand":"Goodlife","productName":"Goodlife Corona_merge_split_19","startDate":"2020-06-15T00:00:00.000Z"},"TradeItem":{"countryOfOriginAssembly":["US - United States"],"innerPack":{"innerPackWidth":2,"innerPackHeight":3,"qtySellableItemsInnerPack":1,"innerPackGTIN":"05923239836453","innerPackWeight":2,"innerPackDepth":1},"sku":"05923239836453","orderableGTIN":"05923239836453"}}]}; // \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest
 
 try {
     $result = $apiInstance->convertItemForWfs($feedType, $convertItemForWfsRequest);
@@ -242,12 +242,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'OMNI_WFS'] |
-| **convertItemForWfsRequest** | [**\Walmart\Model\MP\US\Fulfillment\ConvertItemForWfsRequest**](../Model/ConvertItemForWfsRequest.md)|  | [optional] |
+| **convertItemForWfsRequest** | [**\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest**](../Model/ConvertItemForWfsRequest.md)|  | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\ConvertItemForWfs200Response**](../Model/ConvertItemForWfs200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response**](../Model/ConvertItemForWfs200Response.md)
 
 ### Authorization
 
@@ -265,7 +265,7 @@ try {
 ## `createCarrierRateQuotes()`
 
 ```php
-createCarrierRateQuotes($createCarrierRateQuotesRequest): \Walmart\Model\MP\US\Fulfillment\CreateCarrierRateQuotes200Response
+createCarrierRateQuotes($createCarrierRateQuotesRequest): \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response
 ```
 Create Carrier Rate Quote
 
@@ -281,14 +281,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createCarrierRateQuotesRequest = new \Walmart\Model\MP\US\Fulfillment\CreateCarrierRateQuotesRequest(); // \Walmart\Model\MP\US\Fulfillment\CreateCarrierRateQuotesRequest | Request fields
+$createCarrierRateQuotesRequest = new \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest(); // \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest | Request fields
 
 try {
     $result = $apiInstance->createCarrierRateQuotes($createCarrierRateQuotesRequest);
@@ -300,12 +300,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCarrierRateQuotesRequest** | [**\Walmart\Model\MP\US\Fulfillment\CreateCarrierRateQuotesRequest**](../Model/CreateCarrierRateQuotesRequest.md)| Request fields | |
+| **createCarrierRateQuotesRequest** | [**\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest**](../Model/CreateCarrierRateQuotesRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\CreateCarrierRateQuotes200Response**](../Model/CreateCarrierRateQuotes200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response**](../Model/CreateCarrierRateQuotes200Response.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ try {
 ## `createFulfillment()`
 
 ```php
-createFulfillment($createFulfillmentRequest): \Walmart\Model\MP\US\Fulfillment\CreateFulfillment200Response
+createFulfillment($createFulfillmentRequest): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
 ```
 Create Customer Order
 
@@ -339,14 +339,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createFulfillmentRequest = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"orderChannelId":"1B66575C0D9411EBADC10242AC120002","sellerOrderId":"002","orderPlacedTime":"2022-03-25T21:58:30.143Z","needsConfirmation":false,"partialFulfillments":false,"customer":{"contact":{"name":{"firstName":"Jason","lastName":"Bourne"},"phone":"6462285574","email":"jason.bourne@gmail.com"}},"orderItems":[{"fulfillmentType":"S2H","sellerLineId":"1","itemDetail":{"itemId":"452139670","description":"Ipad white"},"qty":{"unitOfMeasure":"EACH","measurementValue":2},"shippingMethod":"RUSH","shippingTo":{"contact":{"name":{"firstName":"Oscar","lastName":"Merino"},"phone":"6462285574"},"address":{"line1":"56 east 41 st street","line2":"Food Trends Store","line3":"","city":"New york","state":"NY","country":"USA","zip":"10017","addressType":"RESIDENTIAL"}},"chargeDetails":[{"chargeCategory":"PRODUCT","chargeName":"Sale Price","chargePerUnit":{"currencyAmount":5,"currencyUnit":"USD"},"taxDetails":{"taxPerLine":{"currencyAmount":1.04,"currencyUnit":"USD"}}}]}]}}; // \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequest | Request fields
+$createFulfillmentRequest = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"orderChannelId":"1B66575C0D9411EBADC10242AC120002","sellerOrderId":"002","orderPlacedTime":"2022-03-25T21:58:30.143Z","needsConfirmation":false,"partialFulfillments":false,"customer":{"contact":{"name":{"firstName":"Jason","lastName":"Bourne"},"phone":"6462285574","email":"jason.bourne@gmail.com"}},"orderItems":[{"fulfillmentType":"S2H","sellerLineId":"1","itemDetail":{"itemId":"452139670","description":"Ipad white"},"qty":{"unitOfMeasure":"EACH","measurementValue":2},"shippingMethod":"RUSH","shippingTo":{"contact":{"name":{"firstName":"Oscar","lastName":"Merino"},"phone":"6462285574"},"address":{"line1":"56 east 41 st street","line2":"Food Trends Store","line3":"","city":"New york","state":"NY","country":"USA","zip":"10017","addressType":"RESIDENTIAL"}},"chargeDetails":[{"chargeCategory":"PRODUCT","chargeName":"Sale Price","chargePerUnit":{"currencyAmount":5,"currencyUnit":"USD"},"taxDetails":{"taxPerLine":{"currencyAmount":1.04,"currencyUnit":"USD"}}}]}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest | Request fields
 
 try {
     $result = $apiInstance->createFulfillment($createFulfillmentRequest);
@@ -358,12 +358,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createFulfillmentRequest** | [**\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequest**](../Model/CreateFulfillmentRequest.md)| Request fields | |
+| **createFulfillmentRequest** | [**\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest**](../Model/CreateFulfillmentRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\CreateFulfillment200Response**](../Model/CreateFulfillment200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response**](../Model/CreateFulfillment200Response.md)
 
 ### Authorization
 
@@ -397,7 +397,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -455,14 +455,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createInboundShipmentLabelV2Request = new \Walmart\Model\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request(); // \Walmart\Model\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request | Request fields
+$createInboundShipmentLabelV2Request = new \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request(); // \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request | Request fields
 
 try {
     $result = $apiInstance->createInboundShipmentLabelV2($createInboundShipmentLabelV2Request);
@@ -474,7 +474,7 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createInboundShipmentLabelV2Request** | [**\Walmart\Model\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request**](../Model/CreateInboundShipmentLabelV2Request.md)| Request fields | |
+| **createInboundShipmentLabelV2Request** | [**\Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request**](../Model/CreateInboundShipmentLabelV2Request.md)| Request fields | |
 
 
 ### Return type
@@ -497,7 +497,7 @@ try {
 ## `createShipment()`
 
 ```php
-createShipment($createShipmentRequest): \Walmart\Model\MP\US\Fulfillment\CreateShipment200Response
+createShipment($createShipmentRequest): \Walmart\Models\MP\US\Fulfillment\CreateShipment200Response
 ```
 Create Inbound Shipment
 
@@ -513,14 +513,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createShipmentRequest = {"inboundOrderId":"8778881015027","inboundServices":{"inventoryTransferService":"Y"},"returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"USA","postalCode":"94086"},"orderItems":[{"productId":"00894147009695","productType":"GTIN","sku":"WILL-SL969","itemDesc":"Blue jeans","itemQty":10,"vendorPackQty":10,"innerPackQty":1,"expectedDeliveryDate":"2020-11-21T00:00:00.000Z"}]}; // \Walmart\Model\MP\US\Fulfillment\CreateShipmentRequest | Request fields
+$createShipmentRequest = {"inboundOrderId":"8778881015027","inboundServices":{"inventoryTransferService":"Y"},"returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"USA","postalCode":"94086"},"orderItems":[{"productId":"00894147009695","productType":"GTIN","sku":"WILL-SL969","itemDesc":"Blue jeans","itemQty":10,"vendorPackQty":10,"innerPackQty":1,"expectedDeliveryDate":"2020-11-21T00:00:00.000Z"}]}; // \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest | Request fields
 
 try {
     $result = $apiInstance->createShipment($createShipmentRequest);
@@ -532,12 +532,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createShipmentRequest** | [**\Walmart\Model\MP\US\Fulfillment\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)| Request fields | |
+| **createShipmentRequest** | [**\Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\CreateShipment200Response**](../Model/CreateShipment200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response**](../Model/CreateShipment200Response.md)
 
 ### Authorization
 
@@ -555,7 +555,7 @@ try {
 ## `getCarrierRateQuote()`
 
 ```php
-getCarrierRateQuote($shipmentId, $mode): \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200Response
+getCarrierRateQuote($shipmentId, $mode): \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response
 ```
 Get Carrier Rate Quote
 
@@ -571,7 +571,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -597,7 +597,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200Response**](../Model/GetCarrierRateQuote200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response**](../Model/GetCarrierRateQuote200Response.md)
 
 ### Authorization
 
@@ -615,7 +615,7 @@ try {
 ## `getFulfillmentOrdersStatus()`
 
 ```php
-getFulfillmentOrdersStatus($orgId, $limit, $offset, $orderNumber, $trackingNumber, $shipmentNumber, $fromOrderDate, $toOrderDate, $sortOrder, $sortBy): \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response
+getFulfillmentOrdersStatus($orgId, $limit, $offset, $orderNumber, $trackingNumber, $shipmentNumber, $fromOrderDate, $toOrderDate, $sortOrder, $sortBy): \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response
 ```
 Get fulfillment orders status
 
@@ -631,7 +631,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -673,7 +673,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response**](../Model/GetFulfillmentOrdersStatus200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response**](../Model/GetFulfillmentOrdersStatus200Response.md)
 
 ### Authorization
 
@@ -691,7 +691,7 @@ try {
 ## `getInboundOrderErrors()`
 
 ```php
-getInboundOrderErrors($offset, $limit, $shipmentId): \Walmart\Model\MP\US\Fulfillment\GetInboundOrderErrors200Response
+getInboundOrderErrors($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response
 ```
 Get Inbound Shipment errors
 
@@ -707,7 +707,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -735,7 +735,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\GetInboundOrderErrors200Response**](../Model/GetInboundOrderErrors200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response**](../Model/GetInboundOrderErrors200Response.md)
 
 ### Authorization
 
@@ -753,7 +753,7 @@ try {
 ## `getInboundShipmentItems()`
 
 ```php
-getInboundShipmentItems($offset, $limit, $shipmentId): \Walmart\Model\MP\US\Fulfillment\GetInboundShipmentItems200Response
+getInboundShipmentItems($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response
 ```
 Get Inbound Shipment Items
 
@@ -769,7 +769,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -797,7 +797,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\GetInboundShipmentItems200Response**](../Model/GetInboundShipmentItems200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response**](../Model/GetInboundShipmentItems200Response.md)
 
 ### Authorization
 
@@ -815,7 +815,7 @@ try {
 ## `getInboundShipments()`
 
 ```php
-getInboundShipments($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate): \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200Response
+getInboundShipments($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate): \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response
 ```
 Get Shipments
 
@@ -831,7 +831,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -867,7 +867,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200Response**](../Model/GetInboundShipments200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response**](../Model/GetInboundShipments200Response.md)
 
 ### Authorization
 
@@ -901,7 +901,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -940,7 +940,7 @@ try {
 ## `getWFSInventoryLog()`
 
 ```php
-getWFSInventoryLog($gtin, $shipmentId, $transactionType, $transactionLocation, $startDate, $endDate, $sortBy, $sortOrder, $offset, $limit): \Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200Response
+getWFSInventoryLog($gtin, $shipmentId, $transactionType, $transactionLocation, $startDate, $endDate, $sortBy, $sortOrder, $offset, $limit): \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response
 ```
 Get Inventory Log for a WFS item
 
@@ -956,7 +956,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -998,7 +998,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200Response**](../Model/GetWFSInventoryLog200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response**](../Model/GetWFSInventoryLog200Response.md)
 
 ### Authorization
 
@@ -1016,7 +1016,7 @@ try {
 ## `inboundPreview()`
 
 ```php
-inboundPreview($inboundPreviewRequest): \Walmart\Model\MP\US\Fulfillment\InboundPreview200Response
+inboundPreview($inboundPreviewRequest): \Walmart\Models\MP\US\Fulfillment\InboundPreview200Response
 ```
 Fetch Inbound Preview
 
@@ -1032,14 +1032,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$inboundPreviewRequest = {"header":{"headerAttributes":{"buId":"0","martId":"0"}},"payload":{"inboundOrderId":"WFS_P132398111-ITS1011","returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"US","postalCode":"94086"},"orderItems":[{"productId":"06484856148873","productType":"GTIN","sku":"SKU-06476211912694","itemDesc":"tennis ball","itemQty":5,"vendorPackQty":5,"innerPackQty":1,"expectedDeliveryDate":"2023-05-25T15:33:33-07:00","addOnServices":[{"serviceType":"LABEL"}]}]}}; // \Walmart\Model\MP\US\Fulfillment\InboundPreviewRequest | Request fields
+$inboundPreviewRequest = {"header":{"headerAttributes":{"buId":"0","martId":"0"}},"payload":{"inboundOrderId":"WFS_P132398111-ITS1011","returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"US","postalCode":"94086"},"orderItems":[{"productId":"06484856148873","productType":"GTIN","sku":"SKU-06476211912694","itemDesc":"tennis ball","itemQty":5,"vendorPackQty":5,"innerPackQty":1,"expectedDeliveryDate":"2023-05-25T15:33:33-07:00","addOnServices":[{"serviceType":"LABEL"}]}]}}; // \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest | Request fields
 
 try {
     $result = $apiInstance->inboundPreview($inboundPreviewRequest);
@@ -1051,12 +1051,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inboundPreviewRequest** | [**\Walmart\Model\MP\US\Fulfillment\InboundPreviewRequest**](../Model/InboundPreviewRequest.md)| Request fields | |
+| **inboundPreviewRequest** | [**\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest**](../Model/InboundPreviewRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\InboundPreview200Response**](../Model/InboundPreview200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response**](../Model/InboundPreview200Response.md)
 
 ### Authorization
 
@@ -1074,7 +1074,7 @@ try {
 ## `printCarrierLabel()`
 
 ```php
-printCarrierLabel($shipmentId, $printCarrierLabelRequest): \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+printCarrierLabel($shipmentId, $printCarrierLabelRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Print Carrier Label
 
@@ -1090,7 +1090,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1098,7 +1098,7 @@ $apiInstance = new Walmart\Api\FulfillmentApi(
 );
 
 $shipmentId = 'shipmentId_example'; // string | Unique ID identifying each shipment.
-$printCarrierLabelRequest = new \Walmart\Model\MP\US\Fulfillment\PrintCarrierLabelRequest(); // \Walmart\Model\MP\US\Fulfillment\PrintCarrierLabelRequest
+$printCarrierLabelRequest = new \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest(); // \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest
 
 try {
     $result = $apiInstance->printCarrierLabel($shipmentId, $printCarrierLabelRequest);
@@ -1111,12 +1111,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **shipmentId** | **string**| Unique ID identifying each shipment. | |
-| **printCarrierLabelRequest** | [**\Walmart\Model\MP\US\Fulfillment\PrintCarrierLabelRequest**](../Model/PrintCarrierLabelRequest.md)|  | |
+| **printCarrierLabelRequest** | [**\Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest**](../Model/PrintCarrierLabelRequest.md)|  | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
@@ -1134,7 +1134,7 @@ try {
 ## `promiseFulfillments()`
 
 ```php
-promiseFulfillments($promiseFulfillmentsRequest): \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200Response
+promiseFulfillments($promiseFulfillmentsRequest): \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response
 ```
 Fetch Delivery Promise Details
 
@@ -1150,14 +1150,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$promiseFulfillmentsRequest = {"header":{"headerAttributes":{"martId":"202","buId":"0"}},"payload":{"requestId":"dcd127e2-c944-4a40-ac88-d1058c73e33e","destinations":[{"address":{"city":"Milpitas","addressType":"RESIDENTIAL","postalCode":"95035","addressLineOne":"261 Odyssey Ln","addressLineTwo":"222","isPOBox":false,"countryCode":"US","stateCode":"CA"},"fulfillmentType":"DELIVERY"}],"offerSelections":[{"offers":[{"sku":"OMP-B01-L","lineId":"249ac8e1-e6c2-4806-81a5-54215eb16b00","salesUnit":"Each","requestedQuantity":{"measurementValue":1,"unitOfMeasure":"EA"}}]}]}}; // \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequest | Request fields
+$promiseFulfillmentsRequest = {"header":{"headerAttributes":{"martId":"202","buId":"0"}},"payload":{"requestId":"dcd127e2-c944-4a40-ac88-d1058c73e33e","destinations":[{"address":{"city":"Milpitas","addressType":"RESIDENTIAL","postalCode":"95035","addressLineOne":"261 Odyssey Ln","addressLineTwo":"222","isPOBox":false,"countryCode":"US","stateCode":"CA"},"fulfillmentType":"DELIVERY"}],"offerSelections":[{"offers":[{"sku":"OMP-B01-L","lineId":"249ac8e1-e6c2-4806-81a5-54215eb16b00","salesUnit":"Each","requestedQuantity":{"measurementValue":1,"unitOfMeasure":"EA"}}]}]}}; // \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest | Request fields
 
 try {
     $result = $apiInstance->promiseFulfillments($promiseFulfillmentsRequest);
@@ -1169,12 +1169,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promiseFulfillmentsRequest** | [**\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequest**](../Model/PromiseFulfillmentsRequest.md)| Request fields | |
+| **promiseFulfillmentsRequest** | [**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest**](../Model/PromiseFulfillmentsRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200Response**](../Model/PromiseFulfillments200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response**](../Model/PromiseFulfillments200Response.md)
 
 ### Authorization
 
@@ -1192,7 +1192,7 @@ try {
 ## `updateShipmentQuantity()`
 
 ```php
-updateShipmentQuantity($updateShipmentQuantityRequest): \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+updateShipmentQuantity($updateShipmentQuantityRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Update Shipment Quantities
 
@@ -1208,14 +1208,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$updateShipmentQuantityRequest = {"inboundOrderId":"123543","shipmentId":"1234","orderItems":[{"sku":"WILL-SL969","updatedShipmentQty":11}]}; // \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantityRequest | Request fields
+$updateShipmentQuantityRequest = {"inboundOrderId":"123543","shipmentId":"1234","orderItems":[{"sku":"WILL-SL969","updatedShipmentQty":11}]}; // \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest | Request fields
 
 try {
     $result = $apiInstance->updateShipmentQuantity($updateShipmentQuantityRequest);
@@ -1227,12 +1227,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShipmentQuantityRequest** | [**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantityRequest**](../Model/UpdateShipmentQuantityRequest.md)| Request fields | |
+| **updateShipmentQuantityRequest** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest**](../Model/UpdateShipmentQuantityRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
@@ -1250,7 +1250,7 @@ try {
 ## `updateShipmentTrackingDetails()`
 
 ```php
-updateShipmentTrackingDetails($updateShipmentTrackingDetailsRequest): \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+updateShipmentTrackingDetails($updateShipmentTrackingDetailsRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Update Shipment Tracking
 
@@ -1266,14 +1266,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$updateShipmentTrackingDetailsRequest = {"shipmentId":"12345","carrierName":"UPS","trackingInfo":["123","456-1","789-2"]}; // \Walmart\Model\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest | Request fields
+$updateShipmentTrackingDetailsRequest = {"shipmentId":"12345","carrierName":"UPS","trackingInfo":["123","456-1","789-2"]}; // \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest | Request fields
 
 try {
     $result = $apiInstance->updateShipmentTrackingDetails($updateShipmentTrackingDetailsRequest);
@@ -1285,12 +1285,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShipmentTrackingDetailsRequest** | [**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest**](../Model/UpdateShipmentTrackingDetailsRequest.md)| Request fields | |
+| **updateShipmentTrackingDetailsRequest** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest**](../Model/UpdateShipmentTrackingDetailsRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
@@ -1308,7 +1308,7 @@ try {
 ## `voidCarrierRateQuote()`
 
 ```php
-voidCarrierRateQuote($shipmentId): \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+voidCarrierRateQuote($shipmentId): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Cancel Carrier Rate Quote
 
@@ -1324,7 +1324,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1348,7 +1348,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
@@ -1366,7 +1366,7 @@ try {
 ## `wercsFeedback()`
 
 ```php
-wercsFeedback($accept, $wercsFeedbackRequest): \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+wercsFeedback($accept, $wercsFeedbackRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Hazmat Items On hold
 
@@ -1382,7 +1382,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\FulfillmentApi(  
+$apiInstance = new Walmart\Apis\FulfillmentApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -1390,7 +1390,7 @@ $apiInstance = new Walmart\Api\FulfillmentApi(
 );
 
 $accept = application/json; // string | Only supported Media Type : application/json
-$wercsFeedbackRequest = {"query":{"field":"gtin","value":"06154035330299"},"filters":[{"field":"status","op":"equals","values":["PROHIBITED","IN_REVIEW","ACTION_NEEDED"]}],"sort":{"field":"updatedAt","order":"DESC"}}; // \Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequest | Request fields
+$wercsFeedbackRequest = {"query":{"field":"gtin","value":"06154035330299"},"filters":[{"field":"status","op":"equals","values":["PROHIBITED","IN_REVIEW","ACTION_NEEDED"]}],"sort":{"field":"updatedAt","order":"DESC"}}; // \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest | Request fields
 
 try {
     $result = $apiInstance->wercsFeedback($accept, $wercsFeedbackRequest);
@@ -1403,12 +1403,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
-| **wercsFeedbackRequest** | [**\Walmart\Model\MP\US\Fulfillment\WercsFeedbackRequest**](../Model/WercsFeedbackRequest.md)| Request fields | |
+| **wercsFeedbackRequest** | [**\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest**](../Model/WercsFeedbackRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf Class Doc Comment
@@ -50,7 +50,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf extends BaseMo
       */
     protected static array $openAPITypes = [
         'configurationName' => 'string',
-        'configuration' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration'
+        'configuration' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf extends BaseMo
     /**
      * Gets configuration
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null
     
      */
     public function getConfiguration()
@@ -171,7 +171,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf extends BaseMo
     /**
      * Sets configuration
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null $configuration configuration
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null $configuration configuration
      *
      * @return self
     

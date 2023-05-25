@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderCancellationRequest Class Doc Comment
@@ -49,7 +49,7 @@ class OrderCancellationRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderCancellation' => '\Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellation'
+        'orderCancellation' => '\Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellation'
     ];
 
     /**
@@ -124,7 +124,7 @@ class OrderCancellationRequest extends BaseModel
     /**
      * Gets orderCancellation
      *
-     * @return \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellation|null
+     * @return \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellation|null
     
      */
     public function getOrderCancellation()
@@ -135,7 +135,7 @@ class OrderCancellationRequest extends BaseModel
     /**
      * Sets orderCancellation
      *
-     * @param \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellation|null $orderCancellation orderCancellation
+     * @param \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellation|null $orderCancellation orderCancellation
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\LagTime;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\LagTime;
+use Walmart\Models\BaseModel;
 
 /**
  * LagTimeFeedV2 Class Doc Comment
@@ -49,8 +49,8 @@ class LagTimeFeedV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'lagtimeFeedHeader' => '\Walmart\Model\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader',
-        'lagTime' => '\Walmart\Model\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]'
+        'lagtimeFeedHeader' => '\Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader',
+        'lagTime' => '\Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]'
     ];
 
     /**
@@ -137,7 +137,7 @@ class LagTimeFeedV2 extends BaseModel
     /**
      * Gets lagtimeFeedHeader
      *
-     * @return \Walmart\Model\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader
+     * @return \Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader
     
      */
     public function getLagtimeFeedHeader()
@@ -148,7 +148,7 @@ class LagTimeFeedV2 extends BaseModel
     /**
      * Sets lagtimeFeedHeader
      *
-     * @param \Walmart\Model\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader $lagtimeFeedHeader lagtimeFeedHeader
+     * @param \Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader $lagtimeFeedHeader lagtimeFeedHeader
      *
      * @return self
     
@@ -166,7 +166,7 @@ class LagTimeFeedV2 extends BaseModel
     /**
      * Gets lagTime
      *
-     * @return \Walmart\Model\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]
+     * @return \Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]
     
      */
     public function getLagTime()
@@ -177,7 +177,7 @@ class LagTimeFeedV2 extends BaseModel
     /**
      * Sets lagTime
      *
-     * @param \Walmart\Model\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[] $lagTime Specifies an array of objects for lag time.
+     * @param \Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[] $lagTime Specifies an array of objects for lag time.
      *
      * @return self
     

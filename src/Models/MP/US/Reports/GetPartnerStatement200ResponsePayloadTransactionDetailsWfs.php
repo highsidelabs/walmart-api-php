@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Reports;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Reports;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerStatement200ResponsePayloadTransactionDetailsWfs Class Doc Comment

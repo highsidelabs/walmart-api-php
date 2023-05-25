@@ -17,7 +17,7 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api;
+namespace Walmart\Apis;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;

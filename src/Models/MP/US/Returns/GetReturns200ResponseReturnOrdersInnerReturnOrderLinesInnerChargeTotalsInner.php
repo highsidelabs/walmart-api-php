@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner Class Doc Comment
@@ -52,7 +52,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInn
       */
     protected static array $openAPITypes = [
         'name' => 'string',
-        'value' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount'
+        'value' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount'
     ];
 
     /**
@@ -168,7 +168,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInn
     /**
      * Gets value
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount
     
      */
     public function getValue()
@@ -179,7 +179,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInn
     /**
      * Sets value
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount $value value
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount $value value
      *
      * @return self
     

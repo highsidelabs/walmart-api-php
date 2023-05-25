@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingLineType Class Doc Comment
@@ -54,7 +54,7 @@ class ShippingLineType extends BaseModel
         'lineNumber' => 'string',
         'intentToCancelOverride' => 'bool',
         'sellerOrderId' => 'string',
-        'orderLineStatuses' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses',
+        'orderLineStatuses' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses',
         'sellerOrderNo' => 'string'
     ];
 
@@ -250,7 +250,7 @@ class ShippingLineType extends BaseModel
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses
     
      */
     public function getOrderLineStatuses()
@@ -261,7 +261,7 @@ class ShippingLineType extends BaseModel
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
      *
      * @return self
     

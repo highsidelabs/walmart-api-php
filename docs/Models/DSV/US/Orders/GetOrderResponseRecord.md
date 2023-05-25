@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **buyerId** | **string** | Unique ID associated with the specified buyer | [optional]
 **mart** | **string** | Mart information | [optional]
 **isGuest** | **bool** | Indicates a guest customer | [optional]
-**shippingInfo** | [**\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo**](ShipOrderLines200ResponseShippingInfo.md) |  |
-**orderLines** | [**\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLines**](ShipOrderLines200ResponseOrderLines.md) |  |
+**shippingInfo** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo**](ShipOrderLines200ResponseShippingInfo.md) |  |
+**orderLines** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines**](ShipOrderLines200ResponseOrderLines.md) |  |
 **paymentTypes** | **string[]** | Payment Types | [optional]
-**orderSummary** | [**\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderSummary**](ShipOrderLines200ResponseOrderSummary.md) |  | [optional]
-**pickupPersons** | [**\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInner[]**](ShipOrderLines200ResponsePickupPersonsInner.md) | List of pickup persons | [optional]
-**shipNode** | [**\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShipNode**](ShipOrderLines200ResponseShipNode.md) |  | [optional]
+**orderSummary** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderSummary**](ShipOrderLines200ResponseOrderSummary.md) |  | [optional]
+**pickupPersons** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInner[]**](ShipOrderLines200ResponsePickupPersonsInner.md) | List of pickup persons | [optional]
+**shipNode** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShipNode**](ShipOrderLines200ResponseShipNode.md) |  | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)

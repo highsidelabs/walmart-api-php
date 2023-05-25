@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * DeliveryUpdatesRequest Class Doc Comment
@@ -49,7 +49,7 @@ class DeliveryUpdatesRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'packages' => '\Walmart\Model\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]'
+        'packages' => '\Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class DeliveryUpdatesRequest extends BaseModel
     /**
      * Gets packages
      *
-     * @return \Walmart\Model\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]|null
     
      */
     public function getPackages()
@@ -135,7 +135,7 @@ class DeliveryUpdatesRequest extends BaseModel
     /**
      * Sets packages
      *
-     * @param \Walmart\Model\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]|null $packages packages
+     * @param \Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]|null $packages packages
      *
      * @return self
     

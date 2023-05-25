@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**\Walmart\Model\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]**](UpdatePriceCA200ResponseErrorsInner.md) |  | [optional]
+**errors** | [**\Walmart\Models\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]**](UpdatePriceCA200ResponseErrorsInner.md) |  | [optional]
 **mart** | **string** | Marketplace name. Example: Walmart-CA | [optional]
 **sku** | **string** | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. | [optional]
 **currency** | **string** | The currency type. Example: USD for US Dollars | [optional]

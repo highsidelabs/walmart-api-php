@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateFulfillmentCenterRequestShipNodeInnerCalendarDayConfiguration Class Doc Comment
@@ -51,7 +51,7 @@ class CreateFulfillmentCenterRequestShipNodeInnerCalendarDayConfiguration extend
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'standardProcessingSchedule' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule',
+        'standardProcessingSchedule' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule',
         'additionalDaysOff' => 'string[]'
     ];
 
@@ -139,7 +139,7 @@ class CreateFulfillmentCenterRequestShipNodeInnerCalendarDayConfiguration extend
     /**
      * Gets standardProcessingSchedule
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule
     
      */
     public function getStandardProcessingSchedule()
@@ -150,7 +150,7 @@ class CreateFulfillmentCenterRequestShipNodeInnerCalendarDayConfiguration extend
     /**
      * Sets standardProcessingSchedule
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule $standardProcessingSchedule standardProcessingSchedule
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule $standardProcessingSchedule standardProcessingSchedule
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * GetTrendingResult Class Doc Comment
@@ -49,7 +49,7 @@ class GetTrendingResult extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'payload' => '\Walmart\Model\MP\US\Insights\GetTrendingResult200ResponsePayload',
+        'payload' => '\Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayload',
         'status' => 'string'
     ];
 
@@ -131,7 +131,7 @@ class GetTrendingResult extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Insights\GetTrendingResult200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayload|null
     
      */
     public function getPayload()
@@ -142,7 +142,7 @@ class GetTrendingResult extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Insights\GetTrendingResult200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayload|null $payload payload
      *
      * @return self
     

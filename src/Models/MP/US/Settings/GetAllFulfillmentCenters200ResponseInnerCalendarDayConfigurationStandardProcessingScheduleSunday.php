@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardProcessingScheduleSunday Class Doc Comment

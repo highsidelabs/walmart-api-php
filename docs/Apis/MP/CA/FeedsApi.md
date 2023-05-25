@@ -1,4 +1,4 @@
-# Walmart\Api\CA\MPFeedsApi  
+# Walmart\Apis\CA\MPFeedsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `bulkContentSetup()`
 
 ```php
-bulkContentSetup($feedType, $file): \Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response
+bulkContentSetup($feedType, $file): \Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response
 ```
 Content feeds
 
@@ -28,7 +28,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\FeedsApi(  
+$apiInstance = new Walmart\Apis\FeedsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -54,7 +54,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Feeds\BulkContentSetup200Response**](../Model/BulkContentSetup200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response**](../Model/BulkContentSetup200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ try {
 ## `getAllFeedStatuses()`
 
 ```php
-getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response
+getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response
 ```
 All feed statuses
 
@@ -89,7 +89,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\FeedsApi(  
+$apiInstance = new Walmart\Apis\FeedsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -117,7 +117,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200Response**](../Model/GetAllFeedStatuses200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response**](../Model/GetAllFeedStatuses200Response.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ try {
 ## `getFeedItemStatus()`
 
 ```php
-getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response
+getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response
 ```
 Get feed and item status
 
@@ -152,7 +152,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\FeedsApi(  
+$apiInstance = new Walmart\Apis\FeedsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -182,7 +182,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Feeds\GetFeedItemStatus200Response**](../Model/GetFeedItemStatus200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response**](../Model/GetFeedItemStatus200Response.md)
 
 ### Authorization
 

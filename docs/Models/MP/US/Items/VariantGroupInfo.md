@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **isPrimary** | **bool** | Returns true if the item is a primary variant | [optional]
-**groupingAttributes** | [**\Walmart\Model\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfoGroupingAttributes**](GetCatalogSearch200ResponsePayloadInnerVariantGroupInfoGroupingAttributes.md) |  | [optional]
+**groupingAttributes** | [**\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfoGroupingAttributes**](GetCatalogSearch200ResponsePayloadInnerVariantGroupInfoGroupingAttributes.md) |  | [optional]
 **primary** | **bool** |  | [optional]
 
 

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllItems200ResponseErrorsInnerCausesInner Class Doc Comment

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadAdditionalAttributes Class Doc Comment
@@ -49,7 +49,7 @@ class GetPromotionalPrices200ResponsePayloadAdditionalAttributes extends BaseMod
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'additionalAttribute' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[]'
+        'additionalAttribute' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[]'
     ];
 
     /**
@@ -127,7 +127,7 @@ class GetPromotionalPrices200ResponsePayloadAdditionalAttributes extends BaseMod
     /**
      * Gets additionalAttribute
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[]
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[]
     
      */
     public function getAdditionalAttribute()
@@ -138,7 +138,7 @@ class GetPromotionalPrices200ResponsePayloadAdditionalAttributes extends BaseMod
     /**
      * Sets additionalAttribute
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[] $additionalAttribute additionalAttribute
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[] $additionalAttribute additionalAttribute
      *
      * @return self
     

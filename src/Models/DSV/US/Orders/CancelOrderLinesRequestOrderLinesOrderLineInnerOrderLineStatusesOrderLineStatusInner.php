@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -53,7 +53,7 @@ class CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineS
     protected static array $openAPITypes = [
         'status' => 'string',
         'cancellationReason' => 'string',
-        'statusQuantity' => '\Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity'
+        'statusQuantity' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity'
     ];
 
     /**
@@ -302,7 +302,7 @@ class CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineS
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
     
      */
     public function getStatusQuantity()
@@ -313,7 +313,7 @@ class CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineS
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
      *
      * @return self
     

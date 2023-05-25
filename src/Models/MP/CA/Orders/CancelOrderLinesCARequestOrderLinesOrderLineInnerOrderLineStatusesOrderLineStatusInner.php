@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelOrderLinesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -53,7 +53,7 @@ class CancelOrderLinesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLin
     protected static array $openAPITypes = [
         'status' => 'string',
         'cancellationReason' => 'string',
-        'statusQuantity' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity'
+        'statusQuantity' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity'
     ];
 
     /**
@@ -305,7 +305,7 @@ class CancelOrderLinesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLin
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
     
      */
     public function getStatusQuantity()
@@ -316,7 +316,7 @@ class CancelOrderLinesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLin
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
      *
      * @return self
     

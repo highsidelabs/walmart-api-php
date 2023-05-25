@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * MultitenantHeaderWrapper Class Doc Comment
@@ -51,7 +51,7 @@ class MultitenantHeaderWrapper extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headerAttributes' => '\Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes'
+        'headerAttributes' => '\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes'
     ];
 
     /**
@@ -129,7 +129,7 @@ class MultitenantHeaderWrapper extends BaseModel
     /**
      * Gets headerAttributes
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes
     
      */
     public function getHeaderAttributes()
@@ -140,7 +140,7 @@ class MultitenantHeaderWrapper extends BaseModel
     /**
      * Sets headerAttributes
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes $headerAttributes headerAttributes
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes $headerAttributes headerAttributes
      *
      * @return self
     

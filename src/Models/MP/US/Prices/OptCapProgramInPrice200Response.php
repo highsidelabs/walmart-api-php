@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * OptCapProgramInPrice200Response Class Doc Comment
@@ -50,7 +50,7 @@ class OptCapProgramInPrice200Response extends BaseModel
       */
     protected static array $openAPITypes = [
         'martId' => 'string',
-        'statusInfo' => '\Walmart\Model\MP\US\Prices\OptCapProgramInPriceRequest'
+        'statusInfo' => '\Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest'
     ];
 
     /**
@@ -193,7 +193,7 @@ class OptCapProgramInPrice200Response extends BaseModel
     /**
      * Gets statusInfo
      *
-     * @return \Walmart\Model\MP\US\Prices\OptCapProgramInPriceRequest|null
+     * @return \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest|null
     
      */
     public function getStatusInfo()
@@ -204,7 +204,7 @@ class OptCapProgramInPrice200Response extends BaseModel
     /**
      * Sets statusInfo
      *
-     * @param \Walmart\Model\MP\US\Prices\OptCapProgramInPriceRequest|null $statusInfo statusInfo
+     * @param \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest|null $statusInfo statusInfo
      *
      * @return self
     

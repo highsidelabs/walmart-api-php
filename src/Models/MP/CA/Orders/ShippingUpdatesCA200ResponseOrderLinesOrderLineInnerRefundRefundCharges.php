@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges Class Doc Comment
@@ -49,7 +49,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges ex
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'refundCharge' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]'
+        'refundCharge' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges ex
     /**
      * Gets refundCharge
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null
     
      */
     public function getRefundCharge()
@@ -135,7 +135,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges ex
     /**
      * Sets refundCharge
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null $refundCharge refundCharge
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null $refundCharge refundCharge
      *
      * @return self
     

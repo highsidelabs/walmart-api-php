@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\OnRequestReports;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\OnRequestReports;
+use Walmart\Models\BaseModel;
 
 /**
  * GetRequestsStatus200ResponseRequestsInnerPayload Class Doc Comment
@@ -51,7 +51,7 @@ class GetRequestsStatus200ResponseRequestsInnerPayload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rowFilters' => '\Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]',
+        'rowFilters' => '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]',
         'excludeColumns' => 'string[]'
     ];
 
@@ -133,7 +133,7 @@ class GetRequestsStatus200ResponseRequestsInnerPayload extends BaseModel
     /**
      * Gets rowFilters
      *
-     * @return \Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]|null
+     * @return \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]|null
     
      */
     public function getRowFilters()
@@ -144,7 +144,7 @@ class GetRequestsStatus200ResponseRequestsInnerPayload extends BaseModel
     /**
      * Sets rowFilters
      *
-     * @param \Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]|null $rowFilters Row Level filters
+     * @param \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]|null $rowFilters Row Level filters
      *
      * @return self
     

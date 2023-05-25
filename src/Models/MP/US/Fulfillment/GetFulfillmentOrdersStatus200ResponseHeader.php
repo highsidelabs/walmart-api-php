@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponseHeader Class Doc Comment
@@ -51,7 +51,7 @@ class GetFulfillmentOrdersStatus200ResponseHeader extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headerAttributes' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes'
+        'headerAttributes' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes'
     ];
 
     /**
@@ -126,7 +126,7 @@ class GetFulfillmentOrdersStatus200ResponseHeader extends BaseModel
     /**
      * Gets headerAttributes
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes|null
     
      */
     public function getHeaderAttributes()
@@ -137,7 +137,7 @@ class GetFulfillmentOrdersStatus200ResponseHeader extends BaseModel
     /**
      * Sets headerAttributes
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes|null $headerAttributes headerAttributes
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes|null $headerAttributes headerAttributes
      *
      * @return self
     

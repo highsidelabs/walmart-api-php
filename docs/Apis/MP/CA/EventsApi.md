@@ -1,4 +1,4 @@
-# Walmart\Api\CA\MPEventsApi  
+# Walmart\Apis\CA\MPEventsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `autoUploadPromoSpec()`
 
 ```php
-autoUploadPromoSpec($eventId): \Walmart\Model\MP\CA\Events\BulkAddItem200Response
+autoUploadPromoSpec($eventId): \Walmart\Models\MP\CA\Events\BulkAddItem200Response
 ```
 Auto Upload Promo Spec
 
@@ -33,7 +33,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -57,7 +57,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Events\BulkAddItem200Response**](../Model/BulkAddItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../Model/BulkAddItem200Response.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ try {
 ## `bulkAddItem()`
 
 ```php
-bulkAddItem($file, $eventId, $eventName): \Walmart\Model\MP\CA\Events\BulkAddItem200Response
+bulkAddItem($file, $eventId, $eventName): \Walmart\Models\MP\CA\Events\BulkAddItem200Response
 ```
 Bulk Add Item
 
@@ -92,7 +92,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -120,7 +120,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Events\BulkAddItem200Response**](../Model/BulkAddItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../Model/BulkAddItem200Response.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -193,7 +193,7 @@ void (empty response body)
 ## `getAPromoItem()`
 
 ```php
-getAPromoItem($eventID): \Walmart\Model\MP\CA\Events\GetAPromoItem200Response
+getAPromoItem($eventID): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
 ```
 Get Selected Promo Item
 
@@ -210,7 +210,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -234,7 +234,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Events\GetAPromoItem200Response**](../Model/GetAPromoItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../Model/GetAPromoItem200Response.md)
 
 ### Authorization
 
@@ -252,7 +252,7 @@ try {
 ## `getAllPromoItems()`
 
 ```php
-getAllPromoItems($eventID, $type): \Walmart\Model\MP\CA\Events\GetAPromoItem200Response
+getAllPromoItems($eventID, $type): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
 ```
 Get All Promo Items
 
@@ -269,7 +269,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -295,7 +295,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Events\GetAPromoItem200Response**](../Model/GetAPromoItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../Model/GetAPromoItem200Response.md)
 
 ### Authorization
 
@@ -313,7 +313,7 @@ try {
 ## `getEvent()`
 
 ```php
-getEvent(): \Walmart\Model\MP\CA\Events\GetEvent200Response
+getEvent(): \Walmart\Models\MP\CA\Events\GetEvent200Response
 ```
 Get Event by Partner ID
 
@@ -330,7 +330,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -351,7 +351,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Events\GetEvent200Response**](../Model/GetEvent200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetEvent200Response**](../Model/GetEvent200Response.md)
 
 ### Authorization
 
@@ -386,7 +386,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -429,7 +429,7 @@ void (empty response body)
 ## `getTotalItemCount()`
 
 ```php
-getTotalItemCount($eventId): \Walmart\Model\MP\CA\Events\GetTotalItemCount200Response
+getTotalItemCount($eventId): \Walmart\Models\MP\CA\Events\GetTotalItemCount200Response
 ```
 Get Total Item Count
 
@@ -446,7 +446,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\EventsApi(  
+$apiInstance = new Walmart\Apis\EventsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -470,7 +470,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Events\GetTotalItemCount200Response**](../Model/GetTotalItemCount200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response**](../Model/GetTotalItemCount200Response.md)
 
 ### Authorization
 

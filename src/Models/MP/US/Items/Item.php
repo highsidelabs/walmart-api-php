@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * Item Class Doc Comment
@@ -51,14 +51,14 @@ class Item extends BaseModel
     protected static array $openAPITypes = [
         'itemId' => 'string',
         'isMarketPlaceItem' => 'bool',
-        'images' => '\Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerImagesInner[]',
+        'images' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerImagesInner[]',
         'customerRating' => 'string',
-        'price' => '\Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerPrice',
+        'price' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPrice',
         'description' => 'string',
         'title' => 'string',
         'brand' => 'string',
         'productType' => 'string',
-        'properties' => '\Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerProperties'
+        'properties' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerProperties'
     ];
 
     /**
@@ -245,7 +245,7 @@ class Item extends BaseModel
     /**
      * Gets images
      *
-     * @return \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerImagesInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerImagesInner[]|null
     
      */
     public function getImages()
@@ -256,7 +256,7 @@ class Item extends BaseModel
     /**
      * Sets images
      *
-     * @param \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerImagesInner[]|null $images Provides images associated with the item product listing.
+     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerImagesInner[]|null $images Provides images associated with the item product listing.
      *
      * @return self
     
@@ -303,7 +303,7 @@ class Item extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerPrice|null
+     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPrice|null
     
      */
     public function getPrice()
@@ -314,7 +314,7 @@ class Item extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerPrice|null $price price
+     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPrice|null $price price
      *
      * @return self
     
@@ -448,7 +448,7 @@ class Item extends BaseModel
     /**
      * Gets properties
      *
-     * @return \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerProperties|null
+     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerProperties|null
     
      */
     public function getProperties()
@@ -459,7 +459,7 @@ class Item extends BaseModel
     /**
      * Sets properties
      *
-     * @param \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerProperties|null $properties properties
+     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerProperties|null $properties properties
      *
      * @return self
     

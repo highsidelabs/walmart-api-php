@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateLabelRequest Class Doc Comment
@@ -50,9 +50,9 @@ class CreateLabelRequest extends BaseModel
       */
     protected static array $openAPITypes = [
         'packageType' => 'string',
-        'boxDimensions' => '\Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions',
-        'boxItems' => '\Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[]',
-        'fromAddress' => '\Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestFromAddress',
+        'boxDimensions' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions',
+        'boxItems' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[]',
+        'fromAddress' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestFromAddress',
         'purchaseOrderId' => 'string',
         'carrierName' => 'string',
         'carrierServiceType' => 'string'
@@ -216,7 +216,7 @@ class CreateLabelRequest extends BaseModel
     /**
      * Gets boxDimensions
      *
-     * @return \Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions
+     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions
     
      */
     public function getBoxDimensions()
@@ -227,7 +227,7 @@ class CreateLabelRequest extends BaseModel
     /**
      * Sets boxDimensions
      *
-     * @param \Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions $boxDimensions boxDimensions
+     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions $boxDimensions boxDimensions
      *
      * @return self
     
@@ -245,7 +245,7 @@ class CreateLabelRequest extends BaseModel
     /**
      * Gets boxItems
      *
-     * @return \Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[]
+     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[]
     
      */
     public function getBoxItems()
@@ -256,7 +256,7 @@ class CreateLabelRequest extends BaseModel
     /**
      * Sets boxItems
      *
-     * @param \Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[] $boxItems Box Items
+     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[] $boxItems Box Items
      *
      * @return self
     
@@ -274,7 +274,7 @@ class CreateLabelRequest extends BaseModel
     /**
      * Gets fromAddress
      *
-     * @return \Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestFromAddress
+     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestFromAddress
     
      */
     public function getFromAddress()
@@ -285,7 +285,7 @@ class CreateLabelRequest extends BaseModel
     /**
      * Sets fromAddress
      *
-     * @param \Walmart\Model\MP\MX\InternationalShipping\CreateLabelRequestFromAddress $fromAddress fromAddress
+     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestFromAddress $fromAddress fromAddress
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * ReservedQty Class Doc Comment

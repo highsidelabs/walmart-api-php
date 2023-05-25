@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\DSV\US;
+namespace Walmart\Apis\DSV\US;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -54,16 +54,16 @@ class CostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response
+     * @return \Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response
      */
     public function updateBulkCost(
         string $feedType,
-        \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest
-    ): \Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response {
+        \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest
+    ): \Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response {
         return $this->updateBulkCostWithHttpInfo($feedType, $updateBulkCostRequest);
     }
 
@@ -73,16 +73,16 @@ class CostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response
+     * @return \Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response
      */
     protected function updateBulkCostWithHttpInfo(
         string $feedType,
-        \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest,
-    ): \Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response {
+        \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest,
+    ): \Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response {
         $request = $this->updateBulkCostRequest($feedType, $updateBulkCostRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -132,19 +132,19 @@ class CostApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response' !== 'string') {
+                        if ('\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response';
+            $returnType = '\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -160,7 +160,7 @@ class CostApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response',
+                        '\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,14 +178,14 @@ class CostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateBulkCostAsync(
         string $feedType,
-        \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest
+        \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest
     ): PromiseInterface {
         return $this->updateBulkCostAsyncWithHttpInfo($feedType, $updateBulkCostRequest)
             ->then(
@@ -202,16 +202,16 @@ class CostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateBulkCostAsyncWithHttpInfo(
         string $feedType,
-        \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest,
+        \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response';
+        $returnType = '\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response';
         $request = $this->updateBulkCostRequest($feedType, $updateBulkCostRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -258,14 +258,14 @@ class CostApi extends BaseApi
      * Create request for operation 'updateBulkCost'
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateBulkCostRequest(
         string $feedType,
-        \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest,
+        \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest $updateBulkCostRequest,
     ): Request {
         $contentType = self::contentTypes['updateBulkCost'];
 

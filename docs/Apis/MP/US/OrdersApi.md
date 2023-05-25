@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPOrdersApi  
+# Walmart\Apis\US\MPOrdersApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -15,7 +15,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `acknowledgeOrders()`
 
 ```php
-acknowledgeOrders($purchaseOrderId): \Walmart\Model\MP\US\Orders\ShippingUpdates200Response
+acknowledgeOrders($purchaseOrderId): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
 ```
 Acknowledge Orders
 
@@ -31,7 +31,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -55,7 +55,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ try {
 ## `cancelOrderLines()`
 
 ```php
-cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest): \Walmart\Model\MP\US\Orders\ShippingUpdates200Response
+cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
 ```
 Cancel Order Lines
 
@@ -89,7 +89,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -97,7 +97,7 @@ $apiInstance = new Walmart\Api\OrdersApi(
 );
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$cancelOrderLinesRequest = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EA","amount":"1"}}]}}]}}}; // \Walmart\Model\MP\US\Orders\CancelOrderLinesRequest | File fields
+$cancelOrderLinesRequest = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EA","amount":"1"}}]}}]}}}; // \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest | File fields
 
 try {
     $result = $apiInstance->cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest);
@@ -110,12 +110,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **cancelOrderLinesRequest** | [**\Walmart\Model\MP\US\Orders\CancelOrderLinesRequest**](../Model/CancelOrderLinesRequest.md)| File fields | |
+| **cancelOrderLinesRequest** | [**\Walmart\Models\MP\US\Orders\CancelOrderLinesRequest**](../Model/CancelOrderLinesRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ try {
 ## `getAllOrders()`
 
 ```php
-getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Model\MP\US\Orders\GetAllOrders200Response
+getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Models\MP\US\Orders\GetAllOrders200Response
 ```
 All orders
 
@@ -149,7 +149,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -203,7 +203,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
 
 ### Authorization
 
@@ -221,7 +221,7 @@ try {
 ## `getAllReleasedOrders()`
 
 ```php
-getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo, $shipNodeType, $sku, $customerOrderId, $purchaseOrderId, $fromExpectedShipDate, $toExpectedShipDate, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Model\MP\US\Orders\GetAllOrders200Response
+getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo, $shipNodeType, $sku, $customerOrderId, $purchaseOrderId, $fromExpectedShipDate, $toExpectedShipDate, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Models\MP\US\Orders\GetAllOrders200Response
 ```
 All released orders
 
@@ -237,7 +237,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -285,7 +285,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
 
 ### Authorization
 
@@ -303,7 +303,7 @@ try {
 ## `getAnOrder()`
 
 ```php
-getAnOrder($purchaseOrderId, $productInfo, $replacementInfo): \Walmart\Model\MP\US\Orders\GetAnOrder200Response
+getAnOrder($purchaseOrderId, $productInfo, $replacementInfo): \Walmart\Models\MP\US\Orders\GetAnOrder200Response
 ```
 An order
 
@@ -319,7 +319,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -347,7 +347,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Orders\GetAnOrder200Response**](../Model/GetAnOrder200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetAnOrder200Response**](../Model/GetAnOrder200Response.md)
 
 ### Authorization
 
@@ -365,7 +365,7 @@ try {
 ## `refundOrderLines()`
 
 ```php
-refundOrderLines($purchaseOrderId, $refundOrderLinesRequest): \Walmart\Model\MP\US\Orders\ShippingUpdates200Response
+refundOrderLines($purchaseOrderId, $refundOrderLinesRequest): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
 ```
 Refund Order Lines
 
@@ -381,7 +381,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -389,7 +389,7 @@ $apiInstance = new Walmart\Api\OrdersApi(
 );
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$refundOrderLinesRequest = {"orderRefund":{"purchaseOrderId":"2577453162650","orderLines":{"orderLine":[{"lineNumber":"4","isFullRefund":false,"refunds":{"refund":[{"refundComments":"test test","refundCharges":{"refundCharge":[{"refundReason":"Merchandise not received","charge":{"chargeType":"PRODUCT","chargeName":"Item Price","chargeAmount":{"currency":"USD","amount":-0.1},"tax":{"taxName":"Item Price Tax","taxAmount":{"currency":"USD","amount":-0.1}}}}]}}]}}]}}}; // \Walmart\Model\MP\US\Orders\RefundOrderLinesRequest | File fields
+$refundOrderLinesRequest = {"orderRefund":{"purchaseOrderId":"2577453162650","orderLines":{"orderLine":[{"lineNumber":"4","isFullRefund":false,"refunds":{"refund":[{"refundComments":"test test","refundCharges":{"refundCharge":[{"refundReason":"Merchandise not received","charge":{"chargeType":"PRODUCT","chargeName":"Item Price","chargeAmount":{"currency":"USD","amount":-0.1},"tax":{"taxName":"Item Price Tax","taxAmount":{"currency":"USD","amount":-0.1}}}}]}}]}}]}}}; // \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest | File fields
 
 try {
     $result = $apiInstance->refundOrderLines($purchaseOrderId, $refundOrderLinesRequest);
@@ -402,12 +402,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **refundOrderLinesRequest** | [**\Walmart\Model\MP\US\Orders\RefundOrderLinesRequest**](../Model/RefundOrderLinesRequest.md)| File fields | |
+| **refundOrderLinesRequest** | [**\Walmart\Models\MP\US\Orders\RefundOrderLinesRequest**](../Model/RefundOrderLinesRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
 
 ### Authorization
 
@@ -425,7 +425,7 @@ try {
 ## `shippingUpdates()`
 
 ```php
-shippingUpdates($purchaseOrderId, $shippingUpdatesRequest): \Walmart\Model\MP\US\Orders\ShippingUpdates200Response
+shippingUpdates($purchaseOrderId, $shippingUpdatesRequest): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
 ```
 Ship Order Lines
 
@@ -441,7 +441,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -449,7 +449,7 @@ $apiInstance = new Walmart\Api\OrdersApi(
 );
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$shippingUpdatesRequest = {"orderShipment":{"orderLines":{"orderLine":[{"lineNumber":"1","intentToCancelOverride":false,"sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"UPS"},"methodCode":"Standard","trackingNumber":"22344","trackingURL":"http://walmart/tracking/ups?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92345"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}},{"lineNumber":"2","sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"FedEx"},"methodCode":"Express","trackingNumber":"22344","trackingURL":"http://walmart/tracking/fedEx?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92344"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}}]}}}; // \Walmart\Model\MP\US\Orders\ShippingUpdatesRequest | File fields
+$shippingUpdatesRequest = {"orderShipment":{"orderLines":{"orderLine":[{"lineNumber":"1","intentToCancelOverride":false,"sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"UPS"},"methodCode":"Standard","trackingNumber":"22344","trackingURL":"http://walmart/tracking/ups?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92345"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}},{"lineNumber":"2","sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"FedEx"},"methodCode":"Express","trackingNumber":"22344","trackingURL":"http://walmart/tracking/fedEx?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92344"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}}]}}}; // \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest | File fields
 
 try {
     $result = $apiInstance->shippingUpdates($purchaseOrderId, $shippingUpdatesRequest);
@@ -462,12 +462,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **shippingUpdatesRequest** | [**\Walmart\Model\MP\US\Orders\ShippingUpdatesRequest**](../Model/ShippingUpdatesRequest.md)| File fields | |
+| **shippingUpdatesRequest** | [**\Walmart\Models\MP\US\Orders\ShippingUpdatesRequest**](../Model/ShippingUpdatesRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
 
 ### Authorization
 

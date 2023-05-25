@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillmentsRequestPayloadDestinationsInner Class Doc Comment
@@ -51,7 +51,7 @@ class PromiseFulfillmentsRequestPayloadDestinationsInner extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'address' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress',
+        'address' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress',
         'fulfillmentType' => 'string'
     ];
 
@@ -139,7 +139,7 @@ class PromiseFulfillmentsRequestPayloadDestinationsInner extends BaseModel
     /**
      * Gets address
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress
     
      */
     public function getAddress()
@@ -150,7 +150,7 @@ class PromiseFulfillmentsRequestPayloadDestinationsInner extends BaseModel
     /**
      * Sets address
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress $address address
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress $address address
      *
      * @return self
     

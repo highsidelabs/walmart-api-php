@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedRecord Class Doc Comment

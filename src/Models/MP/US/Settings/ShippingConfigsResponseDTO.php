@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingConfigsResponseDTO Class Doc Comment
@@ -49,8 +49,8 @@ class ShippingConfigsResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'partner' => '\Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponsePartner',
-        'configurations' => '\Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]'
+        'partner' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner',
+        'configurations' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Gets partner
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null
     
      */
     public function getPartner()
@@ -142,7 +142,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Sets partner
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null $partner partner
+     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null $partner partner
      *
      * @return self
     
@@ -160,7 +160,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Gets configurations
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]|null
     
      */
     public function getConfigurations()
@@ -171,7 +171,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Sets configurations
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]|null $configurations List of seller configurations like Lag Time
+     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]|null $configurations List of seller configurations like Lag Time
      *
      * @return self
     

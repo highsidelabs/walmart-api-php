@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemPriceResponse Class Doc Comment
@@ -49,7 +49,7 @@ class ItemPriceResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInner[]',
         'statusCode' => 'int',
         'mart' => 'string',
         'sku' => 'string',
@@ -152,7 +152,7 @@ class ItemPriceResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -163,7 +163,7 @@ class ItemPriceResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

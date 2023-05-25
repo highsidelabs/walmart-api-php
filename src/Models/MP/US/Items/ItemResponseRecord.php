@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemResponseRecord Class Doc Comment
@@ -57,10 +57,10 @@ class ItemResponseRecord extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice',
+        'price' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice',
         'publishedStatus' => 'string',
-        'additionalAttributes' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes',
-        'unpublishedReasons' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons',
+        'additionalAttributes' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes',
+        'unpublishedReasons' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons',
         'lifecycleStatus' => 'string'
     ];
 
@@ -486,7 +486,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null
     
      */
     public function getPrice()
@@ -497,7 +497,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
      *
      * @return self
     
@@ -544,7 +544,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Gets additionalAttributes
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null
     
      */
     public function getAdditionalAttributes()
@@ -555,7 +555,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Sets additionalAttributes
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null $additionalAttributes additionalAttributes
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null $additionalAttributes additionalAttributes
      *
      * @return self
     
@@ -573,7 +573,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Gets unpublishedReasons
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null
     
      */
     public function getUnpublishedReasons()
@@ -584,7 +584,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Sets unpublishedReasons
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null $unpublishedReasons unpublishedReasons
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null $unpublishedReasons unpublishedReasons
      *
      * @return self
     

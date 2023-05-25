@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllSubCategories200ResponsePayloadInner Class Doc Comment
@@ -50,7 +50,7 @@ class GetAllSubCategories200ResponsePayloadInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'category' => 'string',
-        'subcategory' => '\Walmart\Model\MP\US\Rules\GetAllSubCategories200ResponsePayloadInnerSubcategoryInner[]'
+        'subcategory' => '\Walmart\Models\MP\US\Rules\GetAllSubCategories200ResponsePayloadInnerSubcategoryInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetAllSubCategories200ResponsePayloadInner extends BaseModel
     /**
      * Gets subcategory
      *
-     * @return \Walmart\Model\MP\US\Rules\GetAllSubCategories200ResponsePayloadInnerSubcategoryInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\GetAllSubCategories200ResponsePayloadInnerSubcategoryInner[]|null
     
      */
     public function getSubcategory()
@@ -171,7 +171,7 @@ class GetAllSubCategories200ResponsePayloadInner extends BaseModel
     /**
      * Sets subcategory
      *
-     * @param \Walmart\Model\MP\US\Rules\GetAllSubCategories200ResponsePayloadInnerSubcategoryInner[]|null $subcategory subCategory
+     * @param \Walmart\Models\MP\US\Rules\GetAllSubCategories200ResponsePayloadInnerSubcategoryInner[]|null $subcategory subCategory
      *
      * @return self
     

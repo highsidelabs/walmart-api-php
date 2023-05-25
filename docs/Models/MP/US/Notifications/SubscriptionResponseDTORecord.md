@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **resourceName** | **string** | Delegated access scope that event type is mapped to. | [optional]
 **status** | **string** | ACTIVE or INACTIVE status of the subscription | [optional]
 **eventUrl** | **string** | Destination URL where notification will be received by seller | [optional]
-**authDetails** | [**\Walmart\Model\MP\US\Notifications\TestNotificationRequestAuthDetails**](TestNotificationRequestAuthDetails.md) |  | [optional]
-**headers** | [**\Walmart\Model\MP\US\Notifications\TestNotificationRequestHeaders**](TestNotificationRequestHeaders.md) |  | [optional]
+**authDetails** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails**](TestNotificationRequestAuthDetails.md) |  | [optional]
+**headers** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders**](TestNotificationRequestHeaders.md) |  | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

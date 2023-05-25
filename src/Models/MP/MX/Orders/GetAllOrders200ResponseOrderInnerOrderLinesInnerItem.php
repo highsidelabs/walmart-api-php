@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInnerItem Class Doc Comment
@@ -54,9 +54,9 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
         'sku' => 'string',
         'condition' => 'string',
         'imageUrl' => 'string',
-        'unitPrice' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice',
-        'commission' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemCommission',
-        'unitPriceWithoutTax' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPriceWithoutTax'
+        'unitPrice' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice',
+        'commission' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemCommission',
+        'unitPriceWithoutTax' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPriceWithoutTax'
     ];
 
     /**
@@ -318,7 +318,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
     /**
      * Gets unitPrice
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice|null
     
      */
     public function getUnitPrice()
@@ -329,7 +329,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
     /**
      * Sets unitPrice
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice|null $unitPrice unitPrice
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice|null $unitPrice unitPrice
      *
      * @return self
     
@@ -347,7 +347,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
     /**
      * Gets commission
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemCommission|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemCommission|null
     
      */
     public function getCommission()
@@ -358,7 +358,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
     /**
      * Sets commission
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemCommission|null $commission commission
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemCommission|null $commission commission
      *
      * @return self
     
@@ -376,7 +376,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
     /**
      * Gets unitPriceWithoutTax
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPriceWithoutTax|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPriceWithoutTax|null
     
      */
     public function getUnitPriceWithoutTax()
@@ -387,7 +387,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
     /**
      * Sets unitPriceWithoutTax
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPriceWithoutTax|null $unitPriceWithoutTax unitPriceWithoutTax
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPriceWithoutTax|null $unitPriceWithoutTax unitPriceWithoutTax
      *
      * @return self
     

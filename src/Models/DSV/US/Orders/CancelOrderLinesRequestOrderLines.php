@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelOrderLinesRequestOrderLines Class Doc Comment
@@ -51,7 +51,7 @@ class CancelOrderLinesRequestOrderLines extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLine' => '\Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInner[]'
+        'orderLine' => '\Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInner[]'
     ];
 
     /**
@@ -129,7 +129,7 @@ class CancelOrderLinesRequestOrderLines extends BaseModel
     /**
      * Gets orderLine
      *
-     * @return \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInner[]
+     * @return \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInner[]
     
      */
     public function getOrderLine()
@@ -140,7 +140,7 @@ class CancelOrderLinesRequestOrderLines extends BaseModel
     /**
      * Sets orderLine
      *
-     * @param \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInner[] $orderLine A list of orderLines to be cancelled
+     * @param \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInner[] $orderLine A list of orderLines to be cancelled
      *
      * @return self
     

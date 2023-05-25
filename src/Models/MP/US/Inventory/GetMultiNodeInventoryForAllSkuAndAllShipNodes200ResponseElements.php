@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements Class Doc Comment
@@ -49,7 +49,7 @@ class GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements extends B
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'inventories' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]'
+        'inventories' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements extends B
     /**
      * Gets inventories
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]|null
     
      */
     public function getInventories()
@@ -135,7 +135,7 @@ class GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements extends B
     /**
      * Sets inventories
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]|null $inventories inventories
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]|null $inventories inventories
      *
      * @return self
     

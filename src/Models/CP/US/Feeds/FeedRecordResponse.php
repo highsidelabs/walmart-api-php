@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\CP\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\CP\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedRecordResponse Class Doc Comment
@@ -49,11 +49,11 @@ class FeedRecordResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\CP\US\Feeds\FeedRecordResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInner[]',
         'totalResults' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'results' => '\Walmart\Model\CP\US\Feeds\FeedRecordResponseResultsInner[]'
+        'results' => '\Walmart\Models\CP\US\Feeds\FeedRecordResponseResultsInner[]'
     ];
 
     /**
@@ -152,7 +152,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\CP\US\Feeds\FeedRecordResponseErrorsInner[]|null
+     * @return \Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -163,7 +163,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\CP\US\Feeds\FeedRecordResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -268,7 +268,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Gets results
      *
-     * @return \Walmart\Model\CP\US\Feeds\FeedRecordResponseResultsInner[]|null
+     * @return \Walmart\Models\CP\US\Feeds\FeedRecordResponseResultsInner[]|null
     
      */
     public function getResults()
@@ -279,7 +279,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Sets results
      *
-     * @param \Walmart\Model\CP\US\Feeds\FeedRecordResponseResultsInner[]|null $results results
+     * @param \Walmart\Models\CP\US\Feeds\FeedRecordResponseResultsInner[]|null $results results
      *
      * @return self
     

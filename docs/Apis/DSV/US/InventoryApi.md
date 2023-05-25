@@ -1,4 +1,4 @@
-# Walmart\Api\US\DSVInventoryApi  
+# Walmart\Apis\US\DSVInventoryApi  
 All URIs are relative to https://api-gateway.walmart.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -12,7 +12,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 ## `getInventoryForAnItem()`
 
 ```php
-getInventoryForAnItem($gtin, $shipNode, $sku): \Walmart\Model\DSV\US\Inventory\GetInventoryForAnItem200Response
+getInventoryForAnItem($gtin, $shipNode, $sku): \Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200Response
 ```
 Inventory
 
@@ -29,7 +29,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InventoryApi(  
+$apiInstance = new Walmart\Apis\InventoryApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -57,7 +57,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\DSV\US\Inventory\GetInventoryForAnItem200Response**](../Model/GetInventoryForAnItem200Response.md)
+[**\Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200Response**](../Model/GetInventoryForAnItem200Response.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ try {
 ## `getMultiNodeInventoryForSkuAndAllShipnodes()`
 
 ```php
-getMultiNodeInventoryForSkuAndAllShipnodes($id, $productIdType, $shipNode): \Walmart\Model\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
+getMultiNodeInventoryForSkuAndAllShipnodes($id, $productIdType, $shipNode): \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
 ```
 Single Item Inventory Across Ship Nodes
 
@@ -92,7 +92,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InventoryApi(  
+$apiInstance = new Walmart\Apis\InventoryApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -120,7 +120,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response**](../Model/GetMultiNodeInventoryForSkuAndAllShipnodes200Response.md)
+[**\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response**](../Model/GetMultiNodeInventoryForSkuAndAllShipnodes200Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ try {
 ## `updateBulkInventory()`
 
 ```php
-updateBulkInventory($feedType, $updateBulkInventoryRequest, $shipNode): \Walmart\Model\DSV\US\Inventory\UpdateBulkInventory200Response
+updateBulkInventory($feedType, $updateBulkInventoryRequest, $shipNode): \Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response
 ```
 Bulk Update Inventory
 
@@ -155,7 +155,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InventoryApi(  
+$apiInstance = new Walmart\Apis\InventoryApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -163,7 +163,7 @@ $apiInstance = new Walmart\Api\InventoryApi(
 );
 
 $feedType = 'feedType_example'; // string | Specifies the feed type.
-$updateBulkInventoryRequest = {"InventoryHeader":{"version":"1.4"},"Inventory":[{"sku":"CNE498398","availabilityCode":"AC","quantity":{"unit":"EACH","amount":"10"}},{"sku":"ard65005","availabilityCode":"AC","quantity":{"unit":"EACH","availableToSell":"5","orderInProgress":"3"}}]}; // \Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequest | File fields
+$updateBulkInventoryRequest = {"InventoryHeader":{"version":"1.4"},"Inventory":[{"sku":"CNE498398","availabilityCode":"AC","quantity":{"unit":"EACH","amount":"10"}},{"sku":"ard65005","availabilityCode":"AC","quantity":{"unit":"EACH","availableToSell":"5","orderInProgress":"3"}}]}; // \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequest | File fields
 $shipNode = 'shipNode_example'; // string | Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested.   The parameter is required for `Inventory` feed type. It is not required for `DSV_INVENTORY` feed type.   The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated.
 
 try {
@@ -177,13 +177,13 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Specifies the feed type. | |
-| **updateBulkInventoryRequest** | [**\Walmart\Model\DSV\US\Inventory\UpdateBulkInventoryRequest**](../Model/UpdateBulkInventoryRequest.md)| File fields | |
+| **updateBulkInventoryRequest** | [**\Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequest**](../Model/UpdateBulkInventoryRequest.md)| File fields | |
 | **shipNode** | **string**| Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested.   The parameter is required for `Inventory` feed type. It is not required for `DSV_INVENTORY` feed type.   The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated. | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Model\DSV\US\Inventory\UpdateBulkInventory200Response**](../Model/UpdateBulkInventory200Response.md)
+[**\Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response**](../Model/UpdateBulkInventory200Response.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ try {
 ## `updateInventoryForAnItem()`
 
 ```php
-updateInventoryForAnItem($shipNode, $updateInventoryForAnItemRequest): \Walmart\Model\DSV\US\Inventory\GetInventoryForAnItem200Response
+updateInventoryForAnItem($shipNode, $updateInventoryForAnItemRequest): \Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200Response
 ```
 Update Inventory
 
@@ -218,7 +218,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\InventoryApi(  
+$apiInstance = new Walmart\Apis\InventoryApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -226,7 +226,7 @@ $apiInstance = new Walmart\Api\InventoryApi(
 );
 
 $shipNode = 'shipNode_example'; // string | Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested. The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated.
-$updateInventoryForAnItemRequest = {"sku":"1487132332472","availabilityCode":"AC","quantity":{"unit":"EACH","amount":"23"}}; // \Walmart\Model\DSV\US\Inventory\UpdateInventoryForAnItemRequest | File fields
+$updateInventoryForAnItemRequest = {"sku":"1487132332472","availabilityCode":"AC","quantity":{"unit":"EACH","amount":"23"}}; // \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest | File fields
 
 try {
     $result = $apiInstance->updateInventoryForAnItem($shipNode, $updateInventoryForAnItemRequest);
@@ -239,12 +239,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **shipNode** | **string**| Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested. The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated. | |
-| **updateInventoryForAnItemRequest** | [**\Walmart\Model\DSV\US\Inventory\UpdateInventoryForAnItemRequest**](../Model/UpdateInventoryForAnItemRequest.md)| File fields | |
+| **updateInventoryForAnItemRequest** | [**\Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest**](../Model/UpdateInventoryForAnItemRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\DSV\US\Inventory\GetInventoryForAnItem200Response**](../Model/GetInventoryForAnItem200Response.md)
+[**\Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200Response**](../Model/GetInventoryForAnItem200Response.md)
 
 ### Authorization
 

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner Class Doc Comment
@@ -53,7 +53,7 @@ class GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner ext
         'itemId' => 'string',
         'isAvailable' => 'string',
         'title' => 'string',
-        'variantValues' => '\Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]'
+        'variantValues' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]'
     ];
 
     /**
@@ -268,7 +268,7 @@ class GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner ext
     /**
      * Gets variantValues
      *
-     * @return \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]|null
     
      */
     public function getVariantValues()
@@ -279,7 +279,7 @@ class GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner ext
     /**
      * Sets variantValues
      *
-     * @param \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]|null $variantValues variantValues
+     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]|null $variantValues variantValues
      *
      * @return self
     

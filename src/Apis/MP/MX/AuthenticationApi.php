@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\MX;
+namespace Walmart\Apis\MP\MX;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -317,11 +317,11 @@ class AuthenticationApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\MX\Authentication\TokenAPI200Response
+     * @return \Walmart\Models\MP\MX\Authentication\TokenAPI200Response
      */
     public function tokenAPI(
         ?string $grantType = null
-    ): \Walmart\Model\MP\MX\Authentication\TokenAPI200Response {
+    ): \Walmart\Models\MP\MX\Authentication\TokenAPI200Response {
         return $this->tokenAPIWithHttpInfo($grantType);
     }
 
@@ -334,11 +334,11 @@ class AuthenticationApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\MX\Authentication\TokenAPI200Response
+     * @return \Walmart\Models\MP\MX\Authentication\TokenAPI200Response
      */
     protected function tokenAPIWithHttpInfo(
         ?string $grantType = null,
-    ): \Walmart\Model\MP\MX\Authentication\TokenAPI200Response {
+    ): \Walmart\Models\MP\MX\Authentication\TokenAPI200Response {
         $request = $this->tokenAPIRequest($grantType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -388,19 +388,19 @@ class AuthenticationApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\MX\Authentication\TokenAPI200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Authentication\TokenAPI200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\MX\Authentication\TokenAPI200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Authentication\TokenAPI200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\MX\Authentication\TokenAPI200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Authentication\TokenAPI200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\MX\Authentication\TokenAPI200Response';
+            $returnType = '\Walmart\Models\MP\MX\Authentication\TokenAPI200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -416,7 +416,7 @@ class AuthenticationApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\MX\Authentication\TokenAPI200Response',
+                        '\Walmart\Models\MP\MX\Authentication\TokenAPI200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -463,7 +463,7 @@ class AuthenticationApi extends BaseApi
     protected function tokenAPIAsyncWithHttpInfo(
         ?string $grantType = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\MX\Authentication\TokenAPI200Response';
+        $returnType = '\Walmart\Models\MP\MX\Authentication\TokenAPI200Response';
         $request = $this->tokenAPIRequest($grantType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

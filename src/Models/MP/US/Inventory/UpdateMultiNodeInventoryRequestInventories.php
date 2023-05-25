@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateMultiNodeInventoryRequestInventories Class Doc Comment
@@ -49,7 +49,7 @@ class UpdateMultiNodeInventoryRequestInventories extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'nodes' => '\Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[]'
+        'nodes' => '\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[]'
     ];
 
     /**
@@ -127,7 +127,7 @@ class UpdateMultiNodeInventoryRequestInventories extends BaseModel
     /**
      * Gets nodes
      *
-     * @return \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[]
+     * @return \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[]
     
      */
     public function getNodes()
@@ -138,7 +138,7 @@ class UpdateMultiNodeInventoryRequestInventories extends BaseModel
     /**
      * Sets nodes
      *
-     * @param \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[] $nodes nodes
+     * @param \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[] $nodes nodes
      *
      * @return self
     

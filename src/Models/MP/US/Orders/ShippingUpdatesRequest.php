@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesRequest Class Doc Comment
@@ -49,7 +49,7 @@ class ShippingUpdatesRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderShipment' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipment'
+        'orderShipment' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipment'
     ];
 
     /**
@@ -124,7 +124,7 @@ class ShippingUpdatesRequest extends BaseModel
     /**
      * Gets orderShipment
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipment|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipment|null
     
      */
     public function getOrderShipment()
@@ -135,7 +135,7 @@ class ShippingUpdatesRequest extends BaseModel
     /**
      * Sets orderShipment
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipment|null $orderShipment orderShipment
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipment|null $orderShipment orderShipment
      *
      * @return self
     

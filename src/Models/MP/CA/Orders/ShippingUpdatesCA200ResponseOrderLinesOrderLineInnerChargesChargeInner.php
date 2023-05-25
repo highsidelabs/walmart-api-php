@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner Class Doc Comment
@@ -51,8 +51,8 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
     protected static array $openAPITypes = [
         'chargeType' => 'string',
         'chargeName' => 'string',
-        'chargeAmount' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount',
-        'tax' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax'
+        'chargeAmount' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount',
+        'tax' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax'
     ];
 
     /**
@@ -212,7 +212,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
     /**
      * Gets chargeAmount
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
     
      */
     public function getChargeAmount()
@@ -223,7 +223,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
     /**
      * Sets chargeAmount
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $chargeAmount chargeAmount
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $chargeAmount chargeAmount
      *
      * @return self
     
@@ -241,7 +241,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
     /**
      * Gets tax
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null
     
      */
     public function getTax()
@@ -252,7 +252,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
     /**
      * Sets tax
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null $tax tax
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null $tax tax
      *
      * @return self
     

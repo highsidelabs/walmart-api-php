@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedConfig Class Doc Comment
@@ -50,7 +50,7 @@ class FeedConfig extends BaseModel
       */
     protected static array $openAPITypes = [
         'configurationName' => 'string',
-        'configuration' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration'
+        'configuration' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration'
     ];
 
     /**
@@ -160,7 +160,7 @@ class FeedConfig extends BaseModel
     /**
      * Gets configuration
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration|null
     
      */
     public function getConfiguration()
@@ -171,7 +171,7 @@ class FeedConfig extends BaseModel
     /**
      * Sets configuration
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration|null $configuration configuration
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration|null $configuration configuration
      *
      * @return self
     

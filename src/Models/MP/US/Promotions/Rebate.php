@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * Rebate Class Doc Comment
@@ -49,7 +49,7 @@ class Rebate extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rebateAmt' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
+        'rebateAmt' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
         'infoUrl' => 'string',
         'rebateType' => 'string',
         'startDate' => '\DateTime',
@@ -182,7 +182,7 @@ class Rebate extends BaseModel
     /**
      * Gets rebateAmt
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue
     
      */
     public function getRebateAmt()
@@ -193,7 +193,7 @@ class Rebate extends BaseModel
     /**
      * Sets rebateAmt
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue $rebateAmt rebateAmt
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue $rebateAmt rebateAmt
      *
      * @return self
     

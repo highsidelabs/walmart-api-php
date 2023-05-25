@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200Response Class Doc Comment
@@ -49,8 +49,8 @@ class GetReturns200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseMeta',
-        'returnOrders' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]'
+        'meta' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseMeta',
+        'returnOrders' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]'
     ];
 
     /**
@@ -170,7 +170,7 @@ class GetReturns200Response extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseMeta
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseMeta
     
      */
     public function getMeta()
@@ -181,7 +181,7 @@ class GetReturns200Response extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseMeta $meta meta
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseMeta $meta meta
      *
      * @return self
     
@@ -199,7 +199,7 @@ class GetReturns200Response extends BaseModel
     /**
      * Gets returnOrders
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]
     
      */
     public function getReturnOrders()
@@ -210,7 +210,7 @@ class GetReturns200Response extends BaseModel
     /**
      * Sets returnOrders
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[] $returnOrders List of returns for the seller.
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[] $returnOrders List of returns for the seller.
      *
      * @return self
     

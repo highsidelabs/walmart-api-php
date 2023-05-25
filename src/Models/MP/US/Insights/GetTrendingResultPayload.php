@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * GetTrendingResultPayload Class Doc Comment
@@ -50,7 +50,7 @@ class GetTrendingResultPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'totalCount' => 'int',
-        'items' => '\Walmart\Model\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]'
+        'items' => '\Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetTrendingResultPayload extends BaseModel
     /**
      * Gets items
      *
-     * @return \Walmart\Model\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]|null
     
      */
     public function getItems()
@@ -171,7 +171,7 @@ class GetTrendingResultPayload extends BaseModel
     /**
      * Sets items
      *
-     * @param \Walmart\Model\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]|null $items List of Qualified Items
+     * @param \Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]|null $items List of Qualified Items
      *
      * @return self
     

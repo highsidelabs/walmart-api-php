@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount Class Doc Comment
@@ -50,7 +50,7 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscoun
       */
     protected static array $openAPITypes = [
         'isPickUpDiscountEligible' => 'bool',
-        'pickupDiscountAmt' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue'
+        'pickupDiscountAmt' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscoun
     /**
      * Gets pickupDiscountAmt
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
     
      */
     public function getPickupDiscountAmt()
@@ -171,7 +171,7 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscoun
     /**
      * Sets pickupDiscountAmt
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $pickupDiscountAmt pickupDiscountAmt
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $pickupDiscountAmt pickupDiscountAmt
      *
      * @return self
     

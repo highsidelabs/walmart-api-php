@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * RefundOrderLines400ResponseError Class Doc Comment
@@ -55,7 +55,7 @@ class RefundOrderLines400ResponseError extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'errorIdentifiers' => '\Walmart\Model\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers'
+        'errorIdentifiers' => '\Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers'
     ];
 
     /**
@@ -340,7 +340,7 @@ class RefundOrderLines400ResponseError extends BaseModel
     /**
      * Gets errorIdentifiers
      *
-     * @return \Walmart\Model\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers|null
+     * @return \Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers|null
     
      */
     public function getErrorIdentifiers()
@@ -351,7 +351,7 @@ class RefundOrderLines400ResponseError extends BaseModel
     /**
      * Sets errorIdentifiers
      *
-     * @param \Walmart\Model\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers|null $errorIdentifiers errorIdentifiers
+     * @param \Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers|null $errorIdentifiers errorIdentifiers
      *
      * @return self
     

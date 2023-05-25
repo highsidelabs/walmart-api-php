@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * StandardProcessingSchedule Class Doc Comment
@@ -51,13 +51,13 @@ class StandardProcessingSchedule extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'sunday' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
-        'monday' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
-        'tuesday' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
-        'wednesday' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
-        'thursday' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
-        'friday' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
-        'saturday' => '\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday'
+        'sunday' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
+        'monday' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
+        'tuesday' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
+        'wednesday' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
+        'thursday' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
+        'friday' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday',
+        'saturday' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday'
     ];
 
     /**
@@ -189,7 +189,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Gets sunday
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
     
      */
     public function getSunday()
@@ -200,7 +200,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Sets sunday
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $sunday sunday
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $sunday sunday
      *
      * @return self
     
@@ -218,7 +218,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Gets monday
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
     
      */
     public function getMonday()
@@ -229,7 +229,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Sets monday
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $monday monday
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $monday monday
      *
      * @return self
     
@@ -247,7 +247,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Gets tuesday
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
     
      */
     public function getTuesday()
@@ -258,7 +258,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Sets tuesday
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $tuesday tuesday
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $tuesday tuesday
      *
      * @return self
     
@@ -276,7 +276,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Gets wednesday
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
     
      */
     public function getWednesday()
@@ -287,7 +287,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Sets wednesday
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $wednesday wednesday
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $wednesday wednesday
      *
      * @return self
     
@@ -305,7 +305,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Gets thursday
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
     
      */
     public function getThursday()
@@ -316,7 +316,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Sets thursday
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $thursday thursday
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $thursday thursday
      *
      * @return self
     
@@ -334,7 +334,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Gets friday
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
     
      */
     public function getFriday()
@@ -345,7 +345,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Sets friday
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $friday friday
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $friday friday
      *
      * @return self
     
@@ -363,7 +363,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Gets saturday
      *
-     * @return \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
+     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday
     
      */
     public function getSaturday()
@@ -374,7 +374,7 @@ class StandardProcessingSchedule extends BaseModel
     /**
      * Sets saturday
      *
-     * @param \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $saturday saturday
+     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday $saturday saturday
      *
      * @return self
     

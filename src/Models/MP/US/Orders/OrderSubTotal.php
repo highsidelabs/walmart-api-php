@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderSubTotal Class Doc Comment
@@ -50,7 +50,7 @@ class OrderSubTotal extends BaseModel
       */
     protected static array $openAPITypes = [
         'subTotalType' => 'string',
-        'totalAmount' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount'
+        'totalAmount' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount'
     ];
 
     /**
@@ -160,7 +160,7 @@ class OrderSubTotal extends BaseModel
     /**
      * Gets totalAmount
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null
     
      */
     public function getTotalAmount()
@@ -171,7 +171,7 @@ class OrderSubTotal extends BaseModel
     /**
      * Sets totalAmount
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null $totalAmount totalAmount
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null $totalAmount totalAmount
      *
      * @return self
     

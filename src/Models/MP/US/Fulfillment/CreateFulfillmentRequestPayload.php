@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateFulfillmentRequestPayload Class Doc Comment
@@ -56,8 +56,8 @@ class CreateFulfillmentRequestPayload extends BaseModel
         'orderPlacedTime' => '\DateTime',
         'needsConfirmation' => 'bool',
         'partialFulfillments' => 'bool',
-        'customer' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer',
-        'orderItems' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]'
+        'customer' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer',
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]'
     ];
 
     /**
@@ -346,7 +346,7 @@ class CreateFulfillmentRequestPayload extends BaseModel
     /**
      * Gets customer
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer
     
      */
     public function getCustomer()
@@ -357,7 +357,7 @@ class CreateFulfillmentRequestPayload extends BaseModel
     /**
      * Sets customer
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer $customer customer
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer $customer customer
      *
      * @return self
     
@@ -375,7 +375,7 @@ class CreateFulfillmentRequestPayload extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]
     
      */
     public function getOrderItems()
@@ -386,7 +386,7 @@ class CreateFulfillmentRequestPayload extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[] $orderItems Order items details
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[] $orderItems Order items details
      *
      * @return self
     

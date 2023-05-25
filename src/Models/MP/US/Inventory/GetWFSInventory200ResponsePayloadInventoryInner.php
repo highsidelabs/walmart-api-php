@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * GetWFSInventory200ResponsePayloadInventoryInner Class Doc Comment
@@ -50,7 +50,7 @@ class GetWFSInventory200ResponsePayloadInventoryInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'shipNodes' => '\Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]'
+        'shipNodes' => '\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetWFSInventory200ResponsePayloadInventoryInner extends BaseModel
     /**
      * Gets shipNodes
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]|null
     
      */
     public function getShipNodes()
@@ -171,7 +171,7 @@ class GetWFSInventory200ResponsePayloadInventoryInner extends BaseModel
     /**
      * Sets shipNodes
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]|null $shipNodes shipNodes
+     * @param \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]|null $shipNodes shipNodes
      *
      * @return self
     

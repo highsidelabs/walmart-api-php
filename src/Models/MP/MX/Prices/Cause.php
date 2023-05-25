@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * Cause Class Doc Comment

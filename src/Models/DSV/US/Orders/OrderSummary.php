@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderSummary Class Doc Comment
@@ -51,8 +51,8 @@ class OrderSummary extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'totalAmount' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount',
-        'orderSubTotals' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner[]'
+        'totalAmount' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount',
+        'orderSubTotals' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner[]'
     ];
 
     /**
@@ -133,7 +133,7 @@ class OrderSummary extends BaseModel
     /**
      * Gets totalAmount
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null
     
      */
     public function getTotalAmount()
@@ -144,7 +144,7 @@ class OrderSummary extends BaseModel
     /**
      * Sets totalAmount
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null $totalAmount totalAmount
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null $totalAmount totalAmount
      *
      * @return self
     
@@ -162,7 +162,7 @@ class OrderSummary extends BaseModel
     /**
      * Gets orderSubTotals
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner[]|null
     
      */
     public function getOrderSubTotals()
@@ -173,7 +173,7 @@ class OrderSummary extends BaseModel
     /**
      * Sets orderSubTotals
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner[]|null $orderSubTotals orderSubTotals
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner[]|null $orderSubTotals orderSubTotals
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * ChargeTotal Class Doc Comment
@@ -52,7 +52,7 @@ class ChargeTotal extends BaseModel
       */
     protected static array $openAPITypes = [
         'name' => 'string',
-        'value' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice'
+        'value' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice'
     ];
 
     /**
@@ -168,7 +168,7 @@ class ChargeTotal extends BaseModel
     /**
      * Gets value
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice
     
      */
     public function getValue()
@@ -179,7 +179,7 @@ class ChargeTotal extends BaseModel
     /**
      * Sets value
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice $value value
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerUnitPrice $value value
      *
      * @return self
     

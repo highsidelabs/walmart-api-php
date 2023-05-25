@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\WS\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\WS\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemResponse Class Doc Comment
@@ -57,7 +57,7 @@ class ItemResponse extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Model\WS\US\Items\GetAllItems200ResponsePrice',
+        'price' => '\Walmart\Models\WS\US\Items\GetAllItems200ResponsePrice',
         'publishedStatus' => 'string'
     ];
 
@@ -462,7 +462,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Model\WS\US\Items\GetAllItems200ResponsePrice|null
+     * @return \Walmart\Models\WS\US\Items\GetAllItems200ResponsePrice|null
     
      */
     public function getPrice()
@@ -473,7 +473,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Model\WS\US\Items\GetAllItems200ResponsePrice|null $price price
+     * @param \Walmart\Models\WS\US\Items\GetAllItems200ResponsePrice|null $price price
      *
      * @return self
     

@@ -5,7 +5,7 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Walmart\Model
+ * @package  Walmart\Models
  * @author   Jesse Evers
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
@@ -18,12 +18,12 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model;
+namespace Walmart\Models;
 
 /**
  * Interface abstracting model access.
  *
- * @package Walmart\Model
+ * @package Walmart\Models
  * @author  Jesse Evers
  */
 interface ModelInterface

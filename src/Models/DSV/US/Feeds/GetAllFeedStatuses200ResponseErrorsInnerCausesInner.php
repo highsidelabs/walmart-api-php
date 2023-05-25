@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFeedStatuses200ResponseErrorsInnerCausesInner Class Doc Comment

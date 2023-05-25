@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner Class Doc Comment
@@ -53,7 +53,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQ
     protected static array $openAPITypes = [
         'status' => 'string',
         'statusDescription' => 'string',
-        'statusQuantity' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity'
+        'statusQuantity' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity'
     ];
 
     /**
@@ -198,7 +198,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQ
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity|null
     
      */
     public function getStatusQuantity()
@@ -209,7 +209,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQ
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity|null $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity|null $statusQuantity statusQuantity
      *
      * @return self
     

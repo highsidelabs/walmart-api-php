@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelFulfillmentRequestPayload Class Doc Comment
@@ -52,7 +52,7 @@ class CancelFulfillmentRequestPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'sellerOrderId' => 'string',
-        'orderItems' => '\Walmart\Model\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[]'
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[]'
     ];
 
     /**
@@ -168,7 +168,7 @@ class CancelFulfillmentRequestPayload extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[]
     
      */
     public function getOrderItems()
@@ -179,7 +179,7 @@ class CancelFulfillmentRequestPayload extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[] $orderItems orderItems
+     * @param \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[] $orderItems orderItems
      *
      * @return self
     

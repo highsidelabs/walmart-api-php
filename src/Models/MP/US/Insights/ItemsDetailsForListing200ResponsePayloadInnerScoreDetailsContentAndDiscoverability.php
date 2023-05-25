@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverability Class Doc Comment
@@ -50,7 +50,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscove
       */
     protected static array $openAPITypes = [
         'issueCount' => 'int',
-        'issues' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]'
+        'issues' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscove
     /**
      * Gets issues
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]|null
     
      */
     public function getIssues()
@@ -171,7 +171,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscove
     /**
      * Sets issues
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]|null $issues issues
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]|null $issues issues
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateInboundRequestDTO Class Doc Comment
@@ -52,8 +52,8 @@ class CreateInboundRequestDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
-        'returnAddress' => '\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
-        'orderItems' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]'
+        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]'
     ];
 
     /**
@@ -208,7 +208,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Gets returnAddress
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress
     
      */
     public function getReturnAddress()
@@ -219,7 +219,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Sets returnAddress
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress $returnAddress returnAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress $returnAddress returnAddress
      *
      * @return self
     
@@ -237,7 +237,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]
     
      */
     public function getOrderItems()
@@ -248,7 +248,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[] $orderItems List of Order Items
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[] $orderItems List of Order Items
      *
      * @return self
     

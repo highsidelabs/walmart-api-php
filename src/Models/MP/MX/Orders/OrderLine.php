@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderLine Class Doc Comment
@@ -53,16 +53,16 @@ class OrderLine extends BaseModel
     protected static array $openAPITypes = [
         'primeLineNumber' => 'string',
         'coLineNumber' => 'string',
-        'item' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItem',
-        'charges' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInner[]',
-        'orderLineQuantity' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity',
-        'orderLineStatus' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner[]',
+        'item' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItem',
+        'charges' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInner[]',
+        'orderLineQuantity' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity',
+        'orderLineStatus' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner[]',
         'intentToCancel' => 'string',
         'shippingMethod' => 'string',
         'soPrimeLineSubLineNo' => 'string',
         'promiseDeliveryDate' => 'string',
         'isMSIEnabled' => 'string',
-        'seller' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller'
+        'seller' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller'
     ];
 
     /**
@@ -261,7 +261,7 @@ class OrderLine extends BaseModel
     /**
      * Gets item
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItem|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItem|null
     
      */
     public function getItem()
@@ -272,7 +272,7 @@ class OrderLine extends BaseModel
     /**
      * Sets item
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItem|null $item item
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerItem|null $item item
      *
      * @return self
     
@@ -290,7 +290,7 @@ class OrderLine extends BaseModel
     /**
      * Gets charges
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInner[]|null
     
      */
     public function getCharges()
@@ -301,7 +301,7 @@ class OrderLine extends BaseModel
     /**
      * Sets charges
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInner[]|null $charges charges
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInner[]|null $charges charges
      *
      * @return self
     
@@ -319,7 +319,7 @@ class OrderLine extends BaseModel
     /**
      * Gets orderLineQuantity
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity|null
     
      */
     public function getOrderLineQuantity()
@@ -330,7 +330,7 @@ class OrderLine extends BaseModel
     /**
      * Sets orderLineQuantity
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity|null $orderLineQuantity orderLineQuantity
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity|null $orderLineQuantity orderLineQuantity
      *
      * @return self
     
@@ -348,7 +348,7 @@ class OrderLine extends BaseModel
     /**
      * Gets orderLineStatus
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner[]|null
     
      */
     public function getOrderLineStatus()
@@ -359,7 +359,7 @@ class OrderLine extends BaseModel
     /**
      * Sets orderLineStatus
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner[]|null $orderLineStatus orderLineStatus
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner[]|null $orderLineStatus orderLineStatus
      *
      * @return self
     
@@ -522,7 +522,7 @@ class OrderLine extends BaseModel
     /**
      * Gets seller
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller|null
     
      */
     public function getSeller()
@@ -533,7 +533,7 @@ class OrderLine extends BaseModel
     /**
      * Sets seller
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller|null $seller seller
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller|null $seller seller
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Notifications;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Notifications;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllSubscriptions200ResponseEventsInnerEventInner Class Doc Comment
@@ -56,8 +56,8 @@ class GetAllSubscriptions200ResponseEventsInnerEventInner extends BaseModel
         'resourceName' => 'string',
         'status' => 'string',
         'eventUrl' => 'string',
-        'authDetails' => '\Walmart\Model\MP\US\Notifications\TestNotificationRequestAuthDetails',
-        'headers' => '\Walmart\Model\MP\US\Notifications\TestNotificationRequestHeaders'
+        'authDetails' => '\Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails',
+        'headers' => '\Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders'
     ];
 
     /**
@@ -383,7 +383,7 @@ class GetAllSubscriptions200ResponseEventsInnerEventInner extends BaseModel
     /**
      * Gets authDetails
      *
-     * @return \Walmart\Model\MP\US\Notifications\TestNotificationRequestAuthDetails|null
+     * @return \Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails|null
     
      */
     public function getAuthDetails()
@@ -394,7 +394,7 @@ class GetAllSubscriptions200ResponseEventsInnerEventInner extends BaseModel
     /**
      * Sets authDetails
      *
-     * @param \Walmart\Model\MP\US\Notifications\TestNotificationRequestAuthDetails|null $authDetails authDetails
+     * @param \Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails|null $authDetails authDetails
      *
      * @return self
     
@@ -412,7 +412,7 @@ class GetAllSubscriptions200ResponseEventsInnerEventInner extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Model\MP\US\Notifications\TestNotificationRequestHeaders|null
+     * @return \Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders|null
     
      */
     public function getHeaders()
@@ -423,7 +423,7 @@ class GetAllSubscriptions200ResponseEventsInnerEventInner extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Model\MP\US\Notifications\TestNotificationRequestHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders|null $headers headers
      *
      * @return self
     

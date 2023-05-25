@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundPreviewResponseDTO Class Doc Comment
@@ -52,7 +52,7 @@ class InboundPreviewResponseDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
-        'previews' => '\Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInner[]'
+        'previews' => '\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInner[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class InboundPreviewResponseDTO extends BaseModel
     /**
      * Gets previews
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInner[]|null
     
      */
     public function getPreviews()
@@ -173,7 +173,7 @@ class InboundPreviewResponseDTO extends BaseModel
     /**
      * Sets previews
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInner[]|null $previews List of preview responses
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInner[]|null $previews List of preview responses
      *
      * @return self
     

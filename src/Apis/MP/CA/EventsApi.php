@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\CA;
+namespace Walmart\Apis\MP\CA;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -64,11 +64,11 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\BulkAddItem200Response
+     * @return \Walmart\Models\MP\CA\Events\BulkAddItem200Response
      */
     public function autoUploadPromoSpec(
         string $eventId
-    ): \Walmart\Model\MP\CA\Events\BulkAddItem200Response {
+    ): \Walmart\Models\MP\CA\Events\BulkAddItem200Response {
         return $this->autoUploadPromoSpecWithHttpInfo($eventId);
     }
 
@@ -81,11 +81,11 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\BulkAddItem200Response
+     * @return \Walmart\Models\MP\CA\Events\BulkAddItem200Response
      */
     protected function autoUploadPromoSpecWithHttpInfo(
         string $eventId,
-    ): \Walmart\Model\MP\CA\Events\BulkAddItem200Response {
+    ): \Walmart\Models\MP\CA\Events\BulkAddItem200Response {
         $request = $this->autoUploadPromoSpecRequest($eventId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -135,19 +135,19 @@ class EventsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Events\BulkAddItem200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Events\BulkAddItem200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Events\BulkAddItem200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Events\BulkAddItem200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Events\BulkAddItem200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Events\BulkAddItem200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Events\BulkAddItem200Response';
+            $returnType = '\Walmart\Models\MP\CA\Events\BulkAddItem200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -163,7 +163,7 @@ class EventsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Events\BulkAddItem200Response',
+                        '\Walmart\Models\MP\CA\Events\BulkAddItem200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -210,7 +210,7 @@ class EventsApi extends BaseApi
     protected function autoUploadPromoSpecAsyncWithHttpInfo(
         string $eventId,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Events\BulkAddItem200Response';
+        $returnType = '\Walmart\Models\MP\CA\Events\BulkAddItem200Response';
         $request = $this->autoUploadPromoSpecRequest($eventId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -363,13 +363,13 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\BulkAddItem200Response
+     * @return \Walmart\Models\MP\CA\Events\BulkAddItem200Response
      */
     public function bulkAddItem(
         \SplFileObject $file,
         string $eventId,
         string $eventName
-    ): \Walmart\Model\MP\CA\Events\BulkAddItem200Response {
+    ): \Walmart\Models\MP\CA\Events\BulkAddItem200Response {
         return $this->bulkAddItemWithHttpInfo($file, $eventId, $eventName);
     }
 
@@ -384,13 +384,13 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\BulkAddItem200Response
+     * @return \Walmart\Models\MP\CA\Events\BulkAddItem200Response
      */
     protected function bulkAddItemWithHttpInfo(
         \SplFileObject $file,
         string $eventId,
         string $eventName,
-    ): \Walmart\Model\MP\CA\Events\BulkAddItem200Response {
+    ): \Walmart\Models\MP\CA\Events\BulkAddItem200Response {
         $request = $this->bulkAddItemRequest($file, $eventId, $eventName, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -440,19 +440,19 @@ class EventsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Events\BulkAddItem200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Events\BulkAddItem200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Events\BulkAddItem200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Events\BulkAddItem200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Events\BulkAddItem200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Events\BulkAddItem200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Events\BulkAddItem200Response';
+            $returnType = '\Walmart\Models\MP\CA\Events\BulkAddItem200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -468,7 +468,7 @@ class EventsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Events\BulkAddItem200Response',
+                        '\Walmart\Models\MP\CA\Events\BulkAddItem200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -523,7 +523,7 @@ class EventsApi extends BaseApi
         string $eventId,
         string $eventName,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Events\BulkAddItem200Response';
+        $returnType = '\Walmart\Models\MP\CA\Events\BulkAddItem200Response';
         $request = $this->bulkAddItemRequest($file, $eventId, $eventName, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -920,11 +920,11 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetAPromoItem200Response
+     * @return \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
      */
     public function getAPromoItem(
         string $eventID
-    ): \Walmart\Model\MP\CA\Events\GetAPromoItem200Response {
+    ): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response {
         return $this->getAPromoItemWithHttpInfo($eventID);
     }
 
@@ -937,11 +937,11 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetAPromoItem200Response
+     * @return \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
      */
     protected function getAPromoItemWithHttpInfo(
         string $eventID,
-    ): \Walmart\Model\MP\CA\Events\GetAPromoItem200Response {
+    ): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response {
         $request = $this->getAPromoItemRequest($eventID, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -991,19 +991,19 @@ class EventsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Events\GetAPromoItem200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Events\GetAPromoItem200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Events\GetAPromoItem200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Events\GetAPromoItem200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response';
+            $returnType = '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1019,7 +1019,7 @@ class EventsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response',
+                        '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1066,7 +1066,7 @@ class EventsApi extends BaseApi
     protected function getAPromoItemAsyncWithHttpInfo(
         string $eventID,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response';
+        $returnType = '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response';
         $request = $this->getAPromoItemRequest($eventID, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1218,12 +1218,12 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetAPromoItem200Response
+     * @return \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
      */
     public function getAllPromoItems(
         string $eventID,
         ?string $type = 'json'
-    ): \Walmart\Model\MP\CA\Events\GetAPromoItem200Response {
+    ): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response {
         return $this->getAllPromoItemsWithHttpInfo($eventID, $type);
     }
 
@@ -1237,12 +1237,12 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetAPromoItem200Response
+     * @return \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
      */
     protected function getAllPromoItemsWithHttpInfo(
         string $eventID,
         ?string $type = 'json',
-    ): \Walmart\Model\MP\CA\Events\GetAPromoItem200Response {
+    ): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response {
         $request = $this->getAllPromoItemsRequest($eventID, $type, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1292,19 +1292,19 @@ class EventsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Events\GetAPromoItem200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Events\GetAPromoItem200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Events\GetAPromoItem200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Events\GetAPromoItem200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response';
+            $returnType = '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1320,7 +1320,7 @@ class EventsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response',
+                        '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1371,7 +1371,7 @@ class EventsApi extends BaseApi
         string $eventID,
         ?string $type = 'json',
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Events\GetAPromoItem200Response';
+        $returnType = '\Walmart\Models\MP\CA\Events\GetAPromoItem200Response';
         $request = $this->getAllPromoItemsRequest($eventID, $type, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1530,9 +1530,9 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetEvent200Response
+     * @return \Walmart\Models\MP\CA\Events\GetEvent200Response
      */
-    public function getEvent(): \Walmart\Model\MP\CA\Events\GetEvent200Response
+    public function getEvent(): \Walmart\Models\MP\CA\Events\GetEvent200Response
     {
         return $this->getEventWithHttpInfo();
     }
@@ -1544,9 +1544,9 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetEvent200Response
+     * @return \Walmart\Models\MP\CA\Events\GetEvent200Response
      */
-    protected function getEventWithHttpInfo(): \Walmart\Model\MP\CA\Events\GetEvent200Response
+    protected function getEventWithHttpInfo(): \Walmart\Models\MP\CA\Events\GetEvent200Response
     {
         $request = $this->getEventRequest();
         $this->writeDebug($request);
@@ -1597,19 +1597,19 @@ class EventsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Events\GetEvent200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Events\GetEvent200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Events\GetEvent200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Events\GetEvent200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Events\GetEvent200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Events\GetEvent200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Events\GetEvent200Response';
+            $returnType = '\Walmart\Models\MP\CA\Events\GetEvent200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1625,7 +1625,7 @@ class EventsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Events\GetEvent200Response',
+                        '\Walmart\Models\MP\CA\Events\GetEvent200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1666,7 +1666,7 @@ class EventsApi extends BaseApi
      */
     protected function getEventAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Model\MP\CA\Events\GetEvent200Response';
+        $returnType = '\Walmart\Models\MP\CA\Events\GetEvent200Response';
         $request = $this->getEventRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2070,11 +2070,11 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetTotalItemCount200Response
+     * @return \Walmart\Models\MP\CA\Events\GetTotalItemCount200Response
      */
     public function getTotalItemCount(
         string $eventId
-    ): \Walmart\Model\MP\CA\Events\GetTotalItemCount200Response {
+    ): \Walmart\Models\MP\CA\Events\GetTotalItemCount200Response {
         return $this->getTotalItemCountWithHttpInfo($eventId);
     }
 
@@ -2087,11 +2087,11 @@ class EventsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\CA\Events\GetTotalItemCount200Response
+     * @return \Walmart\Models\MP\CA\Events\GetTotalItemCount200Response
      */
     protected function getTotalItemCountWithHttpInfo(
         string $eventId,
-    ): \Walmart\Model\MP\CA\Events\GetTotalItemCount200Response {
+    ): \Walmart\Models\MP\CA\Events\GetTotalItemCount200Response {
         $request = $this->getTotalItemCountRequest($eventId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2141,19 +2141,19 @@ class EventsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\CA\Events\GetTotalItemCount200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\CA\Events\GetTotalItemCount200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\CA\Events\GetTotalItemCount200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\CA\Events\GetTotalItemCount200Response';
+            $returnType = '\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2169,7 +2169,7 @@ class EventsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\CA\Events\GetTotalItemCount200Response',
+                        '\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2216,7 +2216,7 @@ class EventsApi extends BaseApi
     protected function getTotalItemCountAsyncWithHttpInfo(
         string $eventId,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\CA\Events\GetTotalItemCount200Response';
+        $returnType = '\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response';
         $request = $this->getTotalItemCountRequest($eventId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

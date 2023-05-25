@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * ResponseItem Class Doc Comment
@@ -50,8 +50,8 @@ class ResponseItem extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'associations' => '\Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]',
-        'errors' => '\Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]'
+        'associations' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]',
+        'errors' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]'
     ];
 
     /**
@@ -170,7 +170,7 @@ class ResponseItem extends BaseModel
     /**
      * Gets associations
      *
-     * @return \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]|null
     
      */
     public function getAssociations()
@@ -181,7 +181,7 @@ class ResponseItem extends BaseModel
     /**
      * Sets associations
      *
-     * @param \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]|null $associations Item Associations like shippingTemplate, shipNode.
+     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]|null $associations Item Associations like shippingTemplate, shipNode.
      *
      * @return self
     
@@ -199,7 +199,7 @@ class ResponseItem extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]|null
     
      */
     public function getErrors()
@@ -210,7 +210,7 @@ class ResponseItem extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]|null $errors errors
      *
      * @return self
     

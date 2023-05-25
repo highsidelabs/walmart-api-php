@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner Class Doc Comment
@@ -51,7 +51,7 @@ class GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner extends BaseM
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'twoDayShipping' => '\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]'
+        'twoDayShipping' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner extends BaseM
     /**
      * Gets twoDayShipping
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]|null
     
      */
     public function getTwoDayShipping()
@@ -137,7 +137,7 @@ class GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner extends BaseM
     /**
      * Sets twoDayShipping
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]|null $twoDayShipping Shipping type provided.
+     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]|null $twoDayShipping Shipping type provided.
      *
      * @return self
     

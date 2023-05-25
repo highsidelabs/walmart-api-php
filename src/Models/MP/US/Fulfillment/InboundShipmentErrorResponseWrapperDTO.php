@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundShipmentErrorResponseWrapperDTO Class Doc Comment
@@ -49,8 +49,8 @@ class InboundShipmentErrorResponseWrapperDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headers' => '\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\GetInboundOrderErrors200ResponsePayloadInner[]'
+        'headers' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200ResponsePayloadInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class InboundShipmentErrorResponseWrapperDTO extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders|null
     
      */
     public function getHeaders()
@@ -142,7 +142,7 @@ class InboundShipmentErrorResponseWrapperDTO extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders|null $headers headers
      *
      * @return self
     
@@ -160,7 +160,7 @@ class InboundShipmentErrorResponseWrapperDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundOrderErrors200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -171,7 +171,7 @@ class InboundShipmentErrorResponseWrapperDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundOrderErrors200ResponsePayloadInner[]|null $payload response payload
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200ResponsePayloadInner[]|null $payload response payload
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseElements Class Doc Comment
@@ -49,7 +49,7 @@ class GetAllOrders200ResponseElements extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'order' => '\Walmart\Model\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]'
+        'order' => '\Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class GetAllOrders200ResponseElements extends BaseModel
     /**
      * Gets order
      *
-     * @return \Walmart\Model\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]|null
     
      */
     public function getOrder()
@@ -135,7 +135,7 @@ class GetAllOrders200ResponseElements extends BaseModel
     /**
      * Sets order
      *
-     * @param \Walmart\Model\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]|null $order order
+     * @param \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]|null $order order
      *
      * @return self
     

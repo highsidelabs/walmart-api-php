@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInner Class Doc Comment
@@ -50,7 +50,7 @@ class AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInner extends B
       */
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
-        'orderLineStatuses' => '\Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatuses'
+        'orderLineStatuses' => '\Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatuses'
     ];
 
     /**
@@ -160,7 +160,7 @@ class AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInner extends B
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatuses|null
+     * @return \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatuses|null
     
      */
     public function getOrderLineStatuses()
@@ -171,7 +171,7 @@ class AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInner extends B
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatuses|null $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatuses|null $orderLineStatuses orderLineStatuses
      *
      * @return self
     

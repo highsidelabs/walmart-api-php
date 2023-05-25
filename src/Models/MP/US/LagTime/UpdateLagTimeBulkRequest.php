@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\LagTime;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\LagTime;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateLagTimeBulkRequest Class Doc Comment
@@ -49,8 +49,8 @@ class UpdateLagTimeBulkRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'lagTimeHeader' => '\Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader',
-        'lagTime' => '\Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]'
+        'lagTimeHeader' => '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader',
+        'lagTime' => '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]'
     ];
 
     /**
@@ -134,7 +134,7 @@ class UpdateLagTimeBulkRequest extends BaseModel
     /**
      * Gets lagTimeHeader
      *
-     * @return \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader
+     * @return \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader
     
      */
     public function getLagTimeHeader()
@@ -145,7 +145,7 @@ class UpdateLagTimeBulkRequest extends BaseModel
     /**
      * Sets lagTimeHeader
      *
-     * @param \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader $lagTimeHeader lagTimeHeader
+     * @param \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader $lagTimeHeader lagTimeHeader
      *
      * @return self
     
@@ -163,7 +163,7 @@ class UpdateLagTimeBulkRequest extends BaseModel
     /**
      * Gets lagTime
      *
-     * @return \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]|null
+     * @return \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]|null
     
      */
     public function getLagTime()
@@ -174,7 +174,7 @@ class UpdateLagTimeBulkRequest extends BaseModel
     /**
      * Sets lagTime
      *
-     * @param \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]|null $lagTime lagTime
+     * @param \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]|null $lagTime lagTime
      *
      * @return self
     

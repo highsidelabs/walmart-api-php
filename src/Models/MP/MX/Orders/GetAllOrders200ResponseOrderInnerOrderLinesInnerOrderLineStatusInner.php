@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner Class Doc Comment
@@ -51,7 +51,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner exten
     protected static array $openAPITypes = [
         'status' => 'string',
         'statusCode' => 'string',
-        'statusQuantity' => '\Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'statusQuantity' => '\Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
         'cancellationReason' => 'string',
         'statusDate' => 'string'
     ];
@@ -210,7 +210,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner exten
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null
+     * @return \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null
     
      */
     public function getStatusQuantity()
@@ -221,7 +221,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner exten
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity|null $statusQuantity statusQuantity
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturnOrdersResponseWithCursor Class Doc Comment
@@ -49,8 +49,8 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200ResponseMeta',
-        'returnOrders' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]'
+        'meta' => '\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200ResponseMeta',
+        'returnOrders' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]'
     ];
 
     /**
@@ -137,7 +137,7 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200ResponseMeta
+     * @return \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200ResponseMeta
     
      */
     public function getMeta()
@@ -148,7 +148,7 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetAllReturnsUsingCursor200ResponseMeta $meta meta
+     * @param \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200ResponseMeta $meta meta
      *
      * @return self
     
@@ -166,7 +166,7 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
     /**
      * Gets returnOrders
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]
     
      */
     public function getReturnOrders()
@@ -177,7 +177,7 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
     /**
      * Sets returnOrders
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[] $returnOrders List of returns for the seller.
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[] $returnOrders List of returns for the seller.
      *
      * @return self
     

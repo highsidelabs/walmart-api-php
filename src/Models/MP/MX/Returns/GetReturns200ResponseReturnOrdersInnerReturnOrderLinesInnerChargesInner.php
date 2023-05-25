@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner Class Doc Comment
@@ -53,8 +53,8 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     protected static array $openAPITypes = [
         'chargeType' => 'string',
         'chargeName' => 'string',
-        'chargeAmount' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerChargeAmount',
-        'tax' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]'
+        'chargeAmount' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerChargeAmount',
+        'tax' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]'
     ];
 
     /**
@@ -205,7 +205,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Gets chargeAmount
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerChargeAmount|null
     
      */
     public function getChargeAmount()
@@ -216,7 +216,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Sets chargeAmount
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerChargeAmount|null $chargeAmount chargeAmount
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerChargeAmount|null $chargeAmount chargeAmount
      *
      * @return self
     
@@ -234,7 +234,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Gets tax
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null
     
      */
     public function getTax()
@@ -245,7 +245,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner ex
     /**
      * Sets tax
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null $tax Taxes for each charge
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]|null $tax Taxes for each charge
      *
      * @return self
     

@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPInsightsApi  
+# Walmart\Apis\US\MPInsightsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -15,7 +15,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getCategoriesList()`
 
 ```php
-getCategoriesList($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset): \Walmart\Model\MP\US\Insights\GetCategoriesList200Response
+getCategoriesList($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset): \Walmart\Models\MP\US\Insights\GetCategoriesList200Response
 ```
 Item count with listing quality issues
 
@@ -31,7 +31,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\InsightsApi(  
+$apiInstance = new Walmart\Apis\InsightsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -65,7 +65,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Insights\GetCategoriesList200Response**](../Model/GetCategoriesList200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetCategoriesList200Response**](../Model/GetCategoriesList200Response.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ try {
 ## `getListingQualityScore()`
 
 ```php
-getListingQualityScore($viewTrendingItems, $wfsFlag): \Walmart\Model\MP\US\Insights\GetListingQualityScore200Response
+getListingQualityScore($viewTrendingItems, $wfsFlag): \Walmart\Models\MP\US\Insights\GetListingQualityScore200Response
 ```
 Seller Listing Quality Score
 
@@ -99,7 +99,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\InsightsApi(  
+$apiInstance = new Walmart\Apis\InsightsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -125,7 +125,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Insights\GetListingQualityScore200Response**](../Model/GetListingQualityScore200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetListingQualityScore200Response**](../Model/GetListingQualityScore200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ try {
 ## `getProSellerBadgeInfo()`
 
 ```php
-getProSellerBadgeInfo(): \Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200Response
+getProSellerBadgeInfo(): \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200Response
 ```
 Pro Seller Badge Status
 
@@ -159,7 +159,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\InsightsApi(  
+$apiInstance = new Walmart\Apis\InsightsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -180,7 +180,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200Response**](../Model/GetProSellerBadgeInfo200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200Response**](../Model/GetProSellerBadgeInfo200Response.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ try {
 ## `getTrendingResult()`
 
 ```php
-getTrendingResult($departmentId, $categoryId, $limit, $offset, $timeFrame): \Walmart\Model\MP\US\Insights\GetTrendingResult200Response
+getTrendingResult($departmentId, $categoryId, $limit, $offset, $timeFrame): \Walmart\Models\MP\US\Insights\GetTrendingResult200Response
 ```
 Top Trending Items
 
@@ -214,7 +214,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\InsightsApi(  
+$apiInstance = new Walmart\Apis\InsightsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -246,7 +246,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Insights\GetTrendingResult200Response**](../Model/GetTrendingResult200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetTrendingResult200Response**](../Model/GetTrendingResult200Response.md)
 
 ### Authorization
 
@@ -264,7 +264,7 @@ try {
 ## `getUnpublishedItemCount()`
 
 ```php
-getUnpublishedItemCount($fromDate): \Walmart\Model\MP\US\Insights\GetUnpublishedItemCount200Response
+getUnpublishedItemCount($fromDate): \Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200Response
 ```
 Unpublished Item Counts
 
@@ -280,7 +280,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\InsightsApi(  
+$apiInstance = new Walmart\Apis\InsightsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -304,7 +304,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Insights\GetUnpublishedItemCount200Response**](../Model/GetUnpublishedItemCount200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200Response**](../Model/GetUnpublishedItemCount200Response.md)
 
 ### Authorization
 
@@ -322,7 +322,7 @@ try {
 ## `getUnpublishedItems()`
 
 ```php
-getUnpublishedItems($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory): \Walmart\Model\MP\US\Insights\GetUnpublishedItems200Response
+getUnpublishedItems($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory): \Walmart\Models\MP\US\Insights\GetUnpublishedItems200Response
 ```
 Unpublished Items
 
@@ -338,7 +338,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\InsightsApi(  
+$apiInstance = new Walmart\Apis\InsightsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -372,7 +372,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Insights\GetUnpublishedItems200Response**](../Model/GetUnpublishedItems200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItems200Response**](../Model/GetUnpublishedItems200Response.md)
 
 ### Authorization
 
@@ -390,7 +390,7 @@ try {
 ## `itemsDetailsForListing()`
 
 ```php
-itemsDetailsForListing($itemsDetailsForListingRequest, $limit, $nextCursor): \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200Response
+itemsDetailsForListing($itemsDetailsForListingRequest, $limit, $nextCursor): \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200Response
 ```
 Item Listing Quality Details
 
@@ -406,14 +406,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\InsightsApi(  
+$apiInstance = new Walmart\Apis\InsightsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$itemsDetailsForListingRequest = {"query":{"field":"sku","value":"WB 433KP412-12"}}; // \Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequest | Request payload
+$itemsDetailsForListingRequest = {"query":{"field":"sku","value":"WB 433KP412-12"}}; // \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequest | Request payload
 $limit = '200'; // string | Specify number of items to return. If no limit is specified, API returns 200 items by default.
 $nextCursor = 'nextCursor_example'; // string | Specify pagination for long list of items.
 
@@ -427,14 +427,14 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemsDetailsForListingRequest** | [**\Walmart\Model\MP\US\Insights\ItemsDetailsForListingRequest**](../Model/ItemsDetailsForListingRequest.md)| Request payload | |
+| **itemsDetailsForListingRequest** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequest**](../Model/ItemsDetailsForListingRequest.md)| Request payload | |
 | **limit** | **string**| Specify number of items to return. If no limit is specified, API returns 200 items by default. | [optional] [default to '200'] |
 | **nextCursor** | **string**| Specify pagination for long list of items. | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200Response**](../Model/ItemsDetailsForListing200Response.md)
+[**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200Response**](../Model/ItemsDetailsForListing200Response.md)
 
 ### Authorization
 

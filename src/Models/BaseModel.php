@@ -5,10 +5,10 @@
  * PHP version 7.4
  *
  * @category Class
- * @package  Walmart\Model
+ * @package  Walmart\Models
  */
 
-namespace Walmart\Model;
+namespace Walmart\Models;
 
 use Exception;
 use ArrayAccess;
@@ -19,11 +19,11 @@ use Walmart\ObjectSerializer;
 /**
  * Basic model functionality that is needed by all non-enum models.
  *
- * @package Walmart\Model
+ * @package Walmart\Models
  *
  * @implements \ArrayAccess<string, mixed>
  * @implements \JsonSerializable
- * @implements {{invokerPackage}}\Model\ModelInterface
+ * @implements {{modelPackage}}\ModelInterface
  */
 abstract class BaseModel implements ArrayAccess, JsonSerializable, ModelInterface
 {

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase Class Doc Comment
@@ -49,10 +49,10 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase exte
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'cancellations' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations',
+        'cancellations' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations',
         'returns' => 'object',
         'issueCount' => 'string',
-        'otd' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations'
+        'otd' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations'
     ];
 
     /**
@@ -145,7 +145,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase exte
     /**
      * Gets cancellations
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null
     
      */
     public function getCancellations()
@@ -156,7 +156,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase exte
     /**
      * Sets cancellations
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null $cancellations cancellations
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null $cancellations cancellations
      *
      * @return self
     
@@ -232,7 +232,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase exte
     /**
      * Gets otd
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null
     
      */
     public function getOtd()
@@ -243,7 +243,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase exte
     /**
      * Sets otd
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null $otd otd
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null $otd otd
      *
      * @return self
     

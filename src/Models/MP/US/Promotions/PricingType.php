@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * PricingType Class Doc Comment
@@ -49,14 +49,14 @@ class PricingType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'currentPrice' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice',
+        'currentPrice' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice',
         'currentPriceType' => 'string',
-        'comparisonPrice' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice',
+        'comparisonPrice' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice',
         'comparisonPriceType' => 'string',
         'savingsAmount' => 'float',
         'savingsPercent' => 'float',
-        'priceDisplayCodes' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes',
-        'pickupDiscount' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount',
+        'priceDisplayCodes' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes',
+        'pickupDiscount' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount',
         'effectiveDate' => 'int',
         'expirationDate' => 'int',
         'processMode' => 'string',
@@ -318,7 +318,7 @@ class PricingType extends BaseModel
     /**
      * Gets currentPrice
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice
     
      */
     public function getCurrentPrice()
@@ -329,7 +329,7 @@ class PricingType extends BaseModel
     /**
      * Sets currentPrice
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice $currentPrice currentPrice
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice $currentPrice currentPrice
      *
      * @return self
     
@@ -386,7 +386,7 @@ class PricingType extends BaseModel
     /**
      * Gets comparisonPrice
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice|null
     
      */
     public function getComparisonPrice()
@@ -397,7 +397,7 @@ class PricingType extends BaseModel
     /**
      * Sets comparisonPrice
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice|null $comparisonPrice comparisonPrice
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice|null $comparisonPrice comparisonPrice
      *
      * @return self
     
@@ -512,7 +512,7 @@ class PricingType extends BaseModel
     /**
      * Gets priceDisplayCodes
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes|null
     
      */
     public function getPriceDisplayCodes()
@@ -523,7 +523,7 @@ class PricingType extends BaseModel
     /**
      * Sets priceDisplayCodes
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes|null $priceDisplayCodes priceDisplayCodes
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes|null $priceDisplayCodes priceDisplayCodes
      *
      * @return self
     
@@ -541,7 +541,7 @@ class PricingType extends BaseModel
     /**
      * Gets pickupDiscount
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount|null
     
      */
     public function getPickupDiscount()
@@ -552,7 +552,7 @@ class PricingType extends BaseModel
     /**
      * Sets pickupDiscount
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount|null $pickupDiscount pickupDiscount
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount|null $pickupDiscount pickupDiscount
      *
      * @return self
     

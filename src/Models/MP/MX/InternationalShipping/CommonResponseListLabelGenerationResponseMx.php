@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * CommonResponseListLabelGenerationResponseMx Class Doc Comment
@@ -49,8 +49,8 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'data' => '\Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseData[]',
-        'errors' => '\Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'data' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseData[]',
+        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Gets data
      *
-     * @return \Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseData[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseData[]|null
     
      */
     public function getData()
@@ -142,7 +142,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Sets data
      *
-     * @param \Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseData[]|null $data data
+     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseData[]|null $data data
      *
      * @return self
     
@@ -160,7 +160,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -171,7 +171,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

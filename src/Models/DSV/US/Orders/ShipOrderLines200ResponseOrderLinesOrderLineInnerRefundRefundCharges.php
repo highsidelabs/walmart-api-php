@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundCharges Class Doc Comment
@@ -49,7 +49,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundCharges exten
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'refundCharge' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]'
+        'refundCharge' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundCharges exten
     /**
      * Gets refundCharge
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null
     
      */
     public function getRefundCharge()
@@ -135,7 +135,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundCharges exten
     /**
      * Sets refundCharge
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null $refundCharge refundCharge
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]|null $refundCharge refundCharge
      *
      * @return self
     

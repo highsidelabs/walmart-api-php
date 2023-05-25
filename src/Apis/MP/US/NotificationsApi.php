@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\US;
+namespace Walmart\Apis\MP\US;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -58,15 +58,15 @@ class NotificationsApi extends BaseApi
      *
      * Create subscription
      *
-     * @param  \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\CreateSubscription200Response
+     * @return \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
      */
     public function createSubscription(
-        \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest
-    ): \Walmart\Model\MP\US\Notifications\CreateSubscription200Response {
+        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest
+    ): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response {
         return $this->createSubscriptionWithHttpInfo($createSubscriptionRequest);
     }
 
@@ -75,15 +75,15 @@ class NotificationsApi extends BaseApi
      *
      * Create subscription
      *
-     * @param  \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\CreateSubscription200Response
+     * @return \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
      */
     protected function createSubscriptionWithHttpInfo(
-        \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
-    ): \Walmart\Model\MP\US\Notifications\CreateSubscription200Response {
+        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
+    ): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response {
         $request = $this->createSubscriptionRequest($createSubscriptionRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -133,19 +133,19 @@ class NotificationsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Notifications\CreateSubscription200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Notifications\CreateSubscription200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Notifications\CreateSubscription200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Notifications\CreateSubscription200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response';
+            $returnType = '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -161,7 +161,7 @@ class NotificationsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response',
+                        '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -178,13 +178,13 @@ class NotificationsApi extends BaseApi
      *
      * Create subscription
      *
-     * @param  \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createSubscriptionAsync(
-        \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest
+        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest
     ): PromiseInterface {
         return $this->createSubscriptionAsyncWithHttpInfo($createSubscriptionRequest)
             ->then(
@@ -200,15 +200,15 @@ class NotificationsApi extends BaseApi
      *
      * Create subscription
      *
-     * @param  \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createSubscriptionAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
+        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response';
+        $returnType = '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response';
         $request = $this->createSubscriptionRequest($createSubscriptionRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -254,13 +254,13 @@ class NotificationsApi extends BaseApi
     /**
      * Create request for operation 'createSubscription'
      *
-     * @param  \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createSubscriptionRequest(
-        \Walmart\Model\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
+        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
     ): Request {
         $contentType = self::contentTypes['createSubscription'];
 
@@ -350,11 +350,11 @@ class NotificationsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\DeleteSubscription200Response
+     * @return \Walmart\Models\MP\US\Notifications\DeleteSubscription200Response
      */
     public function deleteSubscription(
         string $subscriptionId
-    ): \Walmart\Model\MP\US\Notifications\DeleteSubscription200Response {
+    ): \Walmart\Models\MP\US\Notifications\DeleteSubscription200Response {
         return $this->deleteSubscriptionWithHttpInfo($subscriptionId);
     }
 
@@ -367,11 +367,11 @@ class NotificationsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\DeleteSubscription200Response
+     * @return \Walmart\Models\MP\US\Notifications\DeleteSubscription200Response
      */
     protected function deleteSubscriptionWithHttpInfo(
         string $subscriptionId,
-    ): \Walmart\Model\MP\US\Notifications\DeleteSubscription200Response {
+    ): \Walmart\Models\MP\US\Notifications\DeleteSubscription200Response {
         $request = $this->deleteSubscriptionRequest($subscriptionId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -421,19 +421,19 @@ class NotificationsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Notifications\DeleteSubscription200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Notifications\DeleteSubscription200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Notifications\DeleteSubscription200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Notifications\DeleteSubscription200Response';
+            $returnType = '\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -449,7 +449,7 @@ class NotificationsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Notifications\DeleteSubscription200Response',
+                        '\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -496,7 +496,7 @@ class NotificationsApi extends BaseApi
     protected function deleteSubscriptionAsyncWithHttpInfo(
         string $subscriptionId,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Notifications\DeleteSubscription200Response';
+        $returnType = '\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response';
         $request = $this->deleteSubscriptionRequest($subscriptionId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -643,14 +643,14 @@ class NotificationsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response
+     * @return \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response
      */
     public function getAllSubscriptions(
         ?string $subscriptionId = null,
         ?string $eventType = null,
         ?string $resourceName = null,
         ?string $status = null
-    ): \Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response {
+    ): \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response {
         return $this->getAllSubscriptionsWithHttpInfo($subscriptionId, $eventType, $resourceName, $status);
     }
 
@@ -666,14 +666,14 @@ class NotificationsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response
+     * @return \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response
      */
     protected function getAllSubscriptionsWithHttpInfo(
         ?string $subscriptionId = null,
         ?string $eventType = null,
         ?string $resourceName = null,
         ?string $status = null,
-    ): \Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response {
+    ): \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response {
         $request = $this->getAllSubscriptionsRequest($subscriptionId, $eventType, $resourceName, $status, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -723,19 +723,19 @@ class NotificationsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response';
+            $returnType = '\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -751,7 +751,7 @@ class NotificationsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response',
+                        '\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -810,7 +810,7 @@ class NotificationsApi extends BaseApi
         ?string $resourceName = null,
         ?string $status = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Notifications\GetAllSubscriptions200Response';
+        $returnType = '\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response';
         $request = $this->getAllSubscriptionsRequest($subscriptionId, $eventType, $resourceName, $status, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -979,9 +979,9 @@ class NotificationsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\GetEventTypes200Response
+     * @return \Walmart\Models\MP\US\Notifications\GetEventTypes200Response
      */
-    public function getEventTypes(): \Walmart\Model\MP\US\Notifications\GetEventTypes200Response
+    public function getEventTypes(): \Walmart\Models\MP\US\Notifications\GetEventTypes200Response
     {
         return $this->getEventTypesWithHttpInfo();
     }
@@ -993,9 +993,9 @@ class NotificationsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\GetEventTypes200Response
+     * @return \Walmart\Models\MP\US\Notifications\GetEventTypes200Response
      */
-    protected function getEventTypesWithHttpInfo(): \Walmart\Model\MP\US\Notifications\GetEventTypes200Response
+    protected function getEventTypesWithHttpInfo(): \Walmart\Models\MP\US\Notifications\GetEventTypes200Response
     {
         $request = $this->getEventTypesRequest();
         $this->writeDebug($request);
@@ -1046,19 +1046,19 @@ class NotificationsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Notifications\GetEventTypes200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Notifications\GetEventTypes200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Notifications\GetEventTypes200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Notifications\GetEventTypes200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Notifications\GetEventTypes200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Notifications\GetEventTypes200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Notifications\GetEventTypes200Response';
+            $returnType = '\Walmart\Models\MP\US\Notifications\GetEventTypes200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1074,7 +1074,7 @@ class NotificationsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Notifications\GetEventTypes200Response',
+                        '\Walmart\Models\MP\US\Notifications\GetEventTypes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1115,7 +1115,7 @@ class NotificationsApi extends BaseApi
      */
     protected function getEventTypesAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Model\MP\US\Notifications\GetEventTypes200Response';
+        $returnType = '\Walmart\Models\MP\US\Notifications\GetEventTypes200Response';
         $request = $this->getEventTypesRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1237,15 +1237,15 @@ class NotificationsApi extends BaseApi
      *
      * Test Notification
      *
-     * @param  \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\TestNotification200Response
+     * @return \Walmart\Models\MP\US\Notifications\TestNotification200Response
      */
     public function testNotification(
-        \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest
-    ): \Walmart\Model\MP\US\Notifications\TestNotification200Response {
+        \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest
+    ): \Walmart\Models\MP\US\Notifications\TestNotification200Response {
         return $this->testNotificationWithHttpInfo($testNotificationRequest);
     }
 
@@ -1254,15 +1254,15 @@ class NotificationsApi extends BaseApi
      *
      * Test Notification
      *
-     * @param  \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\TestNotification200Response
+     * @return \Walmart\Models\MP\US\Notifications\TestNotification200Response
      */
     protected function testNotificationWithHttpInfo(
-        \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
-    ): \Walmart\Model\MP\US\Notifications\TestNotification200Response {
+        \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
+    ): \Walmart\Models\MP\US\Notifications\TestNotification200Response {
         $request = $this->testNotificationRequest($testNotificationRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1312,19 +1312,19 @@ class NotificationsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Notifications\TestNotification200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Notifications\TestNotification200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Notifications\TestNotification200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Notifications\TestNotification200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Notifications\TestNotification200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Notifications\TestNotification200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Notifications\TestNotification200Response';
+            $returnType = '\Walmart\Models\MP\US\Notifications\TestNotification200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1340,7 +1340,7 @@ class NotificationsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Notifications\TestNotification200Response',
+                        '\Walmart\Models\MP\US\Notifications\TestNotification200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1357,13 +1357,13 @@ class NotificationsApi extends BaseApi
      *
      * Test Notification
      *
-     * @param  \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function testNotificationAsync(
-        \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest
+        \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest
     ): PromiseInterface {
         return $this->testNotificationAsyncWithHttpInfo($testNotificationRequest)
             ->then(
@@ -1379,15 +1379,15 @@ class NotificationsApi extends BaseApi
      *
      * Test Notification
      *
-     * @param  \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function testNotificationAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
+        \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Notifications\TestNotification200Response';
+        $returnType = '\Walmart\Models\MP\US\Notifications\TestNotification200Response';
         $request = $this->testNotificationRequest($testNotificationRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1433,13 +1433,13 @@ class NotificationsApi extends BaseApi
     /**
      * Create request for operation 'testNotification'
      *
-     * @param  \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function testNotificationRequest(
-        \Walmart\Model\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
+        \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
     ): Request {
         $contentType = self::contentTypes['testNotification'];
 
@@ -1526,16 +1526,16 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\CreateSubscription200Response
+     * @return \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
      */
     public function updateSubscription(
         string $subscriptionId,
-        \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest
-    ): \Walmart\Model\MP\US\Notifications\CreateSubscription200Response {
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest
+    ): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response {
         return $this->updateSubscriptionWithHttpInfo($subscriptionId, $updateSubscriptionRequest);
     }
 
@@ -1545,16 +1545,16 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Notifications\CreateSubscription200Response
+     * @return \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
      */
     protected function updateSubscriptionWithHttpInfo(
         string $subscriptionId,
-        \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
-    ): \Walmart\Model\MP\US\Notifications\CreateSubscription200Response {
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
+    ): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response {
         $request = $this->updateSubscriptionRequest($subscriptionId, $updateSubscriptionRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1604,19 +1604,19 @@ class NotificationsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Notifications\CreateSubscription200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Notifications\CreateSubscription200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Notifications\CreateSubscription200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Notifications\CreateSubscription200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response';
+            $returnType = '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1632,7 +1632,7 @@ class NotificationsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response',
+                        '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1650,14 +1650,14 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSubscriptionAsync(
         string $subscriptionId,
-        \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest
     ): PromiseInterface {
         return $this->updateSubscriptionAsyncWithHttpInfo($subscriptionId, $updateSubscriptionRequest)
             ->then(
@@ -1674,16 +1674,16 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateSubscriptionAsyncWithHttpInfo(
         string $subscriptionId,
-        \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Notifications\CreateSubscription200Response';
+        $returnType = '\Walmart\Models\MP\US\Notifications\CreateSubscription200Response';
         $request = $this->updateSubscriptionRequest($subscriptionId, $updateSubscriptionRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1730,14 +1730,14 @@ class NotificationsApi extends BaseApi
      * Create request for operation 'updateSubscription'
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateSubscriptionRequest(
         string $subscriptionId,
-        \Walmart\Model\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
     ): Request {
         $contentType = self::contentTypes['updateSubscription'];
 

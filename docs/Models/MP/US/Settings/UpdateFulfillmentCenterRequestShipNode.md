@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **timeZone** | **string** | Time zone that the seller ships from.Allowed timezones are PST, EST, CST, MST. | [optional]
 **distributorSupportedServices** | **string[]** | The services supported by the defined physical ship node . The allowed values: TWO_DAY_DELIVERY. | [optional]
 **customNodeId** | **string** | Custom node identifier provided by seller. Allowed values are alphanumeric | String | [optional]
-**postalAddress** | [**\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress**](GetAllFulfillmentCenters200ResponseInnerPostalAddress.md) |  | [optional]
-**shippingDetails** | [**\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]**](GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner.md) | Shipping Details. | [optional]
-**calendarDayConfiguration** | [**\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfiguration**](UpdateFulfillmentCenterRequestShipNodeCalendarDayConfiguration.md) |  | [optional]
+**postalAddress** | [**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress**](GetAllFulfillmentCenters200ResponseInnerPostalAddress.md) |  | [optional]
+**shippingDetails** | [**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]**](GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner.md) | Shipping Details. | [optional]
+**calendarDayConfiguration** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfiguration**](UpdateFulfillmentCenterRequestShipNodeCalendarDayConfiguration.md) |  | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

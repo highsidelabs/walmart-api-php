@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllRulesResponse Class Doc Comment
@@ -49,7 +49,7 @@ class GetAllRulesResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rules' => '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]',
+        'rules' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]',
         'status' => 'string'
     ];
 
@@ -131,7 +131,7 @@ class GetAllRulesResponse extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]|null
     
      */
     public function getRules()
@@ -142,7 +142,7 @@ class GetAllRulesResponse extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]|null $rules rules
      *
      * @return self
     

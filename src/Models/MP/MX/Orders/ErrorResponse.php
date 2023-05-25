@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ErrorResponse Class Doc Comment
@@ -49,7 +49,7 @@ class ErrorResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'error' => '\Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseError'
+        'error' => '\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError'
     ];
 
     /**
@@ -124,7 +124,7 @@ class ErrorResponse extends BaseModel
     /**
      * Gets error
      *
-     * @return \Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseError|null
+     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null
     
      */
     public function getError()
@@ -135,7 +135,7 @@ class ErrorResponse extends BaseModel
     /**
      * Sets error
      *
-     * @param \Walmart\Model\MP\MX\Orders\ShippingUpdates400ResponseError|null $error error
+     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null $error error
      *
      * @return self
     

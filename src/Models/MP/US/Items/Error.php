@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * Error Class Doc Comment
@@ -55,7 +55,7 @@ class Error extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]',
+        'causes' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]',
         'errorIdentifiers' => 'array<string,object>'
     ];
 
@@ -433,7 +433,7 @@ class Error extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]|null
     
      */
     public function getCauses()
@@ -444,7 +444,7 @@ class Error extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]|null $causes causes
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CustomerOrderDetailsResponse Class Doc Comment
@@ -56,9 +56,9 @@ class CustomerOrderDetailsResponse extends BaseModel
         'orderType' => 'string',
         'status' => 'string',
         'orderDate' => '\DateTime',
-        'buyerInfo' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo',
-        'shipments' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner[]',
-        'orderLines' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]'
+        'buyerInfo' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo',
+        'shipments' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner[]',
+        'orderLines' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]'
     ];
 
     /**
@@ -320,7 +320,7 @@ class CustomerOrderDetailsResponse extends BaseModel
     /**
      * Gets buyerInfo
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo|null
     
      */
     public function getBuyerInfo()
@@ -331,7 +331,7 @@ class CustomerOrderDetailsResponse extends BaseModel
     /**
      * Sets buyerInfo
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo|null $buyerInfo buyerInfo
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo|null $buyerInfo buyerInfo
      *
      * @return self
     
@@ -349,7 +349,7 @@ class CustomerOrderDetailsResponse extends BaseModel
     /**
      * Gets shipments
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner[]|null
     
      */
     public function getShipments()
@@ -360,7 +360,7 @@ class CustomerOrderDetailsResponse extends BaseModel
     /**
      * Sets shipments
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner[]|null $shipments createDate of the order
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner[]|null $shipments createDate of the order
      *
      * @return self
     
@@ -378,7 +378,7 @@ class CustomerOrderDetailsResponse extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]|null
     
      */
     public function getOrderLines()
@@ -389,7 +389,7 @@ class CustomerOrderDetailsResponse extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]|null $orderLines order lines details
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]|null $orderLines order lines details
      *
      * @return self
     

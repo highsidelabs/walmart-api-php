@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundPreview200ResponsePayloadInnerPreviewsInner Class Doc Comment
@@ -52,7 +52,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'previewType' => 'string',
-        'preview' => '\Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]'
+        'preview' => '\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInner extends BaseModel
     /**
      * Gets preview
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]|null
     
      */
     public function getPreview()
@@ -173,7 +173,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInner extends BaseModel
     /**
      * Sets preview
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]|null $preview Preview
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]|null $preview Preview
      *
      * @return self
     

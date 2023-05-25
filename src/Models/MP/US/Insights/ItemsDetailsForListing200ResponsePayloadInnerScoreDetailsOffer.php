@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer Class Doc Comment
@@ -50,9 +50,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer extends Bas
       */
     protected static array $openAPITypes = [
         'issueCount' => 'int',
-        'price' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice',
-        'shippingSpeed' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed',
-        'publishAndTransactable' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable'
+        'price' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice',
+        'shippingSpeed' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed',
+        'publishAndTransactable' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable'
     ];
 
     /**
@@ -174,7 +174,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer extends Bas
     /**
      * Gets price
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null
     
      */
     public function getPrice()
@@ -185,7 +185,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer extends Bas
     /**
      * Sets price
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null $price price
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null $price price
      *
      * @return self
     
@@ -203,7 +203,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer extends Bas
     /**
      * Gets shippingSpeed
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed|null
     
      */
     public function getShippingSpeed()
@@ -214,7 +214,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer extends Bas
     /**
      * Sets shippingSpeed
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed|null $shippingSpeed shippingSpeed
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed|null $shippingSpeed shippingSpeed
      *
      * @return self
     
@@ -232,7 +232,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer extends Bas
     /**
      * Gets publishAndTransactable
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable|null
     
      */
     public function getPublishAndTransactable()
@@ -243,7 +243,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer extends Bas
     /**
      * Sets publishAndTransactable
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable|null $publishAndTransactable publishAndTransactable
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable|null $publishAndTransactable publishAndTransactable
      *
      * @return self
     

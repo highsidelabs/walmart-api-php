@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\OnRequestReports;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\OnRequestReports;
+use Walmart\Models\BaseModel;
 
 /**
  * DownloadReportResponse Class Doc Comment

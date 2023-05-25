@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillmentsRequest Class Doc Comment
@@ -49,8 +49,8 @@ class PromiseFulfillmentsRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayload'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayload'
     ];
 
     /**
@@ -134,7 +134,7 @@ class PromiseFulfillmentsRequest extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader
     
      */
     public function getHeader()
@@ -145,7 +145,7 @@ class PromiseFulfillmentsRequest extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader $header header
      *
      * @return self
     
@@ -163,7 +163,7 @@ class PromiseFulfillmentsRequest extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayload|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayload|null
     
      */
     public function getPayload()
@@ -174,7 +174,7 @@ class PromiseFulfillmentsRequest extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayload|null $payload payload
      *
      * @return self
     

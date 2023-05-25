@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * InventoryV2 Class Doc Comment
@@ -50,7 +50,7 @@ class InventoryV2 extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'quantity' => '\Walmart\Model\MP\CA\Inventory\GetInventory200ResponseQuantity',
+        'quantity' => '\Walmart\Models\MP\CA\Inventory\GetInventory200ResponseQuantity',
         'fulfillmentLagTime' => 'int',
         'partnerId' => 'string',
         'offerId' => 'string'
@@ -190,7 +190,7 @@ class InventoryV2 extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Model\MP\CA\Inventory\GetInventory200ResponseQuantity
+     * @return \Walmart\Models\MP\CA\Inventory\GetInventory200ResponseQuantity
     
      */
     public function getQuantity()
@@ -201,7 +201,7 @@ class InventoryV2 extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Model\MP\CA\Inventory\GetInventory200ResponseQuantity $quantity quantity
+     * @param \Walmart\Models\MP\CA\Inventory\GetInventory200ResponseQuantity $quantity quantity
      *
      * @return self
     

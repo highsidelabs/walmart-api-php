@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetails Class Doc Comment
@@ -49,10 +49,10 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'offer' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer',
-        'ratingReviews' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsRatingReviews',
-        'postPurchase' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase',
-        'contentAndDiscoverability' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverability'
+        'offer' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer',
+        'ratingReviews' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsRatingReviews',
+        'postPurchase' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase',
+        'contentAndDiscoverability' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverability'
     ];
 
     /**
@@ -145,7 +145,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Gets offer
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer|null
     
      */
     public function getOffer()
@@ -156,7 +156,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Sets offer
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer|null $offer offer
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOffer|null $offer offer
      *
      * @return self
     
@@ -174,7 +174,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Gets ratingReviews
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsRatingReviews|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsRatingReviews|null
     
      */
     public function getRatingReviews()
@@ -185,7 +185,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Sets ratingReviews
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsRatingReviews|null $ratingReviews ratingReviews
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsRatingReviews|null $ratingReviews ratingReviews
      *
      * @return self
     
@@ -203,7 +203,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Gets postPurchase
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase|null
     
      */
     public function getPostPurchase()
@@ -214,7 +214,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Sets postPurchase
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase|null $postPurchase postPurchase
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase|null $postPurchase postPurchase
      *
      * @return self
     
@@ -232,7 +232,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Gets contentAndDiscoverability
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverability|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverability|null
     
      */
     public function getContentAndDiscoverability()
@@ -243,7 +243,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
     /**
      * Sets contentAndDiscoverability
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverability|null $contentAndDiscoverability contentAndDiscoverability
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverability|null $contentAndDiscoverability contentAndDiscoverability
      *
      * @return self
     

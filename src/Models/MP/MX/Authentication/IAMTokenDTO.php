@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Authentication;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Authentication;
+use Walmart\Models\BaseModel;
 
 /**
  * IAMTokenDTO Class Doc Comment

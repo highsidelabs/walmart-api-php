@@ -1,10 +1,10 @@
 <?php
 
-namespace Walmart\Api\MP;
+namespace Walmart\Apis\MP;
 
-use Walmart\Api\MP\CA;
-use Walmart\Api\MP\MX;
-use Walmart\Api\MP\US;
+use Walmart\Apis\MP\CA;
+use Walmart\Apis\MP\MX;
+use Walmart\Apis\MP\US;
 use Walmart\Enums\Country;
 use Walmart\Walmart;
 

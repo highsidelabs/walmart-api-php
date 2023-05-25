@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelOrderLinesRequestOrderCancellationOrderLines Class Doc Comment
@@ -49,7 +49,7 @@ class CancelOrderLinesRequestOrderCancellationOrderLines extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLine' => '\Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInner[]'
+        'orderLine' => '\Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class CancelOrderLinesRequestOrderCancellationOrderLines extends BaseModel
     /**
      * Gets orderLine
      *
-     * @return \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInner[]|null
     
      */
     public function getOrderLine()
@@ -135,7 +135,7 @@ class CancelOrderLinesRequestOrderCancellationOrderLines extends BaseModel
     /**
      * Sets orderLine
      *
-     * @param \Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInner[]|null $orderLine orderLine
+     * @param \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInner[]|null $orderLine orderLine
      *
      * @return self
     

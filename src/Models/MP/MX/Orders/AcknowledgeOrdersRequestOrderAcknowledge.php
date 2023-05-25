@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * AcknowledgeOrdersRequestOrderAcknowledge Class Doc Comment
@@ -49,7 +49,7 @@ class AcknowledgeOrdersRequestOrderAcknowledge extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLines' => '\Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLines'
+        'orderLines' => '\Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLines'
     ];
 
     /**
@@ -124,7 +124,7 @@ class AcknowledgeOrdersRequestOrderAcknowledge extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLines|null
+     * @return \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLines|null
     
      */
     public function getOrderLines()
@@ -135,7 +135,7 @@ class AcknowledgeOrdersRequestOrderAcknowledge extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLines|null $orderLines orderLines
+     * @param \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLines|null $orderLines orderLines
      *
      * @return self
     

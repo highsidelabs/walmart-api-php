@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetSearchResult200Response Class Doc Comment
@@ -49,7 +49,7 @@ class GetSearchResult200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'items' => '\Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInner[]'
+        'items' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInner[]'
     ];
 
     /**
@@ -157,7 +157,7 @@ class GetSearchResult200Response extends BaseModel
     /**
      * Gets items
      *
-     * @return \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInner[]|null
     
      */
     public function getItems()
@@ -168,7 +168,7 @@ class GetSearchResult200Response extends BaseModel
     /**
      * Sets items
      *
-     * @param \Walmart\Model\MP\US\Items\GetSearchResult200ResponseItemsInner[]|null $items items
+     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInner[]|null $items items
      *
      * @return self
     

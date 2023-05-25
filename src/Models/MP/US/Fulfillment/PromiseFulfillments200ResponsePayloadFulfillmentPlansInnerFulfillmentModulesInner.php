@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner Class Doc Comment
@@ -52,7 +52,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
       */
     protected static array $openAPITypes = [
         'name' => 'string',
-        'fulfillmentGroups' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInner[]'
+        'fulfillmentGroups' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInner[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets fulfillmentGroups
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInner[]|null
     
      */
     public function getFulfillmentGroups()
@@ -173,7 +173,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets fulfillmentGroups
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInner[]|null $fulfillmentGroups Fulfillment Group details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInner[]|null $fulfillmentGroups Fulfillment Group details.
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * ReturnTrackingDetail Class Doc Comment
@@ -55,7 +55,7 @@ class ReturnTrackingDetail extends BaseModel
         'eventTag' => 'string',
         'eventDescription' => 'string',
         'eventTime' => '\DateTime',
-        'references' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]'
+        'references' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]'
     ];
 
     /**
@@ -270,7 +270,7 @@ class ReturnTrackingDetail extends BaseModel
     /**
      * Gets references
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null
     
      */
     public function getReferences()
@@ -281,7 +281,7 @@ class ReturnTrackingDetail extends BaseModel
     /**
      * Sets references
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null $references Used only for 1P
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null $references Used only for 1P
      *
      * @return self
     

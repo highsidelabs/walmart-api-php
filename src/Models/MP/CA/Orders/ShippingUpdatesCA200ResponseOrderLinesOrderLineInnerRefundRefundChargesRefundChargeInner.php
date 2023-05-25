@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner Class Doc Comment
@@ -50,7 +50,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRef
       */
     protected static array $openAPITypes = [
         'refundReason' => 'string',
-        'charge' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner'
+        'charge' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner'
     ];
 
     /**
@@ -263,7 +263,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRef
     /**
      * Gets charge
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner
     
      */
     public function getCharge()
@@ -274,7 +274,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRef
     /**
      * Sets charge
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner $charge charge
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner $charge charge
      *
      * @return self
     

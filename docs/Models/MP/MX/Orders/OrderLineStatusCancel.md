@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **string** |  | [optional]
-**statusQuantity** | [**\Walmart\Model\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity**](CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity.md) |  | [optional]
+**statusQuantity** | [**\Walmart\Models\MP\MX\Orders\CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity**](CancelOrderLinesRequestOrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity.md) |  | [optional]
 **cancellationReason** | **string** |  | [optional]
 
 

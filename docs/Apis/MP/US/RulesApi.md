@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPRulesApi  
+# Walmart\Apis\US\MPRulesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -25,7 +25,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `activateRule()`
 
 ```php
-activateRule($inactivateRuleRequest): \Walmart\Model\MP\US\Rules\ActivateRule200Response
+activateRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\ActivateRule200Response
 ```
 Activate rule
 
@@ -41,14 +41,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"39","ruleStatus":"Submitted"},{"ruleId":"44","ruleStatus":"Inactive"}]}; // \Walmart\Model\MP\US\Rules\InactivateRuleRequest | Request fields
+$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"39","ruleStatus":"Submitted"},{"ruleId":"44","ruleStatus":"Inactive"}]}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
     $result = $apiInstance->activateRule($inactivateRuleRequest);
@@ -60,12 +60,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Model\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\ActivateRule200Response**](../Model/ActivateRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\ActivateRule200Response**](../Model/ActivateRule200Response.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ try {
 ## `changeAssortmentType()`
 
 ```php
-changeAssortmentType($enable, $body): \Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response
+changeAssortmentType($enable, $body): \Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response
 ```
 Change assortment type
 
@@ -99,7 +99,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -125,7 +125,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response**](../Model/ChangeAssortmentType200Response.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response**](../Model/ChangeAssortmentType200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ try {
 ## `createItemRule()`
 
 ```php
-createItemRule($createItemRuleRequest): \Walmart\Model\MP\US\Rules\CreateItemRule200Response
+createItemRule($createItemRuleRequest): \Walmart\Models\MP\US\Rules\CreateItemRule200Response
 ```
 Create a new Rule
 
@@ -159,14 +159,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createItemRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"price","operator":"EQUALS","value":"20"},{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}}; // \Walmart\Model\MP\US\Rules\CreateItemRuleRequest | Request fields
+$createItemRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"price","operator":"EQUALS","value":"20"},{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}}; // \Walmart\Models\MP\US\Rules\CreateItemRuleRequest | Request fields
 
 try {
     $result = $apiInstance->createItemRule($createItemRuleRequest);
@@ -178,12 +178,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createItemRuleRequest** | [**\Walmart\Model\MP\US\Rules\CreateItemRuleRequest**](../Model/CreateItemRuleRequest.md)| Request fields | |
+| **createItemRuleRequest** | [**\Walmart\Models\MP\US\Rules\CreateItemRuleRequest**](../Model/CreateItemRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\CreateItemRule200Response**](../Model/CreateItemRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\CreateItemRule200Response**](../Model/CreateItemRule200Response.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ try {
 ## `createOverrideExceptions()`
 
 ```php
-createOverrideExceptions($deleteExceptionsRequest): \Walmart\Model\MP\US\Rules\DeleteExceptions200Response
+createOverrideExceptions($deleteExceptionsRequest): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
 ```
 Create override exceptions
 
@@ -217,14 +217,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest | Request fields
+$deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest | Request fields
 
 try {
     $result = $apiInstance->createOverrideExceptions($deleteExceptionsRequest);
@@ -236,12 +236,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deleteExceptionsRequest** | [**\Walmart\Model\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
+| **deleteExceptionsRequest** | [**\Walmart\Models\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\DeleteExceptions200Response**](../Model/DeleteExceptions200Response.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptions200Response**](../Model/DeleteExceptions200Response.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ try {
 ## `deleteExceptions()`
 
 ```php
-deleteExceptions($deleteExceptionsRequest): \Walmart\Model\MP\US\Rules\DeleteExceptions200Response
+deleteExceptions($deleteExceptionsRequest): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
 ```
 Delete exceptions
 
@@ -275,14 +275,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest | Request fields
+$deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest | Request fields
 
 try {
     $result = $apiInstance->deleteExceptions($deleteExceptionsRequest);
@@ -294,12 +294,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deleteExceptionsRequest** | [**\Walmart\Model\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
+| **deleteExceptionsRequest** | [**\Walmart\Models\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\DeleteExceptions200Response**](../Model/DeleteExceptions200Response.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptions200Response**](../Model/DeleteExceptions200Response.md)
 
 ### Authorization
 
@@ -317,7 +317,7 @@ try {
 ## `deleteRule()`
 
 ```php
-deleteRule($ruleId, $ruleStatus): \Walmart\Model\MP\US\Rules\DeleteRule200Response
+deleteRule($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\DeleteRule200Response
 ```
 Delete rule
 
@@ -333,7 +333,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -359,7 +359,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\DeleteRule200Response**](../Model/DeleteRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\DeleteRule200Response**](../Model/DeleteRule200Response.md)
 
 ### Authorization
 
@@ -393,7 +393,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -448,7 +448,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -492,7 +492,7 @@ try {
 ## `getARule()`
 
 ```php
-getARule($ruleId, $ruleStatus): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+getARule($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
 ```
 Get a rule
 
@@ -508,7 +508,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -534,7 +534,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
 
 ### Authorization
 
@@ -552,7 +552,7 @@ try {
 ## `getAllAreas()`
 
 ```php
-getAllAreas(): \Walmart\Model\MP\US\Rules\GetAllAreas200Response
+getAllAreas(): \Walmart\Models\MP\US\Rules\GetAllAreas200Response
 ```
 Get all areas
 
@@ -568,7 +568,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -589,7 +589,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\GetAllAreas200Response**](../Model/GetAllAreas200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllAreas200Response**](../Model/GetAllAreas200Response.md)
 
 ### Authorization
 
@@ -607,7 +607,7 @@ try {
 ## `getAllExceptions()`
 
 ```php
-getAllExceptions(): \Walmart\Model\MP\US\Rules\GetAllExceptions200Response
+getAllExceptions(): \Walmart\Models\MP\US\Rules\GetAllExceptions200Response
 ```
 Gets all exceptions
 
@@ -623,7 +623,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -644,7 +644,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\GetAllExceptions200Response**](../Model/GetAllExceptions200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllExceptions200Response**](../Model/GetAllExceptions200Response.md)
 
 ### Authorization
 
@@ -662,7 +662,7 @@ try {
 ## `getAllRules()`
 
 ```php
-getAllRules(): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+getAllRules(): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
 ```
 Get all rules
 
@@ -678,7 +678,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -699,7 +699,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
 
 ### Authorization
 
@@ -717,7 +717,7 @@ try {
 ## `getAllSubCategories()`
 
 ```php
-getAllSubCategories(): \Walmart\Model\MP\US\Rules\GetAllSubCategories200Response
+getAllSubCategories(): \Walmart\Models\MP\US\Rules\GetAllSubCategories200Response
 ```
 Get all sub-categories
 
@@ -733,7 +733,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -754,7 +754,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\GetAllSubCategories200Response**](../Model/GetAllSubCategories200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response**](../Model/GetAllSubCategories200Response.md)
 
 ### Authorization
 
@@ -772,7 +772,7 @@ try {
 ## `getSimulationResult()`
 
 ```php
-getSimulationResult($ruleId, $ruleStatus): \Walmart\Model\MP\US\Rules\GetSimulationResult200Response
+getSimulationResult($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\GetSimulationResult200Response
 ```
 Get simulation result
 
@@ -788,7 +788,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -814,7 +814,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\GetSimulationResult200Response**](../Model/GetSimulationResult200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetSimulationResult200Response**](../Model/GetSimulationResult200Response.md)
 
 ### Authorization
 
@@ -832,7 +832,7 @@ try {
 ## `inactivateRule()`
 
 ```php
-inactivateRule($inactivateRuleRequest): \Walmart\Model\MP\US\Rules\InactivateRule200Response
+inactivateRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\InactivateRule200Response
 ```
 Inactivate rule
 
@@ -848,14 +848,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"39","ruleStatus":"Submitted"},{"ruleId":"44","ruleStatus":"Active"}]}; // \Walmart\Model\MP\US\Rules\InactivateRuleRequest | Request fields
+$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"39","ruleStatus":"Submitted"},{"ruleId":"44","ruleStatus":"Active"}]}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
     $result = $apiInstance->inactivateRule($inactivateRuleRequest);
@@ -867,12 +867,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Model\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\InactivateRule200Response**](../Model/InactivateRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRule200Response**](../Model/InactivateRule200Response.md)
 
 ### Authorization
 
@@ -890,7 +890,7 @@ try {
 ## `updateRule()`
 
 ```php
-updateRule($updateRuleRequest): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+updateRule($updateRuleRequest): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
 ```
 Update rule
 
@@ -906,14 +906,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$updateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"511","ruleStatus":"Submitted","name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}]}; // \Walmart\Model\MP\US\Rules\UpdateRuleRequest | Request fields
+$updateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"511","ruleStatus":"Submitted","name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}]}; // \Walmart\Models\MP\US\Rules\UpdateRuleRequest | Request fields
 
 try {
     $result = $apiInstance->updateRule($updateRuleRequest);
@@ -925,12 +925,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateRuleRequest** | [**\Walmart\Model\MP\US\Rules\UpdateRuleRequest**](../Model/UpdateRuleRequest.md)| Request fields | |
+| **updateRuleRequest** | [**\Walmart\Models\MP\US\Rules\UpdateRuleRequest**](../Model/UpdateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
 
 ### Authorization
 
@@ -948,7 +948,7 @@ try {
 ## `updateShippingAreaToRule()`
 
 ```php
-updateShippingAreaToRule($updateShippingAreaToRuleRequest): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+updateShippingAreaToRule($updateShippingAreaToRuleRequest): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
 ```
 Update shipping area to rules
 
@@ -964,14 +964,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\RulesApi(  
+$apiInstance = new Walmart\Apis\RulesApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$updateShippingAreaToRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"ruleId":"612","ruleStatus":"Submitted","actions":[{"twoDayShippingRegions":[{"regionCode":"NE","subRegions":[{"subRegionCode":"NY1"},{"subRegionCode":"NY2"}]}]}]}}; // \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest | Request fields
+$updateShippingAreaToRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"ruleId":"612","ruleStatus":"Submitted","actions":[{"twoDayShippingRegions":[{"regionCode":"NE","subRegions":[{"subRegionCode":"NY1"},{"subRegionCode":"NY2"}]}]}]}}; // \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest | Request fields
 
 try {
     $result = $apiInstance->updateShippingAreaToRule($updateShippingAreaToRuleRequest);
@@ -983,12 +983,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShippingAreaToRuleRequest** | [**\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest**](../Model/UpdateShippingAreaToRuleRequest.md)| Request fields | |
+| **updateShippingAreaToRuleRequest** | [**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest**](../Model/UpdateShippingAreaToRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
 
 ### Authorization
 

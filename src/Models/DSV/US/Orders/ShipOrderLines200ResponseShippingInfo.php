@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipOrderLines200ResponseShippingInfo Class Doc Comment
@@ -55,7 +55,7 @@ class ShipOrderLines200ResponseShippingInfo extends BaseModel
         'estimatedDeliveryDate' => '\DateTime',
         'estimatedShipDate' => '\DateTime',
         'methodCode' => 'string',
-        'postalAddress' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShippingInfoPostalAddress'
+        'postalAddress' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfoPostalAddress'
     ];
 
     /**
@@ -334,7 +334,7 @@ class ShipOrderLines200ResponseShippingInfo extends BaseModel
     /**
      * Gets postalAddress
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShippingInfoPostalAddress
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfoPostalAddress
     
      */
     public function getPostalAddress()
@@ -345,7 +345,7 @@ class ShipOrderLines200ResponseShippingInfo extends BaseModel
     /**
      * Sets postalAddress
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShippingInfoPostalAddress $postalAddress postalAddress
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfoPostalAddress $postalAddress postalAddress
      *
      * @return self
     

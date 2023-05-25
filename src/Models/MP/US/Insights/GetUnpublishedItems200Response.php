@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * GetUnpublishedItems200Response Class Doc Comment
@@ -49,9 +49,9 @@ class GetUnpublishedItems200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'payload' => '\Walmart\Model\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInner[]',
+        'payload' => '\Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInner[]',
         'totalCount' => 'int',
-        'totalGmvAmount' => '\Walmart\Model\MP\US\Insights\GetUnpublishedItems200ResponseTotalGmvAmount'
+        'totalGmvAmount' => '\Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponseTotalGmvAmount'
     ];
 
     /**
@@ -171,7 +171,7 @@ class GetUnpublishedItems200Response extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -182,7 +182,7 @@ class GetUnpublishedItems200Response extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInner[]|null $payload payload
      *
      * @return self
     
@@ -229,7 +229,7 @@ class GetUnpublishedItems200Response extends BaseModel
     /**
      * Gets totalGmvAmount
      *
-     * @return \Walmart\Model\MP\US\Insights\GetUnpublishedItems200ResponseTotalGmvAmount|null
+     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponseTotalGmvAmount|null
     
      */
     public function getTotalGmvAmount()
@@ -240,7 +240,7 @@ class GetUnpublishedItems200Response extends BaseModel
     /**
      * Sets totalGmvAmount
      *
-     * @param \Walmart\Model\MP\US\Insights\GetUnpublishedItems200ResponseTotalGmvAmount|null $totalGmvAmount totalGmvAmount
+     * @param \Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponseTotalGmvAmount|null $totalGmvAmount totalGmvAmount
      *
      * @return self
     

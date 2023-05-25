@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges Class Doc Comment
@@ -51,7 +51,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'charge' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner[]'
+        'charge' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges extends BaseModel
     /**
      * Gets charge
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null
     
      */
     public function getCharge()
@@ -137,7 +137,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges extends BaseModel
     /**
      * Sets charge
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null $charge List of elements that make up a charge
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null $charge List of elements that make up a charge
      *
      * @return self
     

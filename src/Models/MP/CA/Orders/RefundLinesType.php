@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * RefundLinesType Class Doc Comment
@@ -49,7 +49,7 @@ class RefundLinesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLine' => '\Walmart\Model\MP\CA\Orders\RefundOrderLinesCARequestOrderLinesOrderLineInner[]'
+        'orderLine' => '\Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequestOrderLinesOrderLineInner[]'
     ];
 
     /**
@@ -127,7 +127,7 @@ class RefundLinesType extends BaseModel
     /**
      * Gets orderLine
      *
-     * @return \Walmart\Model\MP\CA\Orders\RefundOrderLinesCARequestOrderLinesOrderLineInner[]
+     * @return \Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequestOrderLinesOrderLineInner[]
     
      */
     public function getOrderLine()
@@ -138,7 +138,7 @@ class RefundLinesType extends BaseModel
     /**
      * Sets orderLine
      *
-     * @param \Walmart\Model\MP\CA\Orders\RefundOrderLinesCARequestOrderLinesOrderLineInner[] $orderLine orderLine
+     * @param \Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequestOrderLinesOrderLineInner[] $orderLine orderLine
      *
      * @return self
     

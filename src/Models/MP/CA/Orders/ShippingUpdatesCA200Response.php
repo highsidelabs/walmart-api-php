@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCA200Response Class Doc Comment
@@ -55,8 +55,8 @@ class ShippingUpdatesCA200Response extends BaseModel
         'customerOrderId' => 'string',
         'customerEmailId' => 'string',
         'orderDate' => '\DateTime',
-        'shippingInfo' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo',
-        'orderLines' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines'
+        'shippingInfo' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo',
+        'orderLines' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines'
     ];
 
     /**
@@ -328,7 +328,7 @@ class ShippingUpdatesCA200Response extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo
     
      */
     public function getShippingInfo()
@@ -339,7 +339,7 @@ class ShippingUpdatesCA200Response extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo $shippingInfo shippingInfo
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo $shippingInfo shippingInfo
      *
      * @return self
     
@@ -357,7 +357,7 @@ class ShippingUpdatesCA200Response extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines
     
      */
     public function getOrderLines()
@@ -368,7 +368,7 @@ class ShippingUpdatesCA200Response extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines $orderLines orderLines
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines $orderLines orderLines
      *
      * @return self
     

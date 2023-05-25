@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Utilities;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Utilities;
+use Walmart\Models\BaseModel;
 
 /**
  * StatusAPIResponseDTO Class Doc Comment

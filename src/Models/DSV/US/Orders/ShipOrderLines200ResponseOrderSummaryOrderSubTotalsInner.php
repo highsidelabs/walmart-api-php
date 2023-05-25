@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner Class Doc Comment
@@ -50,7 +50,7 @@ class ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'subTotalType' => 'string',
-        'totalAmount' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount'
+        'totalAmount' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount'
     ];
 
     /**
@@ -160,7 +160,7 @@ class ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner extends BaseModel
     /**
      * Gets totalAmount
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null
     
      */
     public function getTotalAmount()
@@ -171,7 +171,7 @@ class ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner extends BaseModel
     /**
      * Sets totalAmount
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null $totalAmount totalAmount
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null $totalAmount totalAmount
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInner Class Doc Comment
@@ -52,16 +52,16 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
-        'item' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItem',
-        'charges' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerCharges',
-        'orderLineQuantity' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'item' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItem',
+        'charges' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerCharges',
+        'orderLineQuantity' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
         'statusDate' => 'int',
-        'orderLineStatuses' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses',
+        'orderLineStatuses' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses',
         'returnOrderId' => 'string',
-        'refund' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund',
+        'refund' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund',
         'originalCarrierMethod' => 'string',
         'referenceLineId' => 'string',
-        'fulfillment' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment',
+        'fulfillment' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment',
         'intentToCancel' => 'string',
         'configId' => 'string',
         'sellerOrderId' => 'string'
@@ -264,7 +264,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets item
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItem
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItem
     
      */
     public function getItem()
@@ -275,7 +275,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets item
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItem $item item
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItem $item item
      *
      * @return self
     
@@ -293,7 +293,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets charges
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerCharges
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerCharges
     
      */
     public function getCharges()
@@ -304,7 +304,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets charges
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerCharges $charges charges
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerCharges $charges charges
      *
      * @return self
     
@@ -322,7 +322,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets orderLineQuantity
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
     
      */
     public function getOrderLineQuantity()
@@ -333,7 +333,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets orderLineQuantity
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $orderLineQuantity orderLineQuantity
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $orderLineQuantity orderLineQuantity
      *
      * @return self
     
@@ -380,7 +380,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses
     
      */
     public function getOrderLineStatuses()
@@ -391,7 +391,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
      *
      * @return self
     
@@ -438,7 +438,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets refund
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund|null
     
      */
     public function getRefund()
@@ -449,7 +449,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets refund
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund|null $refund refund
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefund|null $refund refund
      *
      * @return self
     
@@ -525,7 +525,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets fulfillment
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment|null
     
      */
     public function getFulfillment()
@@ -536,7 +536,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets fulfillment
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment|null $fulfillment fulfillment
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment|null $fulfillment fulfillment
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner Class Doc Comment
@@ -64,8 +64,8 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner extends Ba
         'carrierServiceCode' => 'string',
         'packageId' => 'string',
         'lastModified' => 'string',
-        'shipmentLines' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]',
-        'shipmentDates' => '\Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]'
+        'shipmentLines' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]',
+        'shipmentDates' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]'
     ];
 
     /**
@@ -601,7 +601,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner extends Ba
     /**
      * Gets shipmentLines
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]|null
     
      */
     public function getShipmentLines()
@@ -612,7 +612,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner extends Ba
     /**
      * Sets shipmentLines
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]|null $shipmentLines Shipment line details
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]|null $shipmentLines Shipment line details
      *
      * @return self
     
@@ -630,7 +630,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner extends Ba
     /**
      * Gets shipmentDates
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]|null
     
      */
     public function getShipmentDates()
@@ -641,7 +641,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner extends Ba
     /**
      * Sets shipmentDates
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]|null $shipmentDates Shipment dates
+     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]|null $shipmentDates Shipment dates
      *
      * @return self
     

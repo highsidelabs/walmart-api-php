@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner Class Doc Comment
@@ -52,12 +52,12 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
       */
     protected static array $openAPITypes = [
         'fulfillmentId' => 'string',
-        'lineItemAttributesList' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]',
-        'sla' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla',
+        'lineItemAttributesList' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]',
+        'sla' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla',
         'nodeType' => 'string',
-        'accessMode' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode',
-        'fulfillmentTime' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime',
-        'errors' => '\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
+        'accessMode' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode',
+        'fulfillmentTime' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime',
+        'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
     ];
 
     /**
@@ -197,7 +197,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets lineItemAttributesList
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]|null
     
      */
     public function getLineItemAttributesList()
@@ -208,7 +208,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets lineItemAttributesList
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]|null $lineItemAttributesList Line item attribute details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]|null $lineItemAttributesList Line item attribute details.
      *
      * @return self
     
@@ -226,7 +226,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets sla
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla|null
     
      */
     public function getSla()
@@ -237,7 +237,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets sla
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla|null $sla sla
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla|null $sla sla
      *
      * @return self
     
@@ -284,7 +284,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets accessMode
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode|null
     
      */
     public function getAccessMode()
@@ -295,7 +295,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets accessMode
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode|null $accessMode accessMode
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode|null $accessMode accessMode
      *
      * @return self
     
@@ -313,7 +313,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets fulfillmentTime
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime|null
     
      */
     public function getFulfillmentTime()
@@ -324,7 +324,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets fulfillmentTime
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime|null $fulfillmentTime fulfillmentTime
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime|null $fulfillmentTime fulfillmentTime
      *
      * @return self
     
@@ -342,7 +342,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -353,7 +353,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors Error list details.
+     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors Error list details.
      *
      * @return self
     

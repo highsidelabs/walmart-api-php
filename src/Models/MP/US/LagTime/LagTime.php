@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\LagTime;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\LagTime;
+use Walmart\Models\BaseModel;
 
 /**
  * LagTime Class Doc Comment
@@ -51,7 +51,7 @@ class LagTime extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'fulfillmentLagTime' => 'int',
-        'additionalAttributes' => '\Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner[]'
+        'additionalAttributes' => '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner[]'
     ];
 
     /**
@@ -199,7 +199,7 @@ class LagTime extends BaseModel
     /**
      * Gets additionalAttributes
      *
-     * @return \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner[]|null
+     * @return \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner[]|null
     
      */
     public function getAdditionalAttributes()
@@ -210,7 +210,7 @@ class LagTime extends BaseModel
     /**
      * Sets additionalAttributes
      *
-     * @param \Walmart\Model\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner[]|null $additionalAttributes additionalAttributes
+     * @param \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner[]|null $additionalAttributes additionalAttributes
      *
      * @return self
     

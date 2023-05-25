@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetShippingTemplateDetails200ResponseShippingMethodsInner Class Doc Comment
@@ -53,7 +53,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInner extends BaseMode
     protected static array $openAPITypes = [
         'shipMethod' => 'string',
         'status' => 'string',
-        'configurations' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[]'
+        'configurations' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[]'
     ];
 
     /**
@@ -290,7 +290,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInner extends BaseMode
     /**
      * Gets configurations
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[]
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[]
     
      */
     public function getConfigurations()
@@ -301,7 +301,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInner extends BaseMode
     /**
      * Sets configurations
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[] $configurations Contains an array of Regions, an array of Address Type, Transit Time and Per shipping charge or array of Tired Shipping Charge
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[] $configurations Contains an array of Regions, an array of Address Type, Transit Time and Per shipping charge or array of Tired Shipping Charge
      *
      * @return self
     

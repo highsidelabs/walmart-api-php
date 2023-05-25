@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderLineStatusType Class Doc Comment
@@ -52,9 +52,9 @@ class OrderLineStatusType extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'statusQuantity' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
         'cancellationReason' => 'string',
-        'trackingInfo' => '\Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo'
+        'trackingInfo' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo'
     ];
 
     /**
@@ -231,7 +231,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
     
      */
     public function getStatusQuantity()
@@ -242,7 +242,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
      *
      * @return self
     
@@ -289,7 +289,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets trackingInfo
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
     
      */
     public function getTrackingInfo()
@@ -300,7 +300,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets trackingInfo
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
      *
      * @return self
     

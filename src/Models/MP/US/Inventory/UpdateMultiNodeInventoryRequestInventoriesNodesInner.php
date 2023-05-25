@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateMultiNodeInventoryRequestInventoriesNodesInner Class Doc Comment
@@ -50,7 +50,7 @@ class UpdateMultiNodeInventoryRequestInventoriesNodesInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'shipNode' => 'string',
-        'inputQty' => '\Walmart\Model\MP\US\Inventory\GetInventory200ResponseQuantity'
+        'inputQty' => '\Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity'
     ];
 
     /**
@@ -166,7 +166,7 @@ class UpdateMultiNodeInventoryRequestInventoriesNodesInner extends BaseModel
     /**
      * Gets inputQty
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetInventory200ResponseQuantity
+     * @return \Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity
     
      */
     public function getInputQty()
@@ -177,7 +177,7 @@ class UpdateMultiNodeInventoryRequestInventoriesNodesInner extends BaseModel
     /**
      * Sets inputQty
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetInventory200ResponseQuantity $inputQty inputQty
+     * @param \Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity $inputQty inputQty
      *
      * @return self
     

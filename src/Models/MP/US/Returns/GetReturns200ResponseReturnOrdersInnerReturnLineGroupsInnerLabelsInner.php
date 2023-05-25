@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner Class Doc Comment
@@ -52,7 +52,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner ext
       */
     protected static array $openAPITypes = [
         'labelImageURL' => 'string',
-        'carrierInfoList' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]'
+        'carrierInfoList' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner ext
     /**
      * Gets carrierInfoList
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]|null
     
      */
     public function getCarrierInfoList()
@@ -173,7 +173,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner ext
     /**
      * Sets carrierInfoList
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]|null $carrierInfoList Carrier information for the return
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]|null $carrierInfoList Carrier information for the return
      *
      * @return self
     

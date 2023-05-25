@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundShipmentErrorsResponseWrapper Class Doc Comment
@@ -53,9 +53,9 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
         'createdDate' => '\DateTime',
-        'returnAddress' => '\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
-        'orderItems' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]',
-        'errors' => '\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
+        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]',
+        'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
     ];
 
     /**
@@ -212,7 +212,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Gets returnAddress
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null
     
      */
     public function getReturnAddress()
@@ -223,7 +223,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Sets returnAddress
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null $returnAddress returnAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null $returnAddress returnAddress
      *
      * @return self
     
@@ -241,7 +241,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null
     
      */
     public function getOrderItems()
@@ -252,7 +252,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null $orderItems inbound shipment request line items
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null $orderItems inbound shipment request line items
      *
      * @return self
     
@@ -270,7 +270,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -281,7 +281,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors Error in inbound shipment creation
+     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors Error in inbound shipment creation
      *
      * @return self
     

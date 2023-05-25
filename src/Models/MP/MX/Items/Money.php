@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * Money Class Doc Comment

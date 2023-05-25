@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipLineStatusType Class Doc Comment
@@ -52,9 +52,9 @@ class ShipLineStatusType extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'asn' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn',
-        'statusQuantity' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
-        'trackingInfo' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo'
+        'asn' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn',
+        'statusQuantity' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'trackingInfo' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo'
     ];
 
     /**
@@ -231,7 +231,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Gets asn
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn|null
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn|null
     
      */
     public function getAsn()
@@ -242,7 +242,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Sets asn
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn|null $asn asn
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn|null $asn asn
      *
      * @return self
     
@@ -260,7 +260,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
     
      */
     public function getStatusQuantity()
@@ -271,7 +271,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
      *
      * @return self
     
@@ -289,7 +289,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Gets trackingInfo
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo
     
      */
     public function getTrackingInfo()
@@ -300,7 +300,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Sets trackingInfo
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo $trackingInfo trackingInfo
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo $trackingInfo trackingInfo
      *
      * @return self
     

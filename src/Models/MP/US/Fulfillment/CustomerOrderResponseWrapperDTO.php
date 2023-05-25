@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CustomerOrderResponseWrapperDTO Class Doc Comment
@@ -50,8 +50,8 @@ class CustomerOrderResponseWrapperDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'header' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\CreateFulfillment200ResponsePayload'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200ResponsePayload'
     ];
 
     /**
@@ -167,7 +167,7 @@ class CustomerOrderResponseWrapperDTO extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader|null
     
      */
     public function getHeader()
@@ -178,7 +178,7 @@ class CustomerOrderResponseWrapperDTO extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillmentRequestHeader|null $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader|null $header header
      *
      * @return self
     
@@ -196,7 +196,7 @@ class CustomerOrderResponseWrapperDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateFulfillment200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200ResponsePayload|null
     
      */
     public function getPayload()
@@ -207,7 +207,7 @@ class CustomerOrderResponseWrapperDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateFulfillment200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200ResponsePayload|null $payload payload
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * Pricing Class Doc Comment
@@ -54,9 +54,9 @@ class Pricing extends BaseModel
         'promoId' => 'string',
         'processMode' => 'string',
         'currentPriceType' => 'string',
-        'currentPrice' => '\Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInnerCurrentPrice',
+        'currentPrice' => '\Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInnerCurrentPrice',
         'comparisonPriceType' => 'string',
-        'comparisonPrice' => '\Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInnerComparisonPrice',
+        'comparisonPrice' => '\Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInnerComparisonPrice',
         'priceDisplayCodes' => 'string'
     ];
 
@@ -459,7 +459,7 @@ class Pricing extends BaseModel
     /**
      * Gets currentPrice
      *
-     * @return \Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInnerCurrentPrice
+     * @return \Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInnerCurrentPrice
     
      */
     public function getCurrentPrice()
@@ -470,7 +470,7 @@ class Pricing extends BaseModel
     /**
      * Sets currentPrice
      *
-     * @param \Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInnerCurrentPrice $currentPrice currentPrice
+     * @param \Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInnerCurrentPrice $currentPrice currentPrice
      *
      * @return self
     
@@ -527,7 +527,7 @@ class Pricing extends BaseModel
     /**
      * Gets comparisonPrice
      *
-     * @return \Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInnerComparisonPrice|null
+     * @return \Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInnerComparisonPrice|null
     
      */
     public function getComparisonPrice()
@@ -538,7 +538,7 @@ class Pricing extends BaseModel
     /**
      * Sets comparisonPrice
      *
-     * @param \Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInnerComparisonPrice|null $comparisonPrice comparisonPrice
+     * @param \Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInnerComparisonPrice|null $comparisonPrice comparisonPrice
      *
      * @return self
     

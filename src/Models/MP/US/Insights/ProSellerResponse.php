@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ProSellerResponse Class Doc Comment
@@ -54,9 +54,9 @@ class ProSellerResponse extends BaseModel
         'badgedSince' => '\DateTime',
         'isProhibited' => 'bool',
         'badgeStatus' => 'string',
-        'meetsCriteria' => '\Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria',
-        'criteriaData' => '\Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData',
-        'recommendations' => '\Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations'
+        'meetsCriteria' => '\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria',
+        'criteriaData' => '\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData',
+        'recommendations' => '\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations'
     ];
 
     /**
@@ -318,7 +318,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Gets meetsCriteria
      *
-     * @return \Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria|null
+     * @return \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria|null
     
      */
     public function getMeetsCriteria()
@@ -329,7 +329,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Sets meetsCriteria
      *
-     * @param \Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria|null $meetsCriteria meetsCriteria
+     * @param \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria|null $meetsCriteria meetsCriteria
      *
      * @return self
     
@@ -347,7 +347,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Gets criteriaData
      *
-     * @return \Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData|null
+     * @return \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData|null
     
      */
     public function getCriteriaData()
@@ -358,7 +358,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Sets criteriaData
      *
-     * @param \Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData|null $criteriaData criteriaData
+     * @param \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData|null $criteriaData criteriaData
      *
      * @return self
     
@@ -376,7 +376,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Gets recommendations
      *
-     * @return \Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations|null
+     * @return \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations|null
     
      */
     public function getRecommendations()
@@ -387,7 +387,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Sets recommendations
      *
-     * @param \Walmart\Model\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations|null $recommendations recommendations
+     * @param \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations|null $recommendations recommendations
      *
      * @return self
     

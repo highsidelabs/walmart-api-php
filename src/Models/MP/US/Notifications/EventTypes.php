@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Notifications;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Notifications;
+use Walmart\Models\BaseModel;
 
 /**
  * EventTypes Class Doc Comment
@@ -49,7 +49,7 @@ class EventTypes extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'eventTypes' => '\Walmart\Model\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]'
+        'eventTypes' => '\Walmart\Models\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class EventTypes extends BaseModel
     /**
      * Gets eventTypes
      *
-     * @return \Walmart\Model\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]|null
+     * @return \Walmart\Models\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]|null
     
      */
     public function getEventTypes()
@@ -135,7 +135,7 @@ class EventTypes extends BaseModel
     /**
      * Sets eventTypes
      *
-     * @param \Walmart\Model\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]|null $eventTypes List of event types
+     * @param \Walmart\Models\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]|null $eventTypes List of event types
      *
      * @return self
     

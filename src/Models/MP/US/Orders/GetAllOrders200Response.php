@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200Response Class Doc Comment
@@ -49,7 +49,7 @@ class GetAllOrders200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'list' => '\Walmart\Model\MP\US\Orders\GetAllOrders200ResponseList'
+        'list' => '\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseList'
     ];
 
     /**
@@ -157,7 +157,7 @@ class GetAllOrders200Response extends BaseModel
     /**
      * Gets list
      *
-     * @return \Walmart\Model\MP\US\Orders\GetAllOrders200ResponseList|null
+     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseList|null
     
      */
     public function getList()
@@ -168,7 +168,7 @@ class GetAllOrders200Response extends BaseModel
     /**
      * Sets list
      *
-     * @param \Walmart\Model\MP\US\Orders\GetAllOrders200ResponseList|null $list list
+     * @param \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseList|null $list list
      *
      * @return self
     

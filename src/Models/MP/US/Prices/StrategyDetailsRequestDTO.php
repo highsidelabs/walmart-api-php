@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * StrategyDetailsRequestDTO Class Doc Comment
@@ -49,7 +49,7 @@ class StrategyDetailsRequestDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'strategy' => '\Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy'
+        'strategy' => '\Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy'
     ];
 
     /**
@@ -124,7 +124,7 @@ class StrategyDetailsRequestDTO extends BaseModel
     /**
      * Gets strategy
      *
-     * @return \Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy|null
+     * @return \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy|null
     
      */
     public function getStrategy()
@@ -135,7 +135,7 @@ class StrategyDetailsRequestDTO extends BaseModel
     /**
      * Sets strategy
      *
-     * @param \Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy|null $strategy strategy
+     * @param \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy|null $strategy strategy
      *
      * @return self
     

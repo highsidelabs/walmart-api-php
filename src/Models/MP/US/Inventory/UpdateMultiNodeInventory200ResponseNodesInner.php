@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateMultiNodeInventory200ResponseNodesInner Class Doc Comment
@@ -51,7 +51,7 @@ class UpdateMultiNodeInventory200ResponseNodesInner extends BaseModel
     protected static array $openAPITypes = [
         'shipNode' => 'string',
         'status' => 'string',
-        'errors' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]'
+        'errors' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]'
     ];
 
     /**
@@ -196,7 +196,7 @@ class UpdateMultiNodeInventory200ResponseNodesInner extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null
     
      */
     public function getErrors()
@@ -207,7 +207,7 @@ class UpdateMultiNodeInventory200ResponseNodesInner extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null $errors Node Update Error description.
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null $errors Node Update Error description.
      *
      * @return self
     

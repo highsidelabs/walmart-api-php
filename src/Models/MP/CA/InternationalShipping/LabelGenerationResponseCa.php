@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * LabelGenerationResponseCa Class Doc Comment
@@ -54,12 +54,12 @@ class LabelGenerationResponseCa extends BaseModel
         'purchaseOrderId' => 'string',
         'id' => 'string',
         'trackingNo' => 'string',
-        'boxItems' => '\Walmart\Model\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]',
+        'boxItems' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]',
         'carrierName' => 'string',
         'carrierFullName' => 'string',
         'carrierServiceType' => 'string',
         'trackingUrl' => 'string',
-        'shippingDocuments' => '\Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments'
+        'shippingDocuments' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments'
     ];
 
     /**
@@ -269,7 +269,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Gets boxItems
      *
-     * @return \Walmart\Model\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]|null
     
      */
     public function getBoxItems()
@@ -280,7 +280,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Sets boxItems
      *
-     * @param \Walmart\Model\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]|null $boxItems Box Items
+     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]|null $boxItems Box Items
      *
      * @return self
     
@@ -414,7 +414,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Gets shippingDocuments
      *
-     * @return \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null
     
      */
     public function getShippingDocuments()
@@ -425,7 +425,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Sets shippingDocuments
      *
-     * @param \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null $shippingDocuments shippingDocuments
+     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null $shippingDocuments shippingDocuments
      *
      * @return self
     

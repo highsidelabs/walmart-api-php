@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetOrderResponseRecord Class Doc Comment
@@ -60,12 +60,12 @@ class GetOrderResponseRecord extends BaseModel
         'buyerId' => 'string',
         'mart' => 'string',
         'isGuest' => 'bool',
-        'shippingInfo' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo',
-        'orderLines' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines',
+        'shippingInfo' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo',
+        'orderLines' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines',
         'paymentTypes' => 'string[]',
-        'orderSummary' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary',
-        'pickupPersons' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]',
-        'shipNode' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode'
+        'orderSummary' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary',
+        'pickupPersons' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]',
+        'shipNode' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode'
     ];
 
     /**
@@ -503,7 +503,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo
     
      */
     public function getShippingInfo()
@@ -514,7 +514,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo $shippingInfo shippingInfo
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShippingInfo $shippingInfo shippingInfo
      *
      * @return self
     
@@ -532,7 +532,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines
     
      */
     public function getOrderLines()
@@ -543,7 +543,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines $orderLines orderLines
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLines $orderLines orderLines
      *
      * @return self
     
@@ -590,7 +590,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets orderSummary
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary|null
     
      */
     public function getOrderSummary()
@@ -601,7 +601,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets orderSummary
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary|null $orderSummary orderSummary
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummary|null $orderSummary orderSummary
      *
      * @return self
     
@@ -619,7 +619,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets pickupPersons
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]|null
     
      */
     public function getPickupPersons()
@@ -630,7 +630,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets pickupPersons
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]|null $pickupPersons List of pickup persons
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner[]|null $pickupPersons List of pickup persons
      *
      * @return self
     
@@ -648,7 +648,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets shipNode
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode|null
     
      */
     public function getShipNode()
@@ -659,7 +659,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets shipNode
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode|null $shipNode shipNode
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode|null $shipNode shipNode
      *
      * @return self
     

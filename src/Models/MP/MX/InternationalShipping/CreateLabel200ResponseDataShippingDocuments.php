@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateLabel200ResponseDataShippingDocuments Class Doc Comment

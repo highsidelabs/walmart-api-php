@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * InactivateRuleRequest Class Doc Comment
@@ -49,8 +49,8 @@ class InactivateRuleRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ruleHeader' => '\Walmart\Model\MP\US\Rules\InactivateRuleRequestRuleHeader',
-        'rules' => '\Walmart\Model\MP\US\Rules\InactivateRuleRequestRulesInner[]'
+        'ruleHeader' => '\Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader',
+        'rules' => '\Walmart\Models\MP\US\Rules\InactivateRuleRequestRulesInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class InactivateRuleRequest extends BaseModel
     /**
      * Gets ruleHeader
      *
-     * @return \Walmart\Model\MP\US\Rules\InactivateRuleRequestRuleHeader|null
+     * @return \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null
     
      */
     public function getRuleHeader()
@@ -142,7 +142,7 @@ class InactivateRuleRequest extends BaseModel
     /**
      * Sets ruleHeader
      *
-     * @param \Walmart\Model\MP\US\Rules\InactivateRuleRequestRuleHeader|null $ruleHeader ruleHeader
+     * @param \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null $ruleHeader ruleHeader
      *
      * @return self
     
@@ -160,7 +160,7 @@ class InactivateRuleRequest extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Model\MP\US\Rules\InactivateRuleRequestRulesInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\InactivateRuleRequestRulesInner[]|null
     
      */
     public function getRules()
@@ -171,7 +171,7 @@ class InactivateRuleRequest extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Model\MP\US\Rules\InactivateRuleRequestRulesInner[]|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\InactivateRuleRequestRulesInner[]|null $rules rules
      *
      * @return self
     

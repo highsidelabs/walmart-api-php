@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesRequestOrderShipment Class Doc Comment
@@ -52,7 +52,7 @@ class ShippingUpdatesRequestOrderShipment extends BaseModel
       */
     protected static array $openAPITypes = [
         'processMode' => 'string',
-        'orderLines' => '\Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLines'
+        'orderLines' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLines'
     ];
 
     /**
@@ -165,7 +165,7 @@ class ShippingUpdatesRequestOrderShipment extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLines
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLines
     
      */
     public function getOrderLines()
@@ -176,7 +176,7 @@ class ShippingUpdatesRequestOrderShipment extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLines $orderLines orderLines
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLines $orderLines orderLines
      *
      * @return self
     

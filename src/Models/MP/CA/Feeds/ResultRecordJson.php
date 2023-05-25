@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * ResultRecordJson Class Doc Comment
@@ -51,7 +51,7 @@ class ResultRecordJson extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'feed' => '\Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]'
+        'feed' => '\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ResultRecordJson extends BaseModel
     /**
      * Gets feed
      *
-     * @return \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null
+     * @return \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null
     
      */
     public function getFeed()
@@ -137,7 +137,7 @@ class ResultRecordJson extends BaseModel
     /**
      * Sets feed
      *
-     * @param \Walmart\Model\MP\CA\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null $feed The feed status results
+     * @param \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null $feed The feed status results
      *
      * @return self
     

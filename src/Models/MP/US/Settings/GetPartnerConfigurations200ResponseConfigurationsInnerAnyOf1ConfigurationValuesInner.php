@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner Class Doc Comment
@@ -52,7 +52,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationV
       */
     protected static array $openAPITypes = [
         'feedType' => 'string',
-        'throttleConfigurations' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]'
+        'throttleConfigurations' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]'
     ];
 
     /**
@@ -232,7 +232,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationV
     /**
      * Gets throttleConfigurations
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]|null
     
      */
     public function getThrottleConfigurations()
@@ -243,7 +243,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationV
     /**
      * Sets throttleConfigurations
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]|null $throttleConfigurations Details of throttling configurations
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]|null $throttleConfigurations Details of throttling configurations
      *
      * @return self
     

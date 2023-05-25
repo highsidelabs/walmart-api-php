@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **locationName** | **string** |  |
-**address** | [**\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress**](GetCarrierRateQuote200ResponseOriginLocationAddress.md) |  |
+**address** | [**\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress**](GetCarrierRateQuote200ResponseOriginLocationAddress.md) |  |
 **locationId** | **string** |  | [optional]
 
 

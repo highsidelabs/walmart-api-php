@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\US;
+namespace Walmart\Apis\MP\US;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -69,15 +69,15 @@ class RulesApi extends BaseApi
      *
      * Activate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\ActivateRule200Response
+     * @return \Walmart\Models\MP\US\Rules\ActivateRule200Response
      */
     public function activateRule(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
-    ): \Walmart\Model\MP\US\Rules\ActivateRule200Response {
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
+    ): \Walmart\Models\MP\US\Rules\ActivateRule200Response {
         return $this->activateRuleWithHttpInfo($inactivateRuleRequest);
     }
 
@@ -86,15 +86,15 @@ class RulesApi extends BaseApi
      *
      * Activate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\ActivateRule200Response
+     * @return \Walmart\Models\MP\US\Rules\ActivateRule200Response
      */
     protected function activateRuleWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
-    ): \Walmart\Model\MP\US\Rules\ActivateRule200Response {
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
+    ): \Walmart\Models\MP\US\Rules\ActivateRule200Response {
         $request = $this->activateRuleRequest($inactivateRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -144,19 +144,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\ActivateRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\ActivateRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\ActivateRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\ActivateRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\ActivateRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\ActivateRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\ActivateRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\ActivateRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -172,7 +172,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\ActivateRule200Response',
+                        '\Walmart\Models\MP\US\Rules\ActivateRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -189,13 +189,13 @@ class RulesApi extends BaseApi
      *
      * Activate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function activateRuleAsync(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
     ): PromiseInterface {
         return $this->activateRuleAsyncWithHttpInfo($inactivateRuleRequest)
             ->then(
@@ -211,15 +211,15 @@ class RulesApi extends BaseApi
      *
      * Activate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function activateRuleAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\ActivateRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\ActivateRule200Response';
         $request = $this->activateRuleRequest($inactivateRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -265,13 +265,13 @@ class RulesApi extends BaseApi
     /**
      * Create request for operation 'activateRule'
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function activateRuleRequest(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): Request {
         $contentType = self::contentTypes['activateRule'];
 
@@ -362,12 +362,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response
+     * @return \Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response
      */
     public function changeAssortmentType(
         bool $enable,
         object $body
-    ): \Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response {
+    ): \Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response {
         return $this->changeAssortmentTypeWithHttpInfo($enable, $body);
     }
 
@@ -381,12 +381,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response
+     * @return \Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response
      */
     protected function changeAssortmentTypeWithHttpInfo(
         bool $enable,
         object $body,
-    ): \Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response {
+    ): \Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response {
         $request = $this->changeAssortmentTypeRequest($enable, $body, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -436,19 +436,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -464,7 +464,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response',
+                        '\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -515,7 +515,7 @@ class RulesApi extends BaseApi
         bool $enable,
         object $body,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\ChangeAssortmentType200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response';
         $request = $this->changeAssortmentTypeRequest($enable, $body, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -673,15 +673,15 @@ class RulesApi extends BaseApi
      *
      * Create a new Rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\CreateItemRule200Response
+     * @return \Walmart\Models\MP\US\Rules\CreateItemRule200Response
      */
     public function createItemRule(
-        \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest
-    ): \Walmart\Model\MP\US\Rules\CreateItemRule200Response {
+        \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest
+    ): \Walmart\Models\MP\US\Rules\CreateItemRule200Response {
         return $this->createItemRuleWithHttpInfo($createItemRuleRequest);
     }
 
@@ -690,15 +690,15 @@ class RulesApi extends BaseApi
      *
      * Create a new Rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\CreateItemRule200Response
+     * @return \Walmart\Models\MP\US\Rules\CreateItemRule200Response
      */
     protected function createItemRuleWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest,
-    ): \Walmart\Model\MP\US\Rules\CreateItemRule200Response {
+        \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest,
+    ): \Walmart\Models\MP\US\Rules\CreateItemRule200Response {
         $request = $this->createItemRuleRequest($createItemRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -748,19 +748,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\CreateItemRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\CreateItemRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\CreateItemRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\CreateItemRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\CreateItemRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\CreateItemRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\CreateItemRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\CreateItemRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -776,7 +776,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\CreateItemRule200Response',
+                        '\Walmart\Models\MP\US\Rules\CreateItemRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -793,13 +793,13 @@ class RulesApi extends BaseApi
      *
      * Create a new Rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createItemRuleAsync(
-        \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest
+        \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest
     ): PromiseInterface {
         return $this->createItemRuleAsyncWithHttpInfo($createItemRuleRequest)
             ->then(
@@ -815,15 +815,15 @@ class RulesApi extends BaseApi
      *
      * Create a new Rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createItemRuleAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest,
+        \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\CreateItemRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\CreateItemRule200Response';
         $request = $this->createItemRuleRequest($createItemRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -869,13 +869,13 @@ class RulesApi extends BaseApi
     /**
      * Create request for operation 'createItemRule'
      *
-     * @param  \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createItemRuleRequest(
-        \Walmart\Model\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest,
+        \Walmart\Models\MP\US\Rules\CreateItemRuleRequest $createItemRuleRequest,
     ): Request {
         $contentType = self::contentTypes['createItemRule'];
 
@@ -961,15 +961,15 @@ class RulesApi extends BaseApi
      *
      * Create override exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\DeleteExceptions200Response
+     * @return \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
      */
     public function createOverrideExceptions(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
-    ): \Walmart\Model\MP\US\Rules\DeleteExceptions200Response {
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
+    ): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response {
         return $this->createOverrideExceptionsWithHttpInfo($deleteExceptionsRequest);
     }
 
@@ -978,15 +978,15 @@ class RulesApi extends BaseApi
      *
      * Create override exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\DeleteExceptions200Response
+     * @return \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
      */
     protected function createOverrideExceptionsWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
-    ): \Walmart\Model\MP\US\Rules\DeleteExceptions200Response {
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
+    ): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response {
         $request = $this->createOverrideExceptionsRequest($deleteExceptionsRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1036,19 +1036,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\DeleteExceptions200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\DeleteExceptions200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\DeleteExceptions200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\DeleteExceptions200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1064,7 +1064,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response',
+                        '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1081,13 +1081,13 @@ class RulesApi extends BaseApi
      *
      * Create override exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createOverrideExceptionsAsync(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
     ): PromiseInterface {
         return $this->createOverrideExceptionsAsyncWithHttpInfo($deleteExceptionsRequest)
             ->then(
@@ -1103,15 +1103,15 @@ class RulesApi extends BaseApi
      *
      * Create override exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createOverrideExceptionsAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response';
         $request = $this->createOverrideExceptionsRequest($deleteExceptionsRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1157,13 +1157,13 @@ class RulesApi extends BaseApi
     /**
      * Create request for operation 'createOverrideExceptions'
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createOverrideExceptionsRequest(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
     ): Request {
         $contentType = self::contentTypes['createOverrideExceptions'];
 
@@ -1249,15 +1249,15 @@ class RulesApi extends BaseApi
      *
      * Delete exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\DeleteExceptions200Response
+     * @return \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
      */
     public function deleteExceptions(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
-    ): \Walmart\Model\MP\US\Rules\DeleteExceptions200Response {
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
+    ): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response {
         return $this->deleteExceptionsWithHttpInfo($deleteExceptionsRequest);
     }
 
@@ -1266,15 +1266,15 @@ class RulesApi extends BaseApi
      *
      * Delete exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\DeleteExceptions200Response
+     * @return \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
      */
     protected function deleteExceptionsWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
-    ): \Walmart\Model\MP\US\Rules\DeleteExceptions200Response {
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
+    ): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response {
         $request = $this->deleteExceptionsRequest($deleteExceptionsRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1324,19 +1324,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\DeleteExceptions200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\DeleteExceptions200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\DeleteExceptions200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\DeleteExceptions200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1352,7 +1352,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response',
+                        '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1369,13 +1369,13 @@ class RulesApi extends BaseApi
      *
      * Delete exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function deleteExceptionsAsync(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest
     ): PromiseInterface {
         return $this->deleteExceptionsAsyncWithHttpInfo($deleteExceptionsRequest)
             ->then(
@@ -1391,15 +1391,15 @@ class RulesApi extends BaseApi
      *
      * Delete exceptions
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function deleteExceptionsAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\DeleteExceptions200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\DeleteExceptions200Response';
         $request = $this->deleteExceptionsRequest($deleteExceptionsRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1445,13 +1445,13 @@ class RulesApi extends BaseApi
     /**
      * Create request for operation 'deleteExceptions'
      *
-     * @param  \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function deleteExceptionsRequest(
-        \Walmart\Model\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
+        \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest $deleteExceptionsRequest,
     ): Request {
         $contentType = self::contentTypes['deleteExceptions'];
 
@@ -1542,12 +1542,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\DeleteRule200Response
+     * @return \Walmart\Models\MP\US\Rules\DeleteRule200Response
      */
     public function deleteRule(
         string $ruleId,
         string $ruleStatus
-    ): \Walmart\Model\MP\US\Rules\DeleteRule200Response {
+    ): \Walmart\Models\MP\US\Rules\DeleteRule200Response {
         return $this->deleteRuleWithHttpInfo($ruleId, $ruleStatus);
     }
 
@@ -1561,12 +1561,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\DeleteRule200Response
+     * @return \Walmart\Models\MP\US\Rules\DeleteRule200Response
      */
     protected function deleteRuleWithHttpInfo(
         string $ruleId,
         string $ruleStatus,
-    ): \Walmart\Model\MP\US\Rules\DeleteRule200Response {
+    ): \Walmart\Models\MP\US\Rules\DeleteRule200Response {
         $request = $this->deleteRuleRequest($ruleId, $ruleStatus, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1616,19 +1616,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\DeleteRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\DeleteRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\DeleteRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\DeleteRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\DeleteRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\DeleteRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\DeleteRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\DeleteRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1644,7 +1644,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\DeleteRule200Response',
+                        '\Walmart\Models\MP\US\Rules\DeleteRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1695,7 +1695,7 @@ class RulesApi extends BaseApi
         string $ruleId,
         string $ruleStatus,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\DeleteRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\DeleteRule200Response';
         $request = $this->deleteRuleRequest($ruleId, $ruleStatus, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2428,12 +2428,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
     public function getARule(
         string $ruleId,
         string $ruleStatus
-    ): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response {
+    ): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response {
         return $this->getARuleWithHttpInfo($ruleId, $ruleStatus);
     }
 
@@ -2447,12 +2447,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
     protected function getARuleWithHttpInfo(
         string $ruleId,
         string $ruleStatus,
-    ): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response {
+    ): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response {
         $request = $this->getARuleRequest($ruleId, $ruleStatus, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2502,19 +2502,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2530,7 +2530,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response',
+                        '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2581,7 +2581,7 @@ class RulesApi extends BaseApi
         string $ruleId,
         string $ruleStatus,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
         $request = $this->getARuleRequest($ruleId, $ruleStatus, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2738,9 +2738,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetAllAreas200Response
+     * @return \Walmart\Models\MP\US\Rules\GetAllAreas200Response
      */
-    public function getAllAreas(): \Walmart\Model\MP\US\Rules\GetAllAreas200Response
+    public function getAllAreas(): \Walmart\Models\MP\US\Rules\GetAllAreas200Response
     {
         return $this->getAllAreasWithHttpInfo();
     }
@@ -2752,9 +2752,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetAllAreas200Response
+     * @return \Walmart\Models\MP\US\Rules\GetAllAreas200Response
      */
-    protected function getAllAreasWithHttpInfo(): \Walmart\Model\MP\US\Rules\GetAllAreas200Response
+    protected function getAllAreasWithHttpInfo(): \Walmart\Models\MP\US\Rules\GetAllAreas200Response
     {
         $request = $this->getAllAreasRequest();
         $this->writeDebug($request);
@@ -2805,19 +2805,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\GetAllAreas200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\GetAllAreas200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\GetAllAreas200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\GetAllAreas200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\GetAllAreas200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\GetAllAreas200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\GetAllAreas200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\GetAllAreas200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2833,7 +2833,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\GetAllAreas200Response',
+                        '\Walmart\Models\MP\US\Rules\GetAllAreas200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2874,7 +2874,7 @@ class RulesApi extends BaseApi
      */
     protected function getAllAreasAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Model\MP\US\Rules\GetAllAreas200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\GetAllAreas200Response';
         $request = $this->getAllAreasRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2998,9 +2998,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetAllExceptions200Response
+     * @return \Walmart\Models\MP\US\Rules\GetAllExceptions200Response
      */
-    public function getAllExceptions(): \Walmart\Model\MP\US\Rules\GetAllExceptions200Response
+    public function getAllExceptions(): \Walmart\Models\MP\US\Rules\GetAllExceptions200Response
     {
         return $this->getAllExceptionsWithHttpInfo();
     }
@@ -3012,9 +3012,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetAllExceptions200Response
+     * @return \Walmart\Models\MP\US\Rules\GetAllExceptions200Response
      */
-    protected function getAllExceptionsWithHttpInfo(): \Walmart\Model\MP\US\Rules\GetAllExceptions200Response
+    protected function getAllExceptionsWithHttpInfo(): \Walmart\Models\MP\US\Rules\GetAllExceptions200Response
     {
         $request = $this->getAllExceptionsRequest();
         $this->writeDebug($request);
@@ -3065,19 +3065,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\GetAllExceptions200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\GetAllExceptions200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\GetAllExceptions200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\GetAllExceptions200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\GetAllExceptions200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\GetAllExceptions200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\GetAllExceptions200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\GetAllExceptions200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3093,7 +3093,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\GetAllExceptions200Response',
+                        '\Walmart\Models\MP\US\Rules\GetAllExceptions200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3134,7 +3134,7 @@ class RulesApi extends BaseApi
      */
     protected function getAllExceptionsAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Model\MP\US\Rules\GetAllExceptions200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\GetAllExceptions200Response';
         $request = $this->getAllExceptionsRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3258,9 +3258,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
-    public function getAllRules(): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+    public function getAllRules(): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
     {
         return $this->getAllRulesWithHttpInfo();
     }
@@ -3272,9 +3272,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
-    protected function getAllRulesWithHttpInfo(): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+    protected function getAllRulesWithHttpInfo(): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
     {
         $request = $this->getAllRulesRequest();
         $this->writeDebug($request);
@@ -3325,19 +3325,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3353,7 +3353,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response',
+                        '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3394,7 +3394,7 @@ class RulesApi extends BaseApi
      */
     protected function getAllRulesAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
         $request = $this->getAllRulesRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3518,9 +3518,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetAllSubCategories200Response
+     * @return \Walmart\Models\MP\US\Rules\GetAllSubCategories200Response
      */
-    public function getAllSubCategories(): \Walmart\Model\MP\US\Rules\GetAllSubCategories200Response
+    public function getAllSubCategories(): \Walmart\Models\MP\US\Rules\GetAllSubCategories200Response
     {
         return $this->getAllSubCategoriesWithHttpInfo();
     }
@@ -3532,9 +3532,9 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetAllSubCategories200Response
+     * @return \Walmart\Models\MP\US\Rules\GetAllSubCategories200Response
      */
-    protected function getAllSubCategoriesWithHttpInfo(): \Walmart\Model\MP\US\Rules\GetAllSubCategories200Response
+    protected function getAllSubCategoriesWithHttpInfo(): \Walmart\Models\MP\US\Rules\GetAllSubCategories200Response
     {
         $request = $this->getAllSubCategoriesRequest();
         $this->writeDebug($request);
@@ -3585,19 +3585,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\GetAllSubCategories200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\GetAllSubCategories200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\GetAllSubCategories200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\GetAllSubCategories200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3613,7 +3613,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\GetAllSubCategories200Response',
+                        '\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3654,7 +3654,7 @@ class RulesApi extends BaseApi
      */
     protected function getAllSubCategoriesAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Model\MP\US\Rules\GetAllSubCategories200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response';
         $request = $this->getAllSubCategoriesRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3781,12 +3781,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetSimulationResult200Response
+     * @return \Walmart\Models\MP\US\Rules\GetSimulationResult200Response
      */
     public function getSimulationResult(
         string $ruleId,
         string $ruleStatus
-    ): \Walmart\Model\MP\US\Rules\GetSimulationResult200Response {
+    ): \Walmart\Models\MP\US\Rules\GetSimulationResult200Response {
         return $this->getSimulationResultWithHttpInfo($ruleId, $ruleStatus);
     }
 
@@ -3800,12 +3800,12 @@ class RulesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\GetSimulationResult200Response
+     * @return \Walmart\Models\MP\US\Rules\GetSimulationResult200Response
      */
     protected function getSimulationResultWithHttpInfo(
         string $ruleId,
         string $ruleStatus,
-    ): \Walmart\Model\MP\US\Rules\GetSimulationResult200Response {
+    ): \Walmart\Models\MP\US\Rules\GetSimulationResult200Response {
         $request = $this->getSimulationResultRequest($ruleId, $ruleStatus, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3855,19 +3855,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\GetSimulationResult200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\GetSimulationResult200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\GetSimulationResult200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\GetSimulationResult200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\GetSimulationResult200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\GetSimulationResult200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\GetSimulationResult200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\GetSimulationResult200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3883,7 +3883,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\GetSimulationResult200Response',
+                        '\Walmart\Models\MP\US\Rules\GetSimulationResult200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3934,7 +3934,7 @@ class RulesApi extends BaseApi
         string $ruleId,
         string $ruleStatus,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\GetSimulationResult200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\GetSimulationResult200Response';
         $request = $this->getSimulationResultRequest($ruleId, $ruleStatus, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4089,15 +4089,15 @@ class RulesApi extends BaseApi
      *
      * Inactivate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\InactivateRule200Response
+     * @return \Walmart\Models\MP\US\Rules\InactivateRule200Response
      */
     public function inactivateRule(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
-    ): \Walmart\Model\MP\US\Rules\InactivateRule200Response {
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
+    ): \Walmart\Models\MP\US\Rules\InactivateRule200Response {
         return $this->inactivateRuleWithHttpInfo($inactivateRuleRequest);
     }
 
@@ -4106,15 +4106,15 @@ class RulesApi extends BaseApi
      *
      * Inactivate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\InactivateRule200Response
+     * @return \Walmart\Models\MP\US\Rules\InactivateRule200Response
      */
     protected function inactivateRuleWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
-    ): \Walmart\Model\MP\US\Rules\InactivateRule200Response {
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
+    ): \Walmart\Models\MP\US\Rules\InactivateRule200Response {
         $request = $this->inactivateRuleRequest($inactivateRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4164,19 +4164,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\InactivateRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\InactivateRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\InactivateRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\InactivateRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\InactivateRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\InactivateRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\InactivateRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\InactivateRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4192,7 +4192,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\InactivateRule200Response',
+                        '\Walmart\Models\MP\US\Rules\InactivateRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4209,13 +4209,13 @@ class RulesApi extends BaseApi
      *
      * Inactivate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function inactivateRuleAsync(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest
     ): PromiseInterface {
         return $this->inactivateRuleAsyncWithHttpInfo($inactivateRuleRequest)
             ->then(
@@ -4231,15 +4231,15 @@ class RulesApi extends BaseApi
      *
      * Inactivate rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function inactivateRuleAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\InactivateRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\InactivateRule200Response';
         $request = $this->inactivateRuleRequest($inactivateRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4285,13 +4285,13 @@ class RulesApi extends BaseApi
     /**
      * Create request for operation 'inactivateRule'
      *
-     * @param  \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function inactivateRuleRequest(
-        \Walmart\Model\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
+        \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): Request {
         $contentType = self::contentTypes['inactivateRule'];
 
@@ -4377,15 +4377,15 @@ class RulesApi extends BaseApi
      *
      * Update rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
     public function updateRule(
-        \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest
-    ): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response {
+        \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest
+    ): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response {
         return $this->updateRuleWithHttpInfo($updateRuleRequest);
     }
 
@@ -4394,15 +4394,15 @@ class RulesApi extends BaseApi
      *
      * Update rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
     protected function updateRuleWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest,
-    ): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response {
+        \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest,
+    ): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response {
         $request = $this->updateRuleRequest($updateRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4452,19 +4452,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4480,7 +4480,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response',
+                        '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4497,13 +4497,13 @@ class RulesApi extends BaseApi
      *
      * Update rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateRuleAsync(
-        \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest
+        \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest
     ): PromiseInterface {
         return $this->updateRuleAsyncWithHttpInfo($updateRuleRequest)
             ->then(
@@ -4519,15 +4519,15 @@ class RulesApi extends BaseApi
      *
      * Update rule
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateRuleAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest,
+        \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
         $request = $this->updateRuleRequest($updateRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4573,13 +4573,13 @@ class RulesApi extends BaseApi
     /**
      * Create request for operation 'updateRule'
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateRuleRequest(
-        \Walmart\Model\MP\US\Rules\UpdateRuleRequest $updateRuleRequest,
+        \Walmart\Models\MP\US\Rules\UpdateRuleRequest $updateRuleRequest,
     ): Request {
         $contentType = self::contentTypes['updateRule'];
 
@@ -4665,15 +4665,15 @@ class RulesApi extends BaseApi
      *
      * Update shipping area to rules
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
     public function updateShippingAreaToRule(
-        \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest
-    ): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response {
+        \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest
+    ): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response {
         return $this->updateShippingAreaToRuleWithHttpInfo($updateShippingAreaToRuleRequest);
     }
 
@@ -4682,15 +4682,15 @@ class RulesApi extends BaseApi
      *
      * Update shipping area to rules
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
      */
     protected function updateShippingAreaToRuleWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest,
-    ): \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response {
+        \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest,
+    ): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response {
         $request = $this->updateShippingAreaToRuleRequest($updateShippingAreaToRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4740,19 +4740,19 @@ class RulesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+            $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4768,7 +4768,7 @@ class RulesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response',
+                        '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4785,13 +4785,13 @@ class RulesApi extends BaseApi
      *
      * Update shipping area to rules
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateShippingAreaToRuleAsync(
-        \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest
+        \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest
     ): PromiseInterface {
         return $this->updateShippingAreaToRuleAsyncWithHttpInfo($updateShippingAreaToRuleRequest)
             ->then(
@@ -4807,15 +4807,15 @@ class RulesApi extends BaseApi
      *
      * Update shipping area to rules
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateShippingAreaToRuleAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest,
+        \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200Response';
+        $returnType = '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response';
         $request = $this->updateShippingAreaToRuleRequest($updateShippingAreaToRuleRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4861,13 +4861,13 @@ class RulesApi extends BaseApi
     /**
      * Create request for operation 'updateShippingAreaToRule'
      *
-     * @param  \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateShippingAreaToRuleRequest(
-        \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest,
+        \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest $updateShippingAreaToRuleRequest,
     ): Request {
         $contentType = self::contentTypes['updateShippingAreaToRule'];
 

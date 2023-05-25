@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Events;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Events;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemCountResponse Class Doc Comment

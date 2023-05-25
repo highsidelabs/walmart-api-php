@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateBulkPromotionalPrice200Response Class Doc Comment

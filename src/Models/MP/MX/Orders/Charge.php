@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * Charge Class Doc Comment
@@ -51,8 +51,8 @@ class Charge extends BaseModel
     protected static array $openAPITypes = [
         'chargeType' => 'string',
         'chargeName' => 'string',
-        'chargeAmount' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerChargeAmount',
-        'tax' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner[]'
+        'chargeAmount' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerChargeAmount',
+        'tax' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner[]'
     ];
 
     /**
@@ -203,7 +203,7 @@ class Charge extends BaseModel
     /**
      * Gets chargeAmount
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerChargeAmount|null
     
      */
     public function getChargeAmount()
@@ -214,7 +214,7 @@ class Charge extends BaseModel
     /**
      * Sets chargeAmount
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerChargeAmount|null $chargeAmount chargeAmount
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerChargeAmount|null $chargeAmount chargeAmount
      *
      * @return self
     
@@ -232,7 +232,7 @@ class Charge extends BaseModel
     /**
      * Gets tax
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner[]|null
     
      */
     public function getTax()
@@ -243,7 +243,7 @@ class Charge extends BaseModel
     /**
      * Sets tax
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner[]|null $tax tax
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner[]|null $tax tax
      *
      * @return self
     

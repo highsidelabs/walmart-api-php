@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateShipment200ResponsePayloadInner Class Doc Comment
@@ -52,8 +52,8 @@ class CreateShipment200ResponsePayloadInner extends BaseModel
       */
     protected static array $openAPITypes = [
         'shipmentId' => 'string',
-        'shipToAddress' => '\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
-        'shipmentItems' => '\Walmart\Model\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]',
+        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
+        'shipmentItems' => '\Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]',
         'expectedDeliveryDate' => '\DateTime'
     ];
 
@@ -176,7 +176,7 @@ class CreateShipment200ResponsePayloadInner extends BaseModel
     /**
      * Gets shipToAddress
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
     
      */
     public function getShipToAddress()
@@ -187,7 +187,7 @@ class CreateShipment200ResponsePayloadInner extends BaseModel
     /**
      * Sets shipToAddress
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
      *
      * @return self
     
@@ -205,7 +205,7 @@ class CreateShipment200ResponsePayloadInner extends BaseModel
     /**
      * Gets shipmentItems
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]|null
     
      */
     public function getShipmentItems()
@@ -216,7 +216,7 @@ class CreateShipment200ResponsePayloadInner extends BaseModel
     /**
      * Sets shipmentItems
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]|null $shipmentItems The items which needs to be send in the shipment
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]|null $shipmentItems The items which needs to be send in the shipment
      *
      * @return self
     

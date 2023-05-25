@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **info** | **string** |  | [optional]
 **severity** | **string** |  | [optional]
 **category** | **string** |  | [optional]
-**causes** | [**\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]**](GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner.md) |  | [optional]
+**causes** | [**\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]**](GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner.md) |  | [optional]
 **errorIdentifiers** | **array<string,object>** |  | [optional]
 
 

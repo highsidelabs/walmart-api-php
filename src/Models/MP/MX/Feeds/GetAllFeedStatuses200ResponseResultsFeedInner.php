@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFeedStatuses200ResponseResultsFeedInner Class Doc Comment

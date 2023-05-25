@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * RefundOrderLinesRequest Class Doc Comment
@@ -49,7 +49,7 @@ class RefundOrderLinesRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderRefund' => '\Walmart\Model\MP\US\Orders\RefundOrderLinesRequestOrderRefund'
+        'orderRefund' => '\Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefund'
     ];
 
     /**
@@ -124,7 +124,7 @@ class RefundOrderLinesRequest extends BaseModel
     /**
      * Gets orderRefund
      *
-     * @return \Walmart\Model\MP\US\Orders\RefundOrderLinesRequestOrderRefund|null
+     * @return \Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefund|null
     
      */
     public function getOrderRefund()
@@ -135,7 +135,7 @@ class RefundOrderLinesRequest extends BaseModel
     /**
      * Sets orderRefund
      *
-     * @param \Walmart\Model\MP\US\Orders\RefundOrderLinesRequestOrderRefund|null $orderRefund orderRefund
+     * @param \Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefund|null $orderRefund orderRefund
      *
      * @return self
     

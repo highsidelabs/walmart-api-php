@@ -1,4 +1,4 @@
-# Walmart\Api\US\DSVCostApi  
+# Walmart\Apis\US\DSVCostApi  
 All URIs are relative to https://api-gateway.walmart.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -9,7 +9,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 ## `updateBulkCost()`
 
 ```php
-updateBulkCost($feedType, $updateBulkCostRequest): \Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response
+updateBulkCost($feedType, $updateBulkCostRequest): \Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response
 ```
 This API allows DSV to update cost for items in bulk.
 
@@ -26,7 +26,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\CostApi(  
+$apiInstance = new Walmart\Apis\CostApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -34,7 +34,7 @@ $apiInstance = new Walmart\Api\CostApi(
 );
 
 $feedType = 'cost'; // string | Includes details of each entity in the feed. Do not set this parameter to true.
-$updateBulkCostRequest = new \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest(); // \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest | File fields
+$updateBulkCostRequest = new \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest(); // \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest | File fields
 
 try {
     $result = $apiInstance->updateBulkCost($feedType, $updateBulkCostRequest);
@@ -47,12 +47,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'cost'] |
-| **updateBulkCostRequest** | [**\Walmart\Model\DSV\US\Cost\UpdateBulkCostRequest**](../Model/UpdateBulkCostRequest.md)| File fields | |
+| **updateBulkCostRequest** | [**\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest**](../Model/UpdateBulkCostRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\DSV\US\Cost\UpdateBulkCost200Response**](../Model/UpdateBulkCost200Response.md)
+[**\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response**](../Model/UpdateBulkCost200Response.md)
 
 ### Authorization
 

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAnItem200Response Class Doc Comment
@@ -57,7 +57,7 @@ class GetAnItem200Response extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Model\DSV\US\Items\GetAllItems200ResponseItemResponseInnerPrice',
+        'price' => '\Walmart\Models\DSV\US\Items\GetAllItems200ResponseItemResponseInnerPrice',
         'publishedStatus' => 'string'
     ];
 
@@ -495,7 +495,7 @@ class GetAnItem200Response extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Model\DSV\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null
+     * @return \Walmart\Models\DSV\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null
     
      */
     public function getPrice()
@@ -506,7 +506,7 @@ class GetAnItem200Response extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Model\DSV\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
+     * @param \Walmart\Models\DSV\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
      *
      * @return self
     

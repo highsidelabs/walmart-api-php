@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges Class Doc Comment
@@ -51,7 +51,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges extends BaseMo
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'charge' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner[]'
+        'charge' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges extends BaseMo
     /**
      * Gets charge
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null
     
      */
     public function getCharge()
@@ -137,7 +137,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges extends BaseMo
     /**
      * Sets charge
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null $charge List of elements that make up a charge
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner[]|null $charge List of elements that make up a charge
      *
      * @return self
     

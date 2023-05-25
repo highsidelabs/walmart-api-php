@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * GetCarrierRateQuote200Response Class Doc Comment
@@ -53,12 +53,12 @@ class GetCarrierRateQuote200Response extends BaseModel
         'quoteId' => 'string',
         'estimatedDeliveryDateTime' => '\DateTime',
         'quoteCreationDate' => '\DateTime',
-        'carrier' => '\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier',
-        'rateQuote' => '\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote',
-        'shipmentPackages' => '\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]',
-        'originLocation' => '\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation',
-        'destinationLocation' => '\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation',
-        'returnLocation' => '\Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation'
+        'carrier' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier',
+        'rateQuote' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote',
+        'shipmentPackages' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]',
+        'originLocation' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation',
+        'destinationLocation' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation',
+        'returnLocation' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation'
     ];
 
     /**
@@ -336,7 +336,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Gets carrier
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier|null
     
      */
     public function getCarrier()
@@ -347,7 +347,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Sets carrier
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier|null $carrier carrier
+     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier|null $carrier carrier
      *
      * @return self
     
@@ -365,7 +365,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Gets rateQuote
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote|null
     
      */
     public function getRateQuote()
@@ -376,7 +376,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Sets rateQuote
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote|null $rateQuote rateQuote
+     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote|null $rateQuote rateQuote
      *
      * @return self
     
@@ -394,7 +394,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Gets shipmentPackages
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]|null
     
      */
     public function getShipmentPackages()
@@ -405,7 +405,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Sets shipmentPackages
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]|null $shipmentPackages shipmentPackages
+     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]|null $shipmentPackages shipmentPackages
      *
      * @return self
     
@@ -423,7 +423,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Gets originLocation
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null
     
      */
     public function getOriginLocation()
@@ -434,7 +434,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Sets originLocation
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null $originLocation originLocation
+     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null $originLocation originLocation
      *
      * @return self
     
@@ -452,7 +452,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Gets destinationLocation
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null
     
      */
     public function getDestinationLocation()
@@ -463,7 +463,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Sets destinationLocation
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null $destinationLocation destinationLocation
+     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation|null $destinationLocation destinationLocation
      *
      * @return self
     
@@ -481,7 +481,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Gets returnLocation
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation|null
     
      */
     public function getReturnLocation()
@@ -492,7 +492,7 @@ class GetCarrierRateQuote200Response extends BaseModel
     /**
      * Sets returnLocation
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation|null $returnLocation returnLocation
+     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation|null $returnLocation returnLocation
      *
      * @return self
     

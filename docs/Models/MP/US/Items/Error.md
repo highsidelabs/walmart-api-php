@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **info** | **string** |  | [optional]
 **severity** | **string** |  | [optional]
 **category** | **string** |  | [optional]
-**causes** | [**\Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]**](GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner.md) |  | [optional]
+**causes** | [**\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner[]**](GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner.md) |  | [optional]
 **errorIdentifiers** | **array<string,object>** |  | [optional]
 
 

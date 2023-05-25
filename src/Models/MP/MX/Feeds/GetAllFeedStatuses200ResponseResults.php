@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFeedStatuses200ResponseResults Class Doc Comment
@@ -51,7 +51,7 @@ class GetAllFeedStatuses200ResponseResults extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'feed' => '\Walmart\Model\MP\MX\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]'
+        'feed' => '\Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class GetAllFeedStatuses200ResponseResults extends BaseModel
     /**
      * Gets feed
      *
-     * @return \Walmart\Model\MP\MX\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null
+     * @return \Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null
     
      */
     public function getFeed()
@@ -137,7 +137,7 @@ class GetAllFeedStatuses200ResponseResults extends BaseModel
     /**
      * Sets feed
      *
-     * @param \Walmart\Model\MP\MX\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null $feed The feed status results
+     * @param \Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner[]|null $feed The feed status results
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Utilities;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Utilities;
+use Walmart\Models\BaseModel;
 
 /**
  * GetCategories Class Doc Comment
@@ -50,7 +50,7 @@ class GetCategories extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'response' => '\Walmart\Model\MP\US\Utilities\GetCategories200ResponseResponse'
+        'response' => '\Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponse'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetCategories extends BaseModel
     /**
      * Gets response
      *
-     * @return \Walmart\Model\MP\US\Utilities\GetCategories200ResponseResponse|null
+     * @return \Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponse|null
     
      */
     public function getResponse()
@@ -171,7 +171,7 @@ class GetCategories extends BaseModel
     /**
      * Sets response
      *
-     * @param \Walmart\Model\MP\US\Utilities\GetCategories200ResponseResponse|null $response response
+     * @param \Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponse|null $response response
      *
      * @return self
     

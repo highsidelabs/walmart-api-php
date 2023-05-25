@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * VariantCountResponses Class Doc Comment
@@ -50,7 +50,7 @@ class VariantCountResponses extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Items\GetVariantCount200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Items\GetVariantCount200ResponsePayloadInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class VariantCountResponses extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Items\GetVariantCount200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetVariantCount200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -171,7 +171,7 @@ class VariantCountResponses extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Items\GetVariantCount200ResponsePayloadInner[]|null $payload Items included in the response list
+     * @param \Walmart\Models\MP\US\Items\GetVariantCount200ResponsePayloadInner[]|null $payload Items included in the response list
      *
      * @return self
     

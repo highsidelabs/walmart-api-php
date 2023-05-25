@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * Region Class Doc Comment
@@ -53,7 +53,7 @@ class Region extends BaseModel
     protected static array $openAPITypes = [
         'regionCode' => 'string',
         'regionName' => 'string',
-        'subRegions' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInner[]'
+        'subRegions' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInner[]'
     ];
 
     /**
@@ -201,7 +201,7 @@ class Region extends BaseModel
     /**
      * Gets subRegions
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInner[]|null
     
      */
     public function getSubRegions()
@@ -212,7 +212,7 @@ class Region extends BaseModel
     /**
      * Sets subRegions
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInner[]|null $subRegions subRegions
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInner[]|null $subRegions subRegions
      *
      * @return self
     

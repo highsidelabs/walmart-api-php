@@ -1,4 +1,4 @@
-# Walmart\Api\CA\MPOrdersApi  
+# Walmart\Apis\CA\MPOrdersApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `acknowledgeOrdersCA()`
 
 ```php
-acknowledgeOrdersCA($purchaseOrderId): \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response
+acknowledgeOrdersCA($purchaseOrderId): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
 ```
 Acknowledge Orders
 
@@ -33,7 +33,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -57,7 +57,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 
@@ -75,7 +75,7 @@ try {
 ## `cancelOrderLinesCA()`
 
 ```php
-cancelOrderLinesCA($purchaseOrderId, $cancelOrderLinesCARequest): \Walmart\Model\MP\CA\Orders\CancelOrderLinesCA200Response
+cancelOrderLinesCA($purchaseOrderId, $cancelOrderLinesCARequest): \Walmart\Models\MP\CA\Orders\CancelOrderLinesCA200Response
 ```
 Cancel Order Lines
 
@@ -92,7 +92,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -117,7 +117,7 @@ $cancelOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
             </orderLineStatuses>
         </orderLine>
     </orderLines>
-</orderCancellation>; // \Walmart\Model\MP\CA\Orders\CancelOrderLinesCARequest | File fields
+</orderCancellation>; // \Walmart\Models\MP\CA\Orders\CancelOrderLinesCARequest | File fields
 
 try {
     $result = $apiInstance->cancelOrderLinesCA($purchaseOrderId, $cancelOrderLinesCARequest);
@@ -130,12 +130,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **cancelOrderLinesCARequest** | [**\Walmart\Model\MP\CA\Orders\CancelOrderLinesCARequest**](../Model/CancelOrderLinesCARequest.md)| File fields | |
+| **cancelOrderLinesCARequest** | [**\Walmart\Models\MP\CA\Orders\CancelOrderLinesCARequest**](../Model/CancelOrderLinesCARequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\CancelOrderLinesCA200Response**](../Model/CancelOrderLinesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\CancelOrderLinesCA200Response**](../Model/CancelOrderLinesCA200Response.md)
 
 ### Authorization
 
@@ -153,7 +153,7 @@ try {
 ## `getAllOrders()`
 
 ```php
-getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Model\MP\CA\Orders\GetAllOrders200Response
+getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\GetAllOrders200Response
 ```
 Get all orders
 
@@ -170,7 +170,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -212,7 +212,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
 
 ### Authorization
 
@@ -230,7 +230,7 @@ try {
 ## `getAllReleasedOrders()`
 
 ```php
-getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo): \Walmart\Model\MP\CA\Orders\GetAllOrders200Response
+getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\GetAllOrders200Response
 ```
 Get all released orders
 
@@ -247,7 +247,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -277,7 +277,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
 
 ### Authorization
 
@@ -295,7 +295,7 @@ try {
 ## `getAllWFSOrders()`
 
 ```php
-getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset): \Walmart\Model\MP\CA\Orders\GetAllOrders200Response
+getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset): \Walmart\Models\MP\CA\Orders\GetAllOrders200Response
 ```
 Get all WFS orders
 
@@ -312,7 +312,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -346,7 +346,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
 
 ### Authorization
 
@@ -364,7 +364,7 @@ try {
 ## `getAnOrder()`
 
 ```php
-getAnOrder($purchaseOrderId, $productInfo): \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response
+getAnOrder($purchaseOrderId, $productInfo): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
 ```
 Get an order
 
@@ -381,7 +381,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -407,7 +407,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 
@@ -425,7 +425,7 @@ try {
 ## `refundOrderLinesCA()`
 
 ```php
-refundOrderLinesCA($purchaseOrderId, $refundOrderLinesCARequest): \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response
+refundOrderLinesCA($purchaseOrderId, $refundOrderLinesCARequest): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
 ```
 Refund Order Lines
 
@@ -442,7 +442,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -503,7 +503,7 @@ $refundOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
             </refunds>
         </orderLine>
     </orderLines>
-</orderRefund>; // \Walmart\Model\MP\CA\Orders\RefundOrderLinesCARequest | File fields
+</orderRefund>; // \Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequest | File fields
 
 try {
     $result = $apiInstance->refundOrderLinesCA($purchaseOrderId, $refundOrderLinesCARequest);
@@ -516,12 +516,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **refundOrderLinesCARequest** | [**\Walmart\Model\MP\CA\Orders\RefundOrderLinesCARequest**](../Model/RefundOrderLinesCARequest.md)| File fields | |
+| **refundOrderLinesCARequest** | [**\Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequest**](../Model/RefundOrderLinesCARequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 
@@ -539,7 +539,7 @@ try {
 ## `shippingUpdatesCA()`
 
 ```php
-shippingUpdatesCA($purchaseOrderId, $shippingUpdatesCARequest): \Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response
+shippingUpdatesCA($purchaseOrderId, $shippingUpdatesCARequest): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
 ```
 Shipping Updates
 
@@ -556,7 +556,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\OrdersApi(  
+$apiInstance = new Walmart\Apis\OrdersApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -592,7 +592,7 @@ $shippingUpdatesCARequest = <?xml version="1.0" encoding="UTF-8" standalone="yes
             </orderLineStatuses>
         </orderLine>
     </orderLines>
-</orderShipment>; // \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequest | File fields
+</orderShipment>; // \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequest | File fields
 
 try {
     $result = $apiInstance->shippingUpdatesCA($purchaseOrderId, $shippingUpdatesCARequest);
@@ -605,12 +605,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **shippingUpdatesCARequest** | [**\Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequest**](../Model/ShippingUpdatesCARequest.md)| File fields | |
+| **shippingUpdatesCARequest** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequest**](../Model/ShippingUpdatesCARequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 

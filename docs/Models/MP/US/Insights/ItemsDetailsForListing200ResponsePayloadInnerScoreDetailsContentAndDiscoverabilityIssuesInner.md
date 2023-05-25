@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **isSpecAttribute** | **bool** |  | [optional]
 **attributeName** | **string** |  | [optional]
 **issueCount** | **int** |  | [optional]
-**issues** | [**\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner[]**](ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner.md) |  | [optional]
+**issues** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner[]**](ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner.md) |  | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

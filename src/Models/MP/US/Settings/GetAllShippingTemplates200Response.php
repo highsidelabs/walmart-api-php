@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllShippingTemplates200Response Class Doc Comment
@@ -49,7 +49,7 @@ class GetAllShippingTemplates200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shippingTemplates' => '\Walmart\Model\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]',
+        'shippingTemplates' => '\Walmart\Models\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]',
         'totalRecords' => 'float'
     ];
 
@@ -164,7 +164,7 @@ class GetAllShippingTemplates200Response extends BaseModel
     /**
      * Gets shippingTemplates
      *
-     * @return \Walmart\Model\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]|null
     
      */
     public function getShippingTemplates()
@@ -175,7 +175,7 @@ class GetAllShippingTemplates200Response extends BaseModel
     /**
      * Sets shippingTemplates
      *
-     * @param \Walmart\Model\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]|null $shippingTemplates Array of Shipping Templates
+     * @param \Walmart\Models\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]|null $shippingTemplates Array of Shipping Templates
      *
      * @return self
     

@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **inboundOrderId** | **string** | Unique ID identifying inbound shipment request | [optional]
 **shipmentId** | **string** | Unique ID identifying inbound shipment | [optional]
-**shipToAddress** | [**\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress**](GetInboundShipments200ResponsePayloadInnerShipToAddress.md) |  | [optional]
-**returnAddress** | [**\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress**](GetInboundShipments200ResponsePayloadInnerReturnAddress.md) |  | [optional]
+**shipToAddress** | [**\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress**](GetInboundShipments200ResponsePayloadInnerShipToAddress.md) |  | [optional]
+**returnAddress** | [**\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress**](GetInboundShipments200ResponsePayloadInnerReturnAddress.md) |  | [optional]
 **status** | **string** | Current status of the shipment | [optional]
 **createdDate** | **\DateTime** | creation date for shipment | [optional]
 **shipmentUnits** | **int** | Total number of units in the shipment | [optional]

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateShipmentQuantity200ResponseErrorsInner Class Doc Comment
@@ -55,7 +55,7 @@ class UpdateShipmentQuantity200ResponseErrorsInner extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]'
+        'causes' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]'
     ];
 
     /**
@@ -426,7 +426,7 @@ class UpdateShipmentQuantity200ResponseErrorsInner extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]|null
     
      */
     public function getCauses()
@@ -437,7 +437,7 @@ class UpdateShipmentQuantity200ResponseErrorsInner extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]|null $causes causes
      *
      * @return self
     

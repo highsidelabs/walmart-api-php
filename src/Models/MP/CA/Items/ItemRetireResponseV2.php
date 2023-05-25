@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemRetireResponseV2 Class Doc Comment
@@ -49,7 +49,7 @@ class ItemRetireResponseV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\MP\CA\Items\GetAllItems200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\CA\Items\GetAllItems200ResponseErrorsInner[]',
         'sku' => 'string',
         'message' => 'string'
     ];
@@ -141,7 +141,7 @@ class ItemRetireResponseV2 extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\CA\Items\GetAllItems200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\Items\GetAllItems200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -152,7 +152,7 @@ class ItemRetireResponseV2 extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\CA\Items\GetAllItems200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\Items\GetAllItems200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

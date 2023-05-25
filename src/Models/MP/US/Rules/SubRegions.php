@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * SubRegions Class Doc Comment
@@ -52,7 +52,7 @@ class SubRegions extends BaseModel
       */
     protected static array $openAPITypes = [
         'regionCode' => 'string',
-        'subRegions' => '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]'
+        'subRegions' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]'
     ];
 
     /**
@@ -162,7 +162,7 @@ class SubRegions extends BaseModel
     /**
      * Gets subRegions
      *
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]|null
     
      */
     public function getSubRegions()
@@ -173,7 +173,7 @@ class SubRegions extends BaseModel
     /**
      * Sets subRegions
      *
-     * @param \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]|null $subRegions subRegions
+     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]|null $subRegions subRegions
      *
      * @return self
     

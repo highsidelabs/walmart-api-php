@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * Order Class Doc Comment
@@ -55,8 +55,8 @@ class Order extends BaseModel
         'customerOrderId' => 'string',
         'customerEmailId' => 'string',
         'orderDate' => '\DateTime',
-        'shippingInfo' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo',
-        'orderLines' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLines'
+        'shippingInfo' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo',
+        'orderLines' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines'
     ];
 
     /**
@@ -295,7 +295,7 @@ class Order extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo
     
      */
     public function getShippingInfo()
@@ -306,7 +306,7 @@ class Order extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo $shippingInfo shippingInfo
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo $shippingInfo shippingInfo
      *
      * @return self
     
@@ -324,7 +324,7 @@ class Order extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLines
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines
     
      */
     public function getOrderLines()
@@ -335,7 +335,7 @@ class Order extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLines $orderLines orderLines
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines $orderLines orderLines
      *
      * @return self
     

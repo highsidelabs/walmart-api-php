@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * RefundOrderLines400Response Class Doc Comment
@@ -49,7 +49,7 @@ class RefundOrderLines400Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'error' => '\Walmart\Model\MP\MX\Returns\RefundOrderLines400ResponseError'
+        'error' => '\Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseError'
     ];
 
     /**
@@ -157,7 +157,7 @@ class RefundOrderLines400Response extends BaseModel
     /**
      * Gets error
      *
-     * @return \Walmart\Model\MP\MX\Returns\RefundOrderLines400ResponseError|null
+     * @return \Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseError|null
     
      */
     public function getError()
@@ -168,7 +168,7 @@ class RefundOrderLines400Response extends BaseModel
     /**
      * Sets error
      *
-     * @param \Walmart\Model\MP\MX\Returns\RefundOrderLines400ResponseError|null $error error
+     * @param \Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseError|null $error error
      *
      * @return self
     

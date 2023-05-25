@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * LabelV2RequestWrapper Class Doc Comment
@@ -52,7 +52,7 @@ class LabelV2RequestWrapper extends BaseModel
         'shipmentId' => 'string',
         'labelSize' => 'string',
         'labelFormat' => 'string',
-        'loadTypes' => '\Walmart\Model\MP\US\Fulfillment\CreateInboundShipmentLabelV2RequestLoadTypesInner[]'
+        'loadTypes' => '\Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2RequestLoadTypesInner[]'
     ];
 
     /**
@@ -235,7 +235,7 @@ class LabelV2RequestWrapper extends BaseModel
     /**
      * Gets loadTypes
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\CreateInboundShipmentLabelV2RequestLoadTypesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2RequestLoadTypesInner[]|null
     
      */
     public function getLoadTypes()
@@ -246,7 +246,7 @@ class LabelV2RequestWrapper extends BaseModel
     /**
      * Sets loadTypes
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\CreateInboundShipmentLabelV2RequestLoadTypesInner[]|null $loadTypes loadTypes
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2RequestLoadTypesInner[]|null $loadTypes loadTypes
      *
      * @return self
     

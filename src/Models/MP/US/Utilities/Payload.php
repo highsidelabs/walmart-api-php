@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Utilities;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Utilities;
+use Walmart\Models\BaseModel;
 
 /**
  * Payload Class Doc Comment
@@ -51,7 +51,7 @@ class Payload extends BaseModel
     protected static array $openAPITypes = [
         'superDepartment' => 'string',
         'superDepartmentId' => 'string',
-        'departments' => '\Walmart\Model\MP\US\Utilities\GetDepartmentList200ResponsePayloadInnerDepartmentsInner[]'
+        'departments' => '\Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInnerDepartmentsInner[]'
     ];
 
     /**
@@ -196,7 +196,7 @@ class Payload extends BaseModel
     /**
      * Gets departments
      *
-     * @return \Walmart\Model\MP\US\Utilities\GetDepartmentList200ResponsePayloadInnerDepartmentsInner[]|null
+     * @return \Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInnerDepartmentsInner[]|null
     
      */
     public function getDepartments()
@@ -207,7 +207,7 @@ class Payload extends BaseModel
     /**
      * Sets departments
      *
-     * @param \Walmart\Model\MP\US\Utilities\GetDepartmentList200ResponsePayloadInnerDepartmentsInner[]|null $departments departments
+     * @param \Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInnerDepartmentsInner[]|null $departments departments
      *
      * @return self
     

@@ -1,8 +1,8 @@
 <?php
 
-namespace Walmart\Api\DSV;
+namespace Walmart\Apis\DSV;
 
-use Walmart\Api\DSV\US;
+use Walmart\Apis\DSV\US;
 use Walmart\Enums\Country;
 use Walmart\Walmart;
 

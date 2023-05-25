@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingLinesType Class Doc Comment
@@ -51,7 +51,7 @@ class ShippingLinesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLine' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInner[]'
+        'orderLine' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInner[]'
     ];
 
     /**
@@ -129,7 +129,7 @@ class ShippingLinesType extends BaseModel
     /**
      * Gets orderLine
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInner[]
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInner[]
     
      */
     public function getOrderLine()
@@ -140,7 +140,7 @@ class ShippingLinesType extends BaseModel
     /**
      * Sets orderLine
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInner[] $orderLine Information about one order line shipment
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInner[] $orderLine Information about one order line shipment
      *
      * @return self
     

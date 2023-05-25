@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **type** | **string** |  |
 **isVariant** | **bool** |  | [optional]
 **variantResourceType** | **string** |  | [optional]
-**value** | [**\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]**](GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner.md) |  |
+**value** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]**](GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner.md) |  |
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)

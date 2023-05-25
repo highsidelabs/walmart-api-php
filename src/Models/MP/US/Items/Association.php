@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * Association Class Doc Comment
@@ -51,7 +51,7 @@ class Association extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shippingTemplate' => '\Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate',
+        'shippingTemplate' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate',
         'shipNodeName' => 'string',
         'shipNode' => 'string'
     ];
@@ -140,7 +140,7 @@ class Association extends BaseModel
     /**
      * Gets shippingTemplate
      *
-     * @return \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate|null
+     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate|null
     
      */
     public function getShippingTemplate()
@@ -151,7 +151,7 @@ class Association extends BaseModel
     /**
      * Sets shippingTemplate
      *
-     * @param \Walmart\Model\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate|null $shippingTemplate shippingTemplate
+     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate|null $shippingTemplate shippingTemplate
      *
      * @return self
     

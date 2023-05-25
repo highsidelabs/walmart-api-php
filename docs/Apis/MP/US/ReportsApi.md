@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPReportsApi  
+# Walmart\Apis\US\MPReportsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -14,7 +14,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAvailableReconReportDates()`
 
 ```php
-getAvailableReconReportDates(): \Walmart\Model\MP\US\Reports\GetAvailableReconReportDates200Response
+getAvailableReconReportDates(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
 ```
 Available recon report dates(Legacy)
 
@@ -30,7 +30,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReportsApi(  
+$apiInstance = new Walmart\Apis\ReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -51,7 +51,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Reports\GetAvailableReconReportDates200Response**](../Model/GetAvailableReconReportDates200Response.md)
+[**\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response**](../Model/GetAvailableReconReportDates200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ try {
 ## `getAvailableV1ReconReportDates()`
 
 ```php
-getAvailableV1ReconReportDates(): \Walmart\Model\MP\US\Reports\GetAvailableReconReportDates200Response
+getAvailableV1ReconReportDates(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
 ```
 Available recon report dates
 
@@ -85,7 +85,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReportsApi(  
+$apiInstance = new Walmart\Apis\ReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -106,7 +106,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Reports\GetAvailableReconReportDates200Response**](../Model/GetAvailableReconReportDates200Response.md)
+[**\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response**](../Model/GetAvailableReconReportDates200Response.md)
 
 ### Authorization
 
@@ -124,7 +124,7 @@ try {
 ## `getPartnerPerformance()`
 
 ```php
-getPartnerPerformance(): \Walmart\Model\MP\US\Reports\GetPartnerPerformance200Response
+getPartnerPerformance(): \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response
 ```
 Performance Report
 
@@ -140,7 +140,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReportsApi(  
+$apiInstance = new Walmart\Apis\ReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -161,7 +161,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Reports\GetPartnerPerformance200Response**](../Model/GetPartnerPerformance200Response.md)
+[**\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response**](../Model/GetPartnerPerformance200Response.md)
 
 ### Authorization
 
@@ -179,7 +179,7 @@ try {
 ## `getPartnerStatement()`
 
 ```php
-getPartnerStatement(): \Walmart\Model\MP\US\Reports\GetPartnerStatement200Response
+getPartnerStatement(): \Walmart\Models\MP\US\Reports\GetPartnerStatement200Response
 ```
 Payment Statement Report
 
@@ -195,7 +195,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReportsApi(  
+$apiInstance = new Walmart\Apis\ReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -216,7 +216,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Reports\GetPartnerStatement200Response**](../Model/GetPartnerStatement200Response.md)
+[**\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response**](../Model/GetPartnerStatement200Response.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReportsApi(  
+$apiInstance = new Walmart\Apis\ReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -308,7 +308,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReportsApi(  
+$apiInstance = new Walmart\Apis\ReportsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

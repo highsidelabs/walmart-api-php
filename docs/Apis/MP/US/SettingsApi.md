@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPSettingsApi  
+# Walmart\Apis\US\MPSettingsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -23,7 +23,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `associate3PFulfillmentCenter()`
 
 ```php
-associate3PFulfillmentCenter($associate3PFulfillmentCenterRequest): \Walmart\Model\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]
+associate3PFulfillmentCenter($associate3PFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]
 ```
 Third party fulfillment center association
 
@@ -39,14 +39,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$associate3PFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNode":"99351656957153281","status":"ACTIVE"}]}; // \Walmart\Model\MP\US\Settings\Associate3PFulfillmentCenterRequest | Request fields
+$associate3PFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNode":"99351656957153281","status":"ACTIVE"}]}; // \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequest | Request fields
 
 try {
     $result = $apiInstance->associate3PFulfillmentCenter($associate3PFulfillmentCenterRequest);
@@ -58,12 +58,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **associate3PFulfillmentCenterRequest** | [**\Walmart\Model\MP\US\Settings\Associate3PFulfillmentCenterRequest**](../Model/Associate3PFulfillmentCenterRequest.md)| Request fields | |
+| **associate3PFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequest**](../Model/Associate3PFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]**](../Model/Associate3PFulfillmentCenterRequestShipNodeInner.md)
+[**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]**](../Model/Associate3PFulfillmentCenterRequestShipNodeInner.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ try {
 ## `createFulfillmentCenter()`
 
 ```php
-createFulfillmentCenter($createFulfillmentCenterRequest): \Walmart\Model\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]
+createFulfillmentCenter($createFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]
 ```
 Create fulfillment center
 
@@ -97,14 +97,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNodeName":"my distrubutor786","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"92hb1234","postalAddress":{"addressLine1":"36 CALIFORNIA SAA233","city":"SC GABRIEL22","state":"CA","country":"USA","postalCode":"90100"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}]}; // \Walmart\Model\MP\US\Settings\CreateFulfillmentCenterRequest | Request fields
+$createFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNodeName":"my distrubutor786","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"92hb1234","postalAddress":{"addressLine1":"36 CALIFORNIA SAA233","city":"SC GABRIEL22","state":"CA","country":"USA","postalCode":"90100"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}]}; // \Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequest | Request fields
 
 try {
     $result = $apiInstance->createFulfillmentCenter($createFulfillmentCenterRequest);
@@ -116,12 +116,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createFulfillmentCenterRequest** | [**\Walmart\Model\MP\US\Settings\CreateFulfillmentCenterRequest**](../Model/CreateFulfillmentCenterRequest.md)| Request fields | |
+| **createFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequest**](../Model/CreateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]**](../Model/CreateFulfillmentCenter200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]**](../Model/CreateFulfillmentCenter200ResponseInner.md)
 
 ### Authorization
 
@@ -139,7 +139,7 @@ try {
 ## `createShippingTemplates()`
 
 ```php
-createShippingTemplates($createShippingTemplatesRequest): \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200Response
+createShippingTemplates($createShippingTemplatesRequest): \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response
 ```
 Create Shipping Templates
 
@@ -155,14 +155,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$createShippingTemplatesRequest = {"name":"Next Day servc","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Model\MP\US\Settings\CreateShippingTemplatesRequest | Request fields
+$createShippingTemplatesRequest = {"name":"Next Day servc","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\CreateShippingTemplatesRequest | Request fields
 
 try {
     $result = $apiInstance->createShippingTemplates($createShippingTemplatesRequest);
@@ -174,12 +174,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createShippingTemplatesRequest** | [**\Walmart\Model\MP\US\Settings\CreateShippingTemplatesRequest**](../Model/CreateShippingTemplatesRequest.md)| Request fields | |
+| **createShippingTemplatesRequest** | [**\Walmart\Models\MP\US\Settings\CreateShippingTemplatesRequest**](../Model/CreateShippingTemplatesRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ try {
 ## `deleteShippingTemplateDetails()`
 
 ```php
-deleteShippingTemplateDetails($templateId): \Walmart\Model\MP\US\Settings\DeleteShippingTemplateDetails200Response
+deleteShippingTemplateDetails($templateId): \Walmart\Models\MP\US\Settings\DeleteShippingTemplateDetails200Response
 ```
 Delete Shipping Template
 
@@ -213,7 +213,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -237,7 +237,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\DeleteShippingTemplateDetails200Response**](../Model/DeleteShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\DeleteShippingTemplateDetails200Response**](../Model/DeleteShippingTemplateDetails200Response.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ try {
 ## `get3PFulfillmentProviders()`
 
 ```php
-get3PFulfillmentProviders(): \Walmart\Model\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]
+get3PFulfillmentProviders(): \Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]
 ```
 Get all third party fulfillment providers
 
@@ -271,7 +271,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -292,7 +292,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]**](../Model/Get3PFulfillmentProviders200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]**](../Model/Get3PFulfillmentProviders200ResponseInner.md)
 
 ### Authorization
 
@@ -310,7 +310,7 @@ try {
 ## `getAllFulfillmentCenters()`
 
 ```php
-getAllFulfillmentCenters($includeCalendarDayConfiguration): \Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]
+getAllFulfillmentCenters($includeCalendarDayConfiguration): \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]
 ```
 Get all fulfillment centers
 
@@ -326,7 +326,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -350,7 +350,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]**](../Model/GetAllFulfillmentCenters200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]**](../Model/GetAllFulfillmentCenters200ResponseInner.md)
 
 ### Authorization
 
@@ -368,7 +368,7 @@ try {
 ## `getAllShippingTemplates()`
 
 ```php
-getAllShippingTemplates(): \Walmart\Model\MP\US\Settings\GetAllShippingTemplates200Response
+getAllShippingTemplates(): \Walmart\Models\MP\US\Settings\GetAllShippingTemplates200Response
 ```
 Get All Shipping Templates
 
@@ -384,7 +384,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -405,7 +405,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetAllShippingTemplates200Response**](../Model/GetAllShippingTemplates200Response.md)
+[**\Walmart\Models\MP\US\Settings\GetAllShippingTemplates200Response**](../Model/GetAllShippingTemplates200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ try {
 ## `getCarrierMethods()`
 
 ```php
-getCarrierMethods(): \Walmart\Model\MP\US\Settings\GetCarrierMethods200ResponseInner[]
+getCarrierMethods(): \Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]
 ```
 Get carrier methods
 
@@ -439,7 +439,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -460,7 +460,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetCarrierMethods200ResponseInner[]**](../Model/GetCarrierMethods200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]**](../Model/GetCarrierMethods200ResponseInner.md)
 
 ### Authorization
 
@@ -478,7 +478,7 @@ try {
 ## `getCoverageForFulfillmentCenters()`
 
 ```php
-getCoverageForFulfillmentCenters(): \Walmart\Model\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]
+getCoverageForFulfillmentCenters(): \Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]
 ```
 Get coverage for fulfillment centers
 
@@ -494,7 +494,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -515,7 +515,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]**](../Model/GetCoverageForFulfillmentCenters200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]**](../Model/GetCoverageForFulfillmentCenters200ResponseInner.md)
 
 ### Authorization
 
@@ -533,7 +533,7 @@ try {
 ## `getPartnerConfigurations()`
 
 ```php
-getPartnerConfigurations(): \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200Response
+getPartnerConfigurations(): \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200Response
 ```
 Get Partner Configurations
 
@@ -549,7 +549,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -570,7 +570,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200Response**](../Model/GetPartnerConfigurations200Response.md)
+[**\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200Response**](../Model/GetPartnerConfigurations200Response.md)
 
 ### Authorization
 
@@ -588,7 +588,7 @@ try {
 ## `getShippingConfigurations()`
 
 ```php
-getShippingConfigurations(): \Walmart\Model\MP\US\Settings\GetShippingConfigurations200Response
+getShippingConfigurations(): \Walmart\Models\MP\US\Settings\GetShippingConfigurations200Response
 ```
 Get Shipping Configurations
 
@@ -604,7 +604,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -625,7 +625,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetShippingConfigurations200Response**](../Model/GetShippingConfigurations200Response.md)
+[**\Walmart\Models\MP\US\Settings\GetShippingConfigurations200Response**](../Model/GetShippingConfigurations200Response.md)
 
 ### Authorization
 
@@ -643,7 +643,7 @@ try {
 ## `getShippingTemplateActivationStatus()`
 
 ```php
-getShippingTemplateActivationStatus(): \Walmart\Model\MP\US\Settings\GetShippingTemplateActivationStatus200Response
+getShippingTemplateActivationStatus(): \Walmart\Models\MP\US\Settings\GetShippingTemplateActivationStatus200Response
 ```
 Get Shipping Template Activation Status
 
@@ -659,7 +659,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -680,7 +680,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetShippingTemplateActivationStatus200Response**](../Model/GetShippingTemplateActivationStatus200Response.md)
+[**\Walmart\Models\MP\US\Settings\GetShippingTemplateActivationStatus200Response**](../Model/GetShippingTemplateActivationStatus200Response.md)
 
 ### Authorization
 
@@ -698,7 +698,7 @@ try {
 ## `getShippingTemplateDetails()`
 
 ```php
-getShippingTemplateDetails($templateId): \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200Response
+getShippingTemplateDetails($templateId): \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response
 ```
 Get Shipping Template Details
 
@@ -714,7 +714,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -738,7 +738,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
 
 ### Authorization
 
@@ -756,7 +756,7 @@ try {
 ## `updateFulfillmentCenter()`
 
 ```php
-updateFulfillmentCenter($updateFulfillmentCenterRequest): \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenter200Response
+updateFulfillmentCenter($updateFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenter200Response
 ```
 Update fulfillment center
 
@@ -772,14 +772,14 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
 
-$updateFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":{"shipNode":"84955660770217985","shipNodeName":"Seller test-distributor","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"91ab1234","postalAddress":{"addressLine1":"111 CALIFORNIA SA","city":"SC GABRIEL","state":"CA","country":"USA","postalCode":"90706"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}}; // \Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequest | Request fields
+$updateFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":{"shipNode":"84955660770217985","shipNodeName":"Seller test-distributor","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"91ab1234","postalAddress":{"addressLine1":"111 CALIFORNIA SA","city":"SC GABRIEL","state":"CA","country":"USA","postalCode":"90706"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}}; // \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest | Request fields
 
 try {
     $result = $apiInstance->updateFulfillmentCenter($updateFulfillmentCenterRequest);
@@ -791,12 +791,12 @@ try {
 
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateFulfillmentCenterRequest** | [**\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\UpdateFulfillmentCenter200Response**](../Model/UpdateFulfillmentCenter200Response.md)
+[**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenter200Response**](../Model/UpdateFulfillmentCenter200Response.md)
 
 ### Authorization
 
@@ -814,7 +814,7 @@ try {
 ## `updateShippingTemplates()`
 
 ```php
-updateShippingTemplates($templateId, $updateShippingTemplatesRequest): \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200Response
+updateShippingTemplates($templateId, $updateShippingTemplatesRequest): \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response
 ```
 Update Shipping Templates
 
@@ -830,7 +830,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\SettingsApi(  
+$apiInstance = new Walmart\Apis\SettingsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -838,7 +838,7 @@ $apiInstance = new Walmart\Api\SettingsApi(
 );
 
 $templateId = 'templateId_example'; // string | templateId
-$updateShippingTemplatesRequest = {"name":"Next Day servc test","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Model\MP\US\Settings\UpdateShippingTemplatesRequest | Request fields
+$updateShippingTemplatesRequest = {"name":"Next Day servc test","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\UpdateShippingTemplatesRequest | Request fields
 
 try {
     $result = $apiInstance->updateShippingTemplates($templateId, $updateShippingTemplatesRequest);
@@ -851,12 +851,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **templateId** | **string**| templateId | |
-| **updateShippingTemplatesRequest** | [**\Walmart\Model\MP\US\Settings\UpdateShippingTemplatesRequest**](../Model/UpdateShippingTemplatesRequest.md)| Request fields | |
+| **updateShippingTemplatesRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplatesRequest**](../Model/UpdateShippingTemplatesRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
 
 ### Authorization
 

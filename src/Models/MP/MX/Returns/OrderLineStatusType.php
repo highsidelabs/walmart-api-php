@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderLineStatusType Class Doc Comment
@@ -50,7 +50,7 @@ class OrderLineStatusType extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Model\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusStatusQuantity'
+        'statusQuantity' => '\Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusStatusQuantity'
     ];
 
     /**
@@ -347,7 +347,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusStatusQuantity
+     * @return \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusStatusQuantity
     
      */
     public function getStatusQuantity()
@@ -358,7 +358,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Model\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusStatusQuantity $statusQuantity statusQuantity
      *
      * @return self
     

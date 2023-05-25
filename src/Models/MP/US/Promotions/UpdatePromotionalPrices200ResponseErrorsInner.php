@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdatePromotionalPrices200ResponseErrorsInner Class Doc Comment
@@ -55,7 +55,7 @@ class UpdatePromotionalPrices200ResponseErrorsInner extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInnerCausesInner[]',
+        'causes' => '\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInnerCausesInner[]',
         'errorIdentifiers' => 'array<string,object>',
         'component' => 'string',
         'type' => 'string',
@@ -491,7 +491,7 @@ class UpdatePromotionalPrices200ResponseErrorsInner extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInnerCausesInner[]|null
     
      */
     public function getCauses()
@@ -502,7 +502,7 @@ class UpdatePromotionalPrices200ResponseErrorsInner extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInnerCausesInner[]|null $causes causes
      *
      * @return self
     

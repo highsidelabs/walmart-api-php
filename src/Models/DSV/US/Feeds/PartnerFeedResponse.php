@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * PartnerFeedResponse Class Doc Comment
@@ -49,17 +49,17 @@ class PartnerFeedResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
         'feedId' => 'string',
         'feedStatus' => 'string',
-        'ingestionErrors' => '\Walmart\Model\DSV\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors',
+        'ingestionErrors' => '\Walmart\Models\DSV\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors',
         'itemsReceived' => 'int',
         'itemsSucceeded' => 'int',
         'itemsFailed' => 'int',
         'itemsProcessing' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'itemDetails' => '\Walmart\Model\DSV\US\Feeds\GetFeedItemStatus200ResponseItemDetails'
+        'itemDetails' => '\Walmart\Models\DSV\US\Feeds\GetFeedItemStatus200ResponseItemDetails'
     ];
 
     /**
@@ -227,7 +227,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -238,7 +238,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -324,7 +324,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets ingestionErrors
      *
-     * @return \Walmart\Model\DSV\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null
+     * @return \Walmart\Models\DSV\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null
     
      */
     public function getIngestionErrors()
@@ -335,7 +335,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets ingestionErrors
      *
-     * @param \Walmart\Model\DSV\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null $ingestionErrors ingestionErrors
+     * @param \Walmart\Models\DSV\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null $ingestionErrors ingestionErrors
      *
      * @return self
     
@@ -527,7 +527,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets itemDetails
      *
-     * @return \Walmart\Model\DSV\US\Feeds\GetFeedItemStatus200ResponseItemDetails|null
+     * @return \Walmart\Models\DSV\US\Feeds\GetFeedItemStatus200ResponseItemDetails|null
     
      */
     public function getItemDetails()
@@ -538,7 +538,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets itemDetails
      *
-     * @param \Walmart\Model\DSV\US\Feeds\GetFeedItemStatus200ResponseItemDetails|null $itemDetails itemDetails
+     * @param \Walmart\Models\DSV\US\Feeds\GetFeedItemStatus200ResponseItemDetails|null $itemDetails itemDetails
      *
      * @return self
     

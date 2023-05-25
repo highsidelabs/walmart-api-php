@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemsDetailsForListing200Response Class Doc Comment
@@ -51,7 +51,7 @@ class ItemsDetailsForListing200Response extends BaseModel
     protected static array $openAPITypes = [
         'nextCursor' => 'string',
         'totalItems' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]',
+        'payload' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]',
         'status' => 'string'
     ];
 
@@ -236,7 +236,7 @@ class ItemsDetailsForListing200Response extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -247,7 +247,7 @@ class ItemsDetailsForListing200Response extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]|null $payload payload
      *
      * @return self
     

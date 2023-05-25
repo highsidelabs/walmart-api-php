@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\OnRequestReports;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\OnRequestReports;
+use Walmart\Models\BaseModel;
 
 /**
  * GetRequestsStatus200Response Class Doc Comment
@@ -53,7 +53,7 @@ class GetRequestsStatus200Response extends BaseModel
         'totalCount' => 'int',
         'limit' => 'int',
         'nextCursor' => 'string',
-        'requests' => '\Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInner[]'
+        'requests' => '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInner[]'
     ];
 
     /**
@@ -301,7 +301,7 @@ class GetRequestsStatus200Response extends BaseModel
     /**
      * Gets requests
      *
-     * @return \Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInner[]|null
+     * @return \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInner[]|null
     
      */
     public function getRequests()
@@ -312,7 +312,7 @@ class GetRequestsStatus200Response extends BaseModel
     /**
      * Sets requests
      *
-     * @param \Walmart\Model\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInner[]|null $requests List of requests
+     * @param \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInner[]|null $requests List of requests
      *
      * @return self
     

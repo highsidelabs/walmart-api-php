@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerShipmentsInner Class Doc Comment
@@ -51,7 +51,7 @@ class GetAllOrders200ResponseOrderInnerShipmentsInner extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipmentLines' => '\Walmart\Model\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]',
+        'shipmentLines' => '\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]',
         'shipmentNo' => 'string',
         'status' => 'string',
         'packageNo' => 'string',
@@ -62,7 +62,7 @@ class GetAllOrders200ResponseOrderInnerShipmentsInner extends BaseModel
         'carrierMethodCode' => 'string',
         'trackingNumber' => 'string',
         'trackingUrl' => 'string',
-        'shipmentAdditionalDate' => '\Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate'
+        'shipmentAdditionalDate' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate'
     ];
 
     /**
@@ -203,7 +203,7 @@ class GetAllOrders200ResponseOrderInnerShipmentsInner extends BaseModel
     /**
      * Gets shipmentLines
      *
-     * @return \Walmart\Model\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null
     
      */
     public function getShipmentLines()
@@ -214,7 +214,7 @@ class GetAllOrders200ResponseOrderInnerShipmentsInner extends BaseModel
     /**
      * Sets shipmentLines
      *
-     * @param \Walmart\Model\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null $shipmentLines shipmentLines
+     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null $shipmentLines shipmentLines
      *
      * @return self
     
@@ -522,7 +522,7 @@ class GetAllOrders200ResponseOrderInnerShipmentsInner extends BaseModel
     /**
      * Gets shipmentAdditionalDate
      *
-     * @return \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate|null
+     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate|null
     
      */
     public function getShipmentAdditionalDate()
@@ -533,7 +533,7 @@ class GetAllOrders200ResponseOrderInnerShipmentsInner extends BaseModel
     /**
      * Sets shipmentAdditionalDate
      *
-     * @param \Walmart\Model\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate|null $shipmentAdditionalDate shipmentAdditionalDate
+     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate|null $shipmentAdditionalDate shipmentAdditionalDate
      *
      * @return self
     

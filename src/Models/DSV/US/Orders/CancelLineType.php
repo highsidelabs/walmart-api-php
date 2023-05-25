@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelLineType Class Doc Comment
@@ -52,7 +52,7 @@ class CancelLineType extends BaseModel
       */
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
-        'orderLineStatuses' => '\Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses'
+        'orderLineStatuses' => '\Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses'
     ];
 
     /**
@@ -168,7 +168,7 @@ class CancelLineType extends BaseModel
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses
+     * @return \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses
     
      */
     public function getOrderLineStatuses()
@@ -179,7 +179,7 @@ class CancelLineType extends BaseModel
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateBulkInventory200Response Class Doc Comment

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipmentMx Class Doc Comment
@@ -49,7 +49,7 @@ class ShipmentMx extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipments' => '\Walmart\Model\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]'
+        'shipments' => '\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class ShipmentMx extends BaseModel
     /**
      * Gets shipments
      *
-     * @return \Walmart\Model\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]|null
     
      */
     public function getShipments()
@@ -135,7 +135,7 @@ class ShipmentMx extends BaseModel
     /**
      * Sets shipments
      *
-     * @param \Walmart\Model\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]|null $shipments List of shipments associated with the order
+     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]|null $shipments List of shipments associated with the order
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge Class Doc Comment
@@ -52,9 +52,9 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
       */
     protected static array $openAPITypes = [
         'unitOfMeasure' => 'string',
-        'shippingAndHandling' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling',
-        'chargePerWeight' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerWeight',
-        'chargePerItem' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem'
+        'shippingAndHandling' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling',
+        'chargePerWeight' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerWeight',
+        'chargePerItem' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem'
     ];
 
     /**
@@ -179,7 +179,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Gets shippingAndHandling
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling|null
     
      */
     public function getShippingAndHandling()
@@ -190,7 +190,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Sets shippingAndHandling
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling|null $shippingAndHandling shippingAndHandling
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling|null $shippingAndHandling shippingAndHandling
      *
      * @return self
     
@@ -208,7 +208,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Gets chargePerWeight
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerWeight|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerWeight|null
     
      */
     public function getChargePerWeight()
@@ -219,7 +219,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Sets chargePerWeight
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerWeight|null $chargePerWeight chargePerWeight
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerWeight|null $chargePerWeight chargePerWeight
      *
      * @return self
     
@@ -237,7 +237,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Gets chargePerItem
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem|null
     
      */
     public function getChargePerItem()
@@ -248,7 +248,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     /**
      * Sets chargePerItem
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem|null $chargePerItem chargePerItem
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem|null $chargePerItem chargePerItem
      *
      * @return self
     

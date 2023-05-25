@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemResponse Class Doc Comment
@@ -57,13 +57,13 @@ class ItemResponse extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice',
+        'price' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice',
         'publishedStatus' => 'string',
-        'additionalAttributes' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes',
-        'unpublishedReasons' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons',
+        'additionalAttributes' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes',
+        'unpublishedReasons' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons',
         'lifecycleStatus' => 'string',
         'variantGroupId' => 'string',
-        'variantGroupInfo' => '\Walmart\Model\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo'
+        'variantGroupInfo' => '\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo'
     ];
 
     /**
@@ -500,7 +500,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null
     
      */
     public function getPrice()
@@ -511,7 +511,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
      *
      * @return self
     
@@ -558,7 +558,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets additionalAttributes
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null
     
      */
     public function getAdditionalAttributes()
@@ -569,7 +569,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets additionalAttributes
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null $additionalAttributes additionalAttributes
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null $additionalAttributes additionalAttributes
      *
      * @return self
     
@@ -587,7 +587,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets unpublishedReasons
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null
     
      */
     public function getUnpublishedReasons()
@@ -598,7 +598,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets unpublishedReasons
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null $unpublishedReasons unpublishedReasons
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null $unpublishedReasons unpublishedReasons
      *
      * @return self
     
@@ -674,7 +674,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets variantGroupInfo
      *
-     * @return \Walmart\Model\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null
+     * @return \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null
     
      */
     public function getVariantGroupInfo()
@@ -685,7 +685,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets variantGroupInfo
      *
-     * @param \Walmart\Model\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null $variantGroupInfo variantGroupInfo
+     * @param \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null $variantGroupInfo variantGroupInfo
      *
      * @return self
     

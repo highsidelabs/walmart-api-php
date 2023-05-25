@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetTaxonomyResponse200Response Class Doc Comment
@@ -50,7 +50,7 @@ class GetTaxonomyResponse200Response extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]'
     ];
 
     /**
@@ -193,7 +193,7 @@ class GetTaxonomyResponse200Response extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -204,7 +204,7 @@ class GetTaxonomyResponse200Response extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]|null $payload payload
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration Class Doc Comment
@@ -49,7 +49,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration 
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'values' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner[]'
+        'values' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner[]'
     ];
 
     /**
@@ -124,7 +124,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration 
     /**
      * Gets values
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner[]|null
     
      */
     public function getValues()
@@ -135,7 +135,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration 
     /**
      * Sets values
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner[]|null $values List of feed throttling configurations
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner[]|null $values List of feed throttling configurations
      *
      * @return self
     

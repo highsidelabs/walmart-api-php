@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Promotions;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Promotions;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemPriceType Class Doc Comment
@@ -49,12 +49,12 @@ class ItemPriceType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'itemIdentifier' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadItemIdentifier',
-        'pricingList' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingList',
-        'maxSalesRetailPrice' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
-        'minAdvtPrice' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
-        'rebate' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadRebate',
-        'additionalAttributes' => '\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributes'
+        'itemIdentifier' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadItemIdentifier',
+        'pricingList' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingList',
+        'maxSalesRetailPrice' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
+        'minAdvtPrice' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
+        'rebate' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadRebate',
+        'additionalAttributes' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributes'
     ];
 
     /**
@@ -165,7 +165,7 @@ class ItemPriceType extends BaseModel
     /**
      * Gets itemIdentifier
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadItemIdentifier
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadItemIdentifier
     
      */
     public function getItemIdentifier()
@@ -176,7 +176,7 @@ class ItemPriceType extends BaseModel
     /**
      * Sets itemIdentifier
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadItemIdentifier $itemIdentifier itemIdentifier
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadItemIdentifier $itemIdentifier itemIdentifier
      *
      * @return self
     
@@ -194,7 +194,7 @@ class ItemPriceType extends BaseModel
     /**
      * Gets pricingList
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingList
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingList
     
      */
     public function getPricingList()
@@ -205,7 +205,7 @@ class ItemPriceType extends BaseModel
     /**
      * Sets pricingList
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingList $pricingList pricingList
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingList $pricingList pricingList
      *
      * @return self
     
@@ -223,7 +223,7 @@ class ItemPriceType extends BaseModel
     /**
      * Gets maxSalesRetailPrice
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
     
      */
     public function getMaxSalesRetailPrice()
@@ -234,7 +234,7 @@ class ItemPriceType extends BaseModel
     /**
      * Sets maxSalesRetailPrice
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $maxSalesRetailPrice maxSalesRetailPrice
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $maxSalesRetailPrice maxSalesRetailPrice
      *
      * @return self
     
@@ -252,7 +252,7 @@ class ItemPriceType extends BaseModel
     /**
      * Gets minAdvtPrice
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
     
      */
     public function getMinAdvtPrice()
@@ -263,7 +263,7 @@ class ItemPriceType extends BaseModel
     /**
      * Sets minAdvtPrice
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $minAdvtPrice minAdvtPrice
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $minAdvtPrice minAdvtPrice
      *
      * @return self
     
@@ -281,7 +281,7 @@ class ItemPriceType extends BaseModel
     /**
      * Gets rebate
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadRebate|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadRebate|null
     
      */
     public function getRebate()
@@ -292,7 +292,7 @@ class ItemPriceType extends BaseModel
     /**
      * Sets rebate
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadRebate|null $rebate rebate
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadRebate|null $rebate rebate
      *
      * @return self
     
@@ -310,7 +310,7 @@ class ItemPriceType extends BaseModel
     /**
      * Gets additionalAttributes
      *
-     * @return \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributes|null
+     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributes|null
     
      */
     public function getAdditionalAttributes()
@@ -321,7 +321,7 @@ class ItemPriceType extends BaseModel
     /**
      * Sets additionalAttributes
      *
-     * @param \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributes|null $additionalAttributes additionalAttributes
+     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributes|null $additionalAttributes additionalAttributes
      *
      * @return self
     

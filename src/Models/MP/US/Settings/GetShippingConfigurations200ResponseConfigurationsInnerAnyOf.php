@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetShippingConfigurations200ResponseConfigurationsInnerAnyOf Class Doc Comment
@@ -50,7 +50,7 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOf extends BaseM
       */
     protected static array $openAPITypes = [
         'configurationName' => 'string',
-        'configuration' => '\Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration'
+        'configuration' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration'
     ];
 
     /**
@@ -194,7 +194,7 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOf extends BaseM
     /**
      * Gets configuration
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null
     
      */
     public function getConfiguration()
@@ -205,7 +205,7 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOf extends BaseM
     /**
      * Sets configuration
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null $configuration configuration
+     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null $configuration configuration
      *
      * @return self
     

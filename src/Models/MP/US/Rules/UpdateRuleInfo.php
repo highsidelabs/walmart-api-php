@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateRuleInfo Class Doc Comment
@@ -54,7 +54,7 @@ class UpdateRuleInfo extends BaseModel
         'name' => 'string',
         'description' => 'string',
         'priority' => 'string',
-        'conditions' => '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]'
+        'conditions' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]'
     ];
 
     /**
@@ -304,7 +304,7 @@ class UpdateRuleInfo extends BaseModel
     /**
      * Gets conditions
      *
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null
     
      */
     public function getConditions()
@@ -315,7 +315,7 @@ class UpdateRuleInfo extends BaseModel
     /**
      * Sets conditions
      *
-     * @param \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null $conditions Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.
+     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null $conditions Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.
      *
      * @return self
     

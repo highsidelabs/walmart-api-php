@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFeedItemStatus200ResponseItemDetails Class Doc Comment
@@ -51,7 +51,7 @@ class GetFeedItemStatus200ResponseItemDetails extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'itemIngestionStatus' => '\Walmart\Model\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]'
+        'itemIngestionStatus' => '\Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class GetFeedItemStatus200ResponseItemDetails extends BaseModel
     /**
      * Gets itemIngestionStatus
      *
-     * @return \Walmart\Model\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]|null
+     * @return \Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]|null
     
      */
     public function getItemIngestionStatus()
@@ -137,7 +137,7 @@ class GetFeedItemStatus200ResponseItemDetails extends BaseModel
     /**
      * Sets itemIngestionStatus
      *
-     * @param \Walmart\Model\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]|null $itemIngestionStatus The ingestion status of an individual item
+     * @param \Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]|null $itemIngestionStatus The ingestion status of an individual item
      *
      * @return self
     

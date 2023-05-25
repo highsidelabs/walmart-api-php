@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * NameValueAttributes Class Doc Comment
@@ -51,7 +51,7 @@ class NameValueAttributes extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'nameValueAttribute' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]'
+        'nameValueAttribute' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class NameValueAttributes extends BaseModel
     /**
      * Gets nameValueAttribute
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]|null
     
      */
     public function getNameValueAttribute()
@@ -137,7 +137,7 @@ class NameValueAttributes extends BaseModel
     /**
      * Sets nameValueAttribute
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]|null $nameValueAttribute nameValueAttribute
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]|null $nameValueAttribute nameValueAttribute
      *
      * @return self
     

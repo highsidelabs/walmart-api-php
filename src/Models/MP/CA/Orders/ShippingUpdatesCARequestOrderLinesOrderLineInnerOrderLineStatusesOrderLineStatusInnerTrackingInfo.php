@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo Class Doc Comment
@@ -52,7 +52,7 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
       */
     protected static array $openAPITypes = [
         'shipDateTime' => '\DateTime',
-        'carrierName' => '\Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName',
+        'carrierName' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName',
         'methodCode' => 'string',
         'trackingNumber' => 'string',
         'trackingURL' => 'string'
@@ -234,7 +234,7 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
     /**
      * Gets carrierName
      *
-     * @return \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName
     
      */
     public function getCarrierName()
@@ -245,7 +245,7 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
     /**
      * Sets carrierName
      *
-     * @param \Walmart\Model\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName $carrierName carrierName
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName $carrierName carrierName
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderCancellation Class Doc Comment
@@ -49,7 +49,7 @@ class OrderCancellation extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLines' => '\Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLines'
+        'orderLines' => '\Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLines'
     ];
 
     /**
@@ -127,7 +127,7 @@ class OrderCancellation extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLines
+     * @return \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLines
     
      */
     public function getOrderLines()
@@ -138,7 +138,7 @@ class OrderCancellation extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Model\DSV\US\Orders\CancelOrderLinesRequestOrderLines $orderLines orderLines
+     * @param \Walmart\Models\DSV\US\Orders\CancelOrderLinesRequestOrderLines $orderLines orderLines
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedUploadRequestDTO Class Doc Comment
@@ -49,8 +49,8 @@ class FeedUploadRequestDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'itemFeedHeader' => '\Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader',
-        'item' => '\Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemInner[]'
+        'itemFeedHeader' => '\Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader',
+        'item' => '\Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Gets itemFeedHeader
      *
-     * @return \Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader|null
+     * @return \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader|null
     
      */
     public function getItemFeedHeader()
@@ -142,7 +142,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Sets itemFeedHeader
      *
-     * @param \Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader|null $itemFeedHeader itemFeedHeader
+     * @param \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader|null $itemFeedHeader itemFeedHeader
      *
      * @return self
     
@@ -160,7 +160,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Gets item
      *
-     * @return \Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemInner[]|null
+     * @return \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInner[]|null
     
      */
     public function getItem()
@@ -171,7 +171,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Sets item
      *
-     * @param \Walmart\Model\MP\US\Prices\GetRepricerFeedRequestItemInner[]|null $item item
+     * @param \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInner[]|null $item item
      *
      * @return self
     

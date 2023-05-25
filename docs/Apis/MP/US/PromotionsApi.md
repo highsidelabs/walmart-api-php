@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPPromotionsApi  
+# Walmart\Apis\US\MPPromotionsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getPromotionalPrices()`
 
 ```php
-getPromotionalPrices($sku): \Walmart\Model\MP\US\Promotions\GetPromotionalPrices200Response
+getPromotionalPrices($sku): \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response
 ```
 Promotional prices
 
@@ -27,7 +27,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
+$apiInstance = new Walmart\Apis\PromotionsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -51,7 +51,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Promotions\GetPromotionalPrices200Response**](../Model/GetPromotionalPrices200Response.md)
+[**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response**](../Model/GetPromotionalPrices200Response.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ try {
 ## `updateBulkPromotionalPrice()`
 
 ```php
-updateBulkPromotionalPrice($feedType, $file): \Walmart\Model\MP\US\Promotions\UpdateBulkPromotionalPrice200Response
+updateBulkPromotionalPrice($feedType, $file): \Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response
 ```
 Updates bulk promotional prices
 
@@ -85,7 +85,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
+$apiInstance = new Walmart\Apis\PromotionsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -111,7 +111,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Promotions\UpdateBulkPromotionalPrice200Response**](../Model/UpdateBulkPromotionalPrice200Response.md)
+[**\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response**](../Model/UpdateBulkPromotionalPrice200Response.md)
 
 ### Authorization
 
@@ -129,7 +129,7 @@ try {
 ## `updatePromotionalPrices()`
 
 ```php
-updatePromotionalPrices($promo, $updatePromotionalPricesRequest): \Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200Response
+updatePromotionalPrices($promo, $updatePromotionalPricesRequest): \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response
 ```
 Update a promotional price
 
@@ -145,7 +145,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
+$apiInstance = new Walmart\Apis\PromotionsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -153,7 +153,7 @@ $apiInstance = new Walmart\Api\PromotionsApi(
 );
 
 $promo = true; // bool | The promotional price. Set to 'true' in order to retrieve promotional prices
-$updatePromotionalPricesRequest = {"sku":"97964_KFTest","pricing":[{"currentPrice":{"currency":"USD","amount":4},"currentPriceType":"REDUCED","comparisonPriceType":"BASE","comparisonPrice":{"currency":"USD","amount":4},"priceDisplayCodes":"CART","effectiveDate":"2019-11-03T09:49:57.943Z","expirationDate":"2019-12-03T09:49:57.943Z","processMode":"UPSERT"}]}; // \Walmart\Model\MP\US\Promotions\UpdatePromotionalPricesRequest | The request body consists of a Feed file attached to the request.
+$updatePromotionalPricesRequest = {"sku":"97964_KFTest","pricing":[{"currentPrice":{"currency":"USD","amount":4},"currentPriceType":"REDUCED","comparisonPriceType":"BASE","comparisonPrice":{"currency":"USD","amount":4},"priceDisplayCodes":"CART","effectiveDate":"2019-11-03T09:49:57.943Z","expirationDate":"2019-12-03T09:49:57.943Z","processMode":"UPSERT"}]}; // \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest | The request body consists of a Feed file attached to the request.
 
 try {
     $result = $apiInstance->updatePromotionalPrices($promo, $updatePromotionalPricesRequest);
@@ -166,12 +166,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promo** | **bool**| The promotional price. Set to 'true' in order to retrieve promotional prices | [default to true] |
-| **updatePromotionalPricesRequest** | [**\Walmart\Model\MP\US\Promotions\UpdatePromotionalPricesRequest**](../Model/UpdatePromotionalPricesRequest.md)| The request body consists of a Feed file attached to the request. | |
+| **updatePromotionalPricesRequest** | [**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest**](../Model/UpdatePromotionalPricesRequest.md)| The request body consists of a Feed file attached to the request. | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Promotions\UpdatePromotionalPrices200Response**](../Model/UpdatePromotionalPrices200Response.md)
+[**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response**](../Model/UpdatePromotionalPrices200Response.md)
 
 ### Authorization
 

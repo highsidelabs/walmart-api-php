@@ -1,4 +1,4 @@
-# Walmart\Api\CA\MPPromotionsApi  
+# Walmart\Apis\CA\MPPromotionsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -28,7 +28,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
+$apiInstance = new Walmart\Apis\PromotionsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -70,7 +70,7 @@ try {
 ## `updateBulkPromotionalPrice()`
 
 ```php
-updateBulkPromotionalPrice($feedType, $file): \Walmart\Model\MP\CA\Promotions\UpdateBulkPromotionalPrice200Response
+updateBulkPromotionalPrice($feedType, $file): \Walmart\Models\MP\CA\Promotions\UpdateBulkPromotionalPrice200Response
 ```
 Updates promotional prices in bulk
 
@@ -87,7 +87,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
+$apiInstance = new Walmart\Apis\PromotionsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -113,7 +113,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\CA\Promotions\UpdateBulkPromotionalPrice200Response**](../Model/UpdateBulkPromotionalPrice200Response.md)
+[**\Walmart\Models\MP\CA\Promotions\UpdateBulkPromotionalPrice200Response**](../Model/UpdateBulkPromotionalPrice200Response.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
+$apiInstance = new Walmart\Apis\PromotionsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * Price Class Doc Comment
@@ -52,7 +52,7 @@ class Price extends BaseModel
         'offerId' => 'string',
         'sku' => 'string',
         'replaceAll' => 'string',
-        'pricing' => '\Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInner[]',
+        'pricing' => '\Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInner[]',
         'definitions' => 'object'
     ];
 
@@ -282,7 +282,7 @@ class Price extends BaseModel
     /**
      * Gets pricing
      *
-     * @return \Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInner[]
+     * @return \Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInner[]
     
      */
     public function getPricing()
@@ -293,7 +293,7 @@ class Price extends BaseModel
     /**
      * Sets pricing
      *
-     * @param \Walmart\Model\MP\US\Prices\UpdatePriceRequestPricingInner[] $pricing pricing
+     * @param \Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInner[] $pricing pricing
      *
      * @return self
     

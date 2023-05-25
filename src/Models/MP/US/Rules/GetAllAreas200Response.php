@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllAreas200Response Class Doc Comment
@@ -50,7 +50,7 @@ class GetAllAreas200Response extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Rules\GetAllAreas200ResponsePayload'
+        'payload' => '\Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayload'
     ];
 
     /**
@@ -193,7 +193,7 @@ class GetAllAreas200Response extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Rules\GetAllAreas200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayload|null
     
      */
     public function getPayload()
@@ -204,7 +204,7 @@ class GetAllAreas200Response extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Rules\GetAllAreas200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayload|null $payload payload
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner Class Doc Comment
@@ -55,10 +55,10 @@ class InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner extends Bas
         'isSortable' => 'bool',
         'isNonSortable' => 'bool',
         'nodeType' => 'string',
-        'shipToAddress' => '\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
+        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
         'totalNetTransferCharge' => 'float',
         'currencyUnit' => 'string',
-        'shipmentItems' => '\Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]'
+        'shipmentItems' => '\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]'
     ];
 
     /**
@@ -291,7 +291,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner extends Bas
     /**
      * Gets shipToAddress
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
     
      */
     public function getShipToAddress()
@@ -302,7 +302,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner extends Bas
     /**
      * Sets shipToAddress
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
      *
      * @return self
     
@@ -378,7 +378,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner extends Bas
     /**
      * Gets shipmentItems
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]|null
     
      */
     public function getShipmentItems()
@@ -389,7 +389,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner extends Bas
     /**
      * Sets shipmentItems
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]|null $shipmentItems Shipment items
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]|null $shipmentItems Shipment items
      *
      * @return self
     

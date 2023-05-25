@@ -1,4 +1,4 @@
-# Walmart\Api\US\CPFeedsApi  
+# Walmart\Apis\US\CPFeedsApi  
 All URIs are relative to http://localhost, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -9,7 +9,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 ## `contentProductFeed()`
 
 ```php
-contentProductFeed($feedType, $file): \Walmart\Model\CP\US\Feeds\ContentProductFeed200Response
+contentProductFeed($feedType, $file): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
 ```
 Content feeds
 
@@ -26,7 +26,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\FeedsApi(  
+$apiInstance = new Walmart\Apis\FeedsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -52,7 +52,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\CP\US\Feeds\ContentProductFeed200Response**](../Model/ContentProductFeed200Response.md)
+[**\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response**](../Model/ContentProductFeed200Response.md)
 
 ### Authorization
 

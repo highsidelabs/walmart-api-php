@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInner Class Doc Comment
@@ -55,15 +55,15 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
         'customerEmailId' => 'string',
         'returnType' => 'string',
         'replacementCustomerOrderId' => 'string',
-        'customerName' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName',
+        'customerName' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName',
         'customerOrderId' => 'string',
         'returnOrderDate' => '\DateTime',
         'returnByDate' => '\DateTime',
         'refundMode' => 'string',
-        'totalRefundAmount' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
-        'returnLineGroups' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner[]',
-        'returnOrderLines' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]',
-        'returnChannel' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnChannel'
+        'totalRefundAmount' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
+        'returnLineGroups' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner[]',
+        'returnOrderLines' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]',
+        'returnChannel' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnChannel'
     ];
 
     /**
@@ -326,7 +326,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Gets customerName
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName|null
     
      */
     public function getCustomerName()
@@ -337,7 +337,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Sets customerName
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName|null $customerName customerName
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName|null $customerName customerName
      *
      * @return self
     
@@ -471,7 +471,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Gets totalRefundAmount
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
     
      */
     public function getTotalRefundAmount()
@@ -482,7 +482,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Sets totalRefundAmount
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $totalRefundAmount totalRefundAmount
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $totalRefundAmount totalRefundAmount
      *
      * @return self
     
@@ -500,7 +500,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Gets returnLineGroups
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner[]|null
     
      */
     public function getReturnLineGroups()
@@ -511,7 +511,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Sets returnLineGroups
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner[]|null $returnLineGroups These groups are created per label or type of carrier service required. (e.g., If order has some lines that can be clubbed and mailed together as a smart post then they belong to one return group. If a line is bulky and needs a different type of carrier service, then that line will be part of different group. Customer gets multiple labels depending on how many groups are created for the entire order.)
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInner[]|null $returnLineGroups These groups are created per label or type of carrier service required. (e.g., If order has some lines that can be clubbed and mailed together as a smart post then they belong to one return group. If a line is bulky and needs a different type of carrier service, then that line will be part of different group. Customer gets multiple labels depending on how many groups are created for the entire order.)
      *
      * @return self
     
@@ -529,7 +529,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Gets returnOrderLines
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]|null
     
      */
     public function getReturnOrderLines()
@@ -540,7 +540,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Sets returnOrderLines
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]|null $returnOrderLines A list of order lines in the return order
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]|null $returnOrderLines A list of order lines in the return order
      *
      * @return self
     
@@ -558,7 +558,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Gets returnChannel
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnChannel|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnChannel|null
     
      */
     public function getReturnChannel()
@@ -569,7 +569,7 @@ class GetReturns200ResponseReturnOrdersInner extends BaseModel
     /**
      * Sets returnChannel
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnChannel|null $returnChannel returnChannel
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnChannel|null $returnChannel returnChannel
      *
      * @return self
     

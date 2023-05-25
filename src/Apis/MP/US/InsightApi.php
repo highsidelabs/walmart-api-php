@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\US;
+namespace Walmart\Apis\MP\US;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -68,7 +68,7 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetCategoriesList200Response
+     * @return \Walmart\Models\MP\US\GetCategoriesList200Response
      */
     public function getCategoriesList(
         ?bool $viewTrendingItems = true,
@@ -77,7 +77,7 @@ class InsightApi extends BaseApi
         ?string $type = null,
         ?int $limit = null,
         ?int $offset = 0
-    ): \Walmart\Model\MP\US\GetCategoriesList200Response {
+    ): \Walmart\Models\MP\US\GetCategoriesList200Response {
         return $this->getCategoriesListWithHttpInfo($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset);
     }
 
@@ -95,7 +95,7 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetCategoriesList200Response
+     * @return \Walmart\Models\MP\US\GetCategoriesList200Response
      */
     protected function getCategoriesListWithHttpInfo(
         ?bool $viewTrendingItems = true,
@@ -104,7 +104,7 @@ class InsightApi extends BaseApi
         ?string $type = null,
         ?int $limit = null,
         ?int $offset = 0,
-    ): \Walmart\Model\MP\US\GetCategoriesList200Response {
+    ): \Walmart\Models\MP\US\GetCategoriesList200Response {
         $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -154,19 +154,19 @@ class InsightApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\GetCategoriesList200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\GetCategoriesList200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\GetCategoriesList200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\GetCategoriesList200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\GetCategoriesList200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\GetCategoriesList200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\GetCategoriesList200Response';
+            $returnType = '\Walmart\Models\MP\US\GetCategoriesList200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -182,7 +182,7 @@ class InsightApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\GetCategoriesList200Response',
+                        '\Walmart\Models\MP\US\GetCategoriesList200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -249,7 +249,7 @@ class InsightApi extends BaseApi
         ?int $limit = null,
         ?int $offset = 0,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\GetCategoriesList200Response';
+        $returnType = '\Walmart\Models\MP\US\GetCategoriesList200Response';
         $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -441,12 +441,12 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetListingQualityScore200Response
+     * @return \Walmart\Models\MP\US\GetListingQualityScore200Response
      */
     public function getListingQualityScore(
         ?bool $viewTrendingItems = null,
         ?string $wfsFlag = null
-    ): \Walmart\Model\MP\US\GetListingQualityScore200Response {
+    ): \Walmart\Models\MP\US\GetListingQualityScore200Response {
         return $this->getListingQualityScoreWithHttpInfo($viewTrendingItems, $wfsFlag);
     }
 
@@ -460,12 +460,12 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetListingQualityScore200Response
+     * @return \Walmart\Models\MP\US\GetListingQualityScore200Response
      */
     protected function getListingQualityScoreWithHttpInfo(
         ?bool $viewTrendingItems = null,
         ?string $wfsFlag = null,
-    ): \Walmart\Model\MP\US\GetListingQualityScore200Response {
+    ): \Walmart\Models\MP\US\GetListingQualityScore200Response {
         $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -515,19 +515,19 @@ class InsightApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\GetListingQualityScore200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\GetListingQualityScore200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\GetListingQualityScore200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\GetListingQualityScore200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\GetListingQualityScore200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\GetListingQualityScore200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\GetListingQualityScore200Response';
+            $returnType = '\Walmart\Models\MP\US\GetListingQualityScore200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -543,7 +543,7 @@ class InsightApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\GetListingQualityScore200Response',
+                        '\Walmart\Models\MP\US\GetListingQualityScore200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -594,7 +594,7 @@ class InsightApi extends BaseApi
         ?bool $viewTrendingItems = null,
         ?string $wfsFlag = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\GetListingQualityScore200Response';
+        $returnType = '\Walmart\Models\MP\US\GetListingQualityScore200Response';
         $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -743,9 +743,9 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetProSellerBadgeInfo200Response
+     * @return \Walmart\Models\MP\US\GetProSellerBadgeInfo200Response
      */
-    public function getProSellerBadgeInfo(): \Walmart\Model\MP\US\GetProSellerBadgeInfo200Response
+    public function getProSellerBadgeInfo(): \Walmart\Models\MP\US\GetProSellerBadgeInfo200Response
     {
         return $this->getProSellerBadgeInfoWithHttpInfo();
     }
@@ -757,9 +757,9 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetProSellerBadgeInfo200Response
+     * @return \Walmart\Models\MP\US\GetProSellerBadgeInfo200Response
      */
-    protected function getProSellerBadgeInfoWithHttpInfo(): \Walmart\Model\MP\US\GetProSellerBadgeInfo200Response
+    protected function getProSellerBadgeInfoWithHttpInfo(): \Walmart\Models\MP\US\GetProSellerBadgeInfo200Response
     {
         $request = $this->getProSellerBadgeInfoRequest();
         $this->writeDebug($request);
@@ -810,19 +810,19 @@ class InsightApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\GetProSellerBadgeInfo200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\GetProSellerBadgeInfo200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\GetProSellerBadgeInfo200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\GetProSellerBadgeInfo200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\GetProSellerBadgeInfo200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\GetProSellerBadgeInfo200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\GetProSellerBadgeInfo200Response';
+            $returnType = '\Walmart\Models\MP\US\GetProSellerBadgeInfo200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -838,7 +838,7 @@ class InsightApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\GetProSellerBadgeInfo200Response',
+                        '\Walmart\Models\MP\US\GetProSellerBadgeInfo200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -879,7 +879,7 @@ class InsightApi extends BaseApi
      */
     protected function getProSellerBadgeInfoAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Model\MP\US\GetProSellerBadgeInfo200Response';
+        $returnType = '\Walmart\Models\MP\US\GetProSellerBadgeInfo200Response';
         $request = $this->getProSellerBadgeInfoRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1009,7 +1009,7 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetTrendingResult200Response
+     * @return \Walmart\Models\MP\US\GetTrendingResult200Response
      */
     public function getTrendingResult(
         string $departmentId,
@@ -1017,7 +1017,7 @@ class InsightApi extends BaseApi
         ?string $limit = '20',
         ?string $offset = '0',
         ?string $timeFrame = '7'
-    ): \Walmart\Model\MP\US\GetTrendingResult200Response {
+    ): \Walmart\Models\MP\US\GetTrendingResult200Response {
         return $this->getTrendingResultWithHttpInfo($departmentId, $categoryId, $limit, $offset, $timeFrame);
     }
 
@@ -1034,7 +1034,7 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetTrendingResult200Response
+     * @return \Walmart\Models\MP\US\GetTrendingResult200Response
      */
     protected function getTrendingResultWithHttpInfo(
         string $departmentId,
@@ -1042,7 +1042,7 @@ class InsightApi extends BaseApi
         ?string $limit = '20',
         ?string $offset = '0',
         ?string $timeFrame = '7',
-    ): \Walmart\Model\MP\US\GetTrendingResult200Response {
+    ): \Walmart\Models\MP\US\GetTrendingResult200Response {
         $request = $this->getTrendingResultRequest($departmentId, $categoryId, $limit, $offset, $timeFrame, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1092,19 +1092,19 @@ class InsightApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\GetTrendingResult200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\GetTrendingResult200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\GetTrendingResult200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\GetTrendingResult200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\GetTrendingResult200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\GetTrendingResult200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\GetTrendingResult200Response';
+            $returnType = '\Walmart\Models\MP\US\GetTrendingResult200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1120,7 +1120,7 @@ class InsightApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\GetTrendingResult200Response',
+                        '\Walmart\Models\MP\US\GetTrendingResult200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1183,7 +1183,7 @@ class InsightApi extends BaseApi
         ?string $offset = '0',
         ?string $timeFrame = '7',
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\GetTrendingResult200Response';
+        $returnType = '\Walmart\Models\MP\US\GetTrendingResult200Response';
         $request = $this->getTrendingResultRequest($departmentId, $categoryId, $limit, $offset, $timeFrame, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1370,11 +1370,11 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetUnpublishedItemCount200Response
+     * @return \Walmart\Models\MP\US\GetUnpublishedItemCount200Response
      */
     public function getUnpublishedItemCount(
         string $fromDate
-    ): \Walmart\Model\MP\US\GetUnpublishedItemCount200Response {
+    ): \Walmart\Models\MP\US\GetUnpublishedItemCount200Response {
         return $this->getUnpublishedItemCountWithHttpInfo($fromDate);
     }
 
@@ -1387,11 +1387,11 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetUnpublishedItemCount200Response
+     * @return \Walmart\Models\MP\US\GetUnpublishedItemCount200Response
      */
     protected function getUnpublishedItemCountWithHttpInfo(
         string $fromDate,
-    ): \Walmart\Model\MP\US\GetUnpublishedItemCount200Response {
+    ): \Walmart\Models\MP\US\GetUnpublishedItemCount200Response {
         $request = $this->getUnpublishedItemCountRequest($fromDate, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1441,19 +1441,19 @@ class InsightApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\GetUnpublishedItemCount200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\GetUnpublishedItemCount200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\GetUnpublishedItemCount200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\GetUnpublishedItemCount200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\GetUnpublishedItemCount200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\GetUnpublishedItemCount200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\GetUnpublishedItemCount200Response';
+            $returnType = '\Walmart\Models\MP\US\GetUnpublishedItemCount200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1469,7 +1469,7 @@ class InsightApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\GetUnpublishedItemCount200Response',
+                        '\Walmart\Models\MP\US\GetUnpublishedItemCount200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1516,7 +1516,7 @@ class InsightApi extends BaseApi
     protected function getUnpublishedItemCountAsyncWithHttpInfo(
         string $fromDate,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\GetUnpublishedItemCount200Response';
+        $returnType = '\Walmart\Models\MP\US\GetUnpublishedItemCount200Response';
         $request = $this->getUnpublishedItemCountRequest($fromDate, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1668,7 +1668,7 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetUnpublishedItems200Response
+     * @return \Walmart\Models\MP\US\GetUnpublishedItems200Response
      */
     public function getUnpublishedItems(
         string $fromDate,
@@ -1677,7 +1677,7 @@ class InsightApi extends BaseApi
         ?string $offerLifecycleStatus = 'all',
         ?string $marketTrending = 'true',
         ?string $itemsWithInventory = 'true'
-    ): \Walmart\Model\MP\US\GetUnpublishedItems200Response {
+    ): \Walmart\Models\MP\US\GetUnpublishedItems200Response {
         return $this->getUnpublishedItemsWithHttpInfo($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory);
     }
 
@@ -1695,7 +1695,7 @@ class InsightApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\GetUnpublishedItems200Response
+     * @return \Walmart\Models\MP\US\GetUnpublishedItems200Response
      */
     protected function getUnpublishedItemsWithHttpInfo(
         string $fromDate,
@@ -1704,7 +1704,7 @@ class InsightApi extends BaseApi
         ?string $offerLifecycleStatus = 'all',
         ?string $marketTrending = 'true',
         ?string $itemsWithInventory = 'true',
-    ): \Walmart\Model\MP\US\GetUnpublishedItems200Response {
+    ): \Walmart\Models\MP\US\GetUnpublishedItems200Response {
         $request = $this->getUnpublishedItemsRequest($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1754,19 +1754,19 @@ class InsightApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\GetUnpublishedItems200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\GetUnpublishedItems200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\GetUnpublishedItems200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\GetUnpublishedItems200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\GetUnpublishedItems200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\GetUnpublishedItems200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\GetUnpublishedItems200Response';
+            $returnType = '\Walmart\Models\MP\US\GetUnpublishedItems200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1782,7 +1782,7 @@ class InsightApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\GetUnpublishedItems200Response',
+                        '\Walmart\Models\MP\US\GetUnpublishedItems200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1849,7 +1849,7 @@ class InsightApi extends BaseApi
         ?string $marketTrending = 'true',
         ?string $itemsWithInventory = 'true',
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\GetUnpublishedItems200Response';
+        $returnType = '\Walmart\Models\MP\US\GetUnpublishedItems200Response';
         $request = $this->getUnpublishedItemsRequest($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2042,19 +2042,19 @@ class InsightApi extends BaseApi
      *
      * Item Listing Quality Details
      *
-     * @param  \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
+     * @param  \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
      * @param  string $limit Specify number of items to return. If no limit is specified, API returns 200 items by default. (optional, default to '200')
      * @param  string $nextCursor Specify pagination for long list of items. (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\ItemsDetailsForListing200Response
+     * @return \Walmart\Models\MP\US\ItemsDetailsForListing200Response
      */
     public function itemsDetailsForListing(
-        \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
+        \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
         ?string $limit = '200',
         ?string $nextCursor = null
-    ): \Walmart\Model\MP\US\ItemsDetailsForListing200Response {
+    ): \Walmart\Models\MP\US\ItemsDetailsForListing200Response {
         return $this->itemsDetailsForListingWithHttpInfo($itemsDetailsForListingRequest, $limit, $nextCursor);
     }
 
@@ -2063,19 +2063,19 @@ class InsightApi extends BaseApi
      *
      * Item Listing Quality Details
      *
-     * @param  \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
+     * @param  \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
      * @param  string $limit Specify number of items to return. If no limit is specified, API returns 200 items by default. (optional, default to '200')
      * @param  string $nextCursor Specify pagination for long list of items. (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\ItemsDetailsForListing200Response
+     * @return \Walmart\Models\MP\US\ItemsDetailsForListing200Response
      */
     protected function itemsDetailsForListingWithHttpInfo(
-        \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
+        \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
         ?string $limit = '200',
         ?string $nextCursor = null,
-    ): \Walmart\Model\MP\US\ItemsDetailsForListing200Response {
+    ): \Walmart\Models\MP\US\ItemsDetailsForListing200Response {
         $request = $this->itemsDetailsForListingRequest($itemsDetailsForListingRequest, $limit, $nextCursor, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2125,19 +2125,19 @@ class InsightApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\ItemsDetailsForListing200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\ItemsDetailsForListing200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\ItemsDetailsForListing200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\ItemsDetailsForListing200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\ItemsDetailsForListing200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\ItemsDetailsForListing200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\ItemsDetailsForListing200Response';
+            $returnType = '\Walmart\Models\MP\US\ItemsDetailsForListing200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2153,7 +2153,7 @@ class InsightApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\ItemsDetailsForListing200Response',
+                        '\Walmart\Models\MP\US\ItemsDetailsForListing200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2170,7 +2170,7 @@ class InsightApi extends BaseApi
      *
      * Item Listing Quality Details
      *
-     * @param  \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
+     * @param  \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
      * @param  string $limit Specify number of items to return. If no limit is specified, API returns 200 items by default. (optional, default to '200')
      * @param  string $nextCursor Specify pagination for long list of items. (optional)
      *
@@ -2178,7 +2178,7 @@ class InsightApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function itemsDetailsForListingAsync(
-        \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
+        \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
         ?string $limit = '200',
         ?string $nextCursor = null
     ): PromiseInterface {
@@ -2196,7 +2196,7 @@ class InsightApi extends BaseApi
      *
      * Item Listing Quality Details
      *
-     * @param  \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
+     * @param  \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
      * @param  string $limit Specify number of items to return. If no limit is specified, API returns 200 items by default. (optional, default to '200')
      * @param  string $nextCursor Specify pagination for long list of items. (optional)
      *
@@ -2204,11 +2204,11 @@ class InsightApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function itemsDetailsForListingAsyncWithHttpInfo(
-        \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
+        \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
         ?string $limit = '200',
         ?string $nextCursor = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\ItemsDetailsForListing200Response';
+        $returnType = '\Walmart\Models\MP\US\ItemsDetailsForListing200Response';
         $request = $this->itemsDetailsForListingRequest($itemsDetailsForListingRequest, $limit, $nextCursor, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2254,7 +2254,7 @@ class InsightApi extends BaseApi
     /**
      * Create request for operation 'itemsDetailsForListing'
      *
-     * @param  \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
+     * @param  \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest Request payload (required)
      * @param  string $limit Specify number of items to return. If no limit is specified, API returns 200 items by default. (optional, default to '200')
      * @param  string $nextCursor Specify pagination for long list of items. (optional)
      *
@@ -2262,7 +2262,7 @@ class InsightApi extends BaseApi
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function itemsDetailsForListingRequest(
-        \Walmart\Model\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
+        \Walmart\Models\MP\US\ItemsDetailsForListingRequest $itemsDetailsForListingRequest,
         ?string $limit = '200',
         ?string $nextCursor = null,
     ): Request {

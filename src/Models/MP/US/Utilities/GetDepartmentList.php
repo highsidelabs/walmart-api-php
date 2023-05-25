@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Utilities;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Utilities;
+use Walmart\Models\BaseModel;
 
 /**
  * GetDepartmentList Class Doc Comment
@@ -50,7 +50,7 @@ class GetDepartmentList extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Model\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetDepartmentList extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]|null
     
      */
     public function getPayload()
@@ -171,7 +171,7 @@ class GetDepartmentList extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]|null $payload payload
      *
      * @return self
     

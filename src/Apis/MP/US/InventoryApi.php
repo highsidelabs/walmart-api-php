@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\MP\US;
+namespace Walmart\Apis\MP\US;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -64,12 +64,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetInventory200Response
      */
     public function getInventory(
         string $sku,
         ?string $shipNode = null
-    ): \Walmart\Model\MP\US\Inventory\GetInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetInventory200Response {
         return $this->getInventoryWithHttpInfo($sku, $shipNode);
     }
 
@@ -83,12 +83,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetInventory200Response
      */
     protected function getInventoryWithHttpInfo(
         string $sku,
         ?string $shipNode = null,
-    ): \Walmart\Model\MP\US\Inventory\GetInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetInventory200Response {
         $request = $this->getInventoryRequest($sku, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -138,19 +138,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Inventory\GetInventory200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Inventory\GetInventory200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Inventory\GetInventory200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Inventory\GetInventory200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Inventory\GetInventory200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Inventory\GetInventory200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Inventory\GetInventory200Response';
+            $returnType = '\Walmart\Models\MP\US\Inventory\GetInventory200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -166,7 +166,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Inventory\GetInventory200Response',
+                        '\Walmart\Models\MP\US\Inventory\GetInventory200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -217,7 +217,7 @@ class InventoryApi extends BaseApi
         string $sku,
         ?string $shipNode = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Inventory\GetInventory200Response';
+        $returnType = '\Walmart\Models\MP\US\Inventory\GetInventory200Response';
         $request = $this->getInventoryRequest($sku, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -375,12 +375,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response
      */
     public function getMultiNodeInventoryForAllSkuAndAllShipNodes(
         ?string $limit = '10',
         ?string $nextCursor = null
-    ): \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response {
         return $this->getMultiNodeInventoryForAllSkuAndAllShipNodesWithHttpInfo($limit, $nextCursor);
     }
 
@@ -394,12 +394,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response
      */
     protected function getMultiNodeInventoryForAllSkuAndAllShipNodesWithHttpInfo(
         ?string $limit = '10',
         ?string $nextCursor = null,
-    ): \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response {
         $request = $this->getMultiNodeInventoryForAllSkuAndAllShipNodesRequest($limit, $nextCursor, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -449,19 +449,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response';
+            $returnType = '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -477,7 +477,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response',
+                        '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -528,7 +528,7 @@ class InventoryApi extends BaseApi
         ?string $limit = '10',
         ?string $nextCursor = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response';
+        $returnType = '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response';
         $request = $this->getMultiNodeInventoryForAllSkuAndAllShipNodesRequest($limit, $nextCursor, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -680,12 +680,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
      */
     public function getMultiNodeInventoryForSkuAndAllShipnodes(
         string $sku,
         ?string $shipNode = null
-    ): \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response {
         return $this->getMultiNodeInventoryForSkuAndAllShipnodesWithHttpInfo($sku, $shipNode);
     }
 
@@ -699,12 +699,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
      */
     protected function getMultiNodeInventoryForSkuAndAllShipnodesWithHttpInfo(
         string $sku,
         ?string $shipNode = null,
-    ): \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response {
         $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($sku, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -754,19 +754,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response';
+            $returnType = '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -782,7 +782,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response',
+                        '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -833,7 +833,7 @@ class InventoryApi extends BaseApi
         string $sku,
         ?string $shipNode = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response';
+        $returnType = '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response';
         $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($sku, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -995,7 +995,7 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetWFSInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200Response
      */
     public function getWFSInventory(
         ?string $sku = null,
@@ -1003,7 +1003,7 @@ class InventoryApi extends BaseApi
         ?string $toModifiedDate = null,
         ?string $limit = '10',
         ?string $offset = '0'
-    ): \Walmart\Model\MP\US\Inventory\GetWFSInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetWFSInventory200Response {
         return $this->getWFSInventoryWithHttpInfo($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset);
     }
 
@@ -1020,7 +1020,7 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetWFSInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200Response
      */
     protected function getWFSInventoryWithHttpInfo(
         ?string $sku = null,
@@ -1028,7 +1028,7 @@ class InventoryApi extends BaseApi
         ?string $toModifiedDate = null,
         ?string $limit = '10',
         ?string $offset = '0',
-    ): \Walmart\Model\MP\US\Inventory\GetWFSInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetWFSInventory200Response {
         $request = $this->getWFSInventoryRequest($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1078,19 +1078,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Inventory\GetWFSInventory200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Inventory\GetWFSInventory200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Inventory\GetWFSInventory200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Inventory\GetWFSInventory200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Inventory\GetWFSInventory200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Inventory\GetWFSInventory200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Inventory\GetWFSInventory200Response';
+            $returnType = '\Walmart\Models\MP\US\Inventory\GetWFSInventory200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1106,7 +1106,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Inventory\GetWFSInventory200Response',
+                        '\Walmart\Models\MP\US\Inventory\GetWFSInventory200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1169,7 +1169,7 @@ class InventoryApi extends BaseApi
         ?string $limit = '10',
         ?string $offset = '0',
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Inventory\GetWFSInventory200Response';
+        $returnType = '\Walmart\Models\MP\US\Inventory\GetWFSInventory200Response';
         $request = $this->getWFSInventoryRequest($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1352,13 +1352,13 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response
      */
     public function updateBulkInventory(
         string $feedType,
         \SplFileObject $file,
         ?string $shipNode = null
-    ): \Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response {
         return $this->updateBulkInventoryWithHttpInfo($feedType, $file, $shipNode);
     }
 
@@ -1373,13 +1373,13 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response
      */
     protected function updateBulkInventoryWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
         ?string $shipNode = null,
-    ): \Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response {
         $request = $this->updateBulkInventoryRequest($feedType, $file, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1429,19 +1429,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response';
+            $returnType = '\Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1457,7 +1457,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response',
+                        '\Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1512,7 +1512,7 @@ class InventoryApi extends BaseApi
         \SplFileObject $file,
         ?string $shipNode = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Inventory\UpdateBulkInventory200Response';
+        $returnType = '\Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response';
         $request = $this->updateBulkInventoryRequest($feedType, $file, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1687,18 +1687,18 @@ class InventoryApi extends BaseApi
      * Update inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
      * @param  string $shipNode The shipNode for which the inventory is to be updated. (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetInventory200Response
      */
     public function updateInventoryForAnItem(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
         ?string $shipNode = null
-    ): \Walmart\Model\MP\US\Inventory\GetInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetInventory200Response {
         return $this->updateInventoryForAnItemWithHttpInfo($sku, $updateInventoryForAnItemRequest, $shipNode);
     }
 
@@ -1708,18 +1708,18 @@ class InventoryApi extends BaseApi
      * Update inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
      * @param  string $shipNode The shipNode for which the inventory is to be updated. (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\GetInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\GetInventory200Response
      */
     protected function updateInventoryForAnItemWithHttpInfo(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
         ?string $shipNode = null,
-    ): \Walmart\Model\MP\US\Inventory\GetInventory200Response {
+    ): \Walmart\Models\MP\US\Inventory\GetInventory200Response {
         $request = $this->updateInventoryForAnItemRequest($sku, $updateInventoryForAnItemRequest, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1769,19 +1769,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Inventory\GetInventory200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Inventory\GetInventory200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Inventory\GetInventory200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Inventory\GetInventory200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Inventory\GetInventory200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Inventory\GetInventory200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Inventory\GetInventory200Response';
+            $returnType = '\Walmart\Models\MP\US\Inventory\GetInventory200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1797,7 +1797,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Inventory\GetInventory200Response',
+                        '\Walmart\Models\MP\US\Inventory\GetInventory200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1815,7 +1815,7 @@ class InventoryApi extends BaseApi
      * Update inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
      * @param  string $shipNode The shipNode for which the inventory is to be updated. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1823,7 +1823,7 @@ class InventoryApi extends BaseApi
      */
     public function updateInventoryForAnItemAsync(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
         ?string $shipNode = null
     ): PromiseInterface {
         return $this->updateInventoryForAnItemAsyncWithHttpInfo($sku, $updateInventoryForAnItemRequest, $shipNode)
@@ -1841,7 +1841,7 @@ class InventoryApi extends BaseApi
      * Update inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
      * @param  string $shipNode The shipNode for which the inventory is to be updated. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1849,10 +1849,10 @@ class InventoryApi extends BaseApi
      */
     protected function updateInventoryForAnItemAsyncWithHttpInfo(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
         ?string $shipNode = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Inventory\GetInventory200Response';
+        $returnType = '\Walmart\Models\MP\US\Inventory\GetInventory200Response';
         $request = $this->updateInventoryForAnItemRequest($sku, $updateInventoryForAnItemRequest, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1899,7 +1899,7 @@ class InventoryApi extends BaseApi
      * Create request for operation 'updateInventoryForAnItem'
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
      * @param  string $shipNode The shipNode for which the inventory is to be updated. (optional)
      *
      * @throws \InvalidArgumentException
@@ -1907,7 +1907,7 @@ class InventoryApi extends BaseApi
      */
     protected function updateInventoryForAnItemRequest(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
         ?string $shipNode = null,
     ): Request {
         $contentType = self::contentTypes['updateInventoryForAnItem'];
@@ -2021,16 +2021,16 @@ class InventoryApi extends BaseApi
      * Update Item Inventory per Ship Node
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response
      */
     public function updateMultiNodeInventory(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest
-    ): \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response {
+        \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest
+    ): \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response {
         return $this->updateMultiNodeInventoryWithHttpInfo($sku, $updateMultiNodeInventoryRequest);
     }
 
@@ -2040,16 +2040,16 @@ class InventoryApi extends BaseApi
      * Update Item Inventory per Ship Node
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response
+     * @return \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response
      */
     protected function updateMultiNodeInventoryWithHttpInfo(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest,
-    ): \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response {
+        \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest,
+    ): \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response {
         $request = $this->updateMultiNodeInventoryRequest($sku, $updateMultiNodeInventoryRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2099,19 +2099,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response';
+            $returnType = '\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2127,7 +2127,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response',
+                        '\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2145,14 +2145,14 @@ class InventoryApi extends BaseApi
      * Update Item Inventory per Ship Node
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateMultiNodeInventoryAsync(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest
+        \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest
     ): PromiseInterface {
         return $this->updateMultiNodeInventoryAsyncWithHttpInfo($sku, $updateMultiNodeInventoryRequest)
             ->then(
@@ -2169,16 +2169,16 @@ class InventoryApi extends BaseApi
      * Update Item Inventory per Ship Node
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateMultiNodeInventoryAsyncWithHttpInfo(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest,
+        \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventory200Response';
+        $returnType = '\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response';
         $request = $this->updateMultiNodeInventoryRequest($sku, $updateMultiNodeInventoryRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2225,14 +2225,14 @@ class InventoryApi extends BaseApi
      * Create request for operation 'updateMultiNodeInventory'
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
-     * @param  \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateMultiNodeInventoryRequest(
         string $sku,
-        \Walmart\Model\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest,
+        \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest $updateMultiNodeInventoryRequest,
     ): Request {
         $contentType = self::contentTypes['updateMultiNodeInventory'];
 

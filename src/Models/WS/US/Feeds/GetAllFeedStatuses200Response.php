@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\WS\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\WS\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllFeedStatuses200Response Class Doc Comment
@@ -49,11 +49,11 @@ class GetAllFeedStatuses200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Model\WS\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
         'totalResults' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'results' => '\Walmart\Model\WS\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]'
+        'results' => '\Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]'
     ];
 
     /**
@@ -185,7 +185,7 @@ class GetAllFeedStatuses200Response extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\WS\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -196,7 +196,7 @@ class GetAllFeedStatuses200Response extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\WS\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -301,7 +301,7 @@ class GetAllFeedStatuses200Response extends BaseModel
     /**
      * Gets results
      *
-     * @return \Walmart\Model\WS\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]|null
+     * @return \Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]|null
     
      */
     public function getResults()
@@ -312,7 +312,7 @@ class GetAllFeedStatuses200Response extends BaseModel
     /**
      * Sets results
      *
-     * @param \Walmart\Model\WS\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]|null $results results
+     * @param \Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]|null $results results
      *
      * @return self
     

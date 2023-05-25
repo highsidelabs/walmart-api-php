@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * PriceBulkUploads200Response Class Doc Comment

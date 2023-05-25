@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetCatalogSearchRequest Class Doc Comment
@@ -49,9 +49,9 @@ class GetCatalogSearchRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'query' => '\Walmart\Model\MP\US\Items\GetCatalogSearchRequestQuery',
-        'filters' => '\Walmart\Model\MP\US\Items\GetCatalogSearchRequestFiltersInner[]',
-        'sort' => '\Walmart\Model\MP\US\Items\GetCatalogSearchRequestSort'
+        'query' => '\Walmart\Models\MP\US\Items\GetCatalogSearchRequestQuery',
+        'filters' => '\Walmart\Models\MP\US\Items\GetCatalogSearchRequestFiltersInner[]',
+        'sort' => '\Walmart\Models\MP\US\Items\GetCatalogSearchRequestSort'
     ];
 
     /**
@@ -138,7 +138,7 @@ class GetCatalogSearchRequest extends BaseModel
     /**
      * Gets query
      *
-     * @return \Walmart\Model\MP\US\Items\GetCatalogSearchRequestQuery|null
+     * @return \Walmart\Models\MP\US\Items\GetCatalogSearchRequestQuery|null
     
      */
     public function getQuery()
@@ -149,7 +149,7 @@ class GetCatalogSearchRequest extends BaseModel
     /**
      * Sets query
      *
-     * @param \Walmart\Model\MP\US\Items\GetCatalogSearchRequestQuery|null $query query
+     * @param \Walmart\Models\MP\US\Items\GetCatalogSearchRequestQuery|null $query query
      *
      * @return self
     
@@ -167,7 +167,7 @@ class GetCatalogSearchRequest extends BaseModel
     /**
      * Gets filters
      *
-     * @return \Walmart\Model\MP\US\Items\GetCatalogSearchRequestFiltersInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GetCatalogSearchRequestFiltersInner[]|null
     
      */
     public function getFilters()
@@ -178,7 +178,7 @@ class GetCatalogSearchRequest extends BaseModel
     /**
      * Sets filters
      *
-     * @param \Walmart\Model\MP\US\Items\GetCatalogSearchRequestFiltersInner[]|null $filters filters
+     * @param \Walmart\Models\MP\US\Items\GetCatalogSearchRequestFiltersInner[]|null $filters filters
      *
      * @return self
     
@@ -196,7 +196,7 @@ class GetCatalogSearchRequest extends BaseModel
     /**
      * Gets sort
      *
-     * @return \Walmart\Model\MP\US\Items\GetCatalogSearchRequestSort|null
+     * @return \Walmart\Models\MP\US\Items\GetCatalogSearchRequestSort|null
     
      */
     public function getSort()
@@ -207,7 +207,7 @@ class GetCatalogSearchRequest extends BaseModel
     /**
      * Sets sort
      *
-     * @param \Walmart\Model\MP\US\Items\GetCatalogSearchRequestSort|null $sort sort
+     * @param \Walmart\Models\MP\US\Items\GetCatalogSearchRequestSort|null $sort sort
      *
      * @return self
     

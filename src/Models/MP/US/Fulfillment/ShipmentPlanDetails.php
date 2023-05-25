@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipmentPlanDetails Class Doc Comment
@@ -53,8 +53,8 @@ class ShipmentPlanDetails extends BaseModel
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
         'shipmentId' => 'string',
-        'shipToAddress' => '\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
-        'returnAddress' => '\Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
+        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
+        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
         'status' => 'string',
         'createdDate' => '\DateTime',
         'shipmentUnits' => 'int',
@@ -268,7 +268,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Gets shipToAddress
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
     
      */
     public function getShipToAddress()
@@ -279,7 +279,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Sets shipToAddress
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
      *
      * @return self
     
@@ -297,7 +297,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Gets returnAddress
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null
     
      */
     public function getReturnAddress()
@@ -308,7 +308,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Sets returnAddress
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null $returnAddress returnAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null $returnAddress returnAddress
      *
      * @return self
     

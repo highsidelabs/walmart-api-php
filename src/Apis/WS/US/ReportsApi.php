@@ -17,14 +17,14 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Api\WS\US;
+namespace Walmart\Apis\WS\US;
 
 use GuzzleHttp\Exception\ConnectException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use GuzzleHttp\Psr7\MultipartStream;
 use GuzzleHttp\Psr7\Request;
-use Walmart\Api\BaseApi;
+use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
@@ -58,12 +58,12 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\WS\US\Reports\GetItemReport200Response
+     * @return \Walmart\Models\WS\US\Reports\GetItemReport200Response
      */
     public function getItemReport(
         string $type,
         string $version
-    ): \Walmart\Model\WS\US\Reports\GetItemReport200Response {
+    ): \Walmart\Models\WS\US\Reports\GetItemReport200Response {
         return $this->getItemReportWithHttpInfo($type, $version);
     }
 
@@ -77,12 +77,12 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Model\WS\US\Reports\GetItemReport200Response
+     * @return \Walmart\Models\WS\US\Reports\GetItemReport200Response
      */
     protected function getItemReportWithHttpInfo(
         string $type,
         string $version,
-    ): \Walmart\Model\WS\US\Reports\GetItemReport200Response {
+    ): \Walmart\Models\WS\US\Reports\GetItemReport200Response {
         $request = $this->getItemReportRequest($type, $version, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -132,19 +132,19 @@ class ReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Model\WS\US\Reports\GetItemReport200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\WS\US\Reports\GetItemReport200Response' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Model\WS\US\Reports\GetItemReport200Response' !== 'string') {
+                        if ('\Walmart\Models\WS\US\Reports\GetItemReport200Response' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Model\WS\US\Reports\GetItemReport200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\WS\US\Reports\GetItemReport200Response', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Model\WS\US\Reports\GetItemReport200Response';
+            $returnType = '\Walmart\Models\WS\US\Reports\GetItemReport200Response';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -160,7 +160,7 @@ class ReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Model\WS\US\Reports\GetItemReport200Response',
+                        '\Walmart\Models\WS\US\Reports\GetItemReport200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -211,7 +211,7 @@ class ReportsApi extends BaseApi
         string $type,
         string $version,
     ): PromiseInterface {
-        $returnType = '\Walmart\Model\WS\US\Reports\GetItemReport200Response';
+        $returnType = '\Walmart\Models\WS\US\Reports\GetItemReport200Response';
         $request = $this->getItemReportRequest($type, $version, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

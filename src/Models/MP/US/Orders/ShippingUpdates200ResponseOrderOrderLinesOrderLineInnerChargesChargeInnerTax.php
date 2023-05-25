@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerTax Class Doc Comment
@@ -52,7 +52,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerT
       */
     protected static array $openAPITypes = [
         'taxName' => 'string',
-        'taxAmount' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerChargeAmount'
+        'taxAmount' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerChargeAmount'
     ];
 
     /**
@@ -168,7 +168,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerT
     /**
      * Gets taxAmount
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
     
      */
     public function getTaxAmount()
@@ -179,7 +179,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerT
     /**
      * Sets taxAmount
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $taxAmount taxAmount
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $taxAmount taxAmount
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\CP\US\Feeds;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\CP\US\Feeds;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemDetails Class Doc Comment
@@ -51,7 +51,7 @@ class ItemDetails extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'itemIngestionStatus' => '\Walmart\Model\CP\US\Feeds\ItemDetailsItemIngestionStatusInner[]'
+        'itemIngestionStatus' => '\Walmart\Models\CP\US\Feeds\ItemDetailsItemIngestionStatusInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class ItemDetails extends BaseModel
     /**
      * Gets itemIngestionStatus
      *
-     * @return \Walmart\Model\CP\US\Feeds\ItemDetailsItemIngestionStatusInner[]|null
+     * @return \Walmart\Models\CP\US\Feeds\ItemDetailsItemIngestionStatusInner[]|null
     
      */
     public function getItemIngestionStatus()
@@ -137,7 +137,7 @@ class ItemDetails extends BaseModel
     /**
      * Sets itemIngestionStatus
      *
-     * @param \Walmart\Model\CP\US\Feeds\ItemDetailsItemIngestionStatusInner[]|null $itemIngestionStatus The ingestion status of an individual item
+     * @param \Walmart\Models\CP\US\Feeds\ItemDetailsItemIngestionStatusInner[]|null $itemIngestionStatus The ingestion status of an individual item
      *
      * @return self
     

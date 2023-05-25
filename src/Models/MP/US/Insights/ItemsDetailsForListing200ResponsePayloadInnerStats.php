@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerStats Class Doc Comment
@@ -49,7 +49,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerStats extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'gmv' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv',
+        'gmv' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv',
         'pageViews' => 'string',
         'orders' => 'string',
         'conversionRate' => 'string',
@@ -152,7 +152,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerStats extends BaseModel
     /**
      * Gets gmv
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv|null
     
      */
     public function getGmv()
@@ -163,7 +163,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerStats extends BaseModel
     /**
      * Sets gmv
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv|null $gmv gmv
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv|null $gmv gmv
      *
      * @return self
     

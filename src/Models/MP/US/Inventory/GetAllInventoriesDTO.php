@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllInventoriesDTO Class Doc Comment
@@ -50,7 +50,7 @@ class GetAllInventoriesDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'nodes' => '\Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInnerNodesInner[]'
+        'nodes' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInnerNodesInner[]'
     ];
 
     /**
@@ -160,7 +160,7 @@ class GetAllInventoriesDTO extends BaseModel
     /**
      * Gets nodes
      *
-     * @return \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInnerNodesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInnerNodesInner[]|null
     
      */
     public function getNodes()
@@ -171,7 +171,7 @@ class GetAllInventoriesDTO extends BaseModel
     /**
      * Sets nodes
      *
-     * @param \Walmart\Model\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInnerNodesInner[]|null $nodes nodes
+     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInnerNodesInner[]|null $nodes nodes
      *
      * @return self
     

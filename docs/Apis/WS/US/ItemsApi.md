@@ -1,4 +1,4 @@
-# Walmart\Api\US\WSItemsApi  
+# Walmart\Apis\US\WSItemsApi  
 All URIs are relative to https://api-gateway.walmart.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,7 +11,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 ## `getAllItems()`
 
 ```php
-getAllItems($nextCursor, $sku): \Walmart\Model\WS\US\Items\GetAllItems200Response
+getAllItems($nextCursor, $sku): \Walmart\Models\WS\US\Items\GetAllItems200Response
 ```
 All items
 
@@ -28,7 +28,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\ItemsApi(  
+$apiInstance = new Walmart\Apis\ItemsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -54,7 +54,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\WS\US\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
+[**\Walmart\Models\WS\US\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ try {
 ## `getAnItem()`
 
 ```php
-getAnItem($sku): \Walmart\Model\WS\US\Items\GetAllItems200Response
+getAnItem($sku): \Walmart\Models\WS\US\Items\GetAllItems200Response
 ```
 An item
 
@@ -89,7 +89,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\ItemsApi(  
+$apiInstance = new Walmart\Apis\ItemsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -113,7 +113,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\WS\US\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
+[**\Walmart\Models\WS\US\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ try {
 ## `itemBulkUploads()`
 
 ```php
-itemBulkUploads($feedType, $file): \Walmart\Model\WS\US\Items\ItemBulkUploads200Response
+itemBulkUploads($feedType, $file): \Walmart\Models\WS\US\Items\ItemBulkUploads200Response
 ```
 Bulk Item Setup
 
@@ -148,7 +148,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM
 // Configure key-based authorization: consumerIdScheme
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
 
-$apiInstance = new Walmart\Api\ItemsApi(  
+$apiInstance = new Walmart\Apis\ItemsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -174,7 +174,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\WS\US\Items\ItemBulkUploads200Response**](../Model/ItemBulkUploads200Response.md)
+[**\Walmart\Models\WS\US\Items\ItemBulkUploads200Response**](../Model/ItemBulkUploads200Response.md)
 
 ### Authorization
 

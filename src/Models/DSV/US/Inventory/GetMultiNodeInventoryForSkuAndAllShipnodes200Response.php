@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Inventory;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Inventory;
+use Walmart\Models\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200Response Class Doc Comment
@@ -51,7 +51,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200Response extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'gtin' => 'string',
-        'nodes' => '\Walmart\Model\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]'
+        'nodes' => '\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]'
     ];
 
     /**
@@ -235,7 +235,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200Response extends BaseModel
     /**
      * Gets nodes
      *
-     * @return \Walmart\Model\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]|null
+     * @return \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]|null
     
      */
     public function getNodes()
@@ -246,7 +246,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200Response extends BaseModel
     /**
      * Sets nodes
      *
-     * @param \Walmart\Model\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]|null $nodes Indicates an array for nodes, to include ship node and allocated quantity.
+     * @param \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]|null $nodes Indicates an array for nodes, to include ship node and allocated quantity.
      *
      * @return self
     

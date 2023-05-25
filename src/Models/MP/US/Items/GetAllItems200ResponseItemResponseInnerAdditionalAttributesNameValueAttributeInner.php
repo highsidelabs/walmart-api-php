@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner Class Doc Comment
@@ -53,7 +53,7 @@ class GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttrib
         'type' => 'string',
         'isVariant' => 'bool',
         'variantResourceType' => 'string',
-        'value' => '\Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]'
+        'value' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]'
     ];
 
     /**
@@ -329,7 +329,7 @@ class GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttrib
     /**
      * Gets value
      *
-     * @return \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]
     
      */
     public function getValue()
@@ -340,7 +340,7 @@ class GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttrib
     /**
      * Sets value
      *
-     * @param \Walmart\Model\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[] $value value
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[] $value value
      *
      * @return self
     

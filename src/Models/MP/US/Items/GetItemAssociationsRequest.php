@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Items;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Items;
+use Walmart\Models\BaseModel;
 
 /**
  * GetItemAssociationsRequest Class Doc Comment
@@ -49,7 +49,7 @@ class GetItemAssociationsRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'items' => '\Walmart\Model\MP\US\Items\GetItemAssociationsRequestItemsInner[]'
+        'items' => '\Walmart\Models\MP\US\Items\GetItemAssociationsRequestItemsInner[]'
     ];
 
     /**
@@ -127,7 +127,7 @@ class GetItemAssociationsRequest extends BaseModel
     /**
      * Gets items
      *
-     * @return \Walmart\Model\MP\US\Items\GetItemAssociationsRequestItemsInner[]
+     * @return \Walmart\Models\MP\US\Items\GetItemAssociationsRequestItemsInner[]
     
      */
     public function getItems()
@@ -138,7 +138,7 @@ class GetItemAssociationsRequest extends BaseModel
     /**
      * Sets items
      *
-     * @param \Walmart\Model\MP\US\Items\GetItemAssociationsRequestItemsInner[] $items List of items whose associations need to be fetched. It should not have more than 50 items.
+     * @param \Walmart\Models\MP\US\Items\GetItemAssociationsRequestItemsInner[] $items List of items whose associations need to be fetched. It should not have more than 50 items.
      *
      * @return self
     

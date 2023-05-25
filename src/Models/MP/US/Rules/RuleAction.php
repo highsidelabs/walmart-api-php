@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * RuleAction Class Doc Comment
@@ -51,7 +51,7 @@ class RuleAction extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'twoDayShippingRegions' => '\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInner[]'
+        'twoDayShippingRegions' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class RuleAction extends BaseModel
     /**
      * Gets twoDayShippingRegions
      *
-     * @return \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInner[]|null
     
      */
     public function getTwoDayShippingRegions()
@@ -137,7 +137,7 @@ class RuleAction extends BaseModel
     /**
      * Sets twoDayShippingRegions
      *
-     * @param \Walmart\Model\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInner[]|null $twoDayShippingRegions List of two-day regions.
+     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInner[]|null $twoDayShippingRegions List of two-day regions.
      *
      * @return self
     

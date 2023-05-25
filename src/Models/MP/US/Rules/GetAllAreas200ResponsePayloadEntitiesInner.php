@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllAreas200ResponsePayloadEntitiesInner Class Doc Comment
@@ -49,7 +49,7 @@ class GetAllAreas200ResponsePayloadEntitiesInner extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'states' => '\Walmart\Model\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]',
+        'states' => '\Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]',
         'regionCode' => 'string',
         'regionName' => 'string'
     ];
@@ -138,7 +138,7 @@ class GetAllAreas200ResponsePayloadEntitiesInner extends BaseModel
     /**
      * Gets states
      *
-     * @return \Walmart\Model\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]|null
     
      */
     public function getStates()
@@ -149,7 +149,7 @@ class GetAllAreas200ResponsePayloadEntitiesInner extends BaseModel
     /**
      * Sets states
      *
-     * @param \Walmart\Model\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]|null $states states.
+     * @param \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]|null $states states.
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * Item Class Doc Comment
@@ -53,7 +53,7 @@ class Item extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'productName' => 'string',
-        'itemWeight' => '\Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight'
+        'itemWeight' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight'
     ];
 
     /**
@@ -198,7 +198,7 @@ class Item extends BaseModel
     /**
      * Gets itemWeight
      *
-     * @return \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null
+     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null
     
      */
     public function getItemWeight()
@@ -209,7 +209,7 @@ class Item extends BaseModel
     /**
      * Sets itemWeight
      *
-     * @param \Walmart\Model\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null $itemWeight itemWeight
+     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null $itemWeight itemWeight
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Rules;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Rules;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateRuleRequest Class Doc Comment
@@ -49,8 +49,8 @@ class CreateRuleRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ruleHeader' => '\Walmart\Model\MP\US\Rules\InactivateRuleRequestRuleHeader',
-        'rules' => '\Walmart\Model\MP\US\Rules\CreateItemRuleRequestRules'
+        'ruleHeader' => '\Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader',
+        'rules' => '\Walmart\Models\MP\US\Rules\CreateItemRuleRequestRules'
     ];
 
     /**
@@ -131,7 +131,7 @@ class CreateRuleRequest extends BaseModel
     /**
      * Gets ruleHeader
      *
-     * @return \Walmart\Model\MP\US\Rules\InactivateRuleRequestRuleHeader|null
+     * @return \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null
     
      */
     public function getRuleHeader()
@@ -142,7 +142,7 @@ class CreateRuleRequest extends BaseModel
     /**
      * Sets ruleHeader
      *
-     * @param \Walmart\Model\MP\US\Rules\InactivateRuleRequestRuleHeader|null $ruleHeader ruleHeader
+     * @param \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null $ruleHeader ruleHeader
      *
      * @return self
     
@@ -160,7 +160,7 @@ class CreateRuleRequest extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Model\MP\US\Rules\CreateItemRuleRequestRules|null
+     * @return \Walmart\Models\MP\US\Rules\CreateItemRuleRequestRules|null
     
      */
     public function getRules()
@@ -171,7 +171,7 @@ class CreateRuleRequest extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Model\MP\US\Rules\CreateItemRuleRequestRules|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\CreateItemRuleRequestRules|null $rules rules
      *
      * @return self
     

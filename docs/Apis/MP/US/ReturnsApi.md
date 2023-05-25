@@ -1,4 +1,4 @@
-# Walmart\Api\US\MPReturnsApi  
+# Walmart\Apis\US\MPReturnsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `bulkItemOverrideFeed()`
 
 ```php
-bulkItemOverrideFeed($feedType, $file): \Walmart\Model\MP\US\Returns\BulkItemOverrideFeed200Response
+bulkItemOverrideFeed($feedType, $file): \Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response
 ```
 Return Item Overrides
 
@@ -27,7 +27,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
+$apiInstance = new Walmart\Apis\ReturnsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Returns\BulkItemOverrideFeed200Response**](../Model/BulkItemOverrideFeed200Response.md)
+[**\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response**](../Model/BulkItemOverrideFeed200Response.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `getReturns()`
 
 ```php
-getReturns($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit): \Walmart\Model\MP\US\Returns\GetReturns200Response
+getReturns($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit): \Walmart\Models\MP\US\Returns\GetReturns200Response
 ```
 Returns
 
@@ -87,7 +87,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
+$apiInstance = new Walmart\Apis\ReturnsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Returns\GetReturns200Response**](../Model/GetReturns200Response.md)
+[**\Walmart\Models\MP\US\Returns\GetReturns200Response**](../Model/GetReturns200Response.md)
 
 ### Authorization
 
@@ -147,7 +147,7 @@ try {
 ## `issueRefund()`
 
 ```php
-issueRefund($returnOrderId, $issueRefundRequest): \Walmart\Model\MP\US\Returns\IssueRefund200Response
+issueRefund($returnOrderId, $issueRefundRequest): \Walmart\Models\MP\US\Returns\IssueRefund200Response
 ```
 Issue refund
 
@@ -163,7 +163,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
+$apiInstance = new Walmart\Apis\ReturnsApi(  
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -171,7 +171,7 @@ $apiInstance = new Walmart\Api\ReturnsApi(
 );
 
 $returnOrderId = 'returnOrderId_example'; // string | The return order ID
-$issueRefundRequest = {"customerOrderId":"1535274411287","refundLines":[{"returnOrderLineNumber":1}]}; // \Walmart\Model\MP\US\Returns\IssueRefundRequest | File fields
+$issueRefundRequest = {"customerOrderId":"1535274411287","refundLines":[{"returnOrderLineNumber":1}]}; // \Walmart\Models\MP\US\Returns\IssueRefundRequest | File fields
 
 try {
     $result = $apiInstance->issueRefund($returnOrderId, $issueRefundRequest);
@@ -184,12 +184,12 @@ try {
 ### Parameters| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| The return order ID | |
-| **issueRefundRequest** | [**\Walmart\Model\MP\US\Returns\IssueRefundRequest**](../Model/IssueRefundRequest.md)| File fields | |
+| **issueRefundRequest** | [**\Walmart\Models\MP\US\Returns\IssueRefundRequest**](../Model/IssueRefundRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Returns\IssueRefund200Response**](../Model/IssueRefund200Response.md)
+[**\Walmart\Models\MP\US\Returns\IssueRefund200Response**](../Model/IssueRefund200Response.md)
 
 ### Authorization
 

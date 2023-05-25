@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateShippingTemplateRequest Class Doc Comment
@@ -53,7 +53,7 @@ class CreateShippingTemplateRequest extends BaseModel
         'type' => 'string',
         'rateModelType' => 'string',
         'status' => 'string',
-        'shippingMethods' => '\Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInner[]'
+        'shippingMethods' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInner[]'
     ];
 
     /**
@@ -268,7 +268,7 @@ class CreateShippingTemplateRequest extends BaseModel
     /**
      * Gets shippingMethods
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInner[]|null
     
      */
     public function getShippingMethods()
@@ -279,7 +279,7 @@ class CreateShippingTemplateRequest extends BaseModel
     /**
      * Sets shippingMethods
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInner[]|null $shippingMethods Array of different ship methods of a Shipping Template
+     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInner[]|null $shippingMethods Array of different ship methods of a Shipping Template
      *
      * @return self
     

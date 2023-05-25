@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * ThrottlingConfigDTO Class Doc Comment
@@ -52,8 +52,8 @@ class ThrottlingConfigDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'type' => 'string',
-        'rate' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate',
-        'fileSize' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize'
+        'rate' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate',
+        'fileSize' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize'
     ];
 
     /**
@@ -203,7 +203,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Gets rate
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate|null
     
      */
     public function getRate()
@@ -214,7 +214,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Sets rate
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate|null $rate rate
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate|null $rate rate
      *
      * @return self
     
@@ -232,7 +232,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Gets fileSize
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize|null
     
      */
     public function getFileSize()
@@ -243,7 +243,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Sets fileSize
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize|null $fileSize fileSize
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize|null $fileSize fileSize
      *
      * @return self
     

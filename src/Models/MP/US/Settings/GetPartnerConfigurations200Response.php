@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Settings;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Settings;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerConfigurations200Response Class Doc Comment
@@ -49,8 +49,8 @@ class GetPartnerConfigurations200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'partner' => '\Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponsePartner',
-        'configurations' => '\Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]'
+        'partner' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner',
+        'configurations' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class GetPartnerConfigurations200Response extends BaseModel
     /**
      * Gets partner
      *
-     * @return \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null
+     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null
     
      */
     public function getPartner()
@@ -175,7 +175,7 @@ class GetPartnerConfigurations200Response extends BaseModel
     /**
      * Sets partner
      *
-     * @param \Walmart\Model\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null $partner partner
+     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null $partner partner
      *
      * @return self
     
@@ -193,7 +193,7 @@ class GetPartnerConfigurations200Response extends BaseModel
     /**
      * Gets configurations
      *
-     * @return \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]|null
     
      */
     public function getConfigurations()
@@ -204,7 +204,7 @@ class GetPartnerConfigurations200Response extends BaseModel
     /**
      * Sets configurations
      *
-     * @param \Walmart\Model\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]|null $configurations List of seller configurations like Seller Account & feed throttling values
+     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]|null $configurations List of seller configurations like Seller Account & feed throttling values
      *
      * @return self
     

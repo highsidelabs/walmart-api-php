@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * GetListingQualityScore200Response Class Doc Comment
@@ -49,7 +49,7 @@ class GetListingQualityScore200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'payload' => '\Walmart\Model\MP\US\Insights\GetListingQualityScore200ResponsePayload'
+        'payload' => '\Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayload'
     ];
 
     /**
@@ -157,7 +157,7 @@ class GetListingQualityScore200Response extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Insights\GetListingQualityScore200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayload|null
     
      */
     public function getPayload()
@@ -168,7 +168,7 @@ class GetListingQualityScore200Response extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Insights\GetListingQualityScore200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayload|null $payload payload
      *
      * @return self
     

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * DiscardLabel200Response Class Doc Comment
@@ -50,7 +50,7 @@ class DiscardLabel200Response extends BaseModel
       */
     protected static array $openAPITypes = [
         'data' => 'bool',
-        'errors' => '\Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'errors' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
     ];
 
     /**
@@ -193,7 +193,7 @@ class DiscardLabel200Response extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -204,7 +204,7 @@ class DiscardLabel200Response extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     

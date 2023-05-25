@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseResponseOffer Class Doc Comment
@@ -51,8 +51,8 @@ class PromiseResponseOffer extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'availableQuantity' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInnerAvailableQuantity',
-        'requestedQuantity' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity',
+        'availableQuantity' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInnerAvailableQuantity',
+        'requestedQuantity' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity',
         'lineId' => 'string',
         'salesUnit' => 'string',
         'sku' => 'string'
@@ -154,7 +154,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Gets availableQuantity
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInnerAvailableQuantity|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInnerAvailableQuantity|null
     
      */
     public function getAvailableQuantity()
@@ -165,7 +165,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Sets availableQuantity
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInnerAvailableQuantity|null $availableQuantity availableQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInnerAvailableQuantity|null $availableQuantity availableQuantity
      *
      * @return self
     
@@ -183,7 +183,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Gets requestedQuantity
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null
     
      */
     public function getRequestedQuantity()
@@ -194,7 +194,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Sets requestedQuantity
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null $requestedQuantity requestedQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity|null $requestedQuantity requestedQuantity
      *
      * @return self
     

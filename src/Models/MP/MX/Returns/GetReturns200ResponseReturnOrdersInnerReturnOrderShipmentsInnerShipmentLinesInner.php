@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\MX\Returns;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\MX\Returns;
+use Walmart\Models\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner Class Doc Comment
@@ -51,7 +51,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLin
     protected static array $openAPITypes = [
         'primeLineNo' => 'string',
         'shipmentLineNo' => 'string',
-        'quantity' => '\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity'
+        'quantity' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity'
     ];
 
     /**
@@ -196,7 +196,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLin
     /**
      * Gets quantity
      *
-     * @return \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity|null
+     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity|null
     
      */
     public function getQuantity()
@@ -207,7 +207,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLin
     /**
      * Sets quantity
      *
-     * @param \Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity|null $quantity quantity
+     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity|null $quantity quantity
      *
      * @return self
     

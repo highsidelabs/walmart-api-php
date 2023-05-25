@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shipmentLines** | [**\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]**](GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner.md) |  | [optional]
+**shipmentLines** | [**\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner[]**](GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInner.md) |  | [optional]
 **shipmentNo** | **string** |  | [optional]
 **status** | **string** |  | [optional]
 **packageNo** | **string** |  | [optional]
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **carrierMethodCode** | **string** |  | [optional]
 **trackingNumber** | **string** |  | [optional]
 **trackingUrl** | **string** |  | [optional]
-**shipmentAdditionalDate** | [**\Walmart\Model\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate**](GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate.md) |  | [optional]
+**shipmentAdditionalDate** | [**\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate**](GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate.md) |  | [optional]
 
 
 [[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)

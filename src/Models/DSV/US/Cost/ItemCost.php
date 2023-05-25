@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Cost;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Cost;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemCost Class Doc Comment
@@ -51,7 +51,7 @@ class ItemCost extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'shipNode' => 'string',
-        'unitCost' => '\Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost'
+        'unitCost' => '\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost'
     ];
 
     /**
@@ -196,7 +196,7 @@ class ItemCost extends BaseModel
     /**
      * Gets unitCost
      *
-     * @return \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost|null
+     * @return \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost|null
     
      */
     public function getUnitCost()
@@ -207,7 +207,7 @@ class ItemCost extends BaseModel
     /**
      * Sets unitCost
      *
-     * @param \Walmart\Model\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost|null $unitCost unitCost
+     * @param \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost|null $unitCost unitCost
      *
      * @return self
     

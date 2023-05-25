@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Prices;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Prices;
+use Walmart\Models\BaseModel;
 
 /**
  * RepricerEntityRequest Class Doc Comment
@@ -52,7 +52,7 @@ class RepricerEntityRequest extends BaseModel
         'repricerStrategy' => 'string',
         'enabled' => 'bool',
         'enableRepricerForPromotion' => 'bool',
-        'strategies' => '\Walmart\Model\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]'
+        'strategies' => '\Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]'
     ];
 
     /**
@@ -232,7 +232,7 @@ class RepricerEntityRequest extends BaseModel
     /**
      * Gets strategies
      *
-     * @return \Walmart\Model\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null
+     * @return \Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null
     
      */
     public function getStrategies()
@@ -243,7 +243,7 @@ class RepricerEntityRequest extends BaseModel
     /**
      * Sets strategies
      *
-     * @param \Walmart\Model\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null $strategies Strategies
+     * @param \Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null $strategies Strategies
      *
      * @return self
     

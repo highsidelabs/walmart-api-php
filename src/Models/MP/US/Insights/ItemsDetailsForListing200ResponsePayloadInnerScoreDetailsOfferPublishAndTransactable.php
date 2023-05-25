@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Insights;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Insights;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable Class Doc Comment
@@ -52,7 +52,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTr
         'issueTitle' => 'string',
         'totalIssue' => 'int',
         'maxIssue' => 'int',
-        'issues' => '\Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]',
+        'issues' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]',
         'score' => 'int'
     ];
 
@@ -239,7 +239,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTr
     /**
      * Gets issues
      *
-     * @return \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]|null
     
      */
     public function getIssues()
@@ -250,7 +250,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTr
     /**
      * Sets issues
      *
-     * @param \Walmart\Model\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]|null $issues issues
+     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]|null $issues issues
      *
      * @return self
     

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rules** | [**\Walmart\Model\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]**](UpdateShippingAreaToRule200ResponseRulesInner.md) |  | [optional]
+**rules** | [**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]**](UpdateShippingAreaToRule200ResponseRulesInner.md) |  | [optional]
 **status** | **string** | status | [optional]
 
 

@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseListErrorsInner Class Doc Comment
@@ -55,7 +55,7 @@ class GetAllOrders200ResponseListErrorsInner extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Model\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]',
+        'causes' => '\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]',
         'errorIdentifiers' => 'array<string,object>',
         'component' => 'string',
         'type' => 'string',
@@ -491,7 +491,7 @@ class GetAllOrders200ResponseListErrorsInner extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Model\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]|null
     
      */
     public function getCauses()
@@ -502,7 +502,7 @@ class GetAllOrders200ResponseListErrorsInner extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Model\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInnerCausesInner[]|null $causes causes
      *
      * @return self
     

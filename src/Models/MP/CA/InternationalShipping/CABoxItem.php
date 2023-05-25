@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * CABoxItem Class Doc Comment

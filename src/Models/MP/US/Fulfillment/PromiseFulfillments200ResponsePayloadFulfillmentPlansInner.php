@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInner Class Doc Comment
@@ -51,7 +51,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInner extends BaseMod
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'fulfillmentModules' => '\Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner[]'
+        'fulfillmentModules' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner[]'
     ];
 
     /**
@@ -126,7 +126,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInner extends BaseMod
     /**
      * Gets fulfillmentModules
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner[]|null
     
      */
     public function getFulfillmentModules()
@@ -137,7 +137,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInner extends BaseMod
     /**
      * Sets fulfillmentModules
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner[]|null $fulfillmentModules Fulfillment module details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner[]|null $fulfillmentModules Fulfillment module details.
      *
      * @return self
     

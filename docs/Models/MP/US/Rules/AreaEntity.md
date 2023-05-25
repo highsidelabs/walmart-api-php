@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**states** | [**\Walmart\Model\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]**](GetAllAreas200ResponsePayloadEntitiesInnerStatesInner.md) | states. | [optional]
+**states** | [**\Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInner[]**](GetAllAreas200ResponsePayloadEntitiesInnerStatesInner.md) | states. | [optional]
 **regionCode** | **string** | regionCode | [optional]
 **regionName** | **string** | regionName | [optional]
 

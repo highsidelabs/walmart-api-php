@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Fulfillment;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Fulfillment;
+use Walmart\Models\BaseModel;
 
 /**
  * GetWFSInventoryLog200Response Class Doc Comment
@@ -49,8 +49,8 @@ class GetWFSInventoryLog200Response extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headers' => '\Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders',
-        'payload' => '\Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload'
+        'headers' => '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload'
     ];
 
     /**
@@ -164,7 +164,7 @@ class GetWFSInventoryLog200Response extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders|null
     
      */
     public function getHeaders()
@@ -175,7 +175,7 @@ class GetWFSInventoryLog200Response extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders|null $headers headers
      *
      * @return self
     
@@ -193,7 +193,7 @@ class GetWFSInventoryLog200Response extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload|null
     
      */
     public function getPayload()
@@ -204,7 +204,7 @@ class GetWFSInventoryLog200Response extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Model\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload|null $payload payload
      *
      * @return self
     

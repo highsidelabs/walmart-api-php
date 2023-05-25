@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * PickupPerson Class Doc Comment
@@ -51,8 +51,8 @@ class PickupPerson extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'name' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName',
-        'phone' => '\Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone'
+        'name' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName',
+        'phone' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone'
     ];
 
     /**
@@ -133,7 +133,7 @@ class PickupPerson extends BaseModel
     /**
      * Gets name
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName|null
     
      */
     public function getName()
@@ -144,7 +144,7 @@ class PickupPerson extends BaseModel
     /**
      * Sets name
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName|null $name name
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName|null $name name
      *
      * @return self
     
@@ -162,7 +162,7 @@ class PickupPerson extends BaseModel
     /**
      * Gets phone
      *
-     * @return \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone|null
+     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone|null
     
      */
     public function getPhone()
@@ -173,7 +173,7 @@ class PickupPerson extends BaseModel
     /**
      * Sets phone
      *
-     * @param \Walmart\Model\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone|null $phone phone
+     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone|null $phone phone
      *
      * @return self
     

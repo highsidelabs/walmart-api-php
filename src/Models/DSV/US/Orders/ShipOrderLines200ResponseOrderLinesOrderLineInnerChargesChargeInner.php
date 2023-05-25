@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\DSV\US\Orders;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\DSV\US\Orders;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner Class Doc Comment
@@ -51,8 +51,8 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
     protected static array $openAPITypes = [
         'chargeType' => 'string',
         'chargeName' => 'string',
-        'chargeAmount' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount',
-        'tax' => '\Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax'
+        'chargeAmount' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount',
+        'tax' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax'
     ];
 
     /**
@@ -212,7 +212,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
     /**
      * Gets chargeAmount
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
     
      */
     public function getChargeAmount()
@@ -223,7 +223,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
     /**
      * Sets chargeAmount
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $chargeAmount chargeAmount
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $chargeAmount chargeAmount
      *
      * @return self
     
@@ -241,7 +241,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
     /**
      * Gets tax
      *
-     * @return \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null
     
      */
     public function getTax()
@@ -252,7 +252,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
     /**
      * Sets tax
      *
-     * @param \Walmart\Model\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null $tax tax
+     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax|null $tax tax
      *
      * @return self
     

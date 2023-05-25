@@ -19,8 +19,8 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\CA\InternationalShipping;
-use Walmart\Model\BaseModel;
+namespace Walmart\Models\MP\CA\InternationalShipping;
+use Walmart\Models\BaseModel;
 
 /**
  * CarrierCommonResponseListCarrierResponse Class Doc Comment
@@ -49,8 +49,8 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'carriers' => '\Walmart\Model\MP\CA\InternationalShipping\GetCarriers200ResponseCarriersInner[]',
-        'errors' => '\Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'carriers' => '\Walmart\Models\MP\CA\InternationalShipping\GetCarriers200ResponseCarriersInner[]',
+        'errors' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Gets carriers
      *
-     * @return \Walmart\Model\MP\CA\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null
     
      */
     public function getCarriers()
@@ -142,7 +142,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Sets carriers
      *
-     * @param \Walmart\Model\MP\CA\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null $carriers carriers
+     * @param \Walmart\Models\MP\CA\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null $carriers carriers
      *
      * @return self
     
@@ -160,7 +160,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
     
      */
     public function getErrors()
@@ -171,7 +171,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Model\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
      *
      * @return self
     
