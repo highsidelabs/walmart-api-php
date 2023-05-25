@@ -71,11 +71,11 @@ class {{classname}} extends BaseApi
      * @deprecated
     {{/if}}
      */
-    public function {{operationId}}({{#if vendorExtensions.x-group-parameters}}array $associative_array{{else}}
-        {{#each allParams}}{{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
+    public function {{operationId}}({{#if vendorExtensions.x-group-parameters}}array $associative_array{{else}}{{#each allParams}}
+        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}{{#unless @last}},{{/unless}}
         {{/each}}
     {{~/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
-        {{#if returnType}}return {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
+        {{#if returnType}}return {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/allParams}}{{/if}});
     }
 
     /**
@@ -244,11 +244,11 @@ class {{classname}} extends BaseApi
      * @deprecated
     {{~/if}}
      */
-    public function {{operationId}}Async({{#if vendorExtensions.x-group-parameters}}
-        array $associative_array{{else}}{{#each allParams}}
-        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-        {{/each}}{{/if}}): PromiseInterface {
-        return $this->{{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}})
+    public function {{operationId}}Async({{#if vendorExtensions.x-group-parameters}}array $associative_array{{else}}{{#each allParams}}
+        {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}{{#unless @last}},{{/unless}}
+        {{/each}}
+    {{/if}}): PromiseInterface {
+        return $this->{{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/allParams}}{{/if}})
             ->then(
                 function ($response) {
                     return $response[0];
@@ -282,8 +282,7 @@ class {{classname}} extends BaseApi
      * @deprecated
     {{~/if}}
      */
-    protected function {{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}
-        array $associative_array{{else}}{{#each allParams}}
+    protected function {{operationId}}AsyncWithHttpInfo({{#if vendorExtensions.x-group-parameters}}array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
     {{/each}}{{/if}}): PromiseInterface {
         $returnType = '{{{returnType}}}';
@@ -489,7 +488,7 @@ class {{classname}} extends BaseApi
         );
 
         // for model (json/xml)
-        {{~#each bodyParams~}}
+        {{~#each bodyParams}}
         if (isset(${{paramName}})) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
@@ -515,7 +514,6 @@ class {{classname}} extends BaseApi
                 }
                 // for HTTP post (form)
                 $httpBody = new MultipartStream($multipartContents);
-
             } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the form parameters
                 $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
