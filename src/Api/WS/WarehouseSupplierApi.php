@@ -3,7 +3,7 @@
 namespace Walmart\Api\WS;
 
 use Walmart\Api\WS\US;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 class WarehouseSupplierApi extends Walmart

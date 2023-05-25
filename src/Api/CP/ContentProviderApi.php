@@ -3,7 +3,7 @@
 namespace Walmart\Api\CP;
 
 use Walmart\Api\CP\US;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 class ContentProviderApi extends Walmart

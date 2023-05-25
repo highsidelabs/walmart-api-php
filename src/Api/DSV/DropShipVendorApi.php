@@ -3,7 +3,7 @@
 namespace Walmart\Api\DSV;
 
 use Walmart\Api\DSV\US;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 class DropShipVendorApi extends Walmart

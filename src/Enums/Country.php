@@ -1,6 +1,6 @@
 <?php
 
-namespace Walmart;
+namespace Walmart\Enums;
 
 // This is basically an enum, but since this library supports PHP 7.4 we can't use a literal enum
 final class Country

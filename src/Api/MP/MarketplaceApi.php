@@ -5,7 +5,7 @@ namespace Walmart\Api\MP;
 use Walmart\Api\MP\CA;
 use Walmart\Api\MP\MX;
 use Walmart\Api\MP\US;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 class MarketplaceApi extends Walmart
@@ -16,7 +16,7 @@ class MarketplaceApi extends Walmart
      */
     protected static array $countryApiMap = [
         'auth' => [
-            Country::MX => MX\AuthenticationAndAuthorizationApi::class,
+            Country::MX => MX\AuthenticationApi::class,
             Country::US => US\AuthenticationApi::class,
         ],
         'events' => [
@@ -43,13 +43,13 @@ class MarketplaceApi extends Walmart
             Country::MX => MX\ItemsApi::class,
             Country::US => US\ItemsApi::class,
         ],
-        'lagtime' => [
+        'lagTime' => [
             Country::US => US\LagTimeApi::class,
         ],
         'notifications' => [
             Country::US => US\NotificationsApi::class,
         ],
-        'onrequestreports' => [
+        'onRequestReports' => [
             Country::US => US\OnRequestReportsApi::class,
         ],
         'orders' => [
@@ -76,9 +76,9 @@ class MarketplaceApi extends Walmart
             Country::MX => MX\ReturnsApi::class,
             Country::US => US\ReturnsApi::class,
         ],
-        'shipping' => [
-            Country::CA => CA\ShippingApi::class,
-            Country::MX => MX\ShippingApi::class,
+        'internationalShipping' => [
+            Country::CA => CA\InternationalShippingApi::class,
+            Country::MX => MX\InternationalShippingApi::class,
         ],
         'rules' => [
             Country::US => US\RulesApi::class,
