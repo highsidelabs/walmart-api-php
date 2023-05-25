@@ -29,7 +29,16 @@
                 "summary": "Update Repricer Strategy",
                 "description": "Updates the existing strategy",
                 "operationId": "updateStrategy",
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "strategyCollectionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "requestBody": {
                     "description": "The request body will have the strategy related information",
                     "content": {
@@ -159,7 +168,16 @@
                 "summary": "Delete Repricer Strategy",
                 "description": "Deletes the strategy",
                 "operationId": "deleteStrategy",
-                "parameters": [],
+                "parameters": [
+                    {
+                        "name": "strategyCollectionId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",

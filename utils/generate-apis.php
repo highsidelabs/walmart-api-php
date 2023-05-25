@@ -77,6 +77,7 @@ function generateSupportingFiles(): void
         --global-property supportingFiles \
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-sdk-php/$version \
+        --openapi-normalizer KEEP_ONLY_FIRST_TAG_IN_OPERATION=true \
         2>&1";
 
     execAndLog($generateCmd);

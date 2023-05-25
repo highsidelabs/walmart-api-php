@@ -63,6 +63,15 @@ function customizeSchema(string $path, string $category): void
             continue;
         }
 
+        $rawPathParams = array_filter(
+            explode('/', $p),
+            fn ($segment) => preg_match('/^\{.*\}$/', $segment) > 0
+        );
+        $pathParams = array_map(
+            fn ($param) => trim($param, '{}'),
+            $rawPathParams
+        );
+
         foreach ($apiPath as $x => $verb) {
             $security = [];
             // Update each operation's parameters and auth information
@@ -97,6 +106,29 @@ function customizeSchema(string $path, string $category): void
             // which leads to weird JSON serialization
             $verb['parameters'] = array_values($verb['parameters']);
             $verb['security'] = [$security];
+
+            $verbPathParams = array_filter(
+                $verb['parameters'],
+                fn ($param) => $param['in'] === 'path'
+            );
+            $verbPathParamNames = array_column($verbPathParams, 'name');
+
+            // Ensure all path parameters are included in the request's parameters list. Sometimes Walmart
+            // forgets to include endpoints' path parameters in their requests, which leads to OpenAPI generator warnings
+            foreach ($pathParams as $pathParam) {
+                if (in_array($pathParam, $verbPathParamNames, true)) {
+                    continue;
+                }
+
+                $verb['parameters'][] = [
+                    'name' => $pathParam,
+                    'in' => 'path',
+                    'required' => true,
+                    'schema' => [
+                        'type' => 'string',
+                    ],
+                ];
+            }
 
             // Update endpoint responses
             foreach ($verb['responses'] as $code => $response) {
