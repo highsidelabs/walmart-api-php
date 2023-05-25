@@ -1,7 +1,7 @@
 <?php
 
 /**
- * GetTokenDetail200Response
+ * TokenDetailResponse
  *
  * PHP version 7.4
  *
@@ -19,11 +19,11 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Authentication;
+namespace Walmart\Models\MP\US\Authentication;
 use Walmart\Model\BaseModel;
 
 /**
- * GetTokenDetail200Response Class Doc Comment
+ * TokenDetailResponse Class Doc Comment
  *
  * @category Class
 
@@ -32,7 +32,7 @@ use Walmart\Model\BaseModel;
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
  */
-class GetTokenDetail200Response extends BaseModel
+class TokenDetailResponse extends BaseModel
 {
     public const DISCRIMINATOR = null;
 
@@ -41,7 +41,7 @@ class GetTokenDetail200Response extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'getTokenDetail_200_response';
+    protected static string $openAPIModelName = 'TokenDetailResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -53,7 +53,7 @@ class GetTokenDetail200Response extends BaseModel
         'issuedAt' => 'string',
         'isValid' => 'bool',
         'isChannelMatch' => 'bool',
-        'scopes' => '\Walmart\Model\MP\US\Authentication\GetTokenDetail200ResponseScopes'
+        'scopes' => '\Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes'
     ];
 
     /**
@@ -123,12 +123,6 @@ class GetTokenDetail200Response extends BaseModel
         'isChannelMatch' => 'getIsChannelMatch',
         'scopes' => 'getScopes'
     ];
-    /**
-     * Array of response headers returned by the API
-     *
-     * @var string[][]
-     */
-    protected array $headers = [];
 
     /**
      * Constructor
@@ -156,29 +150,6 @@ class GetTokenDetail200Response extends BaseModel
 
 
         return $invalidProperties;
-    }
-
-    /**
-     * Gets API response headers (only relevant to response models)
-     *
-     * @return string[][]
-     */
-    public function getHeaders(): array
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Sets API response headers (only relevant to response models)
-     *
-     * @param array[string => string[]] $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders(array $headers): static
-    {
-        $this->headers = $headers;
-        return $this;
     }
 
 
@@ -301,7 +272,7 @@ class GetTokenDetail200Response extends BaseModel
     /**
      * Gets scopes
      *
-     * @return \Walmart\Model\MP\US\Authentication\GetTokenDetail200ResponseScopes|null
+     * @return \Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes|null
     
      */
     public function getScopes()
@@ -312,7 +283,7 @@ class GetTokenDetail200Response extends BaseModel
     /**
      * Sets scopes
      *
-     * @param \Walmart\Model\MP\US\Authentication\GetTokenDetail200ResponseScopes|null $scopes scopes
+     * @param \Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes|null $scopes scopes
      *
      * @return self
     

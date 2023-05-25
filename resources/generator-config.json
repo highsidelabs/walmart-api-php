@@ -14,16 +14,16 @@
 
   "files": {
     "BaseApi.hbs": {
-      "folder": "src/Api",
+      "folder": "src/Apis",
       "destinationFilename": "BaseApi.php",
       "templateType": "SupportingFiles"
     },
     "ModelInterface.hbs": {
-      "folder": "src/Model",
+      "folder": "src/Models",
       "destinationFilename": "ModelInterface.php"
     },
     "BaseModel.hbs": {
-      "folder": "src/Model",
+      "folder": "src/Models",
       "destinationFilename": "BaseModel.php"
     }
   }

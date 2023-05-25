@@ -1,7 +1,7 @@
 <?php
 
 /**
- * OAuthToken
+ * OAuthTokenDTO
  *
  * PHP version 7.4
  *
@@ -19,11 +19,11 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Authentication;
+namespace Walmart\Models\MP\US\Authentication;
 use Walmart\Model\BaseModel;
 
 /**
- * OAuthToken Class Doc Comment
+ * OAuthTokenDTO Class Doc Comment
  *
  * @category Class
 
@@ -32,7 +32,7 @@ use Walmart\Model\BaseModel;
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
  */
-class OAuthToken extends BaseModel
+class OAuthTokenDTO extends BaseModel
 {
     public const DISCRIMINATOR = null;
 
@@ -41,7 +41,7 @@ class OAuthToken extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OAuthToken';
+    protected static string $openAPIModelName = 'OAuthTokenDTO';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -85,9 +85,9 @@ class OAuthToken extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'accessToken' => 'access_token',
-        'tokenType' => 'token_type',
-        'expiresIn' => 'expires_in'
+        'accessToken' => 'accessToken',
+        'tokenType' => 'tokenType',
+        'expiresIn' => 'expiresIn'
     ];
 
     /**
@@ -110,7 +110,9 @@ class OAuthToken extends BaseModel
         'accessToken' => 'getAccessToken',
         'tokenType' => 'getTokenType',
         'expiresIn' => 'getExpiresIn'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -138,6 +140,8 @@ class OAuthToken extends BaseModel
 
         return $invalidProperties;
     }
+
+
     /**
      * Gets accessToken
      *

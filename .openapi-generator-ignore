@@ -4,3 +4,7 @@ README.md
 .travis.yml
 .php-cs-fixer.dist.php
 .gitignore
+
+# Prevents the generator from generating ModelInterface.php into this directory
+# instead of our custom models directory
+src/Model/

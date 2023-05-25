@@ -19,7 +19,7 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Authentication;
+namespace Walmart\Models\MP\US\Authentication;
 use Walmart\Model\BaseModel;
 
 /**
@@ -161,6 +161,8 @@ class Scopes extends BaseModel
         'inventory' => 'getInventory',
         'content' => 'getContent'
     ];
+
+
     public const REPORTS_FULL_ACCESS = 'full_access';
 
     public const REPORTS_VIEW_ONLY = 'view_only';
@@ -523,6 +525,8 @@ class Scopes extends BaseModel
 
         return $invalidProperties;
     }
+
+
     /**
      * Gets reports
      *

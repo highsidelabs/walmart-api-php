@@ -1,7 +1,7 @@
 <?php
 
 /**
- * TokenDetailResponse
+ * GetTokenDetail200Response
  *
  * PHP version 7.4
  *
@@ -19,11 +19,13 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Model\MP\US\Authentication;
+namespace Walmart\Models\MP\US\Authentication;
 use Walmart\Model\BaseModel;
 
+use Walmart\Traits\HasResponseHeaders;
+
 /**
- * TokenDetailResponse Class Doc Comment
+ * GetTokenDetail200Response Class Doc Comment
  *
  * @category Class
 
@@ -32,8 +34,9 @@ use Walmart\Model\BaseModel;
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
  */
-class TokenDetailResponse extends BaseModel
+class GetTokenDetail200Response extends BaseModel
 {
+    use HasResponseHeaders;
     public const DISCRIMINATOR = null;
 
     /**
@@ -41,7 +44,7 @@ class TokenDetailResponse extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TokenDetailResponse';
+    protected static string $openAPIModelName = 'getTokenDetail_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -53,7 +56,7 @@ class TokenDetailResponse extends BaseModel
         'issuedAt' => 'string',
         'isValid' => 'bool',
         'isChannelMatch' => 'bool',
-        'scopes' => '\Walmart\Model\MP\US\Authentication\GetTokenDetail200ResponseScopes'
+        'scopes' => '\Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes'
     ];
 
     /**
@@ -122,7 +125,9 @@ class TokenDetailResponse extends BaseModel
         'isValid' => 'getIsValid',
         'isChannelMatch' => 'getIsChannelMatch',
         'scopes' => 'getScopes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +154,8 @@ class TokenDetailResponse extends BaseModel
 
         return $invalidProperties;
     }
+
+
     /**
      * Gets expireAt
      *
@@ -268,7 +275,7 @@ class TokenDetailResponse extends BaseModel
     /**
      * Gets scopes
      *
-     * @return \Walmart\Model\MP\US\Authentication\GetTokenDetail200ResponseScopes|null
+     * @return \Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes|null
     
      */
     public function getScopes()
@@ -279,7 +286,7 @@ class TokenDetailResponse extends BaseModel
     /**
      * Sets scopes
      *
-     * @param \Walmart\Model\MP\US\Authentication\GetTokenDetail200ResponseScopes|null $scopes scopes
+     * @param \Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes|null $scopes scopes
      *
      * @return self
     

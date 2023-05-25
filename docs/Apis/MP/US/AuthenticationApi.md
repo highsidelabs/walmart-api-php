@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getTokenDetail()`
 
 ```php
-getTokenDetail(): \Walmart\Model\MP\US\Authentication\GetTokenDetail200Response
+getTokenDetail(): \Walmart\Models\MP\US\Authentication\GetTokenDetail200Response
 ```
 Token Detail
 
@@ -47,7 +47,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Authentication\GetTokenDetail200Response**](../Model/GetTokenDetail200Response.md)
+[**\Walmart\Models\MP\US\Authentication\GetTokenDetail200Response**](../Model/GetTokenDetail200Response.md)
 
 ### Authorization
 
@@ -65,7 +65,7 @@ try {
 ## `tokenAPI()`
 
 ```php
-tokenAPI($grantType): \Walmart\Model\MP\US\Authentication\TokenAPI200Response
+tokenAPI($grantType): \Walmart\Models\MP\US\Authentication\TokenAPI200Response
 ```
 Token API
 
@@ -104,7 +104,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Model\MP\US\Authentication\TokenAPI200Response**](../Model/TokenAPI200Response.md)
+[**\Walmart\Models\MP\US\Authentication\TokenAPI200Response**](../Model/TokenAPI200Response.md)
 
 ### Authorization
 

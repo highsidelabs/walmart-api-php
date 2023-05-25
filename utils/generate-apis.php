@@ -60,9 +60,11 @@ function openApiGenerator(string $code, string $name, string $category, string $
 
     execAndLog($generateCmd);
 
-    $apiDocSrcPath = DOCS_DIR . "/Apis/{$compressedSchemaName}Api.md";
+    // There is currently no way to change the docs output directories with the OpenAPI generator
+    $apiDocSrcPath = DOCS_DIR . "/Api/{$compressedSchemaName}Api.md";
+    $modelDocSrcPath = DOCS_DIR . '/Model/*.md';
+
     $apiDocDestPath = DOCS_DIR . "/Apis/$categoryCaps/$countryCaps/";
-    $modelDocSrcPath = DOCS_DIR . '/Models/*.md';
     $modelDocDestPath = DOCS_DIR . "/Models/$categoryCaps/$countryCaps/$compressedSchemaName/";
 
     // Create the documentation directories if they don't exist
@@ -80,6 +82,14 @@ function openApiGenerator(string $code, string $name, string $category, string $
         execAndLog("mv $modelDocSrcPath $modelDocDestPath");
     } else {
         echo "No model documentation found for $name in category $category/country $country\n";
+    }
+
+    // Delete default documentation directories since they are not in use
+    if (count(scandir(DEFAULT_APIDOC_DIR)) == 2) { // 2 because of . and ..
+        rmdir(DEFAULT_APIDOC_DIR);
+    }
+    if (count(scandir(DEFAULT_MODELDOC_DIR)) == 2) {
+        rmdir(DEFAULT_MODELDOC_DIR);
     }
 }
 
