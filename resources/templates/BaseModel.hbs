@@ -60,7 +60,7 @@ abstract class BaseModel implements ArrayAccess, JsonSerializable, ModelInterfac
      *
      * @var string[]
      */
-    protected static $openAPITypes = [];
+    protected static array $openAPITypes = [];
 
     /**
      * Array of property to format mappings. Used for (de)serialization
@@ -69,7 +69,7 @@ abstract class BaseModel implements ArrayAccess, JsonSerializable, ModelInterfac
      * @phpstan-var array<string, string|null>
      * @psalm-var array<string, string|null>
      */
-    protected static $openAPIFormats = [];
+    protected static array $openAPIFormats = [];
 
     /**
      * Array of attributes where the key is the local name,
@@ -77,21 +77,21 @@ abstract class BaseModel implements ArrayAccess, JsonSerializable, ModelInterfac
      *
      * @var string[]
      */
-    protected static $attributeMap = [];
+    protected static array $attributeMap = [];
 
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
-    protected static $setters = [];
+    protected static array $setters = [];
 
     /**
      * Array of attributes to getter functions (for serialization of requests)
      *
      * @var string[]
      */
-    protected static $getters = [];
+    protected static array $getters = [];
 
     /**
      * Sets $this->container[$variableName] to the given data or to the given default Value; if $variableName
@@ -102,7 +102,7 @@ abstract class BaseModel implements ArrayAccess, JsonSerializable, ModelInterfac
      * @param array  $fields
      * @param mixed  $defaultValue
      */
-    private function setIfExists(string $variableName, array $fields, $defaultValue): void
+    protected function setIfExists(string $variableName, array $fields, $defaultValue): void
     {
         if (self::isNullable($variableName) && array_key_exists($variableName, $fields) && is_null($fields[$variableName])) {
             $this->openAPINullablesSetToNull[] = $variableName;
