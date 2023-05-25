@@ -41,7 +41,10 @@
     "scripts": {
         "download-schemas": "php utils/download-schemas.php",
         "customize-schemas": "php utils/customize-schemas.php",
-        "generate": "php utils/generate-apis.php",
+        "generate": [
+            "Composer\\Config::disableProcessTimeout",
+            "php utils/generate-apis.php"
+        ],
         "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
     },
     "autoload": {
