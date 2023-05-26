@@ -1,5 +1,7 @@
 <?php
 
+use Walmart\Enums\SecurityScheme;
+
 require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/constants.php';
 
@@ -36,22 +38,20 @@ function customizeSchema(string $path, string $category, string $name): void
     }
 
     $allSecuritySchemes = [
-        // Used by all endpoints
-        BASIC_SCHEME_NAME => [
+        SecurityScheme::BASIC => [
             'type' => 'http',
             'scheme' => 'basic',
         ],
-        // Used by some endpoints in most APIs
-        ACCESS_TOKEN_SCHEME_NAME => [
+        SecurityScheme::ACCESS_TOKEN => [
             'type' => 'http',
             'scheme' => 'bearer',
         ],
-        CONSUMER_ID_SCHEME_NAME => [
+        SecurityScheme::CONSUMER_ID => [
             'type' => 'apiKey',
             'in' => 'header',
             'name' => CONSUMER_ID_HEADER,
         ],
-        AUTH_SIG_SCHEME_NAME => [
+        SecurityScheme::SIGNATURE => [
             'type' => 'apiKey',
             'in' => 'header',
             'name' => AUTH_SIG_HEADER,
@@ -87,10 +87,10 @@ function customizeSchema(string $path, string $category, string $name): void
 
                     // Apply all relevant security schemes to the endpoint
                     $schemeName = match ($parameter['name']) {
-                        BASIC_SCHEME_HEADER => BASIC_SCHEME_NAME,
-                        ACCESS_TOKEN_HEADER => ACCESS_TOKEN_SCHEME_NAME,
-                        CONSUMER_ID_HEADER => CONSUMER_ID_SCHEME_NAME,
-                        AUTH_SIG_HEADER => AUTH_SIG_SCHEME_NAME,
+                        BASIC_SCHEME_HEADER => SecurityScheme::BASIC,
+                        ACCESS_TOKEN_HEADER => SecurityScheme::ACCESS_TOKEN,
+                        CONSUMER_ID_HEADER => SecurityScheme::CONSUMER_ID,
+                        AUTH_SIG_HEADER => SecurityScheme::SIGNATURE,
                         default => false,
                     };
                     if ($schemeName !== false) {
