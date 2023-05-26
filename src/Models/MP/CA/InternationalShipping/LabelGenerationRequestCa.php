@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * LabelGenerationRequestCa Class Doc Comment

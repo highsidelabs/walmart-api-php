@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Insights;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * PostPurchaseQuality Class Doc Comment

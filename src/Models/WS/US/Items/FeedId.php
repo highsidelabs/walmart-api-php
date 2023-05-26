@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\WS\US\Items;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedId Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\OnRequestReports;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetRequestsStatus200ResponseRequestsInnerPayload Class Doc Comment

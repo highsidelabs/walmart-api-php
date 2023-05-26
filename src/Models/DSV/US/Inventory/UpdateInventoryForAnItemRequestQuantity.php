@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Inventory;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateInventoryForAnItemRequestQuantity Class Doc Comment

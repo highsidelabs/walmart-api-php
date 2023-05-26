@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Reports;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns Class Doc Comment

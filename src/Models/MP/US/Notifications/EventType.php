@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Notifications;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * EventType Class Doc Comment

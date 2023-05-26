@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\LagTime;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * LagTimeResponse Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Orders;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ShipLineStatusesType Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Orders;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * PurchaseOrderTypeV3List Class Doc Comment

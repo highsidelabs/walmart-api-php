@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\CA\Items;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllItems200ResponseErrorsInnerCausesInner Class Doc Comment

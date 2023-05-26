@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Feeds;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner Class Doc Comment

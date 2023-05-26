@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\CP\US\Feeds;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemDetailsItemIngestionStatusInner Class Doc Comment

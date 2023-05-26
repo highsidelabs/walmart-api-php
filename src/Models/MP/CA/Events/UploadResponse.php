@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\CA\Events;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * UploadResponse Class Doc Comment

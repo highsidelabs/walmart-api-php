@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Fulfillment;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * CancelCustomerOrderRequestWrapper Class Doc Comment

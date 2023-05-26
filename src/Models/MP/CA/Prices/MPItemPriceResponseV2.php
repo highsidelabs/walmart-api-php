@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\CA\Prices;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * MPItemPriceResponseV2 Class Doc Comment

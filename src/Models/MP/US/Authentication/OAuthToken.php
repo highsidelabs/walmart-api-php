@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Authentication;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * OAuthToken Class Doc Comment

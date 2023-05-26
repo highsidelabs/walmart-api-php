@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Orders;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseMeta Class Doc Comment

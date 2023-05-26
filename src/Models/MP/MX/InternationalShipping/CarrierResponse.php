@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * CarrierResponse Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Items;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllItems200ResponseItemResponseInnerPrice Class Doc Comment

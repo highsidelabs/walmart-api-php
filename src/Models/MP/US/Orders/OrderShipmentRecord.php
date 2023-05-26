@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Orders;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * OrderShipmentRecord Class Doc Comment

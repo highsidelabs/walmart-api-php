@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\Items;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemResponse Class Doc Comment

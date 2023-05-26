@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateLabel200ResponseDataShippingDocuments Class Doc Comment

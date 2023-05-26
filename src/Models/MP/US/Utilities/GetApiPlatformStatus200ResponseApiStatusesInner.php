@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Utilities;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetApiPlatformStatus200ResponseApiStatusesInner Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Settings;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingTemplate Class Doc Comment

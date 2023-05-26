@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Items;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemSearchPrice Class Doc Comment

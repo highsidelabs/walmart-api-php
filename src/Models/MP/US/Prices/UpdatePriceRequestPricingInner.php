@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Prices;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdatePriceRequestPricingInner Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Cost;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemCost Class Doc Comment

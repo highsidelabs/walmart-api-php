@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\WS\US\Reports;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ReportDTO Class Doc Comment

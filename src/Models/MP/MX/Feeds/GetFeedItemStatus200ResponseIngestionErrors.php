@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\Feeds;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFeedItemStatus200ResponseIngestionErrors Class Doc Comment

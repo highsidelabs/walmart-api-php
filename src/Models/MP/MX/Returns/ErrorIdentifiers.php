@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\Returns;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ErrorIdentifiers Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\CA\Feeds;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ResultRecord Class Doc Comment

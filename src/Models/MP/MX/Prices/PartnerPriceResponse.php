@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\Prices;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * PartnerPriceResponse Class Doc Comment

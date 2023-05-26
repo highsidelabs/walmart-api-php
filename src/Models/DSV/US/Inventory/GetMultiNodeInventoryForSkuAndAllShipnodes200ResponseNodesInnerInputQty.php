@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Inventory;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty Class Doc Comment

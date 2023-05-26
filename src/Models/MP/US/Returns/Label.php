@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Returns;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * Label Class Doc Comment

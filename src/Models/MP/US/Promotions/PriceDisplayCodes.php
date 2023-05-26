@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Promotions;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * PriceDisplayCodes Class Doc Comment

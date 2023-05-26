@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Inventory;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * WfsInventoryDTO Class Doc Comment

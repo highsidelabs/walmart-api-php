@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Rules;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Orders;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment

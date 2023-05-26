@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Reports;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 use Walmart\Traits\HasResponseHeaders;
 
 /**

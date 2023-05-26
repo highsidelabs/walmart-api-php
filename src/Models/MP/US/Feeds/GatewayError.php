@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Feeds;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GatewayError Class Doc Comment

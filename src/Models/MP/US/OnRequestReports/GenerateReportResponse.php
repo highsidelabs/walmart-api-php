@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\OnRequestReports;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GenerateReportResponse Class Doc Comment

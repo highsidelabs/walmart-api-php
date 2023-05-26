@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Notifications;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * CreateSubscriptionRequest Class Doc Comment

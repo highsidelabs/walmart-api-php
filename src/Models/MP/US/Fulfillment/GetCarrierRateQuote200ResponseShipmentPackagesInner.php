@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Fulfillment;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetCarrierRateQuote200ResponseShipmentPackagesInner Class Doc Comment

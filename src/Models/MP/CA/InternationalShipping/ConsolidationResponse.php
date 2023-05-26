@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ConsolidationResponse Class Doc Comment

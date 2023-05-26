@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Feeds;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedRecordResponse Class Doc Comment

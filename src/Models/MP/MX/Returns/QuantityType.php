@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\Returns;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * QuantityType Class Doc Comment

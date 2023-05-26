@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Reports;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetPartnerPerformance200Response7DAY Class Doc Comment

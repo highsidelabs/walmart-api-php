@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\US\Orders;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseListMeta Class Doc Comment

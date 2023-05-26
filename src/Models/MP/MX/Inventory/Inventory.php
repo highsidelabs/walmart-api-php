@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\Inventory;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * Inventory Class Doc Comment

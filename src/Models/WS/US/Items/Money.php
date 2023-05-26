@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\WS\US\Items;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * Money Class Doc Comment

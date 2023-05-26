@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\LagTime;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * FeedId Class Doc Comment

@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\DSV\US\Items;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * ItemResponses Class Doc Comment

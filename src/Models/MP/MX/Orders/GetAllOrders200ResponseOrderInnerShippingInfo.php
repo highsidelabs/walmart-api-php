@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\MP\MX\Orders;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerShippingInfo Class Doc Comment

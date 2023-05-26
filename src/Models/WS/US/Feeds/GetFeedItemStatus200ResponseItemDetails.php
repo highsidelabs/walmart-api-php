@@ -21,7 +21,7 @@
 
 namespace Walmart\Models\WS\US\Feeds;
 
-use Walmart\Model\BaseModel;
+use Walmart\Models\BaseModel;
 
 /**
  * GetFeedItemStatus200ResponseItemDetails Class Doc Comment
