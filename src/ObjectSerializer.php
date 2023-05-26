@@ -23,7 +23,7 @@ namespace Walmart;
 use DateTime;
 use GuzzleHttp\Psr7\Utils;
 use InvalidArgumentException;
-use Walmart\Model\ModelInterface;
+use Walmart\Models\ModelInterface;
 
 /**
  * ObjectSerializer Class Doc Comment

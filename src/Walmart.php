@@ -6,10 +6,10 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use BadMethodCallException;
 use RuntimeException;
-use Walmart\Api\CP\ContentProviderApi;
-use Walmart\Api\DSV\DropShipVendorApi;
-use Walmart\Api\MP\MarketplaceApi;
-use Walmart\Api\WS\WarehouseSupplierApi;
+use Walmart\Apis\CP\ContentProviderApi;
+use Walmart\Apis\DSV\DropShipVendorApi;
+use Walmart\Apis\MP\MarketplaceApi;
+use Walmart\Apis\WS\WarehouseSupplierApi;
 use Walmart\Configuration;
 
 abstract class Walmart
