@@ -487,6 +487,16 @@ class {{classname}} extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         {{~#each bodyParams}}
         if (isset(${{paramName}})) {
@@ -524,7 +534,11 @@ class {{classname}} extends BaseApi
         }
         {{#each authMethods}}
         {{#if isApiKey~}}
-        ${{name}}ApiKey = $this->config->getApiKey('{{name}}');
+        ${{name}}ApiKey = $this->config->getApiKey('{{name}}', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if (${{name}}ApiKey !== null) {
             {{#if isKeyInHeader}}$headers['{{keyParamName}}'] = ${{name}}ApiKey;{{/if~}}
             {{#if isKeyInQuery}}$queryParams['{{keyParamName}}'] = ${{name}}ApiKey;{{/if}}
@@ -553,17 +567,6 @@ class {{classname}} extends BaseApi
         }
         {{/if~}}
         {{/each}}
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(

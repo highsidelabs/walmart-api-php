@@ -93,7 +93,7 @@ class BaseApi
             // These aren't required by every endpoint, but many use them and passing the when they're
             // not needed doesn't adversely affect the request
             'WM_MARKET' => strtoupper($this->config->getCountry()),
-            'WM_TIMESTAMP' => time(),
+            'WM_TIMESTAMP' => (int)(microtime(true) * 1000),
         ];
     }
 
