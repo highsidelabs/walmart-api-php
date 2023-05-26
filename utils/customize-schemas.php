@@ -1,6 +1,7 @@
 <?php
 
-namespace Walmart\Utils;
+require_once __DIR__ . '/helpers.php';
+require_once __DIR__ . '/constants.php';
 
 /**
  * Customize Walmart's JSON schemas to be spec-conformant and standardized, so that we can more easily generate

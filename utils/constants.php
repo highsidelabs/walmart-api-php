@@ -1,7 +1,5 @@
 <?php
 
-namespace Walmart\Utils;
-
 const CONTENT_PROVIDER_API_CODE = 'cp';
 const DROP_SHIP_VENDOR_API_CODE = 'dsv';
 const MARKETPLACE_API_CODE = 'mp';

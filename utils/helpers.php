@@ -1,8 +1,6 @@
 <?php
 
-namespace Walmart\Utils;
-
-use InvalidArgumentException;
+require_once __DIR__ . '/constants.php';
 
 const API_DATA_FILE = RESOURCE_DIR . '/apis.json';
 const COUNTRIES_DATA_FILE = RESOURCE_DIR . '/countries.json';
