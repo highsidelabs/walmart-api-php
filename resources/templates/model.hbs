@@ -21,8 +21,10 @@ namespace {{modelPackage}};
 {{~#unless isEnum~}}
 
 use {{invokerPackage}}\Model\BaseModel;
-{{/unless~}}
-{{! invokerPackage is on a new line to avoid the backslash after Api being treated as a block escape }}
+{{~#if vendorExtensions.x-expose-headers}}
+use Walmart\Traits\HasResponseHeaders;
+{{/if~}}
+{{/unless}}
 
 /**
  * {{classname}} Class Doc Comment
