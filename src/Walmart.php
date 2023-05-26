@@ -43,9 +43,9 @@ abstract class Walmart
      *
      * @param mixed $name The name of the method being called.
      * @param mixed $arguments The arguments passed to the callee.
-     * @return mixed 
      * @throws BadMethodCallException
      * @throws RuntimeException
+     * @return mixed 
      */
     public function __call($name, $arguments)
     {

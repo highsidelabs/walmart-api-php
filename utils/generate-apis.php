@@ -89,13 +89,15 @@ function openApiGenerator(string $code, string $name, string $category, string $
     // Delete default documentation directories if they are not in use
     if (
         DEFAULT_API_DIR !== CUSTOM_API_DIR
-        && count(scandir($defaultApiDocsPath) ?: []) == 2  // 2 because of . and ..
+        && file_exists($defaultApiDocsPath)
+        && count(scandir($defaultApiDocsPath)) === 2  // 2 because of . and ..
     ) {
         rmdir($defaultApiDocsPath);
     }
     if (
         DEFAULT_MODEL_DIR !== CUSTOM_MODEL_DIR
-        && count(scandir($defaultModelDocsPath) ?: []) == 2
+        && file_exists($defaultModelDocsPath)
+        && count(scandir($defaultModelDocsPath)) === 2
     ) {
         rmdir($defaultModelDocsPath);
     }

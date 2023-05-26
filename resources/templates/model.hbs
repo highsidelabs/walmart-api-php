@@ -18,14 +18,12 @@
 
 namespace {{modelPackage}};
 
-{{~#unless isEnum~}}
-
+{{#unless isEnum~}}
 use {{invokerPackage}}\Model\BaseModel;
 {{~#if vendorExtensions.x-expose-headers}}
 use Walmart\Traits\HasResponseHeaders;
 {{/if~}}
 {{/unless}}
-
 /**
  * {{classname}} Class Doc Comment
  *
