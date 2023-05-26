@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetShippingConfigurations200ResponseConfigurationsInnerAnyOf Class Doc Comment
@@ -105,6 +106,8 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOf extends BaseM
         'configurationName' => 'getConfigurationName',
         'configuration' => 'getConfiguration'
     ];
+
+
     public const CONFIGURATION_NAME_LAG_TIME = 'LAG_TIME';
 
     /**
@@ -152,6 +155,7 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOf extends BaseM
 
         return $invalidProperties;
     }
+
     /**
      * Gets configurationName
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ProSellerResponse Class Doc Comment
@@ -140,7 +141,9 @@ class ProSellerResponse extends BaseModel
         'meetsCriteria' => 'getMeetsCriteria',
         'criteriaData' => 'getCriteriaData',
         'recommendations' => 'getRecommendations'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class ProSellerResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets hasBadge
      *

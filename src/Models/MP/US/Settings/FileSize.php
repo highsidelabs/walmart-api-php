@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FileSize Class Doc Comment
@@ -107,6 +108,8 @@ class FileSize extends BaseModel
         'value' => 'getValue',
         'unitOfMeasurement' => 'getUnitOfMeasurement'
     ];
+
+
     public const UNIT_OF_MEASUREMENT_BYTES = 'BYTES';
 
     /**
@@ -154,6 +157,7 @@ class FileSize extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets value
      *

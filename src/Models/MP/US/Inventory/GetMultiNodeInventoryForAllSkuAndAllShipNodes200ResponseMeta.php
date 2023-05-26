@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta Class Doc Comment
@@ -104,7 +105,9 @@ class GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta extends BaseM
     protected static array $getters = [
         'totalCount' => 'getTotalCount',
         'nextCursor' => 'getNextCursor'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta extends BaseM
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

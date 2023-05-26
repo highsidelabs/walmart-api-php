@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Events;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemCountResponse Class Doc Comment
@@ -146,7 +147,9 @@ class ItemCountResponse extends BaseModel
         'selected' => 'getSelected',
         'all' => 'getAll',
         'lastUpdatedTime' => 'getLastUpdatedTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -177,6 +180,7 @@ class ItemCountResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets eventId
      *

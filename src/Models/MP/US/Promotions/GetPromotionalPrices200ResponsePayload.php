@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayload Class Doc Comment
@@ -128,7 +129,9 @@ class GetPromotionalPrices200ResponsePayload extends BaseModel
         'minAdvtPrice' => 'getMinAdvtPrice',
         'rebate' => 'getRebate',
         'additionalAttributes' => 'getAdditionalAttributes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -162,6 +165,7 @@ class GetPromotionalPrices200ResponsePayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets itemIdentifier
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateLagTimeBulkRequestLagTimeInner Class Doc Comment
@@ -112,7 +113,9 @@ class UpdateLagTimeBulkRequestLagTimeInner extends BaseModel
         'productId' => 'getProductId',
         'shipNode' => 'getShipNode',
         'fulfillmentLagTime' => 'getFulfillmentLagTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -146,6 +149,7 @@ class UpdateLagTimeBulkRequestLagTimeInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets productId
      *

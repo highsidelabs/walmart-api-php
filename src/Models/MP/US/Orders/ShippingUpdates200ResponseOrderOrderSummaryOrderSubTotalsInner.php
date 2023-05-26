@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner Class Doc Comment
@@ -104,7 +105,9 @@ class ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner extends Bas
     protected static array $getters = [
         'subTotalType' => 'getSubTotalType',
         'totalAmount' => 'getTotalAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner extends Bas
 
         return $invalidProperties;
     }
+
     /**
      * Gets subTotalType
      *

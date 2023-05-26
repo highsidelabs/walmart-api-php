@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses Class Doc Comment
@@ -100,7 +101,9 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses e
      */
     protected static array $getters = [
         'orderLineStatus' => 'getOrderLineStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatuses e
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderLineStatus
      *

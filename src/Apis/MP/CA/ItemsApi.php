@@ -322,6 +322,16 @@ class ItemsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -346,26 +356,23 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme');
+        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme');
+        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($consumerIdSchemeApiKey !== null) {
             $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -667,6 +674,16 @@ class ItemsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -691,26 +708,23 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme');
+        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme');
+        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($consumerIdSchemeApiKey !== null) {
             $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -961,6 +975,16 @@ class ItemsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -985,26 +1009,23 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme');
+        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme');
+        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($consumerIdSchemeApiKey !== null) {
             $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -1255,6 +1276,16 @@ class ItemsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -1279,26 +1310,23 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme');
+        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme');
+        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
         if ($consumerIdSchemeApiKey !== null) {
             $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);

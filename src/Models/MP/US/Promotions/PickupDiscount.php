@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PickupDiscount Class Doc Comment
@@ -104,7 +105,9 @@ class PickupDiscount extends BaseModel
     protected static array $getters = [
         'isPickUpDiscountEligible' => 'getIsPickUpDiscountEligible',
         'pickupDiscountAmt' => 'getPickupDiscountAmt'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class PickupDiscount extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets isPickUpDiscountEligible
      *

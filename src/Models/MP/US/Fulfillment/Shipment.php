@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Shipment Class Doc Comment
@@ -184,7 +185,9 @@ class Shipment extends BaseModel
         'lastModified' => 'getLastModified',
         'shipmentLines' => 'getShipmentLines',
         'shipmentDates' => 'getShipmentDates'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -221,6 +224,7 @@ class Shipment extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

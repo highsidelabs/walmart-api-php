@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Item Class Doc Comment
@@ -112,7 +113,9 @@ class Item extends BaseModel
         'sku' => 'getSku',
         'productName' => 'getProductName',
         'itemWeight' => 'getItemWeight'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class Item extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

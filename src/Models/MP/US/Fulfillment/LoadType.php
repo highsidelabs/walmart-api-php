@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LoadType Class Doc Comment
@@ -104,7 +105,9 @@ class LoadType extends BaseModel
     protected static array $getters = [
         'count' => 'getCount',
         'loadType' => 'getLoadType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class LoadType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets count
      *

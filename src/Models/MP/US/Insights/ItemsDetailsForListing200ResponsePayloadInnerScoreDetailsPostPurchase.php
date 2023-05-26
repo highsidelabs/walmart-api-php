@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase Class Doc Comment
@@ -116,7 +117,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase exte
         'returns' => 'getReturns',
         'issueCount' => 'getIssueCount',
         'otd' => 'getOtd'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase exte
 
         return $invalidProperties;
     }
+
     /**
      * Gets cancellations
      *

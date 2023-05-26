@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TestNotificationResponseDTO Class Doc Comment
@@ -98,7 +99,9 @@ class TestNotificationResponseDTO extends BaseModel
      */
     protected static array $getters = [
         'message' => 'getMessage'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class TestNotificationResponseDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets message
      *

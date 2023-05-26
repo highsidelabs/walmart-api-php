@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadOffersInner Class Doc Comment
@@ -124,7 +125,9 @@ class PromiseFulfillments200ResponsePayloadOffersInner extends BaseModel
         'lineId' => 'getLineId',
         'salesUnit' => 'getSalesUnit',
         'sku' => 'getSku'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -151,6 +154,7 @@ class PromiseFulfillments200ResponsePayloadOffersInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets availableQuantity
      *

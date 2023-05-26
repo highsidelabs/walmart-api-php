@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress Class Doc Comment
@@ -148,7 +149,9 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
         'country' => 'getCountry',
         'dayPhone' => 'getDayPhone',
         'emailId' => 'getEmailId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -194,6 +197,7 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

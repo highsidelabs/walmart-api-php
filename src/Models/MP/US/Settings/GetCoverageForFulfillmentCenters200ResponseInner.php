@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCoverageForFulfillmentCenters200ResponseInner Class Doc Comment
@@ -110,7 +111,9 @@ class GetCoverageForFulfillmentCenters200ResponseInner extends BaseModel
         'shipNode' => 'getShipNode',
         'shipNodeName' => 'getShipNodeName',
         'coverageArea' => 'getCoverageArea'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class GetCoverageForFulfillmentCenters200ResponseInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNode
      *

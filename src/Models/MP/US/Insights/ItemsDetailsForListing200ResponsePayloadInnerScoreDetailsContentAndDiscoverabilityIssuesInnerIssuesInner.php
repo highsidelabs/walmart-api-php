@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner Class Doc Comment
@@ -104,7 +105,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscove
     protected static array $getters = [
         'title' => 'getTitle',
         'value' => 'getValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscove
 
         return $invalidProperties;
     }
+
     /**
      * Gets title
      *

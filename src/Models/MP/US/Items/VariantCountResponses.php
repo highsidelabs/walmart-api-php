@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * VariantCountResponses Class Doc Comment
@@ -104,7 +105,9 @@ class VariantCountResponses extends BaseModel
     protected static array $getters = [
         'status' => 'getStatus',
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class VariantCountResponses extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

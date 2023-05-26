@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderLineStatusAck Class Doc Comment
@@ -104,7 +105,9 @@ class OrderLineStatusAck extends BaseModel
     protected static array $getters = [
         'status' => 'getStatus',
         'statusQuantity' => 'getStatusQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class OrderLineStatusAck extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

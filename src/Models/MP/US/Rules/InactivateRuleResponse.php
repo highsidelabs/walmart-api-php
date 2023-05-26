@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InactivateRuleResponse Class Doc Comment
@@ -104,7 +105,9 @@ class InactivateRuleResponse extends BaseModel
     protected static array $getters = [
         'message' => 'getMessage',
         'status' => 'getStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class InactivateRuleResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets message
      *

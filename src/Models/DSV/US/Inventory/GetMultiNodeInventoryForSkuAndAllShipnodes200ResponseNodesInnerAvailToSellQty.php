@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty Class Doc Comment
@@ -107,6 +108,8 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSell
         'unit' => 'getUnit',
         'amount' => 'getAmount'
     ];
+
+
     public const UNIT_EACH = 'EACH';
 
     /**
@@ -157,6 +160,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSell
 
         return $invalidProperties;
     }
+
     /**
      * Gets unit
      *

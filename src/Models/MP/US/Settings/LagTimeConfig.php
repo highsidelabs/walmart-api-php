@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LagTimeConfig Class Doc Comment
@@ -105,6 +106,8 @@ class LagTimeConfig extends BaseModel
         'configurationName' => 'getConfigurationName',
         'configuration' => 'getConfiguration'
     ];
+
+
     public const CONFIGURATION_NAME_LAG_TIME = 'LAG_TIME';
 
     /**
@@ -152,6 +155,7 @@ class LagTimeConfig extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets configurationName
      *

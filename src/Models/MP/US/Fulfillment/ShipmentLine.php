@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipmentLine Class Doc Comment
@@ -112,7 +113,9 @@ class ShipmentLine extends BaseModel
         'shipmentLineNo' => 'getShipmentLineNo',
         'fulfillerLineId' => 'getFulfillerLineId',
         'quantity' => 'getQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class ShipmentLine extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentLineNo
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InputQty Class Doc Comment
@@ -107,6 +108,8 @@ class InputQty extends BaseModel
         'unit' => 'getUnit',
         'amount' => 'getAmount'
     ];
+
+
     public const UNIT_EACH = 'EACH';
 
     /**
@@ -160,6 +163,7 @@ class InputQty extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets unit
      *

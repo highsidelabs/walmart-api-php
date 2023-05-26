@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AdjustmentAggregate Class Doc Comment
@@ -122,7 +123,9 @@ class AdjustmentAggregate extends BaseModel
         'returnShipServCharge' => 'getReturnShipServCharge',
         'returnHandlingServCharge' => 'getReturnHandlingServCharge',
         'fwdShippingServiceFee' => 'getFwdShippingServiceFee'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class AdjustmentAggregate extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets netPayable
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner Class Doc Comment
@@ -116,7 +117,9 @@ class GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner extends Bas
         'field' => 'getField',
         'type' => 'getType',
         'description' => 'getDescription'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class GetItemAssociations200ResponseItemsInnerErrorsInnerCausesInner extends Bas
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

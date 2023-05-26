@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerStats Class Doc Comment
@@ -122,7 +123,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerStats extends BaseModel
         'orders' => 'getOrders',
         'conversionRate' => 'getConversionRate',
         'totalUnits' => 'getTotalUnits'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerStats extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets gmv
      *

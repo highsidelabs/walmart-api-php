@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierPackageResponse Class Doc Comment
@@ -136,7 +137,9 @@ class CarrierPackageResponse extends BaseModel
         'width' => 'getWidth',
         'height' => 'getHeight',
         'dimensionUnit' => 'getDimensionUnit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -165,6 +168,7 @@ class CarrierPackageResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

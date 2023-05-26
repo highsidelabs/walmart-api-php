@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice Class Doc Comment
@@ -106,7 +107,9 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice extends Base
     protected static array $getters = [
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItemUnitPrice extends Base
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

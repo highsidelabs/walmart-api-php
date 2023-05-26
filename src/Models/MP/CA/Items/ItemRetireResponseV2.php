@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemRetireResponseV2 Class Doc Comment
@@ -110,7 +111,9 @@ class ItemRetireResponseV2 extends BaseModel
         'errors' => 'getErrors',
         'sku' => 'getSku',
         'message' => 'getMessage'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -138,6 +141,7 @@ class ItemRetireResponseV2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets errors
      *

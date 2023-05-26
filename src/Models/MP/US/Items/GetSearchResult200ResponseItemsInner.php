@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetSearchResult200ResponseItemsInner Class Doc Comment
@@ -152,7 +153,9 @@ class GetSearchResult200ResponseItemsInner extends BaseModel
         'brand' => 'getBrand',
         'productType' => 'getProductType',
         'properties' => 'getProperties'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -184,6 +187,7 @@ class GetSearchResult200ResponseItemsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets itemId
      *

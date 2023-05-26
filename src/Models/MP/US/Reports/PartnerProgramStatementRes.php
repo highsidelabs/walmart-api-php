@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerProgramStatementRes Class Doc Comment
@@ -122,7 +123,9 @@ class PartnerProgramStatementRes extends BaseModel
         'error' => 'getError',
         'partnerId' => 'getPartnerId',
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class PartnerProgramStatementRes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets statusCode
      *

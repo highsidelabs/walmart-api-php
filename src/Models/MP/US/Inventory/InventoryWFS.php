@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InventoryWFS Class Doc Comment
@@ -104,7 +105,9 @@ class InventoryWFS extends BaseModel
     protected static array $getters = [
         'sku' => 'getSku',
         'shipNodes' => 'getShipNodes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class InventoryWFS extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

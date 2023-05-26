@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetWFSInventoryLog200ResponsePayloadInventoryLogInner Class Doc Comment
@@ -148,7 +149,9 @@ class GetWFSInventoryLog200ResponsePayloadInventoryLogInner extends BaseModel
         'transactionReasonDesc' => 'getTransactionReasonDesc',
         'transactionType' => 'getTransactionType',
         'shipmentId' => 'getShipmentId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -179,6 +182,7 @@ class GetWFSInventoryLog200ResponsePayloadInventoryLogInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

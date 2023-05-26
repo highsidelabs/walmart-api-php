@@ -20,7 +20,9 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
+use Walmart\Traits\HasResponseHeaders;
 
 /**
  * ItemsDetailsForListing200Response Class Doc Comment
@@ -34,6 +36,8 @@ use Walmart\Models\BaseModel;
  */
 class ItemsDetailsForListing200Response extends BaseModel
 {
+    use HasResponseHeaders;
+
     public const DISCRIMINATOR = null;
 
     /**
@@ -117,12 +121,6 @@ class ItemsDetailsForListing200Response extends BaseModel
         'payload' => 'getPayload',
         'status' => 'getStatus'
     ];
-    /**
-     * Array of response headers returned by the API
-     *
-     * @var string[][]
-     */
-    protected array $headers = [];
 
     /**
      * Constructor
@@ -150,30 +148,6 @@ class ItemsDetailsForListing200Response extends BaseModel
 
         return $invalidProperties;
     }
-
-    /**
-     * Gets API response headers (only relevant to response models)
-     *
-     * @return string[][]
-     */
-    public function getHeaders(): array
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Sets API response headers (only relevant to response models)
-     *
-     * @param array[string => string[]] $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders(array $headers): static
-    {
-        $this->headers = $headers;
-        return $this;
-    }
-
 
     /**
      * Gets nextCursor

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetSearchResult200ResponseItemsInnerImagesInner Class Doc Comment
@@ -100,7 +101,9 @@ class GetSearchResult200ResponseItemsInnerImagesInner extends BaseModel
      */
     protected static array $getters = [
         'url' => 'getUrl'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class GetSearchResult200ResponseItemsInnerImagesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets url
      *

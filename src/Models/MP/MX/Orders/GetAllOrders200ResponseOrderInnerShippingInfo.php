@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerShippingInfo Class Doc Comment
@@ -112,7 +113,9 @@ class GetAllOrders200ResponseOrderInnerShippingInfo extends BaseModel
         'phone' => 'getPhone',
         'estimatedDeliveryDate' => 'getEstimatedDeliveryDate',
         'postalAddress' => 'getPostalAddress'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class GetAllOrders200ResponseOrderInnerShippingInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets phone
      *

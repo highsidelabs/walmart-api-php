@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInner Class Doc Comment
@@ -166,7 +167,9 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
         'fulfillment' => 'getFulfillment',
         'intentToCancel' => 'getIntentToCancel',
         'configId' => 'getConfigId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -218,6 +221,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

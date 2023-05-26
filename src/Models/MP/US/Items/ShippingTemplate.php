@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingTemplate Class Doc Comment
@@ -113,6 +114,8 @@ class ShippingTemplate extends BaseModel
         'type' => 'getType',
         'id' => 'getId'
     ];
+
+
     public const TYPE__DEFAULT = 'DEFAULT';
 
     public const TYPE_CUSTOM = 'CUSTOM';
@@ -167,6 +170,7 @@ class ShippingTemplate extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

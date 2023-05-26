@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingMethod Class Doc Comment
@@ -113,6 +114,8 @@ class ShippingMethod extends BaseModel
         'status' => 'getStatus',
         'configurations' => 'getConfigurations'
     ];
+
+
     public const SHIP_METHOD_VALUE = 'VALUE';
 
     public const SHIP_METHOD_STANDARD = 'STANDARD';
@@ -209,6 +212,7 @@ class ShippingMethod extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipMethod
      *

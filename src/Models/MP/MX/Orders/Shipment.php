@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Shipment Class Doc Comment
@@ -166,7 +167,9 @@ class Shipment extends BaseModel
         'trackingNumber' => 'getTrackingNumber',
         'trackingUrl' => 'getTrackingUrl',
         'shipmentAdditionalDate' => 'getShipmentAdditionalDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -200,6 +203,7 @@ class Shipment extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentLines
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner Class Doc Comment
@@ -105,6 +106,8 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefund
         'refundReason' => 'getRefundReason',
         'charge' => 'getCharge'
     ];
+
+
     public const REFUND_REASON_BILLING_ERROR = 'BillingError';
 
     public const REFUND_REASON_TAX_EXEMPT_CUSTOMER = 'TaxExemptCustomer';
@@ -221,6 +224,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefund
 
         return $invalidProperties;
     }
+
     /**
      * Gets refundReason
      *

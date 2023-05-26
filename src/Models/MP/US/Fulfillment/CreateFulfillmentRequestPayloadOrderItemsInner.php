@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateFulfillmentRequestPayloadOrderItemsInner Class Doc Comment
@@ -178,7 +179,9 @@ class CreateFulfillmentRequestPayloadOrderItemsInner extends BaseModel
         'itemWeightQty' => 'getItemWeightQty',
         'nonSortItem' => 'getNonSortItem',
         'shipNode' => 'getShipNode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -268,6 +271,7 @@ class CreateFulfillmentRequestPayloadOrderItemsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets productId
      *

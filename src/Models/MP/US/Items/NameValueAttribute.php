@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * NameValueAttribute Class Doc Comment
@@ -123,6 +124,8 @@ class NameValueAttribute extends BaseModel
         'variantResourceType' => 'getVariantResourceType',
         'value' => 'getValue'
     ];
+
+
     public const TYPE_LOCALIZABLE_TEXT = 'LOCALIZABLE_TEXT';
 
     public const TYPE_STRING = 'STRING';
@@ -200,6 +203,7 @@ class NameValueAttribute extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

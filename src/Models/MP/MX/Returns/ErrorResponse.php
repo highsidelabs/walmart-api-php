@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ErrorResponse Class Doc Comment
@@ -98,7 +99,9 @@ class ErrorResponse extends BaseModel
      */
     protected static array $getters = [
         'error' => 'getError'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class ErrorResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets error
      *

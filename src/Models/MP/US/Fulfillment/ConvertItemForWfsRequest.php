@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ConvertItemForWfsRequest Class Doc Comment
@@ -98,7 +99,9 @@ class ConvertItemForWfsRequest extends BaseModel
      */
     protected static array $getters = [
         'file' => 'getFile'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class ConvertItemForWfsRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets file
      *

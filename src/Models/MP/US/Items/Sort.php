@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Sort Class Doc Comment
@@ -105,6 +106,8 @@ class Sort extends BaseModel
         'field' => 'getField',
         'order' => 'getOrder'
     ];
+
+
     public const FIELD_NUM_REVIEWS = 'num_reviews';
 
     public const FIELD_CUSTOMER_RATING = 'customerRating';
@@ -194,6 +197,7 @@ class Sort extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

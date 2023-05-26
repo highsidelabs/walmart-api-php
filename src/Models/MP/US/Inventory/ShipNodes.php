@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipNodes Class Doc Comment
@@ -116,7 +117,9 @@ class ShipNodes extends BaseModel
         'availToSellQty' => 'getAvailToSellQty',
         'onHandQty' => 'getOnHandQty',
         'shipNodeType' => 'getShipNodeType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class ShipNodes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets modifiedDate
      *

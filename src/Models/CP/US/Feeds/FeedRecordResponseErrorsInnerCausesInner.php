@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\CP\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedRecordResponseErrorsInnerCausesInner Class Doc Comment
@@ -116,7 +117,9 @@ class FeedRecordResponseErrorsInnerCausesInner extends BaseModel
         'field' => 'getField',
         'type' => 'getType',
         'description' => 'getDescription'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class FeedRecordResponseErrorsInnerCausesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

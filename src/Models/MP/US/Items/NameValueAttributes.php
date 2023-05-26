@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * NameValueAttributes Class Doc Comment
@@ -100,7 +101,9 @@ class NameValueAttributes extends BaseModel
      */
     protected static array $getters = [
         'nameValueAttribute' => 'getNameValueAttribute'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class NameValueAttributes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets nameValueAttribute
      *

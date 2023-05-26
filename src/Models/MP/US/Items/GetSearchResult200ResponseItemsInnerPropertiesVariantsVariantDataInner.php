@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner Class Doc Comment
@@ -122,7 +123,9 @@ class GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner ext
         'isAvailable' => 'getIsAvailable',
         'title' => 'getTitle',
         'variantValues' => 'getVariantValues'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner ext
 
         return $invalidProperties;
     }
+
     /**
      * Gets productImageUrl
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Sort Class Doc Comment
@@ -105,6 +106,8 @@ class Sort extends BaseModel
         'field' => 'getField',
         'order' => 'getOrder'
     ];
+
+
     public const FIELD_CREATED_AT = 'createdAt';
 
     public const FIELD_UPDATED_AT = 'updatedAt';
@@ -182,6 +185,7 @@ class Sort extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

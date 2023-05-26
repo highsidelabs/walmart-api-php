@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatuses Class Doc Comment
@@ -98,7 +99,9 @@ class AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineS
      */
     protected static array $getters = [
         'orderLineStatus' => 'getOrderLineStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineS
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderLineStatus
      *

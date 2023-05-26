@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemCatalogSearchPayload Class Doc Comment
@@ -110,7 +111,9 @@ class ItemCatalogSearchPayload extends BaseModel
         'query' => 'getQuery',
         'filters' => 'getFilters',
         'sort' => 'getSort'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class ItemCatalogSearchPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets query
      *

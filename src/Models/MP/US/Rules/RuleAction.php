@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RuleAction Class Doc Comment
@@ -100,7 +101,9 @@ class RuleAction extends BaseModel
      */
     protected static array $getters = [
         'twoDayShippingRegions' => 'getTwoDayShippingRegions'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class RuleAction extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets twoDayShippingRegions
      *

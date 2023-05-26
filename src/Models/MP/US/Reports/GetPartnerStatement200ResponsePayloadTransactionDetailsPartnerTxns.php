@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns Class Doc Comment
@@ -104,7 +105,9 @@ class GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns extends
     protected static array $getters = [
         'netPayable' => 'getNetPayable',
         'advancePayment' => 'getAdvancePayment'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns extends
 
         return $invalidProperties;
     }
+
     /**
      * Gets netPayable
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund Class Doc Comment
@@ -112,7 +113,9 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund extends BaseMod
         'refundId' => 'getRefundId',
         'refundComments' => 'getRefundComments',
         'refundCharges' => 'getRefundCharges'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -140,6 +143,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund extends BaseMod
 
         return $invalidProperties;
     }
+
     /**
      * Gets refundId
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment Class Doc Comment
@@ -128,7 +129,9 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment extends BaseM
         'offerId' => 'getOfferId',
         'pickUpDateTime' => 'getPickUpDateTime',
         'pickUpBy' => 'getPickUpBy'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -156,6 +159,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment extends BaseM
 
         return $invalidProperties;
     }
+
     /**
      * Gets fulfillmentOption
      *

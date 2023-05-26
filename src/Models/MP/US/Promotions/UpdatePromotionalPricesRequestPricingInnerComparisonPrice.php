@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdatePromotionalPricesRequestPricingInnerComparisonPrice Class Doc Comment
@@ -107,6 +108,8 @@ class UpdatePromotionalPricesRequestPricingInnerComparisonPrice extends BaseMode
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
     ];
+
+
     public const CURRENCY_USD = 'USD';
 
     public const CURRENCY_CAD = 'CAD';
@@ -157,6 +160,7 @@ class UpdatePromotionalPricesRequestPricingInnerComparisonPrice extends BaseMode
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

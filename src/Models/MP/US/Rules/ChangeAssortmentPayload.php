@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ChangeAssortmentPayload Class Doc Comment
@@ -98,7 +99,9 @@ class ChangeAssortmentPayload extends BaseModel
      */
     protected static array $getters = [
         'id' => 'getId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class ChangeAssortmentPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

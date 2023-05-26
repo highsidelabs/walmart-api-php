@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedItemsRequestDTO Class Doc Comment
@@ -116,7 +117,9 @@ class FeedItemsRequestDTO extends BaseModel
         'repricerStrategy' => 'getRepricerStrategy',
         'minimumSellerAllowedPrice' => 'getMinimumSellerAllowedPrice',
         'maximumSellerAllowedPrice' => 'getMaximumSellerAllowedPrice'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class FeedItemsRequestDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

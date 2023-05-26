@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * IssueRefundRequest Class Doc Comment
@@ -104,7 +105,9 @@ class IssueRefundRequest extends BaseModel
     protected static array $getters = [
         'customerOrderId' => 'getCustomerOrderId',
         'refundLines' => 'getRefundLines'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class IssueRefundRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets customerOrderId
      *

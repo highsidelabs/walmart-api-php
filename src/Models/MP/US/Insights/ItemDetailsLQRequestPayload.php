@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemDetailsLQRequestPayload Class Doc Comment
@@ -104,7 +105,9 @@ class ItemDetailsLQRequestPayload extends BaseModel
     protected static array $getters = [
         'query' => 'getQuery',
         'filters' => 'getFilters'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets query
      *

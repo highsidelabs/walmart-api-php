@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetWFSInventory200ResponseHeaders Class Doc Comment
@@ -110,7 +111,9 @@ class GetWFSInventory200ResponseHeaders extends BaseModel
         'totalCount' => 'getTotalCount',
         'limit' => 'getLimit',
         'offset' => 'getOffset'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class GetWFSInventory200ResponseHeaders extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

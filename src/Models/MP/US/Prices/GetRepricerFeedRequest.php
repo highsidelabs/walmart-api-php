@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetRepricerFeedRequest Class Doc Comment
@@ -104,7 +105,9 @@ class GetRepricerFeedRequest extends BaseModel
     protected static array $getters = [
         'itemFeedHeader' => 'getItemFeedHeader',
         'item' => 'getItem'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetRepricerFeedRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets itemFeedHeader
      *

@@ -20,6 +20,7 @@
  */
 
 namespace Walmart\Models\MP\US\Authentication;
+
 use Walmart\Model\BaseModel;
 
 /**
@@ -126,7 +127,6 @@ class IAMTokenDTO extends BaseModel
 
         return $invalidProperties;
     }
-
 
     /**
      * Gets grantType

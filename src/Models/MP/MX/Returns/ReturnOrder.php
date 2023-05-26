@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReturnOrder Class Doc Comment
@@ -136,7 +137,9 @@ class ReturnOrder extends BaseModel
         'returnOrderDate' => 'getReturnOrderDate',
         'returnOrderLines' => 'getReturnOrderLines',
         'returnOrderShipments' => 'getReturnOrderShipments'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -165,6 +168,7 @@ class ReturnOrder extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets returnOrderId
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TrendingItem Class Doc Comment
@@ -172,7 +173,9 @@ class TrendingItem extends BaseModel
         'brand' => 'getBrand',
         'superDepartmentName' => 'getSuperDepartmentName',
         'subCategoryName' => 'getSubCategoryName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -207,6 +210,7 @@ class TrendingItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets categoryName
      *

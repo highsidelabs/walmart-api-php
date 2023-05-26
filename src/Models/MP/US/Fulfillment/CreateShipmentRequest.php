@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateShipmentRequest Class Doc Comment
@@ -116,7 +117,9 @@ class CreateShipmentRequest extends BaseModel
         'inboundServices' => 'getInboundServices',
         'returnAddress' => 'getReturnAddress',
         'orderItems' => 'getOrderItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class CreateShipmentRequest extends BaseModel
         }
         return $invalidProperties;
     }
+
     /**
      * Gets inboundOrderId
      *

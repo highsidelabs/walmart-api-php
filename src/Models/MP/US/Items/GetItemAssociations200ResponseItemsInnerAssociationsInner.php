@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetItemAssociations200ResponseItemsInnerAssociationsInner Class Doc Comment
@@ -112,7 +113,9 @@ class GetItemAssociations200ResponseItemsInnerAssociationsInner extends BaseMode
         'shippingTemplate' => 'getShippingTemplate',
         'shipNodeName' => 'getShipNodeName',
         'shipNode' => 'getShipNode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class GetItemAssociations200ResponseItemsInnerAssociationsInner extends BaseMode
 
         return $invalidProperties;
     }
+
     /**
      * Gets shippingTemplate
      *

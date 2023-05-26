@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Cost;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UnitCost Class Doc Comment
@@ -104,7 +105,9 @@ class UnitCost extends BaseModel
     protected static array $getters = [
         'amount' => 'getAmount',
         'currency' => 'getCurrency'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class UnitCost extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets amount
      *

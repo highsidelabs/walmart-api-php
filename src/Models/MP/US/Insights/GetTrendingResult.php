@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetTrendingResult Class Doc Comment
@@ -104,7 +105,9 @@ class GetTrendingResult extends BaseModel
     protected static array $getters = [
         'payload' => 'getPayload',
         'status' => 'getStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetTrendingResult extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets payload
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInnerItem Class Doc Comment
@@ -140,7 +141,9 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
         'unitPrice' => 'getUnitPrice',
         'commission' => 'getCommission',
         'unitPriceWithoutTax' => 'getUnitPriceWithoutTax'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets upc
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReturnLineGroup Class Doc Comment
@@ -118,7 +119,9 @@ class ReturnLineGroup extends BaseModel
         'returnLines' => 'getReturnLines',
         'labels' => 'getLabels',
         'returnExpectedFlag' => 'getReturnExpectedFlag'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class ReturnLineGroup extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets groupNo
      *

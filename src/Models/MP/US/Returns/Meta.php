@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Meta Class Doc Comment
@@ -110,7 +111,9 @@ class Meta extends BaseModel
         'totalCount' => 'getTotalCount',
         'limit' => 'getLimit',
         'nextCursor' => 'getNextCursor'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class Meta extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

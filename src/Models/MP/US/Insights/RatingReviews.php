@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RatingReviews Class Doc Comment
@@ -104,7 +105,9 @@ class RatingReviews extends BaseModel
     protected static array $getters = [
         'maxRating' => 'getMaxRating',
         'ratingCount' => 'getRatingCount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class RatingReviews extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets maxRating
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ErrorResponse Class Doc Comment
@@ -137,6 +138,8 @@ class ErrorResponse extends BaseModel
         'category' => 'getCategory',
         'httpStatus' => 'getHttpStatus'
     ];
+
+
     public const SEVERITY_EMERG = 'EMERG';
 
     public const SEVERITY_ALERT = 'ALERT';
@@ -234,6 +237,7 @@ class ErrorResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets info
      *

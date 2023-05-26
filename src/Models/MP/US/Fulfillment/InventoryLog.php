@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InventoryLog Class Doc Comment
@@ -148,7 +149,9 @@ class InventoryLog extends BaseModel
         'transactionReasonDesc' => 'getTransactionReasonDesc',
         'transactionType' => 'getTransactionType',
         'shipmentId' => 'getShipmentId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -179,6 +182,7 @@ class InventoryLog extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

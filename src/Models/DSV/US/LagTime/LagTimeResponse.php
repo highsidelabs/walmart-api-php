@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LagTimeResponse Class Doc Comment
@@ -110,7 +111,9 @@ class LagTimeResponse extends BaseModel
         'sku' => 'getSku',
         'gtin' => 'getGtin',
         'fulfillmentLagTime' => 'getFulfillmentLagTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class LagTimeResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

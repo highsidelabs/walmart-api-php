@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierResponse Class Doc Comment
@@ -112,7 +113,9 @@ class CarrierResponse extends BaseModel
         'carrierId' => 'getCarrierId',
         'shortName' => 'getShortName',
         'carrierName' => 'getCarrierName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class CarrierResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets carrierId
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * SubscriptionResponseDTO Class Doc Comment
@@ -100,7 +101,9 @@ class SubscriptionResponseDTO extends BaseModel
      */
     protected static array $getters = [
         'event' => 'getEvent'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class SubscriptionResponseDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets event
      *

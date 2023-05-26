@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetConsolidation200ResponseData Class Doc Comment
@@ -118,7 +119,9 @@ class GetConsolidation200ResponseData extends BaseModel
         'shipmentIds' => 'getShipmentIds',
         'domesticTrackingNo' => 'getDomesticTrackingNo',
         'domesticCarrierId' => 'getDomesticCarrierId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class GetConsolidation200ResponseData extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets consolidationId
      *

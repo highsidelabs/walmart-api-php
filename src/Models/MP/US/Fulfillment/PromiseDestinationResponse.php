@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseDestinationResponse Class Doc Comment
@@ -112,7 +113,9 @@ class PromiseDestinationResponse extends BaseModel
         'address' => 'getAddress',
         'fulfillmentType' => 'getFulfillmentType',
         'destinationId' => 'getDestinationId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class PromiseDestinationResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets address
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetInboundShipments200ResponseHeaders Class Doc Comment
@@ -110,7 +111,9 @@ class GetInboundShipments200ResponseHeaders extends BaseModel
         'totalCount' => 'getTotalCount',
         'limit' => 'getLimit',
         'offset' => 'getOffset'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class GetInboundShipments200ResponseHeaders extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner Class Doc Comment
@@ -104,7 +105,9 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner exten
     protected static array $getters = [
         'taxName' => 'getTaxName',
         'taxAmount' => 'getTaxAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerChargesInnerTaxInner exten
 
         return $invalidProperties;
     }
+
     /**
      * Gets taxName
      *

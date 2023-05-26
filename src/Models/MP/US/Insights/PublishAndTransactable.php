@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PublishAndTransactable Class Doc Comment
@@ -122,7 +123,9 @@ class PublishAndTransactable extends BaseModel
         'maxIssue' => 'getMaxIssue',
         'issues' => 'getIssues',
         'score' => 'getScore'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class PublishAndTransactable extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets issueTitle
      *

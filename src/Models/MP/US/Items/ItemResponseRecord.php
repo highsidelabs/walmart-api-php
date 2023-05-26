@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemResponseRecord Class Doc Comment
@@ -171,6 +172,8 @@ class ItemResponseRecord extends BaseModel
         'unpublishedReasons' => 'getUnpublishedReasons',
         'lifecycleStatus' => 'getLifecycleStatus'
     ];
+
+
     public const MART_WALMART_US = 'WALMART_US';
 
     public const MART_WALMART_CA = 'WALMART_CA';
@@ -241,6 +244,7 @@ class ItemResponseRecord extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets mart
      *

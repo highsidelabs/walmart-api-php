@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdates400ResponseError Class Doc Comment
@@ -134,7 +135,9 @@ class ShippingUpdates400ResponseError extends BaseModel
         'severity' => 'getSeverity',
         'category' => 'getCategory',
         'errorIdentifiers' => 'getErrorIdentifiers'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class ShippingUpdates400ResponseError extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

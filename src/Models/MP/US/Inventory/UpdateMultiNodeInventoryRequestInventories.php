@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateMultiNodeInventoryRequestInventories Class Doc Comment
@@ -98,7 +99,9 @@ class UpdateMultiNodeInventoryRequestInventories extends BaseModel
      */
     protected static array $getters = [
         'nodes' => 'getNodes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class UpdateMultiNodeInventoryRequestInventories extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets nodes
      *

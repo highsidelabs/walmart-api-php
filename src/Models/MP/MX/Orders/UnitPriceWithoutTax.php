@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UnitPriceWithoutTax Class Doc Comment
@@ -106,7 +107,9 @@ class UnitPriceWithoutTax extends BaseModel
     protected static array $getters = [
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class UnitPriceWithoutTax extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount Class Doc Comment
@@ -107,6 +108,8 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChar
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
     ];
+
+
     public const CURRENCY_AED = 'AED';
 
     public const CURRENCY_AFN = 'AFN';
@@ -664,6 +667,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChar
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

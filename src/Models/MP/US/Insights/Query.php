@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Query Class Doc Comment
@@ -105,6 +106,8 @@ class Query extends BaseModel
         'field' => 'getField',
         'value' => 'getValue'
     ];
+
+
     public const FIELD_TITLE = 'title';
 
     public const FIELD_SKU = 'sku';
@@ -158,6 +161,7 @@ class Query extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

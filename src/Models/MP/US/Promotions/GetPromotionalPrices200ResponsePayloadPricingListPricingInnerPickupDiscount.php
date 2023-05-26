@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount Class Doc Comment
@@ -104,7 +105,9 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscoun
     protected static array $getters = [
         'isPickUpDiscountEligible' => 'getIsPickUpDiscountEligible',
         'pickupDiscountAmt' => 'getPickupDiscountAmt'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscoun
 
         return $invalidProperties;
     }
+
     /**
      * Gets isPickUpDiscountEligible
      *

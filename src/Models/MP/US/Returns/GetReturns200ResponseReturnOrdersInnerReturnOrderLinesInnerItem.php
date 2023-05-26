@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem Class Doc Comment
@@ -112,7 +113,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem extends Ba
         'sku' => 'getSku',
         'productName' => 'getProductName',
         'itemWeight' => 'getItemWeight'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem extends Ba
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

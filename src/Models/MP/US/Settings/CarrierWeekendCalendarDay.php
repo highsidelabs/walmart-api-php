@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierWeekendCalendarDay Class Doc Comment
@@ -98,7 +99,9 @@ class CarrierWeekendCalendarDay extends BaseModel
      */
     protected static array $getters = [
         'workingDay' => 'getWorkingDay'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class CarrierWeekendCalendarDay extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets workingDay
      *

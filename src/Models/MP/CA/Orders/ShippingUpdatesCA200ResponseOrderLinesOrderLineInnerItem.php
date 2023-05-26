@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerItem Class Doc Comment
@@ -106,7 +107,9 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerItem extends BaseModel
     protected static array $getters = [
         'productName' => 'getProductName',
         'sku' => 'getSku'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets productName
      *

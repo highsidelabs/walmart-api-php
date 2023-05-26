@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InventoryV2 Class Doc Comment
@@ -119,6 +120,8 @@ class InventoryV2 extends BaseModel
         'availabilityCode' => 'getAvailabilityCode',
         'quantity' => 'getQuantity'
     ];
+
+
     public const AVAILABILITY_CODE_AA = 'AA';
 
     public const AVAILABILITY_CODE_AC = 'AC';
@@ -180,6 +183,7 @@ class InventoryV2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets productId
      *

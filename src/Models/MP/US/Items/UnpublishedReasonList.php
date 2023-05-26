@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UnpublishedReasonList Class Doc Comment
@@ -100,7 +101,9 @@ class UnpublishedReasonList extends BaseModel
      */
     protected static array $getters = [
         'reason' => 'getReason'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class UnpublishedReasonList extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets reason
      *

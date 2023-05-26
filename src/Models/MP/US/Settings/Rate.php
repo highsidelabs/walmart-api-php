@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Rate Class Doc Comment
@@ -106,7 +107,9 @@ class Rate extends BaseModel
     protected static array $getters = [
         'count' => 'getCount',
         'replenishTimeWindow' => 'getReplenishTimeWindow'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class Rate extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets count
      *

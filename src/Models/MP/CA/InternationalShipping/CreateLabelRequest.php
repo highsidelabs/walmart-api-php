@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateLabelRequest Class Doc Comment
@@ -140,7 +141,9 @@ class CreateLabelRequest extends BaseModel
         'carrierName' => 'getCarrierName',
         'carrierServiceType' => 'getCarrierServiceType',
         'labelSize' => 'getLabelSize'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -188,6 +191,7 @@ class CreateLabelRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets packageType
      *

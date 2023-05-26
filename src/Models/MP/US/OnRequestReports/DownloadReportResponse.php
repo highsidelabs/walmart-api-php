@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\OnRequestReports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * DownloadReportResponse Class Doc Comment
@@ -141,6 +142,8 @@ class DownloadReportResponse extends BaseModel
         'reportVersion' => 'getReportVersion',
         'reportGenerationDate' => 'getReportGenerationDate'
     ];
+
+
     public const REQUEST_STATUS_RECEIVED = 'RECEIVED';
 
     public const REQUEST_STATUS_INPROGRESS = 'INPROGRESS';
@@ -254,6 +257,7 @@ class DownloadReportResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets downloadURL
      *

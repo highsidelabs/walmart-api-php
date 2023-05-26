@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetVariantCount200ResponsePayloadInner Class Doc Comment
@@ -106,7 +107,9 @@ class GetVariantCount200ResponsePayloadInner extends BaseModel
     protected static array $getters = [
         'variantGroupId' => 'getVariantGroupId',
         'count' => 'getCount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetVariantCount200ResponsePayloadInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets variantGroupId
      *

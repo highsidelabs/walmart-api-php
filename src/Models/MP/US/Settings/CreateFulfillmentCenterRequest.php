@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateFulfillmentCenterRequest Class Doc Comment
@@ -104,7 +105,9 @@ class CreateFulfillmentCenterRequest extends BaseModel
     protected static array $getters = [
         'shipNodeHeader' => 'getShipNodeHeader',
         'shipNode' => 'getShipNode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class CreateFulfillmentCenterRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNodeHeader
      *

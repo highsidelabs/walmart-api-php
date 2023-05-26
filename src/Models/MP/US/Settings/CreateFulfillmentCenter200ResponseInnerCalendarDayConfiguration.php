@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateFulfillmentCenter200ResponseInnerCalendarDayConfiguration Class Doc Comment
@@ -106,7 +107,9 @@ class CreateFulfillmentCenter200ResponseInnerCalendarDayConfiguration extends Ba
     protected static array $getters = [
         'standardProcessingSchedule' => 'getStandardProcessingSchedule',
         'additionalDaysOff' => 'getAdditionalDaysOff'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class CreateFulfillmentCenter200ResponseInnerCalendarDayConfiguration extends Ba
 
         return $invalidProperties;
     }
+
     /**
      * Gets standardProcessingSchedule
      *

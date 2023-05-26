@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadPricingList Class Doc Comment
@@ -104,7 +105,9 @@ class GetPromotionalPrices200ResponsePayloadPricingList extends BaseModel
     protected static array $getters = [
         'replaceAll' => 'getReplaceAll',
         'pricing' => 'getPricing'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -131,6 +134,7 @@ class GetPromotionalPrices200ResponsePayloadPricingList extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets replaceAll
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateInventoryForAnItemRequest Class Doc Comment
@@ -104,7 +105,9 @@ class UpdateInventoryForAnItemRequest extends BaseModel
     protected static array $getters = [
         'sku' => 'getSku',
         'quantity' => 'getQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class UpdateInventoryForAnItemRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

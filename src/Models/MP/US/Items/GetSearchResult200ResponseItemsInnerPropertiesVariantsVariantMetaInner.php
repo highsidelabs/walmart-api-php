@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantMetaInner Class Doc Comment
@@ -98,7 +99,9 @@ class GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantMetaInner ext
      */
     protected static array $getters = [
         'name' => 'getName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantMetaInner ext
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

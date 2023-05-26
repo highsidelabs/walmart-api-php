@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner Class Doc Comment
@@ -141,6 +142,8 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
         'causes' => 'getCauses',
         'errorIdentifiers' => 'getErrorIdentifiers'
     ];
+
+
     public const SEVERITY_INFO = 'INFO';
 
     public const SEVERITY_WARN = 'WARN';
@@ -236,6 +239,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Events;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * EventResponse Class Doc Comment
@@ -147,6 +148,8 @@ class EventResponse extends BaseModel
         'description' => 'getDescription',
         'lastUpdatedDate' => 'getLastUpdatedDate'
     ];
+
+
     public const TYPE_FLASH = 'Flash';
 
     public const TYPE_DAILY = 'Daily';
@@ -210,6 +213,7 @@ class EventResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

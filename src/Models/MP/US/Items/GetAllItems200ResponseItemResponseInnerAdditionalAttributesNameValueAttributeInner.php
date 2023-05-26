@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner Class Doc Comment
@@ -123,6 +124,8 @@ class GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttrib
         'variantResourceType' => 'getVariantResourceType',
         'value' => 'getValue'
     ];
+
+
     public const TYPE_LOCALIZABLE_TEXT = 'LOCALIZABLE_TEXT';
 
     public const TYPE_STRING = 'STRING';
@@ -200,6 +203,7 @@ class GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttrib
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

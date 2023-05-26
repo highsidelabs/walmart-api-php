@@ -20,8 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Authentication;
-use Walmart\Model\BaseModel;
 
+use Walmart\Model\BaseModel;
 use Walmart\Traits\HasResponseHeaders;
 
 /**
@@ -144,7 +144,6 @@ class TokenAPI200Response extends BaseModel
 
         return $invalidProperties;
     }
-
 
     /**
      * Gets accessToken

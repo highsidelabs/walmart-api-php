@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdditionalDate Class Doc Comment
@@ -122,7 +123,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdd
         'shipmentACKDate' => 'getShipmentACKDate',
         'expectedShipmentShippedDate' => 'getExpectedShipmentShippedDate',
         'shipmentShippedDate' => 'getShipmentShippedDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentAdd
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentActualCreatedDate
      *

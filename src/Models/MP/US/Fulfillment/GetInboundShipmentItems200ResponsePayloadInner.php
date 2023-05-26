@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetInboundShipmentItems200ResponsePayloadInner Class Doc Comment
@@ -178,7 +179,9 @@ class GetInboundShipmentItems200ResponsePayloadInner extends BaseModel
         'expectedDeliveryDate' => 'getExpectedDeliveryDate',
         'updatedExpectedDeliveryDate' => 'getUpdatedExpectedDeliveryDate',
         'shipNodeName' => 'getShipNodeName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -214,6 +217,7 @@ class GetInboundShipmentItems200ResponsePayloadInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets inboundOrderId
      *

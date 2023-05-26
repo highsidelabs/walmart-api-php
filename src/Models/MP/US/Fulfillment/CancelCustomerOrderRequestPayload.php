@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CancelCustomerOrderRequestPayload Class Doc Comment
@@ -106,7 +107,9 @@ class CancelCustomerOrderRequestPayload extends BaseModel
     protected static array $getters = [
         'sellerOrderId' => 'getSellerOrderId',
         'orderItems' => 'getOrderItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class CancelCustomerOrderRequestPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sellerOrderId
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FulfillmentType Class Doc Comment
@@ -130,7 +131,9 @@ class FulfillmentType extends BaseModel
         'pickUpDateTime' => 'getPickUpDateTime',
         'pickUpBy' => 'getPickUpBy',
         'shippingProgramType' => 'getShippingProgramType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -158,6 +161,7 @@ class FulfillmentType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets fulfillmentOption
      *

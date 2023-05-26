@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReportDTO Class Doc Comment
@@ -296,7 +297,9 @@ class ReportDTO extends BaseModel
         'shippingWeightUnit' => 'getShippingWeightUnit',
         'statusChangeReason' => 'getStatusChangeReason',
         'availableInventoryUnits' => 'getAvailableInventoryUnits'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -352,6 +355,7 @@ class ReportDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets vendorId
      *

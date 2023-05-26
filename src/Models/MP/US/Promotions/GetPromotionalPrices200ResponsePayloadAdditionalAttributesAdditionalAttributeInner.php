@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner Class Doc Comment
@@ -104,7 +105,9 @@ class GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttrib
     protected static array $getters = [
         'name' => 'getName',
         'value' => 'getValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttrib
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

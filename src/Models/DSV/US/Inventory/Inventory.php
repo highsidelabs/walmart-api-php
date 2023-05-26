@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Inventory Class Doc Comment
@@ -111,6 +112,8 @@ class Inventory extends BaseModel
         'availabilityCode' => 'getAvailabilityCode',
         'quantity' => 'getQuantity'
     ];
+
+
     public const AVAILABILITY_CODE_AA = 'AA';
 
     public const AVAILABILITY_CODE_AC = 'AC';
@@ -171,6 +174,7 @@ class Inventory extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets gtin
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromotionalPriceResponse Class Doc Comment
@@ -110,7 +111,9 @@ class PromotionalPriceResponse extends BaseModel
         'payload' => 'getPayload',
         'header' => 'getHeader',
         'status' => 'getStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class PromotionalPriceResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets payload
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ThrottlingConfigDTO Class Doc Comment
@@ -113,6 +114,8 @@ class ThrottlingConfigDTO extends BaseModel
         'rate' => 'getRate',
         'fileSize' => 'getFileSize'
     ];
+
+
     public const TYPE_SELLER = 'SELLER';
 
     /**
@@ -161,6 +164,7 @@ class ThrottlingConfigDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets type
      *

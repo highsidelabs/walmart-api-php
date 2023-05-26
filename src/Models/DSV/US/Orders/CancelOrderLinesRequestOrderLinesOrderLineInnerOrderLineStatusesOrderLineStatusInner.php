@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -113,6 +114,8 @@ class CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineS
         'cancellationReason' => 'getCancellationReason',
         'statusQuantity' => 'getStatusQuantity'
     ];
+
+
     public const STATUS_CREATED = 'Created';
 
     public const STATUS_ACKNOWLEDGED = 'Acknowledged';
@@ -221,6 +224,7 @@ class CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineS
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

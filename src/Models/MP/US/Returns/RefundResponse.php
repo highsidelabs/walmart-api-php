@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundResponse Class Doc Comment
@@ -110,7 +111,9 @@ class RefundResponse extends BaseModel
         'returnOrderId' => 'getReturnOrderId',
         'customerOrderId' => 'getCustomerOrderId',
         'refundLines' => 'getRefundLines'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class RefundResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets returnOrderId
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipNodeRequest Class Doc Comment
@@ -140,7 +141,9 @@ class ShipNodeRequest extends BaseModel
         'postalAddress' => 'getPostalAddress',
         'shippingDetails' => 'getShippingDetails',
         'calendarDayConfiguration' => 'getCalendarDayConfiguration'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class ShipNodeRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNodeName
      *

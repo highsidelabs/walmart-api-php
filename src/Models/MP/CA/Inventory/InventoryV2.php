@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InventoryV2 Class Doc Comment
@@ -122,7 +123,9 @@ class InventoryV2 extends BaseModel
         'fulfillmentLagTime' => 'getFulfillmentLagTime',
         'partnerId' => 'getPartnerId',
         'offerId' => 'getOfferId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -158,6 +161,7 @@ class InventoryV2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

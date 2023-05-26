@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Error Class Doc Comment
@@ -135,6 +136,8 @@ class Error extends BaseModel
         'category' => 'getCategory',
         'causes' => 'getCauses'
     ];
+
+
     public const SEVERITY_INFO = 'INFO';
 
     public const SEVERITY_WARN = 'WARN';
@@ -229,6 +232,7 @@ class Error extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

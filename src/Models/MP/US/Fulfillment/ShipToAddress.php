@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipToAddress Class Doc Comment
@@ -136,7 +137,9 @@ class ShipToAddress extends BaseModel
         'stateCode' => 'getStateCode',
         'countryCode' => 'getCountryCode',
         'postalCode' => 'getPostalCode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -165,6 +168,7 @@ class ShipToAddress extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets fcName
      *

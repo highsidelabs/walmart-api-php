@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MxOrderWithCursor Class Doc Comment
@@ -110,7 +111,9 @@ class MxOrderWithCursor extends BaseModel
         'meta' => 'getMeta',
         'order' => 'getOrder',
         'error' => 'getError'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class MxOrderWithCursor extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets meta
      *

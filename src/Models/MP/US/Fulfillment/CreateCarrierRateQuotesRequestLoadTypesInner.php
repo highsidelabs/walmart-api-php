@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateCarrierRateQuotesRequestLoadTypesInner Class Doc Comment
@@ -104,7 +105,9 @@ class CreateCarrierRateQuotesRequestLoadTypesInner extends BaseModel
     protected static array $getters = [
         'count' => 'getCount',
         'loadType' => 'getLoadType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class CreateCarrierRateQuotesRequestLoadTypesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets count
      *

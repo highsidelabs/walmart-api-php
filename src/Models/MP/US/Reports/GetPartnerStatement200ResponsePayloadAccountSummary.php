@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerStatement200ResponsePayloadAccountSummary Class Doc Comment
@@ -176,7 +177,9 @@ class GetPartnerStatement200ResponsePayloadAccountSummary extends BaseModel
         'lastUpdatedDate' => 'getLastUpdatedDate',
         'holdAmt' => 'getHoldAmt',
         'holdDates' => 'getHoldDates'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -212,6 +215,7 @@ class GetPartnerStatement200ResponsePayloadAccountSummary extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets openingBalance
      *

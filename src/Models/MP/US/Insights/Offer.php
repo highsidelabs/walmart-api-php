@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Offer Class Doc Comment
@@ -116,7 +117,9 @@ class Offer extends BaseModel
         'price' => 'getPrice',
         'shippingSpeed' => 'getShippingSpeed',
         'publishAndTransactable' => 'getPublishAndTransactable'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class Offer extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets issueCount
      *

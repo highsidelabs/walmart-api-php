@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner Class Doc Comment
@@ -136,7 +137,9 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
         'accessMode' => 'getAccessMode',
         'fulfillmentTime' => 'getFulfillmentTime',
         'errors' => 'getErrors'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -165,6 +168,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModul
 
         return $invalidProperties;
     }
+
     /**
      * Gets fulfillmentId
      *

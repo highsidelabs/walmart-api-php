@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity Class Doc Comment
@@ -107,6 +108,8 @@ class ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineSta
         'unitOfMeasurement' => 'getUnitOfMeasurement',
         'amount' => 'getAmount'
     ];
+
+
     public const UNIT_OF_MEASUREMENT_EACH = 'EACH';
 
     public const UNIT_OF_MEASUREMENT_EA = 'EA';
@@ -163,6 +166,7 @@ class ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineSta
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasurement
      *

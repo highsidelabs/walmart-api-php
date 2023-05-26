@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner Class Doc Comment
@@ -116,7 +117,9 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
         'field' => 'getField',
         'type' => 'getType',
         'description' => 'getDescription'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

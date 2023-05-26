@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierLabelRequestWrapper Class Doc Comment
@@ -98,7 +99,9 @@ class CarrierLabelRequestWrapper extends BaseModel
      */
     protected static array $getters = [
         'shipDate' => 'getShipDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class CarrierLabelRequestWrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipDate
      *

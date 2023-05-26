@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdatePriceCA200ResponseErrorsInnerCausesInner Class Doc Comment
@@ -116,7 +117,9 @@ class UpdatePriceCA200ResponseErrorsInnerCausesInner extends BaseModel
         'field' => 'getField',
         'type' => 'getType',
         'description' => 'getDescription'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class UpdatePriceCA200ResponseErrorsInnerCausesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

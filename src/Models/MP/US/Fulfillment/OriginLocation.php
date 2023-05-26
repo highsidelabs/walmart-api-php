@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OriginLocation Class Doc Comment
@@ -110,7 +111,9 @@ class OriginLocation extends BaseModel
         'locationName' => 'getLocationName',
         'address' => 'getAddress',
         'locationId' => 'getLocationId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -141,6 +144,7 @@ class OriginLocation extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets locationName
      *

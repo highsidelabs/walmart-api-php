@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Stats Class Doc Comment
@@ -122,7 +123,9 @@ class Stats extends BaseModel
         'orders' => 'getOrders',
         'conversionRate' => 'getConversionRate',
         'totalUnits' => 'getTotalUnits'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class Stats extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets gmv
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity Class Doc Comment
@@ -106,7 +107,9 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
     protected static array $getters = [
         'unitOfMeasurement' => 'getUnitOfMeasurement',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasurement
      *

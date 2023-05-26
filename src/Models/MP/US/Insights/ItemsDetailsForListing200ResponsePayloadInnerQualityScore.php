@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerQualityScore Class Doc Comment
@@ -104,7 +105,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerQualityScore extends BaseMode
     protected static array $getters = [
         'score' => 'getScore',
         'values' => 'getValues'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerQualityScore extends BaseMode
 
         return $invalidProperties;
     }
+
     /**
      * Gets score
      *

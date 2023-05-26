@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner Class Doc Comment
@@ -105,6 +106,8 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges
         'refundReason' => 'getRefundReason',
         'charge' => 'getCharge'
     ];
+
+
     public const REFUND_REASON_BILLING_ERROR = 'BillingError';
 
     public const REFUND_REASON_TAX_EXEMPT_CUSTOMER = 'TaxExemptCustomer';
@@ -221,6 +224,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerRefundRefundCharges
 
         return $invalidProperties;
     }
+
     /**
      * Gets refundReason
      *

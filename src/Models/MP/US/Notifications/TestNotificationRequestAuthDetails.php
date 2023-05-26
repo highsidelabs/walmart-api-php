@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TestNotificationRequestAuthDetails Class Doc Comment
@@ -136,7 +137,9 @@ class TestNotificationRequestAuthDetails extends BaseModel
         'authUrl' => 'getAuthUrl',
         'clientSecret' => 'getClientSecret',
         'clientId' => 'getClientId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -165,6 +168,7 @@ class TestNotificationRequestAuthDetails extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets authMethod
      *

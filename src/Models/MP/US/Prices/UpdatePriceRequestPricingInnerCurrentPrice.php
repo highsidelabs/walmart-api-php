@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdatePriceRequestPricingInnerCurrentPrice Class Doc Comment
@@ -105,6 +106,8 @@ class UpdatePriceRequestPricingInnerCurrentPrice extends BaseModel
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
     ];
+
+
     public const CURRENCY_USD = 'USD';
 
     public const CURRENCY_CAD = 'CAD';
@@ -155,6 +158,7 @@ class UpdatePriceRequestPricingInnerCurrentPrice extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

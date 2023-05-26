@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * QuoteResponseV2Wrapper Class Doc Comment
@@ -110,7 +111,9 @@ class QuoteResponseV2Wrapper extends BaseModel
         'shipmentId' => 'getShipmentId',
         'shipmentNumber' => 'getShipmentNumber',
         'rateQuotes' => 'getRateQuotes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class QuoteResponseV2Wrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

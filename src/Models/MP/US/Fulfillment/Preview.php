@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Preview Class Doc Comment
@@ -106,7 +107,9 @@ class Preview extends BaseModel
     protected static array $getters = [
         'previewType' => 'getPreviewType',
         'preview' => 'getPreview'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class Preview extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets previewType
      *

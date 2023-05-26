@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemIdentifierType Class Doc Comment
@@ -122,7 +123,9 @@ class ItemIdentifierType extends BaseModel
         'itemId' => 'getItemId',
         'wpid' => 'getWpid',
         'productType' => 'getProductType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class ItemIdentifierType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations Class Doc Comment
@@ -110,7 +111,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCance
         'defectedOrder' => 'getDefectedOrder',
         'totalOrder' => 'getTotalOrder',
         'rate' => 'getRate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCance
 
         return $invalidProperties;
     }
+
     /**
      * Gets defectedOrder
      *

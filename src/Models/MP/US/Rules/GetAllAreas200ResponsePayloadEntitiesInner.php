@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllAreas200ResponsePayloadEntitiesInner Class Doc Comment
@@ -110,7 +111,9 @@ class GetAllAreas200ResponsePayloadEntitiesInner extends BaseModel
         'states' => 'getStates',
         'regionCode' => 'getRegionCode',
         'regionName' => 'getRegionName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class GetAllAreas200ResponsePayloadEntitiesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets states
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerStatement200ResponsePayloadTransactionDetailsWfs Class Doc Comment
@@ -140,7 +141,9 @@ class GetPartnerStatement200ResponsePayloadTransactionDetailsWfs extends BaseMod
         'inventoryRemovalOrder' => 'getInventoryRemovalOrder',
         'inventoryDisposalOrder' => 'getInventoryDisposalOrder',
         'wfsPrepServiceFee' => 'getWfsPrepServiceFee'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class GetPartnerStatement200ResponsePayloadTransactionDetailsWfs extends BaseMod
 
         return $invalidProperties;
     }
+
     /**
      * Gets netPayable
      *

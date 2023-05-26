@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Cost;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateBulkCostRequestCostInner Class Doc Comment
@@ -110,7 +111,9 @@ class UpdateBulkCostRequestCostInner extends BaseModel
         'sku' => 'getSku',
         'shipNode' => 'getShipNode',
         'unitCost' => 'getUnitCost'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class UpdateBulkCostRequestCostInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

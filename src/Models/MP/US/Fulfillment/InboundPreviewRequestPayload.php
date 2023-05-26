@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InboundPreviewRequestPayload Class Doc Comment
@@ -112,7 +113,9 @@ class InboundPreviewRequestPayload extends BaseModel
         'inboundOrderId' => 'getInboundOrderId',
         'returnAddress' => 'getReturnAddress',
         'orderItems' => 'getOrderItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -168,6 +171,7 @@ class InboundPreviewRequestPayload extends BaseModel
         }
         return $invalidProperties;
     }
+
     /**
      * Gets inboundOrderId
      *

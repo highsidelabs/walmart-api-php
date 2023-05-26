@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateInventoriesResponseNodeDTO Class Doc Comment
@@ -110,7 +111,9 @@ class UpdateInventoriesResponseNodeDTO extends BaseModel
         'shipNode' => 'getShipNode',
         'status' => 'getStatus',
         'errors' => 'getErrors'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class UpdateInventoriesResponseNodeDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNode
      *

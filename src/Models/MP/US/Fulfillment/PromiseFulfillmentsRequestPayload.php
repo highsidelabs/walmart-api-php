@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillmentsRequestPayload Class Doc Comment
@@ -112,7 +113,9 @@ class PromiseFulfillmentsRequestPayload extends BaseModel
         'requestId' => 'getRequestId',
         'destinations' => 'getDestinations',
         'offerSelections' => 'getOfferSelections'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -146,6 +149,7 @@ class PromiseFulfillmentsRequestPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets requestId
      *

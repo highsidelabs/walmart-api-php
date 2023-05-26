@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ScoreDetails Class Doc Comment
@@ -116,7 +117,9 @@ class ScoreDetails extends BaseModel
         'ratingReviews' => 'getRatingReviews',
         'postPurchase' => 'getPostPurchase',
         'contentAndDiscoverability' => 'getContentAndDiscoverability'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class ScoreDetails extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets offer
      *

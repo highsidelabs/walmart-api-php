@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner Class Doc Comment
@@ -122,7 +123,9 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner exten
         'statusQuantity' => 'getStatusQuantity',
         'cancellationReason' => 'getCancellationReason',
         'statusDate' => 'getStatusDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineStatusInner exten
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

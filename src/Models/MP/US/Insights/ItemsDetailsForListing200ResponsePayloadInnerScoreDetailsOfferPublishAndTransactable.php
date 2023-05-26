@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable Class Doc Comment
@@ -122,7 +123,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTr
         'maxIssue' => 'getMaxIssue',
         'issues' => 'getIssues',
         'score' => 'getScore'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTr
 
         return $invalidProperties;
     }
+
     /**
      * Gets issueTitle
      *

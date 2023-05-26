@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerPriceResponse Class Doc Comment
@@ -122,7 +123,9 @@ class PartnerPriceResponse extends BaseModel
         'mart' => 'getMart',
         'sku' => 'getSku',
         'message' => 'getMessage'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class PartnerPriceResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets errors
      *

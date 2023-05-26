@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemType Class Doc Comment
@@ -118,7 +119,9 @@ class ItemType extends BaseModel
         'sku' => 'getSku',
         'imageUrl' => 'getImageUrl',
         'weight' => 'getWeight'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -150,6 +153,7 @@ class ItemType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets productName
      *

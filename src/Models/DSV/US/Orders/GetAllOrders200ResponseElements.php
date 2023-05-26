@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseElements Class Doc Comment
@@ -98,7 +99,9 @@ class GetAllOrders200ResponseElements extends BaseModel
      */
     protected static array $getters = [
         'order' => 'getOrder'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class GetAllOrders200ResponseElements extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets order
      *

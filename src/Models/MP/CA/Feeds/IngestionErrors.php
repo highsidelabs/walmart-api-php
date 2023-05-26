@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * IngestionErrors Class Doc Comment
@@ -100,7 +101,9 @@ class IngestionErrors extends BaseModel
      */
     protected static array $getters = [
         'ingestionError' => 'getIngestionError'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class IngestionErrors extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets ingestionError
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ServiceLevelAgreement Class Doc Comment
@@ -106,7 +107,9 @@ class ServiceLevelAgreement extends BaseModel
     protected static array $getters = [
         'tier' => 'getTier',
         'speed' => 'getSpeed'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class ServiceLevelAgreement extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets tier
      *

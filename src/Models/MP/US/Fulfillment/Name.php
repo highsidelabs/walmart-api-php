@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Name Class Doc Comment
@@ -112,7 +113,9 @@ class Name extends BaseModel
         'completeName' => 'getCompleteName',
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class Name extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets completeName
      *

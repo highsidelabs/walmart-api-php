@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LagTimeFeedV2 Class Doc Comment
@@ -104,7 +105,9 @@ class LagTimeFeedV2 extends BaseModel
     protected static array $getters = [
         'lagtimeFeedHeader' => 'getLagtimeFeedHeader',
         'lagTime' => 'getLagTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class LagTimeFeedV2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lagtimeFeedHeader
      *

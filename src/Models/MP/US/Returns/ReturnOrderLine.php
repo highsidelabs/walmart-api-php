@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReturnOrderLine Class Doc Comment
@@ -268,7 +269,9 @@ class ReturnOrderLine extends BaseModel
         'statusTime' => 'getStatusTime',
         'currentDeliveryStatus' => 'getCurrentDeliveryStatus',
         'currentRefundStatus' => 'getCurrentRefundStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -319,6 +322,7 @@ class ReturnOrderLine extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets returnOrderLineNumber
      *

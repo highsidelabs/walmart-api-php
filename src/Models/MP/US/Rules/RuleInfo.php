@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RuleInfo Class Doc Comment
@@ -140,7 +141,9 @@ class RuleInfo extends BaseModel
         'ruleStatus' => 'getRuleStatus',
         'skuProcessingStatus' => 'getSkuProcessingStatus',
         'ruleAction' => 'getRuleAction'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class RuleInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets conditions
      *

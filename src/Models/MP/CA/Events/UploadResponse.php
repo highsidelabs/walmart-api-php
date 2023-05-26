@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Events;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UploadResponse Class Doc Comment
@@ -98,7 +99,9 @@ class UploadResponse extends BaseModel
      */
     protected static array $getters = [
         'response' => 'getResponse'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class UploadResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets response
      *

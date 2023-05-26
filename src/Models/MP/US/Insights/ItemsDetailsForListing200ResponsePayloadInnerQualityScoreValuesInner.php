@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner Class Doc Comment
@@ -110,7 +111,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner exten
         'scoreType' => 'getScoreType',
         'scoreValue' => 'getScoreValue',
         'impact' => 'getImpact'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner exten
 
         return $invalidProperties;
     }
+
     /**
      * Gets scoreType
      *

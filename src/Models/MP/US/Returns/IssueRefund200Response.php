@@ -20,7 +20,9 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
+use Walmart\Traits\HasResponseHeaders;
 
 /**
  * IssueRefund200Response Class Doc Comment
@@ -34,6 +36,8 @@ use Walmart\Models\BaseModel;
  */
 class IssueRefund200Response extends BaseModel
 {
+    use HasResponseHeaders;
+
     public const DISCRIMINATOR = null;
 
     /**
@@ -111,12 +115,6 @@ class IssueRefund200Response extends BaseModel
         'customerOrderId' => 'getCustomerOrderId',
         'refundLines' => 'getRefundLines'
     ];
-    /**
-     * Array of response headers returned by the API
-     *
-     * @var string[][]
-     */
-    protected array $headers = [];
 
     /**
      * Constructor
@@ -143,30 +141,6 @@ class IssueRefund200Response extends BaseModel
 
         return $invalidProperties;
     }
-
-    /**
-     * Gets API response headers (only relevant to response models)
-     *
-     * @return string[][]
-     */
-    public function getHeaders(): array
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Sets API response headers (only relevant to response models)
-     *
-     * @param array[string => string[]] $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders(array $headers): static
-    {
-        $this->headers = $headers;
-        return $this;
-    }
-
 
     /**
      * Gets returnOrderId

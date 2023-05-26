@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetItemAssociationsRequestItemsInner Class Doc Comment
@@ -100,7 +101,9 @@ class GetItemAssociationsRequestItemsInner extends BaseModel
      */
     protected static array $getters = [
         'sku' => 'getSku'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -126,6 +129,7 @@ class GetItemAssociationsRequestItemsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

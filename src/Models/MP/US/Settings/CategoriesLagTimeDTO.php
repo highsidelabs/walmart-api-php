@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CategoriesLagTimeDTO Class Doc Comment
@@ -98,7 +99,9 @@ class CategoriesLagTimeDTO extends BaseModel
      */
     protected static array $getters = [
         'categories' => 'getCategories'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class CategoriesLagTimeDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets categories
      *

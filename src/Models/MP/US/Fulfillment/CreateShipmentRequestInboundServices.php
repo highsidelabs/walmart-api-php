@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateShipmentRequestInboundServices Class Doc Comment
@@ -100,7 +101,9 @@ class CreateShipmentRequestInboundServices extends BaseModel
      */
     protected static array $getters = [
         'inventoryTransferService' => 'getInventoryTransferService'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class CreateShipmentRequestInboundServices extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets inventoryTransferService
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingConfig Class Doc Comment
@@ -107,6 +108,8 @@ class ShippingConfig extends BaseModel
         'configurationName' => 'getConfigurationName',
         'configuration' => 'getConfiguration'
     ];
+
+
     public const CONFIGURATION_NAME_LAG_TIME = 'LAG_TIME';
 
     /**
@@ -154,6 +157,7 @@ class ShippingConfig extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets configurationName
      *

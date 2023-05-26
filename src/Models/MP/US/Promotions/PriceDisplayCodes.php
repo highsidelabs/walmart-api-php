@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PriceDisplayCodes Class Doc Comment
@@ -134,7 +135,9 @@ class PriceDisplayCodes extends BaseModel
         'isReducedPrice' => 'getIsReducedPrice',
         'isEligibleForAssociateDiscount' => 'getIsEligibleForAssociateDiscount',
         'isStrikethrough' => 'getIsStrikethrough'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class PriceDisplayCodes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets isClearance
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseShipNode Class Doc Comment
@@ -112,7 +113,9 @@ class ShipOrderLines200ResponseShipNode extends BaseModel
         'type' => 'getType',
         'name' => 'getName',
         'id' => 'getId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class ShipOrderLines200ResponseShipNode extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets type
      *

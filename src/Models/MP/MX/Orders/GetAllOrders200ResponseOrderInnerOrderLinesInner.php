@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInner Class Doc Comment
@@ -166,7 +167,9 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInner extends BaseModel
         'promiseDeliveryDate' => 'getPromiseDeliveryDate',
         'isMSIEnabled' => 'getIsMSIEnabled',
         'seller' => 'getSeller'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -200,6 +203,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets primeLineNumber
      *

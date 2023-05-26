@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateItemRule200ResponseRulesInner Class Doc Comment
@@ -140,7 +141,9 @@ class CreateItemRule200ResponseRulesInner extends BaseModel
         'ruleId' => 'getRuleId',
         'ruleStatus' => 'getRuleStatus',
         'skuProcessingStatus' => 'getSkuProcessingStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class CreateItemRule200ResponseRulesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets conditions
      *

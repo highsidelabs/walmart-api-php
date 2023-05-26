@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * QualityScore Class Doc Comment
@@ -104,7 +105,9 @@ class QualityScore extends BaseModel
     protected static array $getters = [
         'score' => 'getScore',
         'values' => 'getValues'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class QualityScore extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets score
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInner Class Doc Comment
@@ -110,7 +111,9 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInner extends BaseMod
         'lineNumber' => 'getLineNumber',
         'isFullRefund' => 'getIsFullRefund',
         'refunds' => 'getRefunds'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -141,6 +144,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInner extends BaseMod
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

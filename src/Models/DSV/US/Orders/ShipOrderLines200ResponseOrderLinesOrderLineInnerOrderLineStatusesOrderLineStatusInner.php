@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -119,6 +120,8 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLin
         'cancellationReason' => 'getCancellationReason',
         'trackingInfo' => 'getTrackingInfo'
     ];
+
+
     public const STATUS_CREATED = 'Created';
 
     public const STATUS_ACKNOWLEDGED = 'Acknowledged';
@@ -189,6 +192,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLin
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

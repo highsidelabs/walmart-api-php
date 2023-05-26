@@ -262,6 +262,16 @@ class ReportsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -291,17 +301,6 @@ class ReportsApi extends BaseApi
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -522,6 +521,16 @@ class ReportsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -551,17 +560,6 @@ class ReportsApi extends BaseApi
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -782,6 +780,16 @@ class ReportsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -811,17 +819,6 @@ class ReportsApi extends BaseApi
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -1042,6 +1039,16 @@ class ReportsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -1071,17 +1078,6 @@ class ReportsApi extends BaseApi
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -1335,6 +1331,16 @@ class ReportsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -1364,17 +1370,6 @@ class ReportsApi extends BaseApi
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -1652,6 +1647,16 @@ class ReportsApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -1681,17 +1686,6 @@ class ReportsApi extends BaseApi
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);

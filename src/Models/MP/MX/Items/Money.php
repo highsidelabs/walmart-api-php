@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Money Class Doc Comment
@@ -107,6 +108,8 @@ class Money extends BaseModel
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
     ];
+
+
     public const CURRENCY_AED = 'AED';
 
     public const CURRENCY_AFN = 'AFN';
@@ -658,6 +661,7 @@ class Money extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

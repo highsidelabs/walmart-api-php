@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RateQuoteV2 Class Doc Comment
@@ -272,7 +273,9 @@ class RateQuoteV2 extends BaseModel
         'mixedSKUs' => 'getMixedSKUs',
         'singleSKUs' => 'getSingleSKUs',
         'freightReadyDate' => 'getFreightReadyDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -324,6 +327,7 @@ class RateQuoteV2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets quoteId
      *

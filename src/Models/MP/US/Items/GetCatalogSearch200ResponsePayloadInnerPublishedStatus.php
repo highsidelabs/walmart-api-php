@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCatalogSearch200ResponsePayloadInnerPublishedStatus Class Doc Comment
@@ -106,7 +107,9 @@ class GetCatalogSearch200ResponsePayloadInnerPublishedStatus extends BaseModel
     protected static array $getters = [
         'status' => 'getStatus',
         'reasons' => 'getReasons'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetCatalogSearch200ResponsePayloadInnerPublishedStatus extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Header Class Doc Comment
@@ -98,7 +99,9 @@ class Header extends BaseModel
      */
     protected static array $getters = [
         'headerAttributes' => 'getHeaderAttributes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class Header extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets headerAttributes
      *

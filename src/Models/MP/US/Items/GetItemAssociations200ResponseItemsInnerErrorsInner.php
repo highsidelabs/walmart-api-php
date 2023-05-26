@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetItemAssociations200ResponseItemsInnerErrorsInner Class Doc Comment
@@ -141,6 +142,8 @@ class GetItemAssociations200ResponseItemsInnerErrorsInner extends BaseModel
         'causes' => 'getCauses',
         'errorIdentifiers' => 'getErrorIdentifiers'
     ];
+
+
     public const SEVERITY_INFO = 'INFO';
 
     public const SEVERITY_WARN = 'WARN';
@@ -236,6 +239,7 @@ class GetItemAssociations200ResponseItemsInnerErrorsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

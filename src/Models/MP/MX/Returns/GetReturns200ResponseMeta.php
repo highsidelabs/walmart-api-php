@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseMeta Class Doc Comment
@@ -104,7 +105,9 @@ class GetReturns200ResponseMeta extends BaseModel
     protected static array $getters = [
         'totalCount' => 'getTotalCount',
         'limit' => 'getLimit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class GetReturns200ResponseMeta extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

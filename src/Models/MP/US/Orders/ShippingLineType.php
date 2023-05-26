@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingLineType Class Doc Comment
@@ -124,7 +125,9 @@ class ShippingLineType extends BaseModel
         'sellerOrderId' => 'getSellerOrderId',
         'orderLineStatuses' => 'getOrderLineStatuses',
         'sellerOrderNo' => 'getSellerOrderNo'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -160,6 +163,7 @@ class ShippingLineType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * BuyerInfo Class Doc Comment
@@ -100,7 +101,9 @@ class BuyerInfo extends BaseModel
      */
     protected static array $getters = [
         'primaryContact' => 'getPrimaryContact'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class BuyerInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets primaryContact
      *

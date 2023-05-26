@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemSearchPrice Class Doc Comment
@@ -106,7 +107,9 @@ class ItemSearchPrice extends BaseModel
     protected static array $getters = [
         'amount' => 'getAmount',
         'currency' => 'getCurrency'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class ItemSearchPrice extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets amount
      *

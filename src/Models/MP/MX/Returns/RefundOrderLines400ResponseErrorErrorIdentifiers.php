@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundOrderLines400ResponseErrorErrorIdentifiers Class Doc Comment
@@ -98,7 +99,9 @@ class RefundOrderLines400ResponseErrorErrorIdentifiers extends BaseModel
      */
     protected static array $getters = [
         'entry' => 'getEntry'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class RefundOrderLines400ResponseErrorErrorIdentifiers extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets entry
      *

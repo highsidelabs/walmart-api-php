@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseShippingInfo Class Doc Comment
@@ -125,6 +126,8 @@ class ShipOrderLines200ResponseShippingInfo extends BaseModel
         'methodCode' => 'getMethodCode',
         'postalAddress' => 'getPostalAddress'
     ];
+
+
     public const METHOD_CODE_STANDARD = 'Standard';
 
     public const METHOD_CODE_EXPRESS = 'Express';
@@ -205,6 +208,7 @@ class ShipOrderLines200ResponseShippingInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets phone
      *

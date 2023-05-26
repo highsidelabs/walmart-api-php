@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderCancelItem Class Doc Comment
@@ -104,7 +105,9 @@ class OrderCancelItem extends BaseModel
     protected static array $getters = [
         'sellerLineId' => 'getSellerLineId',
         'qty' => 'getQty'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -148,6 +151,7 @@ class OrderCancelItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sellerLineId
      *

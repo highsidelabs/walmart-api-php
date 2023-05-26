@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MPItemPriceResponseV2 Class Doc Comment
@@ -128,7 +129,9 @@ class MPItemPriceResponseV2 extends BaseModel
         'currency' => 'getCurrency',
         'amount' => 'getAmount',
         'message' => 'getMessage'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -156,6 +159,7 @@ class MPItemPriceResponseV2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets errors
      *

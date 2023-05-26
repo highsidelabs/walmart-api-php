@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Package Class Doc Comment
@@ -122,7 +123,9 @@ class Package extends BaseModel
         'eventTime' => 'getEventTime',
         'eventName' => 'getEventName',
         'packageNo' => 'getPackageNo'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class Package extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets purchaseOrderNo
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Filter Class Doc Comment
@@ -111,6 +112,8 @@ class Filter extends BaseModel
         'op' => 'getOp',
         'values' => 'getValues'
     ];
+
+
     public const FIELD_STATUS = 'status';
 
     public const OP_EQUALS = 'equals';
@@ -204,6 +207,7 @@ class Filter extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

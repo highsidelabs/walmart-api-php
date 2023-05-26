@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllItems200ResponseItemResponseInner Class Doc Comment
@@ -183,6 +184,8 @@ class GetAllItems200ResponseItemResponseInner extends BaseModel
         'variantGroupId' => 'getVariantGroupId',
         'variantGroupInfo' => 'getVariantGroupInfo'
     ];
+
+
     public const MART_WALMART_US = 'WALMART_US';
 
     public const MART_WALMART_CA = 'WALMART_CA';
@@ -255,6 +258,7 @@ class GetAllItems200ResponseItemResponseInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets mart
      *

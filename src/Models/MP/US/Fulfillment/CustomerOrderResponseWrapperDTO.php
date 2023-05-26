@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CustomerOrderResponseWrapperDTO Class Doc Comment
@@ -110,7 +111,9 @@ class CustomerOrderResponseWrapperDTO extends BaseModel
         'status' => 'getStatus',
         'header' => 'getHeader',
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class CustomerOrderResponseWrapperDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

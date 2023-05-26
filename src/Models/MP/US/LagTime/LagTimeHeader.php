@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LagTimeHeader Class Doc Comment
@@ -104,7 +105,9 @@ class LagTimeHeader extends BaseModel
     protected static array $getters = [
         'version' => 'getVersion',
         'feedDate' => 'getFeedDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class LagTimeHeader extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets version
      *

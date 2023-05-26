@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Seller Class Doc Comment
@@ -110,7 +111,9 @@ class Seller extends BaseModel
         'id' => 'getId',
         'name' => 'getName',
         'shipNodeType' => 'getShipNodeType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class Seller extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

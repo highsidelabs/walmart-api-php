@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GroupingAttributes Class Doc Comment
@@ -106,7 +107,9 @@ class GroupingAttributes extends BaseModel
     protected static array $getters = [
         'name' => 'getName',
         'value' => 'getValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GroupingAttributes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

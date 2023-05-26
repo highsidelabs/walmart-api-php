@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListingRequestFiltersInner Class Doc Comment
@@ -111,6 +112,8 @@ class ItemsDetailsForListingRequestFiltersInner extends BaseModel
         'op' => 'getOp',
         'values' => 'getValues'
     ];
+
+
     public const FIELD_CONTENT_DISCOVERABILITY_PERCENTAGE = 'contentDiscoverabilityPercentage';
 
     public const FIELD_QUALITY_SCORE_PERCENTAGE = 'qualityScorePercentage';
@@ -231,6 +234,7 @@ class ItemsDetailsForListingRequestFiltersInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

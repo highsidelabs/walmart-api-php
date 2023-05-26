@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemDetailsLQResponsePayload Class Doc Comment
@@ -116,7 +117,9 @@ class ItemDetailsLQResponsePayload extends BaseModel
         'totalItems' => 'getTotalItems',
         'payload' => 'getPayload',
         'status' => 'getStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class ItemDetailsLQResponsePayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets nextCursor
      *

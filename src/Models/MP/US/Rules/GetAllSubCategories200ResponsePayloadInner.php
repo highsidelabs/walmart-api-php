@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllSubCategories200ResponsePayloadInner Class Doc Comment
@@ -104,7 +105,9 @@ class GetAllSubCategories200ResponsePayloadInner extends BaseModel
     protected static array $getters = [
         'category' => 'getCategory',
         'subcategory' => 'getSubcategory'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetAllSubCategories200ResponsePayloadInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets category
      *

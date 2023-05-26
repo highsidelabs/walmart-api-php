@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * StatusInfo Class Doc Comment
@@ -104,7 +105,9 @@ class StatusInfo extends BaseModel
     protected static array $getters = [
         'subsidyEnrolled' => 'getSubsidyEnrolled',
         'subsidyPreference' => 'getSubsidyPreference'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class StatusInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets subsidyEnrolled
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * BillingInfo Class Doc Comment
@@ -106,7 +107,9 @@ class BillingInfo extends BaseModel
     protected static array $getters = [
         'phone' => 'getPhone',
         'postalAddress' => 'getPostalAddress'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class BillingInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets phone
      *

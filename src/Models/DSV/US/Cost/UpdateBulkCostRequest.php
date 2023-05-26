@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Cost;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateBulkCostRequest Class Doc Comment
@@ -104,7 +105,9 @@ class UpdateBulkCostRequest extends BaseModel
     protected static array $getters = [
         'header' => 'getHeader',
         'cost' => 'getCost'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class UpdateBulkCostRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets header
      *

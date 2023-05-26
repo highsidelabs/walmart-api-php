@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Gmv Class Doc Comment
@@ -104,7 +105,9 @@ class Gmv extends BaseModel
     protected static array $getters = [
         'amount' => 'getAmount',
         'currency' => 'getCurrency'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class Gmv extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets amount
      *

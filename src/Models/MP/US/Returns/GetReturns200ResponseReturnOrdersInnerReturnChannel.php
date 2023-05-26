@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnChannel Class Doc Comment
@@ -100,7 +101,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnChannel extends BaseModel
      */
     protected static array $getters = [
         'channelName' => 'getChannelName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnChannel extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets channelName
      *

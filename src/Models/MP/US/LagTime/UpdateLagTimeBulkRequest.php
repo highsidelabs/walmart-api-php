@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateLagTimeBulkRequest Class Doc Comment
@@ -104,7 +105,9 @@ class UpdateLagTimeBulkRequest extends BaseModel
     protected static array $getters = [
         'lagTimeHeader' => 'getLagTimeHeader',
         'lagTime' => 'getLagTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -131,6 +134,7 @@ class UpdateLagTimeBulkRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lagTimeHeader
      *

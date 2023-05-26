@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Utilities;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Category Class Doc Comment
@@ -104,7 +105,9 @@ class Category extends BaseModel
     protected static array $getters = [
         'categoryName' => 'getCategoryName',
         'categoryId' => 'getCategoryId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class Category extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets categoryName
      *

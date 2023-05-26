@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MoneyType Class Doc Comment
@@ -110,7 +111,9 @@ class MoneyType extends BaseModel
         'value' => 'getValue',
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class MoneyType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets value
      *

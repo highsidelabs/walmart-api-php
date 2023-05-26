@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedItemsHeaderRequestDTO Class Doc Comment
@@ -128,7 +129,9 @@ class FeedItemsHeaderRequestDTO extends BaseModel
         'sellingChannel' => 'getSellingChannel',
         'version' => 'getVersion',
         'locale' => 'getLocale'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -156,6 +159,7 @@ class FeedItemsHeaderRequestDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets processMode
      *

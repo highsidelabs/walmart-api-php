@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateSubscriptionRequestEventsInner Class Doc Comment
@@ -134,7 +135,9 @@ class CreateSubscriptionRequestEventsInner extends BaseModel
         'authDetails' => 'getAuthDetails',
         'headers' => 'getHeaders',
         'status' => 'getStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -178,6 +181,7 @@ class CreateSubscriptionRequestEventsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets eventType
      *

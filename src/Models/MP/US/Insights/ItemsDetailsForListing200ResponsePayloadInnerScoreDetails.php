@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetails Class Doc Comment
@@ -116,7 +117,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
         'ratingReviews' => 'getRatingReviews',
         'postPurchase' => 'getPostPurchase',
         'contentAndDiscoverability' => 'getContentAndDiscoverability'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetails extends BaseMode
 
         return $invalidProperties;
     }
+
     /**
      * Gets offer
      *

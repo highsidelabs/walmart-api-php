@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ComparisonPrice Class Doc Comment
@@ -107,6 +108,8 @@ class ComparisonPrice extends BaseModel
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
     ];
+
+
     public const CURRENCY_USD = 'USD';
 
     public const CURRENCY_CAD = 'CAD';
@@ -157,6 +160,7 @@ class ComparisonPrice extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

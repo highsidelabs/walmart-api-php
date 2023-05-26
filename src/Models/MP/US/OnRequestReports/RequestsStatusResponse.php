@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\OnRequestReports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RequestsStatusResponse Class Doc Comment
@@ -122,7 +123,9 @@ class RequestsStatusResponse extends BaseModel
         'limit' => 'getLimit',
         'nextCursor' => 'getNextCursor',
         'requests' => 'getRequests'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class RequestsStatusResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets page
      *

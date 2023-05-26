@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Meta Class Doc Comment
@@ -104,7 +105,9 @@ class Meta extends BaseModel
     protected static array $getters = [
         'totalCount' => 'getTotalCount',
         'nextCursor' => 'getNextCursor'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class Meta extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

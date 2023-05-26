@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges Class Doc Comment
@@ -98,7 +99,9 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges ex
      */
     protected static array $getters = [
         'refundCharge' => 'getRefundCharge'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges ex
 
         return $invalidProperties;
     }
+
     /**
      * Gets refundCharge
      *

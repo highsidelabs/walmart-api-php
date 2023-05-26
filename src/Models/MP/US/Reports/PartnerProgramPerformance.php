@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerProgramPerformance Class Doc Comment
@@ -134,7 +135,9 @@ class PartnerProgramPerformance extends BaseModel
         'vtr' => 'getVtr',
         'cancellationSellerFault' => 'getCancellationSellerFault',
         'cancellationCustomerFault' => 'getCancellationCustomerFault'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class PartnerProgramPerformance extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets refundRateSellerFault
      *

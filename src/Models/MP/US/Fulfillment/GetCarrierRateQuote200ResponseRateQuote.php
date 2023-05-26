@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCarrierRateQuote200ResponseRateQuote Class Doc Comment
@@ -272,7 +273,9 @@ class GetCarrierRateQuote200ResponseRateQuote extends BaseModel
         'mixedSKUs' => 'getMixedSKUs',
         'singleSKUs' => 'getSingleSKUs',
         'freightReadyDate' => 'getFreightReadyDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -324,6 +327,7 @@ class GetCarrierRateQuote200ResponseRateQuote extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets quoteId
      *

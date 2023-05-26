@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LabelGenerationResponseCa Class Doc Comment
@@ -148,7 +149,9 @@ class LabelGenerationResponseCa extends BaseModel
         'carrierServiceType' => 'getCarrierServiceType',
         'trackingUrl' => 'getTrackingUrl',
         'shippingDocuments' => 'getShippingDocuments'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -179,6 +182,7 @@ class LabelGenerationResponseCa extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets purchaseOrderId
      *

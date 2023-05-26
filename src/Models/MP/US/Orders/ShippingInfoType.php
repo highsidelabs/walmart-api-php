@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingInfoType Class Doc Comment
@@ -125,6 +126,8 @@ class ShippingInfoType extends BaseModel
         'methodCode' => 'getMethodCode',
         'postalAddress' => 'getPostalAddress'
     ];
+
+
     public const METHOD_CODE_STANDARD = 'Standard';
 
     public const METHOD_CODE_EXPRESS = 'Express';
@@ -205,6 +208,7 @@ class ShippingInfoType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets phone
      *

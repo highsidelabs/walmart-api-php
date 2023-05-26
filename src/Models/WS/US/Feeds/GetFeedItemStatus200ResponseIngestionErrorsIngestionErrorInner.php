@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\WS\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner Class Doc Comment
@@ -111,6 +112,8 @@ class GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner extends Bas
         'code' => 'getCode',
         'description' => 'getDescription'
     ];
+
+
     public const TYPE_DATA_ERROR = 'DATA_ERROR';
 
     public const TYPE_SYSTEM_ERROR = 'SYSTEM_ERROR';
@@ -171,6 +174,7 @@ class GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner extends Bas
 
         return $invalidProperties;
     }
+
     /**
      * Gets type
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Authentication;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * IAMTokenDTO Class Doc Comment
@@ -98,7 +99,9 @@ class IAMTokenDTO extends BaseModel
      */
     protected static array $getters = [
         'grantType' => 'getGrantType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class IAMTokenDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets grantType
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Charge Class Doc Comment
@@ -116,7 +117,9 @@ class Charge extends BaseModel
         'chargeName' => 'getChargeName',
         'chargeAmount' => 'getChargeAmount',
         'tax' => 'getTax'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class Charge extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets chargeType
      *

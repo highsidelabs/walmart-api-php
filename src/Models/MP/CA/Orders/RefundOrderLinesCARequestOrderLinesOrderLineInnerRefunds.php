@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundOrderLinesCARequestOrderLinesOrderLineInnerRefunds Class Doc Comment
@@ -98,7 +99,9 @@ class RefundOrderLinesCARequestOrderLinesOrderLineInnerRefunds extends BaseModel
      */
     protected static array $getters = [
         'refund' => 'getRefund'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class RefundOrderLinesCARequestOrderLinesOrderLineInnerRefunds extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets refund
      *

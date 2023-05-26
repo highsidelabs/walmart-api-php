@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierCommonResponseListCarrierResponse Class Doc Comment
@@ -104,7 +105,9 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     protected static array $getters = [
         'carriers' => 'getCarriers',
         'errors' => 'getErrors'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets carriers
      *

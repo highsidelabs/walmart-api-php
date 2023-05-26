@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TimeWindow Class Doc Comment
@@ -107,6 +108,8 @@ class TimeWindow extends BaseModel
         'value' => 'getValue',
         'unitOfMeasurement' => 'getUnitOfMeasurement'
     ];
+
+
     public const UNIT_OF_MEASUREMENT_SECOND = 'SECOND';
 
     /**
@@ -154,6 +157,7 @@ class TimeWindow extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets value
      *

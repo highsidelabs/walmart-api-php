@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingLineType Class Doc Comment
@@ -113,6 +114,8 @@ class ShippingLineType extends BaseModel
         'shipFromCountry' => 'getShipFromCountry',
         'orderLineStatuses' => 'getOrderLineStatuses'
     ];
+
+
     public const SHIP_FROM_COUNTRY_AF = 'AF';
 
     public const SHIP_FROM_COUNTRY_AX = 'AX';
@@ -914,6 +917,7 @@ class ShippingLineType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

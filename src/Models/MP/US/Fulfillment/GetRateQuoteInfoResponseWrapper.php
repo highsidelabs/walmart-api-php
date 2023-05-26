@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetRateQuoteInfoResponseWrapper Class Doc Comment
@@ -152,7 +153,9 @@ class GetRateQuoteInfoResponseWrapper extends BaseModel
         'originLocation' => 'getOriginLocation',
         'destinationLocation' => 'getDestinationLocation',
         'returnLocation' => 'getReturnLocation'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -184,6 +187,7 @@ class GetRateQuoteInfoResponseWrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

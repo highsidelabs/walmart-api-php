@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Authentication;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OAuthTokenDTO Class Doc Comment
@@ -110,7 +111,9 @@ class OAuthTokenDTO extends BaseModel
         'accessToken' => 'getAccessToken',
         'tokenType' => 'getTokenType',
         'expiresIn' => 'getExpiresIn'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -138,6 +141,7 @@ class OAuthTokenDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets accessToken
      *

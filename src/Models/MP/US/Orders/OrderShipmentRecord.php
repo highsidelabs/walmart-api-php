@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderShipmentRecord Class Doc Comment
@@ -106,7 +107,9 @@ class OrderShipmentRecord extends BaseModel
     protected static array $getters = [
         'processMode' => 'getProcessMode',
         'orderLines' => 'getOrderLines'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -133,6 +136,7 @@ class OrderShipmentRecord extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets processMode
      *

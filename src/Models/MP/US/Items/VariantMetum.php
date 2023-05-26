@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * VariantMetum Class Doc Comment
@@ -98,7 +99,9 @@ class VariantMetum extends BaseModel
      */
     protected static array $getters = [
         'name' => 'getName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class VariantMetum extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

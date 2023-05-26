@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Utilities;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * StatusAPIResponseDTO Class Doc Comment
@@ -113,6 +114,8 @@ class StatusAPIResponseDTO extends BaseModel
         'status' => 'getStatus',
         'lastUpdatedTime' => 'getLastUpdatedTime'
     ];
+
+
     public const API_GROUP_RETURNS = 'Returns';
 
     public const API_GROUP_ITEMS = 'Items';
@@ -224,6 +227,7 @@ class StatusAPIResponseDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets apiGroup
      *

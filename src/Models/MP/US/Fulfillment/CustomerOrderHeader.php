@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CustomerOrderHeader Class Doc Comment
@@ -100,7 +101,9 @@ class CustomerOrderHeader extends BaseModel
      */
     protected static array $getters = [
         'headerAttributes' => 'getHeaderAttributes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class CustomerOrderHeader extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets headerAttributes
      *

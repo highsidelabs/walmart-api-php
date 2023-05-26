@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner Class Doc Comment
@@ -113,6 +114,8 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationV
         'rate' => 'getRate',
         'fileSize' => 'getFileSize'
     ];
+
+
     public const TYPE_SELLER = 'SELLER';
 
     /**
@@ -161,6 +164,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationV
 
         return $invalidProperties;
     }
+
     /**
      * Gets type
      *

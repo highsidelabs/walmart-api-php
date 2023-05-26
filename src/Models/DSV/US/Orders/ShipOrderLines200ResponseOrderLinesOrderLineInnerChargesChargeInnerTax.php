@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax Class Doc Comment
@@ -106,7 +107,9 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax ext
     protected static array $getters = [
         'taxName' => 'getTaxName',
         'taxAmount' => 'getTaxAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax ext
 
         return $invalidProperties;
     }
+
     /**
      * Gets taxName
      *

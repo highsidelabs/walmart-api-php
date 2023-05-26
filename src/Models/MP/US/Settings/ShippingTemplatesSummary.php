@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingTemplatesSummary Class Doc Comment
@@ -104,7 +105,9 @@ class ShippingTemplatesSummary extends BaseModel
     protected static array $getters = [
         'shippingTemplates' => 'getShippingTemplates',
         'totalRecords' => 'getTotalRecords'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ShippingTemplatesSummary extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shippingTemplates
      *

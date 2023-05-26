@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Cost;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * DsvCostUpdateResponse Class Doc Comment
@@ -110,7 +111,9 @@ class DsvCostUpdateResponse extends BaseModel
         'feedId' => 'getFeedId',
         'additionalAttributes' => 'getAdditionalAttributes',
         'error' => 'getError'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class DsvCostUpdateResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets feedId
      *

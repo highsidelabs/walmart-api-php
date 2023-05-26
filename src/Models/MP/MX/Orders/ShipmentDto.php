@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipmentDto Class Doc Comment
@@ -119,6 +120,8 @@ class ShipmentDto extends BaseModel
         'trackingNumber' => 'getTrackingNumber',
         'trackingURL' => 'getTrackingURL'
     ];
+
+
     public const CARRIER_MX_FEDX = 'MX-FEDX';
 
     public const CARRIER_MX_DHL = 'MX-DHL';
@@ -180,6 +183,7 @@ class ShipmentDto extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentLines
      *

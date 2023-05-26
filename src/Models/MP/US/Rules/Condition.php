@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Condition Class Doc Comment
@@ -112,7 +113,9 @@ class Condition extends BaseModel
         'name' => 'getName',
         'operator' => 'getOperator',
         'value' => 'getValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class Condition extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

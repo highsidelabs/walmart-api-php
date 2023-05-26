@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Value Class Doc Comment
@@ -110,7 +111,9 @@ class Value extends BaseModel
         'scoreType' => 'getScoreType',
         'scoreValue' => 'getScoreValue',
         'impact' => 'getImpact'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class Value extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets scoreType
      *

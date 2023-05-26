@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReconReportDateResponse Class Doc Comment
@@ -98,7 +99,9 @@ class ReconReportDateResponse extends BaseModel
      */
     protected static array $getters = [
         'availableApReportDates' => 'getAvailableApReportDates'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class ReconReportDateResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets availableApReportDates
      *

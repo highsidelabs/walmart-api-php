@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCarrierMethods200ResponseInner Class Doc Comment
@@ -116,7 +117,9 @@ class GetCarrierMethods200ResponseInner extends BaseModel
         'carrierMethodName' => 'getCarrierMethodName',
         'carrierMethodType' => 'getCarrierMethodType',
         'carrierMethodDescription' => 'getCarrierMethodDescription'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class GetCarrierMethods200ResponseInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets carrierMethodId
      *

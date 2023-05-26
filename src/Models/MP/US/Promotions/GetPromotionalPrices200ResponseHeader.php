@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponseHeader Class Doc Comment
@@ -98,7 +99,9 @@ class GetPromotionalPrices200ResponseHeader extends BaseModel
      */
     protected static array $getters = [
         'headerAttributes' => 'getHeaderAttributes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class GetPromotionalPrices200ResponseHeader extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets headerAttributes
      *

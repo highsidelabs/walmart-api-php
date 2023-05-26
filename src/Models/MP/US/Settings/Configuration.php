@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Configuration Class Doc Comment
@@ -125,6 +126,8 @@ class Configuration extends BaseModel
         'perShippingCharge' => 'getPerShippingCharge',
         'tieredShippingCharges' => 'getTieredShippingCharges'
     ];
+
+
     public const ADDRESS_TYPES_PO_BOX = 'PO_BOX';
 
     public const ADDRESS_TYPES_MILITARY = 'MILITARY';
@@ -181,6 +184,7 @@ class Configuration extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets regions
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * EventType Class Doc Comment
@@ -118,7 +119,9 @@ class EventType extends BaseModel
         'eventType' => 'getEventType',
         'eventVersion' => 'getEventVersion',
         'description' => 'getDescription'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class EventType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets resourceName
      *

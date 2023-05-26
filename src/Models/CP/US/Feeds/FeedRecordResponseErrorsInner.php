@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\CP\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedRecordResponseErrorsInner Class Doc Comment
@@ -165,6 +166,8 @@ class FeedRecordResponseErrorsInner extends BaseModel
         'serviceName' => 'getServiceName',
         'gatewayErrorCategory' => 'getGatewayErrorCategory'
     ];
+
+
     public const SEVERITY_INFO = 'INFO';
 
     public const SEVERITY_WARN = 'WARN';
@@ -294,6 +297,7 @@ class FeedRecordResponseErrorsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

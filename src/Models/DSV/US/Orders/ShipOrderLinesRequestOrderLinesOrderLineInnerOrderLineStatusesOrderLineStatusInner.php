@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -119,6 +120,8 @@ class ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineSta
         'statusQuantity' => 'getStatusQuantity',
         'trackingInfo' => 'getTrackingInfo'
     ];
+
+
     public const STATUS_CREATED = 'Created';
 
     public const STATUS_ACKNOWLEDGED = 'Acknowledged';
@@ -192,6 +195,7 @@ class ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineSta
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

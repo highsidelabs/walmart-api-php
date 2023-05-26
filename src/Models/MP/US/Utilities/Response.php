@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Utilities;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Response Class Doc Comment
@@ -110,7 +111,9 @@ class Response extends BaseModel
         'departmentName' => 'getDepartmentName',
         'departmentId' => 'getDepartmentId',
         'category' => 'getCategory'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class Response extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets departmentName
      *

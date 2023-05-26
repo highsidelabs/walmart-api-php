@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * WfsAggr Class Doc Comment
@@ -140,7 +141,9 @@ class WfsAggr extends BaseModel
         'inventoryRemovalOrder' => 'getInventoryRemovalOrder',
         'inventoryDisposalOrder' => 'getInventoryDisposalOrder',
         'wfsPrepServiceFee' => 'getWfsPrepServiceFee'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class WfsAggr extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets netPayable
      *

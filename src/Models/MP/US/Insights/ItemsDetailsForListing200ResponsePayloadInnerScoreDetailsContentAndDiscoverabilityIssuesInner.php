@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner Class Doc Comment
@@ -134,7 +135,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscove
         'attributeName' => 'getAttributeName',
         'issueCount' => 'getIssueCount',
         'issues' => 'getIssues'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscove
 
         return $invalidProperties;
     }
+
     /**
      * Gets score
      *

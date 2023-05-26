@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Label Class Doc Comment
@@ -106,7 +107,9 @@ class Label extends BaseModel
     protected static array $getters = [
         'labelImageURL' => 'getLabelImageURL',
         'carrierInfoList' => 'getCarrierInfoList'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class Label extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets labelImageURL
      *

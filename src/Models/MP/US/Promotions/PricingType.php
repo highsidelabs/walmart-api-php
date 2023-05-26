@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PricingType Class Doc Comment
@@ -165,6 +166,8 @@ class PricingType extends BaseModel
         'processMode' => 'getProcessMode',
         'pid' => 'getPid'
     ];
+
+
     public const CURRENT_PRICE_TYPE_BASE = 'BASE';
 
     public const CURRENT_PRICE_TYPE_REDUCED = 'REDUCED';
@@ -315,6 +318,7 @@ class PricingType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currentPrice
      *

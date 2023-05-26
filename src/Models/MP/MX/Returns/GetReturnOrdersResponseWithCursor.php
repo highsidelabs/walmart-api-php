@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturnOrdersResponseWithCursor Class Doc Comment
@@ -104,7 +105,9 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
     protected static array $getters = [
         'meta' => 'getMeta',
         'returnOrders' => 'getReturnOrders'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets meta
      *

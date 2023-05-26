@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetProSellerBadgeInfo200ResponseRecommendations Class Doc Comment
@@ -112,7 +113,9 @@ class GetProSellerBadgeInfo200ResponseRecommendations extends BaseModel
         'deliveryDefectRate' => 'getDeliveryDefectRate',
         'cancellationRate' => 'getCancellationRate',
         'listingQualityCatalog' => 'getListingQualityCatalog'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class GetProSellerBadgeInfo200ResponseRecommendations extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets deliveryDefectRate
      *

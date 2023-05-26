@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Tax Class Doc Comment
@@ -112,7 +113,9 @@ class Tax extends BaseModel
         'taxName' => 'getTaxName',
         'excessTax' => 'getExcessTax',
         'taxPerUnit' => 'getTaxPerUnit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class Tax extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets taxName
      *

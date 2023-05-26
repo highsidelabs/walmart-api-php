@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingSpeed Class Doc Comment
@@ -116,7 +117,9 @@ class ShippingSpeed extends BaseModel
         'issueTitle' => 'getIssueTitle',
         'issueDesc' => 'getIssueDesc',
         'score' => 'getScore'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class ShippingSpeed extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shippingType
      *

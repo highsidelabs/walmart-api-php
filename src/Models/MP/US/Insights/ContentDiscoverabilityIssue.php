@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ContentDiscoverabilityIssue Class Doc Comment
@@ -134,7 +135,9 @@ class ContentDiscoverabilityIssue extends BaseModel
         'attributeName' => 'getAttributeName',
         'issueCount' => 'getIssueCount',
         'issues' => 'getIssues'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class ContentDiscoverabilityIssue extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets score
      *

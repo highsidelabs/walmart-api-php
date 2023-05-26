@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseList Class Doc Comment
@@ -112,7 +113,9 @@ class GetAllOrders200ResponseList extends BaseModel
         'errors' => 'getErrors',
         'meta' => 'getMeta',
         'elements' => 'getElements'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -143,6 +146,7 @@ class GetAllOrders200ResponseList extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets errors
      *

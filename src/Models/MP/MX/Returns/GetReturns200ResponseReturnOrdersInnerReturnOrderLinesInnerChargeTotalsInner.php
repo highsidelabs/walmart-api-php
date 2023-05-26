@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner Class Doc Comment
@@ -106,7 +107,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInn
     protected static array $getters = [
         'name' => 'getName',
         'value' => 'getValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInn
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

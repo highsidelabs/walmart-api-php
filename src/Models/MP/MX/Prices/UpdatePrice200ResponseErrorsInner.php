@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdatePrice200ResponseErrorsInner Class Doc Comment
@@ -165,6 +166,8 @@ class UpdatePrice200ResponseErrorsInner extends BaseModel
         'serviceName' => 'getServiceName',
         'gatewayErrorCategory' => 'getGatewayErrorCategory'
     ];
+
+
     public const SEVERITY_INFO = 'INFO';
 
     public const SEVERITY_WARN = 'WARN';
@@ -294,6 +297,7 @@ class UpdatePrice200ResponseErrorsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

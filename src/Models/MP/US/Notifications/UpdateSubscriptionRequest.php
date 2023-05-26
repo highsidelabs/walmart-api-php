@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateSubscriptionRequest Class Doc Comment
@@ -134,7 +135,9 @@ class UpdateSubscriptionRequest extends BaseModel
         'authDetails' => 'getAuthDetails',
         'headers' => 'getHeaders',
         'status' => 'getStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class UpdateSubscriptionRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets eventType
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdatePriceRequest Class Doc Comment
@@ -123,6 +124,8 @@ class UpdatePriceRequest extends BaseModel
         'pricing' => 'getPricing',
         'definitions' => 'getDefinitions'
     ];
+
+
     public const REPLACE_ALL_TRUE = 'true';
 
     public const REPLACE_ALL_FALSE = 'false';
@@ -182,6 +185,7 @@ class UpdatePriceRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets offerId
      *

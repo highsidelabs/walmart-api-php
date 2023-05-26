@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner Class Doc Comment
@@ -116,7 +117,9 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
         'chargeName' => 'getChargeName',
         'chargeAmount' => 'getChargeAmount',
         'tax' => 'getTax'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -151,6 +154,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
 
         return $invalidProperties;
     }
+
     /**
      * Gets chargeType
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Order Class Doc Comment
@@ -172,7 +173,9 @@ class Order extends BaseModel
         'orderSummary' => 'getOrderSummary',
         'pickupPersons' => 'getPickupPersons',
         'shipNode' => 'getShipNode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -225,6 +228,7 @@ class Order extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets purchaseOrderId
      *

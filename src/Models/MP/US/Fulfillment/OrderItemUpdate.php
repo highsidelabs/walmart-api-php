@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderItemUpdate Class Doc Comment
@@ -106,7 +107,9 @@ class OrderItemUpdate extends BaseModel
     protected static array $getters = [
         'sku' => 'getSku',
         'updatedShipmentQty' => 'getUpdatedShipmentQty'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -146,6 +149,7 @@ class OrderItemUpdate extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

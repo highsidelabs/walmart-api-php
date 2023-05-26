@@ -20,6 +20,7 @@
  */
 
 namespace Walmart\Models\MP\US\Authentication;
+
 use Walmart\Model\BaseModel;
 
 /**
@@ -151,7 +152,6 @@ class TokenDetailResponse extends BaseModel
 
         return $invalidProperties;
     }
-
 
     /**
      * Gets expireAt

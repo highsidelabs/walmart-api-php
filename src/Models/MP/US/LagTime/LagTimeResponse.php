@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LagTimeResponse Class Doc Comment
@@ -104,7 +105,9 @@ class LagTimeResponse extends BaseModel
     protected static array $getters = [
         'sku' => 'getSku',
         'fulfillmentLagTime' => 'getFulfillmentLagTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class LagTimeResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

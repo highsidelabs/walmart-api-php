@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CancelLineType Class Doc Comment
@@ -106,7 +107,9 @@ class CancelLineType extends BaseModel
     protected static array $getters = [
         'lineNumber' => 'getLineNumber',
         'orderLineStatuses' => 'getOrderLineStatuses'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class CancelLineType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

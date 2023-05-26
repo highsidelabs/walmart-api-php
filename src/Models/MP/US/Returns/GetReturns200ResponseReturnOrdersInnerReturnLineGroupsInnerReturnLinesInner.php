@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner Class Doc Comment
@@ -100,7 +101,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInne
      */
     protected static array $getters = [
         'returnOrderLineNumber' => 'getReturnOrderLineNumber'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInne
 
         return $invalidProperties;
     }
+
     /**
      * Gets returnOrderLineNumber
      *

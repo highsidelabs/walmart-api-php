@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetOrderResponseRecord Class Doc Comment
@@ -184,7 +185,9 @@ class GetOrderResponseRecord extends BaseModel
         'orderSummary' => 'getOrderSummary',
         'pickupPersons' => 'getPickupPersons',
         'shipNode' => 'getShipNode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -239,6 +242,7 @@ class GetOrderResponseRecord extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets purchaseOrderId
      *

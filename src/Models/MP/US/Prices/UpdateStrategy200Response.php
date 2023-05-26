@@ -20,7 +20,9 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
+use Walmart\Traits\HasResponseHeaders;
 
 /**
  * UpdateStrategy200Response Class Doc Comment
@@ -34,6 +36,8 @@ use Walmart\Models\BaseModel;
  */
 class UpdateStrategy200Response extends BaseModel
 {
+    use HasResponseHeaders;
+
     public const DISCRIMINATOR = null;
 
     /**
@@ -123,12 +127,6 @@ class UpdateStrategy200Response extends BaseModel
         'enableRepricerForPromotion' => 'getEnableRepricerForPromotion',
         'strategies' => 'getStrategies'
     ];
-    /**
-     * Array of response headers returned by the API
-     *
-     * @var string[][]
-     */
-    protected array $headers = [];
 
     /**
      * Constructor
@@ -157,30 +155,6 @@ class UpdateStrategy200Response extends BaseModel
 
         return $invalidProperties;
     }
-
-    /**
-     * Gets API response headers (only relevant to response models)
-     *
-     * @return string[][]
-     */
-    public function getHeaders(): array
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Sets API response headers (only relevant to response models)
-     *
-     * @param array[string => string[]] $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders(array $headers): static
-    {
-        $this->headers = $headers;
-        return $this;
-    }
-
 
     /**
      * Gets repricerStrategy

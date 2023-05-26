@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ChargePerItem Class Doc Comment
@@ -106,7 +107,9 @@ class ChargePerItem extends BaseModel
     protected static array $getters = [
         'amount' => 'getAmount',
         'currency' => 'getCurrency'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class ChargePerItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets amount
      *

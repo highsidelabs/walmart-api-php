@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TieredShippingCharge Class Doc Comment
@@ -112,7 +113,9 @@ class TieredShippingCharge extends BaseModel
         'minLimit' => 'getMinLimit',
         'maxLimit' => 'getMaxLimit',
         'shipCharge' => 'getShipCharge'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -143,6 +146,7 @@ class TieredShippingCharge extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets minLimit
      *

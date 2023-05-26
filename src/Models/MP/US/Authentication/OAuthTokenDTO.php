@@ -20,6 +20,7 @@
  */
 
 namespace Walmart\Models\MP\US\Authentication;
+
 use Walmart\Model\BaseModel;
 
 /**
@@ -140,7 +141,6 @@ class OAuthTokenDTO extends BaseModel
 
         return $invalidProperties;
     }
-
 
     /**
      * Gets accessToken

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateFulfillmentRequestPayload Class Doc Comment
@@ -136,7 +137,9 @@ class CreateFulfillmentRequestPayload extends BaseModel
         'partialFulfillments' => 'getPartialFulfillments',
         'customer' => 'getCustomer',
         'orderItems' => 'getOrderItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -190,6 +193,7 @@ class CreateFulfillmentRequestPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderChannelId
      *

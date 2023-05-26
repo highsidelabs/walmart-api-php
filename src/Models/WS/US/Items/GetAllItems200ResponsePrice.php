@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\WS\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllItems200ResponsePrice Class Doc Comment
@@ -107,6 +108,8 @@ class GetAllItems200ResponsePrice extends BaseModel
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
     ];
+
+
     public const CURRENCY_AED = 'AED';
 
     public const CURRENCY_AFN = 'AFN';
@@ -658,6 +661,7 @@ class GetAllItems200ResponsePrice extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

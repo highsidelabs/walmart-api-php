@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InboundShipmentUpdateQtyWrapper Class Doc Comment
@@ -110,7 +111,9 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
         'inboundOrderId' => 'getInboundOrderId',
         'shipmentId' => 'getShipmentId',
         'orderItems' => 'getOrderItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -153,6 +156,7 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
         }
         return $invalidProperties;
     }
+
     /**
      * Gets inboundOrderId
      *

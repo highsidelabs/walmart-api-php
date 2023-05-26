@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierQuoteRequestV2Wrapper Class Doc Comment
@@ -182,7 +183,9 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
         'freightClass' => 'getFreightClass',
         'declaredValue' => 'getDeclaredValue',
         'loadTypes' => 'getLoadTypes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -255,6 +258,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

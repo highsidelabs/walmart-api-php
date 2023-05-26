@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -119,6 +120,8 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
         'statusQuantity' => 'getStatusQuantity',
         'trackingInfo' => 'getTrackingInfo'
     ];
+
+
     public const STATUS_CREATED = 'CREATED';
 
     public const STATUS_ACKNOWLEDGED = 'ACKNOWLEDGED';
@@ -189,6 +192,7 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

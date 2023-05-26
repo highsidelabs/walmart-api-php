@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * SubscriptionDeleteResponseDTO Class Doc Comment
@@ -104,7 +105,9 @@ class SubscriptionDeleteResponseDTO extends BaseModel
     protected static array $getters = [
         'subscriptionId' => 'getSubscriptionId',
         'message' => 'getMessage'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class SubscriptionDeleteResponseDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets subscriptionId
      *

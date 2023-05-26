@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InactivateRuleRequestRuleHeader Class Doc Comment
@@ -98,7 +99,9 @@ class InactivateRuleRequestRuleHeader extends BaseModel
      */
     protected static array $getters = [
         'version' => 'getVersion'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class InactivateRuleRequestRuleHeader extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets version
      *

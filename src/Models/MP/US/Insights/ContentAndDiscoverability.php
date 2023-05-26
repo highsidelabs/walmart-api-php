@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ContentAndDiscoverability Class Doc Comment
@@ -104,7 +105,9 @@ class ContentAndDiscoverability extends BaseModel
     protected static array $getters = [
         'issueCount' => 'getIssueCount',
         'issues' => 'getIssues'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ContentAndDiscoverability extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets issueCount
      *

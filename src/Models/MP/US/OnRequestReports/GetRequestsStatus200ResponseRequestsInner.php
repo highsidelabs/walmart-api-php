@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\OnRequestReports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetRequestsStatus200ResponseRequestsInner Class Doc Comment
@@ -135,6 +136,8 @@ class GetRequestsStatus200ResponseRequestsInner extends BaseModel
         'payload' => 'getPayload',
         'reportGenerationDate' => 'getReportGenerationDate'
     ];
+
+
     public const REQUEST_STATUS_RECEIVED = 'RECEIVED';
 
     public const REQUEST_STATUS_INPROGRESS = 'INPROGRESS';
@@ -247,6 +250,7 @@ class GetRequestsStatus200ResponseRequestsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets requestId
      *

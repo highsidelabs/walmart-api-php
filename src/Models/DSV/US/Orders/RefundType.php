@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundType Class Doc Comment
@@ -112,7 +113,9 @@ class RefundType extends BaseModel
         'refundId' => 'getRefundId',
         'refundComments' => 'getRefundComments',
         'refundCharges' => 'getRefundCharges'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -140,6 +143,7 @@ class RefundType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets refundId
      *

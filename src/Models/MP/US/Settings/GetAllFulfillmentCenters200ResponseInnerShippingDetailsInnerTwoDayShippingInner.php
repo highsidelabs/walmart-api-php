@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner Class Doc Comment
@@ -106,7 +107,9 @@ class GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShipping
     protected static array $getters = [
         'carrierMethodName' => 'getCarrierMethodName',
         'carrierMethodType' => 'getCarrierMethodType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShipping
 
         return $invalidProperties;
     }
+
     /**
      * Gets carrierMethodName
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingDocument Class Doc Comment
@@ -112,7 +113,9 @@ class ShippingDocument extends BaseModel
         'documentFormat' => 'getDocumentFormat',
         'documentType' => 'getDocumentType',
         'base64EncodedDocument' => 'getBase64EncodedDocument'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class ShippingDocument extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets documentFormat
      *

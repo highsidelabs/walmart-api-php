@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillmentsRequestPayloadDestinationsInnerAddress Class Doc Comment
@@ -142,7 +143,9 @@ class PromiseFulfillmentsRequestPayloadDestinationsInnerAddress extends BaseMode
         'countryCode' => 'getCountryCode',
         'stateCode' => 'getStateCode',
         'isPOBox' => 'getIsPOBox'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -178,6 +181,7 @@ class PromiseFulfillmentsRequestPayloadDestinationsInnerAddress extends BaseMode
 
         return $invalidProperties;
     }
+
     /**
      * Gets city
      *

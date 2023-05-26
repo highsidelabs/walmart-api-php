@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Utilities;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TaxonomyResponseDTO Class Doc Comment
@@ -104,7 +105,9 @@ class TaxonomyResponseDTO extends BaseModel
     protected static array $getters = [
         'status' => 'getStatus',
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class TaxonomyResponseDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

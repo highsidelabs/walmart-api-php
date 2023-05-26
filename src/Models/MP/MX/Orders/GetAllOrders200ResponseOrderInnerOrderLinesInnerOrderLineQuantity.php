@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity Class Doc Comment
@@ -104,7 +105,9 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity extends 
     protected static array $getters = [
         'unitOfMeasurement' => 'getUnitOfMeasurement',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetAllOrders200ResponseOrderInnerOrderLinesInnerOrderLineQuantity extends 
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasurement
      *

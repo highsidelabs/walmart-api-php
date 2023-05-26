@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseOffer Class Doc Comment
@@ -118,7 +119,9 @@ class PromiseOffer extends BaseModel
         'lineId' => 'getLineId',
         'salesUnit' => 'getSalesUnit',
         'requestedQuantity' => 'getRequestedQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -156,6 +159,7 @@ class PromiseOffer extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerProgramStatementDO Class Doc Comment
@@ -116,7 +117,9 @@ class PartnerProgramStatementDO extends BaseModel
         'sellerInfo' => 'getSellerInfo',
         'accountSummary' => 'getAccountSummary',
         'transactionDetails' => 'getTransactionDetails'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class PartnerProgramStatementDO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets outstandingMCABalance
      *

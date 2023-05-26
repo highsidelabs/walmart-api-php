@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCarrierRateQuote200ResponseCarrier Class Doc Comment
@@ -104,7 +105,9 @@ class GetCarrierRateQuote200ResponseCarrier extends BaseModel
     protected static array $getters = [
         'carrierId' => 'getCarrierId',
         'carrierName' => 'getCarrierName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetCarrierRateQuote200ResponseCarrier extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets carrierId
      *

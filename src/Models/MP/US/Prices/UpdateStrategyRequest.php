@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateStrategyRequest Class Doc Comment
@@ -116,7 +117,9 @@ class UpdateStrategyRequest extends BaseModel
         'enabled' => 'getEnabled',
         'enableRepricerForPromotion' => 'getEnableRepricerForPromotion',
         'strategies' => 'getStrategies'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class UpdateStrategyRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets repricerStrategy
      *

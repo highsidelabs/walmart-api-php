@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CapProgramResponse Class Doc Comment
@@ -104,7 +105,9 @@ class CapProgramResponse extends BaseModel
     protected static array $getters = [
         'martId' => 'getMartId',
         'statusInfo' => 'getStatusInfo'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class CapProgramResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets martId
      *

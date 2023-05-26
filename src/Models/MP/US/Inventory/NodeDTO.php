@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * NodeDTO Class Doc Comment
@@ -122,7 +123,9 @@ class NodeDTO extends BaseModel
         'availToSellQty' => 'getAvailToSellQty',
         'errors' => 'getErrors',
         'reservedQty' => 'getReservedQty'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class NodeDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNode
      *

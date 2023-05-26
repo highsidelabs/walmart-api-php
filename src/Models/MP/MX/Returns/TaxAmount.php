@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TaxAmount Class Doc Comment
@@ -106,7 +107,9 @@ class TaxAmount extends BaseModel
     protected static array $getters = [
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class TaxAmount extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

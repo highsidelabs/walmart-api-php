@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Measurement Class Doc Comment
@@ -104,7 +105,9 @@ class Measurement extends BaseModel
     protected static array $getters = [
         'unitOfMeasurement' => 'getUnitOfMeasurement',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class Measurement extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasurement
      *

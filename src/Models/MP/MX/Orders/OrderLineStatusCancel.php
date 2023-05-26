@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderLineStatusCancel Class Doc Comment
@@ -110,7 +111,9 @@ class OrderLineStatusCancel extends BaseModel
         'status' => 'getStatus',
         'statusQuantity' => 'getStatusQuantity',
         'cancellationReason' => 'getCancellationReason'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class OrderLineStatusCancel extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

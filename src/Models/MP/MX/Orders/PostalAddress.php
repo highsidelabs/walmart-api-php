@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PostalAddress Class Doc Comment
@@ -160,7 +161,9 @@ class PostalAddress extends BaseModel
         'state' => 'getState',
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -193,6 +196,7 @@ class PostalAddress extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

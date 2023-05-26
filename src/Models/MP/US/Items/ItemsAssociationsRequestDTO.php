@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsAssociationsRequestDTO Class Doc Comment
@@ -98,7 +99,9 @@ class ItemsAssociationsRequestDTO extends BaseModel
      */
     protected static array $getters = [
         'items' => 'getItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class ItemsAssociationsRequestDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets items
      *

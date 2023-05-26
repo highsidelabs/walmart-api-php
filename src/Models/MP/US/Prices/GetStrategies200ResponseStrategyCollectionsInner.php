@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetStrategies200ResponseStrategyCollectionsInner Class Doc Comment
@@ -128,7 +129,9 @@ class GetStrategies200ResponseStrategyCollectionsInner extends BaseModel
         'assignedCount' => 'getAssignedCount',
         'enableRepricerForPromotion' => 'getEnableRepricerForPromotion',
         'strategies' => 'getStrategies'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -156,6 +159,7 @@ class GetStrategies200ResponseStrategyCollectionsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets repricerStrategy
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponsePickupPersonsInnerName Class Doc Comment
@@ -140,7 +141,9 @@ class ShipOrderLines200ResponsePickupPersonsInnerName extends BaseModel
         'maturitySuffix' => 'getMaturitySuffix',
         'titleOfRespect' => 'getTitleOfRespect',
         'empty' => 'getEmpty'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -170,6 +173,7 @@ class ShipOrderLines200ResponsePickupPersonsInnerName extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets completeName
      *

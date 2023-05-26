@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromotionsPrice Class Doc Comment
@@ -134,7 +135,9 @@ class PromotionsPrice extends BaseModel
         'perUnitValue' => 'getPerUnitValue',
         'minUnitValue' => 'getMinUnitValue',
         'maxUnitValue' => 'getMaxUnitValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class PromotionsPrice extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets value
      *

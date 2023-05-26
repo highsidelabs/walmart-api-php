@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Association Class Doc Comment
@@ -112,7 +113,9 @@ class Association extends BaseModel
         'shippingTemplate' => 'getShippingTemplate',
         'shipNodeName' => 'getShipNodeName',
         'shipNode' => 'getShipNode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class Association extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shippingTemplate
      *

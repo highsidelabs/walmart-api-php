@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Customer Class Doc Comment
@@ -104,7 +105,9 @@ class Customer extends BaseModel
     protected static array $getters = [
         'customerId' => 'getCustomerId',
         'customerName' => 'getCustomerName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class Customer extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets customerId
      *

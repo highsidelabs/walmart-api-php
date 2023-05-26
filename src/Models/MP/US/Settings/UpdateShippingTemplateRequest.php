@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateShippingTemplateRequest Class Doc Comment
@@ -123,6 +124,8 @@ class UpdateShippingTemplateRequest extends BaseModel
         'status' => 'getStatus',
         'shippingMethods' => 'getShippingMethods'
     ];
+
+
     public const TYPE__DEFAULT = 'DEFAULT';
 
     public const TYPE_CUSTOM = 'CUSTOM';
@@ -258,6 +261,7 @@ class UpdateShippingTemplateRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

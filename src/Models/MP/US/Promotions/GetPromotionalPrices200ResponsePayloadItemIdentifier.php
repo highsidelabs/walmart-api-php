@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadItemIdentifier Class Doc Comment
@@ -122,7 +123,9 @@ class GetPromotionalPrices200ResponsePayloadItemIdentifier extends BaseModel
         'itemId' => 'getItemId',
         'wpid' => 'getWpid',
         'productType' => 'getProductType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class GetPromotionalPrices200ResponsePayloadItemIdentifier extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

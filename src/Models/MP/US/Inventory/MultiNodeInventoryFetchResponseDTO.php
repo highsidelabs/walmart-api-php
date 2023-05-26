@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MultiNodeInventoryFetchResponseDTO Class Doc Comment
@@ -104,7 +105,9 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     protected static array $getters = [
         'meta' => 'getMeta',
         'elements' => 'getElements'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets meta
      *

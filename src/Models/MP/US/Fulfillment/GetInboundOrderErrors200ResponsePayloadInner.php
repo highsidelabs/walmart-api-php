@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetInboundOrderErrors200ResponsePayloadInner Class Doc Comment
@@ -124,7 +125,9 @@ class GetInboundOrderErrors200ResponsePayloadInner extends BaseModel
         'returnAddress' => 'getReturnAddress',
         'orderItems' => 'getOrderItems',
         'errors' => 'getErrors'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -151,6 +154,7 @@ class GetInboundOrderErrors200ResponsePayloadInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets inboundOrderId
      *

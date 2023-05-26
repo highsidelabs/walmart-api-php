@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponsePickupPersonsInner Class Doc Comment
@@ -106,7 +107,9 @@ class ShipOrderLines200ResponsePickupPersonsInner extends BaseModel
     protected static array $getters = [
         'name' => 'getName',
         'phone' => 'getPhone'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class ShipOrderLines200ResponsePickupPersonsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

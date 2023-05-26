@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderLineType Class Doc Comment
@@ -178,7 +179,9 @@ class OrderLineType extends BaseModel
         'intentToCancel' => 'getIntentToCancel',
         'configId' => 'getConfigId',
         'sellerOrderId' => 'getSellerOrderId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -232,6 +235,7 @@ class OrderLineType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

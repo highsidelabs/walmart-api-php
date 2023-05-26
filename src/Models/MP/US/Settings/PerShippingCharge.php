@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PerShippingCharge Class Doc Comment
@@ -118,7 +119,9 @@ class PerShippingCharge extends BaseModel
         'shippingAndHandling' => 'getShippingAndHandling',
         'chargePerWeight' => 'getChargePerWeight',
         'chargePerItem' => 'getChargePerItem'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -147,6 +150,7 @@ class PerShippingCharge extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasure
      *

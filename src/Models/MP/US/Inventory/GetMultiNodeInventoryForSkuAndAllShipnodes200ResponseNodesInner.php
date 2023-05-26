@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner Class Doc Comment
@@ -122,7 +123,9 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
         'availToSellQty' => 'getAvailToSellQty',
         'errors' => 'getErrors',
         'reservedQty' => 'getReservedQty'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner extends Ba
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNode
      *

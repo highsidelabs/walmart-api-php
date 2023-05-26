@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AsnType Class Doc Comment
@@ -104,7 +105,9 @@ class AsnType extends BaseModel
     protected static array $getters = [
         'packageASN' => 'getPackageASN',
         'palletASN' => 'getPalletASN'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -131,6 +134,7 @@ class AsnType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets packageASN
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateLabel200ResponseErrorsInner Class Doc Comment
@@ -137,6 +138,8 @@ class CreateLabel200ResponseErrorsInner extends BaseModel
         'category' => 'getCategory',
         'httpStatus' => 'getHttpStatus'
     ];
+
+
     public const SEVERITY_EMERG = 'EMERG';
 
     public const SEVERITY_ALERT = 'ALERT';
@@ -234,6 +237,7 @@ class CreateLabel200ResponseErrorsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets info
      *

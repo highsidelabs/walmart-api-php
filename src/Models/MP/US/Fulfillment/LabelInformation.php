@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LabelInformation Class Doc Comment
@@ -146,7 +147,9 @@ class LabelInformation extends BaseModel
         'packageAsn' => 'getPackageAsn',
         'masterTrackingCode' => 'getMasterTrackingCode',
         'master' => 'getMaster'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -177,6 +180,7 @@ class LabelInformation extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets labelData
      *

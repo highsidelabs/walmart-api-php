@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\WS\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemDetails Class Doc Comment
@@ -100,7 +101,9 @@ class ItemDetails extends BaseModel
      */
     protected static array $getters = [
         'itemIngestionStatus' => 'getItemIngestionStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class ItemDetails extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets itemIngestionStatus
      *

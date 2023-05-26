@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PreviewShipmentItem Class Doc Comment
@@ -130,7 +131,9 @@ class PreviewShipmentItem extends BaseModel
         'itemQty' => 'getItemQty',
         'netTransferCharge' => 'getNetTransferCharge',
         'currencyUnit' => 'getCurrencyUnit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -158,6 +161,7 @@ class PreviewShipmentItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets vendorSku
      *

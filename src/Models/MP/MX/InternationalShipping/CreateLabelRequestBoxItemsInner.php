@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateLabelRequestBoxItemsInner Class Doc Comment
@@ -112,7 +113,9 @@ class CreateLabelRequestBoxItemsInner extends BaseModel
         'sku' => 'getSku',
         'quantity' => 'getQuantity',
         'countryOfOrigin' => 'getCountryOfOrigin'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -146,6 +149,7 @@ class CreateLabelRequestBoxItemsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

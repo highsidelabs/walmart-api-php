@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllItems200ResponseItemResponseInnerUnpublishedReasons Class Doc Comment
@@ -100,7 +101,9 @@ class GetAllItems200ResponseItemResponseInnerUnpublishedReasons extends BaseMode
      */
     protected static array $getters = [
         'reason' => 'getReason'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class GetAllItems200ResponseItemResponseInnerUnpublishedReasons extends BaseMode
 
         return $invalidProperties;
     }
+
     /**
      * Gets reason
      *

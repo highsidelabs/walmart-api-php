@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderLineStatusType Class Doc Comment
@@ -105,6 +106,8 @@ class OrderLineStatusType extends BaseModel
         'status' => 'getStatus',
         'statusQuantity' => 'getStatusQuantity'
     ];
+
+
     public const STATUS_PROCUREMENT_PURCHASE_ORDER_SHIPPED = 'PROCUREMENT_PURCHASE_ORDER_SHIPPED';
 
     public const STATUS_PROCUREMENT_TRANSFER_ORDER_SHIPPED = 'PROCUREMENT_TRANSFER_ORDER_SHIPPED';
@@ -305,6 +308,7 @@ class OrderLineStatusType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

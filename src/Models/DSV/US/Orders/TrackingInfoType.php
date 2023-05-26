@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TrackingInfoType Class Doc Comment
@@ -125,6 +126,8 @@ class TrackingInfoType extends BaseModel
         'trackingNumber' => 'getTrackingNumber',
         'trackingURL' => 'getTrackingURL'
     ];
+
+
     public const METHOD_CODE_STANDARD = 'Standard';
 
     public const METHOD_CODE_EXPRESS = 'Express';
@@ -202,6 +205,7 @@ class TrackingInfoType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipDateTime
      *

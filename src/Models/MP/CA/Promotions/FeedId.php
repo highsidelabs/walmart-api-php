@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedId Class Doc Comment
@@ -110,7 +111,9 @@ class FeedId extends BaseModel
         'feedId' => 'getFeedId',
         'additionalAttributes' => 'getAdditionalAttributes',
         'errors' => 'getErrors'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class FeedId extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets feedId
      *

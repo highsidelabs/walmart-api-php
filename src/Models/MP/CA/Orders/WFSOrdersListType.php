@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * WFSOrdersListType Class Doc Comment
@@ -104,7 +105,9 @@ class WFSOrdersListType extends BaseModel
     protected static array $getters = [
         'meta' => 'getMeta',
         'elements' => 'getElements'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class WFSOrdersListType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets meta
      *

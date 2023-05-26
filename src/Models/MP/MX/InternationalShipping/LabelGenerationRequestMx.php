@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LabelGenerationRequestMx Class Doc Comment
@@ -134,7 +135,9 @@ class LabelGenerationRequestMx extends BaseModel
         'purchaseOrderId' => 'getPurchaseOrderId',
         'carrierName' => 'getCarrierName',
         'carrierServiceType' => 'getCarrierServiceType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -184,6 +187,7 @@ class LabelGenerationRequestMx extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets packageType
      *

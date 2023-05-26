@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipmentLine Class Doc Comment
@@ -110,7 +111,9 @@ class ShipmentLine extends BaseModel
         'primeLineNo' => 'getPrimeLineNo',
         'shipmentLineNo' => 'getShipmentLineNo',
         'quantity' => 'getQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class ShipmentLine extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets primeLineNo
      *

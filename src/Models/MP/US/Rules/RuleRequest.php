@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RuleRequest Class Doc Comment
@@ -116,7 +117,9 @@ class RuleRequest extends BaseModel
         'description' => 'getDescription',
         'name' => 'getName',
         'priority' => 'getPriority'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class RuleRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets conditions
      *

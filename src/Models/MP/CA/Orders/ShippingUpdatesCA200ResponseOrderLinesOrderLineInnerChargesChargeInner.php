@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner Class Doc Comment
@@ -116,7 +117,9 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
         'chargeName' => 'getChargeName',
         'chargeAmount' => 'getChargeAmount',
         'tax' => 'getTax'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -151,6 +154,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
 
         return $invalidProperties;
     }
+
     /**
      * Gets chargeType
      *

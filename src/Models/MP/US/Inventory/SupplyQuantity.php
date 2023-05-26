@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * SupplyQuantity Class Doc Comment
@@ -107,6 +108,8 @@ class SupplyQuantity extends BaseModel
         'unit' => 'getUnit',
         'amount' => 'getAmount'
     ];
+
+
     public const UNIT_EACH = 'EACH';
 
     /**
@@ -160,6 +163,7 @@ class SupplyQuantity extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets unit
      *

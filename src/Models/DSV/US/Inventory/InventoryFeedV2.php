@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InventoryFeedV2 Class Doc Comment
@@ -104,7 +105,9 @@ class InventoryFeedV2 extends BaseModel
     protected static array $getters = [
         'inventoryFeedHeader' => 'getInventoryFeedHeader',
         'inventory' => 'getInventory'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class InventoryFeedV2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets inventoryFeedHeader
      *

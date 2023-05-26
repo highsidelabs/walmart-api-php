@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ServiceResponse Class Doc Comment
@@ -117,6 +118,8 @@ class ServiceResponse extends BaseModel
         'errors' => 'getErrors',
         'payload' => 'getPayload'
     ];
+
+
     public const STATUS_OK = 'OK';
 
     public const STATUS_CREATED = 'CREATED';
@@ -241,6 +244,7 @@ class ServiceResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

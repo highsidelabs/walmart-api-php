@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InventoriesDTO Class Doc Comment
@@ -110,7 +111,9 @@ class InventoriesDTO extends BaseModel
         'sku' => 'getSku',
         'gtin' => 'getGtin',
         'nodes' => 'getNodes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -141,6 +144,7 @@ class InventoriesDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

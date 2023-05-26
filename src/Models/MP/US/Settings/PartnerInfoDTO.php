@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerInfoDTO Class Doc Comment
@@ -130,7 +131,9 @@ class PartnerInfoDTO extends BaseModel
         'partnerStoreId' => 'getPartnerStoreId',
         'businessRegNumber' => 'getBusinessRegNumber',
         'countryOfIncorporation' => 'getCountryOfIncorporation'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -158,6 +161,7 @@ class PartnerInfoDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets partnerId
      *

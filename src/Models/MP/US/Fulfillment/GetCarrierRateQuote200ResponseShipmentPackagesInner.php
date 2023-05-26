@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCarrierRateQuote200ResponseShipmentPackagesInner Class Doc Comment
@@ -188,7 +189,9 @@ class GetCarrierRateQuote200ResponseShipmentPackagesInner extends BaseModel
         'packageType' => 'getPackageType',
         'noOfPackages' => 'getNoOfPackages',
         'stackable' => 'getStackable'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -287,6 +290,7 @@ class GetCarrierRateQuote200ResponseShipmentPackagesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets packageSequenceNumber
      *

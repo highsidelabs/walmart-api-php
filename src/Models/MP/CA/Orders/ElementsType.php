@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ElementsType Class Doc Comment
@@ -100,7 +101,9 @@ class ElementsType extends BaseModel
      */
     protected static array $getters = [
         'order' => 'getOrder'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class ElementsType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets order
      *

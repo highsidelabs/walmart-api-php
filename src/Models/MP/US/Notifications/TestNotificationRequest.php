@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Notifications;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TestNotificationRequest Class Doc Comment
@@ -128,7 +129,9 @@ class TestNotificationRequest extends BaseModel
         'eventUrl' => 'getEventUrl',
         'authDetails' => 'getAuthDetails',
         'headers' => 'getHeaders'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -168,6 +171,7 @@ class TestNotificationRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets eventType
      *

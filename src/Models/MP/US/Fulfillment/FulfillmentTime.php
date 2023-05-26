@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FulfillmentTime Class Doc Comment
@@ -100,7 +101,9 @@ class FulfillmentTime extends BaseModel
      */
     protected static array $getters = [
         'date' => 'getDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class FulfillmentTime extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets date
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1 Class Doc Comment
@@ -104,7 +105,9 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1 extends BaseM
     protected static array $getters = [
         'configurationName' => 'getConfigurationName',
         'configuration' => 'getConfiguration'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1 extends BaseM
 
         return $invalidProperties;
     }
+
     /**
      * Gets configurationName
      *

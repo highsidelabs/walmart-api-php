@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetProSellerBadgeInfo200ResponseMeetsCriteria Class Doc Comment
@@ -124,7 +125,9 @@ class GetProSellerBadgeInfo200ResponseMeetsCriteria extends BaseModel
         'isCancellationCriteriaMet' => 'getIsCancellationCriteriaMet',
         'isListingQualityCatalogCriteriaMet' => 'getIsListingQualityCatalogCriteriaMet',
         'isActiveDaysCriteriaMet' => 'getIsActiveDaysCriteriaMet'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -151,6 +154,7 @@ class GetProSellerBadgeInfo200ResponseMeetsCriteria extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets isOrdersCriteriaMet
      *

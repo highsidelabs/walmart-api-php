@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes Class Doc Comment
@@ -118,7 +119,9 @@ class GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes extends BaseMo
         'buId' => 'getBuId',
         'pageCount' => 'getPageCount',
         'totalCount' => 'getTotalCount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes extends BaseMo
 
         return $invalidProperties;
     }
+
     /**
      * Gets martId
      *

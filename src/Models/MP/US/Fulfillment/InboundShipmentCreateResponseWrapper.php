@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InboundShipmentCreateResponseWrapper Class Doc Comment
@@ -118,7 +119,9 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
         'shipToAddress' => 'getShipToAddress',
         'shipmentItems' => 'getShipmentItems',
         'expectedDeliveryDate' => 'getExpectedDeliveryDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

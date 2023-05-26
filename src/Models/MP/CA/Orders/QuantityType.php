@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * QuantityType Class Doc Comment
@@ -106,7 +107,9 @@ class QuantityType extends BaseModel
     protected static array $getters = [
         'unitOfMeasurement' => 'getUnitOfMeasurement',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class QuantityType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasurement
      *

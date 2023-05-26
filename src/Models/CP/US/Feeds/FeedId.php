@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\CP\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedId Class Doc Comment
@@ -98,7 +99,9 @@ class FeedId extends BaseModel
      */
     protected static array $getters = [
         'feedId' => 'getFeedId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class FeedId extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets feedId
      *

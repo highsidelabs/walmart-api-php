@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner Class Doc Comment
@@ -268,7 +269,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner extends BaseMo
         'statusTime' => 'getStatusTime',
         'currentDeliveryStatus' => 'getCurrentDeliveryStatus',
         'currentRefundStatus' => 'getCurrentRefundStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -319,6 +322,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner extends BaseMo
 
         return $invalidProperties;
     }
+
     /**
      * Gets returnOrderLineNumber
      *

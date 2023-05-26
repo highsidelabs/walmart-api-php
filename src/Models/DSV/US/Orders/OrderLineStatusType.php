@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderLineStatusType Class Doc Comment
@@ -119,6 +120,8 @@ class OrderLineStatusType extends BaseModel
         'cancellationReason' => 'getCancellationReason',
         'trackingInfo' => 'getTrackingInfo'
     ];
+
+
     public const STATUS_CREATED = 'Created';
 
     public const STATUS_ACKNOWLEDGED = 'Acknowledged';
@@ -189,6 +192,7 @@ class OrderLineStatusType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

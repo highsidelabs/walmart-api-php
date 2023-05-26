@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MXBoxItemResponse Class Doc Comment
@@ -106,7 +107,9 @@ class MXBoxItemResponse extends BaseModel
     protected static array $getters = [
         'sku' => 'getSku',
         'quantity' => 'getQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class MXBoxItemResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

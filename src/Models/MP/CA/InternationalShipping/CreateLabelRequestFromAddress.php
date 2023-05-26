@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateLabelRequestFromAddress Class Doc Comment
@@ -154,7 +155,9 @@ class CreateLabelRequestFromAddress extends BaseModel
         'country' => 'getCountry',
         'phone' => 'getPhone',
         'email' => 'getEmail'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -207,6 +210,7 @@ class CreateLabelRequestFromAddress extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets contactName
      *

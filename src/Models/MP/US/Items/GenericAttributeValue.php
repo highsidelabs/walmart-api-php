@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GenericAttributeValue Class Doc Comment
@@ -122,7 +123,9 @@ class GenericAttributeValue extends BaseModel
         'source' => 'getSource',
         'rank' => 'getRank',
         'isVariant' => 'getIsVariant'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -152,6 +155,7 @@ class GenericAttributeValue extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets value
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner Class Doc Comment
@@ -118,7 +119,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarr
         'carrierName' => 'getCarrierName',
         'serviceType' => 'getServiceType',
         'trackingNo' => 'getTrackingNo'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarr
 
         return $invalidProperties;
     }
+
     /**
      * Gets carrierId
      *

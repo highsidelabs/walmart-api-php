@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateMultiNodeInventoryRequestInventoriesNodesInner Class Doc Comment
@@ -104,7 +105,9 @@ class UpdateMultiNodeInventoryRequestInventoriesNodesInner extends BaseModel
     protected static array $getters = [
         'shipNode' => 'getShipNode',
         'inputQty' => 'getInputQty'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class UpdateMultiNodeInventoryRequestInventoriesNodesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNode
      *

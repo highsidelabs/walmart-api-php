@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice Class Doc Comment
@@ -134,7 +135,9 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice 
         'perUnitValue' => 'getPerUnitValue',
         'minUnitValue' => 'getMinUnitValue',
         'maxUnitValue' => 'getMaxUnitValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice 
 
         return $invalidProperties;
     }
+
     /**
      * Gets value
      *

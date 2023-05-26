@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity Class Doc Comment
@@ -106,7 +107,9 @@ class PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQ
     protected static array $getters = [
         'measurementValue' => 'getMeasurementValue',
         'unitOfMeasure' => 'getUnitOfMeasure'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -146,6 +149,7 @@ class PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQ
 
         return $invalidProperties;
     }
+
     /**
      * Gets measurementValue
      *

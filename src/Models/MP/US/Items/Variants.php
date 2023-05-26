@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Variants Class Doc Comment
@@ -104,7 +105,9 @@ class Variants extends BaseModel
     protected static array $getters = [
         'variantMeta' => 'getVariantMeta',
         'variantData' => 'getVariantData'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class Variants extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets variantMeta
      *

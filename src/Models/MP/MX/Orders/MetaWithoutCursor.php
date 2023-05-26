@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MetaWithoutCursor Class Doc Comment
@@ -104,7 +105,9 @@ class MetaWithoutCursor extends BaseModel
     protected static array $getters = [
         'totalCount' => 'getTotalCount',
         'limit' => 'getLimit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class MetaWithoutCursor extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

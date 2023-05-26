@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LagTimeFeedHeader Class Doc Comment
@@ -124,7 +125,9 @@ class LagTimeFeedHeader extends BaseModel
         'feedDate' => 'getFeedDate',
         'locale' => 'getLocale',
         'businessUnit' => 'getBusinessUnit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -166,6 +169,7 @@ class LagTimeFeedHeader extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets version
      *

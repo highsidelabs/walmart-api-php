@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes Class Doc Comment
@@ -134,7 +135,9 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayC
         'isReducedPrice' => 'getIsReducedPrice',
         'isEligibleForAssociateDiscount' => 'getIsEligibleForAssociateDiscount',
         'isStrikethrough' => 'getIsStrikethrough'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -163,6 +166,7 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayC
 
         return $invalidProperties;
     }
+
     /**
      * Gets isClearance
      *

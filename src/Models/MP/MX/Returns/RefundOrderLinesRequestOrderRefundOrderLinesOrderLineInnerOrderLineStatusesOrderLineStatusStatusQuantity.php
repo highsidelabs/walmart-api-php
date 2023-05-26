@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusStatusQuantity Class Doc Comment
@@ -104,7 +105,9 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuse
     protected static array $getters = [
         'unitOfMeasurement' => 'getUnitOfMeasurement',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatuse
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasurement
      *

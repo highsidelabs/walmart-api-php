@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Events;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromoItemResponse Class Doc Comment
@@ -207,6 +208,8 @@ class PromoItemResponse extends BaseModel
         'confirmedEventEndDate' => 'getConfirmedEventEndDate',
         'feedback' => 'getFeedback'
     ];
+
+
     public const EVENT_TYPE_FLASH = 'Flash';
 
     public const EVENT_TYPE_DAILY = 'Daily';
@@ -313,6 +316,7 @@ class PromoItemResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets eventId
      *

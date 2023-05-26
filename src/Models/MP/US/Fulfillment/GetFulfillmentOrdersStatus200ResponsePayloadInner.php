@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponsePayloadInner Class Doc Comment
@@ -142,7 +143,9 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInner extends BaseModel
         'buyerInfo' => 'getBuyerInfo',
         'shipments' => 'getShipments',
         'orderLines' => 'getOrderLines'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -172,6 +175,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderChannelId
      *

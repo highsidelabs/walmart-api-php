@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner Class Doc Comment
@@ -112,7 +113,9 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
         'regionCode' => 'getRegionCode',
         'regionName' => 'getRegionName',
         'subRegions' => 'getSubRegions'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -140,6 +143,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
 
         return $invalidProperties;
     }
+
     /**
      * Gets regionCode
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingInfo Class Doc Comment
@@ -112,7 +113,9 @@ class ShippingInfo extends BaseModel
         'phone' => 'getPhone',
         'estimatedDeliveryDate' => 'getEstimatedDeliveryDate',
         'postalAddress' => 'getPostalAddress'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class ShippingInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets phone
      *

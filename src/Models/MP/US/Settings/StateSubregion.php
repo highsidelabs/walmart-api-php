@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * StateSubregion Class Doc Comment
@@ -104,7 +105,9 @@ class StateSubregion extends BaseModel
     protected static array $getters = [
         'stateSubregionCode' => 'getStateSubregionCode',
         'stateSubregionName' => 'getStateSubregionName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -131,6 +134,7 @@ class StateSubregion extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets stateSubregionCode
      *

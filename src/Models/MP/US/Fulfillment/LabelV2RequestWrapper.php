@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * LabelV2RequestWrapper Class Doc Comment
@@ -116,7 +117,9 @@ class LabelV2RequestWrapper extends BaseModel
         'labelSize' => 'getLabelSize',
         'labelFormat' => 'getLabelFormat',
         'loadTypes' => 'getLoadTypes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -145,6 +148,7 @@ class LabelV2RequestWrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements Class Doc Comment
@@ -98,7 +99,9 @@ class GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements extends B
      */
     protected static array $getters = [
         'inventories' => 'getInventories'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements extends B
 
         return $invalidProperties;
     }
+
     /**
      * Gets inventories
      *

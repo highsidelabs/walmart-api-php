@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CustomerShipToAddress Class Doc Comment
@@ -106,7 +107,9 @@ class CustomerShipToAddress extends BaseModel
     protected static array $getters = [
         'address' => 'getAddress',
         'name' => 'getName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class CustomerShipToAddress extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets address
      *

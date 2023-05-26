@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerProgramPerformanceRes Class Doc Comment
@@ -146,7 +147,9 @@ class PartnerProgramPerformanceRes extends BaseModel
         '_30dAY' => 'get30dAY',
         '_60dAY' => 'get60dAY',
         '_90dAY' => 'get90dAY'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -177,6 +180,7 @@ class PartnerProgramPerformanceRes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets statusCode
      *

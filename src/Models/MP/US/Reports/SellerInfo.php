@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * SellerInfo Class Doc Comment
@@ -116,7 +117,9 @@ class SellerInfo extends BaseModel
         'sellerStatus' => 'getSellerStatus',
         'paymentStatus' => 'getPaymentStatus',
         'tenure' => 'getTenure'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class SellerInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets storeFrontUrl
      *

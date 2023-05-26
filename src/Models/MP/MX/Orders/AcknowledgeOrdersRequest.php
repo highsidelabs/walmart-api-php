@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AcknowledgeOrdersRequest Class Doc Comment
@@ -98,7 +99,9 @@ class AcknowledgeOrdersRequest extends BaseModel
      */
     protected static array $getters = [
         'orderAcknowledge' => 'getOrderAcknowledge'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class AcknowledgeOrdersRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderAcknowledge
      *

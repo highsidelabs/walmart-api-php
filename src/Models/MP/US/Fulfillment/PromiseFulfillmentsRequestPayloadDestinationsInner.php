@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillmentsRequestPayloadDestinationsInner Class Doc Comment
@@ -106,7 +107,9 @@ class PromiseFulfillmentsRequestPayloadDestinationsInner extends BaseModel
     protected static array $getters = [
         'address' => 'getAddress',
         'fulfillmentType' => 'getFulfillmentType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class PromiseFulfillmentsRequestPayloadDestinationsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets address
      *

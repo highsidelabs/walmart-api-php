@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderDate Class Doc Comment
@@ -112,7 +113,9 @@ class OrderDate extends BaseModel
         'actualDate' => 'getActualDate',
         'dateTypeId' => 'getDateTypeId',
         'expectedDate' => 'getExpectedDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class OrderDate extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets actualDate
      *

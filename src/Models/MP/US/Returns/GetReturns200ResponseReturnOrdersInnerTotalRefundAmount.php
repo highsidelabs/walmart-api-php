@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerTotalRefundAmount Class Doc Comment
@@ -106,7 +107,9 @@ class GetReturns200ResponseReturnOrdersInnerTotalRefundAmount extends BaseModel
     protected static array $getters = [
         'currencyAmount' => 'getCurrencyAmount',
         'currencyUnit' => 'getCurrencyUnit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class GetReturns200ResponseReturnOrdersInnerTotalRefundAmount extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currencyAmount
      *

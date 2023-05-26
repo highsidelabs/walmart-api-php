@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetShipmentItemsDTO Class Doc Comment
@@ -104,7 +105,9 @@ class GetShipmentItemsDTO extends BaseModel
     protected static array $getters = [
         'headers' => 'getHeaders',
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetShipmentItemsDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets headers
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\CP\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemDetailsItemIngestionStatusInner Class Doc Comment
@@ -131,6 +132,8 @@ class ItemDetailsItemIngestionStatusInner extends BaseModel
         'ingestionStatus' => 'getIngestionStatus',
         'ingestionErrors' => 'getIngestionErrors'
     ];
+
+
     public const INGESTION_STATUS_INPROGRESS = 'INPROGRESS';
 
     public const INGESTION_STATUS_SUCCESS = 'SUCCESS';
@@ -197,6 +200,7 @@ class ItemDetailsItemIngestionStatusInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets martId
      *

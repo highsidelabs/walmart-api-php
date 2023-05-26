@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CustomerName Class Doc Comment
@@ -106,7 +107,9 @@ class CustomerName extends BaseModel
     protected static array $getters = [
         'firstName' => 'getFirstName',
         'lastName' => 'getLastName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class CustomerName extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets firstName
      *

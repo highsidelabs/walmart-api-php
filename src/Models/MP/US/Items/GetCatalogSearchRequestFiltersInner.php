@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCatalogSearchRequestFiltersInner Class Doc Comment
@@ -111,6 +112,8 @@ class GetCatalogSearchRequestFiltersInner extends BaseModel
         'op' => 'getOp',
         'values' => 'getValues'
     ];
+
+
     public const FIELD_NUM_REVIEWS = 'num_reviews';
 
     public const FIELD_CUSTOMER_RATING = 'customerRating';
@@ -213,6 +216,7 @@ class GetCatalogSearchRequestFiltersInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllFeedStatuses200ResponseResults Class Doc Comment
@@ -100,7 +101,9 @@ class GetAllFeedStatuses200ResponseResults extends BaseModel
      */
     protected static array $getters = [
         'feed' => 'getFeed'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class GetAllFeedStatuses200ResponseResults extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets feed
      *

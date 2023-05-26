@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Cancellations Class Doc Comment
@@ -110,7 +111,9 @@ class Cancellations extends BaseModel
         'defectedOrder' => 'getDefectedOrder',
         'totalOrder' => 'getTotalOrder',
         'rate' => 'getRate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class Cancellations extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets defectedOrder
      *

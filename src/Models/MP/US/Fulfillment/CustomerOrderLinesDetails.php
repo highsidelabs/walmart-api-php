@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CustomerOrderLinesDetails Class Doc Comment
@@ -142,7 +143,9 @@ class CustomerOrderLinesDetails extends BaseModel
         'orderProduct' => 'getOrderProduct',
         'orderedQty' => 'getOrderedQty',
         'customerShipToAddress' => 'getCustomerShipToAddress'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -172,6 +175,7 @@ class CustomerOrderLinesDetails extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets fulfillmentType
      *

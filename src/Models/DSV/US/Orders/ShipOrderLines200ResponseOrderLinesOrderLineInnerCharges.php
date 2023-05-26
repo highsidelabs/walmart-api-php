@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges Class Doc Comment
@@ -100,7 +101,9 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges extends BaseModel
      */
     protected static array $getters = [
         'charge' => 'getCharge'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets charge
      *

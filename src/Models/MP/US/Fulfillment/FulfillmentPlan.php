@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FulfillmentPlan Class Doc Comment
@@ -100,7 +101,9 @@ class FulfillmentPlan extends BaseModel
      */
     protected static array $getters = [
         'fulfillmentModules' => 'getFulfillmentModules'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class FulfillmentPlan extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets fulfillmentModules
      *

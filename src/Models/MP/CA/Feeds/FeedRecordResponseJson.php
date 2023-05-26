@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedRecordResponseJson Class Doc Comment
@@ -122,7 +123,9 @@ class FeedRecordResponseJson extends BaseModel
         'offset' => 'getOffset',
         'limit' => 'getLimit',
         'results' => 'getResults'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class FeedRecordResponseJson extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets errors
      *

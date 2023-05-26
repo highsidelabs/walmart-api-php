@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner Class Doc Comment
@@ -116,7 +117,9 @@ class GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner extends Base
         'availToSellQty' => 'getAvailToSellQty',
         'onHandQty' => 'getOnHandQty',
         'shipNodeType' => 'getShipNodeType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner extends Base
 
         return $invalidProperties;
     }
+
     /**
      * Gets modifiedDate
      *

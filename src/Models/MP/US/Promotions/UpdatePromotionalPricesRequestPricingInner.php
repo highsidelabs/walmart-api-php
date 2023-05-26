@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdatePromotionalPricesRequestPricingInner Class Doc Comment
@@ -147,6 +148,8 @@ class UpdatePromotionalPricesRequestPricingInner extends BaseModel
         'comparisonPrice' => 'getComparisonPrice',
         'priceDisplayCodes' => 'getPriceDisplayCodes'
     ];
+
+
     public const PROCESS_MODE_UPSERT = 'UPSERT';
 
     public const PROCESS_MODE_DELETE = 'DELETE';
@@ -291,6 +294,7 @@ class UpdatePromotionalPricesRequestPricingInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets effectiveDate
      *

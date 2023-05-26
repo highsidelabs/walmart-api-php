@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPromotionalPrices200ResponsePayloadPricingListPricingInner Class Doc Comment
@@ -165,6 +166,8 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInner extends Base
         'processMode' => 'getProcessMode',
         'pid' => 'getPid'
     ];
+
+
     public const CURRENT_PRICE_TYPE_BASE = 'BASE';
 
     public const CURRENT_PRICE_TYPE_REDUCED = 'REDUCED';
@@ -315,6 +318,7 @@ class GetPromotionalPrices200ResponsePayloadPricingListPricingInner extends Base
 
         return $invalidProperties;
     }
+
     /**
      * Gets currentPrice
      *

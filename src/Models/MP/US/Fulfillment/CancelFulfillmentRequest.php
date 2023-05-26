@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CancelFulfillmentRequest Class Doc Comment
@@ -104,7 +105,9 @@ class CancelFulfillmentRequest extends BaseModel
     protected static array $getters = [
         'header' => 'getHeader',
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -131,6 +134,7 @@ class CancelFulfillmentRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets header
      *

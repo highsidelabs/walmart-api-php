@@ -258,6 +258,16 @@ class AuthenticationApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -286,17 +296,6 @@ class AuthenticationApi extends BaseApi
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
@@ -537,6 +536,16 @@ class AuthenticationApi extends BaseApi
             $multipart
         );
 
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
         // for model (json/xml)
         if (count($formParams) > 0) {
             if ($multipart) {
@@ -565,17 +574,6 @@ class AuthenticationApi extends BaseApi
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
         }
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
 
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);

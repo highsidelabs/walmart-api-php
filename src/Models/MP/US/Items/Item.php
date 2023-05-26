@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Item Class Doc Comment
@@ -152,7 +153,9 @@ class Item extends BaseModel
         'brand' => 'getBrand',
         'productType' => 'getProductType',
         'properties' => 'getProperties'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -184,6 +187,7 @@ class Item extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets itemId
      *

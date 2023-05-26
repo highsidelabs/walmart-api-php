@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner Class Doc Comment
@@ -125,6 +126,8 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
         'trackingInfo' => 'getTrackingInfo',
         'returnCenterAddress' => 'getReturnCenterAddress'
     ];
+
+
     public const STATUS_CREATED = 'Created';
 
     public const STATUS_ACKNOWLEDGED = 'Acknowledged';
@@ -196,6 +199,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerOrderLineStatusesOr
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipmentAdditionalDate Class Doc Comment
@@ -122,7 +123,9 @@ class ShipmentAdditionalDate extends BaseModel
         'shipmentACKDate' => 'getShipmentACKDate',
         'expectedShipmentShippedDate' => 'getExpectedShipmentShippedDate',
         'shipmentShippedDate' => 'getShipmentShippedDate'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class ShipmentAdditionalDate extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentActualCreatedDate
      *

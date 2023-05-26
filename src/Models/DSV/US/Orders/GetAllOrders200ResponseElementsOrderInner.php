@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseElementsOrderInner Class Doc Comment
@@ -130,7 +131,9 @@ class GetAllOrders200ResponseElementsOrderInner extends BaseModel
         'orderDate' => 'getOrderDate',
         'shippingInfo' => 'getShippingInfo',
         'orderLines' => 'getOrderLines'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -176,6 +179,7 @@ class GetAllOrders200ResponseElementsOrderInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets purchaseOrderId
      *

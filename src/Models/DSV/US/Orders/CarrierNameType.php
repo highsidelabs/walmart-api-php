@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierNameType Class Doc Comment
@@ -107,6 +108,8 @@ class CarrierNameType extends BaseModel
         'otherCarrier' => 'getOtherCarrier',
         'carrier' => 'getCarrier'
     ];
+
+
     public const CARRIER_UPS = 'UPS';
 
     public const CARRIER_USPS = 'USPS';
@@ -193,6 +196,7 @@ class CarrierNameType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets otherCarrier
      *

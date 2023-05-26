@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration Class Doc Comment
@@ -98,7 +99,9 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration 
      */
     protected static array $getters = [
         'categories' => 'getCategories'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration 
 
         return $invalidProperties;
     }
+
     /**
      * Gets categories
      *

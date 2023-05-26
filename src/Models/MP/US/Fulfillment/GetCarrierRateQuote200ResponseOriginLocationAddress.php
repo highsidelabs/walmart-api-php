@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCarrierRateQuote200ResponseOriginLocationAddress Class Doc Comment
@@ -134,7 +135,9 @@ class GetCarrierRateQuote200ResponseOriginLocationAddress extends BaseModel
         'countryCode' => 'getCountryCode',
         'postalCode' => 'getPostalCode',
         'phone' => 'getPhone'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -178,6 +181,7 @@ class GetCarrierRateQuote200ResponseOriginLocationAddress extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets addressLine1
      *

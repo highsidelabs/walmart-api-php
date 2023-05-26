@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipOrderLines200ResponsePickupPersonsInnerPhone Class Doc Comment
@@ -135,6 +136,8 @@ class ShipOrderLines200ResponsePickupPersonsInnerPhone extends BaseModel
         'subscriberNumber' => 'getSubscriberNumber',
         'countryCode' => 'getCountryCode'
     ];
+
+
     public const TYPE_MOBILE = 'MOBILE';
 
     public const TYPE_HOME = 'HOME';
@@ -193,6 +196,7 @@ class ShipOrderLines200ResponsePickupPersonsInnerPhone extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PostPurchaseQuality Class Doc Comment
@@ -106,7 +107,9 @@ class PostPurchaseQuality extends BaseModel
     protected static array $getters = [
         'defectRatio' => 'getDefectRatio',
         'itemDefectCnt' => 'getItemDefectCnt'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class PostPurchaseQuality extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets defectRatio
      *

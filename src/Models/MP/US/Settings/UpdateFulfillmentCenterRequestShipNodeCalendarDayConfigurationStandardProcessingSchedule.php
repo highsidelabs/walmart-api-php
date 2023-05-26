@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule Class Doc Comment
@@ -136,7 +137,9 @@ class UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProc
         'thursday' => 'getThursday',
         'friday' => 'getFriday',
         'saturday' => 'getSaturday'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -186,6 +189,7 @@ class UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProc
 
         return $invalidProperties;
     }
+
     /**
      * Gets sunday
      *

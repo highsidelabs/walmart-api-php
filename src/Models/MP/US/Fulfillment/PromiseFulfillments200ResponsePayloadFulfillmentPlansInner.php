@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayloadFulfillmentPlansInner Class Doc Comment
@@ -100,7 +101,9 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInner extends BaseMod
      */
     protected static array $getters = [
         'fulfillmentModules' => 'getFulfillmentModules'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class PromiseFulfillments200ResponsePayloadFulfillmentPlansInner extends BaseMod
 
         return $invalidProperties;
     }
+
     /**
      * Gets fulfillmentModules
      *

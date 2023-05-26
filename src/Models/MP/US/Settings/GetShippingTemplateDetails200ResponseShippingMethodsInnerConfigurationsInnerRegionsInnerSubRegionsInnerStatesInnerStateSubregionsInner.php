@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInnerStatesInnerStateSubregionsInner Class Doc Comment
@@ -104,7 +105,9 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
     protected static array $getters = [
         'stateSubregionCode' => 'getStateSubregionCode',
         'stateSubregionName' => 'getStateSubregionName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -131,6 +134,7 @@ class GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInn
 
         return $invalidProperties;
     }
+
     /**
      * Gets stateSubregionCode
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInner Class Doc Comment
@@ -124,7 +125,9 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInner extends BaseMo
         'sellerOrderId' => 'getSellerOrderId',
         'orderLineStatuses' => 'getOrderLineStatuses',
         'sellerOrderNo' => 'getSellerOrderNo'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -160,6 +163,7 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInner extends BaseMo
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

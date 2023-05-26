@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ThirdPartyShipNode2 Class Doc Comment
@@ -104,7 +105,9 @@ class ThirdPartyShipNode2 extends BaseModel
     protected static array $getters = [
         'shipNode' => 'getShipNode',
         'shipNodeName' => 'getShipNodeName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ThirdPartyShipNode2 extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNode
      *

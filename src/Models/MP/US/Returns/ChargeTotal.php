@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ChargeTotal Class Doc Comment
@@ -106,7 +107,9 @@ class ChargeTotal extends BaseModel
     protected static array $getters = [
         'name' => 'getName',
         'value' => 'getValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class ChargeTotal extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

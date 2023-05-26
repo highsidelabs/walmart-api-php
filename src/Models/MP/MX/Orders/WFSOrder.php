@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * WFSOrder Class Doc Comment
@@ -170,7 +171,9 @@ class WFSOrder extends BaseModel
         'rfc' => 'getRfc',
         'paymentMethod' => 'getPaymentMethod',
         'cfdi' => 'getCfdi'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -205,6 +208,7 @@ class WFSOrder extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets customerOrderId
      *

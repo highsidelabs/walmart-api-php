@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetUnpublishedItemsPayload Class Doc Comment
@@ -206,7 +207,9 @@ class GetUnpublishedItemsPayload extends BaseModel
         'productType' => 'getProductType',
         'offerEndDate' => 'getOfferEndDate',
         'publishStatus' => 'getPublishStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -247,6 +250,7 @@ class GetUnpublishedItemsPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets gtin
      *

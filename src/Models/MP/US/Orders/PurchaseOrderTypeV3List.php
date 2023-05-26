@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PurchaseOrderTypeV3List Class Doc Comment
@@ -112,7 +113,9 @@ class PurchaseOrderTypeV3List extends BaseModel
         'errors' => 'getErrors',
         'meta' => 'getMeta',
         'elements' => 'getElements'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -143,6 +146,7 @@ class PurchaseOrderTypeV3List extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets errors
      *

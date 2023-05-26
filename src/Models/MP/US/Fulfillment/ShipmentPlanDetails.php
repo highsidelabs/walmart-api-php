@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipmentPlanDetails Class Doc Comment
@@ -172,7 +173,9 @@ class ShipmentPlanDetails extends BaseModel
         'actualDeliveryDate' => 'getActualDeliveryDate',
         'trackingNo' => 'getTrackingNo',
         'carrierName' => 'getCarrierName'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -207,6 +210,7 @@ class ShipmentPlanDetails extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets inboundOrderId
      *

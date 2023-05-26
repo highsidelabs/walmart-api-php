@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesRequestShipmentsInnerShipmentLinesInnerQuantity Class Doc Comment
@@ -106,7 +107,9 @@ class ShippingUpdatesRequestShipmentsInnerShipmentLinesInnerQuantity extends Bas
     protected static array $getters = [
         'unitOfMeasurement' => 'getUnitOfMeasurement',
         'amount' => 'getAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class ShippingUpdatesRequestShipmentsInnerShipmentLinesInnerQuantity extends Bas
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasurement
      *

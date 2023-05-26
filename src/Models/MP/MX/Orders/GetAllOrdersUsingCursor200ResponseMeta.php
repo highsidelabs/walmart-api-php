@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrdersUsingCursor200ResponseMeta Class Doc Comment
@@ -112,7 +113,9 @@ class GetAllOrdersUsingCursor200ResponseMeta extends BaseModel
         'totalCount' => 'getTotalCount',
         'limit' => 'getLimit',
         'nextCursorMark' => 'getNextCursorMark'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class GetAllOrdersUsingCursor200ResponseMeta extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

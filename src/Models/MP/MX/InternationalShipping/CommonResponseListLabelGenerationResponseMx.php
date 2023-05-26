@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CommonResponseListLabelGenerationResponseMx Class Doc Comment
@@ -104,7 +105,9 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     protected static array $getters = [
         'data' => 'getData',
         'errors' => 'getErrors'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets data
      *

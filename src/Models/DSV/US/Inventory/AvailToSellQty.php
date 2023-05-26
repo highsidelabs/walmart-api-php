@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AvailToSellQty Class Doc Comment
@@ -107,6 +108,8 @@ class AvailToSellQty extends BaseModel
         'unit' => 'getUnit',
         'amount' => 'getAmount'
     ];
+
+
     public const UNIT_EACH = 'EACH';
 
     /**
@@ -157,6 +160,7 @@ class AvailToSellQty extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets unit
      *

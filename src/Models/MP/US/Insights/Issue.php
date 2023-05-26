@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Issue Class Doc Comment
@@ -110,7 +111,9 @@ class Issue extends BaseModel
         'date' => 'getDate',
         'publishFlag' => 'getPublishFlag',
         'transactableFlag' => 'getTransactableFlag'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class Issue extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets date
      *

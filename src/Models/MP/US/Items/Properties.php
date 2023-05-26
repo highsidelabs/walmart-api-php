@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Properties Class Doc Comment
@@ -122,7 +123,9 @@ class Properties extends BaseModel
         'categories' => 'getCategories',
         'variants' => 'getVariants',
         'nextDayEligible' => 'getNextDayEligible'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class Properties extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets variantItemsNum
      *

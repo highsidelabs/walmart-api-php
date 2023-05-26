@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AdditionalAttributes Class Doc Comment
@@ -98,7 +99,9 @@ class AdditionalAttributes extends BaseModel
      */
     protected static array $getters = [
         'additionalAttribute' => 'getAdditionalAttribute'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class AdditionalAttributes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets additionalAttribute
      *

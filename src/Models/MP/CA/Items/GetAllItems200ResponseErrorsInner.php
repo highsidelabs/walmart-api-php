@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllItems200ResponseErrorsInner Class Doc Comment
@@ -165,6 +166,8 @@ class GetAllItems200ResponseErrorsInner extends BaseModel
         'serviceName' => 'getServiceName',
         'gatewayErrorCategory' => 'getGatewayErrorCategory'
     ];
+
+
     public const SEVERITY_INFO = 'INFO';
 
     public const SEVERITY_WARN = 'WARN';
@@ -294,6 +297,7 @@ class GetAllItems200ResponseErrorsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets code
      *

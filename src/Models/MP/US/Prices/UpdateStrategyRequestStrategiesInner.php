@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateStrategyRequestStrategiesInner Class Doc Comment
@@ -111,6 +112,8 @@ class UpdateStrategyRequestStrategiesInner extends BaseModel
         'adjustmentType' => 'getAdjustmentType',
         'adjustmentValue' => 'getAdjustmentValue'
     ];
+
+
     public const STRATEGY_TYPE_BUY_BOX_PRICE = 'Buy Box Price';
 
     public const STRATEGY_TYPE_EXTERNAL_PRICE = 'External Price';
@@ -192,6 +195,7 @@ class UpdateStrategyRequestStrategiesInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets strategyType
      *

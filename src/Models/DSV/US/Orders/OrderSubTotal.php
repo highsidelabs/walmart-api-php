@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderSubTotal Class Doc Comment
@@ -104,7 +105,9 @@ class OrderSubTotal extends BaseModel
     protected static array $getters = [
         'subTotalType' => 'getSubTotalType',
         'totalAmount' => 'getTotalAmount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class OrderSubTotal extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets subTotalType
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CalendarDayConfiguration Class Doc Comment
@@ -112,7 +113,9 @@ class CalendarDayConfiguration extends BaseModel
         'standardProcessingSchedule' => 'getStandardProcessingSchedule',
         'additionalDaysOff' => 'getAdditionalDaysOff',
         'carrierWeekendCalendar' => 'getCarrierWeekendCalendar'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -143,6 +146,7 @@ class CalendarDayConfiguration extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets standardProcessingSchedule
      *

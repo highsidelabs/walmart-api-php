@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * SubCategory Class Doc Comment
@@ -106,7 +107,9 @@ class SubCategory extends BaseModel
     protected static array $getters = [
         'subCategoryName' => 'getSubCategoryName',
         'subCategoryId' => 'getSubCategoryId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class SubCategory extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets subCategoryName
      *

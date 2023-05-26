@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetListingQualityScore200ResponsePayload Class Doc Comment
@@ -110,7 +111,9 @@ class GetListingQualityScore200ResponsePayload extends BaseModel
         'overAllQuality' => 'getOverAllQuality',
         'score' => 'getScore',
         'postPurchaseQuality' => 'getPostPurchaseQuality'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class GetListingQualityScore200ResponsePayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets overAllQuality
      *

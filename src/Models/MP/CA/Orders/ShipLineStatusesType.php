@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipLineStatusesType Class Doc Comment
@@ -100,7 +101,9 @@ class ShipLineStatusesType extends BaseModel
      */
     protected static array $getters = [
         'orderLineStatus' => 'getOrderLineStatus'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -126,6 +129,7 @@ class ShipLineStatusesType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderLineStatus
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Rebate Class Doc Comment
@@ -123,6 +124,8 @@ class Rebate extends BaseModel
         'startDate' => 'getStartDate',
         'endDate' => 'getEndDate'
     ];
+
+
     public const REBATE_TYPE_AMOUNT = 'AMOUNT';
 
     public const REBATE_TYPE_PRODUCT = 'PRODUCT';
@@ -179,6 +182,7 @@ class Rebate extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets rebateAmt
      *

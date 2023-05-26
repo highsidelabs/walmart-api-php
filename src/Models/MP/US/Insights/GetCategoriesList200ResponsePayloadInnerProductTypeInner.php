@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCategoriesList200ResponsePayloadInnerProductTypeInner Class Doc Comment
@@ -106,7 +107,9 @@ class GetCategoriesList200ResponsePayloadInnerProductTypeInner extends BaseModel
     protected static array $getters = [
         'name' => 'getName',
         'count' => 'getCount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetCategoriesList200ResponsePayloadInnerProductTypeInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

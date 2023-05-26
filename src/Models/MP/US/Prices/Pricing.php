@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Pricing Class Doc Comment
@@ -147,6 +148,8 @@ class Pricing extends BaseModel
         'comparisonPrice' => 'getComparisonPrice',
         'priceDisplayCodes' => 'getPriceDisplayCodes'
     ];
+
+
     public const PROCESS_MODE_UPSERT = 'UPSERT';
 
     public const PROCESS_MODE_DELETE = 'DELETE';
@@ -291,6 +294,7 @@ class Pricing extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets effectiveDate
      *

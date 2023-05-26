@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MultitenantHeader Class Doc Comment
@@ -106,7 +107,9 @@ class MultitenantHeader extends BaseModel
     protected static array $getters = [
         'buId' => 'getBuId',
         'martId' => 'getMartId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class MultitenantHeader extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets buId
      *

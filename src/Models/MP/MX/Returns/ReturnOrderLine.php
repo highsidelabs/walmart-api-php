@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReturnOrderLine Class Doc Comment
@@ -191,6 +192,8 @@ class ReturnOrderLine extends BaseModel
         'soPrimeLineSubLineNo' => 'getSoPrimeLineSubLineNo',
         'isWFSEnabled' => 'getIsWFSEnabled'
     ];
+
+
     public const RETURN_REASON_CLIENTE_NO_SATISFECHO_GARANTA_AL_CLIENTE = 'Cliente no satisfecho/Garantía al cliente';
 
     public const RETURN_REASON_DAO_DURANTE_EL_TRASLADO = 'Daño durante el traslado';
@@ -396,6 +399,7 @@ class ReturnOrderLine extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets returnOrderLineNumber
      *

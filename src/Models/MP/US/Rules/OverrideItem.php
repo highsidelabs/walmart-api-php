@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OverrideItem Class Doc Comment
@@ -98,7 +99,9 @@ class OverrideItem extends BaseModel
      */
     protected static array $getters = [
         'sku' => 'getSku'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class OverrideItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo Class Doc Comment
@@ -112,7 +113,9 @@ class GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo extends BaseModel
         'isPrimary' => 'getIsPrimary',
         'groupingAttributes' => 'getGroupingAttributes',
         'primary' => 'getPrimary'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets isPrimary
      *

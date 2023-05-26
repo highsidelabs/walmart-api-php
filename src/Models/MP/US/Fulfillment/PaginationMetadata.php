@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PaginationMetadata Class Doc Comment
@@ -112,7 +113,9 @@ class PaginationMetadata extends BaseModel
         'limit' => 'getLimit',
         'offset' => 'getOffset',
         'totalCount' => 'getTotalCount'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class PaginationMetadata extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets limit
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShipmentItem Class Doc Comment
@@ -106,7 +107,9 @@ class ShipmentItem extends BaseModel
     protected static array $getters = [
         'vendorSku' => 'getVendorSku',
         'itemQty' => 'getItemQty'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class ShipmentItem extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets vendorSku
      *

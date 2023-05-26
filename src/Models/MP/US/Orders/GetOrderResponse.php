@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetOrderResponse Class Doc Comment
@@ -98,7 +99,9 @@ class GetOrderResponse extends BaseModel
      */
     protected static array $getters = [
         'order' => 'getOrder'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class GetOrderResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets order
      *

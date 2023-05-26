@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Utilities;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * StatusAPIResponse Class Doc Comment
@@ -98,7 +99,9 @@ class StatusAPIResponse extends BaseModel
      */
     protected static array $getters = [
         'apiStatuses' => 'getApiStatuses'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class StatusAPIResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets apiStatuses
      *

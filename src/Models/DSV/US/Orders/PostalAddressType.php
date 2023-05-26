@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PostalAddressType Class Doc Comment
@@ -142,7 +143,9 @@ class PostalAddressType extends BaseModel
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry',
         'addressType' => 'getAddressType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -190,6 +193,7 @@ class PostalAddressType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

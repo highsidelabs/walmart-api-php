@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerFeedResponse Class Doc Comment
@@ -159,6 +160,8 @@ class PartnerFeedResponse extends BaseModel
         'limit' => 'getLimit',
         'itemDetails' => 'getItemDetails'
     ];
+
+
     public const FEED_STATUS_RECEIVED = 'RECEIVED';
 
     public const FEED_STATUS_INPROGRESS = 'INPROGRESS';
@@ -224,6 +227,7 @@ class PartnerFeedResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets errors
      *

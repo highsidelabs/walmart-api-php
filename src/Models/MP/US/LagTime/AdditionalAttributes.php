@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\LagTime;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AdditionalAttributes Class Doc Comment
@@ -104,7 +105,9 @@ class AdditionalAttributes extends BaseModel
     protected static array $getters = [
         'name' => 'getName',
         'value' => 'getValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class AdditionalAttributes extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

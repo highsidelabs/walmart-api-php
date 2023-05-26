@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCA200ResponseShippingInfo Class Doc Comment
@@ -125,6 +126,8 @@ class ShippingUpdatesCA200ResponseShippingInfo extends BaseModel
         'methodCode' => 'getMethodCode',
         'postalAddress' => 'getPostalAddress'
     ];
+
+
     public const METHOD_CODE_STANDARD = 'STANDARD';
 
     public const METHOD_CODE_EXPRESS = 'EXPRESS';
@@ -205,6 +208,7 @@ class ShippingUpdatesCA200ResponseShippingInfo extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets phone
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CarrierQuoteConfirmRequestWrapper Class Doc Comment
@@ -98,7 +99,9 @@ class CarrierQuoteConfirmRequestWrapper extends BaseModel
      */
     protected static array $getters = [
         'shipmentId' => 'getShipmentId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class CarrierQuoteConfirmRequestWrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

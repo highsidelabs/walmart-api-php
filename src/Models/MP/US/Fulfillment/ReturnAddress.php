@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReturnAddress Class Doc Comment
@@ -130,7 +131,9 @@ class ReturnAddress extends BaseModel
         'stateCode' => 'getStateCode',
         'countryCode' => 'getCountryCode',
         'postalCode' => 'getPostalCode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -173,6 +176,7 @@ class ReturnAddress extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets addressLine1
      *

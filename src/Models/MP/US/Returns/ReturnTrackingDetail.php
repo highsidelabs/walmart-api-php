@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ReturnTrackingDetail Class Doc Comment
@@ -124,7 +125,9 @@ class ReturnTrackingDetail extends BaseModel
         'eventDescription' => 'getEventDescription',
         'eventTime' => 'getEventTime',
         'references' => 'getReferences'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -151,6 +154,7 @@ class ReturnTrackingDetail extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sequenceNo
      *

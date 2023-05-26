@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * StandardProcessingScheduleResponse Class Doc Comment
@@ -136,7 +137,9 @@ class StandardProcessingScheduleResponse extends BaseModel
         'thursday' => 'getThursday',
         'friday' => 'getFriday',
         'saturday' => 'getSaturday'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -165,6 +168,7 @@ class StandardProcessingScheduleResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sunday
      *

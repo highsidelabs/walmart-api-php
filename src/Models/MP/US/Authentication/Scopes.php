@@ -20,6 +20,7 @@
  */
 
 namespace Walmart\Models\MP\US\Authentication;
+
 use Walmart\Model\BaseModel;
 
 /**
@@ -525,7 +526,6 @@ class Scopes extends BaseModel
 
         return $invalidProperties;
     }
-
 
     /**
      * Gets reports

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * TrackingInfoWrapper Class Doc Comment
@@ -110,7 +111,9 @@ class TrackingInfoWrapper extends BaseModel
         'shipmentId' => 'getShipmentId',
         'carrierName' => 'getCarrierName',
         'trackingInfo' => 'getTrackingInfo'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -153,6 +156,7 @@ class TrackingInfoWrapper extends BaseModel
         }
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

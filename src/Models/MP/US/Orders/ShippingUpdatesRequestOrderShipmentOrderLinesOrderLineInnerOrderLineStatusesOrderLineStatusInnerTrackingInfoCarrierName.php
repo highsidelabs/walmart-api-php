@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName Class Doc Comment
@@ -107,6 +108,8 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
         'otherCarrier' => 'getOtherCarrier',
         'carrier' => 'getCarrier'
     ];
+
+
     public const CARRIER_UPS = 'UPS';
 
     public const CARRIER_USPS = 'USPS';
@@ -304,6 +307,7 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
 
         return $invalidProperties;
     }
+
     /**
      * Gets otherCarrier
      *

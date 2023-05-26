@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner Class Doc Comment
@@ -142,7 +143,9 @@ class InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner extends Bas
         'totalNetTransferCharge' => 'getTotalNetTransferCharge',
         'currencyUnit' => 'getCurrencyUnit',
         'shipmentItems' => 'getShipmentItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -172,6 +175,7 @@ class InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner extends Bas
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipNode
      *

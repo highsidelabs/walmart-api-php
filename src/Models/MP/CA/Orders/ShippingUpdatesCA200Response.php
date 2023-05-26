@@ -20,7 +20,9 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
+use Walmart\Traits\HasResponseHeaders;
 
 /**
  * ShippingUpdatesCA200Response Class Doc Comment
@@ -36,6 +38,8 @@ use Walmart\Models\BaseModel;
  */
 class ShippingUpdatesCA200Response extends BaseModel
 {
+    use HasResponseHeaders;
+
     public const DISCRIMINATOR = null;
 
     /**
@@ -131,12 +135,6 @@ class ShippingUpdatesCA200Response extends BaseModel
         'shippingInfo' => 'getShippingInfo',
         'orderLines' => 'getOrderLines'
     ];
-    /**
-     * Array of response headers returned by the API
-     *
-     * @var string[][]
-     */
-    protected array $headers = [];
 
     /**
      * Constructor
@@ -184,30 +182,6 @@ class ShippingUpdatesCA200Response extends BaseModel
 
         return $invalidProperties;
     }
-
-    /**
-     * Gets API response headers (only relevant to response models)
-     *
-     * @return string[][]
-     */
-    public function getHeaders(): array
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Sets API response headers (only relevant to response models)
-     *
-     * @param array[string => string[]] $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders(array $headers): static
-    {
-        $this->headers = $headers;
-        return $this;
-    }
-
 
     /**
      * Gets purchaseOrderId

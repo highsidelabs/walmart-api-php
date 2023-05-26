@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity Class Doc Comment
@@ -106,7 +107,9 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLin
     protected static array $getters = [
         'unitOfMeasure' => 'getUnitOfMeasure',
         'measurementValue' => 'getMeasurementValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -136,6 +139,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLin
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasure
      *

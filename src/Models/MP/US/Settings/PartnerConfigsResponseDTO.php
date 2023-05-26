@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerConfigsResponseDTO Class Doc Comment
@@ -104,7 +105,9 @@ class PartnerConfigsResponseDTO extends BaseModel
     protected static array $getters = [
         'partner' => 'getPartner',
         'configurations' => 'getConfigurations'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class PartnerConfigsResponseDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets partner
      *

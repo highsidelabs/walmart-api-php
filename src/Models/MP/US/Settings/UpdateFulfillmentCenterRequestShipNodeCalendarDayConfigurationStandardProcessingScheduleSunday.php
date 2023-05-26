@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday Class Doc Comment
@@ -104,7 +105,9 @@ class UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProc
     protected static array $getters = [
         'isWorkingDay' => 'getIsWorkingDay',
         'cutOffTime' => 'getCutOffTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -131,6 +134,7 @@ class UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProc
 
         return $invalidProperties;
     }
+
     /**
      * Gets isWorkingDay
      *

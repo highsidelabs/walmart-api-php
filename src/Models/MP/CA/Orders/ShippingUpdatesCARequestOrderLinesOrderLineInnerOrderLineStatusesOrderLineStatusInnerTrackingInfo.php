@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo Class Doc Comment
@@ -125,6 +126,8 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
         'trackingNumber' => 'getTrackingNumber',
         'trackingURL' => 'getTrackingURL'
     ];
+
+
     public const METHOD_CODE_STANDARD = 'STANDARD';
 
     public const METHOD_CODE_EXPRESS = 'EXPRESS';
@@ -202,6 +205,7 @@ class ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLine
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipDateTime
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RepricerEntityCollectionResponse Class Doc Comment
@@ -104,7 +105,9 @@ class RepricerEntityCollectionResponse extends BaseModel
     protected static array $getters = [
         'totalElements' => 'getTotalElements',
         'strategyCollections' => 'getStrategyCollections'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class RepricerEntityCollectionResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalElements
      *

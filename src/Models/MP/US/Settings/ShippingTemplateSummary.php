@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingTemplateSummary Class Doc Comment
@@ -149,6 +150,8 @@ class ShippingTemplateSummary extends BaseModel
         'createdDate' => 'getCreatedDate',
         'modifiedDate' => 'getModifiedDate'
     ];
+
+
     public const TYPE__DEFAULT = 'DEFAULT';
 
     public const TYPE_CUSTOM = 'CUSTOM';
@@ -263,6 +266,7 @@ class ShippingTemplateSummary extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets id
      *

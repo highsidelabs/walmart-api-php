@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingLabelRequest Class Doc Comment
@@ -98,7 +99,9 @@ class ShippingLabelRequest extends BaseModel
      */
     protected static array $getters = [
         'trackingNumbers' => 'getTrackingNumbers'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class ShippingLabelRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets trackingNumbers
      *

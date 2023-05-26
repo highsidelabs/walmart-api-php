@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemCatalogResponses Class Doc Comment
@@ -128,7 +129,9 @@ class ItemCatalogResponses extends BaseModel
         'limit' => 'getLimit',
         'nextCursor' => 'getNextCursor',
         'statuss' => 'getStatuss'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -156,6 +159,7 @@ class ItemCatalogResponses extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

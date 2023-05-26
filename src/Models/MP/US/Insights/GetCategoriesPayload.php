@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCategoriesPayload Class Doc Comment
@@ -110,7 +111,9 @@ class GetCategoriesPayload extends BaseModel
         'name' => 'getName',
         'count' => 'getCount',
         'productType' => 'getProductType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -135,6 +138,7 @@ class GetCategoriesPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

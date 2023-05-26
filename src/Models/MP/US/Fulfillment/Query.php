@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * Query Class Doc Comment
@@ -105,6 +106,8 @@ class Query extends BaseModel
         'field' => 'getField',
         'value' => 'getValue'
     ];
+
+
     public const FIELD_SKU = 'sku';
 
     public const FIELD_GTIN = 'gtin';
@@ -155,6 +158,7 @@ class Query extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

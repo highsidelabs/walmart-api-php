@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CancelLinesType Class Doc Comment
@@ -100,7 +101,9 @@ class CancelLinesType extends BaseModel
      */
     protected static array $getters = [
         'orderLine' => 'getOrderLine'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -126,6 +129,7 @@ class CancelLinesType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderLine
      *

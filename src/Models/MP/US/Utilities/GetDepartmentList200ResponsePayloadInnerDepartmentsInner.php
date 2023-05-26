@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Utilities;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetDepartmentList200ResponsePayloadInnerDepartmentsInner Class Doc Comment
@@ -104,7 +105,9 @@ class GetDepartmentList200ResponsePayloadInnerDepartmentsInner extends BaseModel
     protected static array $getters = [
         'departmentName' => 'getDepartmentName',
         'departmentId' => 'getDepartmentId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetDepartmentList200ResponsePayloadInnerDepartmentsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets departmentName
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Returns;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner Class Doc Comment
@@ -106,7 +107,9 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner ext
     protected static array $getters = [
         'labelImageURL' => 'getLabelImageURL',
         'carrierInfoList' => 'getCarrierInfoList'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner ext
 
         return $invalidProperties;
     }
+
     /**
      * Gets labelImageURL
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetUnpublishedItemsCount Class Doc Comment
@@ -98,7 +99,9 @@ class GetUnpublishedItemsCount extends BaseModel
      */
     protected static array $getters = [
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class GetUnpublishedItemsCount extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets payload
      *

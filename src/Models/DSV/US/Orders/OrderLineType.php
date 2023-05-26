@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderLineType Class Doc Comment
@@ -166,7 +167,9 @@ class OrderLineType extends BaseModel
         'fulfillment' => 'getFulfillment',
         'intentToCancel' => 'getIntentToCancel',
         'configId' => 'getConfigId'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -218,6 +221,7 @@ class OrderLineType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets lineNumber
      *

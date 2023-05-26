@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\OnRequestReports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetRequestsStatus200ResponseRequestsInnerPayload Class Doc Comment
@@ -106,7 +107,9 @@ class GetRequestsStatus200ResponseRequestsInnerPayload extends BaseModel
     protected static array $getters = [
         'rowFilters' => 'getRowFilters',
         'excludeColumns' => 'getExcludeColumns'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetRequestsStatus200ResponseRequestsInnerPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets rowFilters
      *

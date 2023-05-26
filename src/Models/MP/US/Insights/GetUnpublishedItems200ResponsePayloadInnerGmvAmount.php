@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetUnpublishedItems200ResponsePayloadInnerGmvAmount Class Doc Comment
@@ -104,7 +105,9 @@ class GetUnpublishedItems200ResponsePayloadInnerGmvAmount extends BaseModel
     protected static array $getters = [
         'amount' => 'getAmount',
         'currency' => 'getCurrency'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetUnpublishedItems200ResponsePayloadInnerGmvAmount extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets amount
      *

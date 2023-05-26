@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationCategoriesInner Class Doc Comment
@@ -106,7 +107,9 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationC
     protected static array $getters = [
         'name' => 'getName',
         'fulfillmentLagTime' => 'getFulfillmentLagTime'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -130,6 +133,7 @@ class GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationC
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

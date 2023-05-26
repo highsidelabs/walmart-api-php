@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PromiseFulfillments200ResponsePayload Class Doc Comment
@@ -118,7 +119,9 @@ class PromiseFulfillments200ResponsePayload extends BaseModel
         'destinations' => 'getDestinations',
         'prepurchaseHandle' => 'getPrepurchaseHandle',
         'fulfillmentPlans' => 'getFulfillmentPlans'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class PromiseFulfillments200ResponsePayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets offers
      *

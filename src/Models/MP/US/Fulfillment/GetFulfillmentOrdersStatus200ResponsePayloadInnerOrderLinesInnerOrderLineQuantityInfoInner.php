@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner Class Doc Comment
@@ -112,7 +113,9 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQ
         'status' => 'getStatus',
         'statusDescription' => 'getStatusDescription',
         'statusQuantity' => 'getStatusQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQ
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

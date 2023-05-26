@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateInboundRequestDTO Class Doc Comment
@@ -112,7 +113,9 @@ class CreateInboundRequestDTO extends BaseModel
         'inboundOrderId' => 'getInboundOrderId',
         'returnAddress' => 'getReturnAddress',
         'orderItems' => 'getOrderItems'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -168,6 +171,7 @@ class CreateInboundRequestDTO extends BaseModel
         }
         return $invalidProperties;
     }
+
     /**
      * Gets inboundOrderId
      *

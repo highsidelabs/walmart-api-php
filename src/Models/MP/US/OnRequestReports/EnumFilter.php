@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\OnRequestReports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * EnumFilter Class Doc Comment
@@ -111,6 +112,8 @@ class EnumFilter extends BaseModel
         'columnName' => 'getColumnName',
         'type' => 'getType'
     ];
+
+
     public const TYPE_RANGE_FILTER = 'rangeFilter';
 
     public const TYPE_ENUM_FILTER = 'enumFilter';
@@ -168,6 +171,7 @@ class EnumFilter extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets values
      *

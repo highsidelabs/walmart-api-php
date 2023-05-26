@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate Class Doc Comment
@@ -194,7 +195,9 @@ class GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate exten
         'wfsShipppingTax' => 'getWfsShipppingTax',
         'totalBaseCommission' => 'getTotalBaseCommission',
         'commissionSavings' => 'getCommissionSavings'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -233,6 +236,7 @@ class GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate exten
 
         return $invalidProperties;
     }
+
     /**
      * Gets productPrice
      *

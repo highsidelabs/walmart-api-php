@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundLinesType Class Doc Comment
@@ -98,7 +99,9 @@ class RefundLinesType extends BaseModel
      */
     protected static array $getters = [
         'orderLine' => 'getOrderLine'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class RefundLinesType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderLine
      *

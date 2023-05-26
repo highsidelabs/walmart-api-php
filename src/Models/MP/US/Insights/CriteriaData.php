@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CriteriaData Class Doc Comment
@@ -124,7 +125,9 @@ class CriteriaData extends BaseModel
         'cancellationRate' => 'getCancellationRate',
         'listingQualityCatalog' => 'getListingQualityCatalog',
         'activeDays' => 'getActiveDays'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -151,6 +154,7 @@ class CriteriaData extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orders
      *

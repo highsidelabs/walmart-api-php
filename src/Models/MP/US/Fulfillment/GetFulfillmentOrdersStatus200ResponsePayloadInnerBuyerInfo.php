@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo Class Doc Comment
@@ -100,7 +101,9 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo extends BaseMod
      */
     protected static array $getters = [
         'primaryContact' => 'getPrimaryContact'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo extends BaseMod
 
         return $invalidProperties;
     }
+
     /**
      * Gets primaryContact
      *

@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateInboundShipmentLabelV2Request Class Doc Comment
@@ -116,7 +117,9 @@ class CreateInboundShipmentLabelV2Request extends BaseModel
         'labelSize' => 'getLabelSize',
         'labelFormat' => 'getLabelFormat',
         'loadTypes' => 'getLoadTypes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -145,6 +148,7 @@ class CreateInboundShipmentLabelV2Request extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets shipmentId
      *

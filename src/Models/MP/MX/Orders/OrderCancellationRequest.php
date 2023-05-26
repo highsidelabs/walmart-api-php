@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderCancellationRequest Class Doc Comment
@@ -98,7 +99,9 @@ class OrderCancellationRequest extends BaseModel
      */
     protected static array $getters = [
         'orderCancellation' => 'getOrderCancellation'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class OrderCancellationRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderCancellation
      *

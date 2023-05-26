@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * OrderShipment Class Doc Comment
@@ -100,7 +101,9 @@ class OrderShipment extends BaseModel
      */
     protected static array $getters = [
         'orderLines' => 'getOrderLines'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -126,6 +129,7 @@ class OrderShipment extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets orderLines
      *

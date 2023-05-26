@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInner Class Doc Comment
@@ -107,6 +108,8 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationV
         'feedType' => 'getFeedType',
         'throttleConfigurations' => 'getThrottleConfigurations'
     ];
+
+
     public const FEED_TYPE_ITEM = 'item';
 
     public const FEED_TYPE_RETIRE_ITEM = 'RETIRE_ITEM';
@@ -190,6 +193,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationV
 
         return $invalidProperties;
     }
+
     /**
      * Gets feedType
      *

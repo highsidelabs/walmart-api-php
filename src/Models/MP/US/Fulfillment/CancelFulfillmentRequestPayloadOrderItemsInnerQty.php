@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CancelFulfillmentRequestPayloadOrderItemsInnerQty Class Doc Comment
@@ -104,7 +105,9 @@ class CancelFulfillmentRequestPayloadOrderItemsInnerQty extends BaseModel
     protected static array $getters = [
         'unitOfMeasure' => 'getUnitOfMeasure',
         'measurementValue' => 'getMeasurementValue'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -158,6 +161,7 @@ class CancelFulfillmentRequestPayloadOrderItemsInnerQty extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets unitOfMeasure
      *

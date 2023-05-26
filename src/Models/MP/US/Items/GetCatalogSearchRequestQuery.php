@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Items;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetCatalogSearchRequestQuery Class Doc Comment
@@ -105,6 +106,8 @@ class GetCatalogSearchRequestQuery extends BaseModel
         'field' => 'getField',
         'value' => 'getValue'
     ];
+
+
     public const FIELD_PRODUCT_NAME = 'productName';
 
     public const FIELD_SKU = 'sku';
@@ -173,6 +176,7 @@ class GetCatalogSearchRequestQuery extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets field
      *

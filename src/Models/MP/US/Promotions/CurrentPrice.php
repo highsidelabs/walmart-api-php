@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Promotions;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CurrentPrice Class Doc Comment
@@ -105,6 +106,8 @@ class CurrentPrice extends BaseModel
         'currency' => 'getCurrency',
         'amount' => 'getAmount'
     ];
+
+
     public const CURRENCY_USD = 'USD';
 
     public const CURRENCY_CAD = 'CAD';
@@ -155,6 +158,7 @@ class CurrentPrice extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets currency
      *

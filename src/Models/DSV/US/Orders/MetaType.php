@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MetaType Class Doc Comment
@@ -112,7 +113,9 @@ class MetaType extends BaseModel
         'totalCount' => 'getTotalCount',
         'limit' => 'getLimit',
         'nextCursor' => 'getNextCursor'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -137,6 +140,7 @@ class MetaType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets totalCount
      *

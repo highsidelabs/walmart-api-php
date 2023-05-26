@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CancelLineStatusType Class Doc Comment
@@ -113,6 +114,8 @@ class CancelLineStatusType extends BaseModel
         'cancellationReason' => 'getCancellationReason',
         'statusQuantity' => 'getStatusQuantity'
     ];
+
+
     public const STATUS_CREATED = 'CREATED';
 
     public const STATUS_ACKNOWLEDGED = 'ACKNOWLEDGED';
@@ -224,6 +227,7 @@ class CancelLineStatusType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

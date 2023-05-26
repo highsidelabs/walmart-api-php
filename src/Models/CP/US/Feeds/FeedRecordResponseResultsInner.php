@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\CP\US\Feeds;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * FeedRecordResponseResultsInner Class Doc Comment
@@ -166,7 +167,9 @@ class FeedRecordResponseResultsInner extends BaseModel
         'feedDate' => 'getFeedDate',
         'batchId' => 'getBatchId',
         'modifiedDtm' => 'getModifiedDtm'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -200,6 +203,7 @@ class FeedRecordResponseResultsInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets feedId
      *

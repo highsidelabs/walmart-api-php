@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetWFSInventory200ResponsePayloadInventoryInner Class Doc Comment
@@ -104,7 +105,9 @@ class GetWFSInventory200ResponsePayloadInventoryInner extends BaseModel
     protected static array $getters = [
         'sku' => 'getSku',
         'shipNodes' => 'getShipNodes'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class GetWFSInventory200ResponsePayloadInventoryInner extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

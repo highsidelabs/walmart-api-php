@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * AccessMode Class Doc Comment
@@ -100,7 +101,9 @@ class AccessMode extends BaseModel
      */
     protected static array $getters = [
         'mode' => 'getMode'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class AccessMode extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets mode
      *

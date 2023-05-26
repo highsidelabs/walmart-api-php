@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration Class Doc Comment
@@ -99,6 +100,8 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration e
     protected static array $getters = [
         'status' => 'getStatus'
     ];
+
+
     public const STATUS_ACTIVE = 'ACTIVE';
 
     public const STATUS_ONBOARDING_ACTIVE = 'ONBOARDING_ACTIVE';
@@ -160,6 +163,7 @@ class GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration e
 
         return $invalidProperties;
     }
+
     /**
      * Gets status
      *

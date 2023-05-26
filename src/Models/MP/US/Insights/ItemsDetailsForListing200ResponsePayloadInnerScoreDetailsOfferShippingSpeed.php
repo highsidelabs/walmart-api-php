@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed Class Doc Comment
@@ -116,7 +117,9 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpee
         'issueTitle' => 'getIssueTitle',
         'issueDesc' => 'getIssueDesc',
         'score' => 'getScore'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -142,6 +145,7 @@ class ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpee
 
         return $invalidProperties;
     }
+
     /**
      * Gets shippingType
      *

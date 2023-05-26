@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Rules;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ActivateRuleRequest Class Doc Comment
@@ -104,7 +105,9 @@ class ActivateRuleRequest extends BaseModel
     protected static array $getters = [
         'ruleHeader' => 'getRuleHeader',
         'rules' => 'getRules'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -128,6 +131,7 @@ class ActivateRuleRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets ruleHeader
      *

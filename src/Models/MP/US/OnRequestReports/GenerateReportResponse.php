@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\OnRequestReports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GenerateReportResponse Class Doc Comment
@@ -129,6 +130,8 @@ class GenerateReportResponse extends BaseModel
         'reportVersion' => 'getReportVersion',
         'payload' => 'getPayload'
     ];
+
+
     public const REQUEST_STATUS_RECEIVED = 'RECEIVED';
 
     public const REQUEST_STATUS_INPROGRESS = 'INPROGRESS';
@@ -240,6 +243,7 @@ class GenerateReportResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets requestId
      *

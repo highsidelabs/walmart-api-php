@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateShippingTemplatesRequest Class Doc Comment
@@ -122,7 +123,9 @@ class CreateShippingTemplatesRequest extends BaseModel
         'rateModelType' => 'getRateModelType',
         'status' => 'getStatus',
         'shippingMethods' => 'getShippingMethods'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class CreateShippingTemplatesRequest extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

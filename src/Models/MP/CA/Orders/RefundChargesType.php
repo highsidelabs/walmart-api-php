@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\CA\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RefundChargesType Class Doc Comment
@@ -98,7 +99,9 @@ class RefundChargesType extends BaseModel
      */
     protected static array $getters = [
         'refundCharge' => 'getRefundCharge'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class RefundChargesType extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets refundCharge
      *

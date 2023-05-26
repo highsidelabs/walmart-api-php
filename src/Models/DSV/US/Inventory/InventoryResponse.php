@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * InventoryResponse Class Doc Comment
@@ -110,7 +111,9 @@ class InventoryResponse extends BaseModel
         'sku' => 'getSku',
         'gtin' => 'getGtin',
         'quantity' => 'getQuantity'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -144,6 +147,7 @@ class InventoryResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets sku
      *

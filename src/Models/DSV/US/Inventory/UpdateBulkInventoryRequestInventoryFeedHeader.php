@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\DSV\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * UpdateBulkInventoryRequestInventoryFeedHeader Class Doc Comment
@@ -124,7 +125,9 @@ class UpdateBulkInventoryRequestInventoryFeedHeader extends BaseModel
         'feedDate' => 'getFeedDate',
         'locale' => 'getLocale',
         'businessUnit' => 'getBusinessUnit'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -166,6 +169,7 @@ class UpdateBulkInventoryRequestInventoryFeedHeader extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets version
      *

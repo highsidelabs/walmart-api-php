@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Insights;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ItemDetailsForListingQualityPayload Class Doc Comment
@@ -188,7 +189,9 @@ class ItemDetailsForListingQualityPayload extends BaseModel
         'category' => 'getCategory',
         'postPurchaseIssues' => 'getPostPurchaseIssues',
         'productType' => 'getProductType'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -226,6 +229,7 @@ class ItemDetailsForListingQualityPayload extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets productId
      *

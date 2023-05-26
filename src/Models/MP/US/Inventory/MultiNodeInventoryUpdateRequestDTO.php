@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Inventory;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * MultiNodeInventoryUpdateRequestDTO Class Doc Comment
@@ -98,7 +99,9 @@ class MultiNodeInventoryUpdateRequestDTO extends BaseModel
      */
     protected static array $getters = [
         'inventories' => 'getInventories'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -124,6 +127,7 @@ class MultiNodeInventoryUpdateRequestDTO extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets inventories
      *

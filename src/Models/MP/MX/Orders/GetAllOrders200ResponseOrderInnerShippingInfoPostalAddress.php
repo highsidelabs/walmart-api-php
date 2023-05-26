@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress Class Doc Comment
@@ -160,7 +161,9 @@ class GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress extends BaseMod
         'state' => 'getState',
         'postalCode' => 'getPostalCode',
         'country' => 'getCountry'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -193,6 +196,7 @@ class GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress extends BaseMod
 
         return $invalidProperties;
     }
+
     /**
      * Gets name
      *

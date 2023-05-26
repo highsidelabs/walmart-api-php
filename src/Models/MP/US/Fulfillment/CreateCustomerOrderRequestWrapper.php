@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Fulfillment;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateCustomerOrderRequestWrapper Class Doc Comment
@@ -104,7 +105,9 @@ class CreateCustomerOrderRequestWrapper extends BaseModel
     protected static array $getters = [
         'header' => 'getHeader',
         'payload' => 'getPayload'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -134,6 +137,7 @@ class CreateCustomerOrderRequestWrapper extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets header
      *

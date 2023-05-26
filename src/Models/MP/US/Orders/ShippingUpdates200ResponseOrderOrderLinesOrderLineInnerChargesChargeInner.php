@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Orders;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner Class Doc Comment
@@ -118,7 +119,9 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner 
         'chargeName' => 'getChargeName',
         'chargeAmount' => 'getChargeAmount',
         'tax' => 'getTax'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -153,6 +156,7 @@ class ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner 
 
         return $invalidProperties;
     }
+
     /**
      * Gets chargeType
      *

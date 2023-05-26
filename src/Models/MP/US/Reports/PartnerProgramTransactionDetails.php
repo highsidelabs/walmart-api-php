@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Reports;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * PartnerProgramTransactionDetails Class Doc Comment
@@ -122,7 +123,9 @@ class PartnerProgramTransactionDetails extends BaseModel
         'adjustmentAggregate' => 'getAdjustmentAggregate',
         'wfs' => 'getWfs',
         'partnerTxns' => 'getPartnerTxns'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -149,6 +152,7 @@ class PartnerProgramTransactionDetails extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets saleAggregate
      *

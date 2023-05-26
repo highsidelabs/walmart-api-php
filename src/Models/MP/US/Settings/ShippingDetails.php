@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * ShippingDetails Class Doc Comment
@@ -100,7 +101,9 @@ class ShippingDetails extends BaseModel
      */
     protected static array $getters = [
         'twoDayShipping' => 'getTwoDayShipping'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -123,6 +126,7 @@ class ShippingDetails extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets twoDayShipping
      *

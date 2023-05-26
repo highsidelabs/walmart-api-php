@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\MX\InternationalShipping;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * CreateLabelRequestBoxDimensions Class Doc Comment
@@ -131,6 +132,8 @@ class CreateLabelRequestBoxDimensions extends BaseModel
         'boxWidth' => 'getBoxWidth',
         'boxHeight' => 'getBoxHeight'
     ];
+
+
     public const BOX_DIMENSION_UNIT_CM = 'CM';
 
     public const BOX_DIMENSION_UNIT_IN = 'IN';
@@ -218,6 +221,7 @@ class CreateLabelRequestBoxDimensions extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets boxDimensionUnit
      *

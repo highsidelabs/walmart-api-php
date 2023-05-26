@@ -20,7 +20,9 @@
  */
 
 namespace Walmart\Models\MP\US\Settings;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
+use Walmart\Traits\HasResponseHeaders;
 
 /**
  * GetShippingTemplateDetails200Response Class Doc Comment
@@ -34,6 +36,8 @@ use Walmart\Models\BaseModel;
  */
 class GetShippingTemplateDetails200Response extends BaseModel
 {
+    use HasResponseHeaders;
+
     public const DISCRIMINATOR = null;
 
     /**
@@ -153,12 +157,6 @@ class GetShippingTemplateDetails200Response extends BaseModel
         'createdDate' => 'getCreatedDate',
         'modifiedDate' => 'getModifiedDate'
     ];
-    /**
-     * Array of response headers returned by the API
-     *
-     * @var string[][]
-     */
-    protected array $headers = [];
 
 
     public const TYPE__DEFAULT = 'DEFAULT';
@@ -301,30 +299,6 @@ class GetShippingTemplateDetails200Response extends BaseModel
 
         return $invalidProperties;
     }
-
-    /**
-     * Gets API response headers (only relevant to response models)
-     *
-     * @return string[][]
-     */
-    public function getHeaders(): array
-    {
-        return $this->headers;
-    }
-
-    /**
-     * Sets API response headers (only relevant to response models)
-     *
-     * @param array[string => string[]] $headers Associative array of response headers.
-     *
-     * @return self
-     */
-    public function setHeaders(array $headers): static
-    {
-        $this->headers = $headers;
-        return $this;
-    }
-
 
     /**
      * Gets id

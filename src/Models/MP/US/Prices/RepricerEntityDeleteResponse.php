@@ -20,7 +20,8 @@
  */
 
 namespace Walmart\Models\MP\US\Prices;
-use Walmart\Models\BaseModel;
+
+use Walmart\Model\BaseModel;
 
 /**
  * RepricerEntityDeleteResponse Class Doc Comment
@@ -98,7 +99,9 @@ class RepricerEntityDeleteResponse extends BaseModel
      */
     protected static array $getters = [
         'message' => 'getMessage'
-    ];/**
+    ];
+
+    /**
      * Constructor
      *
      * @param mixed[] $data Associated array of property values
@@ -121,6 +124,7 @@ class RepricerEntityDeleteResponse extends BaseModel
 
         return $invalidProperties;
     }
+
     /**
      * Gets message
      *
