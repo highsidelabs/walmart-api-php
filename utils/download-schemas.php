@@ -1,8 +1,8 @@
 <?php
 
+namespace Walmart\Utils;
+
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/helpers.php';
-require_once __DIR__ . '/constants.php';
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__ . '/helpers.php';
-require_once __DIR__ . '/constants.php';
+namespace Walmart\Utils;
 
 /**
  * Generate the SDK based on the schemas that fit the given options.
