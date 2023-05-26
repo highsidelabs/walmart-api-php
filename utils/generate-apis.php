@@ -52,7 +52,7 @@ function openApiGenerator(string $code, string $name, string $category, string $
         --engine handlebars \
         --global-property apis,models \
         --enable-post-process-file \
-        --http-user-agent highsidelabs/walmart-sdk-php/$version \
+        --http-user-agent highsidelabs/walmart-api-php/$version \
         --api-package \"Apis\\$categoryCaps\\$countryCaps\" \
         --model-package \"Models\\$categoryCaps\\$countryCaps\\$compressedSchemaName\" \
         --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps\" \
@@ -120,7 +120,7 @@ function generateSupportingFiles(): void
         --engine handlebars \
         --global-property supportingFiles \
         --enable-post-process-file \
-        --http-user-agent highsidelabs/walmart-sdk-php/$version \
+        --http-user-agent highsidelabs/walmart-api-php/$version \
         --api-package Apis \
         --model-package Models \
         --openapi-normalizer KEEP_ONLY_FIRST_TAG_IN_OPERATION=true \

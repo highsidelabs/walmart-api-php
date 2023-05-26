@@ -5,7 +5,7 @@
   "variableNamingConvention": "camelCase",
 
   "gitUserId": "highsidelabs",
-  "gitRepoId": "walmart-sdk-php",
+  "gitRepoId": "walmart-api-php",
 
   "packagePath": "generated",
   "srcBasePath": "src",
