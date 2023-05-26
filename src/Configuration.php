@@ -133,6 +133,16 @@ class Configuration
     }
 
     /**
+     * Check if the instance is ready for request-signature-based authentication.
+     *
+     * @return bool
+     */
+    public function isSignatureAuthReady(): bool
+    {
+        return isset($this->privateKey) && isset($this->consumerId);
+    }
+
+    /**
      * Sets API key by auth scheme name
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme name)
@@ -492,19 +502,20 @@ class Configuration
      */
     protected function sign(string $path, string $method, int $timestamp): string
     {
-        if (is_null($this->getConsumerId()) || is_null($this->getPrivateKey())) {
+        if (!$this->isSignatureAuthReady()) {
             throw new RuntimeException('Consumer ID and private key must be set to generate a signature');
         }
+
         $_method = strtoupper($method);
-
         $stringToSign = "{$this->getConsumerId()}\n{$this->getHost()}{$path}\n{$_method}\n{$timestamp}";
-        $decoded = base64_decode($this->getPrivateKey(), true);
 
+        $decoded = base64_decode($this->getPrivateKey(), true);
         $rsa = RSA::loadFormat('PKCS8', $decoded);
         if (!$rsa) {
             throw new RuntimeException('Unable to load private key');
         }        
         $signature = $rsa->withHash('sha256')->sign($stringToSign);
+
         return base64_encode($signature);
     }
 }

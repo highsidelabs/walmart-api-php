@@ -19,7 +19,7 @@
 namespace {{modelPackage}};
 
 {{#unless isEnum~}}
-use {{invokerPackage}}\Model\BaseModel;
+use {{invokerPackage}}\Models\BaseModel;
 {{~#if vendorExtensions.x-expose-headers}}
 use Walmart\Traits\HasResponseHeaders;
 {{/if~}}
