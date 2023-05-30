@@ -44,8 +44,20 @@ The existing Walmart client libraries for PHP are either incomplete, outdated, o
 
 ## Table of Contents 
 
-
-
+* [Getting Started](#getting-started)
+    * [Prerequisites](#prerequisites)
+    * [Setup](#setup)
+    * [Basic Usage](#basic-usage)
+* [Documentation](#documentation)
+    * [Configuration](#configuration)
+    * [Using API classes](#using-api-classes)
+    * [Using model classes](#using-model-classes)
+    * [Debug mode](#debug-mode)
+    * [Supported API segments](#supported-api-segments)
+        * [Marketplace](#marketplace)
+        * [Drop Ship Vendor](#drop-ship-vendor)
+        * [Content Provider](#content-provider)
+        * [Warehouse Supplier](#warehouse-supplier)
 
 
 ## Getting Started
