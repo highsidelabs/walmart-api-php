@@ -1,5 +1,4 @@
-# {{#models}}{{#model}}# {{~x-walmart-country}}\
-{{~x-walmart-api-category}}\
+# {{#models}}{{#model}}{{modelPackage}}\
 {{~classname}}
 
 ## Properties
@@ -9,4 +8,4 @@ Name | Type | Description | Notes
 {{#vars}}**{{name}}** | {{#if isPrimitiveType}}**{{{dataType}}}**{{else}}[**{{{dataType}}}**]({{complexType}}.md){{/if}} | {{{description}}} |{{#unless required}} [optional]{{/unless}}{{#if isReadOnly}} [readonly]{{/if}}{{#if defaultValue}} [default to {{{defaultValue}}}]{{/if}}
 {{/vars}}
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/{{~x-walmart-country}}/{{~x-walmart-api-category}}) [[Back to README]](../../README.md){{/model}}{{/models}}
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md){{/model}}{{/models}}

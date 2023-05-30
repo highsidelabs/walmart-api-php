@@ -1,23 +1,9 @@
 {{#if hasAuthMethods ~}}
 {{#authMethods ~}}
-{{#if isBasic ~}}
-{{#if isBasicBasic ~}}
-// Configure HTTP basic authorization: {{{name}}}
-$config = new {{invokerPackage}}\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-{{/if ~}}
-{{#if isBasicBearer ~}}
-// Configure access token{{#if bearerFormat}} ({{{bearerFormat}}}){{/if}} authorization: {{{name}}}
-$accessToken = new {{invokerPackage}}\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new {{{invokerPackage}}}\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
-{{/if ~}}
-{{/if ~}}
-{{#if isApiKey ~}}
-// Configure key-based authorization: {{{name}}}
-$config = new {{{invokerPackage}}}\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('{{{keyParamName}}}', 'YOUR_KEY');
-{{/if ~}}
-{{#if isOAuth}}
-// Configure OAuth2 access token for authorization: {{{name}}}
-$accessToken = new {{invokerPackage}}\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new {{{invokerPackage}}}\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
-{{/if}}{{/authMethods ~}}
+$config = new {{invokerPackage}}\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => '{{x-walmart-country}}',  // Default US if not set{{#if isApiKey}}
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',{{/if}}
+]);
+{{/authMethods ~}}
 {{/if}}

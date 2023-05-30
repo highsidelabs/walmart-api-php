@@ -1,6 +1,4 @@
-# Walmart\Api\
-{{~x-walmart-country}}\
-{{~x-walmart-api-category}}
+# {{apiPackage}}\
 {{~ classname}}  {{! classname is on a new line to avoid the backslash after Api being treated as a block escape }}
 {{#if description}}
 
@@ -12,11 +10,11 @@ All URIs are relative to {{basePath}}, except if the operation defines another b
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 {{#operations~}}
-{{#operation}}| [**{{operationId}}()**]({{classname}}.md#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}} |
+{{#operation}}| [**{{operationId}}()**](#{{operationId}}) | **{{httpMethod}}** {{path}} | {{summary}} |
 {{/operation}}{{~/operations~}}
 {{~#operations}}{{#operation}}
 
-## `{{{operationId}}}()`
+## `{{operationId}}()`
 
 ```php
 {{{operationId}}}({{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}){{#if returnType}}: {{{returnType}}}{{/if}}
@@ -31,16 +29,13 @@ All URIs are relative to {{basePath}}, except if the operation defines another b
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use {{invokerPackage}}\Configuration;
+use {{invokerPackage}}\Walmart;
+
+require_once __DIR__ . '/vendor/autoload.php';
 
 {{> php_doc_auth_partial ~}}
-$apiInstance = new {{invokerPackage}}\Api\
-{{~ classname}}(  {{! classname is on a new line to avoid the backslash after Api being treated as a block escape }}
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(){{#hasAuthMethods}},
-    $config{{/hasAuthMethods}}
-);
+$api = Walmart::{{x-walmart-category-code}}($config)->{{x-walmart-api-name}}();
 {{#if vendorExtensions.x-group-parameters}}
 $associative_array = [
 {{#allParams}}    '{{paramName}}' => {{{example}}}, // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
@@ -52,7 +47,7 @@ $associative_array = [
 {{#allParams}}${{paramName}} = {{{example}}}; // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}
 {{/allParams}}{{/if}}
 try {
-    {{#if returnType}}$result = {{/if}}$apiInstance->{{{operationId}}}({{#if vendorExtensions.x-group-parameters}}$associate_array{{else}}{{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}});{{#if returnType}}
+    {{#if returnType}}$result = {{/if}}$api->{{{operationId}}}({{#if vendorExtensions.x-group-parameters}}$associate_array{{else}}{{#each allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/each}}{{/if}});{{#if returnType}}
     print_r($result);{{/if}}
 } catch (Exception $e) {
     echo "Exception when calling {{classname}}->{{operationId}}: {$e->getMessage()}\n";
@@ -64,7 +59,7 @@ try {
 {{~#if vendorExtensions.x-group-parameters~}}
 Note: the input parameter is an associative array with the keys listed as the parameter names below.
 
-{{~/if~}}
+{{~/if}}
 {{#unless allParams}}This endpoint does not need any parameter.{{/unless}}{{#each allParams}}{{#if @last}}| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |{{/if}}{{/each}}
 {{#allParams}}| **{{paramName}}** | {{#if isFile}}**{{{dataType}}}**{{/if}}{{#if isPrimitiveType}}**{{{dataType}}}**{{else}}{{#unless isFile}}[**{{{dataType}}}**](../Model/{{baseType}}.md){{/unless}}{{/if}}| {{{description}}} |{{#unless required}} [optional]{{/unless}}{{#if defaultValue}} [default to {{{defaultValue}}}]{{/if}} |
@@ -83,6 +78,6 @@ Note: the input parameter is an associative array with the keys listed as the pa
 - **Content-Type**: {{#each consumes}}`{{{mediaType}}}`{{#unless @last}}, {{/unless}}{{/each}}{{#unless consumes}}Not defined{{/unless}}
 - **Accept**: {{#each produces}}`{{{mediaType}}}`{{#unless @last}}, {{/unless}}{{/each}}{{#unless produces}}Not defined{{/unless}}
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md){{/operation}}{{/operations}}
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/{{x-walmart-api-category}}/{{x-walmart-country}})
+[[Back to README]](../../../../README.md){{/operation}}{{/operations}}
