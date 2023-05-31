@@ -52,7 +52,7 @@ class InventoriesDTO extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'gtin' => 'string',
-        'nodes' => '\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]'
+        'nodes' => '\Walmart\Models\DSV\US\Inventory\NodeDTO[]'
     ];
 
     /**
@@ -206,7 +206,7 @@ class InventoriesDTO extends BaseModel
     /**
      * Gets nodes
      *
-     * @return \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]|null
+     * @return \Walmart\Models\DSV\US\Inventory\NodeDTO[]|null
     
      */
     public function getNodes()
@@ -217,7 +217,7 @@ class InventoriesDTO extends BaseModel
     /**
      * Sets nodes
      *
-     * @param \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]|null $nodes Indicates an array for nodes, to include ship node and allocated quantity.
+     * @param \Walmart\Models\DSV\US\Inventory\NodeDTO[]|null $nodes Indicates an array for nodes, to include ship node and allocated quantity.
      *
      * @return self
     

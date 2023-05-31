@@ -50,7 +50,7 @@ class GetCategoriesResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'payload' => '\Walmart\Models\MP\US\Insights\GetCategoriesList200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Insights\GetCategoriesPayload[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class GetCategoriesResponse extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Insights\GetCategoriesList200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\GetCategoriesPayload[]|null
     
      */
     public function getPayload()
@@ -139,7 +139,7 @@ class GetCategoriesResponse extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Insights\GetCategoriesList200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Insights\GetCategoriesPayload[]|null $payload payload
      *
      * @return self
     

@@ -50,8 +50,8 @@ class OrdersListType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseMeta',
-        'elements' => '\Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElements'
+        'meta' => '\Walmart\Models\DSV\US\Orders\MetaType',
+        'elements' => '\Walmart\Models\DSV\US\Orders\ElementsType'
     ];
 
     /**
@@ -141,7 +141,7 @@ class OrdersListType extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseMeta
+     * @return \Walmart\Models\DSV\US\Orders\MetaType
     
      */
     public function getMeta()
@@ -152,7 +152,7 @@ class OrdersListType extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseMeta $meta meta
+     * @param \Walmart\Models\DSV\US\Orders\MetaType $meta meta
      *
      * @return self
     
@@ -170,7 +170,7 @@ class OrdersListType extends BaseModel
     /**
      * Gets elements
      *
-     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElements
+     * @return \Walmart\Models\DSV\US\Orders\ElementsType
     
      */
     public function getElements()
@@ -181,7 +181,7 @@ class OrdersListType extends BaseModel
     /**
      * Sets elements
      *
-     * @param \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElements $elements elements
+     * @param \Walmart\Models\DSV\US\Orders\ElementsType $elements elements
      *
      * @return self
     

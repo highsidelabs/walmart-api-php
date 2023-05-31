@@ -51,7 +51,7 @@ class GetTrendingResultPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'totalCount' => 'int',
-        'items' => '\Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]'
+        'items' => '\Walmart\Models\MP\US\Insights\TrendingItem[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class GetTrendingResultPayload extends BaseModel
     /**
      * Gets items
      *
-     * @return \Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\TrendingItem[]|null
     
      */
     public function getItems()
@@ -175,7 +175,7 @@ class GetTrendingResultPayload extends BaseModel
     /**
      * Sets items
      *
-     * @param \Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]|null $items List of Qualified Items
+     * @param \Walmart\Models\MP\US\Insights\TrendingItem[]|null $items List of Qualified Items
      *
      * @return self
     

@@ -10,7 +10,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 ## `getAllFeedStatuses()`
 
 ```php
-getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200Response
+getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Models\WS\US\Feeds\FeedRecordResponse
 ```
 Feed status
 
@@ -60,7 +60,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200Response**](../Model/GetAllFeedStatuses200Response.md)
+[**\Walmart\Models\WS\US\Feeds\FeedRecordResponse**](../Model/FeedRecordResponse.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ try {
 ## `getFeedItemStatus()`
 
 ```php
-getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Models\WS\US\Feeds\GetFeedItemStatus200Response
+getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Models\WS\US\Feeds\PartnerFeedResponse
 ```
 Feed item status
 
@@ -130,7 +130,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Feeds\GetFeedItemStatus200Response**](../Model/GetFeedItemStatus200Response.md)
+[**\Walmart\Models\WS\US\Feeds\PartnerFeedResponse**](../Model/PartnerFeedResponse.md)
 
 ### Authorization
 

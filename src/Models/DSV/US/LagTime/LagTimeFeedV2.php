@@ -51,7 +51,7 @@ class LagTimeFeedV2 extends BaseModel
       */
     protected static array $openAPITypes = [
         'lagtimeFeedHeader' => '\Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader',
-        'lagTime' => '\Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]'
+        'lagTime' => '\Walmart\Models\DSV\US\LagTime\LagTimeV2[]'
     ];
 
     /**
@@ -170,7 +170,7 @@ class LagTimeFeedV2 extends BaseModel
     /**
      * Gets lagTime
      *
-     * @return \Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[]
+     * @return \Walmart\Models\DSV\US\LagTime\LagTimeV2[]
     
      */
     public function getLagTime()
@@ -181,7 +181,7 @@ class LagTimeFeedV2 extends BaseModel
     /**
      * Sets lagTime
      *
-     * @param \Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner[] $lagTime Specifies an array of objects for lag time.
+     * @param \Walmart\Models\DSV\US\LagTime\LagTimeV2[] $lagTime Specifies an array of objects for lag time.
      *
      * @return self
     

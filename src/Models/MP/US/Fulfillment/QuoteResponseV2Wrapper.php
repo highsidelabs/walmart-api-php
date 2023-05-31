@@ -52,7 +52,7 @@ class QuoteResponseV2Wrapper extends BaseModel
     protected static array $openAPITypes = [
         'shipmentId' => 'string',
         'shipmentNumber' => 'string',
-        'rateQuotes' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote[]'
+        'rateQuotes' => '\Walmart\Models\MP\US\Fulfillment\RateQuoteV2[]'
     ];
 
     /**
@@ -200,7 +200,7 @@ class QuoteResponseV2Wrapper extends BaseModel
     /**
      * Gets rateQuotes
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\RateQuoteV2[]|null
     
      */
     public function getRateQuotes()
@@ -211,7 +211,7 @@ class QuoteResponseV2Wrapper extends BaseModel
     /**
      * Sets rateQuotes
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseRateQuote[]|null $rateQuotes rateQuotes
+     * @param \Walmart\Models\MP\US\Fulfillment\RateQuoteV2[]|null $rateQuotes rateQuotes
      *
      * @return self
     

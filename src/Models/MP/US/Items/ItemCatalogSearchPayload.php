@@ -50,9 +50,9 @@ class ItemCatalogSearchPayload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'query' => '\Walmart\Models\MP\US\Items\GetCatalogSearchRequestQuery',
-        'filters' => '\Walmart\Models\MP\US\Items\GetCatalogSearchRequestFiltersInner[]',
-        'sort' => '\Walmart\Models\MP\US\Items\GetCatalogSearchRequestSort'
+        'query' => '\Walmart\Models\MP\US\Items\Query',
+        'filters' => '\Walmart\Models\MP\US\Items\Filter[]',
+        'sort' => '\Walmart\Models\MP\US\Items\Sort'
     ];
 
     /**
@@ -142,7 +142,7 @@ class ItemCatalogSearchPayload extends BaseModel
     /**
      * Gets query
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearchRequestQuery|null
+     * @return \Walmart\Models\MP\US\Items\Query|null
     
      */
     public function getQuery()
@@ -153,7 +153,7 @@ class ItemCatalogSearchPayload extends BaseModel
     /**
      * Sets query
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearchRequestQuery|null $query query
+     * @param \Walmart\Models\MP\US\Items\Query|null $query query
      *
      * @return self
     
@@ -171,7 +171,7 @@ class ItemCatalogSearchPayload extends BaseModel
     /**
      * Gets filters
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearchRequestFiltersInner[]|null
+     * @return \Walmart\Models\MP\US\Items\Filter[]|null
     
      */
     public function getFilters()
@@ -182,7 +182,7 @@ class ItemCatalogSearchPayload extends BaseModel
     /**
      * Sets filters
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearchRequestFiltersInner[]|null $filters filters
+     * @param \Walmart\Models\MP\US\Items\Filter[]|null $filters filters
      *
      * @return self
     
@@ -200,7 +200,7 @@ class ItemCatalogSearchPayload extends BaseModel
     /**
      * Gets sort
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearchRequestSort|null
+     * @return \Walmart\Models\MP\US\Items\Sort|null
     
      */
     public function getSort()
@@ -211,7 +211,7 @@ class ItemCatalogSearchPayload extends BaseModel
     /**
      * Sets sort
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearchRequestSort|null $sort sort
+     * @param \Walmart\Models\MP\US\Items\Sort|null $sort sort
      *
      * @return self
     

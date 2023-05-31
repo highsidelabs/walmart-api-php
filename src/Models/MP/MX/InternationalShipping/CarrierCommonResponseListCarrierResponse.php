@@ -50,8 +50,8 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'carriers' => '\Walmart\Models\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]',
-        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'carriers' => '\Walmart\Models\MP\MX\InternationalShipping\CarrierResponse[]',
+        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Gets carriers
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\CarrierResponse[]|null
     
      */
     public function getCarriers()
@@ -146,7 +146,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Sets carriers
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\GetCarriers200ResponseCarriersInner[]|null $carriers carriers
+     * @param \Walmart\Models\MP\MX\InternationalShipping\CarrierResponse[]|null $carriers carriers
      *
      * @return self
     
@@ -164,7 +164,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]|null
     
      */
     public function getErrors()
@@ -175,7 +175,7 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]|null $errors errors
      *
      * @return self
     

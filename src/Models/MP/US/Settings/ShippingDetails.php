@@ -52,7 +52,7 @@ class ShippingDetails extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'twoDayShipping' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]'
+        'twoDayShipping' => '\Walmart\Models\MP\US\Settings\CarrierDetail1[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class ShippingDetails extends BaseModel
     /**
      * Gets twoDayShipping
      *
-     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\CarrierDetail1[]|null
     
      */
     public function getTwoDayShipping()
@@ -141,7 +141,7 @@ class ShippingDetails extends BaseModel
     /**
      * Sets twoDayShipping
      *
-     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner[]|null $twoDayShipping Shipping type provided.
+     * @param \Walmart\Models\MP\US\Settings\CarrierDetail1[]|null $twoDayShipping Shipping type provided.
      *
      * @return self
     

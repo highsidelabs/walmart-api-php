@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rules** | [**\Walmart\Models\MP\US\Rules\CreateItemRule200ResponseRulesInner[]**](CreateItemRule200ResponseRulesInner.md) |  | [optional]
+**rules** | [**\Walmart\Models\MP\US\Rules\RuleInfo[]**](RuleInfo.md) |  | [optional]
 **status** | **string** |  | [optional]
 
 

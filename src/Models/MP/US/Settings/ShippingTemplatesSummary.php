@@ -50,7 +50,7 @@ class ShippingTemplatesSummary extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shippingTemplates' => '\Walmart\Models\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]',
+        'shippingTemplates' => '\Walmart\Models\MP\US\Settings\ShippingTemplateSummary[]',
         'totalRecords' => 'float'
     ];
 
@@ -135,7 +135,7 @@ class ShippingTemplatesSummary extends BaseModel
     /**
      * Gets shippingTemplates
      *
-     * @return \Walmart\Models\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\ShippingTemplateSummary[]|null
     
      */
     public function getShippingTemplates()
@@ -146,7 +146,7 @@ class ShippingTemplatesSummary extends BaseModel
     /**
      * Sets shippingTemplates
      *
-     * @param \Walmart\Models\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner[]|null $shippingTemplates Array of Shipping Templates
+     * @param \Walmart\Models\MP\US\Settings\ShippingTemplateSummary[]|null $shippingTemplates Array of Shipping Templates
      *
      * @return self
     

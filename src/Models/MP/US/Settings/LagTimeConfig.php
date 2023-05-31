@@ -51,7 +51,7 @@ class LagTimeConfig extends BaseModel
       */
     protected static array $openAPITypes = [
         'configurationName' => 'string',
-        'configuration' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration'
+        'configuration' => '\Walmart\Models\MP\US\Settings\CategoriesLagTimeDTO'
     ];
 
     /**
@@ -198,7 +198,7 @@ class LagTimeConfig extends BaseModel
     /**
      * Gets configuration
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null
+     * @return \Walmart\Models\MP\US\Settings\CategoriesLagTimeDTO|null
     
      */
     public function getConfiguration()
@@ -209,7 +209,7 @@ class LagTimeConfig extends BaseModel
     /**
      * Sets configuration
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null $configuration configuration
+     * @param \Walmart\Models\MP\US\Settings\CategoriesLagTimeDTO|null $configuration configuration
      *
      * @return self
     

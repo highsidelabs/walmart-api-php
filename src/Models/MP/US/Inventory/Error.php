@@ -56,7 +56,7 @@ class Error extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]',
+        'causes' => '\Walmart\Models\MP\US\Inventory\Cause[]',
         'errorIdentifiers' => 'array<string,object>'
     ];
 
@@ -437,7 +437,7 @@ class Error extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\Cause[]|null
     
      */
     public function getCauses()
@@ -448,7 +448,7 @@ class Error extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\MP\US\Inventory\Cause[]|null $causes causes
      *
      * @return self
     

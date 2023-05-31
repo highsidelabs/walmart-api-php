@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **offerId** | **string** | This is applicable only for promotions | [optional]
 **sku** | **string** |  |
 **replaceAll** | **string** | This is applicable only for promotions | [optional]
-**pricing** | [**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequestPricingInner[]**](UpdatePromotionalPricesRequestPricingInner.md) |  |
+**pricing** | [**\Walmart\Models\MP\US\Promotions\Pricing[]**](Pricing.md) |  |
 **definitions** | **object** |  | [optional]
 
 

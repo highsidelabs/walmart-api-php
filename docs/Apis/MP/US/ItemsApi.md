@@ -87,7 +87,7 @@ try {
 ## `getAnItem()`
 
 ```php
-getAnItem($id, $productIdType): \Walmart\Models\MP\US\Items\GetAnItem200Response
+getAnItem($id, $productIdType): \Walmart\Models\MP\US\Items\ItemResponseJson
 ```
 An item
 
@@ -128,7 +128,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetAnItem200Response**](../Model/GetAnItem200Response.md)
+[**\Walmart\Models\MP\US\Items\ItemResponseJson**](../Model/ItemResponseJson.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ try {
 ## `getCatalogSearch()`
 
 ```php
-getCatalogSearch($getCatalogSearchRequest, $page, $limit, $nextCursor): \Walmart\Models\MP\US\Items\GetCatalogSearch200Response
+getCatalogSearch($itemCatalogSearchPayload, $page, $limit, $nextCursor): \Walmart\Models\MP\US\Items\ItemCatalogResponses
 ```
 Catalog Search
 
@@ -167,13 +167,13 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->items();
 
-$getCatalogSearchRequest = new \Walmart\Models\MP\US\Items\GetCatalogSearchRequest(); // \Walmart\Models\MP\US\Items\GetCatalogSearchRequest | Request fields
+$itemCatalogSearchPayload = new \Walmart\Models\MP\US\Items\ItemCatalogSearchPayload(); // \Walmart\Models\MP\US\Items\ItemCatalogSearchPayload | Request fields
 $page = 0; // int | number of page
 $limit = 100; // int | number of items
 $nextCursor = 'nextCursor_example'; // string | nextCursor
 
 try {
-    $result = $api->getCatalogSearch($getCatalogSearchRequest, $page, $limit, $nextCursor);
+    $result = $api->getCatalogSearch($itemCatalogSearchPayload, $page, $limit, $nextCursor);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getCatalogSearch: {$e->getMessage()}\n";
@@ -183,7 +183,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **getCatalogSearchRequest** | [**\Walmart\Models\MP\US\Items\GetCatalogSearchRequest**](../Model/GetCatalogSearchRequest.md)| Request fields | |
+| **itemCatalogSearchPayload** | [**\Walmart\Models\MP\US\Items\ItemCatalogSearchPayload**](../Model/ItemCatalogSearchPayload.md)| Request fields | |
 | **page** | **int**| number of page | [optional] [default to 0] |
 | **limit** | **int**| number of items | [optional] [default to 100] |
 | **nextCursor** | **string**| nextCursor | [optional] |
@@ -191,7 +191,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetCatalogSearch200Response**](../Model/GetCatalogSearch200Response.md)
+[**\Walmart\Models\MP\US\Items\ItemCatalogResponses**](../Model/ItemCatalogResponses.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ try {
 ## `getItemAssociations()`
 
 ```php
-getItemAssociations($getItemAssociationsRequest): \Walmart\Models\MP\US\Items\GetItemAssociations200Response
+getItemAssociations($itemsAssociationsResponseDTO): \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO
 ```
 Get Item Associations
 
@@ -287,10 +287,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->items();
 
-$getItemAssociationsRequest = {"items":[{"sku":"RG-IRAE-79VD"},{"sku":"AC73891"}]}; // \Walmart\Models\MP\US\Items\GetItemAssociationsRequest | Request fields
+$itemsAssociationsResponseDTO = {"items":[{"sku":"RG-IRAE-79VD"},{"sku":"AC73891"}]}; // \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO | Request fields
 
 try {
-    $result = $api->getItemAssociations($getItemAssociationsRequest);
+    $result = $api->getItemAssociations($itemsAssociationsResponseDTO);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getItemAssociations: {$e->getMessage()}\n";
@@ -300,12 +300,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **getItemAssociationsRequest** | [**\Walmart\Models\MP\US\Items\GetItemAssociationsRequest**](../Model/GetItemAssociationsRequest.md)| Request fields | |
+| **itemsAssociationsResponseDTO** | [**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../Model/ItemsAssociationsResponseDTO.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetItemAssociations200Response**](../Model/GetItemAssociations200Response.md)
+[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../Model/ItemsAssociationsResponseDTO.md)
 
 ### Authorization
 
@@ -323,7 +323,7 @@ try {
 ## `getSearchResult()`
 
 ```php
-getSearchResult($query, $upc, $gtin): \Walmart\Models\MP\US\Items\GetSearchResult200Response
+getSearchResult($query, $upc, $gtin): \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO
 ```
 Item Search
 
@@ -366,7 +366,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetSearchResult200Response**](../Model/GetSearchResult200Response.md)
+[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../Model/ItemsAssociationsResponseDTO.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ try {
 ## `getTaxonomyResponse()`
 
 ```php
-getTaxonomyResponse(): \Walmart\Models\MP\US\Items\GetTaxonomyResponse200Response
+getTaxonomyResponse(): \Walmart\Models\MP\US\Items\TaxonomyResponseDTO
 ```
 Taxonomy
 
@@ -420,7 +420,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetTaxonomyResponse200Response**](../Model/GetTaxonomyResponse200Response.md)
+[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
 
 ### Authorization
 
@@ -438,7 +438,7 @@ This endpoint does not need any parameter.
 ## `getVariantCount()`
 
 ```php
-getVariantCount($variantGroupId): \Walmart\Models\MP\US\Items\GetVariantCount200Response
+getVariantCount($variantGroupId): \Walmart\Models\MP\US\Items\TaxonomyResponseDTO
 ```
 Get item count by groups
 
@@ -477,7 +477,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetVariantCount200Response**](../Model/GetVariantCount200Response.md)
+[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
 
 ### Authorization
 
@@ -495,11 +495,11 @@ try {
 ## `itemBulkUploads()`
 
 ```php
-itemBulkUploads($feedType, $file): \Walmart\Models\MP\US\Items\ItemBulkUploads200Response
+itemBulkUploads($feedType, $file): \Walmart\Models\MP\US\Items\FeedId
 ```
 Bulk Item Setup (Multiple)
 
-Use this API for initial item setup and maintenance.  This API updates items in bulk. You can update 10,000 items at once; updates with more than 10,000 items are not supported. Keep feed sizes below 10 MB, except for FITMENT_ACES and FITMENT_PIES, to ensure optimal feed processing time. For FITMENT_PIES and FITMENT_ACES feeds, files upto 25 MB are supported.  You can use the Bulk Item Setup API for any of the following item spec versions, just specify the corresponding feed type as a query parameter.  *   Item spec version 4.7 feed type: MP_ITEM *   WFS Item spec version 4.3 feed type: MP_WFS_ITEM  *   WFS Maintenance spec version 4.7 feed type: MP_MAINTENANCE *   Set up item by match 4.1 feed type: MP_ITEM_MATCH  *   Convert an existing item to WFS 4.5 feed type : OMNI_WFS  *   For Fitment feed type FITMENT_ACES and FITMENT_PIES, zip file needs to be added in the request body. While uploading the fitment feeds, it is mandatory to add boundary parameter in Content-Type header. For example, Content-Type: multipart/form-data;boundary=\"----custom boundary\". Without a boundary parameter, fitment feeds will fail to process. For details refer to the guide link below
+Use this API for initial item setup and maintenance.  This API updates items in bulk. You can update 10,000 items at once; updates with more than 10,000 items are not supported. Keep feed sizes below 10 MB, except for FITMENT_ACES and FITMENT_PIES, to ensure optimal feed processing time. For FITMENT_PIES and FITMENT_ACES feeds, files upto 25 MB are supported.  You can use the Bulk Item Setup API for any of the following item spec versions, just specify the corresponding feed type as a query parameter.  *   Item spec version 4.8 feed type: MP_ITEM *   WFS Item spec version 4.3 feed type: MP_WFS_ITEM  *   WFS Maintenance spec version 4.8 feed type: MP_MAINTENANCE *   Set up item by match 4.1 feed type: MP_ITEM_MATCH  *   Convert an existing item to WFS 4.5 feed type : OMNI_WFS  *   For Fitment feed type FITMENT_ACES and FITMENT_PIES, zip file needs to be added in the request body. While uploading the fitment feeds, it is mandatory to add boundary parameter in Content-Type header. For example, Content-Type: multipart/form-data;boundary=\"----custom boundary\". Without a boundary parameter, fitment feeds will fail to process. For details refer to the guide link below
 
 ### Example
 
@@ -536,7 +536,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemBulkUploads200Response**](../Model/ItemBulkUploads200Response.md)
+[**\Walmart\Models\MP\US\Items\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 

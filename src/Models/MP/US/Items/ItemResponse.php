@@ -64,7 +64,7 @@ class ItemResponse extends BaseModel
         'unpublishedReasons' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons',
         'lifecycleStatus' => 'string',
         'variantGroupId' => 'string',
-        'variantGroupInfo' => '\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo'
+        'variantGroupInfo' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerVariantGroupInfo'
     ];
 
     /**
@@ -678,7 +678,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets variantGroupInfo
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null
+     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerVariantGroupInfo|null
     
      */
     public function getVariantGroupInfo()
@@ -689,7 +689,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets variantGroupInfo
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null $variantGroupInfo variantGroupInfo
+     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerVariantGroupInfo|null $variantGroupInfo variantGroupInfo
      *
      * @return self
     

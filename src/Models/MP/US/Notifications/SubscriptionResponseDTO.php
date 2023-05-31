@@ -52,7 +52,7 @@ class SubscriptionResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'event' => '\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]'
+        'event' => '\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTORecord[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class SubscriptionResponseDTO extends BaseModel
     /**
      * Gets event
      *
-     * @return \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]|null
+     * @return \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTORecord[]|null
     
      */
     public function getEvent()
@@ -141,7 +141,7 @@ class SubscriptionResponseDTO extends BaseModel
     /**
      * Sets event
      *
-     * @param \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner[]|null $event event
+     * @param \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTORecord[]|null $event event
      *
      * @return self
     

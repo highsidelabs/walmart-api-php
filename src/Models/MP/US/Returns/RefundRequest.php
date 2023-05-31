@@ -51,7 +51,7 @@ class RefundRequest extends BaseModel
       */
     protected static array $openAPITypes = [
         'customerOrderId' => 'string',
-        'refundLines' => '\Walmart\Models\MP\US\Returns\IssueRefundRequestRefundLinesInner[]'
+        'refundLines' => '\Walmart\Models\MP\US\Returns\RefundLine[]'
     ];
 
     /**
@@ -170,7 +170,7 @@ class RefundRequest extends BaseModel
     /**
      * Gets refundLines
      *
-     * @return \Walmart\Models\MP\US\Returns\IssueRefundRequestRefundLinesInner[]
+     * @return \Walmart\Models\MP\US\Returns\RefundLine[]
     
      */
     public function getRefundLines()
@@ -181,7 +181,7 @@ class RefundRequest extends BaseModel
     /**
      * Sets refundLines
      *
-     * @param \Walmart\Models\MP\US\Returns\IssueRefundRequestRefundLinesInner[] $refundLines Array of refund lines.
+     * @param \Walmart\Models\MP\US\Returns\RefundLine[] $refundLines Array of refund lines.
      *
      * @return self
     

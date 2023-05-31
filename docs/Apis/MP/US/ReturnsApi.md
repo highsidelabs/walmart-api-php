@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `bulkItemOverrideFeed()`
 
 ```php
-bulkItemOverrideFeed($feedType, $file): \Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response
+bulkItemOverrideFeed($feedType, $file): \Walmart\Models\MP\US\Returns\FeedId
 ```
 Return Item Overrides
 
@@ -52,7 +52,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response**](../Model/BulkItemOverrideFeed200Response.md)
+[**\Walmart\Models\MP\US\Returns\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 
@@ -70,7 +70,7 @@ try {
 ## `getReturns()`
 
 ```php
-getReturns($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit): \Walmart\Models\MP\US\Returns\GetReturns200Response
+getReturns($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit): \Walmart\Models\MP\US\Returns\GetReturnOrdersResponse
 ```
 Returns
 
@@ -127,7 +127,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\GetReturns200Response**](../Model/GetReturns200Response.md)
+[**\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse**](../Model/GetReturnOrdersResponse.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ try {
 ## `issueRefund()`
 
 ```php
-issueRefund($returnOrderId, $issueRefundRequest): \Walmart\Models\MP\US\Returns\IssueRefund200Response
+issueRefund($returnOrderId, $refundRequest): \Walmart\Models\MP\US\Returns\RefundResponse
 ```
 Issue refund
 
@@ -167,10 +167,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->returns();
 
 $returnOrderId = 'returnOrderId_example'; // string | The return order ID
-$issueRefundRequest = {"customerOrderId":"1535274411287","refundLines":[{"returnOrderLineNumber":1}]}; // \Walmart\Models\MP\US\Returns\IssueRefundRequest | File fields
+$refundRequest = {"customerOrderId":"1535274411287","refundLines":[{"returnOrderLineNumber":1}]}; // \Walmart\Models\MP\US\Returns\RefundRequest | File fields
 
 try {
-    $result = $api->issueRefund($returnOrderId, $issueRefundRequest);
+    $result = $api->issueRefund($returnOrderId, $refundRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->issueRefund: {$e->getMessage()}\n";
@@ -181,12 +181,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| The return order ID | |
-| **issueRefundRequest** | [**\Walmart\Models\MP\US\Returns\IssueRefundRequest**](../Model/IssueRefundRequest.md)| File fields | |
+| **refundRequest** | [**\Walmart\Models\MP\US\Returns\RefundRequest**](../Model/RefundRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\IssueRefund200Response**](../Model/IssueRefund200Response.md)
+[**\Walmart\Models\MP\US\Returns\RefundResponse**](../Model/RefundResponse.md)
 
 ### Authorization
 

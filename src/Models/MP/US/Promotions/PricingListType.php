@@ -51,7 +51,7 @@ class PricingListType extends BaseModel
       */
     protected static array $openAPITypes = [
         'replaceAll' => 'bool',
-        'pricing' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[]'
+        'pricing' => '\Walmart\Models\MP\US\Promotions\PricingType[]'
     ];
 
     /**
@@ -167,7 +167,7 @@ class PricingListType extends BaseModel
     /**
      * Gets pricing
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[]
+     * @return \Walmart\Models\MP\US\Promotions\PricingType[]
     
      */
     public function getPricing()
@@ -178,7 +178,7 @@ class PricingListType extends BaseModel
     /**
      * Sets pricing
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[] $pricing pricing
+     * @param \Walmart\Models\MP\US\Promotions\PricingType[] $pricing pricing
      *
      * @return self
     

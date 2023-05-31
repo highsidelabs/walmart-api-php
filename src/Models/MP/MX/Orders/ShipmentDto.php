@@ -52,7 +52,7 @@ class ShipmentDto extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipmentLines' => '\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]',
+        'shipmentLines' => '\Walmart\Models\MP\MX\Orders\ShipmentLine[]',
         'carrier' => 'string',
         'trackingNumber' => 'string',
         'trackingURL' => 'string'
@@ -187,7 +187,7 @@ class ShipmentDto extends BaseModel
     /**
      * Gets shipmentLines
      *
-     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\ShipmentLine[]|null
     
      */
     public function getShipmentLines()
@@ -198,7 +198,7 @@ class ShipmentDto extends BaseModel
     /**
      * Sets shipmentLines
      *
-     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null $shipmentLines shipmentLines
+     * @param \Walmart\Models\MP\MX\Orders\ShipmentLine[]|null $shipmentLines shipmentLines
      *
      * @return self
     

@@ -50,7 +50,7 @@ class Elements extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'inventories' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]'
+        'inventories' => '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class Elements extends BaseModel
     /**
      * Gets inventories
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO[]|null
     
      */
     public function getInventories()
@@ -139,7 +139,7 @@ class Elements extends BaseModel
     /**
      * Sets inventories
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElementsInventoriesInner[]|null $inventories inventories
+     * @param \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO[]|null $inventories inventories
      *
      * @return self
     

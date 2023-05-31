@@ -42,7 +42,7 @@ class TestNotificationRequest extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'testNotification_request';
+    protected static string $openAPIModelName = 'TestNotificationRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -54,8 +54,8 @@ class TestNotificationRequest extends BaseModel
         'eventVersion' => 'string',
         'resourceName' => 'string',
         'eventUrl' => 'string',
-        'authDetails' => '\Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails',
-        'headers' => '\Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders'
+        'authDetails' => '\Walmart\Models\MP\US\Notifications\AuthDetails',
+        'headers' => '\Walmart\Models\MP\US\Notifications\Headers'
     ];
 
     /**
@@ -291,7 +291,7 @@ class TestNotificationRequest extends BaseModel
     /**
      * Gets authDetails
      *
-     * @return \Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails|null
+     * @return \Walmart\Models\MP\US\Notifications\AuthDetails|null
     
      */
     public function getAuthDetails()
@@ -302,7 +302,7 @@ class TestNotificationRequest extends BaseModel
     /**
      * Sets authDetails
      *
-     * @param \Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails|null $authDetails authDetails
+     * @param \Walmart\Models\MP\US\Notifications\AuthDetails|null $authDetails authDetails
      *
      * @return self
     
@@ -320,7 +320,7 @@ class TestNotificationRequest extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders|null
+     * @return \Walmart\Models\MP\US\Notifications\Headers|null
     
      */
     public function getHeaders()
@@ -331,7 +331,7 @@ class TestNotificationRequest extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Notifications\Headers|null $headers headers
      *
      * @return self
     

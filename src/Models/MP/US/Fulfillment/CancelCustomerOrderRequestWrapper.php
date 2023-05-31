@@ -50,8 +50,8 @@ class CancelCustomerOrderRequestWrapper extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayload'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\CancelCustomerOrderRequestPayload'
     ];
 
     /**
@@ -138,7 +138,7 @@ class CancelCustomerOrderRequestWrapper extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader
     
      */
     public function getHeader()
@@ -149,7 +149,7 @@ class CancelCustomerOrderRequestWrapper extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader $header header
      *
      * @return self
     
@@ -167,7 +167,7 @@ class CancelCustomerOrderRequestWrapper extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayload|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CancelCustomerOrderRequestPayload|null
     
      */
     public function getPayload()
@@ -178,7 +178,7 @@ class CancelCustomerOrderRequestWrapper extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\CancelCustomerOrderRequestPayload|null $payload payload
      *
      * @return self
     

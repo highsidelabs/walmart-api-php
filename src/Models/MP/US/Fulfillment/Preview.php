@@ -53,7 +53,7 @@ class Preview extends BaseModel
       */
     protected static array $openAPITypes = [
         'previewType' => 'string',
-        'preview' => '\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]'
+        'preview' => '\Walmart\Models\MP\US\Fulfillment\PreviewResponseDTO[]'
     ];
 
     /**
@@ -166,7 +166,7 @@ class Preview extends BaseModel
     /**
      * Gets preview
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PreviewResponseDTO[]|null
     
      */
     public function getPreview()
@@ -177,7 +177,7 @@ class Preview extends BaseModel
     /**
      * Sets preview
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInner[]|null $preview Preview
+     * @param \Walmart\Models\MP\US\Fulfillment\PreviewResponseDTO[]|null $preview Preview
      *
      * @return self
     

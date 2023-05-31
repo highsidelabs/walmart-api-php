@@ -60,9 +60,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+     * @return \Walmart\Models\MP\US\Reports\ReconReportDateResponse
      */
-    public function getAvailableReconReportDates(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+    public function getAvailableReconReportDates(): \Walmart\Models\MP\US\Reports\ReconReportDateResponse
     {
         return $this->getAvailableReconReportDatesWithHttpInfo();
     }
@@ -74,9 +74,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+     * @return \Walmart\Models\MP\US\Reports\ReconReportDateResponse
      */
-    protected function getAvailableReconReportDatesWithHttpInfo(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+    protected function getAvailableReconReportDatesWithHttpInfo(): \Walmart\Models\MP\US\Reports\ReconReportDateResponse
     {
         $request = $this->getAvailableReconReportDatesRequest();
         $this->writeDebug($request);
@@ -127,19 +127,19 @@ class ReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Reports\ReconReportDateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Reports\ReconReportDateResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\ReconReportDateResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response';
+            $returnType = '\Walmart\Models\MP\US\Reports\ReconReportDateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -155,7 +155,7 @@ class ReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response',
+                        '\Walmart\Models\MP\US\Reports\ReconReportDateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -196,7 +196,7 @@ class ReportsApi extends BaseApi
      */
     protected function getAvailableReconReportDatesAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response';
+        $returnType = '\Walmart\Models\MP\US\Reports\ReconReportDateResponse';
         $request = $this->getAvailableReconReportDatesRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -319,9 +319,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+     * @return \Walmart\Models\MP\US\Reports\ReconReportDateResponse
      */
-    public function getAvailableV1ReconReportDates(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+    public function getAvailableV1ReconReportDates(): \Walmart\Models\MP\US\Reports\ReconReportDateResponse
     {
         return $this->getAvailableV1ReconReportDatesWithHttpInfo();
     }
@@ -333,9 +333,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+     * @return \Walmart\Models\MP\US\Reports\ReconReportDateResponse
      */
-    protected function getAvailableV1ReconReportDatesWithHttpInfo(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+    protected function getAvailableV1ReconReportDatesWithHttpInfo(): \Walmart\Models\MP\US\Reports\ReconReportDateResponse
     {
         $request = $this->getAvailableV1ReconReportDatesRequest();
         $this->writeDebug($request);
@@ -386,19 +386,19 @@ class ReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Reports\ReconReportDateResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Reports\ReconReportDateResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\ReconReportDateResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response';
+            $returnType = '\Walmart\Models\MP\US\Reports\ReconReportDateResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -414,7 +414,7 @@ class ReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response',
+                        '\Walmart\Models\MP\US\Reports\ReconReportDateResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -455,7 +455,7 @@ class ReportsApi extends BaseApi
      */
     protected function getAvailableV1ReconReportDatesAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response';
+        $returnType = '\Walmart\Models\MP\US\Reports\ReconReportDateResponse';
         $request = $this->getAvailableV1ReconReportDatesRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -578,9 +578,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes
      */
-    public function getPartnerPerformance(): \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response
+    public function getPartnerPerformance(): \Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes
     {
         return $this->getPartnerPerformanceWithHttpInfo();
     }
@@ -592,9 +592,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes
      */
-    protected function getPartnerPerformanceWithHttpInfo(): \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response
+    protected function getPartnerPerformanceWithHttpInfo(): \Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes
     {
         $request = $this->getPartnerPerformanceRequest();
         $this->writeDebug($request);
@@ -645,19 +645,19 @@ class ReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response';
+            $returnType = '\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -673,7 +673,7 @@ class ReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response',
+                        '\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -714,7 +714,7 @@ class ReportsApi extends BaseApi
      */
     protected function getPartnerPerformanceAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response';
+        $returnType = '\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes';
         $request = $this->getPartnerPerformanceRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -837,9 +837,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200Response
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramStatementRes
      */
-    public function getPartnerStatement(): \Walmart\Models\MP\US\Reports\GetPartnerStatement200Response
+    public function getPartnerStatement(): \Walmart\Models\MP\US\Reports\PartnerProgramStatementRes
     {
         return $this->getPartnerStatementWithHttpInfo();
     }
@@ -851,9 +851,9 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200Response
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramStatementRes
      */
-    protected function getPartnerStatementWithHttpInfo(): \Walmart\Models\MP\US\Reports\GetPartnerStatement200Response
+    protected function getPartnerStatementWithHttpInfo(): \Walmart\Models\MP\US\Reports\PartnerProgramStatementRes
     {
         $request = $this->getPartnerStatementRequest();
         $this->writeDebug($request);
@@ -904,19 +904,19 @@ class ReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response';
+            $returnType = '\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -932,7 +932,7 @@ class ReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response',
+                        '\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -973,7 +973,7 @@ class ReportsApi extends BaseApi
      */
     protected function getPartnerStatementAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response';
+        $returnType = '\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes';
         $request = $this->getPartnerStatementRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

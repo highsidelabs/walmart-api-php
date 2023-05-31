@@ -51,7 +51,7 @@ class InboundPreviewResponseWrapper extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\InboundPreviewResponseDTO[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class InboundPreviewResponseWrapper extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreviewResponseDTO[]|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class InboundPreviewResponseWrapper extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInner[]|null $payload Response payload.
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreviewResponseDTO[]|null $payload Response payload.
      *
      * @return self
     

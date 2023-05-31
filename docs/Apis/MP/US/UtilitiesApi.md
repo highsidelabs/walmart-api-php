@@ -12,7 +12,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getApiPlatformStatus()`
 
 ```php
-getApiPlatformStatus(): \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response
+getApiPlatformStatus(): \Walmart\Models\MP\US\Utilities\StatusAPIResponse
 ```
 API Platform Status
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response**](../Model/GetApiPlatformStatus200Response.md)
+[**\Walmart\Models\MP\US\Utilities\StatusAPIResponse**](../Model/StatusAPIResponse.md)
 
 ### Authorization
 
@@ -66,7 +66,7 @@ This endpoint does not need any parameter.
 ## `getCategories()`
 
 ```php
-getCategories($departmentId): \Walmart\Models\MP\US\Utilities\GetCategories200Response
+getCategories($departmentId): \Walmart\Models\MP\US\Utilities\GetCategories
 ```
 All Categories
 
@@ -105,7 +105,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\GetCategories200Response**](../Model/GetCategories200Response.md)
+[**\Walmart\Models\MP\US\Utilities\GetCategories**](../Model/GetCategories.md)
 
 ### Authorization
 
@@ -123,7 +123,7 @@ try {
 ## `getDepartmentList()`
 
 ```php
-getDepartmentList(): \Walmart\Models\MP\US\Utilities\GetDepartmentList200Response
+getDepartmentList(): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
 ```
 All Departments
 
@@ -159,7 +159,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response**](../Model/GetDepartmentList200Response.md)
+[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
 
 ### Authorization
 
@@ -177,7 +177,7 @@ This endpoint does not need any parameter.
 ## `getTaxonomyResponse()`
 
 ```php
-getTaxonomyResponse($feedType, $version): \Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response
+getTaxonomyResponse($feedType, $version): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
 ```
 Taxonomy by spec
 
@@ -218,7 +218,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response**](../Model/GetTaxonomyResponse200Response.md)
+[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
 
 ### Authorization
 

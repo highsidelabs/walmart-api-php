@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createConsolidation()`
 
 ```php
-createConsolidation($accept, $contentType, $createConsolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response
+createConsolidation($accept, $contentType, $consolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Create consolidation
 
@@ -46,10 +46,10 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
-$createConsolidationRequest = {"domesticCarrierId":1000,"domesticTrackingNo":"20128590000367","shipmentIds":["875F143972000000CA8020EA"]}; // \Walmart\Models\MP\CA\InternationalShipping\CreateConsolidationRequest | Consolidation Request
+$consolidationRequest = {"domesticCarrierId":1000,"domesticTrackingNo":"20128590000367","shipmentIds":["875F143972000000CA8020EA"]}; // \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest | Consolidation Request
 
 try {
-    $result = $api->createConsolidation($accept, $contentType, $createConsolidationRequest);
+    $result = $api->createConsolidation($accept, $contentType, $consolidationRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createConsolidation: {$e->getMessage()}\n";
@@ -61,12 +61,12 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
-| **createConsolidationRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\CreateConsolidationRequest**](../Model/CreateConsolidationRequest.md)| Consolidation Request | |
+| **consolidationRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest**](../Model/ConsolidationRequest.md)| Consolidation Request | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response**](../Model/GetConsolidation200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ try {
 ## `createLabel()`
 
 ```php
-createLabel($accept, $contentType, $createLabelRequest, $wMTESTMODE): \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200Response
+createLabel($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Create label
 
@@ -114,11 +114,11 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
-$createLabelRequest = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY","labelSize":"A6"}; // \Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequest | Label fields
+$labelGenerationRequestCa = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY","labelSize":"A6"}; // \Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa | Label fields
 $wMTESTMODE = false; // bool | For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned.
 
 try {
-    $result = $api->createLabel($accept, $contentType, $createLabelRequest, $wMTESTMODE);
+    $result = $api->createLabel($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createLabel: {$e->getMessage()}\n";
@@ -130,13 +130,13 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
-| **createLabelRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequest**](../Model/CreateLabelRequest.md)| Label fields | |
+| **labelGenerationRequestCa** | [**\Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa**](../Model/LabelGenerationRequestCa.md)| Label fields | |
 | **wMTESTMODE** | **bool**| For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned. | [optional] [default to false] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200Response**](../Model/CreateLabel200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
@@ -154,7 +154,7 @@ try {
 ## `discardLabel()`
 
 ```php
-discardLabel($carrierShortName, $trackingNo, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\DiscardLabel200Response
+discardLabel($carrierShortName, $trackingNo, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Discard label
 
@@ -206,7 +206,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\DiscardLabel200Response**](../Model/DiscardLabel200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ try {
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200Response
+getCarrierPackageTypes($carrierShortName, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Supported carrier package types
 
@@ -274,7 +274,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200Response**](../Model/GetCarrierPackageTypes200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
@@ -292,7 +292,7 @@ try {
 ## `getCarriers()`
 
 ```php
-getCarriers($accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetCarriers200Response
+getCarriers($accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse
 ```
 Supported carriers
 
@@ -340,7 +340,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\GetCarriers200Response**](../Model/GetCarriers200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../Model/CarrierCommonResponseListCarrierResponse.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ try {
 ## `getConsolidation()`
 
 ```php
-getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response
+getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Get consolidation details
 
@@ -410,7 +410,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200Response**](../Model/GetConsolidation200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
@@ -428,7 +428,7 @@ try {
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\GetLabel200Response
+getLabel($purchaseOrderId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Labels by purchase order id
 
@@ -478,7 +478,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\GetLabel200Response**](../Model/GetLabel200Response.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 

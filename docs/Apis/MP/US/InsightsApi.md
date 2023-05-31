@@ -15,7 +15,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getCategoriesList()`
 
 ```php
-getCategoriesList($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset): \Walmart\Models\MP\US\Insights\GetCategoriesList200Response
+getCategoriesList($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
 ```
 Item count with listing quality issues
 
@@ -64,7 +64,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetCategoriesList200Response**](../Model/GetCategoriesList200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../Model/GetUnpublishedItemsCount.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ try {
 ## `getListingQualityScore()`
 
 ```php
-getListingQualityScore($viewTrendingItems, $wfsFlag): \Walmart\Models\MP\US\Insights\GetListingQualityScore200Response
+getListingQualityScore($viewTrendingItems, $wfsFlag): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
 ```
 Seller Listing Quality Score
 
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetListingQualityScore200Response**](../Model/GetListingQualityScore200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../Model/GetUnpublishedItemsCount.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ try {
 ## `getProSellerBadgeInfo()`
 
 ```php
-getProSellerBadgeInfo(): \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200Response
+getProSellerBadgeInfo(): \Walmart\Models\MP\US\Insights\ProSellerResponse
 ```
 Pro Seller Badge Status
 
@@ -177,7 +177,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200Response**](../Model/GetProSellerBadgeInfo200Response.md)
+[**\Walmart\Models\MP\US\Insights\ProSellerResponse**](../Model/ProSellerResponse.md)
 
 ### Authorization
 
@@ -195,7 +195,7 @@ This endpoint does not need any parameter.
 ## `getTrendingResult()`
 
 ```php
-getTrendingResult($departmentId, $categoryId, $limit, $offset, $timeFrame): \Walmart\Models\MP\US\Insights\GetTrendingResult200Response
+getTrendingResult($departmentId, $categoryId, $limit, $offset, $timeFrame): \Walmart\Models\MP\US\Insights\GetTrendingResult
 ```
 Top Trending Items
 
@@ -242,7 +242,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetTrendingResult200Response**](../Model/GetTrendingResult200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetTrendingResult**](../Model/GetTrendingResult.md)
 
 ### Authorization
 
@@ -260,7 +260,7 @@ try {
 ## `getUnpublishedItemCount()`
 
 ```php
-getUnpublishedItemCount($fromDate): \Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200Response
+getUnpublishedItemCount($fromDate): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
 ```
 Unpublished Item Counts
 
@@ -299,7 +299,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200Response**](../Model/GetUnpublishedItemCount200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../Model/GetUnpublishedItemsCount.md)
 
 ### Authorization
 
@@ -317,7 +317,7 @@ try {
 ## `getUnpublishedItems()`
 
 ```php
-getUnpublishedItems($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory): \Walmart\Models\MP\US\Insights\GetUnpublishedItems200Response
+getUnpublishedItems($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory): \Walmart\Models\MP\US\Insights\GetUnpublishedItem
 ```
 Unpublished Items
 
@@ -366,7 +366,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItems200Response**](../Model/GetUnpublishedItems200Response.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItem**](../Model/GetUnpublishedItem.md)
 
 ### Authorization
 
@@ -384,7 +384,7 @@ try {
 ## `itemsDetailsForListing()`
 
 ```php
-itemsDetailsForListing($itemsDetailsForListingRequest, $limit, $nextCursor): \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200Response
+itemsDetailsForListing($itemDetailsLQRequestPayload, $limit, $nextCursor): \Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload
 ```
 Item Listing Quality Details
 
@@ -405,12 +405,12 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->insights();
 
-$itemsDetailsForListingRequest = {"query":{"field":"sku","value":"WB 433KP412-12"}}; // \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequest | Request payload
+$itemDetailsLQRequestPayload = {"query":{"field":"sku","value":"WB 433KP412-12"}}; // \Walmart\Models\MP\US\Insights\ItemDetailsLQRequestPayload | Request payload
 $limit = '200'; // string | Specify number of items to return. If no limit is specified, API returns 200 items by default.
 $nextCursor = 'nextCursor_example'; // string | Specify pagination for long list of items.
 
 try {
-    $result = $api->itemsDetailsForListing($itemsDetailsForListingRequest, $limit, $nextCursor);
+    $result = $api->itemsDetailsForListing($itemDetailsLQRequestPayload, $limit, $nextCursor);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InsightsApi->itemsDetailsForListing: {$e->getMessage()}\n";
@@ -420,14 +420,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemsDetailsForListingRequest** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequest**](../Model/ItemsDetailsForListingRequest.md)| Request payload | |
+| **itemDetailsLQRequestPayload** | [**\Walmart\Models\MP\US\Insights\ItemDetailsLQRequestPayload**](../Model/ItemDetailsLQRequestPayload.md)| Request payload | |
 | **limit** | **string**| Specify number of items to return. If no limit is specified, API returns 200 items by default. | [optional] [default to '200'] |
 | **nextCursor** | **string**| Specify pagination for long list of items. | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200Response**](../Model/ItemsDetailsForListing200Response.md)
+[**\Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload**](../Model/ItemDetailsLQResponsePayload.md)
 
 ### Authorization
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**orderRefund** | [**\Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefund**](RefundOrderLinesRequestOrderRefund.md) |  | [optional]
+**orderRefund** | [**\Walmart\Models\MP\US\Orders\RefundOrderLinesRequest**](RefundOrderLinesRequest.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

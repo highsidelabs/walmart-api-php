@@ -52,7 +52,7 @@ class FulfillmentGroup extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'fulfillmentOptions' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]'
+        'fulfillmentOptions' => '\Walmart\Models\MP\US\Fulfillment\FulfillmentOption[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class FulfillmentGroup extends BaseModel
     /**
      * Gets fulfillmentOptions
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\FulfillmentOption[]|null
     
      */
     public function getFulfillmentOptions()
@@ -141,7 +141,7 @@ class FulfillmentGroup extends BaseModel
     /**
      * Sets fulfillmentOptions
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInner[]|null $fulfillmentOptions Fulfillment options details.
+     * @param \Walmart\Models\MP\US\Fulfillment\FulfillmentOption[]|null $fulfillmentOptions Fulfillment options details.
      *
      * @return self
     

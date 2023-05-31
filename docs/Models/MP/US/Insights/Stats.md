@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gmv** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv**](ItemsDetailsForListing200ResponsePayloadInnerStatsGmv.md) |  | [optional]
+**gmv** | [**\Walmart\Models\MP\US\Insights\Gmv**](Gmv.md) |  | [optional]
 **pageViews** | **string** |  | [optional]
 **orders** | **string** |  | [optional]
 **conversionRate** | **string** |  | [optional]

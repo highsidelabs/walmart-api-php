@@ -50,7 +50,7 @@ class GetAllRulesResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rules' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]',
+        'rules' => '\Walmart\Models\MP\US\Rules\RuleInfo[]',
         'status' => 'string'
     ];
 
@@ -135,7 +135,7 @@ class GetAllRulesResponse extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\RuleInfo[]|null
     
      */
     public function getRules()
@@ -146,7 +146,7 @@ class GetAllRulesResponse extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInner[]|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\RuleInfo[]|null $rules rules
      *
      * @return self
     

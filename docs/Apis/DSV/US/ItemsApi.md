@@ -11,7 +11,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 ## `getAllItems()`
 
 ```php
-getAllItems($nextCursor, $sku): \Walmart\Models\DSV\US\Items\GetAllItems200Response
+getAllItems($nextCursor, $sku): \Walmart\Models\DSV\US\Items\ItemResponses
 ```
 All items
 
@@ -59,7 +59,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
+[**\Walmart\Models\DSV\US\Items\ItemResponses**](../Model/ItemResponses.md)
 
 ### Authorization
 
@@ -77,7 +77,7 @@ try {
 ## `getAnItem()`
 
 ```php
-getAnItem($sku): \Walmart\Models\DSV\US\Items\GetAnItem200Response
+getAnItem($sku): \Walmart\Models\DSV\US\Items\ItemResponse
 ```
 An item
 
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\GetAnItem200Response**](../Model/GetAnItem200Response.md)
+[**\Walmart\Models\DSV\US\Items\ItemResponse**](../Model/ItemResponse.md)
 
 ### Authorization
 

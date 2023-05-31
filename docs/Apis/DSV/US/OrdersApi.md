@@ -148,7 +148,7 @@ try {
 ## `getAllOrders()`
 
 ```php
-getAllOrders($shipNode, $limit, $sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $productInfo): \Walmart\Models\DSV\US\Orders\GetAllOrders200Response
+getAllOrders($shipNode, $limit, $sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $productInfo): \Walmart\Models\DSV\US\Orders\OrdersListType
 ```
 All orders
 
@@ -214,7 +214,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\DSV\US\Orders\OrdersListType**](../Model/OrdersListType.md)
 
 ### Authorization
 
@@ -232,7 +232,7 @@ try {
 ## `getAllReleasedOrders()`
 
 ```php
-getAllReleasedOrders($shipNode, $sku, $customerOrderId, $purchaseOrderId, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Models\DSV\US\Orders\GetAllOrders200Response
+getAllReleasedOrders($shipNode, $sku, $customerOrderId, $purchaseOrderId, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Models\DSV\US\Orders\OrdersListType
 ```
 All released orders
 
@@ -296,7 +296,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\DSV\US\Orders\OrdersListType**](../Model/OrdersListType.md)
 
 ### Authorization
 

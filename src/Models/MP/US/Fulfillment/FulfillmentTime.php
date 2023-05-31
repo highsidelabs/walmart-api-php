@@ -52,7 +52,7 @@ class FulfillmentTime extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'date' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTimeDate'
+        'date' => '\Walmart\Models\MP\US\Fulfillment\FulfillmentDate'
     ];
 
     /**
@@ -130,7 +130,7 @@ class FulfillmentTime extends BaseModel
     /**
      * Gets date
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTimeDate|null
+     * @return \Walmart\Models\MP\US\Fulfillment\FulfillmentDate|null
     
      */
     public function getDate()
@@ -141,7 +141,7 @@ class FulfillmentTime extends BaseModel
     /**
      * Sets date
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTimeDate|null $date date
+     * @param \Walmart\Models\MP\US\Fulfillment\FulfillmentDate|null $date date
      *
      * @return self
     

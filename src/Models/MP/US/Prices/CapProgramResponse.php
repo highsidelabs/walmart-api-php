@@ -51,7 +51,7 @@ class CapProgramResponse extends BaseModel
       */
     protected static array $openAPITypes = [
         'martId' => 'string',
-        'statusInfo' => '\Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest'
+        'statusInfo' => '\Walmart\Models\MP\US\Prices\StatusInfo'
     ];
 
     /**
@@ -164,7 +164,7 @@ class CapProgramResponse extends BaseModel
     /**
      * Gets statusInfo
      *
-     * @return \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest|null
+     * @return \Walmart\Models\MP\US\Prices\StatusInfo|null
     
      */
     public function getStatusInfo()
@@ -175,7 +175,7 @@ class CapProgramResponse extends BaseModel
     /**
      * Sets statusInfo
      *
-     * @param \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest|null $statusInfo statusInfo
+     * @param \Walmart\Models\MP\US\Prices\StatusInfo|null $statusInfo statusInfo
      *
      * @return self
     

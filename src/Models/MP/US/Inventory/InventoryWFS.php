@@ -51,7 +51,7 @@ class InventoryWFS extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'shipNodes' => '\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]'
+        'shipNodes' => '\Walmart\Models\MP\US\Inventory\ShipNodes[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class InventoryWFS extends BaseModel
     /**
      * Gets shipNodes
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\ShipNodes[]|null
     
      */
     public function getShipNodes()
@@ -175,7 +175,7 @@ class InventoryWFS extends BaseModel
     /**
      * Sets shipNodes
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner[]|null $shipNodes shipNodes
+     * @param \Walmart\Models\MP\US\Inventory\ShipNodes[]|null $shipNodes shipNodes
      *
      * @return self
     

@@ -75,16 +75,16 @@ class FulfillmentApi extends BaseApi
      *
      * Cancel Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     public function cancelFulfillment(
-        \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest
-    ): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response {
-        return $this->cancelFulfillmentWithHttpInfo($cancelFulfillmentRequest);
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
+        return $this->cancelFulfillmentWithHttpInfo($createCustomerOrderRequestWrapper);
     }
 
     /**
@@ -92,16 +92,16 @@ class FulfillmentApi extends BaseApi
      *
      * Cancel Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     protected function cancelFulfillmentWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest,
-    ): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response {
-        $request = $this->cancelFulfillmentRequest($cancelFulfillmentRequest, );
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
+        $request = $this->cancelFulfillmentRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -150,19 +150,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -178,7 +178,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -195,15 +195,15 @@ class FulfillmentApi extends BaseApi
      *
      * Cancel Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function cancelFulfillmentAsync(
-        \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
     ): PromiseInterface {
-        return $this->cancelFulfillmentAsyncWithHttpInfo($cancelFulfillmentRequest)
+        return $this->cancelFulfillmentAsyncWithHttpInfo($createCustomerOrderRequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -217,16 +217,16 @@ class FulfillmentApi extends BaseApi
      *
      * Cancel Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function cancelFulfillmentAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response';
-        $request = $this->cancelFulfillmentRequest($cancelFulfillmentRequest, );
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
+        $request = $this->cancelFulfillmentRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -271,20 +271,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'cancelFulfillment'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function cancelFulfillmentRequest(
-        \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest $cancelFulfillmentRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): Request {
         $contentType = self::contentTypes['cancelFulfillment'];
 
-        // verify the required parameter 'cancelFulfillmentRequest' is set
-        if ($cancelFulfillmentRequest === null || (is_array($cancelFulfillmentRequest) && count($cancelFulfillmentRequest) === 0)) {
+        // verify the required parameter 'createCustomerOrderRequestWrapper' is set
+        if ($createCustomerOrderRequestWrapper === null || (is_array($createCustomerOrderRequestWrapper) && count($createCustomerOrderRequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cancelFulfillmentRequest when calling cancelFulfillment'
+                'Missing the required parameter $createCustomerOrderRequestWrapper when calling cancelFulfillment'
             );
         }
         $resourcePath = '/v3/fulfillment/orders-fulfillments/cancel';
@@ -311,12 +311,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($cancelFulfillmentRequest)) {
+        if (isset($createCustomerOrderRequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($cancelFulfillmentRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createCustomerOrderRequestWrapper));
             } else {
-                $httpBody = $cancelFulfillmentRequest;
+                $httpBody = $createCustomerOrderRequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -651,16 +651,16 @@ class FulfillmentApi extends BaseApi
      *
      * Confirm Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
      */
     public function confirmCarrierRateQuote(
-        \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        return $this->confirmCarrierRateQuoteWithHttpInfo($confirmCarrierRateQuoteRequest);
+        return $this->confirmCarrierRateQuoteWithHttpInfo($carrierQuoteConfirmRequestWrapper);
     }
 
     /**
@@ -668,16 +668,16 @@ class FulfillmentApi extends BaseApi
      *
      * Confirm Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
      */
     protected function confirmCarrierRateQuoteWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper,
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        $request = $this->confirmCarrierRateQuoteRequest($confirmCarrierRateQuoteRequest, );
+        $request = $this->confirmCarrierRateQuoteRequest($carrierQuoteConfirmRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -771,15 +771,15 @@ class FulfillmentApi extends BaseApi
      *
      * Confirm Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function confirmCarrierRateQuoteAsync(
-        \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper
     ): PromiseInterface {
-        return $this->confirmCarrierRateQuoteAsyncWithHttpInfo($confirmCarrierRateQuoteRequest)
+        return $this->confirmCarrierRateQuoteAsyncWithHttpInfo($carrierQuoteConfirmRequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -793,16 +793,16 @@ class FulfillmentApi extends BaseApi
      *
      * Confirm Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function confirmCarrierRateQuoteAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response';
-        $request = $this->confirmCarrierRateQuoteRequest($confirmCarrierRateQuoteRequest, );
+        $request = $this->confirmCarrierRateQuoteRequest($carrierQuoteConfirmRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -847,20 +847,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'confirmCarrierRateQuote'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function confirmCarrierRateQuoteRequest(
-        \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest $confirmCarrierRateQuoteRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper $carrierQuoteConfirmRequestWrapper,
     ): Request {
         $contentType = self::contentTypes['confirmCarrierRateQuote'];
 
-        // verify the required parameter 'confirmCarrierRateQuoteRequest' is set
-        if ($confirmCarrierRateQuoteRequest === null || (is_array($confirmCarrierRateQuoteRequest) && count($confirmCarrierRateQuoteRequest) === 0)) {
+        // verify the required parameter 'carrierQuoteConfirmRequestWrapper' is set
+        if ($carrierQuoteConfirmRequestWrapper === null || (is_array($carrierQuoteConfirmRequestWrapper) && count($carrierQuoteConfirmRequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $confirmCarrierRateQuoteRequest when calling confirmCarrierRateQuote'
+                'Missing the required parameter $carrierQuoteConfirmRequestWrapper when calling confirmCarrierRateQuote'
             );
         }
         $resourcePath = '/v3/fulfillment/carrier-rate-quote/confirm';
@@ -887,12 +887,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($confirmCarrierRateQuoteRequest)) {
+        if (isset($carrierQuoteConfirmRequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($confirmCarrierRateQuoteRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($carrierQuoteConfirmRequestWrapper));
             } else {
-                $httpBody = $confirmCarrierRateQuoteRequest;
+                $httpBody = $carrierQuoteConfirmRequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -943,12 +943,12 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\FeedId
      */
     public function convertItemForWfs(
         string $feedType,
         ?\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest $convertItemForWfsRequest = null
-    ): \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\FeedId {
         return $this->convertItemForWfsWithHttpInfo($feedType, $convertItemForWfsRequest);
     }
 
@@ -962,12 +962,12 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\FeedId
      */
     protected function convertItemForWfsWithHttpInfo(
         string $feedType,
         ?\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest $convertItemForWfsRequest = null,
-    ): \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\FeedId {
         $request = $this->convertItemForWfsRequest($feedType, $convertItemForWfsRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1017,19 +1017,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1045,7 +1045,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1096,7 +1096,7 @@ class FulfillmentApi extends BaseApi
         string $feedType,
         ?\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest $convertItemForWfsRequest = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response';
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\FeedId';
         $request = $this->convertItemForWfsRequest($feedType, $convertItemForWfsRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1247,16 +1247,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper
      */
     public function createCarrierRateQuotes(
-        \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest
-    ): \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response {
-        return $this->createCarrierRateQuotesWithHttpInfo($createCarrierRateQuotesRequest);
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper
+    ): \Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper {
+        return $this->createCarrierRateQuotesWithHttpInfo($carrierQuoteRequestV2Wrapper);
     }
 
     /**
@@ -1264,16 +1264,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper
      */
     protected function createCarrierRateQuotesWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest,
-    ): \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response {
-        $request = $this->createCarrierRateQuotesRequest($createCarrierRateQuotesRequest, );
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper,
+    ): \Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper {
+        $request = $this->createCarrierRateQuotesRequest($carrierQuoteRequestV2Wrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1322,19 +1322,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1350,7 +1350,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1367,15 +1367,15 @@ class FulfillmentApi extends BaseApi
      *
      * Create Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createCarrierRateQuotesAsync(
-        \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper
     ): PromiseInterface {
-        return $this->createCarrierRateQuotesAsyncWithHttpInfo($createCarrierRateQuotesRequest)
+        return $this->createCarrierRateQuotesAsyncWithHttpInfo($carrierQuoteRequestV2Wrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1389,16 +1389,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Carrier Rate Quote
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createCarrierRateQuotesAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response';
-        $request = $this->createCarrierRateQuotesRequest($createCarrierRateQuotesRequest, );
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper';
+        $request = $this->createCarrierRateQuotesRequest($carrierQuoteRequestV2Wrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1443,20 +1443,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'createCarrierRateQuotes'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createCarrierRateQuotesRequest(
-        \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest $createCarrierRateQuotesRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper $carrierQuoteRequestV2Wrapper,
     ): Request {
         $contentType = self::contentTypes['createCarrierRateQuotes'];
 
-        // verify the required parameter 'createCarrierRateQuotesRequest' is set
-        if ($createCarrierRateQuotesRequest === null || (is_array($createCarrierRateQuotesRequest) && count($createCarrierRateQuotesRequest) === 0)) {
+        // verify the required parameter 'carrierQuoteRequestV2Wrapper' is set
+        if ($carrierQuoteRequestV2Wrapper === null || (is_array($carrierQuoteRequestV2Wrapper) && count($carrierQuoteRequestV2Wrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $createCarrierRateQuotesRequest when calling createCarrierRateQuotes'
+                'Missing the required parameter $carrierQuoteRequestV2Wrapper when calling createCarrierRateQuotes'
             );
         }
         $resourcePath = '/v3/fulfillment/carrier-rate-quotes';
@@ -1483,12 +1483,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($createCarrierRateQuotesRequest)) {
+        if (isset($carrierQuoteRequestV2Wrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createCarrierRateQuotesRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($carrierQuoteRequestV2Wrapper));
             } else {
-                $httpBody = $createCarrierRateQuotesRequest;
+                $httpBody = $carrierQuoteRequestV2Wrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1534,16 +1534,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     public function createFulfillment(
-        \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest
-    ): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response {
-        return $this->createFulfillmentWithHttpInfo($createFulfillmentRequest);
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
+        return $this->createFulfillmentWithHttpInfo($createCustomerOrderRequestWrapper);
     }
 
     /**
@@ -1551,16 +1551,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     protected function createFulfillmentWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest,
-    ): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response {
-        $request = $this->createFulfillmentRequest($createFulfillmentRequest, );
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
+        $request = $this->createFulfillmentRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1609,19 +1609,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1637,7 +1637,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1654,15 +1654,15 @@ class FulfillmentApi extends BaseApi
      *
      * Create Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createFulfillmentAsync(
-        \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
     ): PromiseInterface {
-        return $this->createFulfillmentAsyncWithHttpInfo($createFulfillmentRequest)
+        return $this->createFulfillmentAsyncWithHttpInfo($createCustomerOrderRequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1676,16 +1676,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Customer Order
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createFulfillmentAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response';
-        $request = $this->createFulfillmentRequest($createFulfillmentRequest, );
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
+        $request = $this->createFulfillmentRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1730,20 +1730,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'createFulfillment'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createFulfillmentRequest(
-        \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest $createFulfillmentRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): Request {
         $contentType = self::contentTypes['createFulfillment'];
 
-        // verify the required parameter 'createFulfillmentRequest' is set
-        if ($createFulfillmentRequest === null || (is_array($createFulfillmentRequest) && count($createFulfillmentRequest) === 0)) {
+        // verify the required parameter 'createCustomerOrderRequestWrapper' is set
+        if ($createCustomerOrderRequestWrapper === null || (is_array($createCustomerOrderRequestWrapper) && count($createCustomerOrderRequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $createFulfillmentRequest when calling createFulfillment'
+                'Missing the required parameter $createCustomerOrderRequestWrapper when calling createFulfillment'
             );
         }
         $resourcePath = '/v3/fulfillment/orders-fulfillments';
@@ -1770,12 +1770,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($createFulfillmentRequest)) {
+        if (isset($createCustomerOrderRequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createFulfillmentRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createCustomerOrderRequestWrapper));
             } else {
-                $httpBody = $createFulfillmentRequest;
+                $httpBody = $createCustomerOrderRequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2110,16 +2110,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment label
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string
      */
     public function createInboundShipmentLabelV2(
-        \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request
+        \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper
     ): string {
-        return $this->createInboundShipmentLabelV2WithHttpInfo($createInboundShipmentLabelV2Request);
+        return $this->createInboundShipmentLabelV2WithHttpInfo($labelV2RequestWrapper);
     }
 
     /**
@@ -2127,16 +2127,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment label
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return string
      */
     protected function createInboundShipmentLabelV2WithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request,
+        \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper,
     ): string {
-        $request = $this->createInboundShipmentLabelV2Request($createInboundShipmentLabelV2Request, );
+        $request = $this->createInboundShipmentLabelV2Request($labelV2RequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2230,15 +2230,15 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment label
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createInboundShipmentLabelV2Async(
-        \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request
+        \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper
     ): PromiseInterface {
-        return $this->createInboundShipmentLabelV2AsyncWithHttpInfo($createInboundShipmentLabelV2Request)
+        return $this->createInboundShipmentLabelV2AsyncWithHttpInfo($labelV2RequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2252,16 +2252,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment label
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createInboundShipmentLabelV2AsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request,
+        \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->createInboundShipmentLabelV2Request($createInboundShipmentLabelV2Request, );
+        $request = $this->createInboundShipmentLabelV2Request($labelV2RequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2306,20 +2306,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'createInboundShipmentLabelV2'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createInboundShipmentLabelV2Request(
-        \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request $createInboundShipmentLabelV2Request,
+        \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper $labelV2RequestWrapper,
     ): Request {
         $contentType = self::contentTypes['createInboundShipmentLabelV2'];
 
-        // verify the required parameter 'createInboundShipmentLabelV2Request' is set
-        if ($createInboundShipmentLabelV2Request === null || (is_array($createInboundShipmentLabelV2Request) && count($createInboundShipmentLabelV2Request) === 0)) {
+        // verify the required parameter 'labelV2RequestWrapper' is set
+        if ($labelV2RequestWrapper === null || (is_array($labelV2RequestWrapper) && count($labelV2RequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $createInboundShipmentLabelV2Request when calling createInboundShipmentLabelV2'
+                'Missing the required parameter $labelV2RequestWrapper when calling createInboundShipmentLabelV2'
             );
         }
         $resourcePath = '/v3/fulfillment/shipment-label';
@@ -2346,12 +2346,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($createInboundShipmentLabelV2Request)) {
+        if (isset($labelV2RequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createInboundShipmentLabelV2Request));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($labelV2RequestWrapper));
             } else {
-                $httpBody = $createInboundShipmentLabelV2Request;
+                $httpBody = $labelV2RequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2397,16 +2397,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateShipment200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO
      */
     public function createShipment(
-        \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest
-    ): \Walmart\Models\MP\US\Fulfillment\CreateShipment200Response {
-        return $this->createShipmentWithHttpInfo($createShipmentRequest);
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper
+    ): \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO {
+        return $this->createShipmentWithHttpInfo($inboundShipmentRequestWrapper);
     }
 
     /**
@@ -2414,16 +2414,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateShipment200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO
      */
     protected function createShipmentWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest,
-    ): \Walmart\Models\MP\US\Fulfillment\CreateShipment200Response {
-        $request = $this->createShipmentRequest($createShipmentRequest, );
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper,
+    ): \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO {
+        $request = $this->createShipmentRequest($inboundShipmentRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2472,19 +2472,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2500,7 +2500,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2517,15 +2517,15 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createShipmentAsync(
-        \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper
     ): PromiseInterface {
-        return $this->createShipmentAsyncWithHttpInfo($createShipmentRequest)
+        return $this->createShipmentAsyncWithHttpInfo($inboundShipmentRequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2539,16 +2539,16 @@ class FulfillmentApi extends BaseApi
      *
      * Create Inbound Shipment
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createShipmentAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest,
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response';
-        $request = $this->createShipmentRequest($createShipmentRequest, );
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO';
+        $request = $this->createShipmentRequest($inboundShipmentRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2593,20 +2593,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'createShipment'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createShipmentRequest(
-        \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest $createShipmentRequest,
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper $inboundShipmentRequestWrapper,
     ): Request {
         $contentType = self::contentTypes['createShipment'];
 
-        // verify the required parameter 'createShipmentRequest' is set
-        if ($createShipmentRequest === null || (is_array($createShipmentRequest) && count($createShipmentRequest) === 0)) {
+        // verify the required parameter 'inboundShipmentRequestWrapper' is set
+        if ($inboundShipmentRequestWrapper === null || (is_array($inboundShipmentRequestWrapper) && count($inboundShipmentRequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $createShipmentRequest when calling createShipment'
+                'Missing the required parameter $inboundShipmentRequestWrapper when calling createShipment'
             );
         }
         $resourcePath = '/v3/fulfillment/inbound-shipments';
@@ -2633,12 +2633,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($createShipmentRequest)) {
+        if (isset($inboundShipmentRequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createShipmentRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($inboundShipmentRequestWrapper));
             } else {
-                $httpBody = $createShipmentRequest;
+                $httpBody = $inboundShipmentRequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2689,12 +2689,12 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper
      */
     public function getCarrierRateQuote(
         string $shipmentId,
         string $mode
-    ): \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper {
         return $this->getCarrierRateQuoteWithHttpInfo($shipmentId, $mode);
     }
 
@@ -2708,12 +2708,12 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper
      */
     protected function getCarrierRateQuoteWithHttpInfo(
         string $shipmentId,
         string $mode,
-    ): \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper {
         $request = $this->getCarrierRateQuoteRequest($shipmentId, $mode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2763,19 +2763,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2791,7 +2791,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2842,7 +2842,7 @@ class FulfillmentApi extends BaseApi
         string $shipmentId,
         string $mode,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response';
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper';
         $request = $this->getCarrierRateQuoteRequest($shipmentId, $mode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3009,7 +3009,7 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     public function getFulfillmentOrdersStatus(
         string $orgId,
@@ -3022,7 +3022,7 @@ class FulfillmentApi extends BaseApi
         ?string $toOrderDate = null,
         ?string $sortOrder = 'desc',
         ?string $sortBy = null
-    ): \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
         return $this->getFulfillmentOrdersStatusWithHttpInfo($orgId, $limit, $offset, $orderNumber, $trackingNumber, $shipmentNumber, $fromOrderDate, $toOrderDate, $sortOrder, $sortBy);
     }
 
@@ -3044,7 +3044,7 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     protected function getFulfillmentOrdersStatusWithHttpInfo(
         string $orgId,
@@ -3057,7 +3057,7 @@ class FulfillmentApi extends BaseApi
         ?string $toOrderDate = null,
         ?string $sortOrder = 'desc',
         ?string $sortBy = null,
-    ): \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
         $request = $this->getFulfillmentOrdersStatusRequest($orgId, $limit, $offset, $orderNumber, $trackingNumber, $shipmentNumber, $fromOrderDate, $toOrderDate, $sortOrder, $sortBy, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3107,19 +3107,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3135,7 +3135,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3218,7 +3218,7 @@ class FulfillmentApi extends BaseApi
         ?string $sortOrder = 'desc',
         ?string $sortBy = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response';
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
         $request = $this->getFulfillmentOrdersStatusRequest($orgId, $limit, $offset, $orderNumber, $trackingNumber, $shipmentNumber, $fromOrderDate, $toOrderDate, $sortOrder, $sortBy, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3468,13 +3468,13 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     public function getInboundOrderErrors(
         ?string $offset = '0',
         ?string $limit = '10',
         ?string $shipmentId = null
-    ): \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         return $this->getInboundOrderErrorsWithHttpInfo($offset, $limit, $shipmentId);
     }
 
@@ -3489,13 +3489,13 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     protected function getInboundOrderErrorsWithHttpInfo(
         ?string $offset = '0',
         ?string $limit = '10',
         ?string $shipmentId = null,
-    ): \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         $request = $this->getInboundOrderErrorsRequest($offset, $limit, $shipmentId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3545,19 +3545,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3573,7 +3573,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3628,7 +3628,7 @@ class FulfillmentApi extends BaseApi
         ?string $limit = '10',
         ?string $shipmentId = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response';
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
         $request = $this->getInboundOrderErrorsRequest($offset, $limit, $shipmentId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3790,13 +3790,13 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     public function getInboundShipmentItems(
         ?string $offset = '0',
         ?string $limit = '10',
         ?string $shipmentId = null
-    ): \Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         return $this->getInboundShipmentItemsWithHttpInfo($offset, $limit, $shipmentId);
     }
 
@@ -3811,13 +3811,13 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     protected function getInboundShipmentItemsWithHttpInfo(
         ?string $offset = '0',
         ?string $limit = '10',
         ?string $shipmentId = null,
-    ): \Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         $request = $this->getInboundShipmentItemsRequest($offset, $limit, $shipmentId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3867,19 +3867,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3895,7 +3895,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3950,7 +3950,7 @@ class FulfillmentApi extends BaseApi
         ?string $limit = '10',
         ?string $shipmentId = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response';
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
         $request = $this->getInboundShipmentItemsRequest($offset, $limit, $shipmentId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4116,7 +4116,7 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     public function getInboundShipments(
         ?string $offset = '0',
@@ -4126,7 +4126,7 @@ class FulfillmentApi extends BaseApi
         ?string $status = null,
         ?string $fromCreateDate = null,
         ?string $toCreateDate = null
-    ): \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         return $this->getInboundShipmentsWithHttpInfo($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate);
     }
 
@@ -4145,7 +4145,7 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     protected function getInboundShipmentsWithHttpInfo(
         ?string $offset = '0',
@@ -4155,7 +4155,7 @@ class FulfillmentApi extends BaseApi
         ?string $status = null,
         ?string $fromCreateDate = null,
         ?string $toCreateDate = null,
-    ): \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         $request = $this->getInboundShipmentsRequest($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4205,19 +4205,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4233,7 +4233,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4304,7 +4304,7 @@ class FulfillmentApi extends BaseApi
         ?string $fromCreateDate = null,
         ?string $toCreateDate = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response';
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
         $request = $this->getInboundShipmentsRequest($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4772,7 +4772,7 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     public function getWFSInventoryLog(
         string $gtin,
@@ -4785,7 +4785,7 @@ class FulfillmentApi extends BaseApi
         ?string $sortOrder = null,
         ?string $offset = '0',
         ?string $limit = '50'
-    ): \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         return $this->getWFSInventoryLogWithHttpInfo($gtin, $shipmentId, $transactionType, $transactionLocation, $startDate, $endDate, $sortBy, $sortOrder, $offset, $limit);
     }
 
@@ -4807,7 +4807,7 @@ class FulfillmentApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
      */
     protected function getWFSInventoryLogWithHttpInfo(
         string $gtin,
@@ -4820,7 +4820,7 @@ class FulfillmentApi extends BaseApi
         ?string $sortOrder = null,
         ?string $offset = '0',
         ?string $limit = '50',
-    ): \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response {
+    ): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper {
         $request = $this->getWFSInventoryLogRequest($gtin, $shipmentId, $transactionType, $transactionLocation, $startDate, $endDate, $sortBy, $sortOrder, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -4870,19 +4870,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -4898,7 +4898,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4981,7 +4981,7 @@ class FulfillmentApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '50',
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response';
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper';
         $request = $this->getWFSInventoryLogRequest($gtin, $shipmentId, $transactionType, $transactionLocation, $startDate, $endDate, $sortBy, $sortOrder, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -5213,16 +5213,16 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Inbound Preview
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO
      */
     public function inboundPreview(
-        \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest
-    ): \Walmart\Models\MP\US\Fulfillment\InboundPreview200Response {
-        return $this->inboundPreviewWithHttpInfo($inboundPreviewRequest);
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
+    ): \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO {
+        return $this->inboundPreviewWithHttpInfo($createCustomerOrderRequestWrapper);
     }
 
     /**
@@ -5230,16 +5230,16 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Inbound Preview
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO
      */
     protected function inboundPreviewWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest,
-    ): \Walmart\Models\MP\US\Fulfillment\InboundPreview200Response {
-        $request = $this->inboundPreviewRequest($inboundPreviewRequest, );
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
+    ): \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO {
+        $request = $this->inboundPreviewRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -5288,19 +5288,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5316,7 +5316,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5333,15 +5333,15 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Inbound Preview
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function inboundPreviewAsync(
-        \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
     ): PromiseInterface {
-        return $this->inboundPreviewAsyncWithHttpInfo($inboundPreviewRequest)
+        return $this->inboundPreviewAsyncWithHttpInfo($createCustomerOrderRequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5355,16 +5355,16 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Inbound Preview
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function inboundPreviewAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response';
-        $request = $this->inboundPreviewRequest($inboundPreviewRequest, );
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO';
+        $request = $this->inboundPreviewRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -5409,20 +5409,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'inboundPreview'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function inboundPreviewRequest(
-        \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest $inboundPreviewRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): Request {
         $contentType = self::contentTypes['inboundPreview'];
 
-        // verify the required parameter 'inboundPreviewRequest' is set
-        if ($inboundPreviewRequest === null || (is_array($inboundPreviewRequest) && count($inboundPreviewRequest) === 0)) {
+        // verify the required parameter 'createCustomerOrderRequestWrapper' is set
+        if ($createCustomerOrderRequestWrapper === null || (is_array($createCustomerOrderRequestWrapper) && count($createCustomerOrderRequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $inboundPreviewRequest when calling inboundPreview'
+                'Missing the required parameter $createCustomerOrderRequestWrapper when calling inboundPreview'
             );
         }
         $resourcePath = '/v3/fulfillment/inbound-preview';
@@ -5449,12 +5449,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($inboundPreviewRequest)) {
+        if (isset($createCustomerOrderRequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($inboundPreviewRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createCustomerOrderRequestWrapper));
             } else {
-                $httpBody = $inboundPreviewRequest;
+                $httpBody = $createCustomerOrderRequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5501,7 +5501,7 @@ class FulfillmentApi extends BaseApi
      * Print Carrier Label
      *
      * @param  string $shipmentId Unique ID identifying each shipment. (required)
-     * @param  \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5509,9 +5509,9 @@ class FulfillmentApi extends BaseApi
      */
     public function printCarrierLabel(
         string $shipmentId,
-        \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest
+        \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        return $this->printCarrierLabelWithHttpInfo($shipmentId, $printCarrierLabelRequest);
+        return $this->printCarrierLabelWithHttpInfo($shipmentId, $carrierLabelRequestWrapper);
     }
 
     /**
@@ -5520,7 +5520,7 @@ class FulfillmentApi extends BaseApi
      * Print Carrier Label
      *
      * @param  string $shipmentId Unique ID identifying each shipment. (required)
-     * @param  \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -5528,9 +5528,9 @@ class FulfillmentApi extends BaseApi
      */
     protected function printCarrierLabelWithHttpInfo(
         string $shipmentId,
-        \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper,
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        $request = $this->printCarrierLabelRequest($shipmentId, $printCarrierLabelRequest, );
+        $request = $this->printCarrierLabelRequest($shipmentId, $carrierLabelRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -5625,16 +5625,16 @@ class FulfillmentApi extends BaseApi
      * Print Carrier Label
      *
      * @param  string $shipmentId Unique ID identifying each shipment. (required)
-     * @param  \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function printCarrierLabelAsync(
         string $shipmentId,
-        \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest
+        \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper
     ): PromiseInterface {
-        return $this->printCarrierLabelAsyncWithHttpInfo($shipmentId, $printCarrierLabelRequest)
+        return $this->printCarrierLabelAsyncWithHttpInfo($shipmentId, $carrierLabelRequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5649,17 +5649,17 @@ class FulfillmentApi extends BaseApi
      * Print Carrier Label
      *
      * @param  string $shipmentId Unique ID identifying each shipment. (required)
-     * @param  \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function printCarrierLabelAsyncWithHttpInfo(
         string $shipmentId,
-        \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response';
-        $request = $this->printCarrierLabelRequest($shipmentId, $printCarrierLabelRequest, );
+        $request = $this->printCarrierLabelRequest($shipmentId, $carrierLabelRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -5705,14 +5705,14 @@ class FulfillmentApi extends BaseApi
      * Create request for operation 'printCarrierLabel'
      *
      * @param  string $shipmentId Unique ID identifying each shipment. (required)
-     * @param  \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function printCarrierLabelRequest(
         string $shipmentId,
-        \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest $printCarrierLabelRequest,
+        \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper $carrierLabelRequestWrapper,
     ): Request {
         $contentType = self::contentTypes['printCarrierLabel'];
 
@@ -5722,10 +5722,10 @@ class FulfillmentApi extends BaseApi
                 'Missing the required parameter $shipmentId when calling printCarrierLabel'
             );
         }
-        // verify the required parameter 'printCarrierLabelRequest' is set
-        if ($printCarrierLabelRequest === null || (is_array($printCarrierLabelRequest) && count($printCarrierLabelRequest) === 0)) {
+        // verify the required parameter 'carrierLabelRequestWrapper' is set
+        if ($carrierLabelRequestWrapper === null || (is_array($carrierLabelRequestWrapper) && count($carrierLabelRequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $printCarrierLabelRequest when calling printCarrierLabel'
+                'Missing the required parameter $carrierLabelRequestWrapper when calling printCarrierLabel'
             );
         }
         $resourcePath = '/v3/fulfillment/carrier-label/{shipmentId}';
@@ -5761,12 +5761,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($printCarrierLabelRequest)) {
+        if (isset($carrierLabelRequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($printCarrierLabelRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($carrierLabelRequestWrapper));
             } else {
-                $httpBody = $printCarrierLabelRequest;
+                $httpBody = $carrierLabelRequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -5812,16 +5812,16 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Delivery Promise Details
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     public function promiseFulfillments(
-        \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest
-    ): \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response {
-        return $this->promiseFulfillmentsWithHttpInfo($promiseFulfillmentsRequest);
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
+        return $this->promiseFulfillmentsWithHttpInfo($createCustomerOrderRequestWrapper);
     }
 
     /**
@@ -5829,16 +5829,16 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Delivery Promise Details
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
      */
     protected function promiseFulfillmentsWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest,
-    ): \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response {
-        $request = $this->promiseFulfillmentsRequest($promiseFulfillmentsRequest, );
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
+    ): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO {
+        $request = $this->promiseFulfillmentsRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -5887,19 +5887,19 @@ class FulfillmentApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response';
+            $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -5915,7 +5915,7 @@ class FulfillmentApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response',
+                        '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -5932,15 +5932,15 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Delivery Promise Details
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function promiseFulfillmentsAsync(
-        \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper
     ): PromiseInterface {
-        return $this->promiseFulfillmentsAsyncWithHttpInfo($promiseFulfillmentsRequest)
+        return $this->promiseFulfillmentsAsyncWithHttpInfo($createCustomerOrderRequestWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -5954,16 +5954,16 @@ class FulfillmentApi extends BaseApi
      *
      * Fetch Delivery Promise Details
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function promiseFulfillmentsAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response';
-        $request = $this->promiseFulfillmentsRequest($promiseFulfillmentsRequest, );
+        $returnType = '\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO';
+        $request = $this->promiseFulfillmentsRequest($createCustomerOrderRequestWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -6008,20 +6008,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'promiseFulfillments'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function promiseFulfillmentsRequest(
-        \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest $promiseFulfillmentsRequest,
+        \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper $createCustomerOrderRequestWrapper,
     ): Request {
         $contentType = self::contentTypes['promiseFulfillments'];
 
-        // verify the required parameter 'promiseFulfillmentsRequest' is set
-        if ($promiseFulfillmentsRequest === null || (is_array($promiseFulfillmentsRequest) && count($promiseFulfillmentsRequest) === 0)) {
+        // verify the required parameter 'createCustomerOrderRequestWrapper' is set
+        if ($createCustomerOrderRequestWrapper === null || (is_array($createCustomerOrderRequestWrapper) && count($createCustomerOrderRequestWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $promiseFulfillmentsRequest when calling promiseFulfillments'
+                'Missing the required parameter $createCustomerOrderRequestWrapper when calling promiseFulfillments'
             );
         }
         $resourcePath = '/v3/fulfillment/orders-fulfillments/fetchOrderPromiseOptions';
@@ -6048,12 +6048,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($promiseFulfillmentsRequest)) {
+        if (isset($createCustomerOrderRequestWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($promiseFulfillmentsRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createCustomerOrderRequestWrapper));
             } else {
-                $httpBody = $promiseFulfillmentsRequest;
+                $httpBody = $createCustomerOrderRequestWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6099,16 +6099,16 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Quantities
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
      */
     public function updateShipmentQuantity(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        return $this->updateShipmentQuantityWithHttpInfo($updateShipmentQuantityRequest);
+        return $this->updateShipmentQuantityWithHttpInfo($inboundShipmentUpdateQtyWrapper);
     }
 
     /**
@@ -6116,16 +6116,16 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Quantities
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
      */
     protected function updateShipmentQuantityWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest,
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper,
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        $request = $this->updateShipmentQuantityRequest($updateShipmentQuantityRequest, );
+        $request = $this->updateShipmentQuantityRequest($inboundShipmentUpdateQtyWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -6219,15 +6219,15 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Quantities
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateShipmentQuantityAsync(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper
     ): PromiseInterface {
-        return $this->updateShipmentQuantityAsyncWithHttpInfo($updateShipmentQuantityRequest)
+        return $this->updateShipmentQuantityAsyncWithHttpInfo($inboundShipmentUpdateQtyWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6241,16 +6241,16 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Quantities
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateShipmentQuantityAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest,
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response';
-        $request = $this->updateShipmentQuantityRequest($updateShipmentQuantityRequest, );
+        $request = $this->updateShipmentQuantityRequest($inboundShipmentUpdateQtyWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -6295,20 +6295,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'updateShipmentQuantity'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateShipmentQuantityRequest(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest $updateShipmentQuantityRequest,
+        \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper $inboundShipmentUpdateQtyWrapper,
     ): Request {
         $contentType = self::contentTypes['updateShipmentQuantity'];
 
-        // verify the required parameter 'updateShipmentQuantityRequest' is set
-        if ($updateShipmentQuantityRequest === null || (is_array($updateShipmentQuantityRequest) && count($updateShipmentQuantityRequest) === 0)) {
+        // verify the required parameter 'inboundShipmentUpdateQtyWrapper' is set
+        if ($inboundShipmentUpdateQtyWrapper === null || (is_array($inboundShipmentUpdateQtyWrapper) && count($inboundShipmentUpdateQtyWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updateShipmentQuantityRequest when calling updateShipmentQuantity'
+                'Missing the required parameter $inboundShipmentUpdateQtyWrapper when calling updateShipmentQuantity'
             );
         }
         $resourcePath = '/v3/fulfillment/shipment-quantities';
@@ -6335,12 +6335,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updateShipmentQuantityRequest)) {
+        if (isset($inboundShipmentUpdateQtyWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateShipmentQuantityRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($inboundShipmentUpdateQtyWrapper));
             } else {
-                $httpBody = $updateShipmentQuantityRequest;
+                $httpBody = $inboundShipmentUpdateQtyWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -6386,16 +6386,16 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Tracking
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
      */
     public function updateShipmentTrackingDetails(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest
+        \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        return $this->updateShipmentTrackingDetailsWithHttpInfo($updateShipmentTrackingDetailsRequest);
+        return $this->updateShipmentTrackingDetailsWithHttpInfo($trackingInfoWrapper);
     }
 
     /**
@@ -6403,16 +6403,16 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Tracking
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
      */
     protected function updateShipmentTrackingDetailsWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest,
+        \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper,
     ): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response {
-        $request = $this->updateShipmentTrackingDetailsRequest($updateShipmentTrackingDetailsRequest, );
+        $request = $this->updateShipmentTrackingDetailsRequest($trackingInfoWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -6506,15 +6506,15 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Tracking
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateShipmentTrackingDetailsAsync(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest
+        \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper
     ): PromiseInterface {
-        return $this->updateShipmentTrackingDetailsAsyncWithHttpInfo($updateShipmentTrackingDetailsRequest)
+        return $this->updateShipmentTrackingDetailsAsyncWithHttpInfo($trackingInfoWrapper)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -6528,16 +6528,16 @@ class FulfillmentApi extends BaseApi
      *
      * Update Shipment Tracking
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateShipmentTrackingDetailsAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest,
+        \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response';
-        $request = $this->updateShipmentTrackingDetailsRequest($updateShipmentTrackingDetailsRequest, );
+        $request = $this->updateShipmentTrackingDetailsRequest($trackingInfoWrapper, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -6582,20 +6582,20 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'updateShipmentTrackingDetails'
      *
-     * @param  \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateShipmentTrackingDetailsRequest(
-        \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest $updateShipmentTrackingDetailsRequest,
+        \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper $trackingInfoWrapper,
     ): Request {
         $contentType = self::contentTypes['updateShipmentTrackingDetails'];
 
-        // verify the required parameter 'updateShipmentTrackingDetailsRequest' is set
-        if ($updateShipmentTrackingDetailsRequest === null || (is_array($updateShipmentTrackingDetailsRequest) && count($updateShipmentTrackingDetailsRequest) === 0)) {
+        // verify the required parameter 'trackingInfoWrapper' is set
+        if ($trackingInfoWrapper === null || (is_array($trackingInfoWrapper) && count($trackingInfoWrapper) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updateShipmentTrackingDetailsRequest when calling updateShipmentTrackingDetails'
+                'Missing the required parameter $trackingInfoWrapper when calling updateShipmentTrackingDetails'
             );
         }
         $resourcePath = '/v3/fulfillment/shipment-tracking';
@@ -6622,12 +6622,12 @@ class FulfillmentApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updateShipmentTrackingDetailsRequest)) {
+        if (isset($trackingInfoWrapper)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateShipmentTrackingDetailsRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($trackingInfoWrapper));
             } else {
-                $httpBody = $updateShipmentTrackingDetailsRequest;
+                $httpBody = $trackingInfoWrapper;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

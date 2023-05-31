@@ -5,9 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **issueCount** | **int** |  | [optional]
-**price** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice**](ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice.md) |  | [optional]
-**shippingSpeed** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed**](ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed.md) |  | [optional]
-**publishAndTransactable** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable**](ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable.md) |  | [optional]
+**price** | [**\Walmart\Models\MP\US\Insights\Gmv**](Gmv.md) |  | [optional]
+**shippingSpeed** | [**\Walmart\Models\MP\US\Insights\ShippingSpeed**](ShippingSpeed.md) |  | [optional]
+**publishAndTransactable** | [**\Walmart\Models\MP\US\Insights\PublishAndTransactable**](PublishAndTransactable.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

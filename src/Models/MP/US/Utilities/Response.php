@@ -52,7 +52,7 @@ class Response extends BaseModel
     protected static array $openAPITypes = [
         'departmentName' => 'string',
         'departmentId' => 'string',
-        'category' => '\Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]'
+        'category' => '\Walmart\Models\MP\US\Utilities\Category[]'
     ];
 
     /**
@@ -200,7 +200,7 @@ class Response extends BaseModel
     /**
      * Gets category
      *
-     * @return \Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]|null
+     * @return \Walmart\Models\MP\US\Utilities\Category[]|null
     
      */
     public function getCategory()
@@ -211,7 +211,7 @@ class Response extends BaseModel
     /**
      * Sets category
      *
-     * @param \Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]|null $category category
+     * @param \Walmart\Models\MP\US\Utilities\Category[]|null $category category
      *
      * @return self
     

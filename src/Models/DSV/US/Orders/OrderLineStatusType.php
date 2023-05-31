@@ -53,9 +53,9 @@ class OrderLineStatusType extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'statusQuantity' => '\Walmart\Models\DSV\US\Orders\QuantityType',
         'cancellationReason' => 'string',
-        'trackingInfo' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo'
+        'trackingInfo' => '\Walmart\Models\DSV\US\Orders\TrackingInfoType'
     ];
 
     /**
@@ -235,7 +235,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\DSV\US\Orders\QuantityType
     
      */
     public function getStatusQuantity()
@@ -246,7 +246,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\DSV\US\Orders\QuantityType $statusQuantity statusQuantity
      *
      * @return self
     
@@ -293,7 +293,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets trackingInfo
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
+     * @return \Walmart\Models\DSV\US\Orders\TrackingInfoType|null
     
      */
     public function getTrackingInfo()
@@ -304,7 +304,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets trackingInfo
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
+     * @param \Walmart\Models\DSV\US\Orders\TrackingInfoType|null $trackingInfo trackingInfo
      *
      * @return self
     

@@ -52,7 +52,7 @@ class ShipmentLine extends BaseModel
     protected static array $openAPITypes = [
         'primeLineNo' => 'string',
         'shipmentLineNo' => 'string',
-        'quantity' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity'
+        'quantity' => '\Walmart\Models\MP\MX\Returns\QuantityType'
     ];
 
     /**
@@ -200,7 +200,7 @@ class ShipmentLine extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity|null
+     * @return \Walmart\Models\MP\MX\Returns\QuantityType|null
     
      */
     public function getQuantity()
@@ -211,7 +211,7 @@ class ShipmentLine extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInnerShipmentLinesInnerQuantity|null $quantity quantity
+     * @param \Walmart\Models\MP\MX\Returns\QuantityType|null $quantity quantity
      *
      * @return self
     

@@ -54,7 +54,7 @@ class VariantDatum extends BaseModel
         'itemId' => 'string',
         'isAvailable' => 'string',
         'title' => 'string',
-        'variantValues' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]'
+        'variantValues' => '\Walmart\Models\MP\US\Items\GroupingAttributes[]'
     ];
 
     /**
@@ -272,7 +272,7 @@ class VariantDatum extends BaseModel
     /**
      * Gets variantValues
      *
-     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GroupingAttributes[]|null
     
      */
     public function getVariantValues()
@@ -283,7 +283,7 @@ class VariantDatum extends BaseModel
     /**
      * Sets variantValues
      *
-     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]|null $variantValues variantValues
+     * @param \Walmart\Models\MP\US\Items\GroupingAttributes[]|null $variantValues variantValues
      *
      * @return self
     

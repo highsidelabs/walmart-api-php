@@ -50,11 +50,11 @@ class PartnerProgramTransactionDetails extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'saleAggregate' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate',
-        'refundDetails' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate',
-        'adjustmentAggregate' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsAdjustmentAggregate',
-        'wfs' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsWfs',
-        'partnerTxns' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns'
+        'saleAggregate' => '\Walmart\Models\MP\US\Reports\SaleRefundAggr',
+        'refundDetails' => '\Walmart\Models\MP\US\Reports\SaleRefundAggr',
+        'adjustmentAggregate' => '\Walmart\Models\MP\US\Reports\AdjustmentAggregate',
+        'wfs' => '\Walmart\Models\MP\US\Reports\WfsAggr',
+        'partnerTxns' => '\Walmart\Models\MP\US\Reports\PartnerTxns'
     ];
 
     /**
@@ -156,7 +156,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Gets saleAggregate
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate|null
+     * @return \Walmart\Models\MP\US\Reports\SaleRefundAggr|null
     
      */
     public function getSaleAggregate()
@@ -167,7 +167,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Sets saleAggregate
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate|null $saleAggregate saleAggregate
+     * @param \Walmart\Models\MP\US\Reports\SaleRefundAggr|null $saleAggregate saleAggregate
      *
      * @return self
     
@@ -185,7 +185,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Gets refundDetails
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate|null
+     * @return \Walmart\Models\MP\US\Reports\SaleRefundAggr|null
     
      */
     public function getRefundDetails()
@@ -196,7 +196,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Sets refundDetails
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsSaleAggregate|null $refundDetails refundDetails
+     * @param \Walmart\Models\MP\US\Reports\SaleRefundAggr|null $refundDetails refundDetails
      *
      * @return self
     
@@ -214,7 +214,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Gets adjustmentAggregate
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsAdjustmentAggregate|null
+     * @return \Walmart\Models\MP\US\Reports\AdjustmentAggregate|null
     
      */
     public function getAdjustmentAggregate()
@@ -225,7 +225,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Sets adjustmentAggregate
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsAdjustmentAggregate|null $adjustmentAggregate adjustmentAggregate
+     * @param \Walmart\Models\MP\US\Reports\AdjustmentAggregate|null $adjustmentAggregate adjustmentAggregate
      *
      * @return self
     
@@ -243,7 +243,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Gets wfs
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsWfs|null
+     * @return \Walmart\Models\MP\US\Reports\WfsAggr|null
     
      */
     public function getWfs()
@@ -254,7 +254,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Sets wfs
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsWfs|null $wfs wfs
+     * @param \Walmart\Models\MP\US\Reports\WfsAggr|null $wfs wfs
      *
      * @return self
     
@@ -272,7 +272,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Gets partnerTxns
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns|null
+     * @return \Walmart\Models\MP\US\Reports\PartnerTxns|null
     
      */
     public function getPartnerTxns()
@@ -283,7 +283,7 @@ class PartnerProgramTransactionDetails extends BaseModel
     /**
      * Sets partnerTxns
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns|null $partnerTxns partnerTxns
+     * @param \Walmart\Models\MP\US\Reports\PartnerTxns|null $partnerTxns partnerTxns
      *
      * @return self
     

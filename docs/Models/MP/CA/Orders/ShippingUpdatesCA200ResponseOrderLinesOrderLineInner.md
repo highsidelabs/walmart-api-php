@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **shipFromCountry** | **string** | The ship from country is associated with the details for each individual item in the purchase order | [optional]
 **item** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerItem**](ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerItem.md) |  |
 **charges** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges**](ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges.md) |  |
-**orderLineQuantity** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity**](ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity.md) |  |
+**orderLineQuantity** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity**](ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity.md) |  |
 **statusDate** | **\DateTime** | The date shown on the recent order status |
 **orderLineStatuses** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses**](ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses.md) |  |
 **refund** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund**](ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund.md) |  | [optional]

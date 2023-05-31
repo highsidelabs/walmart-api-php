@@ -351,12 +351,12 @@ class LagTimeApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response
+     * @return \Walmart\Models\MP\US\LagTime\FeedId
      */
     public function updateLagTimeBulk(
         string $feedType,
         \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest
-    ): \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response {
+    ): \Walmart\Models\MP\US\LagTime\FeedId {
         return $this->updateLagTimeBulkWithHttpInfo($feedType, $updateLagTimeBulkRequest);
     }
 
@@ -370,12 +370,12 @@ class LagTimeApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response
+     * @return \Walmart\Models\MP\US\LagTime\FeedId
      */
     protected function updateLagTimeBulkWithHttpInfo(
         string $feedType,
         \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest,
-    ): \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response {
+    ): \Walmart\Models\MP\US\LagTime\FeedId {
         $request = $this->updateLagTimeBulkRequest($feedType, $updateLagTimeBulkRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -425,19 +425,19 @@ class LagTimeApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\LagTime\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\LagTime\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\LagTime\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response';
+            $returnType = '\Walmart\Models\MP\US\LagTime\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -453,7 +453,7 @@ class LagTimeApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response',
+                        '\Walmart\Models\MP\US\LagTime\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -504,7 +504,7 @@ class LagTimeApi extends BaseApi
         string $feedType,
         \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response';
+        $returnType = '\Walmart\Models\MP\US\LagTime\FeedId';
         $request = $this->updateLagTimeBulkRequest($feedType, $updateLagTimeBulkRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

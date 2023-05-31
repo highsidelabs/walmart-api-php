@@ -50,7 +50,7 @@ class StatusAPIResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'apiStatuses' => '\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200ResponseApiStatusesInner[]'
+        'apiStatuses' => '\Walmart\Models\MP\US\Utilities\StatusAPIResponseDTO[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class StatusAPIResponse extends BaseModel
     /**
      * Gets apiStatuses
      *
-     * @return \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200ResponseApiStatusesInner[]|null
+     * @return \Walmart\Models\MP\US\Utilities\StatusAPIResponseDTO[]|null
     
      */
     public function getApiStatuses()
@@ -139,7 +139,7 @@ class StatusAPIResponse extends BaseModel
     /**
      * Sets apiStatuses
      *
-     * @param \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200ResponseApiStatusesInner[]|null $apiStatuses A-List of all API statuses
+     * @param \Walmart\Models\MP\US\Utilities\StatusAPIResponseDTO[]|null $apiStatuses A-List of all API statuses
      *
      * @return self
     

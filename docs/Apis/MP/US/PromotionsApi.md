@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getPromotionalPrices()`
 
 ```php
-getPromotionalPrices($sku): \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response
+getPromotionalPrices($sku): \Walmart\Models\MP\US\Promotions\PromotionalPriceResponse
 ```
 Promotional prices
 
@@ -50,7 +50,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response**](../Model/GetPromotionalPrices200Response.md)
+[**\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse**](../Model/PromotionalPriceResponse.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ try {
 ## `updateBulkPromotionalPrice()`
 
 ```php
-updateBulkPromotionalPrice($feedType, $file): \Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response
+updateBulkPromotionalPrice($feedType, $file): \Walmart\Models\MP\US\Promotions\FeedId
 ```
 Updates bulk promotional prices
 
@@ -109,7 +109,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response**](../Model/UpdateBulkPromotionalPrice200Response.md)
+[**\Walmart\Models\MP\US\Promotions\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 
@@ -127,7 +127,7 @@ try {
 ## `updatePromotionalPrices()`
 
 ```php
-updatePromotionalPrices($promo, $updatePromotionalPricesRequest): \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response
+updatePromotionalPrices($promo, $price): \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response
 ```
 Update a promotional price
 
@@ -149,10 +149,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->promotions();
 
 $promo = true; // bool | The promotional price. Set to 'true' in order to retrieve promotional prices
-$updatePromotionalPricesRequest = {"sku":"97964_KFTest","pricing":[{"currentPrice":{"currency":"USD","amount":4},"currentPriceType":"REDUCED","comparisonPriceType":"BASE","comparisonPrice":{"currency":"USD","amount":4},"priceDisplayCodes":"CART","effectiveDate":"2019-11-03T09:49:57.943Z","expirationDate":"2019-12-03T09:49:57.943Z","processMode":"UPSERT"}]}; // \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest | The request body consists of a Feed file attached to the request.
+$price = {"sku":"97964_KFTest","pricing":[{"currentPrice":{"currency":"USD","amount":4},"currentPriceType":"REDUCED","comparisonPriceType":"BASE","comparisonPrice":{"currency":"USD","amount":4},"priceDisplayCodes":"CART","effectiveDate":"2019-11-03T09:49:57.943Z","expirationDate":"2019-12-03T09:49:57.943Z","processMode":"UPSERT"}]}; // \Walmart\Models\MP\US\Promotions\Price | The request body consists of a Feed file attached to the request.
 
 try {
-    $result = $api->updatePromotionalPrices($promo, $updatePromotionalPricesRequest);
+    $result = $api->updatePromotionalPrices($promo, $price);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PromotionsApi->updatePromotionalPrices: {$e->getMessage()}\n";
@@ -163,7 +163,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promo** | **bool**| The promotional price. Set to 'true' in order to retrieve promotional prices | [default to true] |
-| **updatePromotionalPricesRequest** | [**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest**](../Model/UpdatePromotionalPricesRequest.md)| The request body consists of a Feed file attached to the request. | |
+| **price** | [**\Walmart\Models\MP\US\Promotions\Price**](../Model/Price.md)| The request body consists of a Feed file attached to the request. | |
 
 
 ### Return type

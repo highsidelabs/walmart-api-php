@@ -50,7 +50,7 @@ class GetAllAreasPayload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'entities' => '\Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInner[]'
+        'entities' => '\Walmart\Models\MP\US\Rules\AreaEntity[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class GetAllAreasPayload extends BaseModel
     /**
      * Gets entities
      *
-     * @return \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\AreaEntity[]|null
     
      */
     public function getEntities()
@@ -139,7 +139,7 @@ class GetAllAreasPayload extends BaseModel
     /**
      * Sets entities
      *
-     * @param \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInner[]|null $entities entities
+     * @param \Walmart\Models\MP\US\Rules\AreaEntity[]|null $entities entities
      *
      * @return self
     

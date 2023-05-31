@@ -52,7 +52,7 @@ class Shipment extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipmentLines' => '\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]',
+        'shipmentLines' => '\Walmart\Models\MP\MX\Orders\ShipmentLine[]',
         'shipmentNo' => 'string',
         'status' => 'string',
         'packageNo' => 'string',
@@ -63,7 +63,7 @@ class Shipment extends BaseModel
         'carrierMethodCode' => 'string',
         'trackingNumber' => 'string',
         'trackingUrl' => 'string',
-        'shipmentAdditionalDate' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate'
+        'shipmentAdditionalDate' => '\Walmart\Models\MP\MX\Orders\ShipmentAdditionalDate'
     ];
 
     /**
@@ -207,7 +207,7 @@ class Shipment extends BaseModel
     /**
      * Gets shipmentLines
      *
-     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\ShipmentLine[]|null
     
      */
     public function getShipmentLines()
@@ -218,7 +218,7 @@ class Shipment extends BaseModel
     /**
      * Sets shipmentLines
      *
-     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInnerShipmentLinesInner[]|null $shipmentLines shipmentLines
+     * @param \Walmart\Models\MP\MX\Orders\ShipmentLine[]|null $shipmentLines shipmentLines
      *
      * @return self
     
@@ -526,7 +526,7 @@ class Shipment extends BaseModel
     /**
      * Gets shipmentAdditionalDate
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate|null
+     * @return \Walmart\Models\MP\MX\Orders\ShipmentAdditionalDate|null
     
      */
     public function getShipmentAdditionalDate()
@@ -537,7 +537,7 @@ class Shipment extends BaseModel
     /**
      * Sets shipmentAdditionalDate
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate|null $shipmentAdditionalDate shipmentAdditionalDate
+     * @param \Walmart\Models\MP\MX\Orders\ShipmentAdditionalDate|null $shipmentAdditionalDate shipmentAdditionalDate
      *
      * @return self
     

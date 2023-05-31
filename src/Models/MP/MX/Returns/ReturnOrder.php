@@ -54,11 +54,11 @@ class ReturnOrder extends BaseModel
     protected static array $openAPITypes = [
         'returnOrderId' => 'string',
         'customerEmail' => 'string',
-        'customerName' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName',
+        'customerName' => '\Walmart\Models\MP\MX\Returns\CustomerName',
         'customerOrderId' => 'string',
         'returnOrderDate' => 'string',
-        'returnOrderLines' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]',
-        'returnOrderShipments' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner[]'
+        'returnOrderLines' => '\Walmart\Models\MP\MX\Returns\ReturnOrderLine[]',
+        'returnOrderShipments' => '\Walmart\Models\MP\MX\Returns\Shipment[]'
     ];
 
     /**
@@ -230,7 +230,7 @@ class ReturnOrder extends BaseModel
     /**
      * Gets customerName
      *
-     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName|null
+     * @return \Walmart\Models\MP\MX\Returns\CustomerName|null
     
      */
     public function getCustomerName()
@@ -241,7 +241,7 @@ class ReturnOrder extends BaseModel
     /**
      * Sets customerName
      *
-     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName|null $customerName customerName
+     * @param \Walmart\Models\MP\MX\Returns\CustomerName|null $customerName customerName
      *
      * @return self
     
@@ -317,7 +317,7 @@ class ReturnOrder extends BaseModel
     /**
      * Gets returnOrderLines
      *
-     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]|null
+     * @return \Walmart\Models\MP\MX\Returns\ReturnOrderLine[]|null
     
      */
     public function getReturnOrderLines()
@@ -328,7 +328,7 @@ class ReturnOrder extends BaseModel
     /**
      * Sets returnOrderLines
      *
-     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner[]|null $returnOrderLines A list of order lines in the return order
+     * @param \Walmart\Models\MP\MX\Returns\ReturnOrderLine[]|null $returnOrderLines A list of order lines in the return order
      *
      * @return self
     
@@ -346,7 +346,7 @@ class ReturnOrder extends BaseModel
     /**
      * Gets returnOrderShipments
      *
-     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner[]|null
+     * @return \Walmart\Models\MP\MX\Returns\Shipment[]|null
     
      */
     public function getReturnOrderShipments()
@@ -357,7 +357,7 @@ class ReturnOrder extends BaseModel
     /**
      * Sets returnOrderShipments
      *
-     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner[]|null $returnOrderShipments The shipments for return orders
+     * @param \Walmart\Models\MP\MX\Returns\Shipment[]|null $returnOrderShipments The shipments for return orders
      *
      * @return self
     

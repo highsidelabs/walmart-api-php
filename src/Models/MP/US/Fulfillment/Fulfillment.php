@@ -53,11 +53,11 @@ class Fulfillment extends BaseModel
       */
     protected static array $openAPITypes = [
         'fulfillmentId' => 'string',
-        'lineItemAttributesList' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]',
-        'sla' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla',
+        'lineItemAttributesList' => '\Walmart\Models\MP\US\Fulfillment\LineItemAttributes[]',
+        'sla' => '\Walmart\Models\MP\US\Fulfillment\ServiceLevelAgreement',
         'nodeType' => 'string',
-        'accessMode' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode',
-        'fulfillmentTime' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime',
+        'accessMode' => '\Walmart\Models\MP\US\Fulfillment\AccessMode',
+        'fulfillmentTime' => '\Walmart\Models\MP\US\Fulfillment\FulfillmentTime',
         'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
     ];
 
@@ -201,7 +201,7 @@ class Fulfillment extends BaseModel
     /**
      * Gets lineItemAttributesList
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\LineItemAttributes[]|null
     
      */
     public function getLineItemAttributesList()
@@ -212,7 +212,7 @@ class Fulfillment extends BaseModel
     /**
      * Sets lineItemAttributesList
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerLineItemAttributesListInner[]|null $lineItemAttributesList Line item attribute details.
+     * @param \Walmart\Models\MP\US\Fulfillment\LineItemAttributes[]|null $lineItemAttributesList Line item attribute details.
      *
      * @return self
     
@@ -230,7 +230,7 @@ class Fulfillment extends BaseModel
     /**
      * Gets sla
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ServiceLevelAgreement|null
     
      */
     public function getSla()
@@ -241,7 +241,7 @@ class Fulfillment extends BaseModel
     /**
      * Sets sla
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerSla|null $sla sla
+     * @param \Walmart\Models\MP\US\Fulfillment\ServiceLevelAgreement|null $sla sla
      *
      * @return self
     
@@ -288,7 +288,7 @@ class Fulfillment extends BaseModel
     /**
      * Gets accessMode
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode|null
+     * @return \Walmart\Models\MP\US\Fulfillment\AccessMode|null
     
      */
     public function getAccessMode()
@@ -299,7 +299,7 @@ class Fulfillment extends BaseModel
     /**
      * Sets accessMode
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerAccessMode|null $accessMode accessMode
+     * @param \Walmart\Models\MP\US\Fulfillment\AccessMode|null $accessMode accessMode
      *
      * @return self
     
@@ -317,7 +317,7 @@ class Fulfillment extends BaseModel
     /**
      * Gets fulfillmentTime
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime|null
+     * @return \Walmart\Models\MP\US\Fulfillment\FulfillmentTime|null
     
      */
     public function getFulfillmentTime()
@@ -328,7 +328,7 @@ class Fulfillment extends BaseModel
     /**
      * Sets fulfillmentTime
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInnerFulfillmentTime|null $fulfillmentTime fulfillmentTime
+     * @param \Walmart\Models\MP\US\Fulfillment\FulfillmentTime|null $fulfillmentTime fulfillmentTime
      *
      * @return self
     

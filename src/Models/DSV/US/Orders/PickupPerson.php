@@ -53,7 +53,7 @@ class PickupPerson extends BaseModel
       */
     protected static array $openAPITypes = [
         'name' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerName',
-        'phone' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone'
+        'phone' => '\Walmart\Models\DSV\US\Orders\Phone'
     ];
 
     /**
@@ -166,7 +166,7 @@ class PickupPerson extends BaseModel
     /**
      * Gets phone
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone|null
+     * @return \Walmart\Models\DSV\US\Orders\Phone|null
     
      */
     public function getPhone()
@@ -177,7 +177,7 @@ class PickupPerson extends BaseModel
     /**
      * Sets phone
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone|null $phone phone
+     * @param \Walmart\Models\DSV\US\Orders\Phone|null $phone phone
      *
      * @return self
     

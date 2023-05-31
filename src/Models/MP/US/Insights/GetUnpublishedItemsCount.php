@@ -50,7 +50,7 @@ class GetUnpublishedItemsCount extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'payload' => '\Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Insights\Payload[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class GetUnpublishedItemsCount extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\Payload[]|null
     
      */
     public function getPayload()
@@ -139,7 +139,7 @@ class GetUnpublishedItemsCount extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Insights\Payload[]|null $payload payload
      *
      * @return self
     

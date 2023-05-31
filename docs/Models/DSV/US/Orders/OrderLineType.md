@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lineNumber** | **string** | The line number associated with the details for each individual item in the purchase order |
-**item** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerItem**](ShipOrderLines200ResponseOrderLinesOrderLineInnerItem.md) |  |
-**charges** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges**](ShipOrderLines200ResponseOrderLinesOrderLineInnerCharges.md) |  |
-**orderLineQuantity** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity**](ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity.md) |  |
+**item** | [**\Walmart\Models\DSV\US\Orders\ItemType**](ItemType.md) |  |
+**charges** | [**\Walmart\Models\DSV\US\Orders\ChargesType**](ChargesType.md) |  |
+**orderLineQuantity** | [**\Walmart\Models\DSV\US\Orders\QuantityType**](QuantityType.md) |  |
 **statusDate** | **\DateTime** | The date shown on the recent order status |
-**orderLineStatuses** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses**](ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatuses.md) |  |
-**refund** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund**](ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund.md) |  | [optional]
+**orderLineStatuses** | [**\Walmart\Models\DSV\US\Orders\OrderLineStatusesType**](OrderLineStatusesType.md) |  |
+**refund** | [**\Walmart\Models\DSV\US\Orders\RefundType**](RefundType.md) |  | [optional]
 **originalCarrierMethod** | **string** |  | [optional]
 **referenceLineId** | **string** |  | [optional]
-**fulfillment** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment**](ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment.md) |  | [optional]
+**fulfillment** | [**\Walmart\Models\DSV\US\Orders\FulfillmentType**](FulfillmentType.md) |  | [optional]
 **intentToCancel** | **string** |  | [optional]
 **configId** | **string** |  | [optional]
 

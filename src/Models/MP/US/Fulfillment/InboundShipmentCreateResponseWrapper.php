@@ -53,8 +53,8 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
       */
     protected static array $openAPITypes = [
         'shipmentId' => 'string',
-        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
-        'shipmentItems' => '\Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]',
+        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\ShipToAddress',
+        'shipmentItems' => '\Walmart\Models\MP\US\Fulfillment\ShipmentItem[]',
         'expectedDeliveryDate' => '\DateTime'
     ];
 
@@ -180,7 +180,7 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
     /**
      * Gets shipToAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ShipToAddress|null
     
      */
     public function getShipToAddress()
@@ -191,7 +191,7 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
     /**
      * Sets shipToAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\ShipToAddress|null $shipToAddress shipToAddress
      *
      * @return self
     
@@ -209,7 +209,7 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
     /**
      * Gets shipmentItems
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ShipmentItem[]|null
     
      */
     public function getShipmentItems()
@@ -220,7 +220,7 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
     /**
      * Sets shipmentItems
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInnerShipmentItemsInner[]|null $shipmentItems The items which needs to be send in the shipment
+     * @param \Walmart\Models\MP\US\Fulfillment\ShipmentItem[]|null $shipmentItems The items which needs to be send in the shipment
      *
      * @return self
     

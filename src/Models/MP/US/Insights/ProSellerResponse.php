@@ -55,9 +55,9 @@ class ProSellerResponse extends BaseModel
         'badgedSince' => '\DateTime',
         'isProhibited' => 'bool',
         'badgeStatus' => 'string',
-        'meetsCriteria' => '\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria',
-        'criteriaData' => '\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData',
-        'recommendations' => '\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations'
+        'meetsCriteria' => '\Walmart\Models\MP\US\Insights\MeetsCriteria',
+        'criteriaData' => '\Walmart\Models\MP\US\Insights\CriteriaData',
+        'recommendations' => '\Walmart\Models\MP\US\Insights\Recommendations'
     ];
 
     /**
@@ -322,7 +322,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Gets meetsCriteria
      *
-     * @return \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria|null
+     * @return \Walmart\Models\MP\US\Insights\MeetsCriteria|null
     
      */
     public function getMeetsCriteria()
@@ -333,7 +333,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Sets meetsCriteria
      *
-     * @param \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria|null $meetsCriteria meetsCriteria
+     * @param \Walmart\Models\MP\US\Insights\MeetsCriteria|null $meetsCriteria meetsCriteria
      *
      * @return self
     
@@ -351,7 +351,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Gets criteriaData
      *
-     * @return \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData|null
+     * @return \Walmart\Models\MP\US\Insights\CriteriaData|null
     
      */
     public function getCriteriaData()
@@ -362,7 +362,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Sets criteriaData
      *
-     * @param \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData|null $criteriaData criteriaData
+     * @param \Walmart\Models\MP\US\Insights\CriteriaData|null $criteriaData criteriaData
      *
      * @return self
     
@@ -380,7 +380,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Gets recommendations
      *
-     * @return \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations|null
+     * @return \Walmart\Models\MP\US\Insights\Recommendations|null
     
      */
     public function getRecommendations()
@@ -391,7 +391,7 @@ class ProSellerResponse extends BaseModel
     /**
      * Sets recommendations
      *
-     * @param \Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations|null $recommendations recommendations
+     * @param \Walmart\Models\MP\US\Insights\Recommendations|null $recommendations recommendations
      *
      * @return self
     

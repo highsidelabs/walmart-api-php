@@ -50,7 +50,7 @@ class OrderLineStatusesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLineStatus' => '\Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatus'
+        'orderLineStatus' => '\Walmart\Models\MP\MX\Returns\OrderLineStatusType'
     ];
 
     /**
@@ -131,7 +131,7 @@ class OrderLineStatusesType extends BaseModel
     /**
      * Gets orderLineStatus
      *
-     * @return \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatus
+     * @return \Walmart\Models\MP\MX\Returns\OrderLineStatusType
     
      */
     public function getOrderLineStatus()
@@ -142,7 +142,7 @@ class OrderLineStatusesType extends BaseModel
     /**
      * Sets orderLineStatus
      *
-     * @param \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatus $orderLineStatus orderLineStatus
+     * @param \Walmart\Models\MP\MX\Returns\OrderLineStatusType $orderLineStatus orderLineStatus
      *
      * @return self
     

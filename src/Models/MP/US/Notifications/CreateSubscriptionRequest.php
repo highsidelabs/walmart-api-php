@@ -42,7 +42,7 @@ class CreateSubscriptionRequest extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'createSubscription_request';
+    protected static string $openAPIModelName = 'CreateSubscriptionRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -50,7 +50,7 @@ class CreateSubscriptionRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'events' => '\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]'
+        'events' => '\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class CreateSubscriptionRequest extends BaseModel
     /**
      * Gets events
      *
-     * @return \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]|null
+     * @return \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord[]|null
     
      */
     public function getEvents()
@@ -139,7 +139,7 @@ class CreateSubscriptionRequest extends BaseModel
     /**
      * Sets events
      *
-     * @param \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]|null $events events
+     * @param \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord[]|null $events events
      *
      * @return self
     

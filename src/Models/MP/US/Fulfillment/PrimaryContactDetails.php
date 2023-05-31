@@ -52,7 +52,7 @@ class PrimaryContactDetails extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'name' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName'
+        'name' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderName'
     ];
 
     /**
@@ -130,7 +130,7 @@ class PrimaryContactDetails extends BaseModel
     /**
      * Gets name
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderName|null
     
      */
     public function getName()
@@ -141,7 +141,7 @@ class PrimaryContactDetails extends BaseModel
     /**
      * Sets name
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null $name name
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderName|null $name name
      *
      * @return self
     

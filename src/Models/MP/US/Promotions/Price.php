@@ -53,7 +53,7 @@ class Price extends BaseModel
         'offerId' => 'string',
         'sku' => 'string',
         'replaceAll' => 'string',
-        'pricing' => '\Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequestPricingInner[]',
+        'pricing' => '\Walmart\Models\MP\US\Promotions\Pricing[]',
         'definitions' => 'object'
     ];
 
@@ -286,7 +286,7 @@ class Price extends BaseModel
     /**
      * Gets pricing
      *
-     * @return \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequestPricingInner[]
+     * @return \Walmart\Models\MP\US\Promotions\Pricing[]
     
      */
     public function getPricing()
@@ -297,7 +297,7 @@ class Price extends BaseModel
     /**
      * Sets pricing
      *
-     * @param \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequestPricingInner[] $pricing pricing
+     * @param \Walmart\Models\MP\US\Promotions\Pricing[] $pricing pricing
      *
      * @return self
     

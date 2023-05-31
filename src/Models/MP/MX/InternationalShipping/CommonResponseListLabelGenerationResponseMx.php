@@ -50,8 +50,8 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'data' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseData[]',
-        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'data' => '\Walmart\Models\MP\MX\InternationalShipping\LabelGenerationResponseMx[]',
+        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Gets data
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseData[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationResponseMx[]|null
     
      */
     public function getData()
@@ -146,7 +146,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Sets data
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseData[]|null $data data
+     * @param \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationResponseMx[]|null $data data
      *
      * @return self
     
@@ -164,7 +164,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]|null
     
      */
     public function getErrors()
@@ -175,7 +175,7 @@ class CommonResponseListLabelGenerationResponseMx extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]|null $errors errors
      *
      * @return self
     

@@ -52,7 +52,7 @@ class ItemDetails extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'itemIngestionStatus' => '\Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]'
+        'itemIngestionStatus' => '\Walmart\Models\MP\US\Feeds\PartnerItemIngestionStatus[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class ItemDetails extends BaseModel
     /**
      * Gets itemIngestionStatus
      *
-     * @return \Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]|null
+     * @return \Walmart\Models\MP\US\Feeds\PartnerItemIngestionStatus[]|null
     
      */
     public function getItemIngestionStatus()
@@ -141,7 +141,7 @@ class ItemDetails extends BaseModel
     /**
      * Sets itemIngestionStatus
      *
-     * @param \Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner[]|null $itemIngestionStatus The ingestion status of an individual item
+     * @param \Walmart\Models\MP\US\Feeds\PartnerItemIngestionStatus[]|null $itemIngestionStatus The ingestion status of an individual item
      *
      * @return self
     

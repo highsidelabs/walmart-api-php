@@ -52,7 +52,7 @@ class IngestionErrors extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ingestionError' => '\Walmart\Models\CP\US\Feeds\IngestionErrorsIngestionErrorInner[]'
+        'ingestionError' => '\Walmart\Models\CP\US\Feeds\IngestionError[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class IngestionErrors extends BaseModel
     /**
      * Gets ingestionError
      *
-     * @return \Walmart\Models\CP\US\Feeds\IngestionErrorsIngestionErrorInner[]|null
+     * @return \Walmart\Models\CP\US\Feeds\IngestionError[]|null
     
      */
     public function getIngestionError()
@@ -141,7 +141,7 @@ class IngestionErrors extends BaseModel
     /**
      * Sets ingestionError
      *
-     * @param \Walmart\Models\CP\US\Feeds\IngestionErrorsIngestionErrorInner[]|null $ingestionError ingestionError
+     * @param \Walmart\Models\CP\US\Feeds\IngestionError[]|null $ingestionError ingestionError
      *
      * @return self
     

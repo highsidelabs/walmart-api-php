@@ -51,7 +51,7 @@ class GetDepartmentList extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Utilities\Payload[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class GetDepartmentList extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Utilities\Payload[]|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class GetDepartmentList extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Utilities\Payload[]|null $payload payload
      *
      * @return self
     

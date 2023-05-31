@@ -50,8 +50,8 @@ class CommonResponseListCarrierPackageResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'data' => '\Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]',
-        'errors' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'data' => '\Walmart\Models\MP\CA\InternationalShipping\CarrierPackageResponse[]',
+        'errors' => '\Walmart\Models\MP\CA\InternationalShipping\ErrorResponse[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class CommonResponseListCarrierPackageResponse extends BaseModel
     /**
      * Gets data
      *
-     * @return \Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CarrierPackageResponse[]|null
     
      */
     public function getData()
@@ -146,7 +146,7 @@ class CommonResponseListCarrierPackageResponse extends BaseModel
     /**
      * Sets data
      *
-     * @param \Walmart\Models\MP\CA\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner[]|null $data data
+     * @param \Walmart\Models\MP\CA\InternationalShipping\CarrierPackageResponse[]|null $data data
      *
      * @return self
     
@@ -164,7 +164,7 @@ class CommonResponseListCarrierPackageResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\ErrorResponse[]|null
     
      */
     public function getErrors()
@@ -175,7 +175,7 @@ class CommonResponseListCarrierPackageResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\InternationalShipping\ErrorResponse[]|null $errors errors
      *
      * @return self
     

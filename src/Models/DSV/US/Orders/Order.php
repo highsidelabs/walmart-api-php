@@ -56,8 +56,8 @@ class Order extends BaseModel
         'customerOrderId' => 'string',
         'customerEmailId' => 'string',
         'orderDate' => '\DateTime',
-        'shippingInfo' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo',
-        'orderLines' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines'
+        'shippingInfo' => '\Walmart\Models\DSV\US\Orders\ShippingInfoType',
+        'orderLines' => '\Walmart\Models\DSV\US\Orders\OrderLinesType'
     ];
 
     /**
@@ -299,7 +299,7 @@ class Order extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo
+     * @return \Walmart\Models\DSV\US\Orders\ShippingInfoType
     
      */
     public function getShippingInfo()
@@ -310,7 +310,7 @@ class Order extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo $shippingInfo shippingInfo
+     * @param \Walmart\Models\DSV\US\Orders\ShippingInfoType $shippingInfo shippingInfo
      *
      * @return self
     
@@ -328,7 +328,7 @@ class Order extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines
+     * @return \Walmart\Models\DSV\US\Orders\OrderLinesType
     
      */
     public function getOrderLines()
@@ -339,7 +339,7 @@ class Order extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines $orderLines orderLines
+     * @param \Walmart\Models\DSV\US\Orders\OrderLinesType $orderLines orderLines
      *
      * @return self
     

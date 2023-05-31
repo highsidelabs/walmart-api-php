@@ -50,7 +50,7 @@ class ItemSearch extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'items' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInner[]'
+        'items' => '\Walmart\Models\MP\US\Items\Item[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ItemSearch extends BaseModel
     /**
      * Gets items
      *
-     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\Item[]|null
     
      */
     public function getItems()
@@ -139,7 +139,7 @@ class ItemSearch extends BaseModel
     /**
      * Sets items
      *
-     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInner[]|null $items items
+     * @param \Walmart\Models\MP\US\Items\Item[]|null $items items
      *
      * @return self
     

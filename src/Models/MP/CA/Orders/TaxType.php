@@ -53,7 +53,7 @@ class TaxType extends BaseModel
       */
     protected static array $openAPITypes = [
         'taxName' => 'string',
-        'taxAmount' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount'
+        'taxAmount' => '\Walmart\Models\MP\CA\Orders\MoneyType'
     ];
 
     /**
@@ -172,7 +172,7 @@ class TaxType extends BaseModel
     /**
      * Gets taxAmount
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount
+     * @return \Walmart\Models\MP\CA\Orders\MoneyType
     
      */
     public function getTaxAmount()
@@ -183,7 +183,7 @@ class TaxType extends BaseModel
     /**
      * Sets taxAmount
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount $taxAmount taxAmount
+     * @param \Walmart\Models\MP\CA\Orders\MoneyType $taxAmount taxAmount
      *
      * @return self
     

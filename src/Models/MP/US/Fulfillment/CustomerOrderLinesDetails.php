@@ -56,10 +56,10 @@ class CustomerOrderLinesDetails extends BaseModel
         'lastModified' => '\DateTime',
         'shippingMethod' => 'string',
         'shippingTier' => 'string',
-        'orderLineQuantityInfo' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner[]',
-        'orderProduct' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderProduct',
-        'orderedQty' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity',
-        'customerShipToAddress' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress'
+        'orderLineQuantityInfo' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderLineQtyInfo[]',
+        'orderProduct' => '\Walmart\Models\MP\US\Fulfillment\OrderProduct',
+        'orderedQty' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType',
+        'customerShipToAddress' => '\Walmart\Models\MP\US\Fulfillment\CustomerShipToAddress'
     ];
 
     /**
@@ -295,7 +295,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Gets orderLineQuantityInfo
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderLineQtyInfo[]|null
     
      */
     public function getOrderLineQuantityInfo()
@@ -306,7 +306,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Sets orderLineQuantityInfo
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderLineQuantityInfoInner[]|null $orderLineQuantityInfo Order line quantity information
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderLineQtyInfo[]|null $orderLineQuantityInfo Order line quantity information
      *
      * @return self
     
@@ -324,7 +324,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Gets orderProduct
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderProduct|null
+     * @return \Walmart\Models\MP\US\Fulfillment\OrderProduct|null
     
      */
     public function getOrderProduct()
@@ -335,7 +335,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Sets orderProduct
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerOrderProduct|null $orderProduct orderProduct
+     * @param \Walmart\Models\MP\US\Fulfillment\OrderProduct|null $orderProduct orderProduct
      *
      * @return self
     
@@ -353,7 +353,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Gets orderedQty
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null
     
      */
     public function getOrderedQty()
@@ -364,7 +364,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Sets orderedQty
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInnerQuantity|null $orderedQty orderedQty
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null $orderedQty orderedQty
      *
      * @return self
     
@@ -382,7 +382,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Gets customerShipToAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerShipToAddress|null
     
      */
     public function getCustomerShipToAddress()
@@ -393,7 +393,7 @@ class CustomerOrderLinesDetails extends BaseModel
     /**
      * Sets customerShipToAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress|null $customerShipToAddress customerShipToAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerShipToAddress|null $customerShipToAddress customerShipToAddress
      *
      * @return self
     

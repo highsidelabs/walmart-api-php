@@ -52,7 +52,7 @@ class ShipLineStatusesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLineStatus' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]'
+        'orderLineStatus' => '\Walmart\Models\MP\US\Orders\ShipLineStatusType[]'
     ];
 
     /**
@@ -133,7 +133,7 @@ class ShipLineStatusesType extends BaseModel
     /**
      * Gets orderLineStatus
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]
+     * @return \Walmart\Models\MP\US\Orders\ShipLineStatusType[]
     
      */
     public function getOrderLineStatus()
@@ -144,7 +144,7 @@ class ShipLineStatusesType extends BaseModel
     /**
      * Sets orderLineStatus
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[] $orderLineStatus Details about the Order Line status
+     * @param \Walmart\Models\MP\US\Orders\ShipLineStatusType[] $orderLineStatus Details about the Order Line status
      *
      * @return self
     

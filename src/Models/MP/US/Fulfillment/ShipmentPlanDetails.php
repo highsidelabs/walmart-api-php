@@ -54,8 +54,8 @@ class ShipmentPlanDetails extends BaseModel
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
         'shipmentId' => 'string',
-        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
-        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
+        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\ShipToAddress',
+        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\ReturnAddress',
         'status' => 'string',
         'createdDate' => '\DateTime',
         'shipmentUnits' => 'int',
@@ -272,7 +272,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Gets shipToAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ShipToAddress|null
     
      */
     public function getShipToAddress()
@@ -283,7 +283,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Sets shipToAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\ShipToAddress|null $shipToAddress shipToAddress
      *
      * @return self
     
@@ -301,7 +301,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Gets returnAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ReturnAddress|null
     
      */
     public function getReturnAddress()
@@ -312,7 +312,7 @@ class ShipmentPlanDetails extends BaseModel
     /**
      * Sets returnAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null $returnAddress returnAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\ReturnAddress|null $returnAddress returnAddress
      *
      * @return self
     

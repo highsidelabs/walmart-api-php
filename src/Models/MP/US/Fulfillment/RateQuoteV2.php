@@ -52,7 +52,7 @@ class RateQuoteV2 extends BaseModel
     protected static array $openAPITypes = [
         'quoteId' => 'string',
         'estimatedDeliveryDateTime' => '\DateTime',
-        'carrier' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier',
+        'carrier' => '\Walmart\Models\MP\US\Fulfillment\Carrier',
         'currency' => 'string',
         'discountCharge' => 'float',
         'netCharge' => 'float',
@@ -389,7 +389,7 @@ class RateQuoteV2 extends BaseModel
     /**
      * Gets carrier
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Carrier|null
     
      */
     public function getCarrier()
@@ -400,7 +400,7 @@ class RateQuoteV2 extends BaseModel
     /**
      * Sets carrier
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier|null $carrier carrier
+     * @param \Walmart\Models\MP\US\Fulfillment\Carrier|null $carrier carrier
      *
      * @return self
     

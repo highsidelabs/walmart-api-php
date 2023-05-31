@@ -52,7 +52,7 @@ class SubRegion extends BaseModel
     protected static array $openAPITypes = [
         'subRegionCode' => 'string',
         'subRegionName' => 'string',
-        'states' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInnerStatesInner[]'
+        'states' => '\Walmart\Models\MP\US\Settings\State[]'
     ];
 
     /**
@@ -203,7 +203,7 @@ class SubRegion extends BaseModel
     /**
      * Gets states
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInnerStatesInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\State[]|null
     
      */
     public function getStates()
@@ -214,7 +214,7 @@ class SubRegion extends BaseModel
     /**
      * Sets states
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInnerStatesInner[]|null $states states
+     * @param \Walmart\Models\MP\US\Settings\State[]|null $states states
      *
      * @return self
     

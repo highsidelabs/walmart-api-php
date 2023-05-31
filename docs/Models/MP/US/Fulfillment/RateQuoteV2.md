@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quoteId** | **string** |  | [optional]
 **estimatedDeliveryDateTime** | **\DateTime** |  | [optional]
-**carrier** | [**\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseCarrier**](GetCarrierRateQuote200ResponseCarrier.md) |  | [optional]
+**carrier** | [**\Walmart\Models\MP\US\Fulfillment\Carrier**](Carrier.md) |  | [optional]
 **currency** | **string** |  | [optional]
 **discountCharge** | **float** |  | [optional]
 **netCharge** | **float** |  | [optional]

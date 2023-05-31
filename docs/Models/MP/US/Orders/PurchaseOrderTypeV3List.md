@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInner[]**](GetAllOrders200ResponseListErrorsInner.md) |  | [optional]
-**meta** | [**\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListMeta**](GetAllOrders200ResponseListMeta.md) |  |
-**elements** | [**\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListElements**](GetAllOrders200ResponseListElements.md) |  |
+**errors** | [**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListErrorsInner[]**](PurchaseOrderTypeV3ListErrorsInner.md) |  | [optional]
+**meta** | [**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListMeta**](PurchaseOrderTypeV3ListMeta.md) |  |
+**elements** | [**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListElements**](PurchaseOrderTypeV3ListElements.md) |  |
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

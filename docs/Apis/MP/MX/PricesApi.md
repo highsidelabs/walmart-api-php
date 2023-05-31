@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `updateBulkPrices()`
 
 ```php
-updateBulkPrices($feedType, $file): \Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response
+updateBulkPrices($feedType, $file): \Walmart\Models\MP\MX\Prices\FeedId
 ```
 Updates price in bulk
 
@@ -54,7 +54,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response**](../Model/UpdateBulkPrices200Response.md)
+[**\Walmart\Models\MP\MX\Prices\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 

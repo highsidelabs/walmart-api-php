@@ -52,11 +52,11 @@ class Configuration extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'regions' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[]',
+        'regions' => '\Walmart\Models\MP\US\Settings\Region[]',
         'addressTypes' => 'string[]',
         'transitTime' => 'int',
-        'perShippingCharge' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge',
-        'tieredShippingCharges' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]'
+        'perShippingCharge' => '\Walmart\Models\MP\US\Settings\PerShippingCharge',
+        'tieredShippingCharges' => '\Walmart\Models\MP\US\Settings\TieredShippingCharge[]'
     ];
 
     /**
@@ -188,7 +188,7 @@ class Configuration extends BaseModel
     /**
      * Gets regions
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[]
+     * @return \Walmart\Models\MP\US\Settings\Region[]
     
      */
     public function getRegions()
@@ -199,7 +199,7 @@ class Configuration extends BaseModel
     /**
      * Sets regions
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInner[] $regions Supported Regions includes 48 State Street, 48 State – Street Po Box/Street, AK and HI – Street etc
+     * @param \Walmart\Models\MP\US\Settings\Region[] $regions Supported Regions includes 48 State Street, 48 State – Street Po Box/Street, AK and HI – Street etc
      *
      * @return self
     
@@ -283,7 +283,7 @@ class Configuration extends BaseModel
     /**
      * Gets perShippingCharge
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge|null
+     * @return \Walmart\Models\MP\US\Settings\PerShippingCharge|null
     
      */
     public function getPerShippingCharge()
@@ -294,7 +294,7 @@ class Configuration extends BaseModel
     /**
      * Sets perShippingCharge
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingCharge|null $perShippingCharge perShippingCharge
+     * @param \Walmart\Models\MP\US\Settings\PerShippingCharge|null $perShippingCharge perShippingCharge
      *
      * @return self
     
@@ -312,7 +312,7 @@ class Configuration extends BaseModel
     /**
      * Gets tieredShippingCharges
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\TieredShippingCharge[]|null
     
      */
     public function getTieredShippingCharges()
@@ -323,7 +323,7 @@ class Configuration extends BaseModel
     /**
      * Sets tieredShippingCharges
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]|null $tieredShippingCharges Tiered Shipping Charges
+     * @param \Walmart\Models\MP\US\Settings\TieredShippingCharge[]|null $tieredShippingCharges Tiered Shipping Charges
      *
      * @return self
     

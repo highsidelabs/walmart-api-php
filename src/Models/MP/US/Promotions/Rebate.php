@@ -50,7 +50,7 @@ class Rebate extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rebateAmt' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
+        'rebateAmt' => '\Walmart\Models\MP\US\Promotions\MoneyType',
         'infoUrl' => 'string',
         'rebateType' => 'string',
         'startDate' => '\DateTime',
@@ -186,7 +186,7 @@ class Rebate extends BaseModel
     /**
      * Gets rebateAmt
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType
     
      */
     public function getRebateAmt()
@@ -197,7 +197,7 @@ class Rebate extends BaseModel
     /**
      * Sets rebateAmt
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue $rebateAmt rebateAmt
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType $rebateAmt rebateAmt
      *
      * @return self
     

@@ -56,7 +56,7 @@ class ContentDiscoverabilityIssue extends BaseModel
         'isSpecAttribute' => 'bool',
         'attributeName' => 'string',
         'issueCount' => 'int',
-        'issues' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner[]'
+        'issues' => '\Walmart\Models\MP\US\Insights\ContentDiscoverabilityIssuesDesc[]'
     ];
 
     /**
@@ -344,7 +344,7 @@ class ContentDiscoverabilityIssue extends BaseModel
     /**
      * Gets issues
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ContentDiscoverabilityIssuesDesc[]|null
     
      */
     public function getIssues()
@@ -355,7 +355,7 @@ class ContentDiscoverabilityIssue extends BaseModel
     /**
      * Sets issues
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner[]|null $issues issues
+     * @param \Walmart\Models\MP\US\Insights\ContentDiscoverabilityIssuesDesc[]|null $issues issues
      *
      * @return self
     

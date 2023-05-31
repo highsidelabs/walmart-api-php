@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **unpublishedReasons** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons**](GetAllItems200ResponseItemResponseInnerUnpublishedReasons.md) |  | [optional]
 **lifecycleStatus** | **string** | The lifecycle status of an item describes where the item listing is in the overall lifecycle. Examples of allowed values are ACTIVE , ARCHIVED, RETIRED. | [optional]
 **variantGroupId** | **string** | Variant Id  if the item is of type Variant | [optional]
-**variantGroupInfo** | [**\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo**](GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo.md) |  | [optional]
+**variantGroupInfo** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerVariantGroupInfo**](GetAllItems200ResponseItemResponseInnerVariantGroupInfo.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

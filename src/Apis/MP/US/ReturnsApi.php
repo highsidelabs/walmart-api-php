@@ -60,12 +60,12 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response
+     * @return \Walmart\Models\MP\US\Returns\FeedId
      */
     public function bulkItemOverrideFeed(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response {
+    ): \Walmart\Models\MP\US\Returns\FeedId {
         return $this->bulkItemOverrideFeedWithHttpInfo($feedType, $file);
     }
 
@@ -79,12 +79,12 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response
+     * @return \Walmart\Models\MP\US\Returns\FeedId
      */
     protected function bulkItemOverrideFeedWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response {
+    ): \Walmart\Models\MP\US\Returns\FeedId {
         $request = $this->bulkItemOverrideFeedRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -134,19 +134,19 @@ class ReturnsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Returns\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Returns\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Returns\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response';
+            $returnType = '\Walmart\Models\MP\US\Returns\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -162,7 +162,7 @@ class ReturnsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response',
+                        '\Walmart\Models\MP\US\Returns\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -213,7 +213,7 @@ class ReturnsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Returns\BulkItemOverrideFeed200Response';
+        $returnType = '\Walmart\Models\MP\US\Returns\FeedId';
         $request = $this->bulkItemOverrideFeedRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -389,7 +389,7 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200Response
+     * @return \Walmart\Models\MP\US\Returns\GetReturnOrdersResponse
      */
     public function getReturns(
         ?string $returnOrderId = null,
@@ -402,7 +402,7 @@ class ReturnsApi extends BaseApi
         ?\DateTime $returnLastModifiedStartDate = null,
         ?\DateTime $returnLastModifiedEndDate = null,
         ?string $limit = '10'
-    ): \Walmart\Models\MP\US\Returns\GetReturns200Response {
+    ): \Walmart\Models\MP\US\Returns\GetReturnOrdersResponse {
         return $this->getReturnsWithHttpInfo($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit);
     }
 
@@ -424,7 +424,7 @@ class ReturnsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200Response
+     * @return \Walmart\Models\MP\US\Returns\GetReturnOrdersResponse
      */
     protected function getReturnsWithHttpInfo(
         ?string $returnOrderId = null,
@@ -437,7 +437,7 @@ class ReturnsApi extends BaseApi
         ?\DateTime $returnLastModifiedStartDate = null,
         ?\DateTime $returnLastModifiedEndDate = null,
         ?string $limit = '10',
-    ): \Walmart\Models\MP\US\Returns\GetReturns200Response {
+    ): \Walmart\Models\MP\US\Returns\GetReturnOrdersResponse {
         $request = $this->getReturnsRequest($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -487,19 +487,19 @@ class ReturnsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Returns\GetReturns200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Returns\GetReturns200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Returns\GetReturns200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Returns\GetReturns200Response';
+            $returnType = '\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -515,7 +515,7 @@ class ReturnsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Returns\GetReturns200Response',
+                        '\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -598,7 +598,7 @@ class ReturnsApi extends BaseApi
         ?\DateTime $returnLastModifiedEndDate = null,
         ?string $limit = '10',
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Returns\GetReturns200Response';
+        $returnType = '\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse';
         $request = $this->getReturnsRequest($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -825,17 +825,17 @@ class ReturnsApi extends BaseApi
      * Issue refund
      *
      * @param  string $returnOrderId The return order ID (required)
-     * @param  \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Returns\IssueRefund200Response
+     * @return \Walmart\Models\MP\US\Returns\RefundResponse
      */
     public function issueRefund(
         string $returnOrderId,
-        \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest
-    ): \Walmart\Models\MP\US\Returns\IssueRefund200Response {
-        return $this->issueRefundWithHttpInfo($returnOrderId, $issueRefundRequest);
+        \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest
+    ): \Walmart\Models\MP\US\Returns\RefundResponse {
+        return $this->issueRefundWithHttpInfo($returnOrderId, $refundRequest);
     }
 
     /**
@@ -844,17 +844,17 @@ class ReturnsApi extends BaseApi
      * Issue refund
      *
      * @param  string $returnOrderId The return order ID (required)
-     * @param  \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Returns\IssueRefund200Response
+     * @return \Walmart\Models\MP\US\Returns\RefundResponse
      */
     protected function issueRefundWithHttpInfo(
         string $returnOrderId,
-        \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest,
-    ): \Walmart\Models\MP\US\Returns\IssueRefund200Response {
-        $request = $this->issueRefundRequest($returnOrderId, $issueRefundRequest, );
+        \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest,
+    ): \Walmart\Models\MP\US\Returns\RefundResponse {
+        $request = $this->issueRefundRequest($returnOrderId, $refundRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -903,19 +903,19 @@ class ReturnsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Returns\IssueRefund200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Returns\RefundResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Returns\IssueRefund200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Returns\RefundResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Returns\IssueRefund200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Returns\RefundResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Returns\IssueRefund200Response';
+            $returnType = '\Walmart\Models\MP\US\Returns\RefundResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -931,7 +931,7 @@ class ReturnsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Returns\IssueRefund200Response',
+                        '\Walmart\Models\MP\US\Returns\RefundResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -949,16 +949,16 @@ class ReturnsApi extends BaseApi
      * Issue refund
      *
      * @param  string $returnOrderId The return order ID (required)
-     * @param  \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function issueRefundAsync(
         string $returnOrderId,
-        \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest
+        \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest
     ): PromiseInterface {
-        return $this->issueRefundAsyncWithHttpInfo($returnOrderId, $issueRefundRequest)
+        return $this->issueRefundAsyncWithHttpInfo($returnOrderId, $refundRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -973,17 +973,17 @@ class ReturnsApi extends BaseApi
      * Issue refund
      *
      * @param  string $returnOrderId The return order ID (required)
-     * @param  \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function issueRefundAsyncWithHttpInfo(
         string $returnOrderId,
-        \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest,
+        \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Returns\IssueRefund200Response';
-        $request = $this->issueRefundRequest($returnOrderId, $issueRefundRequest, );
+        $returnType = '\Walmart\Models\MP\US\Returns\RefundResponse';
+        $request = $this->issueRefundRequest($returnOrderId, $refundRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1029,14 +1029,14 @@ class ReturnsApi extends BaseApi
      * Create request for operation 'issueRefund'
      *
      * @param  string $returnOrderId The return order ID (required)
-     * @param  \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function issueRefundRequest(
         string $returnOrderId,
-        \Walmart\Models\MP\US\Returns\IssueRefundRequest $issueRefundRequest,
+        \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest,
     ): Request {
         $contentType = self::contentTypes['issueRefund'];
 
@@ -1046,10 +1046,10 @@ class ReturnsApi extends BaseApi
                 'Missing the required parameter $returnOrderId when calling issueRefund'
             );
         }
-        // verify the required parameter 'issueRefundRequest' is set
-        if ($issueRefundRequest === null || (is_array($issueRefundRequest) && count($issueRefundRequest) === 0)) {
+        // verify the required parameter 'refundRequest' is set
+        if ($refundRequest === null || (is_array($refundRequest) && count($refundRequest) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $issueRefundRequest when calling issueRefund'
+                'Missing the required parameter $refundRequest when calling issueRefund'
             );
         }
         $resourcePath = '/v3/returns/{returnOrderId}/refund';
@@ -1085,12 +1085,12 @@ class ReturnsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($issueRefundRequest)) {
+        if (isset($refundRequest)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($issueRefundRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($refundRequest));
             } else {
-                $httpBody = $issueRefundRequest;
+                $httpBody = $refundRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

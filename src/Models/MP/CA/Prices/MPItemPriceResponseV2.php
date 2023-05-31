@@ -50,7 +50,7 @@ class MPItemPriceResponseV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\CA\Prices\GatewayError[]',
         'mart' => 'string',
         'sku' => 'string',
         'currency' => 'string',
@@ -163,7 +163,7 @@ class MPItemPriceResponseV2 extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\Prices\GatewayError[]|null
     
      */
     public function getErrors()
@@ -174,7 +174,7 @@ class MPItemPriceResponseV2 extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\CA\Prices\UpdatePriceCA200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\Prices\GatewayError[]|null $errors errors
      *
      * @return self
     

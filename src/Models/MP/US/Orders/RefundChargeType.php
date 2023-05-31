@@ -51,7 +51,7 @@ class RefundChargeType extends BaseModel
       */
     protected static array $openAPITypes = [
         'refundReason' => 'string',
-        'charge' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner'
+        'charge' => '\Walmart\Models\MP\US\Orders\ChargeType'
     ];
 
     /**
@@ -267,7 +267,7 @@ class RefundChargeType extends BaseModel
     /**
      * Gets charge
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner
+     * @return \Walmart\Models\MP\US\Orders\ChargeType
     
      */
     public function getCharge()
@@ -278,7 +278,7 @@ class RefundChargeType extends BaseModel
     /**
      * Sets charge
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner $charge charge
+     * @param \Walmart\Models\MP\US\Orders\ChargeType $charge charge
      *
      * @return self
     

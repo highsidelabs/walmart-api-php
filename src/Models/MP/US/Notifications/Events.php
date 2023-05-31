@@ -50,7 +50,7 @@ class Events extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'events' => '\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInner[]'
+        'events' => '\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class Events extends BaseModel
     /**
      * Gets events
      *
-     * @return \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInner[]|null
+     * @return \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO[]|null
     
      */
     public function getEvents()
@@ -139,7 +139,7 @@ class Events extends BaseModel
     /**
      * Sets events
      *
-     * @param \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInner[]|null $events List of events
+     * @param \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO[]|null $events List of events
      *
      * @return self
     

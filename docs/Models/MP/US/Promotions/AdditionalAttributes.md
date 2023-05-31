@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**additionalAttribute** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[]**](GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner.md) |  |
+**additionalAttribute** | [**\Walmart\Models\MP\US\Promotions\AdditionalAttribute[]**](AdditionalAttribute.md) |  |
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

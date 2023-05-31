@@ -148,7 +148,7 @@ class CustomerOrderHeaderAttributes extends BaseModel
     /**
      * Sets martId
      *
-     * @param string|null $martId martId of the seller
+     * @param string|null $martId martId of the seller. Currently supported: '202'
      *
      * @return self
     
@@ -177,7 +177,7 @@ class CustomerOrderHeaderAttributes extends BaseModel
     /**
      * Sets buId
      *
-     * @param string|null $buId buId of the seller
+     * @param string|null $buId buId of the seller. Currently supported: '0'
      *
      * @return self
     

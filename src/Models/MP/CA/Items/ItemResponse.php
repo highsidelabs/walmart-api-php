@@ -58,7 +58,7 @@ class ItemResponse extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Models\MP\CA\Items\GetAllItems200ResponseItemResponseInnerPrice',
+        'price' => '\Walmart\Models\MP\CA\Items\ItemResponsePrice',
         'publishedStatus' => 'string'
     ];
 
@@ -466,7 +466,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\CA\Items\GetAllItems200ResponseItemResponseInnerPrice|null
+     * @return \Walmart\Models\MP\CA\Items\ItemResponsePrice|null
     
      */
     public function getPrice()
@@ -477,7 +477,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\CA\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
+     * @param \Walmart\Models\MP\CA\Items\ItemResponsePrice|null $price price
      *
      * @return self
     

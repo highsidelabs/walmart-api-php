@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rowFilters** | [**\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]**](GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner.md) | Row Level filters | [optional]
+**rowFilters** | [**\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayloadRowFiltersInner[]**](GenerateReportPayloadRowFiltersInner.md) | Row Level filters | [optional]
 **excludeColumns** | **string[]** | Columns to exclude from report | [optional]
 
 

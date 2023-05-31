@@ -51,9 +51,9 @@ class InboundShipmentRequestWrapper extends BaseModel
       */
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
-        'inboundServices' => '\Walmart\Models\MP\US\Fulfillment\CreateShipmentRequestInboundServices',
-        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
-        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]'
+        'inboundServices' => '\Walmart\Models\MP\US\Fulfillment\InboundService',
+        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\ReturnAddress',
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\OrderItem[]'
     ];
 
     /**
@@ -214,7 +214,7 @@ class InboundShipmentRequestWrapper extends BaseModel
     /**
      * Gets inboundServices
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequestInboundServices|null
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundService|null
     
      */
     public function getInboundServices()
@@ -225,7 +225,7 @@ class InboundShipmentRequestWrapper extends BaseModel
     /**
      * Sets inboundServices
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequestInboundServices|null $inboundServices inboundServices
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundService|null $inboundServices inboundServices
      *
      * @return self
     
@@ -243,7 +243,7 @@ class InboundShipmentRequestWrapper extends BaseModel
     /**
      * Gets returnAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress
+     * @return \Walmart\Models\MP\US\Fulfillment\ReturnAddress
     
      */
     public function getReturnAddress()
@@ -254,7 +254,7 @@ class InboundShipmentRequestWrapper extends BaseModel
     /**
      * Sets returnAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress $returnAddress returnAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\ReturnAddress $returnAddress returnAddress
      *
      * @return self
     
@@ -272,7 +272,7 @@ class InboundShipmentRequestWrapper extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\OrderItem[]|null
     
      */
     public function getOrderItems()
@@ -283,7 +283,7 @@ class InboundShipmentRequestWrapper extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null $orderItems inbound shipment request line items
+     * @param \Walmart\Models\MP\US\Fulfillment\OrderItem[]|null $orderItems inbound shipment request line items
      *
      * @return self
     

@@ -52,8 +52,8 @@ class OrderSummary extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'totalAmount' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount',
-        'orderSubTotals' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]'
+        'totalAmount' => '\Walmart\Models\MP\US\Orders\GetAnOrder200ResponseOrderSummaryTotalAmount',
+        'orderSubTotals' => '\Walmart\Models\MP\US\Orders\OrderSubTotal[]'
     ];
 
     /**
@@ -137,7 +137,7 @@ class OrderSummary extends BaseModel
     /**
      * Gets totalAmount
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null
+     * @return \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseOrderSummaryTotalAmount|null
     
      */
     public function getTotalAmount()
@@ -148,7 +148,7 @@ class OrderSummary extends BaseModel
     /**
      * Sets totalAmount
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryTotalAmount|null $totalAmount totalAmount
+     * @param \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseOrderSummaryTotalAmount|null $totalAmount totalAmount
      *
      * @return self
     
@@ -166,7 +166,7 @@ class OrderSummary extends BaseModel
     /**
      * Gets orderSubTotals
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]|null
+     * @return \Walmart\Models\MP\US\Orders\OrderSubTotal[]|null
     
      */
     public function getOrderSubTotals()
@@ -177,7 +177,7 @@ class OrderSummary extends BaseModel
     /**
      * Sets orderSubTotals
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderSummaryOrderSubTotalsInner[]|null $orderSubTotals orderSubTotals
+     * @param \Walmart\Models\MP\US\Orders\OrderSubTotal[]|null $orderSubTotals orderSubTotals
      *
      * @return self
     

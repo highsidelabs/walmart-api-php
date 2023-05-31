@@ -408,13 +408,13 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
+     * @return \Walmart\Models\DSV\US\Inventory\InventoriesDTO
      */
     public function getMultiNodeInventoryForSkuAndAllShipnodes(
         string $id,
         string $productIdType,
         ?string $shipNode = null
-    ): \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response {
+    ): \Walmart\Models\DSV\US\Inventory\InventoriesDTO {
         return $this->getMultiNodeInventoryForSkuAndAllShipnodesWithHttpInfo($id, $productIdType, $shipNode);
     }
 
@@ -429,13 +429,13 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
+     * @return \Walmart\Models\DSV\US\Inventory\InventoriesDTO
      */
     protected function getMultiNodeInventoryForSkuAndAllShipnodesWithHttpInfo(
         string $id,
         string $productIdType,
         ?string $shipNode = null,
-    ): \Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response {
+    ): \Walmart\Models\DSV\US\Inventory\InventoriesDTO {
         $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($id, $productIdType, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -485,19 +485,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\DSV\US\Inventory\InventoriesDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response' !== 'string') {
+                        if ('\Walmart\Models\DSV\US\Inventory\InventoriesDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Inventory\InventoriesDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response';
+            $returnType = '\Walmart\Models\DSV\US\Inventory\InventoriesDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -513,7 +513,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response',
+                        '\Walmart\Models\DSV\US\Inventory\InventoriesDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -568,7 +568,7 @@ class InventoryApi extends BaseApi
         string $productIdType,
         ?string $shipNode = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response';
+        $returnType = '\Walmart\Models\DSV\US\Inventory\InventoriesDTO';
         $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($id, $productIdType, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -755,13 +755,13 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response
+     * @return \Walmart\Models\DSV\US\Inventory\FeedIdInventory
      */
     public function updateBulkInventory(
         string $feedType,
         \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequest $updateBulkInventoryRequest,
         ?string $shipNode = null
-    ): \Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response {
+    ): \Walmart\Models\DSV\US\Inventory\FeedIdInventory {
         return $this->updateBulkInventoryWithHttpInfo($feedType, $updateBulkInventoryRequest, $shipNode);
     }
 
@@ -776,13 +776,13 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response
+     * @return \Walmart\Models\DSV\US\Inventory\FeedIdInventory
      */
     protected function updateBulkInventoryWithHttpInfo(
         string $feedType,
         \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequest $updateBulkInventoryRequest,
         ?string $shipNode = null,
-    ): \Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response {
+    ): \Walmart\Models\DSV\US\Inventory\FeedIdInventory {
         $request = $this->updateBulkInventoryRequest($feedType, $updateBulkInventoryRequest, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -832,19 +832,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\DSV\US\Inventory\FeedIdInventory' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response' !== 'string') {
+                        if ('\Walmart\Models\DSV\US\Inventory\FeedIdInventory' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Inventory\FeedIdInventory', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response';
+            $returnType = '\Walmart\Models\DSV\US\Inventory\FeedIdInventory';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -860,7 +860,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response',
+                        '\Walmart\Models\DSV\US\Inventory\FeedIdInventory',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -915,7 +915,7 @@ class InventoryApi extends BaseApi
         \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequest $updateBulkInventoryRequest,
         ?string $shipNode = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventory200Response';
+        $returnType = '\Walmart\Models\DSV\US\Inventory\FeedIdInventory';
         $request = $this->updateBulkInventoryRequest($feedType, $updateBulkInventoryRequest, $shipNode, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1095,7 +1095,7 @@ class InventoryApi extends BaseApi
      * Update Inventory
      *
      * @param  string $shipNode Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested. The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated. (required)
-     * @param  \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Inventory\Inventory $inventory File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1103,9 +1103,9 @@ class InventoryApi extends BaseApi
      */
     public function updateInventoryForAnItem(
         string $shipNode,
-        \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest
+        \Walmart\Models\DSV\US\Inventory\Inventory $inventory
     ): \Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200Response {
-        return $this->updateInventoryForAnItemWithHttpInfo($shipNode, $updateInventoryForAnItemRequest);
+        return $this->updateInventoryForAnItemWithHttpInfo($shipNode, $inventory);
     }
 
     /**
@@ -1114,7 +1114,7 @@ class InventoryApi extends BaseApi
      * Update Inventory
      *
      * @param  string $shipNode Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested. The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated. (required)
-     * @param  \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Inventory\Inventory $inventory File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1122,9 +1122,9 @@ class InventoryApi extends BaseApi
      */
     protected function updateInventoryForAnItemWithHttpInfo(
         string $shipNode,
-        \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\DSV\US\Inventory\Inventory $inventory,
     ): \Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200Response {
-        $request = $this->updateInventoryForAnItemRequest($shipNode, $updateInventoryForAnItemRequest, );
+        $request = $this->updateInventoryForAnItemRequest($shipNode, $inventory, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1219,16 +1219,16 @@ class InventoryApi extends BaseApi
      * Update Inventory
      *
      * @param  string $shipNode Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested. The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated. (required)
-     * @param  \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Inventory\Inventory $inventory File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateInventoryForAnItemAsync(
         string $shipNode,
-        \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest
+        \Walmart\Models\DSV\US\Inventory\Inventory $inventory
     ): PromiseInterface {
-        return $this->updateInventoryForAnItemAsyncWithHttpInfo($shipNode, $updateInventoryForAnItemRequest)
+        return $this->updateInventoryForAnItemAsyncWithHttpInfo($shipNode, $inventory)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1243,17 +1243,17 @@ class InventoryApi extends BaseApi
      * Update Inventory
      *
      * @param  string $shipNode Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested. The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated. (required)
-     * @param  \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Inventory\Inventory $inventory File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateInventoryForAnItemAsyncWithHttpInfo(
         string $shipNode,
-        \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\DSV\US\Inventory\Inventory $inventory,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200Response';
-        $request = $this->updateInventoryForAnItemRequest($shipNode, $updateInventoryForAnItemRequest, );
+        $request = $this->updateInventoryForAnItemRequest($shipNode, $inventory, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1299,14 +1299,14 @@ class InventoryApi extends BaseApi
      * Create request for operation 'updateInventoryForAnItem'
      *
      * @param  string $shipNode Specifies the distribution facility distributor identifier.    This parameter identifies each facility from which the inventory is requested. The identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated. (required)
-     * @param  \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest File fields (required)
+     * @param  \Walmart\Models\DSV\US\Inventory\Inventory $inventory File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateInventoryForAnItemRequest(
         string $shipNode,
-        \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequest $updateInventoryForAnItemRequest,
+        \Walmart\Models\DSV\US\Inventory\Inventory $inventory,
     ): Request {
         $contentType = self::contentTypes['updateInventoryForAnItem'];
 
@@ -1316,10 +1316,10 @@ class InventoryApi extends BaseApi
                 'Missing the required parameter $shipNode when calling updateInventoryForAnItem'
             );
         }
-        // verify the required parameter 'updateInventoryForAnItemRequest' is set
-        if ($updateInventoryForAnItemRequest === null || (is_array($updateInventoryForAnItemRequest) && count($updateInventoryForAnItemRequest) === 0)) {
+        // verify the required parameter 'inventory' is set
+        if ($inventory === null || (is_array($inventory) && count($inventory) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updateInventoryForAnItemRequest when calling updateInventoryForAnItem'
+                'Missing the required parameter $inventory when calling updateInventoryForAnItem'
             );
         }
         $resourcePath = '/v3/inventory';
@@ -1358,12 +1358,12 @@ class InventoryApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updateInventoryForAnItemRequest)) {
+        if (isset($inventory)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateInventoryForAnItemRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($inventory));
             } else {
-                $httpBody = $updateInventoryForAnItemRequest;
+                $httpBody = $inventory;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

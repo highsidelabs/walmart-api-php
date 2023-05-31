@@ -50,8 +50,8 @@ class CommonResponseConsolidationResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'data' => '\Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200ResponseData',
-        'errors' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'data' => '\Walmart\Models\MP\CA\InternationalShipping\ConsolidationResponse',
+        'errors' => '\Walmart\Models\MP\CA\InternationalShipping\ErrorResponse[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class CommonResponseConsolidationResponse extends BaseModel
     /**
      * Gets data
      *
-     * @return \Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200ResponseData|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\ConsolidationResponse|null
     
      */
     public function getData()
@@ -146,7 +146,7 @@ class CommonResponseConsolidationResponse extends BaseModel
     /**
      * Sets data
      *
-     * @param \Walmart\Models\MP\CA\InternationalShipping\GetConsolidation200ResponseData|null $data data
+     * @param \Walmart\Models\MP\CA\InternationalShipping\ConsolidationResponse|null $data data
      *
      * @return self
     
@@ -164,7 +164,7 @@ class CommonResponseConsolidationResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\ErrorResponse[]|null
     
      */
     public function getErrors()
@@ -175,7 +175,7 @@ class CommonResponseConsolidationResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\CA\InternationalShipping\ErrorResponse[]|null $errors errors
      *
      * @return self
     

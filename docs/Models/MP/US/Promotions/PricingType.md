@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**currentPrice** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice**](GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice.md) |  |
+**currentPrice** | [**\Walmart\Models\MP\US\Promotions\PromotionsPrice**](PromotionsPrice.md) |  |
 **currentPriceType** | **string** |  |
-**comparisonPrice** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice**](GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPrice.md) |  | [optional]
+**comparisonPrice** | [**\Walmart\Models\MP\US\Promotions\PromotionsPrice**](PromotionsPrice.md) |  | [optional]
 **comparisonPriceType** | **string** |  | [optional]
 **savingsAmount** | **float** |  | [optional]
 **savingsPercent** | **float** |  | [optional]
-**priceDisplayCodes** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes**](GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPriceDisplayCodes.md) |  | [optional]
-**pickupDiscount** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount**](GetPromotionalPrices200ResponsePayloadPricingListPricingInnerPickupDiscount.md) |  | [optional]
+**priceDisplayCodes** | [**\Walmart\Models\MP\US\Promotions\PriceDisplayCodes**](PriceDisplayCodes.md) |  | [optional]
+**pickupDiscount** | [**\Walmart\Models\MP\US\Promotions\PickupDiscount**](PickupDiscount.md) |  | [optional]
 **effectiveDate** | **int** |  | [optional]
 **expirationDate** | **int** |  | [optional]
 **processMode** | **string** |  | [optional]

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ingestionError** | [**\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]**](GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner.md) |  | [optional]
+**ingestionError** | [**\Walmart\Models\MP\MX\Feeds\IngestionError[]**](IngestionError.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

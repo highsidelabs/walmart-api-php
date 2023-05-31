@@ -53,7 +53,7 @@ class FeedThrottlingDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'feedType' => 'string',
-        'throttleConfigurations' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]'
+        'throttleConfigurations' => '\Walmart\Models\MP\US\Settings\ThrottlingConfigDTO[]'
     ];
 
     /**
@@ -236,7 +236,7 @@ class FeedThrottlingDTO extends BaseModel
     /**
      * Gets throttleConfigurations
      *
-     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\ThrottlingConfigDTO[]|null
     
      */
     public function getThrottleConfigurations()
@@ -247,7 +247,7 @@ class FeedThrottlingDTO extends BaseModel
     /**
      * Sets throttleConfigurations
      *
-     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInner[]|null $throttleConfigurations Details of throttling configurations
+     * @param \Walmart\Models\MP\US\Settings\ThrottlingConfigDTO[]|null $throttleConfigurations Details of throttling configurations
      *
      * @return self
     

@@ -52,7 +52,7 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
         'shipmentId' => 'string',
-        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]'
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\OrderItemUpdate[]'
     ];
 
     /**
@@ -218,7 +218,7 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\OrderItemUpdate[]|null
     
      */
     public function getOrderItems()
@@ -229,7 +229,7 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequestOrderItemsInner[]|null $orderItems update shipment qty line items
+     * @param \Walmart\Models\MP\US\Fulfillment\OrderItemUpdate[]|null $orderItems update shipment qty line items
      *
      * @return self
     

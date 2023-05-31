@@ -52,7 +52,7 @@ class OrderLineStatusesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLineStatus' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]'
+        'orderLineStatus' => '\Walmart\Models\DSV\US\Orders\OrderLineStatusType[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class OrderLineStatusesType extends BaseModel
     /**
      * Gets orderLineStatus
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\OrderLineStatusType[]|null
     
      */
     public function getOrderLineStatus()
@@ -141,7 +141,7 @@ class OrderLineStatusesType extends BaseModel
     /**
      * Sets orderLineStatus
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null $orderLineStatus Details about the Order Line status
+     * @param \Walmart\Models\DSV\US\Orders\OrderLineStatusType[]|null $orderLineStatus Details about the Order Line status
      *
      * @return self
     

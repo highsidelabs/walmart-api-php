@@ -53,10 +53,10 @@ class ShipLineStatusType extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'asn' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn',
-        'statusQuantity' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
-        'trackingInfo' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo',
-        'returnCenterAddress' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress'
+        'asn' => '\Walmart\Models\MP\US\Orders\AsnType',
+        'statusQuantity' => '\Walmart\Models\MP\US\Orders\QuantityType',
+        'trackingInfo' => '\Walmart\Models\MP\US\Orders\TrackingInfoType',
+        'returnCenterAddress' => '\Walmart\Models\MP\US\Orders\ReturnCenterAddressType'
     ];
 
     /**
@@ -245,7 +245,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Gets asn
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn|null
+     * @return \Walmart\Models\MP\US\Orders\AsnType|null
     
      */
     public function getAsn()
@@ -256,7 +256,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Sets asn
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerAsn|null $asn asn
+     * @param \Walmart\Models\MP\US\Orders\AsnType|null $asn asn
      *
      * @return self
     
@@ -274,7 +274,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\US\Orders\QuantityType
     
      */
     public function getStatusQuantity()
@@ -285,7 +285,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\US\Orders\QuantityType $statusQuantity statusQuantity
      *
      * @return self
     
@@ -303,7 +303,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Gets trackingInfo
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo
+     * @return \Walmart\Models\MP\US\Orders\TrackingInfoType
     
      */
     public function getTrackingInfo()
@@ -314,7 +314,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Sets trackingInfo
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo $trackingInfo trackingInfo
+     * @param \Walmart\Models\MP\US\Orders\TrackingInfoType $trackingInfo trackingInfo
      *
      * @return self
     
@@ -332,7 +332,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Gets returnCenterAddress
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null
+     * @return \Walmart\Models\MP\US\Orders\ReturnCenterAddressType|null
     
      */
     public function getReturnCenterAddress()
@@ -343,7 +343,7 @@ class ShipLineStatusType extends BaseModel
     /**
      * Sets returnCenterAddress
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null $returnCenterAddress returnCenterAddress
+     * @param \Walmart\Models\MP\US\Orders\ReturnCenterAddressType|null $returnCenterAddress returnCenterAddress
      *
      * @return self
     

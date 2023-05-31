@@ -51,18 +51,18 @@ class GetUnpublishedItemsPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'gtin' => 'string',
-        'marketPrice' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice',
+        'marketPrice' => '\Walmart\Models\MP\US\Insights\Gmv',
         'offerStartDate' => 'string',
         'marketTrending' => 'string',
         'lifecycleStatus' => 'string',
         'unpublishReasons' => 'string',
         'conversionRate' => 'int',
         'productName' => 'string',
-        'gmvAmount' => '\Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInnerGmvAmount',
+        'gmvAmount' => '\Walmart\Models\MP\US\Insights\Gmv',
         'itemId' => 'string',
         'customerRating' => 'string',
         'pageViews' => 'int',
-        'price' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice',
+        'price' => '\Walmart\Models\MP\US\Insights\Gmv',
         'unpublishedDate' => 'string',
         'brand' => 'string',
         'sku' => 'string',
@@ -283,7 +283,7 @@ class GetUnpublishedItemsPayload extends BaseModel
     /**
      * Gets marketPrice
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null
+     * @return \Walmart\Models\MP\US\Insights\Gmv|null
     
      */
     public function getMarketPrice()
@@ -294,7 +294,7 @@ class GetUnpublishedItemsPayload extends BaseModel
     /**
      * Sets marketPrice
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null $marketPrice marketPrice
+     * @param \Walmart\Models\MP\US\Insights\Gmv|null $marketPrice marketPrice
      *
      * @return self
     
@@ -486,7 +486,7 @@ class GetUnpublishedItemsPayload extends BaseModel
     /**
      * Gets gmvAmount
      *
-     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInnerGmvAmount|null
+     * @return \Walmart\Models\MP\US\Insights\Gmv|null
     
      */
     public function getGmvAmount()
@@ -497,7 +497,7 @@ class GetUnpublishedItemsPayload extends BaseModel
     /**
      * Sets gmvAmount
      *
-     * @param \Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInnerGmvAmount|null $gmvAmount gmvAmount
+     * @param \Walmart\Models\MP\US\Insights\Gmv|null $gmvAmount gmvAmount
      *
      * @return self
     
@@ -602,7 +602,7 @@ class GetUnpublishedItemsPayload extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null
+     * @return \Walmart\Models\MP\US\Insights\Gmv|null
     
      */
     public function getPrice()
@@ -613,7 +613,7 @@ class GetUnpublishedItemsPayload extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null $price price
+     * @param \Walmart\Models\MP\US\Insights\Gmv|null $price price
      *
      * @return self
     

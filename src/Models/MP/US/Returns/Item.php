@@ -54,7 +54,7 @@ class Item extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'productName' => 'string',
-        'itemWeight' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight'
+        'itemWeight' => '\Walmart\Models\MP\US\Returns\Quantity'
     ];
 
     /**
@@ -202,7 +202,7 @@ class Item extends BaseModel
     /**
      * Gets itemWeight
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null
+     * @return \Walmart\Models\MP\US\Returns\Quantity|null
     
      */
     public function getItemWeight()
@@ -213,7 +213,7 @@ class Item extends BaseModel
     /**
      * Sets itemWeight
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null $itemWeight itemWeight
+     * @param \Walmart\Models\MP\US\Returns\Quantity|null $itemWeight itemWeight
      *
      * @return self
     

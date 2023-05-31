@@ -60,16 +60,16 @@ class PricesApi extends BaseApi
      *
      * Create Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityResponse
      */
     public function createStrategy(
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest
-    ): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response {
-        return $this->createStrategyWithHttpInfo($updateStrategyRequest);
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest
+    ): \Walmart\Models\MP\US\Prices\RepricerEntityResponse {
+        return $this->createStrategyWithHttpInfo($repricerEntityRequest);
     }
 
     /**
@@ -77,16 +77,16 @@ class PricesApi extends BaseApi
      *
      * Create Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityResponse
      */
     protected function createStrategyWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest,
-    ): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response {
-        $request = $this->createStrategyRequest($updateStrategyRequest, );
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
+    ): \Walmart\Models\MP\US\Prices\RepricerEntityResponse {
+        $request = $this->createStrategyRequest($repricerEntityRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -135,19 +135,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Prices\UpdateStrategy200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Prices\RepricerEntityResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Prices\UpdateStrategy200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Prices\RepricerEntityResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\RepricerEntityResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response';
+            $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -163,7 +163,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response',
+                        '\Walmart\Models\MP\US\Prices\RepricerEntityResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -180,15 +180,15 @@ class PricesApi extends BaseApi
      *
      * Create Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createStrategyAsync(
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest
     ): PromiseInterface {
-        return $this->createStrategyAsyncWithHttpInfo($updateStrategyRequest)
+        return $this->createStrategyAsyncWithHttpInfo($repricerEntityRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -202,16 +202,16 @@ class PricesApi extends BaseApi
      *
      * Create Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createStrategyAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest,
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response';
-        $request = $this->createStrategyRequest($updateStrategyRequest, );
+        $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityResponse';
+        $request = $this->createStrategyRequest($repricerEntityRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -256,20 +256,20 @@ class PricesApi extends BaseApi
     /**
      * Create request for operation 'createStrategy'
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createStrategyRequest(
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest,
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): Request {
         $contentType = self::contentTypes['createStrategy'];
 
-        // verify the required parameter 'updateStrategyRequest' is set
-        if ($updateStrategyRequest === null || (is_array($updateStrategyRequest) && count($updateStrategyRequest) === 0)) {
+        // verify the required parameter 'repricerEntityRequest' is set
+        if ($repricerEntityRequest === null || (is_array($repricerEntityRequest) && count($repricerEntityRequest) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updateStrategyRequest when calling createStrategy'
+                'Missing the required parameter $repricerEntityRequest when calling createStrategy'
             );
         }
         $resourcePath = '/v3/repricer/strategy';
@@ -296,12 +296,12 @@ class PricesApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updateStrategyRequest)) {
+        if (isset($repricerEntityRequest)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateStrategyRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($repricerEntityRequest));
             } else {
-                $httpBody = $updateStrategyRequest;
+                $httpBody = $repricerEntityRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -351,11 +351,11 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\DeleteStrategy200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse
      */
     public function deleteStrategy(
         string $strategyCollectionId
-    ): \Walmart\Models\MP\US\Prices\DeleteStrategy200Response {
+    ): \Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse {
         return $this->deleteStrategyWithHttpInfo($strategyCollectionId);
     }
 
@@ -368,11 +368,11 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\DeleteStrategy200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse
      */
     protected function deleteStrategyWithHttpInfo(
         string $strategyCollectionId,
-    ): \Walmart\Models\MP\US\Prices\DeleteStrategy200Response {
+    ): \Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse {
         $request = $this->deleteStrategyRequest($strategyCollectionId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -422,19 +422,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Prices\DeleteStrategy200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Prices\DeleteStrategy200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\DeleteStrategy200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Prices\DeleteStrategy200Response';
+            $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -450,7 +450,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Prices\DeleteStrategy200Response',
+                        '\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -497,7 +497,7 @@ class PricesApi extends BaseApi
     protected function deleteStrategyAsyncWithHttpInfo(
         string $strategyCollectionId,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Prices\DeleteStrategy200Response';
+        $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse';
         $request = $this->deleteStrategyRequest($strategyCollectionId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -636,16 +636,16 @@ class PricesApi extends BaseApi
      *
      * Assign/Unassign items to/from Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest (required)
+     * @param  \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\GetRepricerFeed200Response
+     * @return \Walmart\Models\MP\US\Prices\FeedUploadResponseDTO
      */
     public function getRepricerFeed(
-        \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest
-    ): \Walmart\Models\MP\US\Prices\GetRepricerFeed200Response {
-        return $this->getRepricerFeedWithHttpInfo($getRepricerFeedRequest);
+        \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO
+    ): \Walmart\Models\MP\US\Prices\FeedUploadResponseDTO {
+        return $this->getRepricerFeedWithHttpInfo($feedUploadRequestDTO);
     }
 
     /**
@@ -653,16 +653,16 @@ class PricesApi extends BaseApi
      *
      * Assign/Unassign items to/from Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest (required)
+     * @param  \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\GetRepricerFeed200Response
+     * @return \Walmart\Models\MP\US\Prices\FeedUploadResponseDTO
      */
     protected function getRepricerFeedWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest,
-    ): \Walmart\Models\MP\US\Prices\GetRepricerFeed200Response {
-        $request = $this->getRepricerFeedRequest($getRepricerFeedRequest, );
+        \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO,
+    ): \Walmart\Models\MP\US\Prices\FeedUploadResponseDTO {
+        $request = $this->getRepricerFeedRequest($feedUploadRequestDTO, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -711,19 +711,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response';
+            $returnType = '\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -739,7 +739,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response',
+                        '\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -756,15 +756,15 @@ class PricesApi extends BaseApi
      *
      * Assign/Unassign items to/from Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest (required)
+     * @param  \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getRepricerFeedAsync(
-        \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest
+        \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO
     ): PromiseInterface {
-        return $this->getRepricerFeedAsyncWithHttpInfo($getRepricerFeedRequest)
+        return $this->getRepricerFeedAsyncWithHttpInfo($feedUploadRequestDTO)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -778,16 +778,16 @@ class PricesApi extends BaseApi
      *
      * Assign/Unassign items to/from Repricer Strategy
      *
-     * @param  \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest (required)
+     * @param  \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function getRepricerFeedAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest,
+        \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response';
-        $request = $this->getRepricerFeedRequest($getRepricerFeedRequest, );
+        $returnType = '\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO';
+        $request = $this->getRepricerFeedRequest($feedUploadRequestDTO, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -832,20 +832,20 @@ class PricesApi extends BaseApi
     /**
      * Create request for operation 'getRepricerFeed'
      *
-     * @param  \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest (required)
+     * @param  \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function getRepricerFeedRequest(
-        \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest $getRepricerFeedRequest,
+        \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO,
     ): Request {
         $contentType = self::contentTypes['getRepricerFeed'];
 
-        // verify the required parameter 'getRepricerFeedRequest' is set
-        if ($getRepricerFeedRequest === null || (is_array($getRepricerFeedRequest) && count($getRepricerFeedRequest) === 0)) {
+        // verify the required parameter 'feedUploadRequestDTO' is set
+        if ($feedUploadRequestDTO === null || (is_array($feedUploadRequestDTO) && count($feedUploadRequestDTO) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $getRepricerFeedRequest when calling getRepricerFeed'
+                'Missing the required parameter $feedUploadRequestDTO when calling getRepricerFeed'
             );
         }
         $resourcePath = '/v3/repricerFeeds';
@@ -872,12 +872,12 @@ class PricesApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($getRepricerFeedRequest)) {
+        if (isset($feedUploadRequestDTO)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($getRepricerFeedRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($feedUploadRequestDTO));
             } else {
-                $httpBody = $getRepricerFeedRequest;
+                $httpBody = $feedUploadRequestDTO;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -925,9 +925,9 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\GetStrategies200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse
      */
-    public function getStrategies(): \Walmart\Models\MP\US\Prices\GetStrategies200Response
+    public function getStrategies(): \Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse
     {
         return $this->getStrategiesWithHttpInfo();
     }
@@ -939,9 +939,9 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\GetStrategies200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse
      */
-    protected function getStrategiesWithHttpInfo(): \Walmart\Models\MP\US\Prices\GetStrategies200Response
+    protected function getStrategiesWithHttpInfo(): \Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse
     {
         $request = $this->getStrategiesRequest();
         $this->writeDebug($request);
@@ -992,19 +992,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Prices\GetStrategies200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Prices\GetStrategies200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\GetStrategies200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Prices\GetStrategies200Response';
+            $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1020,7 +1020,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Prices\GetStrategies200Response',
+                        '\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1061,7 +1061,7 @@ class PricesApi extends BaseApi
      */
     protected function getStrategiesAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Prices\GetStrategies200Response';
+        $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse';
         $request = $this->getStrategiesRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1182,16 +1182,16 @@ class PricesApi extends BaseApi
      *
      * Set up CAP SKU All
      *
-     * @param  \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response
+     * @return \Walmart\Models\MP\US\Prices\CapProgramResponse
      */
     public function optCapProgramInPrice(
-        \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest
-    ): \Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response {
-        return $this->optCapProgramInPriceWithHttpInfo($optCapProgramInPriceRequest);
+        \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo
+    ): \Walmart\Models\MP\US\Prices\CapProgramResponse {
+        return $this->optCapProgramInPriceWithHttpInfo($statusInfo);
     }
 
     /**
@@ -1199,16 +1199,16 @@ class PricesApi extends BaseApi
      *
      * Set up CAP SKU All
      *
-     * @param  \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response
+     * @return \Walmart\Models\MP\US\Prices\CapProgramResponse
      */
     protected function optCapProgramInPriceWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest,
-    ): \Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response {
-        $request = $this->optCapProgramInPriceRequest($optCapProgramInPriceRequest, );
+        \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo,
+    ): \Walmart\Models\MP\US\Prices\CapProgramResponse {
+        $request = $this->optCapProgramInPriceRequest($statusInfo, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1257,19 +1257,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Prices\CapProgramResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Prices\CapProgramResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\CapProgramResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response';
+            $returnType = '\Walmart\Models\MP\US\Prices\CapProgramResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1285,7 +1285,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response',
+                        '\Walmart\Models\MP\US\Prices\CapProgramResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1302,15 +1302,15 @@ class PricesApi extends BaseApi
      *
      * Set up CAP SKU All
      *
-     * @param  \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function optCapProgramInPriceAsync(
-        \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest
+        \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo
     ): PromiseInterface {
-        return $this->optCapProgramInPriceAsyncWithHttpInfo($optCapProgramInPriceRequest)
+        return $this->optCapProgramInPriceAsyncWithHttpInfo($statusInfo)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1324,16 +1324,16 @@ class PricesApi extends BaseApi
      *
      * Set up CAP SKU All
      *
-     * @param  \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function optCapProgramInPriceAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest,
+        \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response';
-        $request = $this->optCapProgramInPriceRequest($optCapProgramInPriceRequest, );
+        $returnType = '\Walmart\Models\MP\US\Prices\CapProgramResponse';
+        $request = $this->optCapProgramInPriceRequest($statusInfo, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1378,20 +1378,20 @@ class PricesApi extends BaseApi
     /**
      * Create request for operation 'optCapProgramInPrice'
      *
-     * @param  \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest Request fields (required)
+     * @param  \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function optCapProgramInPriceRequest(
-        \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest $optCapProgramInPriceRequest,
+        \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo,
     ): Request {
         $contentType = self::contentTypes['optCapProgramInPrice'];
 
-        // verify the required parameter 'optCapProgramInPriceRequest' is set
-        if ($optCapProgramInPriceRequest === null || (is_array($optCapProgramInPriceRequest) && count($optCapProgramInPriceRequest) === 0)) {
+        // verify the required parameter 'statusInfo' is set
+        if ($statusInfo === null || (is_array($statusInfo) && count($statusInfo) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $optCapProgramInPriceRequest when calling optCapProgramInPrice'
+                'Missing the required parameter $statusInfo when calling optCapProgramInPrice'
             );
         }
         $resourcePath = '/v3/cppreference';
@@ -1418,12 +1418,12 @@ class PricesApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($optCapProgramInPriceRequest)) {
+        if (isset($statusInfo)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($optCapProgramInPriceRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($statusInfo));
             } else {
-                $httpBody = $optCapProgramInPriceRequest;
+                $httpBody = $statusInfo;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -1474,12 +1474,12 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\PriceBulkUploads200Response
+     * @return \Walmart\Models\MP\US\Prices\FeedId
      */
     public function priceBulkUploads(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Models\MP\US\Prices\PriceBulkUploads200Response {
+    ): \Walmart\Models\MP\US\Prices\FeedId {
         return $this->priceBulkUploadsWithHttpInfo($feedType, $file);
     }
 
@@ -1493,12 +1493,12 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\PriceBulkUploads200Response
+     * @return \Walmart\Models\MP\US\Prices\FeedId
      */
     protected function priceBulkUploadsWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Models\MP\US\Prices\PriceBulkUploads200Response {
+    ): \Walmart\Models\MP\US\Prices\FeedId {
         $request = $this->priceBulkUploadsRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1548,19 +1548,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Prices\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Prices\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response';
+            $returnType = '\Walmart\Models\MP\US\Prices\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1576,7 +1576,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response',
+                        '\Walmart\Models\MP\US\Prices\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1627,7 +1627,7 @@ class PricesApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response';
+        $returnType = '\Walmart\Models\MP\US\Prices\FeedId';
         $request = $this->priceBulkUploadsRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1790,16 +1790,16 @@ class PricesApi extends BaseApi
      *
      * Update a price
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Prices\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Prices\UpdatePrice200Response
      */
     public function updatePrice(
-        \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest
+        \Walmart\Models\MP\US\Prices\Price $price
     ): \Walmart\Models\MP\US\Prices\UpdatePrice200Response {
-        return $this->updatePriceWithHttpInfo($updatePriceRequest);
+        return $this->updatePriceWithHttpInfo($price);
     }
 
     /**
@@ -1807,16 +1807,16 @@ class PricesApi extends BaseApi
      *
      * Update a price
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Prices\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Prices\UpdatePrice200Response
      */
     protected function updatePriceWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest,
+        \Walmart\Models\MP\US\Prices\Price $price,
     ): \Walmart\Models\MP\US\Prices\UpdatePrice200Response {
-        $request = $this->updatePriceRequest($updatePriceRequest, );
+        $request = $this->updatePriceRequest($price, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1910,15 +1910,15 @@ class PricesApi extends BaseApi
      *
      * Update a price
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Prices\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePriceAsync(
-        \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest
+        \Walmart\Models\MP\US\Prices\Price $price
     ): PromiseInterface {
-        return $this->updatePriceAsyncWithHttpInfo($updatePriceRequest)
+        return $this->updatePriceAsyncWithHttpInfo($price)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1932,16 +1932,16 @@ class PricesApi extends BaseApi
      *
      * Update a price
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Prices\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updatePriceAsyncWithHttpInfo(
-        \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest,
+        \Walmart\Models\MP\US\Prices\Price $price,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\UpdatePrice200Response';
-        $request = $this->updatePriceRequest($updatePriceRequest, );
+        $request = $this->updatePriceRequest($price, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1986,20 +1986,20 @@ class PricesApi extends BaseApi
     /**
      * Create request for operation 'updatePrice'
      *
-     * @param  \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Prices\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updatePriceRequest(
-        \Walmart\Models\MP\US\Prices\UpdatePriceRequest $updatePriceRequest,
+        \Walmart\Models\MP\US\Prices\Price $price,
     ): Request {
         $contentType = self::contentTypes['updatePrice'];
 
-        // verify the required parameter 'updatePriceRequest' is set
-        if ($updatePriceRequest === null || (is_array($updatePriceRequest) && count($updatePriceRequest) === 0)) {
+        // verify the required parameter 'price' is set
+        if ($price === null || (is_array($price) && count($price) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updatePriceRequest when calling updatePrice'
+                'Missing the required parameter $price when calling updatePrice'
             );
         }
         $resourcePath = '/v3/price';
@@ -2026,12 +2026,12 @@ class PricesApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updatePriceRequest)) {
+        if (isset($price)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updatePriceRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($price));
             } else {
-                $httpBody = $updatePriceRequest;
+                $httpBody = $price;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2078,17 +2078,17 @@ class PricesApi extends BaseApi
      * Update Repricer Strategy
      *
      * @param  string $strategyCollectionId (required)
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityResponse
      */
     public function updateStrategy(
         string $strategyCollectionId,
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest
-    ): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response {
-        return $this->updateStrategyWithHttpInfo($strategyCollectionId, $updateStrategyRequest);
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest
+    ): \Walmart\Models\MP\US\Prices\RepricerEntityResponse {
+        return $this->updateStrategyWithHttpInfo($strategyCollectionId, $repricerEntityRequest);
     }
 
     /**
@@ -2097,17 +2097,17 @@ class PricesApi extends BaseApi
      * Update Repricer Strategy
      *
      * @param  string $strategyCollectionId (required)
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityResponse
      */
     protected function updateStrategyWithHttpInfo(
         string $strategyCollectionId,
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest,
-    ): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response {
-        $request = $this->updateStrategyRequest($strategyCollectionId, $updateStrategyRequest, );
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
+    ): \Walmart\Models\MP\US\Prices\RepricerEntityResponse {
+        $request = $this->updateStrategyRequest($strategyCollectionId, $repricerEntityRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2156,19 +2156,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Prices\UpdateStrategy200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Prices\RepricerEntityResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Prices\UpdateStrategy200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Prices\RepricerEntityResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Prices\RepricerEntityResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response';
+            $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2184,7 +2184,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response',
+                        '\Walmart\Models\MP\US\Prices\RepricerEntityResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2202,16 +2202,16 @@ class PricesApi extends BaseApi
      * Update Repricer Strategy
      *
      * @param  string $strategyCollectionId (required)
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateStrategyAsync(
         string $strategyCollectionId,
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest
     ): PromiseInterface {
-        return $this->updateStrategyAsyncWithHttpInfo($strategyCollectionId, $updateStrategyRequest)
+        return $this->updateStrategyAsyncWithHttpInfo($strategyCollectionId, $repricerEntityRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2226,17 +2226,17 @@ class PricesApi extends BaseApi
      * Update Repricer Strategy
      *
      * @param  string $strategyCollectionId (required)
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateStrategyAsyncWithHttpInfo(
         string $strategyCollectionId,
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest,
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Prices\UpdateStrategy200Response';
-        $request = $this->updateStrategyRequest($strategyCollectionId, $updateStrategyRequest, );
+        $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityResponse';
+        $request = $this->updateStrategyRequest($strategyCollectionId, $repricerEntityRequest, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2282,14 +2282,14 @@ class PricesApi extends BaseApi
      * Create request for operation 'updateStrategy'
      *
      * @param  string $strategyCollectionId (required)
-     * @param  \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest The request body will have the strategy related information (required)
+     * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateStrategyRequest(
         string $strategyCollectionId,
-        \Walmart\Models\MP\US\Prices\UpdateStrategyRequest $updateStrategyRequest,
+        \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): Request {
         $contentType = self::contentTypes['updateStrategy'];
 
@@ -2299,10 +2299,10 @@ class PricesApi extends BaseApi
                 'Missing the required parameter $strategyCollectionId when calling updateStrategy'
             );
         }
-        // verify the required parameter 'updateStrategyRequest' is set
-        if ($updateStrategyRequest === null || (is_array($updateStrategyRequest) && count($updateStrategyRequest) === 0)) {
+        // verify the required parameter 'repricerEntityRequest' is set
+        if ($repricerEntityRequest === null || (is_array($repricerEntityRequest) && count($repricerEntityRequest) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updateStrategyRequest when calling updateStrategy'
+                'Missing the required parameter $repricerEntityRequest when calling updateStrategy'
             );
         }
         $resourcePath = '/v3/repricer/strategy/{strategyCollectionId}';
@@ -2338,12 +2338,12 @@ class PricesApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updateStrategyRequest)) {
+        if (isset($repricerEntityRequest)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateStrategyRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($repricerEntityRequest));
             } else {
-                $httpBody = $updateStrategyRequest;
+                $httpBody = $repricerEntityRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**\Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]**](GetAllFeedStatuses200ResponseErrorsInner.md) |  | [optional]
+**errors** | [**\Walmart\Models\MP\MX\Feeds\GatewayError[]**](GatewayError.md) |  | [optional]
 **totalResults** | **int** | Total number of feeds returned | [optional]
 **offset** | **int** | The object response to the starting number, where 0 is the first available | [optional]
 **limit** | **int** | The number of items to be returned | [optional]

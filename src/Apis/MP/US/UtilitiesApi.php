@@ -58,9 +58,9 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response
+     * @return \Walmart\Models\MP\US\Utilities\StatusAPIResponse
      */
-    public function getApiPlatformStatus(): \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response
+    public function getApiPlatformStatus(): \Walmart\Models\MP\US\Utilities\StatusAPIResponse
     {
         return $this->getApiPlatformStatusWithHttpInfo();
     }
@@ -72,9 +72,9 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response
+     * @return \Walmart\Models\MP\US\Utilities\StatusAPIResponse
      */
-    protected function getApiPlatformStatusWithHttpInfo(): \Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response
+    protected function getApiPlatformStatusWithHttpInfo(): \Walmart\Models\MP\US\Utilities\StatusAPIResponse
     {
         $request = $this->getApiPlatformStatusRequest();
         $this->writeDebug($request);
@@ -125,19 +125,19 @@ class UtilitiesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Utilities\StatusAPIResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Utilities\StatusAPIResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\StatusAPIResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response';
+            $returnType = '\Walmart\Models\MP\US\Utilities\StatusAPIResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -153,7 +153,7 @@ class UtilitiesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response',
+                        '\Walmart\Models\MP\US\Utilities\StatusAPIResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -194,7 +194,7 @@ class UtilitiesApi extends BaseApi
      */
     protected function getApiPlatformStatusAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Utilities\GetApiPlatformStatus200Response';
+        $returnType = '\Walmart\Models\MP\US\Utilities\StatusAPIResponse';
         $request = $this->getApiPlatformStatusRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -319,11 +319,11 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetCategories200Response
+     * @return \Walmart\Models\MP\US\Utilities\GetCategories
      */
     public function getCategories(
         string $departmentId
-    ): \Walmart\Models\MP\US\Utilities\GetCategories200Response {
+    ): \Walmart\Models\MP\US\Utilities\GetCategories {
         return $this->getCategoriesWithHttpInfo($departmentId);
     }
 
@@ -336,11 +336,11 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetCategories200Response
+     * @return \Walmart\Models\MP\US\Utilities\GetCategories
      */
     protected function getCategoriesWithHttpInfo(
         string $departmentId,
-    ): \Walmart\Models\MP\US\Utilities\GetCategories200Response {
+    ): \Walmart\Models\MP\US\Utilities\GetCategories {
         $request = $this->getCategoriesRequest($departmentId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -390,19 +390,19 @@ class UtilitiesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Utilities\GetCategories200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Utilities\GetCategories' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Utilities\GetCategories200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Utilities\GetCategories' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\GetCategories200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\GetCategories', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Utilities\GetCategories200Response';
+            $returnType = '\Walmart\Models\MP\US\Utilities\GetCategories';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -418,7 +418,7 @@ class UtilitiesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Utilities\GetCategories200Response',
+                        '\Walmart\Models\MP\US\Utilities\GetCategories',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -465,7 +465,7 @@ class UtilitiesApi extends BaseApi
     protected function getCategoriesAsyncWithHttpInfo(
         string $departmentId,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Utilities\GetCategories200Response';
+        $returnType = '\Walmart\Models\MP\US\Utilities\GetCategories';
         $request = $this->getCategoriesRequest($departmentId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -606,9 +606,9 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetDepartmentList200Response
+     * @return \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
      */
-    public function getDepartmentList(): \Walmart\Models\MP\US\Utilities\GetDepartmentList200Response
+    public function getDepartmentList(): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
     {
         return $this->getDepartmentListWithHttpInfo();
     }
@@ -620,9 +620,9 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetDepartmentList200Response
+     * @return \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
      */
-    protected function getDepartmentListWithHttpInfo(): \Walmart\Models\MP\US\Utilities\GetDepartmentList200Response
+    protected function getDepartmentListWithHttpInfo(): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
     {
         $request = $this->getDepartmentListRequest();
         $this->writeDebug($request);
@@ -673,19 +673,19 @@ class UtilitiesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response';
+            $returnType = '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -701,7 +701,7 @@ class UtilitiesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response',
+                        '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -742,7 +742,7 @@ class UtilitiesApi extends BaseApi
      */
     protected function getDepartmentListAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Utilities\GetDepartmentList200Response';
+        $returnType = '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO';
         $request = $this->getDepartmentListRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -868,12 +868,12 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response
+     * @return \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
      */
     public function getTaxonomyResponse(
         ?string $feedType = null,
         ?string $version = null
-    ): \Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response {
+    ): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO {
         return $this->getTaxonomyResponseWithHttpInfo($feedType, $version);
     }
 
@@ -887,12 +887,12 @@ class UtilitiesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response
+     * @return \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
      */
     protected function getTaxonomyResponseWithHttpInfo(
         ?string $feedType = null,
         ?string $version = null,
-    ): \Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response {
+    ): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO {
         $request = $this->getTaxonomyResponseRequest($feedType, $version, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -942,19 +942,19 @@ class UtilitiesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response';
+            $returnType = '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -970,7 +970,7 @@ class UtilitiesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response',
+                        '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1021,7 +1021,7 @@ class UtilitiesApi extends BaseApi
         ?string $feedType = null,
         ?string $version = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200Response';
+        $returnType = '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO';
         $request = $this->getTaxonomyResponseRequest($feedType, $version, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

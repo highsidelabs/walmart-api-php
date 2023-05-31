@@ -15,7 +15,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `acknowledgeOrders()`
 
 ```php
-acknowledgeOrders($purchaseOrderId): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+acknowledgeOrders($purchaseOrderId): \Walmart\Models\MP\US\Orders\GetOrderResponse
 ```
 Acknowledge Orders
 
@@ -54,7 +54,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ try {
 ## `cancelOrderLines()`
 
 ```php
-cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+cancelOrderLines($purchaseOrderId, $orderCancellationResponse): \Walmart\Models\MP\US\Orders\GetOrderResponse
 ```
 Cancel Order Lines
 
@@ -94,10 +94,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$cancelOrderLinesRequest = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EA","amount":"1"}}]}}]}}}; // \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest | File fields
+$orderCancellationResponse = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EA","amount":"1"}}]}}]}}}; // \Walmart\Models\MP\US\Orders\OrderCancellationResponse | File fields
 
 try {
-    $result = $api->cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest);
+    $result = $api->cancelOrderLines($purchaseOrderId, $orderCancellationResponse);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->cancelOrderLines: {$e->getMessage()}\n";
@@ -108,12 +108,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **cancelOrderLinesRequest** | [**\Walmart\Models\MP\US\Orders\CancelOrderLinesRequest**](../Model/CancelOrderLinesRequest.md)| File fields | |
+| **orderCancellationResponse** | [**\Walmart\Models\MP\US\Orders\OrderCancellationResponse**](../Model/OrderCancellationResponse.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
 
 ### Authorization
 
@@ -131,7 +131,7 @@ try {
 ## `getAllOrders()`
 
 ```php
-getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Models\MP\US\Orders\GetAllOrders200Response
+getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
 ```
 All orders
 
@@ -200,7 +200,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../Model/PurchaseOrderTypeV3.md)
 
 ### Authorization
 
@@ -218,7 +218,7 @@ try {
 ## `getAllReleasedOrders()`
 
 ```php
-getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo, $shipNodeType, $sku, $customerOrderId, $purchaseOrderId, $fromExpectedShipDate, $toExpectedShipDate, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Models\MP\US\Orders\GetAllOrders200Response
+getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo, $shipNodeType, $sku, $customerOrderId, $purchaseOrderId, $fromExpectedShipDate, $toExpectedShipDate, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
 ```
 All released orders
 
@@ -281,7 +281,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../Model/PurchaseOrderTypeV3.md)
 
 ### Authorization
 
@@ -360,7 +360,7 @@ try {
 ## `refundOrderLines()`
 
 ```php
-refundOrderLines($purchaseOrderId, $refundOrderLinesRequest): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+refundOrderLines($purchaseOrderId, $orderRefundJson): \Walmart\Models\MP\US\Orders\GetOrderResponse
 ```
 Refund Order Lines
 
@@ -382,10 +382,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$refundOrderLinesRequest = {"orderRefund":{"purchaseOrderId":"2577453162650","orderLines":{"orderLine":[{"lineNumber":"4","isFullRefund":false,"refunds":{"refund":[{"refundComments":"test test","refundCharges":{"refundCharge":[{"refundReason":"Merchandise not received","charge":{"chargeType":"PRODUCT","chargeName":"Item Price","chargeAmount":{"currency":"USD","amount":-0.1},"tax":{"taxName":"Item Price Tax","taxAmount":{"currency":"USD","amount":-0.1}}}}]}}]}}]}}}; // \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest | File fields
+$orderRefundJson = {"orderRefund":{"purchaseOrderId":"2577453162650","orderLines":{"orderLine":[{"lineNumber":"4","isFullRefund":false,"refunds":{"refund":[{"refundComments":"test test","refundCharges":{"refundCharge":[{"refundReason":"Merchandise not received","charge":{"chargeType":"PRODUCT","chargeName":"Item Price","chargeAmount":{"currency":"USD","amount":-0.1},"tax":{"taxName":"Item Price Tax","taxAmount":{"currency":"USD","amount":-0.1}}}}]}}]}}]}}}; // \Walmart\Models\MP\US\Orders\OrderRefundJson | File fields
 
 try {
-    $result = $api->refundOrderLines($purchaseOrderId, $refundOrderLinesRequest);
+    $result = $api->refundOrderLines($purchaseOrderId, $orderRefundJson);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->refundOrderLines: {$e->getMessage()}\n";
@@ -396,12 +396,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **refundOrderLinesRequest** | [**\Walmart\Models\MP\US\Orders\RefundOrderLinesRequest**](../Model/RefundOrderLinesRequest.md)| File fields | |
+| **orderRefundJson** | [**\Walmart\Models\MP\US\Orders\OrderRefundJson**](../Model/OrderRefundJson.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ try {
 ## `shippingUpdates()`
 
 ```php
-shippingUpdates($purchaseOrderId, $shippingUpdatesRequest): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+shippingUpdates($purchaseOrderId, $orderShipment): \Walmart\Models\MP\US\Orders\GetOrderResponse
 ```
 Ship Order Lines
 
@@ -441,10 +441,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$shippingUpdatesRequest = {"orderShipment":{"orderLines":{"orderLine":[{"lineNumber":"1","intentToCancelOverride":false,"sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"UPS"},"methodCode":"Standard","trackingNumber":"22344","trackingURL":"http://walmart/tracking/ups?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92345"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}},{"lineNumber":"2","sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"FedEx"},"methodCode":"Express","trackingNumber":"22344","trackingURL":"http://walmart/tracking/fedEx?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92344"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}}]}}}; // \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest | File fields
+$orderShipment = {"orderShipment":{"orderLines":{"orderLine":[{"lineNumber":"1","intentToCancelOverride":false,"sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"UPS"},"methodCode":"Standard","trackingNumber":"22344","trackingURL":"http://walmart/tracking/ups?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92345"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}},{"lineNumber":"2","sellerOrderId":"92344","orderLineStatuses":{"orderLineStatus":[{"status":"Shipped","statusQuantity":{"unitOfMeasurement":"EACH","amount":"1"},"trackingInfo":{"shipDateTime":1580821866000,"carrierName":{"carrier":"FedEx"},"methodCode":"Express","trackingNumber":"22344","trackingURL":"http://walmart/tracking/fedEx?&type=MP&seller_id=12345&promise_date=03/02/2020&dzip=92840&tracking_numbers=92344"},"returnCenterAddress":{"name":"walmart","address1":"walmart store 2","city":"Huntsville","state":"AL","postalCode":"35805","country":"USA","dayPhone":"12344","emailId":"walmart@walmart.com"}}]}}]}}}; // \Walmart\Models\MP\US\Orders\OrderShipment | File fields
 
 try {
-    $result = $api->shippingUpdates($purchaseOrderId, $shippingUpdatesRequest);
+    $result = $api->shippingUpdates($purchaseOrderId, $orderShipment);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->shippingUpdates: {$e->getMessage()}\n";
@@ -455,12 +455,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **shippingUpdatesRequest** | [**\Walmart\Models\MP\US\Orders\ShippingUpdatesRequest**](../Model/ShippingUpdatesRequest.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\US\Orders\OrderShipment**](../Model/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\ShippingUpdates200Response**](../Model/ShippingUpdates200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
 
 ### Authorization
 

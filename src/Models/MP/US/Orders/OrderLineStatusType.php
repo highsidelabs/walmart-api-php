@@ -53,10 +53,10 @@ class OrderLineStatusType extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'statusQuantity' => '\Walmart\Models\MP\US\Orders\QuantityType',
         'cancellationReason' => 'string',
-        'trackingInfo' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo',
-        'returnCenterAddress' => '\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress'
+        'trackingInfo' => '\Walmart\Models\MP\US\Orders\TrackingInfoType',
+        'returnCenterAddress' => '\Walmart\Models\MP\US\Orders\ReturnCenterAddressType'
     ];
 
     /**
@@ -242,7 +242,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\US\Orders\QuantityType
     
      */
     public function getStatusQuantity()
@@ -253,7 +253,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\US\Orders\QuantityType $statusQuantity statusQuantity
      *
      * @return self
     
@@ -300,7 +300,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets trackingInfo
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
+     * @return \Walmart\Models\MP\US\Orders\TrackingInfoType|null
     
      */
     public function getTrackingInfo()
@@ -311,7 +311,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets trackingInfo
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
+     * @param \Walmart\Models\MP\US\Orders\TrackingInfoType|null $trackingInfo trackingInfo
      *
      * @return self
     
@@ -329,7 +329,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Gets returnCenterAddress
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null
+     * @return \Walmart\Models\MP\US\Orders\ReturnCenterAddressType|null
     
      */
     public function getReturnCenterAddress()
@@ -340,7 +340,7 @@ class OrderLineStatusType extends BaseModel
     /**
      * Sets returnCenterAddress
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerReturnCenterAddress|null $returnCenterAddress returnCenterAddress
+     * @param \Walmart\Models\MP\US\Orders\ReturnCenterAddressType|null $returnCenterAddress returnCenterAddress
      *
      * @return self
     

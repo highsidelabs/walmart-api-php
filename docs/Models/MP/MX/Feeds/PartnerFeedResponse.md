@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**\Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]**](GetAllFeedStatuses200ResponseErrorsInner.md) |  | [optional]
+**errors** | [**\Walmart\Models\MP\MX\Feeds\GatewayError[]**](GatewayError.md) |  | [optional]
 **feedId** | **string** | A unique ID used for tracking the Feed File | [optional]
 **feedStatus** | **string** | Can be one of the following: RECEIVED, INPROGRESS, PROCESSED, or ERROR | [optional]
 **ingestionErrors** | [**\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors**](GetFeedItemStatus200ResponseIngestionErrors.md) |  | [optional]

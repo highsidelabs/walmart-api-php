@@ -50,7 +50,7 @@ class AdditionalAttributes extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'additionalAttribute' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[]'
+        'additionalAttribute' => '\Walmart\Models\MP\US\Promotions\AdditionalAttribute[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class AdditionalAttributes extends BaseModel
     /**
      * Gets additionalAttribute
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[]
+     * @return \Walmart\Models\MP\US\Promotions\AdditionalAttribute[]
     
      */
     public function getAdditionalAttribute()
@@ -142,7 +142,7 @@ class AdditionalAttributes extends BaseModel
     /**
      * Sets additionalAttribute
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributesAdditionalAttributeInner[] $additionalAttribute additionalAttribute
+     * @param \Walmart\Models\MP\US\Promotions\AdditionalAttribute[] $additionalAttribute additionalAttribute
      *
      * @return self
     

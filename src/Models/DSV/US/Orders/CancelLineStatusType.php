@@ -54,7 +54,7 @@ class CancelLineStatusType extends BaseModel
     protected static array $openAPITypes = [
         'status' => 'string',
         'cancellationReason' => 'string',
-        'statusQuantity' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity'
+        'statusQuantity' => '\Walmart\Models\DSV\US\Orders\QuantityType'
     ];
 
     /**
@@ -306,7 +306,7 @@ class CancelLineStatusType extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\DSV\US\Orders\QuantityType
     
      */
     public function getStatusQuantity()
@@ -317,7 +317,7 @@ class CancelLineStatusType extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\DSV\US\Orders\QuantityType $statusQuantity statusQuantity
      *
      * @return self
     

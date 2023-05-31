@@ -52,7 +52,7 @@ class Inventory extends BaseModel
     protected static array $openAPITypes = [
         'gtin' => 'string',
         'availabilityCode' => 'string',
-        'quantity' => '\Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity'
+        'quantity' => '\Walmart\Models\DSV\US\Inventory\Quantity'
     ];
 
     /**
@@ -246,7 +246,7 @@ class Inventory extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity
+     * @return \Walmart\Models\DSV\US\Inventory\Quantity
     
      */
     public function getQuantity()
@@ -257,7 +257,7 @@ class Inventory extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity $quantity quantity
+     * @param \Walmart\Models\DSV\US\Inventory\Quantity $quantity quantity
      *
      * @return self
     

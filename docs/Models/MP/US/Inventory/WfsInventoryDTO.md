@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**headers** | [**\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders**](GetWFSInventory200ResponseHeaders.md) |  | [optional]
-**payload** | [**\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayload**](GetWFSInventory200ResponsePayload.md) |  | [optional]
+**headers** | [**\Walmart\Models\MP\US\Inventory\Headers**](Headers.md) |  | [optional]
+**payload** | [**\Walmart\Models\MP\US\Inventory\Payload**](Payload.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

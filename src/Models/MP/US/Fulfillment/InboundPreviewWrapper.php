@@ -50,8 +50,8 @@ class InboundPreviewWrapper extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeader',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestPayload'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\CreateInboundRequestDTO'
     ];
 
     /**
@@ -141,7 +141,7 @@ class InboundPreviewWrapper extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeader
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader
     
      */
     public function getHeader()
@@ -152,7 +152,7 @@ class InboundPreviewWrapper extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeader $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader $header header
      *
      * @return self
     
@@ -170,7 +170,7 @@ class InboundPreviewWrapper extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestPayload
+     * @return \Walmart\Models\MP\US\Fulfillment\CreateInboundRequestDTO
     
      */
     public function getPayload()
@@ -181,7 +181,7 @@ class InboundPreviewWrapper extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestPayload $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\CreateInboundRequestDTO $payload payload
      *
      * @return self
     

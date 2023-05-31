@@ -54,7 +54,7 @@ class ShippingMethod extends BaseModel
     protected static array $openAPITypes = [
         'shipMethod' => 'string',
         'status' => 'string',
-        'configurations' => '\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[]'
+        'configurations' => '\Walmart\Models\MP\US\Settings\Configuration[]'
     ];
 
     /**
@@ -294,7 +294,7 @@ class ShippingMethod extends BaseModel
     /**
      * Gets configurations
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[]
+     * @return \Walmart\Models\MP\US\Settings\Configuration[]
     
      */
     public function getConfigurations()
@@ -305,7 +305,7 @@ class ShippingMethod extends BaseModel
     /**
      * Sets configurations
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner[] $configurations Contains an array of Regions, an array of Address Type, Transit Time and Per shipping charge or array of Tired Shipping Charge
+     * @param \Walmart\Models\MP\US\Settings\Configuration[] $configurations Contains an array of Regions, an array of Address Type, Transit Time and Per shipping charge or array of Tired Shipping Charge
      *
      * @return self
     

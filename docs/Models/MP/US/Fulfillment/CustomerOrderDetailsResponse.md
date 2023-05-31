@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **orderType** | **string** | order type of the order | [optional]
 **status** | **string** | status of the order | [optional]
 **orderDate** | **\DateTime** | createDate of the order | [optional]
-**buyerInfo** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo**](GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfo.md) |  | [optional]
-**shipments** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner.md) | createDate of the order | [optional]
-**orderLines** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner.md) | order lines details | [optional]
+**buyerInfo** | [**\Walmart\Models\MP\US\Fulfillment\BuyerInfo**](BuyerInfo.md) |  | [optional]
+**shipments** | [**\Walmart\Models\MP\US\Fulfillment\Shipment[]**](Shipment.md) | createDate of the order | [optional]
+**orderLines** | [**\Walmart\Models\MP\US\Fulfillment\CustomerOrderLinesDetails[]**](CustomerOrderLinesDetails.md) | order lines details | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -14,7 +14,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createSubscription()`
 
 ```php
-createSubscription($createSubscriptionRequest): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
+createSubscription($createSubscriptionRequest): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO
 ```
 Create subscription
 
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\CreateSubscription200Response**](../Model/CreateSubscription200Response.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../Model/SubscriptionResponseDTO.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `deleteSubscription()`
 
 ```php
-deleteSubscription($subscriptionId): \Walmart\Models\MP\US\Notifications\DeleteSubscription200Response
+deleteSubscription($subscriptionId): \Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO
 ```
 Delete Subscription
 
@@ -110,7 +110,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\DeleteSubscription200Response**](../Model/DeleteSubscription200Response.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO**](../Model/SubscriptionDeleteResponseDTO.md)
 
 ### Authorization
 
@@ -128,7 +128,7 @@ try {
 ## `getAllSubscriptions()`
 
 ```php
-getAllSubscriptions($subscriptionId, $eventType, $resourceName, $status): \Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response
+getAllSubscriptions($subscriptionId, $eventType, $resourceName, $status): \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest
 ```
 All subscriptions
 
@@ -173,7 +173,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\GetAllSubscriptions200Response**](../Model/GetAllSubscriptions200Response.md)
+[**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)
 
 ### Authorization
 
@@ -191,7 +191,7 @@ try {
 ## `getEventTypes()`
 
 ```php
-getEventTypes(): \Walmart\Models\MP\US\Notifications\GetEventTypes200Response
+getEventTypes(): \Walmart\Models\MP\US\Notifications\EventTypes
 ```
 Event Types
 
@@ -227,7 +227,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\GetEventTypes200Response**](../Model/GetEventTypes200Response.md)
+[**\Walmart\Models\MP\US\Notifications\EventTypes**](../Model/EventTypes.md)
 
 ### Authorization
 
@@ -245,7 +245,7 @@ This endpoint does not need any parameter.
 ## `testNotification()`
 
 ```php
-testNotification($testNotificationRequest): \Walmart\Models\MP\US\Notifications\TestNotification200Response
+testNotification($testNotificationRequest): \Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO
 ```
 Test Notification
 
@@ -284,7 +284,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\TestNotification200Response**](../Model/TestNotification200Response.md)
+[**\Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO**](../Model/TestNotificationResponseDTO.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ try {
 ## `updateSubscription()`
 
 ```php
-updateSubscription($subscriptionId, $updateSubscriptionRequest): \Walmart\Models\MP\US\Notifications\CreateSubscription200Response
+updateSubscription($subscriptionId, $createSubscriptionRequestRecord): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO
 ```
 Update Subscription
 
@@ -324,10 +324,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->notifications();
 
 $subscriptionId = 'subscriptionId_example'; // string | Unique ID for the subscription
-$updateSubscriptionRequest = {"eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"status":"ACTIVE"}; // \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest | Request fields
+$createSubscriptionRequestRecord = {"eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"status":"ACTIVE"}; // \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord | Request fields
 
 try {
-    $result = $api->updateSubscription($subscriptionId, $updateSubscriptionRequest);
+    $result = $api->updateSubscription($subscriptionId, $createSubscriptionRequestRecord);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->updateSubscription: {$e->getMessage()}\n";
@@ -338,12 +338,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Unique ID for the subscription | |
-| **updateSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest**](../Model/UpdateSubscriptionRequest.md)| Request fields | |
+| **createSubscriptionRequestRecord** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord**](../Model/CreateSubscriptionRequestRecord.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\CreateSubscription200Response**](../Model/CreateSubscription200Response.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../Model/SubscriptionResponseDTO.md)
 
 ### Authorization
 

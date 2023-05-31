@@ -50,7 +50,8 @@ class RefundOrderLinesRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderRefund' => '\Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefund'
+        'purchaseOrderId' => 'string',
+        'orderLines' => '\Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderLines'
     ];
 
     /**
@@ -61,7 +62,8 @@ class RefundOrderLinesRequest extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'orderRefund' => null
+        'purchaseOrderId' => null,
+        'orderLines' => null
     ];
 
     /**
@@ -70,7 +72,8 @@ class RefundOrderLinesRequest extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'orderRefund' => false
+        'purchaseOrderId' => false,
+        'orderLines' => false
     ];
 
     /**
@@ -80,7 +83,8 @@ class RefundOrderLinesRequest extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'orderRefund' => 'orderRefund'
+        'purchaseOrderId' => 'purchaseOrderId',
+        'orderLines' => 'orderLines'
     ];
 
     /**
@@ -89,7 +93,8 @@ class RefundOrderLinesRequest extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'orderRefund' => 'setOrderRefund'
+        'purchaseOrderId' => 'setPurchaseOrderId',
+        'orderLines' => 'setOrderLines'
     ];
 
     /**
@@ -98,7 +103,8 @@ class RefundOrderLinesRequest extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'orderRefund' => 'getOrderRefund'
+        'purchaseOrderId' => 'getPurchaseOrderId',
+        'orderLines' => 'getOrderLines'
     ];
 
     /**
@@ -109,7 +115,8 @@ class RefundOrderLinesRequest extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('orderRefund', $data ?? [], null);
+        $this->setIfExists('purchaseOrderId', $data ?? [], null);
+        $this->setIfExists('orderLines', $data ?? [], null);
     }
 
     /**
@@ -121,36 +128,71 @@ class RefundOrderLinesRequest extends BaseModel
     {
         $invalidProperties = [];
 
+        if ($this->container['purchaseOrderId'] === null) {
+            $invalidProperties[] = "'purchaseOrderId' can't be null";
+        }
+        if ($this->container['orderLines'] === null) {
+            $invalidProperties[] = "'orderLines' can't be null";
+        }
 
         return $invalidProperties;
     }
 
     /**
-     * Gets orderRefund
+     * Gets purchaseOrderId
      *
-     * @return \Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefund|null
+     * @return string
     
      */
-    public function getOrderRefund()
+    public function getPurchaseOrderId()
     {
-        return $this->container['orderRefund'];
+        return $this->container['purchaseOrderId'];
     }
 
     /**
-     * Sets orderRefund
+     * Sets purchaseOrderId
      *
-     * @param \Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefund|null $orderRefund orderRefund
+     * @param string $purchaseOrderId purchaseOrderId
      *
      * @return self
     
      */
-    public function setOrderRefund($orderRefund)
+    public function setPurchaseOrderId($purchaseOrderId)
     {
-        if (is_null($orderRefund)) {
-            throw new \InvalidArgumentException('non-nullable orderRefund cannot be null');
+        if (is_null($purchaseOrderId)) {
+            throw new \InvalidArgumentException('non-nullable purchaseOrderId cannot be null');
         }
 
-        $this->container['orderRefund'] = $orderRefund;
+        $this->container['purchaseOrderId'] = $purchaseOrderId;
+        return $this;
+    }
+
+    /**
+     * Gets orderLines
+     *
+     * @return \Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderLines
+    
+     */
+    public function getOrderLines()
+    {
+        return $this->container['orderLines'];
+    }
+
+    /**
+     * Sets orderLines
+     *
+     * @param \Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderLines $orderLines orderLines
+     *
+     * @return self
+    
+     */
+    public function setOrderLines($orderLines)
+    {
+        if (is_null($orderLines)) {
+            throw new \InvalidArgumentException('non-nullable orderLines cannot be null');
+        }
+
+        $this->container['orderLines'] = $orderLines;
         return $this;
     }
 }

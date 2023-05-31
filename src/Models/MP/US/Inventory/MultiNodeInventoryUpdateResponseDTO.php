@@ -51,7 +51,7 @@ class MultiNodeInventoryUpdateResponseDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'nodes' => '\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200ResponseNodesInner[]'
+        'nodes' => '\Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTO[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class MultiNodeInventoryUpdateResponseDTO extends BaseModel
     /**
      * Gets nodes
      *
-     * @return \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200ResponseNodesInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTO[]|null
     
      */
     public function getNodes()
@@ -175,7 +175,7 @@ class MultiNodeInventoryUpdateResponseDTO extends BaseModel
     /**
      * Sets nodes
      *
-     * @param \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200ResponseNodesInner[]|null $nodes nodes
+     * @param \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTO[]|null $nodes nodes
      *
      * @return self
     

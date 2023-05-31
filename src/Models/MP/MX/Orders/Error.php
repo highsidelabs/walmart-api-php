@@ -56,7 +56,7 @@ class Error extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'errorIdentifiers' => '\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers'
+        'errorIdentifiers' => '\Walmart\Models\MP\MX\Orders\ErrorIdentifiers'
     ];
 
     /**
@@ -344,7 +344,7 @@ class Error extends BaseModel
     /**
      * Gets errorIdentifiers
      *
-     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers|null
+     * @return \Walmart\Models\MP\MX\Orders\ErrorIdentifiers|null
     
      */
     public function getErrorIdentifiers()
@@ -355,7 +355,7 @@ class Error extends BaseModel
     /**
      * Sets errorIdentifiers
      *
-     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers|null $errorIdentifiers errorIdentifiers
+     * @param \Walmart\Models\MP\MX\Orders\ErrorIdentifiers|null $errorIdentifiers errorIdentifiers
      *
      * @return self
     

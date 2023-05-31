@@ -51,7 +51,7 @@ class GetAllSubCategoriesResponse extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Rules\GetAllSubCategories200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Rules\CategoryInfo[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class GetAllSubCategoriesResponse extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Rules\GetAllSubCategories200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\CategoryInfo[]|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class GetAllSubCategoriesResponse extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Rules\GetAllSubCategories200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Rules\CategoryInfo[]|null $payload payload
      *
      * @return self
     

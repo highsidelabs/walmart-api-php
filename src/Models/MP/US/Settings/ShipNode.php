@@ -56,9 +56,9 @@ class ShipNode extends BaseModel
         'timeZone' => 'string',
         'distributorSupportedServices' => 'string[]',
         'customNodeId' => 'string',
-        'postalAddress' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress',
-        'shippingDetails' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]',
-        'calendarDayConfiguration' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfiguration'
+        'postalAddress' => '\Walmart\Models\MP\US\Settings\PostalAddress',
+        'shippingDetails' => '\Walmart\Models\MP\US\Settings\ShippingDetails[]',
+        'calendarDayConfiguration' => '\Walmart\Models\MP\US\Settings\CalendarDayConfigurationResponse'
     ];
 
     /**
@@ -358,7 +358,7 @@ class ShipNode extends BaseModel
     /**
      * Gets postalAddress
      *
-     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress|null
+     * @return \Walmart\Models\MP\US\Settings\PostalAddress|null
     
      */
     public function getPostalAddress()
@@ -369,7 +369,7 @@ class ShipNode extends BaseModel
     /**
      * Sets postalAddress
      *
-     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress|null $postalAddress postalAddress
+     * @param \Walmart\Models\MP\US\Settings\PostalAddress|null $postalAddress postalAddress
      *
      * @return self
     
@@ -387,7 +387,7 @@ class ShipNode extends BaseModel
     /**
      * Gets shippingDetails
      *
-     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\ShippingDetails[]|null
     
      */
     public function getShippingDetails()
@@ -398,7 +398,7 @@ class ShipNode extends BaseModel
     /**
      * Sets shippingDetails
      *
-     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner[]|null $shippingDetails Shipping Details.
+     * @param \Walmart\Models\MP\US\Settings\ShippingDetails[]|null $shippingDetails Shipping Details.
      *
      * @return self
     
@@ -416,7 +416,7 @@ class ShipNode extends BaseModel
     /**
      * Gets calendarDayConfiguration
      *
-     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfiguration|null
+     * @return \Walmart\Models\MP\US\Settings\CalendarDayConfigurationResponse|null
     
      */
     public function getCalendarDayConfiguration()
@@ -427,7 +427,7 @@ class ShipNode extends BaseModel
     /**
      * Sets calendarDayConfiguration
      *
-     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfiguration|null $calendarDayConfiguration calendarDayConfiguration
+     * @param \Walmart\Models\MP\US\Settings\CalendarDayConfigurationResponse|null $calendarDayConfiguration calendarDayConfiguration
      *
      * @return self
     

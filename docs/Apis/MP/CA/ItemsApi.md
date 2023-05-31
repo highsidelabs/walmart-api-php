@@ -78,7 +78,7 @@ try {
 ## `getAllItems()`
 
 ```php
-getAllItems($nextCursor, $sku, $offset, $limit): \Walmart\Models\MP\CA\Items\GetAllItems200Response
+getAllItems($nextCursor, $sku, $offset, $limit): \Walmart\Models\MP\CA\Items\ItemResponses
 ```
 Get all items
 
@@ -130,7 +130,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
+[**\Walmart\Models\MP\CA\Items\ItemResponses**](../Model/ItemResponses.md)
 
 ### Authorization
 
@@ -148,7 +148,7 @@ try {
 ## `getAnItem()`
 
 ```php
-getAnItem($sku): \Walmart\Models\MP\CA\Items\GetAnItem200Response
+getAnItem($sku): \Walmart\Models\MP\CA\Items\ItemResponse
 ```
 Get an item
 
@@ -194,7 +194,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\GetAnItem200Response**](../Model/GetAnItem200Response.md)
+[**\Walmart\Models\MP\CA\Items\ItemResponse**](../Model/ItemResponse.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ try {
 ## `retireAnItem()`
 
 ```php
-retireAnItem($sKU): \Walmart\Models\MP\CA\Items\RetireAnItem200Response
+retireAnItem($sKU): \Walmart\Models\MP\CA\Items\ItemRetireResponseV2
 ```
 Retire an item
 
@@ -258,7 +258,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\RetireAnItem200Response**](../Model/RetireAnItem200Response.md)
+[**\Walmart\Models\MP\CA\Items\ItemRetireResponseV2**](../Model/ItemRetireResponseV2.md)
 
 ### Authorization
 

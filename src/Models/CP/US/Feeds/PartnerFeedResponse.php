@@ -50,10 +50,10 @@ class PartnerFeedResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\CP\US\Feeds\GatewayError[]',
         'feedId' => 'string',
         'feedStatus' => 'string',
-        'ingestionErrors' => '\Walmart\Models\CP\US\Feeds\ItemDetailsItemIngestionStatusInnerIngestionErrors',
+        'ingestionErrors' => '\Walmart\Models\CP\US\Feeds\PartnerFeedResponseIngestionErrors',
         'itemsReceived' => 'int',
         'itemsSucceeded' => 'int',
         'itemsFailed' => 'int',
@@ -231,7 +231,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInner[]|null
+     * @return \Walmart\Models\CP\US\Feeds\GatewayError[]|null
     
      */
     public function getErrors()
@@ -242,7 +242,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\CP\US\Feeds\GatewayError[]|null $errors errors
      *
      * @return self
     
@@ -328,7 +328,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets ingestionErrors
      *
-     * @return \Walmart\Models\CP\US\Feeds\ItemDetailsItemIngestionStatusInnerIngestionErrors|null
+     * @return \Walmart\Models\CP\US\Feeds\PartnerFeedResponseIngestionErrors|null
     
      */
     public function getIngestionErrors()
@@ -339,7 +339,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets ingestionErrors
      *
-     * @param \Walmart\Models\CP\US\Feeds\ItemDetailsItemIngestionStatusInnerIngestionErrors|null $ingestionErrors ingestionErrors
+     * @param \Walmart\Models\CP\US\Feeds\PartnerFeedResponseIngestionErrors|null $ingestionErrors ingestionErrors
      *
      * @return self
     

@@ -54,7 +54,7 @@ class FulfillmentOption extends BaseModel
     protected static array $openAPITypes = [
         'fulfillmentMode' => 'string',
         'accessType' => 'string',
-        'fulfillments' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]',
+        'fulfillments' => '\Walmart\Models\MP\US\Fulfillment\Fulfillment[]',
         'fulfillmentType' => 'string',
         'default' => 'bool'
     ];
@@ -216,7 +216,7 @@ class FulfillmentOption extends BaseModel
     /**
      * Gets fulfillments
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Fulfillment[]|null
     
      */
     public function getFulfillments()
@@ -227,7 +227,7 @@ class FulfillmentOption extends BaseModel
     /**
      * Sets fulfillments
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInnerFulfillmentGroupsInnerFulfillmentOptionsInnerFulfillmentsInner[]|null $fulfillments Fulfillment details.
+     * @param \Walmart\Models\MP\US\Fulfillment\Fulfillment[]|null $fulfillments Fulfillment details.
      *
      * @return self
     

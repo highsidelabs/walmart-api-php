@@ -51,7 +51,7 @@ class DestinationLocation extends BaseModel
       */
     protected static array $openAPITypes = [
         'locationName' => 'string',
-        'address' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress',
+        'address' => '\Walmart\Models\MP\US\Fulfillment\Address',
         'locationId' => 'string'
     ];
 
@@ -177,7 +177,7 @@ class DestinationLocation extends BaseModel
     /**
      * Gets address
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress
+     * @return \Walmart\Models\MP\US\Fulfillment\Address
     
      */
     public function getAddress()
@@ -188,7 +188,7 @@ class DestinationLocation extends BaseModel
     /**
      * Sets address
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress $address address
+     * @param \Walmart\Models\MP\US\Fulfillment\Address $address address
      *
      * @return self
     

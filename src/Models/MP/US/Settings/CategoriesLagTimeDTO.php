@@ -50,7 +50,7 @@ class CategoriesLagTimeDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'categories' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationCategoriesInner[]'
+        'categories' => '\Walmart\Models\MP\US\Settings\CategoryLagTimeDTO[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class CategoriesLagTimeDTO extends BaseModel
     /**
      * Gets categories
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationCategoriesInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\CategoryLagTimeDTO[]|null
     
      */
     public function getCategories()
@@ -139,7 +139,7 @@ class CategoriesLagTimeDTO extends BaseModel
     /**
      * Sets categories
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationCategoriesInner[]|null $categories List of item setup category level lag time exceptions configured for seller
+     * @param \Walmart\Models\MP\US\Settings\CategoryLagTimeDTO[]|null $categories List of item setup category level lag time exceptions configured for seller
      *
      * @return self
     

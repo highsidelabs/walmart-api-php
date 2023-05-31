@@ -51,7 +51,7 @@ class InboundShipmentCreateResponseWrapperDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapper[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class InboundShipmentCreateResponseWrapperDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapper[]|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class InboundShipmentCreateResponseWrapperDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInner[]|null $payload response payload
+     * @param \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapper[]|null $payload response payload
      *
      * @return self
     

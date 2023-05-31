@@ -396,14 +396,14 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\GetAllItems200Response
+     * @return \Walmart\Models\MP\CA\Items\ItemResponses
      */
     public function getAllItems(
         ?string $nextCursor = '*',
         ?string $sku = null,
         ?string $offset = '0',
         ?string $limit = '20'
-    ): \Walmart\Models\MP\CA\Items\GetAllItems200Response {
+    ): \Walmart\Models\MP\CA\Items\ItemResponses {
         return $this->getAllItemsWithHttpInfo($nextCursor, $sku, $offset, $limit);
     }
 
@@ -419,14 +419,14 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\GetAllItems200Response
+     * @return \Walmart\Models\MP\CA\Items\ItemResponses
      */
     protected function getAllItemsWithHttpInfo(
         ?string $nextCursor = '*',
         ?string $sku = null,
         ?string $offset = '0',
         ?string $limit = '20',
-    ): \Walmart\Models\MP\CA\Items\GetAllItems200Response {
+    ): \Walmart\Models\MP\CA\Items\ItemResponses {
         $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -476,19 +476,19 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\Items\GetAllItems200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Items\ItemResponses' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\Items\GetAllItems200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Items\ItemResponses' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\GetAllItems200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\ItemResponses', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\Items\GetAllItems200Response';
+            $returnType = '\Walmart\Models\MP\CA\Items\ItemResponses';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -504,7 +504,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\Items\GetAllItems200Response',
+                        '\Walmart\Models\MP\CA\Items\ItemResponses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -563,7 +563,7 @@ class ItemsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '20',
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\Items\GetAllItems200Response';
+        $returnType = '\Walmart\Models\MP\CA\Items\ItemResponses';
         $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -745,11 +745,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\GetAnItem200Response
+     * @return \Walmart\Models\MP\CA\Items\ItemResponse
      */
     public function getAnItem(
         string $sku
-    ): \Walmart\Models\MP\CA\Items\GetAnItem200Response {
+    ): \Walmart\Models\MP\CA\Items\ItemResponse {
         return $this->getAnItemWithHttpInfo($sku);
     }
 
@@ -762,11 +762,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\GetAnItem200Response
+     * @return \Walmart\Models\MP\CA\Items\ItemResponse
      */
     protected function getAnItemWithHttpInfo(
         string $sku,
-    ): \Walmart\Models\MP\CA\Items\GetAnItem200Response {
+    ): \Walmart\Models\MP\CA\Items\ItemResponse {
         $request = $this->getAnItemRequest($sku, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -816,19 +816,19 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\Items\GetAnItem200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Items\ItemResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\Items\GetAnItem200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Items\ItemResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\GetAnItem200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\ItemResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\Items\GetAnItem200Response';
+            $returnType = '\Walmart\Models\MP\CA\Items\ItemResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -844,7 +844,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\Items\GetAnItem200Response',
+                        '\Walmart\Models\MP\CA\Items\ItemResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -891,7 +891,7 @@ class ItemsApi extends BaseApi
     protected function getAnItemAsyncWithHttpInfo(
         string $sku,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\Items\GetAnItem200Response';
+        $returnType = '\Walmart\Models\MP\CA\Items\ItemResponse';
         $request = $this->getAnItemRequest($sku, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1046,11 +1046,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\RetireAnItem200Response
+     * @return \Walmart\Models\MP\CA\Items\ItemRetireResponseV2
      */
     public function retireAnItem(
         string $sKU
-    ): \Walmart\Models\MP\CA\Items\RetireAnItem200Response {
+    ): \Walmart\Models\MP\CA\Items\ItemRetireResponseV2 {
         return $this->retireAnItemWithHttpInfo($sKU);
     }
 
@@ -1063,11 +1063,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Items\RetireAnItem200Response
+     * @return \Walmart\Models\MP\CA\Items\ItemRetireResponseV2
      */
     protected function retireAnItemWithHttpInfo(
         string $sKU,
-    ): \Walmart\Models\MP\CA\Items\RetireAnItem200Response {
+    ): \Walmart\Models\MP\CA\Items\ItemRetireResponseV2 {
         $request = $this->retireAnItemRequest($sKU, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1117,19 +1117,19 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\Items\RetireAnItem200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Items\ItemRetireResponseV2' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\Items\RetireAnItem200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Items\ItemRetireResponseV2' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\RetireAnItem200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Items\ItemRetireResponseV2', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\Items\RetireAnItem200Response';
+            $returnType = '\Walmart\Models\MP\CA\Items\ItemRetireResponseV2';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1145,7 +1145,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\Items\RetireAnItem200Response',
+                        '\Walmart\Models\MP\CA\Items\ItemRetireResponseV2',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1192,7 +1192,7 @@ class ItemsApi extends BaseApi
     protected function retireAnItemAsyncWithHttpInfo(
         string $sKU,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\Items\RetireAnItem200Response';
+        $returnType = '\Walmart\Models\MP\CA\Items\ItemRetireResponseV2';
         $request = $this->retireAnItemRequest($sKU, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

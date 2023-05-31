@@ -62,13 +62,13 @@ class ReturnOrderLine extends BaseModel
         'isReturnForException' => 'bool',
         'rechargeReason' => 'string',
         'returnCancellationReason' => 'string',
-        'item' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem',
-        'charges' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]',
-        'unitPrice' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
-        'itemReturnSettings' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]',
-        'chargeTotals' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]',
+        'item' => '\Walmart\Models\MP\US\Returns\Item',
+        'charges' => '\Walmart\Models\MP\US\Returns\Charge[]',
+        'unitPrice' => '\Walmart\Models\MP\US\Returns\Money',
+        'itemReturnSettings' => '\Walmart\Models\MP\US\Returns\ChargeTotal[]',
+        'chargeTotals' => '\Walmart\Models\MP\US\Returns\ChargeTotal[]',
         'cancellableQty' => 'int',
-        'quantity' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight',
+        'quantity' => '\Walmart\Models\MP\US\Returns\Quantity',
         'returnExpectedFlag' => 'bool',
         'isFastReplacement' => 'bool',
         'isKeepIt' => 'bool',
@@ -76,7 +76,7 @@ class ReturnOrderLine extends BaseModel
         'refundedQty' => 'float',
         'rechargeableQty' => 'float',
         'refundChannel' => 'string',
-        'returnTrackingDetail' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerReturnTrackingDetailInner[]',
+        'returnTrackingDetail' => '\Walmart\Models\MP\US\Returns\ReturnTrackingDetail[]',
         'status' => 'string',
         'statusTime' => '\DateTime',
         'currentDeliveryStatus' => 'string',
@@ -616,7 +616,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets item
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem|null
+     * @return \Walmart\Models\MP\US\Returns\Item|null
     
      */
     public function getItem()
@@ -627,7 +627,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets item
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem|null $item item
+     * @param \Walmart\Models\MP\US\Returns\Item|null $item item
      *
      * @return self
     
@@ -645,7 +645,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets charges
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\Charge[]|null
     
      */
     public function getCharges()
@@ -656,7 +656,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets charges
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner[]|null $charges Information relating to the charge for the orderLine
+     * @param \Walmart\Models\MP\US\Returns\Charge[]|null $charges Information relating to the charge for the orderLine
      *
      * @return self
     
@@ -674,7 +674,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets unitPrice
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\Money|null
     
      */
     public function getUnitPrice()
@@ -685,7 +685,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets unitPrice
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $unitPrice unitPrice
+     * @param \Walmart\Models\MP\US\Returns\Money|null $unitPrice unitPrice
      *
      * @return self
     
@@ -703,7 +703,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets itemReturnSettings
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\ChargeTotal[]|null
     
      */
     public function getItemReturnSettings()
@@ -714,7 +714,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets itemReturnSettings
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerReferencesInner[]|null $itemReturnSettings Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges).
+     * @param \Walmart\Models\MP\US\Returns\ChargeTotal[]|null $itemReturnSettings Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges).
      *
      * @return self
     
@@ -732,7 +732,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets chargeTotals
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\ChargeTotal[]|null
     
      */
     public function getChargeTotals()
@@ -743,7 +743,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets chargeTotals
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargeTotalsInner[]|null $chargeTotals Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges).
+     * @param \Walmart\Models\MP\US\Returns\ChargeTotal[]|null $chargeTotals Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges).
      *
      * @return self
     
@@ -790,7 +790,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null
+     * @return \Walmart\Models\MP\US\Returns\Quantity|null
     
      */
     public function getQuantity()
@@ -801,7 +801,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight|null $quantity quantity
+     * @param \Walmart\Models\MP\US\Returns\Quantity|null $quantity quantity
      *
      * @return self
     
@@ -1022,7 +1022,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets returnTrackingDetail
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerReturnTrackingDetailInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\ReturnTrackingDetail[]|null
     
      */
     public function getReturnTrackingDetail()
@@ -1033,7 +1033,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets returnTrackingDetail
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerReturnTrackingDetailInner[]|null $returnTrackingDetail Informational blocks added as the return order completes its journey from return creation to received and refunded.
+     * @param \Walmart\Models\MP\US\Returns\ReturnTrackingDetail[]|null $returnTrackingDetail Informational blocks added as the return order completes its journey from return creation to received and refunded.
      *
      * @return self
     

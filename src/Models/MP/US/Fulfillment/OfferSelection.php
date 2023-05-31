@@ -52,7 +52,7 @@ class OfferSelection extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'offers' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInner[]'
+        'offers' => '\Walmart\Models\MP\US\Fulfillment\PromiseOffer[]'
     ];
 
     /**
@@ -133,7 +133,7 @@ class OfferSelection extends BaseModel
     /**
      * Gets offers
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseOffer[]
     
      */
     public function getOffers()
@@ -144,7 +144,7 @@ class OfferSelection extends BaseModel
     /**
      * Sets offers
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInner[] $offers Offer details. List of an items/vendor sku.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseOffer[] $offers Offer details. List of an items/vendor sku.
      *
      * @return self
     

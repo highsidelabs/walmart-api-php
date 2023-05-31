@@ -59,12 +59,12 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response
+     * @return \Walmart\Models\MP\MX\Prices\FeedId
      */
     public function updateBulkPrices(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response {
+    ): \Walmart\Models\MP\MX\Prices\FeedId {
         return $this->updateBulkPricesWithHttpInfo($feedType, $file);
     }
 
@@ -78,12 +78,12 @@ class PricesApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response
+     * @return \Walmart\Models\MP\MX\Prices\FeedId
      */
     protected function updateBulkPricesWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response {
+    ): \Walmart\Models\MP\MX\Prices\FeedId {
         $request = $this->updateBulkPricesRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -133,19 +133,19 @@ class PricesApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\MX\Prices\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\MX\Prices\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\MX\Prices\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response';
+            $returnType = '\Walmart\Models\MP\MX\Prices\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -161,7 +161,7 @@ class PricesApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response',
+                        '\Walmart\Models\MP\MX\Prices\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -212,7 +212,7 @@ class PricesApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\MX\Prices\UpdateBulkPrices200Response';
+        $returnType = '\Walmart\Models\MP\MX\Prices\FeedId';
         $request = $this->updateBulkPricesRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

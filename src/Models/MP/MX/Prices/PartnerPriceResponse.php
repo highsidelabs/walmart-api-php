@@ -50,7 +50,7 @@ class PartnerPriceResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\MX\Prices\UpdatePrice200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\MX\Prices\GatewayError[]',
         'statusCode' => 'int',
         'mart' => 'string',
         'sku' => 'string',
@@ -156,7 +156,7 @@ class PartnerPriceResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\MX\Prices\UpdatePrice200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\MX\Prices\GatewayError[]|null
     
      */
     public function getErrors()
@@ -167,7 +167,7 @@ class PartnerPriceResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\MX\Prices\UpdatePrice200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\MX\Prices\GatewayError[]|null $errors errors
      *
      * @return self
     

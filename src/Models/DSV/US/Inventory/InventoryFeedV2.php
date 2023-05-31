@@ -50,8 +50,8 @@ class InventoryFeedV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'inventoryFeedHeader' => '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader',
-        'inventory' => '\Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[]'
+        'inventoryFeedHeader' => '\Walmart\Models\DSV\US\Inventory\InventoryFeedHeader',
+        'inventory' => '\Walmart\Models\DSV\US\Inventory\InventoryV2[]'
     ];
 
     /**
@@ -141,7 +141,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Gets inventoryFeedHeader
      *
-     * @return \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader
+     * @return \Walmart\Models\DSV\US\Inventory\InventoryFeedHeader
     
      */
     public function getInventoryFeedHeader()
@@ -152,7 +152,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Sets inventoryFeedHeader
      *
-     * @param \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryFeedHeader $inventoryFeedHeader inventoryFeedHeader
+     * @param \Walmart\Models\DSV\US\Inventory\InventoryFeedHeader $inventoryFeedHeader inventoryFeedHeader
      *
      * @return self
     
@@ -170,7 +170,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Gets inventory
      *
-     * @return \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[]
+     * @return \Walmart\Models\DSV\US\Inventory\InventoryV2[]
     
      */
     public function getInventory()
@@ -181,7 +181,7 @@ class InventoryFeedV2 extends BaseModel
     /**
      * Sets inventory
      *
-     * @param \Walmart\Models\DSV\US\Inventory\UpdateBulkInventoryRequestInventoryInner[] $inventory Specifies an object for inventory information.
+     * @param \Walmart\Models\DSV\US\Inventory\InventoryV2[] $inventory Specifies an object for inventory information.
      *
      * @return self
     

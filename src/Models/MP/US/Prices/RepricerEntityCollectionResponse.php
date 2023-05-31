@@ -51,7 +51,7 @@ class RepricerEntityCollectionResponse extends BaseModel
       */
     protected static array $openAPITypes = [
         'totalElements' => 'int',
-        'strategyCollections' => '\Walmart\Models\MP\US\Prices\GetStrategies200ResponseStrategyCollectionsInner[]'
+        'strategyCollections' => '\Walmart\Models\MP\US\Prices\RepricerEntityGetResponse[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class RepricerEntityCollectionResponse extends BaseModel
     /**
      * Gets strategyCollections
      *
-     * @return \Walmart\Models\MP\US\Prices\GetStrategies200ResponseStrategyCollectionsInner[]|null
+     * @return \Walmart\Models\MP\US\Prices\RepricerEntityGetResponse[]|null
     
      */
     public function getStrategyCollections()
@@ -175,7 +175,7 @@ class RepricerEntityCollectionResponse extends BaseModel
     /**
      * Sets strategyCollections
      *
-     * @param \Walmart\Models\MP\US\Prices\GetStrategies200ResponseStrategyCollectionsInner[]|null $strategyCollections strategyCollections
+     * @param \Walmart\Models\MP\US\Prices\RepricerEntityGetResponse[]|null $strategyCollections strategyCollections
      *
      * @return self
     

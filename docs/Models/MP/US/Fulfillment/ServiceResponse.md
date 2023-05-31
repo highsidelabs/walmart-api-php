@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **string** |  |
-**header** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader**](UpdateShipmentQuantity200ResponseHeader.md) |  | [optional]
-**errors** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]**](UpdateShipmentQuantity200ResponseErrorsInner.md) |  | [optional]
+**header** | [**\Walmart\Models\MP\US\Fulfillment\ServiceHeader**](ServiceHeader.md) |  | [optional]
+**errors** | [**\Walmart\Models\MP\US\Fulfillment\Error[]**](Error.md) |  | [optional]
 **payload** | **object** |  | [optional]
 
 

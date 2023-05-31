@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createStrategy()`
 
 ```php
-createStrategy($updateStrategyRequest): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
+createStrategy($repricerEntityRequest): \Walmart\Models\MP\US\Prices\RepricerEntityResponse
 ```
 Create Repricer Strategy
 
@@ -37,10 +37,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->prices();
 
-$updateStrategyRequest = new \Walmart\Models\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Models\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
+$repricerEntityRequest = new \Walmart\Models\MP\US\Prices\RepricerEntityRequest(); // \Walmart\Models\MP\US\Prices\RepricerEntityRequest | The request body will have the strategy related information
 
 try {
-    $result = $api->createStrategy($updateStrategyRequest);
+    $result = $api->createStrategy($repricerEntityRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->createStrategy: {$e->getMessage()}\n";
@@ -50,12 +50,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateStrategyRequest** | [**\Walmart\Models\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
+| **repricerEntityRequest** | [**\Walmart\Models\MP\US\Prices\RepricerEntityRequest**](../Model/RepricerEntityRequest.md)| The request body will have the strategy related information | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\UpdateStrategy200Response**](../Model/UpdateStrategy200Response.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityResponse**](../Model/RepricerEntityResponse.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ try {
 ## `deleteStrategy()`
 
 ```php
-deleteStrategy($strategyCollectionId): \Walmart\Models\MP\US\Prices\DeleteStrategy200Response
+deleteStrategy($strategyCollectionId): \Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse
 ```
 Delete Repricer Strategy
 
@@ -112,7 +112,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\DeleteStrategy200Response**](../Model/DeleteStrategy200Response.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse**](../Model/RepricerEntityDeleteResponse.md)
 
 ### Authorization
 
@@ -130,7 +130,7 @@ try {
 ## `getRepricerFeed()`
 
 ```php
-getRepricerFeed($getRepricerFeedRequest): \Walmart\Models\MP\US\Prices\GetRepricerFeed200Response
+getRepricerFeed($feedUploadRequestDTO): \Walmart\Models\MP\US\Prices\FeedUploadResponseDTO
 ```
 Assign/Unassign items to/from Repricer Strategy
 
@@ -151,10 +151,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->prices();
 
-$getRepricerFeedRequest = new \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest(); // \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest
+$feedUploadRequestDTO = new \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO(); // \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO
 
 try {
-    $result = $api->getRepricerFeed($getRepricerFeedRequest);
+    $result = $api->getRepricerFeed($feedUploadRequestDTO);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->getRepricerFeed: {$e->getMessage()}\n";
@@ -164,12 +164,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **getRepricerFeedRequest** | [**\Walmart\Models\MP\US\Prices\GetRepricerFeedRequest**](../Model/GetRepricerFeedRequest.md)|  | |
+| **feedUploadRequestDTO** | [**\Walmart\Models\MP\US\Prices\FeedUploadRequestDTO**](../Model/FeedUploadRequestDTO.md)|  | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\GetRepricerFeed200Response**](../Model/GetRepricerFeed200Response.md)
+[**\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO**](../Model/FeedUploadResponseDTO.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ try {
 ## `getStrategies()`
 
 ```php
-getStrategies(): \Walmart\Models\MP\US\Prices\GetStrategies200Response
+getStrategies(): \Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse
 ```
 List of Repricer Strategies
 
@@ -223,7 +223,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\GetStrategies200Response**](../Model/GetStrategies200Response.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse**](../Model/RepricerEntityCollectionResponse.md)
 
 ### Authorization
 
@@ -241,7 +241,7 @@ This endpoint does not need any parameter.
 ## `optCapProgramInPrice()`
 
 ```php
-optCapProgramInPrice($optCapProgramInPriceRequest): \Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response
+optCapProgramInPrice($statusInfo): \Walmart\Models\MP\US\Prices\CapProgramResponse
 ```
 Set up CAP SKU All
 
@@ -262,10 +262,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->prices();
 
-$optCapProgramInPriceRequest = new \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest(); // \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest | Request fields
+$statusInfo = new \Walmart\Models\MP\US\Prices\StatusInfo(); // \Walmart\Models\MP\US\Prices\StatusInfo | Request fields
 
 try {
-    $result = $api->optCapProgramInPrice($optCapProgramInPriceRequest);
+    $result = $api->optCapProgramInPrice($statusInfo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->optCapProgramInPrice: {$e->getMessage()}\n";
@@ -275,12 +275,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **optCapProgramInPriceRequest** | [**\Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest**](../Model/OptCapProgramInPriceRequest.md)| Request fields | |
+| **statusInfo** | [**\Walmart\Models\MP\US\Prices\StatusInfo**](../Model/StatusInfo.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response**](../Model/OptCapProgramInPrice200Response.md)
+[**\Walmart\Models\MP\US\Prices\CapProgramResponse**](../Model/CapProgramResponse.md)
 
 ### Authorization
 
@@ -298,7 +298,7 @@ try {
 ## `priceBulkUploads()`
 
 ```php
-priceBulkUploads($feedType, $file): \Walmart\Models\MP\US\Prices\PriceBulkUploads200Response
+priceBulkUploads($feedType, $file): \Walmart\Models\MP\US\Prices\FeedId
 ```
 Update bulk prices (Multiple)
 
@@ -339,7 +339,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\PriceBulkUploads200Response**](../Model/PriceBulkUploads200Response.md)
+[**\Walmart\Models\MP\US\Prices\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 
@@ -357,7 +357,7 @@ try {
 ## `updatePrice()`
 
 ```php
-updatePrice($updatePriceRequest): \Walmart\Models\MP\US\Prices\UpdatePrice200Response
+updatePrice($price): \Walmart\Models\MP\US\Prices\UpdatePrice200Response
 ```
 Update a price
 
@@ -378,10 +378,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->prices();
 
-$updatePriceRequest = {"sku":"97964_KFTest","pricing":[{"currentPriceType":"BASE","currentPrice":{"currency":"USD","amount":10}}]}; // \Walmart\Models\MP\US\Prices\UpdatePriceRequest | The request body consists of a Feed file attached to the request.
+$price = {"sku":"97964_KFTest","pricing":[{"currentPriceType":"BASE","currentPrice":{"currency":"USD","amount":10}}]}; // \Walmart\Models\MP\US\Prices\Price | The request body consists of a Feed file attached to the request.
 
 try {
-    $result = $api->updatePrice($updatePriceRequest);
+    $result = $api->updatePrice($price);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->updatePrice: {$e->getMessage()}\n";
@@ -391,7 +391,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updatePriceRequest** | [**\Walmart\Models\MP\US\Prices\UpdatePriceRequest**](../Model/UpdatePriceRequest.md)| The request body consists of a Feed file attached to the request. | |
+| **price** | [**\Walmart\Models\MP\US\Prices\Price**](../Model/Price.md)| The request body consists of a Feed file attached to the request. | |
 
 
 ### Return type
@@ -414,7 +414,7 @@ try {
 ## `updateStrategy()`
 
 ```php
-updateStrategy($strategyCollectionId, $updateStrategyRequest): \Walmart\Models\MP\US\Prices\UpdateStrategy200Response
+updateStrategy($strategyCollectionId, $repricerEntityRequest): \Walmart\Models\MP\US\Prices\RepricerEntityResponse
 ```
 Update Repricer Strategy
 
@@ -436,10 +436,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->prices();
 
 $strategyCollectionId = 'strategyCollectionId_example'; // string
-$updateStrategyRequest = new \Walmart\Models\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Models\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
+$repricerEntityRequest = new \Walmart\Models\MP\US\Prices\RepricerEntityRequest(); // \Walmart\Models\MP\US\Prices\RepricerEntityRequest | The request body will have the strategy related information
 
 try {
-    $result = $api->updateStrategy($strategyCollectionId, $updateStrategyRequest);
+    $result = $api->updateStrategy($strategyCollectionId, $repricerEntityRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->updateStrategy: {$e->getMessage()}\n";
@@ -450,12 +450,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **strategyCollectionId** | **string**|  | |
-| **updateStrategyRequest** | [**\Walmart\Models\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
+| **repricerEntityRequest** | [**\Walmart\Models\MP\US\Prices\RepricerEntityRequest**](../Model/RepricerEntityRequest.md)| The request body will have the strategy related information | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\UpdateStrategy200Response**](../Model/UpdateStrategy200Response.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityResponse**](../Model/RepricerEntityResponse.md)
 
 ### Authorization
 

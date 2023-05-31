@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**primaryContact** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContact**](GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContact.md) |  | [optional]
+**primaryContact** | [**\Walmart\Models\MP\US\Fulfillment\PrimaryContactDetails**](PrimaryContactDetails.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

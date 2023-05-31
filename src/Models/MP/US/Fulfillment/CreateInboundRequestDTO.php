@@ -53,8 +53,8 @@ class CreateInboundRequestDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
-        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
-        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]'
+        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\ReturnAddress',
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\OrderItem[]'
     ];
 
     /**
@@ -212,7 +212,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Gets returnAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress
+     * @return \Walmart\Models\MP\US\Fulfillment\ReturnAddress
     
      */
     public function getReturnAddress()
@@ -223,7 +223,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Sets returnAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress $returnAddress returnAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\ReturnAddress $returnAddress returnAddress
      *
      * @return self
     
@@ -241,7 +241,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\OrderItem[]
     
      */
     public function getOrderItems()
@@ -252,7 +252,7 @@ class CreateInboundRequestDTO extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[] $orderItems List of Order Items
+     * @param \Walmart\Models\MP\US\Fulfillment\OrderItem[] $orderItems List of Order Items
      *
      * @return self
     

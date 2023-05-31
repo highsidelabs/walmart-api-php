@@ -9,7 +9,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 ## `updateBulkCost()`
 
 ```php
-updateBulkCost($feedType, $updateBulkCostRequest): \Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response
+updateBulkCost($feedType, $dsvCostUpdateRequest): \Walmart\Models\DSV\US\Cost\DsvCostUpdateResponse
 ```
 This API allows DSV to update cost for items in bulk.
 
@@ -38,10 +38,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::dropShipVendor($config)->cost();
 
 $feedType = 'cost'; // string | Includes details of each entity in the feed. Do not set this parameter to true.
-$updateBulkCostRequest = new \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest(); // \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest | File fields
+$dsvCostUpdateRequest = new \Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest(); // \Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest | File fields
 
 try {
-    $result = $api->updateBulkCost($feedType, $updateBulkCostRequest);
+    $result = $api->updateBulkCost($feedType, $dsvCostUpdateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling CostApi->updateBulkCost: {$e->getMessage()}\n";
@@ -52,12 +52,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'cost'] |
-| **updateBulkCostRequest** | [**\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest**](../Model/UpdateBulkCostRequest.md)| File fields | |
+| **dsvCostUpdateRequest** | [**\Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest**](../Model/DsvCostUpdateRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Cost\UpdateBulkCost200Response**](../Model/UpdateBulkCost200Response.md)
+[**\Walmart\Models\DSV\US\Cost\DsvCostUpdateResponse**](../Model/DsvCostUpdateResponse.md)
 
 ### Authorization
 

@@ -51,10 +51,10 @@ class NodeDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'shipNode' => 'string',
-        'inputQty' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty',
-        'availToSellQty' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty',
-        'errors' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]',
-        'reservedQty' => '\Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity'
+        'inputQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity',
+        'availToSellQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity',
+        'errors' => '\Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]',
+        'reservedQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity'
     ];
 
     /**
@@ -185,7 +185,7 @@ class NodeDTO extends BaseModel
     /**
      * Gets inputQty
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty|null
+     * @return \Walmart\Models\MP\US\Inventory\SupplyQuantity|null
     
      */
     public function getInputQty()
@@ -196,7 +196,7 @@ class NodeDTO extends BaseModel
     /**
      * Sets inputQty
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerInputQty|null $inputQty inputQty
+     * @param \Walmart\Models\MP\US\Inventory\SupplyQuantity|null $inputQty inputQty
      *
      * @return self
     
@@ -214,7 +214,7 @@ class NodeDTO extends BaseModel
     /**
      * Gets availToSellQty
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty|null
+     * @return \Walmart\Models\MP\US\Inventory\SupplyQuantity|null
     
      */
     public function getAvailToSellQty()
@@ -225,7 +225,7 @@ class NodeDTO extends BaseModel
     /**
      * Sets availToSellQty
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerAvailToSellQty|null $availToSellQty availToSellQty
+     * @param \Walmart\Models\MP\US\Inventory\SupplyQuantity|null $availToSellQty availToSellQty
      *
      * @return self
     
@@ -243,7 +243,7 @@ class NodeDTO extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]|null
     
      */
     public function getErrors()
@@ -254,7 +254,7 @@ class NodeDTO extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -272,7 +272,7 @@ class NodeDTO extends BaseModel
     /**
      * Gets reservedQty
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity|null
+     * @return \Walmart\Models\MP\US\Inventory\SupplyQuantity|null
     
      */
     public function getReservedQty()
@@ -283,7 +283,7 @@ class NodeDTO extends BaseModel
     /**
      * Sets reservedQty
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity|null $reservedQty reservedQty
+     * @param \Walmart\Models\MP\US\Inventory\SupplyQuantity|null $reservedQty reservedQty
      *
      * @return self
     

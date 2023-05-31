@@ -50,8 +50,8 @@ class PartnerConfigsResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'partner' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner',
-        'configurations' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]'
+        'partner' => '\Walmart\Models\MP\US\Settings\PartnerInfoDTO',
+        'configurations' => '\Walmart\Models\MP\US\Settings\PartnerConfigsResponseDTOConfigurationsInner[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class PartnerConfigsResponseDTO extends BaseModel
     /**
      * Gets partner
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null
+     * @return \Walmart\Models\MP\US\Settings\PartnerInfoDTO|null
     
      */
     public function getPartner()
@@ -146,7 +146,7 @@ class PartnerConfigsResponseDTO extends BaseModel
     /**
      * Sets partner
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null $partner partner
+     * @param \Walmart\Models\MP\US\Settings\PartnerInfoDTO|null $partner partner
      *
      * @return self
     
@@ -164,7 +164,7 @@ class PartnerConfigsResponseDTO extends BaseModel
     /**
      * Gets configurations
      *
-     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\PartnerConfigsResponseDTOConfigurationsInner[]|null
     
      */
     public function getConfigurations()
@@ -175,7 +175,7 @@ class PartnerConfigsResponseDTO extends BaseModel
     /**
      * Sets configurations
      *
-     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]|null $configurations List of seller configurations like Seller Account & feed throttling values
+     * @param \Walmart\Models\MP\US\Settings\PartnerConfigsResponseDTOConfigurationsInner[]|null $configurations List of seller configurations like Seller Account & feed throttling values
      *
      * @return self
     

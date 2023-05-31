@@ -50,7 +50,7 @@ class RefundsType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'refund' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund[]'
+        'refund' => '\Walmart\Models\MP\CA\Orders\RefundType[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class RefundsType extends BaseModel
     /**
      * Gets refund
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund[]
+     * @return \Walmart\Models\MP\CA\Orders\RefundType[]
     
      */
     public function getRefund()
@@ -142,7 +142,7 @@ class RefundsType extends BaseModel
     /**
      * Sets refund
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund[] $refund refund
+     * @param \Walmart\Models\MP\CA\Orders\RefundType[] $refund refund
      *
      * @return self
     

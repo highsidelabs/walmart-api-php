@@ -52,7 +52,7 @@ class CalendarDayConfigurationRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'standardProcessingSchedule' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule',
+        'standardProcessingSchedule' => '\Walmart\Models\MP\US\Settings\StandardProcessingScheduleResponse',
         'additionalDaysOff' => 'string[]'
     ];
 
@@ -143,7 +143,7 @@ class CalendarDayConfigurationRequest extends BaseModel
     /**
      * Gets standardProcessingSchedule
      *
-     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule
+     * @return \Walmart\Models\MP\US\Settings\StandardProcessingScheduleResponse
     
      */
     public function getStandardProcessingSchedule()
@@ -154,7 +154,7 @@ class CalendarDayConfigurationRequest extends BaseModel
     /**
      * Sets standardProcessingSchedule
      *
-     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule $standardProcessingSchedule standardProcessingSchedule
+     * @param \Walmart\Models\MP\US\Settings\StandardProcessingScheduleResponse $standardProcessingSchedule standardProcessingSchedule
      *
      * @return self
     

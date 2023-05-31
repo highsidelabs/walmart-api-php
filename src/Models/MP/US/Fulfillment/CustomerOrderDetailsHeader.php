@@ -52,7 +52,7 @@ class CustomerOrderDetailsHeader extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headerAttributes' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes'
+        'headerAttributes' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsHeaderAttributes'
     ];
 
     /**
@@ -130,7 +130,7 @@ class CustomerOrderDetailsHeader extends BaseModel
     /**
      * Gets headerAttributes
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsHeaderAttributes|null
     
      */
     public function getHeaderAttributes()
@@ -141,7 +141,7 @@ class CustomerOrderDetailsHeader extends BaseModel
     /**
      * Sets headerAttributes
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeaderHeaderAttributes|null $headerAttributes headerAttributes
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsHeaderAttributes|null $headerAttributes headerAttributes
      *
      * @return self
     

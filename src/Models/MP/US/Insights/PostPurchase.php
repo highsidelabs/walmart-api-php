@@ -50,10 +50,10 @@ class PostPurchase extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'cancellations' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations',
+        'cancellations' => '\Walmart\Models\MP\US\Insights\Cancellations',
         'returns' => 'object',
         'issueCount' => 'string',
-        'otd' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations'
+        'otd' => '\Walmart\Models\MP\US\Insights\Cancellations'
     ];
 
     /**
@@ -149,7 +149,7 @@ class PostPurchase extends BaseModel
     /**
      * Gets cancellations
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null
+     * @return \Walmart\Models\MP\US\Insights\Cancellations|null
     
      */
     public function getCancellations()
@@ -160,7 +160,7 @@ class PostPurchase extends BaseModel
     /**
      * Sets cancellations
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null $cancellations cancellations
+     * @param \Walmart\Models\MP\US\Insights\Cancellations|null $cancellations cancellations
      *
      * @return self
     
@@ -236,7 +236,7 @@ class PostPurchase extends BaseModel
     /**
      * Gets otd
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null
+     * @return \Walmart\Models\MP\US\Insights\Cancellations|null
     
      */
     public function getOtd()
@@ -247,7 +247,7 @@ class PostPurchase extends BaseModel
     /**
      * Sets otd
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations|null $otd otd
+     * @param \Walmart\Models\MP\US\Insights\Cancellations|null $otd otd
      *
      * @return self
     

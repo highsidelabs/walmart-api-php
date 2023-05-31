@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getInventory()`
 
 ```php
-getInventory($sku): \Walmart\Models\MP\MX\Inventory\GetInventory200Response
+getInventory($sku): \Walmart\Models\MP\MX\Inventory\Inventory
 ```
 Get Inventory
 
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\MX\Inventory\Inventory**](../Model/Inventory.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `updateBulkInventory()`
 
 ```php
-updateBulkInventory($feedType, $file): \Walmart\Models\MP\MX\Inventory\UpdateBulkInventory200Response
+updateBulkInventory($feedType, $file): \Walmart\Models\MP\MX\Inventory\FeedId
 ```
 Update bulk inventory
 
@@ -115,7 +115,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\UpdateBulkInventory200Response**](../Model/UpdateBulkInventory200Response.md)
+[**\Walmart\Models\MP\MX\Inventory\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ try {
 ## `updateInventoryForAnItem()`
 
 ```php
-updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest): \Walmart\Models\MP\MX\Inventory\GetInventory200Response
+updateInventoryForAnItem($sku, $inventory): \Walmart\Models\MP\MX\Inventory\Inventory
 ```
 Update inventory
 
@@ -158,10 +158,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, identifying each item.
-$updateInventoryForAnItemRequest = {"sku":"sku-e2e-0723x","quantity":{"unit":"EACH","amount":8596}}; // \Walmart\Models\MP\MX\Inventory\UpdateInventoryForAnItemRequest | File fields
+$inventory = {"sku":"sku-e2e-0723x","quantity":{"unit":"EACH","amount":8596}}; // \Walmart\Models\MP\MX\Inventory\Inventory | File fields
 
 try {
-    $result = $api->updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest);
+    $result = $api->updateInventoryForAnItem($sku, $inventory);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateInventoryForAnItem: {$e->getMessage()}\n";
@@ -172,12 +172,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
-| **updateInventoryForAnItemRequest** | [**\Walmart\Models\MP\MX\Inventory\UpdateInventoryForAnItemRequest**](../Model/UpdateInventoryForAnItemRequest.md)| File fields | |
+| **inventory** | [**\Walmart\Models\MP\MX\Inventory\Inventory**](../Model/Inventory.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\MX\Inventory\Inventory**](../Model/Inventory.md)
 
 ### Authorization
 

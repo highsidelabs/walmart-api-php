@@ -50,8 +50,8 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta',
-        'elements' => '\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements'
+        'meta' => '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTOMeta',
+        'elements' => '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO'
     ];
 
     /**
@@ -135,7 +135,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta|null
+     * @return \Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTOMeta|null
     
      */
     public function getMeta()
@@ -146,7 +146,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseMeta|null $meta meta
+     * @param \Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTOMeta|null $meta meta
      *
      * @return self
     
@@ -164,7 +164,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Gets elements
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements|null
+     * @return \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO|null
     
      */
     public function getElements()
@@ -175,7 +175,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Sets elements
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements|null $elements elements
+     * @param \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO|null $elements elements
      *
      * @return self
     

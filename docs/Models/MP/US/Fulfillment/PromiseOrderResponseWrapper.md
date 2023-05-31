@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **string** | Response status. | [optional]
-**header** | [**\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader**](CreateFulfillmentRequestHeader.md) |  | [optional]
-**payload** | [**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayload**](PromiseFulfillments200ResponsePayload.md) |  | [optional]
+**header** | [**\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader**](CustomerOrderHeader.md) |  | [optional]
+**payload** | [**\Walmart\Models\MP\US\Fulfillment\PromiseOrderResponsePayload**](PromiseOrderResponsePayload.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

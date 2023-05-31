@@ -50,7 +50,7 @@ class ErrorResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'error' => '\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError'
+        'error' => '\Walmart\Models\MP\MX\Orders\Error'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ErrorResponse extends BaseModel
     /**
      * Gets error
      *
-     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null
+     * @return \Walmart\Models\MP\MX\Orders\Error|null
     
      */
     public function getError()
@@ -139,7 +139,7 @@ class ErrorResponse extends BaseModel
     /**
      * Sets error
      *
-     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null $error error
+     * @param \Walmart\Models\MP\MX\Orders\Error|null $error error
      *
      * @return self
     

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**error** | [**\Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseError**](RefundOrderLines400ResponseError.md) |  | [optional]
+**error** | [**\Walmart\Models\MP\MX\Returns\Error**](Error.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

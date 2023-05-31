@@ -51,8 +51,8 @@ class PromiseOrderResponseWrapper extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'header' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayload'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\PromiseOrderResponsePayload'
     ];
 
     /**
@@ -171,7 +171,7 @@ class PromiseOrderResponseWrapper extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader|null
     
      */
     public function getHeader()
@@ -182,7 +182,7 @@ class PromiseOrderResponseWrapper extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestHeader|null $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader|null $header header
      *
      * @return self
     
@@ -200,7 +200,7 @@ class PromiseOrderResponseWrapper extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseOrderResponsePayload|null
     
      */
     public function getPayload()
@@ -211,7 +211,7 @@ class PromiseOrderResponseWrapper extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseOrderResponsePayload|null $payload payload
      *
      * @return self
     

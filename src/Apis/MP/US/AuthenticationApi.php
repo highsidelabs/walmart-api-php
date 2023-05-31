@@ -56,9 +56,9 @@ class AuthenticationApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Authentication\GetTokenDetail200Response
+     * @return \Walmart\Models\MP\US\Authentication\TokenDetailResponse
      */
-    public function getTokenDetail(): \Walmart\Models\MP\US\Authentication\GetTokenDetail200Response
+    public function getTokenDetail(): \Walmart\Models\MP\US\Authentication\TokenDetailResponse
     {
         return $this->getTokenDetailWithHttpInfo();
     }
@@ -70,9 +70,9 @@ class AuthenticationApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Authentication\GetTokenDetail200Response
+     * @return \Walmart\Models\MP\US\Authentication\TokenDetailResponse
      */
-    protected function getTokenDetailWithHttpInfo(): \Walmart\Models\MP\US\Authentication\GetTokenDetail200Response
+    protected function getTokenDetailWithHttpInfo(): \Walmart\Models\MP\US\Authentication\TokenDetailResponse
     {
         $request = $this->getTokenDetailRequest();
         $this->writeDebug($request);
@@ -123,19 +123,19 @@ class AuthenticationApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Authentication\GetTokenDetail200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Authentication\TokenDetailResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Authentication\GetTokenDetail200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Authentication\TokenDetailResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Authentication\GetTokenDetail200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Authentication\TokenDetailResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Authentication\GetTokenDetail200Response';
+            $returnType = '\Walmart\Models\MP\US\Authentication\TokenDetailResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -151,7 +151,7 @@ class AuthenticationApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Authentication\GetTokenDetail200Response',
+                        '\Walmart\Models\MP\US\Authentication\TokenDetailResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -192,7 +192,7 @@ class AuthenticationApi extends BaseApi
      */
     protected function getTokenDetailAsyncWithHttpInfo(): PromiseInterface
     {
-        $returnType = '\Walmart\Models\MP\US\Authentication\GetTokenDetail200Response';
+        $returnType = '\Walmart\Models\MP\US\Authentication\TokenDetailResponse';
         $request = $this->getTokenDetailRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -317,11 +317,11 @@ class AuthenticationApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Authentication\TokenAPI200Response
+     * @return \Walmart\Models\MP\US\Authentication\OAuthToken
      */
     public function tokenAPI(
         string $grantType
-    ): \Walmart\Models\MP\US\Authentication\TokenAPI200Response {
+    ): \Walmart\Models\MP\US\Authentication\OAuthToken {
         return $this->tokenAPIWithHttpInfo($grantType);
     }
 
@@ -334,11 +334,11 @@ class AuthenticationApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Authentication\TokenAPI200Response
+     * @return \Walmart\Models\MP\US\Authentication\OAuthToken
      */
     protected function tokenAPIWithHttpInfo(
         string $grantType,
-    ): \Walmart\Models\MP\US\Authentication\TokenAPI200Response {
+    ): \Walmart\Models\MP\US\Authentication\OAuthToken {
         $request = $this->tokenAPIRequest($grantType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -388,19 +388,19 @@ class AuthenticationApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Authentication\TokenAPI200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Authentication\OAuthToken' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Authentication\TokenAPI200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Authentication\OAuthToken' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Authentication\TokenAPI200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Authentication\OAuthToken', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Authentication\TokenAPI200Response';
+            $returnType = '\Walmart\Models\MP\US\Authentication\OAuthToken';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -416,7 +416,7 @@ class AuthenticationApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Authentication\TokenAPI200Response',
+                        '\Walmart\Models\MP\US\Authentication\OAuthToken',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -463,7 +463,7 @@ class AuthenticationApi extends BaseApi
     protected function tokenAPIAsyncWithHttpInfo(
         string $grantType,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Authentication\TokenAPI200Response';
+        $returnType = '\Walmart\Models\MP\US\Authentication\OAuthToken';
         $request = $this->tokenAPIRequest($grantType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

@@ -52,7 +52,7 @@ class MultitenantHeaderWrapper extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headerAttributes' => '\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes'
+        'headerAttributes' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeaderAttributes'
     ];
 
     /**
@@ -133,7 +133,7 @@ class MultitenantHeaderWrapper extends BaseModel
     /**
      * Gets headerAttributes
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeaderAttributes
     
      */
     public function getHeaderAttributes()
@@ -144,7 +144,7 @@ class MultitenantHeaderWrapper extends BaseModel
     /**
      * Sets headerAttributes
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequestHeaderHeaderAttributes $headerAttributes headerAttributes
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeaderAttributes $headerAttributes headerAttributes
      *
      * @return self
     

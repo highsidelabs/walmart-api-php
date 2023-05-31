@@ -50,7 +50,7 @@ class Payload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'inventory' => '\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInner[]'
+        'inventory' => '\Walmart\Models\MP\US\Inventory\InventoryWFS[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class Payload extends BaseModel
     /**
      * Gets inventory
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\InventoryWFS[]|null
     
      */
     public function getInventory()
@@ -139,7 +139,7 @@ class Payload extends BaseModel
     /**
      * Sets inventory
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInner[]|null $inventory inventory
+     * @param \Walmart\Models\MP\US\Inventory\InventoryWFS[]|null $inventory inventory
      *
      * @return self
     

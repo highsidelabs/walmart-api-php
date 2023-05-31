@@ -53,9 +53,9 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrder
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'statusQuantity' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity',
         'cancellationReason' => 'string',
-        'trackingInfo' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo'
+        'trackingInfo' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo'
     ];
 
     /**
@@ -232,7 +232,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrder
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity
     
      */
     public function getStatusQuantity()
@@ -243,7 +243,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrder
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity $statusQuantity statusQuantity
      *
      * @return self
     
@@ -290,7 +290,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrder
     /**
      * Gets trackingInfo
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null
     
      */
     public function getTrackingInfo()
@@ -301,7 +301,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrder
     /**
      * Sets trackingInfo
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo|null $trackingInfo trackingInfo
      *
      * @return self
     

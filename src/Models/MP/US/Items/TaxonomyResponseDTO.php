@@ -51,7 +51,7 @@ class TaxonomyResponseDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]'
+        'payload' => '\Walmart\Models\MP\US\Items\CategoryPayload[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class TaxonomyResponseDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Items\CategoryPayload[]|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class TaxonomyResponseDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Items\GetTaxonomyResponse200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Items\CategoryPayload[]|null $payload payload
      *
      * @return self
     

@@ -54,7 +54,7 @@ class TokenDetailResponse extends BaseModel
         'issuedAt' => 'string',
         'isValid' => 'bool',
         'isChannelMatch' => 'bool',
-        'scopes' => '\Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes'
+        'scopes' => '\Walmart\Models\MP\US\Authentication\Scopes'
     ];
 
     /**
@@ -272,7 +272,7 @@ class TokenDetailResponse extends BaseModel
     /**
      * Gets scopes
      *
-     * @return \Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes|null
+     * @return \Walmart\Models\MP\US\Authentication\Scopes|null
     
      */
     public function getScopes()
@@ -283,7 +283,7 @@ class TokenDetailResponse extends BaseModel
     /**
      * Sets scopes
      *
-     * @param \Walmart\Models\MP\US\Authentication\GetTokenDetail200ResponseScopes|null $scopes scopes
+     * @param \Walmart\Models\MP\US\Authentication\Scopes|null $scopes scopes
      *
      * @return self
     

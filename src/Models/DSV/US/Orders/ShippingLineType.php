@@ -53,7 +53,7 @@ class ShippingLineType extends BaseModel
       */
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
-        'orderLineStatuses' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses'
+        'orderLineStatuses' => '\Walmart\Models\DSV\US\Orders\OrderLineStatusesType'
     ];
 
     /**
@@ -172,7 +172,7 @@ class ShippingLineType extends BaseModel
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses
+     * @return \Walmart\Models\DSV\US\Orders\OrderLineStatusesType
     
      */
     public function getOrderLineStatuses()
@@ -183,7 +183,7 @@ class ShippingLineType extends BaseModel
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\DSV\US\Orders\OrderLineStatusesType $orderLineStatuses orderLineStatuses
      *
      * @return self
     

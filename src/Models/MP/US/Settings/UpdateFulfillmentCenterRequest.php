@@ -42,7 +42,7 @@ class UpdateFulfillmentCenterRequest extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'updateFulfillmentCenter_request';
+    protected static string $openAPIModelName = 'UpdateFulfillmentCenterRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -50,8 +50,8 @@ class UpdateFulfillmentCenterRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipNodeHeader' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeHeader',
-        'shipNode' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNode'
+        'shipNodeHeader' => '\Walmart\Models\MP\US\Settings\ShipNodeHeader',
+        'shipNode' => '\Walmart\Models\MP\US\Settings\ShipNode'
     ];
 
     /**
@@ -135,7 +135,7 @@ class UpdateFulfillmentCenterRequest extends BaseModel
     /**
      * Gets shipNodeHeader
      *
-     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeHeader|null
+     * @return \Walmart\Models\MP\US\Settings\ShipNodeHeader|null
     
      */
     public function getShipNodeHeader()
@@ -146,7 +146,7 @@ class UpdateFulfillmentCenterRequest extends BaseModel
     /**
      * Sets shipNodeHeader
      *
-     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeHeader|null $shipNodeHeader shipNodeHeader
+     * @param \Walmart\Models\MP\US\Settings\ShipNodeHeader|null $shipNodeHeader shipNodeHeader
      *
      * @return self
     
@@ -164,7 +164,7 @@ class UpdateFulfillmentCenterRequest extends BaseModel
     /**
      * Gets shipNode
      *
-     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNode|null
+     * @return \Walmart\Models\MP\US\Settings\ShipNode|null
     
      */
     public function getShipNode()
@@ -175,7 +175,7 @@ class UpdateFulfillmentCenterRequest extends BaseModel
     /**
      * Sets shipNode
      *
-     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNode|null $shipNode shipNode
+     * @param \Walmart\Models\MP\US\Settings\ShipNode|null $shipNode shipNode
      *
      * @return self
     

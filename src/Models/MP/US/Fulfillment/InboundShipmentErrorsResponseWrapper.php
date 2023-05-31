@@ -54,8 +54,8 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     protected static array $openAPITypes = [
         'inboundOrderId' => 'string',
         'createdDate' => '\DateTime',
-        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress',
-        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]',
+        'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\ReturnAddress',
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\OrderItem[]',
         'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
     ];
 
@@ -216,7 +216,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Gets returnAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ReturnAddress|null
     
      */
     public function getReturnAddress()
@@ -227,7 +227,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Sets returnAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress|null $returnAddress returnAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\ReturnAddress|null $returnAddress returnAddress
      *
      * @return self
     
@@ -245,7 +245,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\OrderItem[]|null
     
      */
     public function getOrderItems()
@@ -256,7 +256,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]|null $orderItems inbound shipment request line items
+     * @param \Walmart\Models\MP\US\Fulfillment\OrderItem[]|null $orderItems inbound shipment request line items
      *
      * @return self
     

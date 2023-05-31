@@ -12,7 +12,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `bulkItemSetup()`
 
 ```php
-bulkItemSetup($feedType, $file): \Walmart\Models\MP\MX\Items\BulkItemSetup200Response
+bulkItemSetup($feedType, $file): \Walmart\Models\MP\MX\Items\FeedId
 ```
 Bulk Item Setup
 
@@ -56,7 +56,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\BulkItemSetup200Response**](../Model/BulkItemSetup200Response.md)
+[**\Walmart\Models\MP\MX\Items\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ try {
 ## `getAllItems()`
 
 ```php
-getAllItems($nextCursor, $sku, $offset, $limit): \Walmart\Models\MP\MX\Items\GetAllItems200Response
+getAllItems($nextCursor, $sku, $offset, $limit): \Walmart\Models\MP\MX\Items\ItemResponses
 ```
 Get all items
 
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
+[**\Walmart\Models\MP\MX\Items\ItemResponses**](../Model/ItemResponses.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ try {
 ## `getAnItem()`
 
 ```php
-getAnItem($sku): \Walmart\Models\MP\MX\Items\GetAnItem200Response
+getAnItem($sku): \Walmart\Models\MP\MX\Items\ItemResponse
 ```
 Get an item
 
@@ -182,7 +182,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\GetAnItem200Response**](../Model/GetAnItem200Response.md)
+[**\Walmart\Models\MP\MX\Items\ItemResponse**](../Model/ItemResponse.md)
 
 ### Authorization
 
@@ -200,7 +200,7 @@ try {
 ## `retireAnItem()`
 
 ```php
-retireAnItem($sKU): \Walmart\Models\MP\MX\Items\RetireAnItem200Response
+retireAnItem($sKU): \Walmart\Models\MP\MX\Items\ItemRetireResponseV2
 ```
 Retire an item
 
@@ -242,7 +242,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\RetireAnItem200Response**](../Model/RetireAnItem200Response.md)
+[**\Walmart\Models\MP\MX\Items\ItemRetireResponseV2**](../Model/ItemRetireResponseV2.md)
 
 ### Authorization
 

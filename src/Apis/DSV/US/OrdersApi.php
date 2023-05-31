@@ -753,7 +753,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\DSV\US\Orders\OrdersListType
      */
     public function getAllOrders(
         string $shipNode,
@@ -767,7 +767,7 @@ class OrdersApi extends BaseApi
         ?string $fromExpectedShipDate = null,
         ?string $toExpectedShipDate = null,
         ?string $productInfo = 'false'
-    ): \Walmart\Models\DSV\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\DSV\US\Orders\OrdersListType {
         return $this->getAllOrdersWithHttpInfo($shipNode, $limit, $sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $productInfo);
     }
 
@@ -790,7 +790,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\DSV\US\Orders\OrdersListType
      */
     protected function getAllOrdersWithHttpInfo(
         string $shipNode,
@@ -804,7 +804,7 @@ class OrdersApi extends BaseApi
         ?string $fromExpectedShipDate = null,
         ?string $toExpectedShipDate = null,
         ?string $productInfo = 'false',
-    ): \Walmart\Models\DSV\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\DSV\US\Orders\OrdersListType {
         $request = $this->getAllOrdersRequest($shipNode, $limit, $sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $productInfo, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -854,19 +854,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\DSV\US\Orders\GetAllOrders200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\DSV\US\Orders\OrdersListType' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\DSV\US\Orders\GetAllOrders200Response' !== 'string') {
+                        if ('\Walmart\Models\DSV\US\Orders\OrdersListType' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Orders\OrdersListType', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response';
+            $returnType = '\Walmart\Models\DSV\US\Orders\OrdersListType';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -882,7 +882,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response',
+                        '\Walmart\Models\DSV\US\Orders\OrdersListType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -969,7 +969,7 @@ class OrdersApi extends BaseApi
         ?string $toExpectedShipDate = null,
         ?string $productInfo = 'false',
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response';
+        $returnType = '\Walmart\Models\DSV\US\Orders\OrdersListType';
         $request = $this->getAllOrdersRequest($shipNode, $limit, $sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $productInfo, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1236,7 +1236,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\DSV\US\Orders\OrdersListType
      */
     public function getAllReleasedOrders(
         string $shipNode,
@@ -1249,7 +1249,7 @@ class OrdersApi extends BaseApi
         ?string $toExpectedShipDate = null,
         ?string $limit = '100',
         ?string $productInfo = 'false'
-    ): \Walmart\Models\DSV\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\DSV\US\Orders\OrdersListType {
         return $this->getAllReleasedOrdersWithHttpInfo($shipNode, $sku, $customerOrderId, $purchaseOrderId, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo);
     }
 
@@ -1271,7 +1271,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\DSV\US\Orders\OrdersListType
      */
     protected function getAllReleasedOrdersWithHttpInfo(
         string $shipNode,
@@ -1284,7 +1284,7 @@ class OrdersApi extends BaseApi
         ?string $toExpectedShipDate = null,
         ?string $limit = '100',
         ?string $productInfo = 'false',
-    ): \Walmart\Models\DSV\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\DSV\US\Orders\OrdersListType {
         $request = $this->getAllReleasedOrdersRequest($shipNode, $sku, $customerOrderId, $purchaseOrderId, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1334,19 +1334,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\DSV\US\Orders\GetAllOrders200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\DSV\US\Orders\OrdersListType' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\DSV\US\Orders\GetAllOrders200Response' !== 'string') {
+                        if ('\Walmart\Models\DSV\US\Orders\OrdersListType' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Orders\OrdersListType', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response';
+            $returnType = '\Walmart\Models\DSV\US\Orders\OrdersListType';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1362,7 +1362,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response',
+                        '\Walmart\Models\DSV\US\Orders\OrdersListType',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1445,7 +1445,7 @@ class OrdersApi extends BaseApi
         ?string $limit = '100',
         ?string $productInfo = 'false',
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\DSV\US\Orders\GetAllOrders200Response';
+        $returnType = '\Walmart\Models\DSV\US\Orders\OrdersListType';
         $request = $this->getAllReleasedOrdersRequest($shipNode, $sku, $customerOrderId, $purchaseOrderId, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

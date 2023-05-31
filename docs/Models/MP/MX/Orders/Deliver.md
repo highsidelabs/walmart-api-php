@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**packages** | [**\Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]**](DeliveryUpdatesRequestPackagesInner.md) |  | [optional]
+**packages** | [**\Walmart\Models\MP\MX\Orders\Package[]**](Package.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

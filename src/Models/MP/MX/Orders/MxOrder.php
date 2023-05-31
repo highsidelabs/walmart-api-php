@@ -50,9 +50,9 @@ class MxOrder extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseMeta',
-        'order' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]',
-        'error' => '\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError'
+        'meta' => '\Walmart\Models\MP\MX\Orders\MetaWithoutCursor',
+        'order' => '\Walmart\Models\MP\MX\Orders\Order[]',
+        'error' => '\Walmart\Models\MP\MX\Orders\Error'
     ];
 
     /**
@@ -142,7 +142,7 @@ class MxOrder extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseMeta|null
+     * @return \Walmart\Models\MP\MX\Orders\MetaWithoutCursor|null
     
      */
     public function getMeta()
@@ -153,7 +153,7 @@ class MxOrder extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseMeta|null $meta meta
+     * @param \Walmart\Models\MP\MX\Orders\MetaWithoutCursor|null $meta meta
      *
      * @return self
     
@@ -171,7 +171,7 @@ class MxOrder extends BaseModel
     /**
      * Gets order
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\Order[]|null
     
      */
     public function getOrder()
@@ -182,7 +182,7 @@ class MxOrder extends BaseModel
     /**
      * Sets order
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInner[]|null $order Information about the purchase order
+     * @param \Walmart\Models\MP\MX\Orders\Order[]|null $order Information about the purchase order
      *
      * @return self
     
@@ -200,7 +200,7 @@ class MxOrder extends BaseModel
     /**
      * Gets error
      *
-     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null
+     * @return \Walmart\Models\MP\MX\Orders\Error|null
     
      */
     public function getError()
@@ -211,7 +211,7 @@ class MxOrder extends BaseModel
     /**
      * Sets error
      *
-     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null $error error
+     * @param \Walmart\Models\MP\MX\Orders\Error|null $error error
      *
      * @return self
     

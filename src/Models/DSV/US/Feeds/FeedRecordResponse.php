@@ -50,11 +50,11 @@ class FeedRecordResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\DSV\US\Feeds\GatewayError[]',
         'totalResults' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'results' => '\Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]'
+        'results' => '\Walmart\Models\DSV\US\Feeds\FeedRecord[]'
     ];
 
     /**
@@ -156,7 +156,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\DSV\US\Feeds\GatewayError[]|null
     
      */
     public function getErrors()
@@ -167,7 +167,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\DSV\US\Feeds\GatewayError[]|null $errors errors
      *
      * @return self
     
@@ -272,7 +272,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Gets results
      *
-     * @return \Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]|null
+     * @return \Walmart\Models\DSV\US\Feeds\FeedRecord[]|null
     
      */
     public function getResults()
@@ -283,7 +283,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Sets results
      *
-     * @param \Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]|null $results results
+     * @param \Walmart\Models\DSV\US\Feeds\FeedRecord[]|null $results results
      *
      * @return self
     

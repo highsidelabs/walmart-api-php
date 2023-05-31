@@ -59,11 +59,11 @@ class PromotionsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response
+     * @return \Walmart\Models\MP\US\Promotions\PromotionalPriceResponse
      */
     public function getPromotionalPrices(
         string $sku
-    ): \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response {
+    ): \Walmart\Models\MP\US\Promotions\PromotionalPriceResponse {
         return $this->getPromotionalPricesWithHttpInfo($sku);
     }
 
@@ -76,11 +76,11 @@ class PromotionsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response
+     * @return \Walmart\Models\MP\US\Promotions\PromotionalPriceResponse
      */
     protected function getPromotionalPricesWithHttpInfo(
         string $sku,
-    ): \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response {
+    ): \Walmart\Models\MP\US\Promotions\PromotionalPriceResponse {
         $request = $this->getPromotionalPricesRequest($sku, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -130,19 +130,19 @@ class PromotionsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response';
+            $returnType = '\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -158,7 +158,7 @@ class PromotionsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response',
+                        '\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -205,7 +205,7 @@ class PromotionsApi extends BaseApi
     protected function getPromotionalPricesAsyncWithHttpInfo(
         string $sku,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200Response';
+        $returnType = '\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse';
         $request = $this->getPromotionalPricesRequest($sku, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -349,12 +349,12 @@ class PromotionsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response
+     * @return \Walmart\Models\MP\US\Promotions\FeedId
      */
     public function updateBulkPromotionalPrice(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response {
+    ): \Walmart\Models\MP\US\Promotions\FeedId {
         return $this->updateBulkPromotionalPriceWithHttpInfo($feedType, $file);
     }
 
@@ -368,12 +368,12 @@ class PromotionsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response
+     * @return \Walmart\Models\MP\US\Promotions\FeedId
      */
     protected function updateBulkPromotionalPriceWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response {
+    ): \Walmart\Models\MP\US\Promotions\FeedId {
         $request = $this->updateBulkPromotionalPriceRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -423,19 +423,19 @@ class PromotionsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Promotions\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Promotions\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Promotions\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response';
+            $returnType = '\Walmart\Models\MP\US\Promotions\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -451,7 +451,7 @@ class PromotionsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response',
+                        '\Walmart\Models\MP\US\Promotions\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -502,7 +502,7 @@ class PromotionsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Promotions\UpdateBulkPromotionalPrice200Response';
+        $returnType = '\Walmart\Models\MP\US\Promotions\FeedId';
         $request = $this->updateBulkPromotionalPriceRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -666,7 +666,7 @@ class PromotionsApi extends BaseApi
      * Update a promotional price
      *
      * @param  bool $promo The promotional price. Set to 'true' in order to retrieve promotional prices (required)
-     * @param  \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Promotions\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -674,9 +674,9 @@ class PromotionsApi extends BaseApi
      */
     public function updatePromotionalPrices(
         bool $promo,
-        \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest
+        \Walmart\Models\MP\US\Promotions\Price $price
     ): \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response {
-        return $this->updatePromotionalPricesWithHttpInfo($promo, $updatePromotionalPricesRequest);
+        return $this->updatePromotionalPricesWithHttpInfo($promo, $price);
     }
 
     /**
@@ -685,7 +685,7 @@ class PromotionsApi extends BaseApi
      * Update a promotional price
      *
      * @param  bool $promo The promotional price. Set to 'true' in order to retrieve promotional prices (required)
-     * @param  \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Promotions\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -693,9 +693,9 @@ class PromotionsApi extends BaseApi
      */
     protected function updatePromotionalPricesWithHttpInfo(
         bool $promo,
-        \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest,
+        \Walmart\Models\MP\US\Promotions\Price $price,
     ): \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response {
-        $request = $this->updatePromotionalPricesRequest($promo, $updatePromotionalPricesRequest, );
+        $request = $this->updatePromotionalPricesRequest($promo, $price, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -790,16 +790,16 @@ class PromotionsApi extends BaseApi
      * Update a promotional price
      *
      * @param  bool $promo The promotional price. Set to 'true' in order to retrieve promotional prices (required)
-     * @param  \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Promotions\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updatePromotionalPricesAsync(
         bool $promo,
-        \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest
+        \Walmart\Models\MP\US\Promotions\Price $price
     ): PromiseInterface {
-        return $this->updatePromotionalPricesAsyncWithHttpInfo($promo, $updatePromotionalPricesRequest)
+        return $this->updatePromotionalPricesAsyncWithHttpInfo($promo, $price)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -814,17 +814,17 @@ class PromotionsApi extends BaseApi
      * Update a promotional price
      *
      * @param  bool $promo The promotional price. Set to 'true' in order to retrieve promotional prices (required)
-     * @param  \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Promotions\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updatePromotionalPricesAsyncWithHttpInfo(
         bool $promo,
-        \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest,
+        \Walmart\Models\MP\US\Promotions\Price $price,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response';
-        $request = $this->updatePromotionalPricesRequest($promo, $updatePromotionalPricesRequest, );
+        $request = $this->updatePromotionalPricesRequest($promo, $price, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -870,14 +870,14 @@ class PromotionsApi extends BaseApi
      * Create request for operation 'updatePromotionalPrices'
      *
      * @param  bool $promo The promotional price. Set to 'true' in order to retrieve promotional prices (required)
-     * @param  \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest The request body consists of a Feed file attached to the request. (required)
+     * @param  \Walmart\Models\MP\US\Promotions\Price $price The request body consists of a Feed file attached to the request. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updatePromotionalPricesRequest(
         bool $promo,
-        \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest $updatePromotionalPricesRequest,
+        \Walmart\Models\MP\US\Promotions\Price $price,
     ): Request {
         $contentType = self::contentTypes['updatePromotionalPrices'];
 
@@ -887,10 +887,10 @@ class PromotionsApi extends BaseApi
                 'Missing the required parameter $promo when calling updatePromotionalPrices'
             );
         }
-        // verify the required parameter 'updatePromotionalPricesRequest' is set
-        if ($updatePromotionalPricesRequest === null || (is_array($updatePromotionalPricesRequest) && count($updatePromotionalPricesRequest) === 0)) {
+        // verify the required parameter 'price' is set
+        if ($price === null || (is_array($price) && count($price) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updatePromotionalPricesRequest when calling updatePromotionalPrices'
+                'Missing the required parameter $price when calling updatePromotionalPrices'
             );
         }
         $resourcePath = '/v3/price';
@@ -929,12 +929,12 @@ class PromotionsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updatePromotionalPricesRequest)) {
+        if (isset($price)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updatePromotionalPricesRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($price));
             } else {
-                $httpBody = $updatePromotionalPricesRequest;
+                $httpBody = $price;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

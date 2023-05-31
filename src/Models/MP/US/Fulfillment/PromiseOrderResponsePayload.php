@@ -52,10 +52,10 @@ class PromiseOrderResponsePayload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'offers' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInner[]',
-        'destinations' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadDestinationsInner[]',
+        'offers' => '\Walmart\Models\MP\US\Fulfillment\PromiseResponseOffer[]',
+        'destinations' => '\Walmart\Models\MP\US\Fulfillment\PromiseDestinationResponse[]',
         'prepurchaseHandle' => 'string',
-        'fulfillmentPlans' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInner[]'
+        'fulfillmentPlans' => '\Walmart\Models\MP\US\Fulfillment\FulfillmentPlan[]'
     ];
 
     /**
@@ -151,7 +151,7 @@ class PromiseOrderResponsePayload extends BaseModel
     /**
      * Gets offers
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseResponseOffer[]|null
     
      */
     public function getOffers()
@@ -162,7 +162,7 @@ class PromiseOrderResponsePayload extends BaseModel
     /**
      * Sets offers
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadOffersInner[]|null $offers Offer details indicating available quantity vs required quantify for offer
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseResponseOffer[]|null $offers Offer details indicating available quantity vs required quantify for offer
      *
      * @return self
     
@@ -180,7 +180,7 @@ class PromiseOrderResponsePayload extends BaseModel
     /**
      * Gets destinations
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadDestinationsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseDestinationResponse[]|null
     
      */
     public function getDestinations()
@@ -191,7 +191,7 @@ class PromiseOrderResponsePayload extends BaseModel
     /**
      * Sets destinations
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadDestinationsInner[]|null $destinations Customer order destination details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseDestinationResponse[]|null $destinations Customer order destination details.
      *
      * @return self
     
@@ -238,7 +238,7 @@ class PromiseOrderResponsePayload extends BaseModel
     /**
      * Gets fulfillmentPlans
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\FulfillmentPlan[]|null
     
      */
     public function getFulfillmentPlans()
@@ -249,7 +249,7 @@ class PromiseOrderResponsePayload extends BaseModel
     /**
      * Sets fulfillmentPlans
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInner[]|null $fulfillmentPlans Fulfillment plans details.
+     * @param \Walmart\Models\MP\US\Fulfillment\FulfillmentPlan[]|null $fulfillmentPlans Fulfillment plans details.
      *
      * @return self
     

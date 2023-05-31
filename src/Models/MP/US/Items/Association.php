@@ -52,7 +52,7 @@ class Association extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shippingTemplate' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate',
+        'shippingTemplate' => '\Walmart\Models\MP\US\Items\ShippingTemplate',
         'shipNodeName' => 'string',
         'shipNode' => 'string'
     ];
@@ -144,7 +144,7 @@ class Association extends BaseModel
     /**
      * Gets shippingTemplate
      *
-     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate|null
+     * @return \Walmart\Models\MP\US\Items\ShippingTemplate|null
     
      */
     public function getShippingTemplate()
@@ -155,7 +155,7 @@ class Association extends BaseModel
     /**
      * Sets shippingTemplate
      *
-     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInnerShippingTemplate|null $shippingTemplate shippingTemplate
+     * @param \Walmart\Models\MP\US\Items\ShippingTemplate|null $shippingTemplate shippingTemplate
      *
      * @return self
     

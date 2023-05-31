@@ -52,8 +52,8 @@ class PickupPerson extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'name' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName',
-        'phone' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone'
+        'name' => '\Walmart\Models\MP\US\Orders\GetAnOrder200ResponsePickupPersonsInnerName',
+        'phone' => '\Walmart\Models\MP\US\Orders\Phone'
     ];
 
     /**
@@ -137,7 +137,7 @@ class PickupPerson extends BaseModel
     /**
      * Gets name
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName|null
+     * @return \Walmart\Models\MP\US\Orders\GetAnOrder200ResponsePickupPersonsInnerName|null
     
      */
     public function getName()
@@ -148,7 +148,7 @@ class PickupPerson extends BaseModel
     /**
      * Sets name
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerName|null $name name
+     * @param \Walmart\Models\MP\US\Orders\GetAnOrder200ResponsePickupPersonsInnerName|null $name name
      *
      * @return self
     
@@ -166,7 +166,7 @@ class PickupPerson extends BaseModel
     /**
      * Gets phone
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone|null
+     * @return \Walmart\Models\MP\US\Orders\Phone|null
     
      */
     public function getPhone()
@@ -177,7 +177,7 @@ class PickupPerson extends BaseModel
     /**
      * Sets phone
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone|null $phone phone
+     * @param \Walmart\Models\MP\US\Orders\Phone|null $phone phone
      *
      * @return self
     

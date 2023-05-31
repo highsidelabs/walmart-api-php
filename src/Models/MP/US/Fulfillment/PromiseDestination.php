@@ -52,7 +52,7 @@ class PromiseDestination extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'address' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress',
+        'address' => '\Walmart\Models\MP\US\Fulfillment\PromiseAddress',
         'fulfillmentType' => 'string'
     ];
 
@@ -143,7 +143,7 @@ class PromiseDestination extends BaseModel
     /**
      * Gets address
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseAddress
     
      */
     public function getAddress()
@@ -154,7 +154,7 @@ class PromiseDestination extends BaseModel
     /**
      * Sets address
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInnerAddress $address address
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseAddress $address address
      *
      * @return self
     

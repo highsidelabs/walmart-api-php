@@ -53,8 +53,8 @@ class ThrottlingConfigDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'type' => 'string',
-        'rate' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate',
-        'fileSize' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize'
+        'rate' => '\Walmart\Models\MP\US\Settings\Rate',
+        'fileSize' => '\Walmart\Models\MP\US\Settings\FileSize'
     ];
 
     /**
@@ -207,7 +207,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Gets rate
      *
-     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate|null
+     * @return \Walmart\Models\MP\US\Settings\Rate|null
     
      */
     public function getRate()
@@ -218,7 +218,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Sets rate
      *
-     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate|null $rate rate
+     * @param \Walmart\Models\MP\US\Settings\Rate|null $rate rate
      *
      * @return self
     
@@ -236,7 +236,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Gets fileSize
      *
-     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize|null
+     * @return \Walmart\Models\MP\US\Settings\FileSize|null
     
      */
     public function getFileSize()
@@ -247,7 +247,7 @@ class ThrottlingConfigDTO extends BaseModel
     /**
      * Sets fileSize
      *
-     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFileSize|null $fileSize fileSize
+     * @param \Walmart\Models\MP\US\Settings\FileSize|null $fileSize fileSize
      *
      * @return self
     

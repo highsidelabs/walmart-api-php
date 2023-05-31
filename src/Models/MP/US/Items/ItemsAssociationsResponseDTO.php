@@ -50,7 +50,7 @@ class ItemsAssociationsResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'items' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInner[]'
+        'items' => '\Walmart\Models\MP\US\Items\ResponseItem[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class ItemsAssociationsResponseDTO extends BaseModel
     /**
      * Gets items
      *
-     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInner[]
+     * @return \Walmart\Models\MP\US\Items\ResponseItem[]
     
      */
     public function getItems()
@@ -142,7 +142,7 @@ class ItemsAssociationsResponseDTO extends BaseModel
     /**
      * Sets items
      *
-     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInner[] $items items
+     * @param \Walmart\Models\MP\US\Items\ResponseItem[] $items items
      *
      * @return self
     

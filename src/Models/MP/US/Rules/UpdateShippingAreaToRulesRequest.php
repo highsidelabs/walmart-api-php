@@ -50,8 +50,8 @@ class UpdateShippingAreaToRulesRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ruleHeader' => '\Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader',
-        'rules' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRules'
+        'ruleHeader' => '\Walmart\Models\MP\US\Rules\RuleHeader',
+        'rules' => '\Walmart\Models\MP\US\Rules\RuleToUpdate'
     ];
 
     /**
@@ -135,7 +135,7 @@ class UpdateShippingAreaToRulesRequest extends BaseModel
     /**
      * Gets ruleHeader
      *
-     * @return \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null
+     * @return \Walmart\Models\MP\US\Rules\RuleHeader|null
     
      */
     public function getRuleHeader()
@@ -146,7 +146,7 @@ class UpdateShippingAreaToRulesRequest extends BaseModel
     /**
      * Sets ruleHeader
      *
-     * @param \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null $ruleHeader ruleHeader
+     * @param \Walmart\Models\MP\US\Rules\RuleHeader|null $ruleHeader ruleHeader
      *
      * @return self
     
@@ -164,7 +164,7 @@ class UpdateShippingAreaToRulesRequest extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRules|null
+     * @return \Walmart\Models\MP\US\Rules\RuleToUpdate|null
     
      */
     public function getRules()
@@ -175,7 +175,7 @@ class UpdateShippingAreaToRulesRequest extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRules|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\RuleToUpdate|null $rules rules
      *
      * @return self
     

@@ -28,6 +28,8 @@ use Walmart\Models\BaseModel;
  *
  * @category Class
 
+ * @description Container for the cancellation details
+
  * @package  Walmart
  * @author   Jesse Evers
  * @link     https://highsidelabs.co
@@ -50,7 +52,7 @@ class CancelOrderLinesRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderCancellation' => '\Walmart\Models\MP\US\Orders\CancelOrderLinesRequestOrderCancellation'
+        'orderLines' => '\Walmart\Models\MP\US\Orders\CancelOrderLinesRequestOrderLines'
     ];
 
     /**
@@ -61,7 +63,7 @@ class CancelOrderLinesRequest extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'orderCancellation' => null
+        'orderLines' => null
     ];
 
     /**
@@ -70,7 +72,7 @@ class CancelOrderLinesRequest extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'orderCancellation' => false
+        'orderLines' => false
     ];
 
     /**
@@ -80,7 +82,7 @@ class CancelOrderLinesRequest extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'orderCancellation' => 'orderCancellation'
+        'orderLines' => 'orderLines'
     ];
 
     /**
@@ -89,7 +91,7 @@ class CancelOrderLinesRequest extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'orderCancellation' => 'setOrderCancellation'
+        'orderLines' => 'setOrderLines'
     ];
 
     /**
@@ -98,7 +100,7 @@ class CancelOrderLinesRequest extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'orderCancellation' => 'getOrderCancellation'
+        'orderLines' => 'getOrderLines'
     ];
 
     /**
@@ -109,7 +111,7 @@ class CancelOrderLinesRequest extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('orderCancellation', $data ?? [], null);
+        $this->setIfExists('orderLines', $data ?? [], null);
     }
 
     /**
@@ -121,36 +123,39 @@ class CancelOrderLinesRequest extends BaseModel
     {
         $invalidProperties = [];
 
+        if ($this->container['orderLines'] === null) {
+            $invalidProperties[] = "'orderLines' can't be null";
+        }
 
         return $invalidProperties;
     }
 
     /**
-     * Gets orderCancellation
+     * Gets orderLines
      *
-     * @return \Walmart\Models\MP\US\Orders\CancelOrderLinesRequestOrderCancellation|null
+     * @return \Walmart\Models\MP\US\Orders\CancelOrderLinesRequestOrderLines
     
      */
-    public function getOrderCancellation()
+    public function getOrderLines()
     {
-        return $this->container['orderCancellation'];
+        return $this->container['orderLines'];
     }
 
     /**
-     * Sets orderCancellation
+     * Sets orderLines
      *
-     * @param \Walmart\Models\MP\US\Orders\CancelOrderLinesRequestOrderCancellation|null $orderCancellation orderCancellation
+     * @param \Walmart\Models\MP\US\Orders\CancelOrderLinesRequestOrderLines $orderLines orderLines
      *
      * @return self
     
      */
-    public function setOrderCancellation($orderCancellation)
+    public function setOrderLines($orderLines)
     {
-        if (is_null($orderCancellation)) {
-            throw new \InvalidArgumentException('non-nullable orderCancellation cannot be null');
+        if (is_null($orderLines)) {
+            throw new \InvalidArgumentException('non-nullable orderLines cannot be null');
         }
 
-        $this->container['orderCancellation'] = $orderCancellation;
+        $this->container['orderLines'] = $orderLines;
         return $this;
     }
 }

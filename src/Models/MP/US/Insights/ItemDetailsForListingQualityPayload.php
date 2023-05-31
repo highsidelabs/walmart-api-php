@@ -51,16 +51,16 @@ class ItemDetailsForListingQualityPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'productId' => 'string',
-        'scoreDetails' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetails',
+        'scoreDetails' => '\Walmart\Models\MP\US\Insights\ScoreDetails',
         'wfsEnabled' => 'string',
         'priority' => 'string',
         'productName' => 'string',
         'itemId' => 'string',
         'sellerId' => 'string',
         'pageViews' => 'string',
-        'stats' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStats',
+        'stats' => '\Walmart\Models\MP\US\Insights\Stats',
         'imageUrL' => 'string',
-        'qualityScore' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScore',
+        'qualityScore' => '\Walmart\Models\MP\US\Insights\QualityScore',
         'offerId' => 'string',
         'sku' => 'string',
         'category' => 'string',
@@ -262,7 +262,7 @@ class ItemDetailsForListingQualityPayload extends BaseModel
     /**
      * Gets scoreDetails
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetails|null
+     * @return \Walmart\Models\MP\US\Insights\ScoreDetails|null
     
      */
     public function getScoreDetails()
@@ -273,7 +273,7 @@ class ItemDetailsForListingQualityPayload extends BaseModel
     /**
      * Sets scoreDetails
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetails|null $scoreDetails scoreDetails
+     * @param \Walmart\Models\MP\US\Insights\ScoreDetails|null $scoreDetails scoreDetails
      *
      * @return self
     
@@ -465,7 +465,7 @@ class ItemDetailsForListingQualityPayload extends BaseModel
     /**
      * Gets stats
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStats|null
+     * @return \Walmart\Models\MP\US\Insights\Stats|null
     
      */
     public function getStats()
@@ -476,7 +476,7 @@ class ItemDetailsForListingQualityPayload extends BaseModel
     /**
      * Sets stats
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStats|null $stats stats
+     * @param \Walmart\Models\MP\US\Insights\Stats|null $stats stats
      *
      * @return self
     
@@ -523,7 +523,7 @@ class ItemDetailsForListingQualityPayload extends BaseModel
     /**
      * Gets qualityScore
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScore|null
+     * @return \Walmart\Models\MP\US\Insights\QualityScore|null
     
      */
     public function getQualityScore()
@@ -534,7 +534,7 @@ class ItemDetailsForListingQualityPayload extends BaseModel
     /**
      * Sets qualityScore
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScore|null $qualityScore qualityScore
+     * @param \Walmart\Models\MP\US\Insights\QualityScore|null $qualityScore qualityScore
      *
      * @return self
     

@@ -56,15 +56,15 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
         'pickupToDateTime' => '\DateTime',
         'deliveryFromDateTime' => '\DateTime',
         'deliveryToDateTime' => '\DateTime',
-        'customer' => '\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer',
-        'originLocation' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation',
-        'destinationLocation' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation',
-        'returnLocation' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation',
-        'shipmentPackages' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]',
+        'customer' => '\Walmart\Models\MP\US\Fulfillment\Customer',
+        'originLocation' => '\Walmart\Models\MP\US\Fulfillment\DestinationLocation',
+        'destinationLocation' => '\Walmart\Models\MP\US\Fulfillment\DestinationLocation',
+        'returnLocation' => '\Walmart\Models\MP\US\Fulfillment\ReturnLocation',
+        'shipmentPackages' => '\Walmart\Models\MP\US\Fulfillment\ShipmentPackage[]',
         'mode' => 'string',
         'freightClass' => 'string',
         'declaredValue' => 'int',
-        'loadTypes' => '\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequestLoadTypesInner[]'
+        'loadTypes' => '\Walmart\Models\MP\US\Fulfillment\LoadType[]'
     ];
 
     /**
@@ -436,7 +436,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets customer
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer
+     * @return \Walmart\Models\MP\US\Fulfillment\Customer
     
      */
     public function getCustomer()
@@ -447,7 +447,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets customer
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadCustomer $customer customer
+     * @param \Walmart\Models\MP\US\Fulfillment\Customer $customer customer
      *
      * @return self
     
@@ -465,7 +465,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets originLocation
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation
+     * @return \Walmart\Models\MP\US\Fulfillment\DestinationLocation
     
      */
     public function getOriginLocation()
@@ -476,7 +476,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets originLocation
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation $originLocation originLocation
+     * @param \Walmart\Models\MP\US\Fulfillment\DestinationLocation $originLocation originLocation
      *
      * @return self
     
@@ -494,7 +494,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets destinationLocation
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation
+     * @return \Walmart\Models\MP\US\Fulfillment\DestinationLocation
     
      */
     public function getDestinationLocation()
@@ -505,7 +505,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets destinationLocation
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocation $destinationLocation destinationLocation
+     * @param \Walmart\Models\MP\US\Fulfillment\DestinationLocation $destinationLocation destinationLocation
      *
      * @return self
     
@@ -523,7 +523,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets returnLocation
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation
+     * @return \Walmart\Models\MP\US\Fulfillment\ReturnLocation
     
      */
     public function getReturnLocation()
@@ -534,7 +534,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets returnLocation
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseReturnLocation $returnLocation returnLocation
+     * @param \Walmart\Models\MP\US\Fulfillment\ReturnLocation $returnLocation returnLocation
      *
      * @return self
     
@@ -552,7 +552,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets shipmentPackages
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\ShipmentPackage[]
     
      */
     public function getShipmentPackages()
@@ -563,7 +563,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets shipmentPackages
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInner[] $shipmentPackages shipmentPackages
+     * @param \Walmart\Models\MP\US\Fulfillment\ShipmentPackage[] $shipmentPackages shipmentPackages
      *
      * @return self
     
@@ -679,7 +679,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets loadTypes
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequestLoadTypesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\LoadType[]|null
     
      */
     public function getLoadTypes()
@@ -690,7 +690,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets loadTypes
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequestLoadTypesInner[]|null $loadTypes loadTypes
+     * @param \Walmart\Models\MP\US\Fulfillment\LoadType[]|null $loadTypes loadTypes
      *
      * @return self
     

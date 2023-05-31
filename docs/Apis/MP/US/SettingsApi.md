@@ -23,7 +23,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `associate3PFulfillmentCenter()`
 
 ```php
-associate3PFulfillmentCenter($associate3PFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]
+associate3PFulfillmentCenter($updateFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[]
 ```
 Third party fulfillment center association
 
@@ -44,10 +44,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->settings();
 
-$associate3PFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNode":"99351656957153281","status":"ACTIVE"}]}; // \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequest | Request fields
+$updateFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNode":"99351656957153281","status":"ACTIVE"}]}; // \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest | Request fields
 
 try {
-    $result = $api->associate3PFulfillmentCenter($associate3PFulfillmentCenterRequest);
+    $result = $api->associate3PFulfillmentCenter($updateFulfillmentCenterRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->associate3PFulfillmentCenter: {$e->getMessage()}\n";
@@ -57,12 +57,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **associate3PFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequest**](../Model/Associate3PFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]**](../Model/Associate3PFulfillmentCenterRequestShipNodeInner.md)
+[**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[]**](../Model/Associate3PFulfillmentCenter200ResponseInner.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ try {
 ## `createFulfillmentCenter()`
 
 ```php
-createFulfillmentCenter($createFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]
+createFulfillmentCenter($updateFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]
 ```
 Create fulfillment center
 
@@ -101,10 +101,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->settings();
 
-$createFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNodeName":"my distrubutor786","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"92hb1234","postalAddress":{"addressLine1":"36 CALIFORNIA SAA233","city":"SC GABRIEL22","state":"CA","country":"USA","postalCode":"90100"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}]}; // \Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequest | Request fields
+$updateFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNodeName":"my distrubutor786","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"92hb1234","postalAddress":{"addressLine1":"36 CALIFORNIA SAA233","city":"SC GABRIEL22","state":"CA","country":"USA","postalCode":"90100"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}]}; // \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest | Request fields
 
 try {
-    $result = $api->createFulfillmentCenter($createFulfillmentCenterRequest);
+    $result = $api->createFulfillmentCenter($updateFulfillmentCenterRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->createFulfillmentCenter: {$e->getMessage()}\n";
@@ -114,7 +114,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequest**](../Model/CreateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
@@ -137,7 +137,7 @@ try {
 ## `createShippingTemplates()`
 
 ```php
-createShippingTemplates($createShippingTemplatesRequest): \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response
+createShippingTemplates($updateShippingTemplateRequest): \Walmart\Models\MP\US\Settings\ShippingTemplate
 ```
 Create Shipping Templates
 
@@ -158,10 +158,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->settings();
 
-$createShippingTemplatesRequest = {"name":"Next Day servc","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\CreateShippingTemplatesRequest | Request fields
+$updateShippingTemplateRequest = {"name":"Next Day servc","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest | Request fields
 
 try {
-    $result = $api->createShippingTemplates($createShippingTemplatesRequest);
+    $result = $api->createShippingTemplates($updateShippingTemplateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->createShippingTemplates: {$e->getMessage()}\n";
@@ -171,12 +171,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createShippingTemplatesRequest** | [**\Walmart\Models\MP\US\Settings\CreateShippingTemplatesRequest**](../Model/CreateShippingTemplatesRequest.md)| Request fields | |
+| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../Model/UpdateShippingTemplateRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../Model/ShippingTemplate.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ try {
 ## `deleteShippingTemplateDetails()`
 
 ```php
-deleteShippingTemplateDetails($templateId): \Walmart\Models\MP\US\Settings\DeleteShippingTemplateDetails200Response
+deleteShippingTemplateDetails($templateId): \Walmart\Models\MP\US\Settings\ShippingTemplateId
 ```
 Delete Shipping Template
 
@@ -233,7 +233,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\DeleteShippingTemplateDetails200Response**](../Model/DeleteShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplateId**](../Model/ShippingTemplateId.md)
 
 ### Authorization
 
@@ -362,7 +362,7 @@ try {
 ## `getAllShippingTemplates()`
 
 ```php
-getAllShippingTemplates(): \Walmart\Models\MP\US\Settings\GetAllShippingTemplates200Response
+getAllShippingTemplates(): \Walmart\Models\MP\US\Settings\ShippingTemplatesSummary
 ```
 Get All Shipping Templates
 
@@ -398,7 +398,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetAllShippingTemplates200Response**](../Model/GetAllShippingTemplates200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplatesSummary**](../Model/ShippingTemplatesSummary.md)
 
 ### Authorization
 
@@ -524,7 +524,7 @@ This endpoint does not need any parameter.
 ## `getPartnerConfigurations()`
 
 ```php
-getPartnerConfigurations(): \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200Response
+getPartnerConfigurations(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
 ```
 Get Partner Configurations
 
@@ -560,7 +560,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200Response**](../Model/GetPartnerConfigurations200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../Model/ShippingConfigsResponseDTO.md)
 
 ### Authorization
 
@@ -578,7 +578,7 @@ This endpoint does not need any parameter.
 ## `getShippingConfigurations()`
 
 ```php
-getShippingConfigurations(): \Walmart\Models\MP\US\Settings\GetShippingConfigurations200Response
+getShippingConfigurations(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
 ```
 Get Shipping Configurations
 
@@ -614,7 +614,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetShippingConfigurations200Response**](../Model/GetShippingConfigurations200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../Model/ShippingConfigsResponseDTO.md)
 
 ### Authorization
 
@@ -632,7 +632,7 @@ This endpoint does not need any parameter.
 ## `getShippingTemplateActivationStatus()`
 
 ```php
-getShippingTemplateActivationStatus(): \Walmart\Models\MP\US\Settings\GetShippingTemplateActivationStatus200Response
+getShippingTemplateActivationStatus(): \Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus
 ```
 Get Shipping Template Activation Status
 
@@ -668,7 +668,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetShippingTemplateActivationStatus200Response**](../Model/GetShippingTemplateActivationStatus200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus**](../Model/ShippingTemplateActivationStatus.md)
 
 ### Authorization
 
@@ -686,7 +686,7 @@ This endpoint does not need any parameter.
 ## `getShippingTemplateDetails()`
 
 ```php
-getShippingTemplateDetails($templateId): \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response
+getShippingTemplateDetails($templateId): \Walmart\Models\MP\US\Settings\ShippingTemplate
 ```
 Get Shipping Template Details
 
@@ -725,7 +725,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../Model/ShippingTemplate.md)
 
 ### Authorization
 
@@ -743,7 +743,7 @@ try {
 ## `updateFulfillmentCenter()`
 
 ```php
-updateFulfillmentCenter($updateFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenter200Response
+updateFulfillmentCenter($updateFulfillmentCenterRequest): \Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate
 ```
 Update fulfillment center
 
@@ -782,7 +782,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenter200Response**](../Model/UpdateFulfillmentCenter200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate**](../Model/ShipNodeResponseUpdate.md)
 
 ### Authorization
 
@@ -800,7 +800,7 @@ try {
 ## `updateShippingTemplates()`
 
 ```php
-updateShippingTemplates($templateId, $updateShippingTemplatesRequest): \Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response
+updateShippingTemplates($templateId, $updateShippingTemplateRequest): \Walmart\Models\MP\US\Settings\ShippingTemplate
 ```
 Update Shipping Templates
 
@@ -822,10 +822,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->settings();
 
 $templateId = 'templateId_example'; // string | templateId
-$updateShippingTemplatesRequest = {"name":"Next Day servc test","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\UpdateShippingTemplatesRequest | Request fields
+$updateShippingTemplateRequest = {"name":"Next Day servc test","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest | Request fields
 
 try {
-    $result = $api->updateShippingTemplates($templateId, $updateShippingTemplatesRequest);
+    $result = $api->updateShippingTemplates($templateId, $updateShippingTemplateRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->updateShippingTemplates: {$e->getMessage()}\n";
@@ -836,12 +836,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **templateId** | **string**| templateId | |
-| **updateShippingTemplatesRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplatesRequest**](../Model/UpdateShippingTemplatesRequest.md)| Request fields | |
+| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../Model/UpdateShippingTemplateRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200Response**](../Model/GetShippingTemplateDetails200Response.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../Model/ShippingTemplate.md)
 
 ### Authorization
 

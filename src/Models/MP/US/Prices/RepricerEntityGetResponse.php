@@ -55,7 +55,7 @@ class RepricerEntityGetResponse extends BaseModel
         'enabled' => 'bool',
         'assignedCount' => 'int',
         'enableRepricerForPromotion' => 'bool',
-        'strategies' => '\Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]'
+        'strategies' => '\Walmart\Models\MP\US\Prices\RepricerStrategyType[]'
     ];
 
     /**
@@ -308,7 +308,7 @@ class RepricerEntityGetResponse extends BaseModel
     /**
      * Gets strategies
      *
-     * @return \Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null
+     * @return \Walmart\Models\MP\US\Prices\RepricerStrategyType[]|null
     
      */
     public function getStrategies()
@@ -319,7 +319,7 @@ class RepricerEntityGetResponse extends BaseModel
     /**
      * Sets strategies
      *
-     * @param \Walmart\Models\MP\US\Prices\UpdateStrategyRequestStrategiesInner[]|null $strategies strategies
+     * @param \Walmart\Models\MP\US\Prices\RepricerStrategyType[]|null $strategies strategies
      *
      * @return self
     

@@ -53,8 +53,8 @@ class ReturnLineGroup extends BaseModel
       */
     protected static array $openAPITypes = [
         'groupNo' => 'int',
-        'returnLines' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]',
-        'labels' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]',
+        'returnLines' => '\Walmart\Models\MP\US\Returns\RefundLine[]',
+        'labels' => '\Walmart\Models\MP\US\Returns\Label[]',
         'returnExpectedFlag' => 'bool'
     ];
 
@@ -180,7 +180,7 @@ class ReturnLineGroup extends BaseModel
     /**
      * Gets returnLines
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\RefundLine[]|null
     
      */
     public function getReturnLines()
@@ -191,7 +191,7 @@ class ReturnLineGroup extends BaseModel
     /**
      * Sets returnLines
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]|null $returnLines Array of return lines
+     * @param \Walmart\Models\MP\US\Returns\RefundLine[]|null $returnLines Array of return lines
      *
      * @return self
     
@@ -209,7 +209,7 @@ class ReturnLineGroup extends BaseModel
     /**
      * Gets labels
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\Label[]|null
     
      */
     public function getLabels()
@@ -220,7 +220,7 @@ class ReturnLineGroup extends BaseModel
     /**
      * Sets labels
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]|null $labels Array of labels
+     * @param \Walmart\Models\MP\US\Returns\Label[]|null $labels Array of labels
      *
      * @return self
     

@@ -52,8 +52,8 @@ class CustomerShipToAddress extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'address' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress',
-        'name' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName'
+        'address' => '\Walmart\Models\MP\US\Fulfillment\Address',
+        'name' => '\Walmart\Models\MP\US\Fulfillment\Name'
     ];
 
     /**
@@ -137,7 +137,7 @@ class CustomerShipToAddress extends BaseModel
     /**
      * Gets address
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Address|null
     
      */
     public function getAddress()
@@ -148,7 +148,7 @@ class CustomerShipToAddress extends BaseModel
     /**
      * Sets address
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress|null $address address
+     * @param \Walmart\Models\MP\US\Fulfillment\Address|null $address address
      *
      * @return self
     
@@ -166,7 +166,7 @@ class CustomerShipToAddress extends BaseModel
     /**
      * Gets name
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Name|null
     
      */
     public function getName()
@@ -177,7 +177,7 @@ class CustomerShipToAddress extends BaseModel
     /**
      * Sets name
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName|null $name name
+     * @param \Walmart\Models\MP\US\Fulfillment\Name|null $name name
      *
      * @return self
     

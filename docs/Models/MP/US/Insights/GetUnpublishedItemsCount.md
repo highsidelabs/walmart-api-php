@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\Walmart\Models\MP\US\Insights\GetUnpublishedItemCount200ResponsePayloadInner[]**](GetUnpublishedItemCount200ResponsePayloadInner.md) |  | [optional]
+**payload** | [**\Walmart\Models\MP\US\Insights\Payload[]**](Payload.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

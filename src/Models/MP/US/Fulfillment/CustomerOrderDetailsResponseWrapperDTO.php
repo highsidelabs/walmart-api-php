@@ -51,8 +51,8 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'header' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]'
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsResponse[]'
     ];
 
     /**
@@ -171,7 +171,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader|null
     
      */
     public function getHeader()
@@ -182,7 +182,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponseHeader|null $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader|null $header header
      *
      * @return self
     
@@ -200,7 +200,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsResponse[]|null
     
      */
     public function getPayload()
@@ -211,7 +211,7 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner[]|null $payload Order details
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsResponse[]|null $payload Order details
      *
      * @return self
     

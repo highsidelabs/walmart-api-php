@@ -50,8 +50,8 @@ class GetShipmentPlanDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headers' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInner[]'
+        'headers' => '\Walmart\Models\MP\US\Fulfillment\PaginationMetadata',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\ShipmentPlanDetails[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class GetShipmentPlanDTO extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PaginationMetadata|null
     
      */
     public function getHeaders()
@@ -146,7 +146,7 @@ class GetShipmentPlanDTO extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Fulfillment\PaginationMetadata|null $headers headers
      *
      * @return self
     
@@ -164,7 +164,7 @@ class GetShipmentPlanDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ShipmentPlanDetails[]|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class GetShipmentPlanDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInner[]|null $payload response payload
+     * @param \Walmart\Models\MP\US\Fulfillment\ShipmentPlanDetails[]|null $payload response payload
      *
      * @return self
     

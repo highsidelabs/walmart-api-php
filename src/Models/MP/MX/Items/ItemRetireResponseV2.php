@@ -50,7 +50,7 @@ class ItemRetireResponseV2 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\MX\Items\GetAllItems200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\MX\Items\GatewayError[]',
         'sku' => 'string',
         'message' => 'string'
     ];
@@ -145,7 +145,7 @@ class ItemRetireResponseV2 extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\MX\Items\GetAllItems200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\MX\Items\GatewayError[]|null
     
      */
     public function getErrors()
@@ -156,7 +156,7 @@ class ItemRetireResponseV2 extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\MX\Items\GetAllItems200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\MX\Items\GatewayError[]|null $errors errors
      *
      * @return self
     

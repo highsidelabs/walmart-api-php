@@ -51,8 +51,8 @@ class ResponseItem extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'associations' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]',
-        'errors' => '\Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]'
+        'associations' => '\Walmart\Models\MP\US\Items\Association[]',
+        'errors' => '\Walmart\Models\MP\US\Items\ResponseItemErrorsInner[]'
     ];
 
     /**
@@ -174,7 +174,7 @@ class ResponseItem extends BaseModel
     /**
      * Gets associations
      *
-     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\Association[]|null
     
      */
     public function getAssociations()
@@ -185,7 +185,7 @@ class ResponseItem extends BaseModel
     /**
      * Sets associations
      *
-     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerAssociationsInner[]|null $associations Item Associations like shippingTemplate, shipNode.
+     * @param \Walmart\Models\MP\US\Items\Association[]|null $associations Item Associations like shippingTemplate, shipNode.
      *
      * @return self
     
@@ -203,7 +203,7 @@ class ResponseItem extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\ResponseItemErrorsInner[]|null
     
      */
     public function getErrors()
@@ -214,7 +214,7 @@ class ResponseItem extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Items\GetItemAssociations200ResponseItemsInnerErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Items\ResponseItemErrorsInner[]|null $errors errors
      *
      * @return self
     

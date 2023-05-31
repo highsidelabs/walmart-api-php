@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **requestSubmissionDate** | **string** | Date and time on which the report request is submitted. | [optional]
 **reportType** | **string** | Type of report for which the request is created. Example, ITEM for Item Report. | [optional]
 **reportVersion** | **string** | Version of report for which the request is created. Example, v1. | [optional]
-**payload** | [**\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload**](GetRequestsStatus200ResponseRequestsInnerPayload.md) |  | [optional]
+**payload** | [**\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload**](GenerateReportPayload.md) |  | [optional]
 **reportGenerationDate** | **string** | Date and time on which the report is generated. Attribute is available only if report is generated. | [optional]
 
 

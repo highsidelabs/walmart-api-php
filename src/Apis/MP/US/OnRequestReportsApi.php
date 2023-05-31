@@ -61,12 +61,12 @@ class OnRequestReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse
      */
     public function downloadReport(
         string $requestId,
         string $accept
-    ): \Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response {
+    ): \Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse {
         return $this->downloadReportWithHttpInfo($requestId, $accept);
     }
 
@@ -80,12 +80,12 @@ class OnRequestReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse
      */
     protected function downloadReportWithHttpInfo(
         string $requestId,
         string $accept,
-    ): \Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response {
+    ): \Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse {
         $request = $this->downloadReportRequest($requestId, $accept, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -135,19 +135,19 @@ class OnRequestReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response';
+            $returnType = '\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -163,7 +163,7 @@ class OnRequestReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response',
+                        '\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -214,7 +214,7 @@ class OnRequestReportsApi extends BaseApi
         string $requestId,
         string $accept,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response';
+        $returnType = '\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse';
         $request = $this->downloadReportRequest($requestId, $accept, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -373,20 +373,20 @@ class OnRequestReportsApi extends BaseApi
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
-     * @param  \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload Request body (optional)
+     * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse
      */
     public function generateReport(
         string $reportType,
         string $reportVersion,
         string $accept,
         string $contentType,
-        ?\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload = null
-    ): \Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response {
-        return $this->generateReportWithHttpInfo($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload);
+        ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null
+    ): \Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse {
+        return $this->generateReportWithHttpInfo($reportType, $reportVersion, $accept, $contentType, $generateReportPayload);
     }
 
     /**
@@ -398,20 +398,20 @@ class OnRequestReportsApi extends BaseApi
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
-     * @param  \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload Request body (optional)
+     * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse
      */
     protected function generateReportWithHttpInfo(
         string $reportType,
         string $reportVersion,
         string $accept,
         string $contentType,
-        ?\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload = null,
-    ): \Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response {
-        $request = $this->generateReportRequest($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload, );
+        ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null,
+    ): \Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse {
+        $request = $this->generateReportRequest($reportType, $reportVersion, $accept, $contentType, $generateReportPayload, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -460,19 +460,19 @@ class OnRequestReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response';
+            $returnType = '\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -488,7 +488,7 @@ class OnRequestReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response',
+                        '\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -509,7 +509,7 @@ class OnRequestReportsApi extends BaseApi
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
-     * @param  \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload Request body (optional)
+     * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -519,9 +519,9 @@ class OnRequestReportsApi extends BaseApi
         string $reportVersion,
         string $accept,
         string $contentType,
-        ?\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload = null
+        ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null
     ): PromiseInterface {
-        return $this->generateReportAsyncWithHttpInfo($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload)
+        return $this->generateReportAsyncWithHttpInfo($reportType, $reportVersion, $accept, $contentType, $generateReportPayload)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -539,7 +539,7 @@ class OnRequestReportsApi extends BaseApi
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
-     * @param  \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload Request body (optional)
+     * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -549,10 +549,10 @@ class OnRequestReportsApi extends BaseApi
         string $reportVersion,
         string $accept,
         string $contentType,
-        ?\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload = null,
+        ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response';
-        $request = $this->generateReportRequest($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload, );
+        $returnType = '\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse';
+        $request = $this->generateReportRequest($reportType, $reportVersion, $accept, $contentType, $generateReportPayload, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -601,7 +601,7 @@ class OnRequestReportsApi extends BaseApi
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
-     * @param  \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload Request body (optional)
+     * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -611,7 +611,7 @@ class OnRequestReportsApi extends BaseApi
         string $reportVersion,
         string $accept,
         string $contentType,
-        ?\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload $getRequestsStatus200ResponseRequestsInnerPayload = null,
+        ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null,
     ): Request {
         $contentType = self::contentTypes['generateReport'];
 
@@ -691,12 +691,12 @@ class OnRequestReportsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($getRequestsStatus200ResponseRequestsInnerPayload)) {
+        if (isset($generateReportPayload)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($getRequestsStatus200ResponseRequestsInnerPayload));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($generateReportPayload));
             } else {
-                $httpBody = $getRequestsStatus200ResponseRequestsInnerPayload;
+                $httpBody = $generateReportPayload;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -751,7 +751,7 @@ class OnRequestReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse
      */
     public function getRequestsStatus(
         string $reportType,
@@ -760,7 +760,7 @@ class OnRequestReportsApi extends BaseApi
         ?string $requestStatus = null,
         ?string $requestSubmissionStartDate = null,
         ?string $requestSubmissionEndDate = null
-    ): \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response {
+    ): \Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse {
         return $this->getRequestsStatusWithHttpInfo($reportType, $accept, $reportVersion, $requestStatus, $requestSubmissionStartDate, $requestSubmissionEndDate);
     }
 
@@ -778,7 +778,7 @@ class OnRequestReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse
      */
     protected function getRequestsStatusWithHttpInfo(
         string $reportType,
@@ -787,7 +787,7 @@ class OnRequestReportsApi extends BaseApi
         ?string $requestStatus = null,
         ?string $requestSubmissionStartDate = null,
         ?string $requestSubmissionEndDate = null,
-    ): \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response {
+    ): \Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse {
         $request = $this->getRequestsStatusRequest($reportType, $accept, $reportVersion, $requestStatus, $requestSubmissionStartDate, $requestSubmissionEndDate, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -837,19 +837,19 @@ class OnRequestReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response';
+            $returnType = '\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -865,7 +865,7 @@ class OnRequestReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response',
+                        '\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -932,7 +932,7 @@ class OnRequestReportsApi extends BaseApi
         ?string $requestSubmissionStartDate = null,
         ?string $requestSubmissionEndDate = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response';
+        $returnType = '\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse';
         $request = $this->getRequestsStatusRequest($reportType, $accept, $reportVersion, $requestStatus, $requestSubmissionStartDate, $requestSubmissionEndDate, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1132,12 +1132,12 @@ class OnRequestReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse
      */
     public function getSingleRequestStatus(
         string $requestId,
         string $accept
-    ): \Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response {
+    ): \Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse {
         return $this->getSingleRequestStatusWithHttpInfo($requestId, $accept);
     }
 
@@ -1151,12 +1151,12 @@ class OnRequestReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response
+     * @return \Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse
      */
     protected function getSingleRequestStatusWithHttpInfo(
         string $requestId,
         string $accept,
-    ): \Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response {
+    ): \Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse {
         $request = $this->getSingleRequestStatusRequest($requestId, $accept, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1206,19 +1206,19 @@ class OnRequestReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response';
+            $returnType = '\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1234,7 +1234,7 @@ class OnRequestReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response',
+                        '\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1285,7 +1285,7 @@ class OnRequestReportsApi extends BaseApi
         string $requestId,
         string $accept,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response';
+        $returnType = '\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse';
         $request = $this->getSingleRequestStatusRequest($requestId, $accept, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

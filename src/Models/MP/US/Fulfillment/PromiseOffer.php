@@ -55,7 +55,7 @@ class PromiseOffer extends BaseModel
         'sku' => 'string',
         'lineId' => 'string',
         'salesUnit' => 'string',
-        'requestedQuantity' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity'
+        'requestedQuantity' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType'
     ];
 
     /**
@@ -250,7 +250,7 @@ class PromiseOffer extends BaseModel
     /**
      * Gets requestedQuantity
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType
     
      */
     public function getRequestedQuantity()
@@ -261,7 +261,7 @@ class PromiseOffer extends BaseModel
     /**
      * Sets requestedQuantity
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity $requestedQuantity requestedQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType $requestedQuantity requestedQuantity
      *
      * @return self
     

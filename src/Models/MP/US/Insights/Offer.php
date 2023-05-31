@@ -51,9 +51,9 @@ class Offer extends BaseModel
       */
     protected static array $openAPITypes = [
         'issueCount' => 'int',
-        'price' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice',
-        'shippingSpeed' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed',
-        'publishAndTransactable' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable'
+        'price' => '\Walmart\Models\MP\US\Insights\Gmv',
+        'shippingSpeed' => '\Walmart\Models\MP\US\Insights\ShippingSpeed',
+        'publishAndTransactable' => '\Walmart\Models\MP\US\Insights\PublishAndTransactable'
     ];
 
     /**
@@ -178,7 +178,7 @@ class Offer extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null
+     * @return \Walmart\Models\MP\US\Insights\Gmv|null
     
      */
     public function getPrice()
@@ -189,7 +189,7 @@ class Offer extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPrice|null $price price
+     * @param \Walmart\Models\MP\US\Insights\Gmv|null $price price
      *
      * @return self
     
@@ -207,7 +207,7 @@ class Offer extends BaseModel
     /**
      * Gets shippingSpeed
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed|null
+     * @return \Walmart\Models\MP\US\Insights\ShippingSpeed|null
     
      */
     public function getShippingSpeed()
@@ -218,7 +218,7 @@ class Offer extends BaseModel
     /**
      * Sets shippingSpeed
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferShippingSpeed|null $shippingSpeed shippingSpeed
+     * @param \Walmart\Models\MP\US\Insights\ShippingSpeed|null $shippingSpeed shippingSpeed
      *
      * @return self
     
@@ -236,7 +236,7 @@ class Offer extends BaseModel
     /**
      * Gets publishAndTransactable
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable|null
+     * @return \Walmart\Models\MP\US\Insights\PublishAndTransactable|null
     
      */
     public function getPublishAndTransactable()
@@ -247,7 +247,7 @@ class Offer extends BaseModel
     /**
      * Sets publishAndTransactable
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactable|null $publishAndTransactable publishAndTransactable
+     * @param \Walmart\Models\MP\US\Insights\PublishAndTransactable|null $publishAndTransactable publishAndTransactable
      *
      * @return self
     

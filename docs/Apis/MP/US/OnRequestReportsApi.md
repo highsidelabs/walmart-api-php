@@ -12,7 +12,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `downloadReport()`
 
 ```php
-downloadReport($requestId, $accept): \Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response
+downloadReport($requestId, $accept): \Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse
 ```
 Download Report URL
 
@@ -53,7 +53,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\DownloadReport200Response**](../Model/DownloadReport200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse**](../Model/DownloadReportResponse.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ try {
 ## `generateReport()`
 
 ```php
-generateReport($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload): \Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response
+generateReport($reportType, $reportVersion, $accept, $contentType, $generateReportPayload): \Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse
 ```
 Create Report Request
 
@@ -96,10 +96,10 @@ $reportType = 'reportType_example'; // string | Specifies the report type for th
 $reportVersion = 'reportVersion_example'; // string | Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM.
 $accept = application/json; // string | Only supported Media Type : application/json
 $contentType = application/json; // string | Only supported Media Type : application/json
-$getRequestsStatus200ResponseRequestsInnerPayload = {"rowFilters":[{"type":"rangeFilter","columnName":"Offer Start Date","from":"2020-03-16"},{"type":"rangeFilter","columnName":"Offer End Date","to":"2021-06-16"},{"type":"rangeFilter","columnName":"Price","from":"10","to":"100"},{"type":"enumFilter","columnName":"Publish Status","values":["PUBLISHED"]}],"excludeColumns":["Average Rating","Shelf Name"]}; // \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload | Request body
+$generateReportPayload = {"rowFilters":[{"type":"rangeFilter","columnName":"Offer Start Date","from":"2020-03-16"},{"type":"rangeFilter","columnName":"Offer End Date","to":"2021-06-16"},{"type":"rangeFilter","columnName":"Price","from":"10","to":"100"},{"type":"enumFilter","columnName":"Publish Status","values":["PUBLISHED"]}],"excludeColumns":["Average Rating","Shelf Name"]}; // \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload | Request body
 
 try {
-    $result = $api->generateReport($reportType, $reportVersion, $accept, $contentType, $getRequestsStatus200ResponseRequestsInnerPayload);
+    $result = $api->generateReport($reportType, $reportVersion, $accept, $contentType, $generateReportPayload);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OnRequestReportsApi->generateReport: {$e->getMessage()}\n";
@@ -113,12 +113,12 @@ try {
 | **reportVersion** | **string**| Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. | |
 | **accept** | **string**| Only supported Media Type : application/json | |
 | **contentType** | **string**| Only supported Media Type : application/json | |
-| **getRequestsStatus200ResponseRequestsInnerPayload** | [**\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload**](../Model/GetRequestsStatus200ResponseRequestsInnerPayload.md)| Request body | [optional] |
+| **generateReportPayload** | [**\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload**](../Model/GenerateReportPayload.md)| Request body | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\GenerateReport200Response**](../Model/GenerateReport200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse**](../Model/GenerateReportResponse.md)
 
 ### Authorization
 
@@ -136,7 +136,7 @@ try {
 ## `getRequestsStatus()`
 
 ```php
-getRequestsStatus($reportType, $accept, $reportVersion, $requestStatus, $requestSubmissionStartDate, $requestSubmissionEndDate): \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response
+getRequestsStatus($reportType, $accept, $reportVersion, $requestStatus, $requestSubmissionStartDate, $requestSubmissionEndDate): \Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse
 ```
 Get All Report Requests
 
@@ -185,7 +185,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200Response**](../Model/GetRequestsStatus200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse**](../Model/RequestsStatusResponse.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ try {
 ## `getSingleRequestStatus()`
 
 ```php
-getSingleRequestStatus($requestId, $accept): \Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response
+getSingleRequestStatus($requestId, $accept): \Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse
 ```
 Report Request Status
 
@@ -244,7 +244,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response**](../Model/GetSingleRequestStatus200Response.md)
+[**\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse**](../Model/RequestStatusResponse.md)
 
 ### Authorization
 

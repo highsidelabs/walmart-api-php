@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**headers** | [**\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponseHeaders**](GetInboundShipments200ResponseHeaders.md) |  | [optional]
-**payload** | [**\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200ResponsePayloadInner[]**](GetInboundShipmentItems200ResponsePayloadInner.md) | response payload | [optional]
+**headers** | [**\Walmart\Models\MP\US\Fulfillment\PaginationMetadata**](PaginationMetadata.md) |  | [optional]
+**payload** | [**\Walmart\Models\MP\US\Fulfillment\ShipmentItemDetails[]**](ShipmentItemDetails.md) | response payload | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

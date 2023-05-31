@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **info** | **string** |  | [optional]
 **severity** | **string** |  | [optional]
 **category** | **string** |  | [optional]
-**errorIdentifiers** | [**\Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers**](RefundOrderLines400ResponseErrorErrorIdentifiers.md) |  | [optional]
+**errorIdentifiers** | [**\Walmart\Models\MP\MX\Returns\ErrorIdentifiers**](ErrorIdentifiers.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

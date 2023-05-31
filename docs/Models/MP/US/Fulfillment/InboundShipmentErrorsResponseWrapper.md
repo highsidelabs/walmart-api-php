@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **inboundOrderId** | **string** | Unique ID identifying inbound shipment requests | [optional]
 **createdDate** | **\DateTime** | created date for the request | [optional]
-**returnAddress** | [**\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerReturnAddress**](GetInboundShipments200ResponsePayloadInnerReturnAddress.md) |  | [optional]
-**orderItems** | [**\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]**](CreateFulfillmentRequestPayloadOrderItemsInner.md) | inbound shipment request line items | [optional]
+**returnAddress** | [**\Walmart\Models\MP\US\Fulfillment\ReturnAddress**](ReturnAddress.md) |  | [optional]
+**orderItems** | [**\Walmart\Models\MP\US\Fulfillment\OrderItem[]**](OrderItem.md) | inbound shipment request line items | [optional]
 **errors** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]**](UpdateShipmentQuantity200ResponseErrorsInner.md) | Error in inbound shipment creation | [optional]
 
 

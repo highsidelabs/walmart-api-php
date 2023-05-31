@@ -51,9 +51,9 @@ class LabelGenerationRequestMx extends BaseModel
       */
     protected static array $openAPITypes = [
         'packageType' => 'string',
-        'boxDimensions' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions',
-        'boxItems' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[]',
-        'fromAddress' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestFromAddress',
+        'boxDimensions' => '\Walmart\Models\MP\MX\InternationalShipping\BoxDimensions',
+        'boxItems' => '\Walmart\Models\MP\MX\InternationalShipping\MXBoxItemReq[]',
+        'fromAddress' => '\Walmart\Models\MP\MX\InternationalShipping\Address',
         'purchaseOrderId' => 'string',
         'carrierName' => 'string',
         'carrierServiceType' => 'string'
@@ -220,7 +220,7 @@ class LabelGenerationRequestMx extends BaseModel
     /**
      * Gets boxDimensions
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions
+     * @return \Walmart\Models\MP\MX\InternationalShipping\BoxDimensions
     
      */
     public function getBoxDimensions()
@@ -231,7 +231,7 @@ class LabelGenerationRequestMx extends BaseModel
     /**
      * Sets boxDimensions
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxDimensions $boxDimensions boxDimensions
+     * @param \Walmart\Models\MP\MX\InternationalShipping\BoxDimensions $boxDimensions boxDimensions
      *
      * @return self
     
@@ -249,7 +249,7 @@ class LabelGenerationRequestMx extends BaseModel
     /**
      * Gets boxItems
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[]
+     * @return \Walmart\Models\MP\MX\InternationalShipping\MXBoxItemReq[]
     
      */
     public function getBoxItems()
@@ -260,7 +260,7 @@ class LabelGenerationRequestMx extends BaseModel
     /**
      * Sets boxItems
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner[] $boxItems Box Items
+     * @param \Walmart\Models\MP\MX\InternationalShipping\MXBoxItemReq[] $boxItems Box Items
      *
      * @return self
     
@@ -278,7 +278,7 @@ class LabelGenerationRequestMx extends BaseModel
     /**
      * Gets fromAddress
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestFromAddress
+     * @return \Walmart\Models\MP\MX\InternationalShipping\Address
     
      */
     public function getFromAddress()
@@ -289,7 +289,7 @@ class LabelGenerationRequestMx extends BaseModel
     /**
      * Sets fromAddress
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestFromAddress $fromAddress fromAddress
+     * @param \Walmart\Models\MP\MX\InternationalShipping\Address $fromAddress fromAddress
      *
      * @return self
     

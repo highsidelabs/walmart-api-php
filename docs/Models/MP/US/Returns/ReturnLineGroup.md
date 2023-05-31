@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **groupNo** | **int** | Sequence of group numbers where each returnLineGroups will represent one or more return lines | [optional]
-**returnLines** | [**\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner[]**](GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerReturnLinesInner.md) | Array of return lines | [optional]
-**labels** | [**\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner[]**](GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInner.md) | Array of labels | [optional]
+**returnLines** | [**\Walmart\Models\MP\US\Returns\RefundLine[]**](RefundLine.md) | Array of return lines | [optional]
+**labels** | [**\Walmart\Models\MP\US\Returns\Label[]**](Label.md) | Array of labels | [optional]
 **returnExpectedFlag** | **bool** | Is customer required to send this item back to return center | [optional]
 
 

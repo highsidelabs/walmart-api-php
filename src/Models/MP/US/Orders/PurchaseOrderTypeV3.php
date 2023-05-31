@@ -50,7 +50,7 @@ class PurchaseOrderTypeV3 extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'list' => '\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseList'
+        'list' => '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3List'
     ];
 
     /**
@@ -128,7 +128,7 @@ class PurchaseOrderTypeV3 extends BaseModel
     /**
      * Gets list
      *
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseList|null
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3List|null
     
      */
     public function getList()
@@ -139,7 +139,7 @@ class PurchaseOrderTypeV3 extends BaseModel
     /**
      * Sets list
      *
-     * @param \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseList|null $list list
+     * @param \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3List|null $list list
      *
      * @return self
     

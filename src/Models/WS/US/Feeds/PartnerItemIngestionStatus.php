@@ -57,7 +57,7 @@ class PartnerItemIngestionStatus extends BaseModel
         'wpid' => 'string',
         'index' => 'int',
         'ingestionStatus' => 'string',
-        'ingestionErrors' => '\Walmart\Models\WS\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors'
+        'ingestionErrors' => '\Walmart\Models\WS\US\Feeds\IngestionErrors'
     ];
 
     /**
@@ -359,7 +359,7 @@ class PartnerItemIngestionStatus extends BaseModel
     /**
      * Gets ingestionErrors
      *
-     * @return \Walmart\Models\WS\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null
+     * @return \Walmart\Models\WS\US\Feeds\IngestionErrors|null
     
      */
     public function getIngestionErrors()
@@ -370,7 +370,7 @@ class PartnerItemIngestionStatus extends BaseModel
     /**
      * Sets ingestionErrors
      *
-     * @param \Walmart\Models\WS\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null $ingestionErrors ingestionErrors
+     * @param \Walmart\Models\WS\US\Feeds\IngestionErrors|null $ingestionErrors ingestionErrors
      *
      * @return self
     

@@ -56,8 +56,8 @@ class Order extends BaseModel
         'customerOrderId' => 'string',
         'customerEmailId' => 'string',
         'orderDate' => '\DateTime',
-        'shippingInfo' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo',
-        'orderLines' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines'
+        'shippingInfo' => '\Walmart\Models\MP\CA\Orders\ShippingInfoType',
+        'orderLines' => '\Walmart\Models\MP\CA\Orders\OrderLinesType'
     ];
 
     /**
@@ -299,7 +299,7 @@ class Order extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo
+     * @return \Walmart\Models\MP\CA\Orders\ShippingInfoType
     
      */
     public function getShippingInfo()
@@ -310,7 +310,7 @@ class Order extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo $shippingInfo shippingInfo
+     * @param \Walmart\Models\MP\CA\Orders\ShippingInfoType $shippingInfo shippingInfo
      *
      * @return self
     
@@ -328,7 +328,7 @@ class Order extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines
+     * @return \Walmart\Models\MP\CA\Orders\OrderLinesType
     
      */
     public function getOrderLines()
@@ -339,7 +339,7 @@ class Order extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLines $orderLines orderLines
+     * @param \Walmart\Models\MP\CA\Orders\OrderLinesType $orderLines orderLines
      *
      * @return self
     

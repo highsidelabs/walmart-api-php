@@ -25,7 +25,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `activateRule()`
 
 ```php
-activateRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\ActivateRule200Response
+activateRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\InactivateRuleResponse
 ```
 Activate rule
 
@@ -64,7 +64,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ActivateRule200Response**](../Model/ActivateRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../Model/InactivateRuleResponse.md)
 
 ### Authorization
 
@@ -82,7 +82,7 @@ try {
 ## `changeAssortmentType()`
 
 ```php
-changeAssortmentType($enable, $body): \Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response
+changeAssortmentType($enable, $body): \Walmart\Models\MP\US\Rules\ChangeAssortmentResponse
 ```
 Change assortment type
 
@@ -123,7 +123,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response**](../Model/ChangeAssortmentType200Response.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../Model/ChangeAssortmentResponse.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ try {
 ## `createItemRule()`
 
 ```php
-createItemRule($createItemRuleRequest): \Walmart\Models\MP\US\Rules\CreateItemRule200Response
+createItemRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\GetAllRulesResponse
 ```
 Create a new Rule
 
@@ -162,10 +162,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->rules();
 
-$createItemRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"price","operator":"EQUALS","value":"20"},{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}}; // \Walmart\Models\MP\US\Rules\CreateItemRuleRequest | Request fields
+$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"price","operator":"EQUALS","value":"20"},{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
-    $result = $api->createItemRule($createItemRuleRequest);
+    $result = $api->createItemRule($inactivateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->createItemRule: {$e->getMessage()}\n";
@@ -175,12 +175,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createItemRuleRequest** | [**\Walmart\Models\MP\US\Rules\CreateItemRuleRequest**](../Model/CreateItemRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\CreateItemRule200Response**](../Model/CreateItemRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ try {
 ## `createOverrideExceptions()`
 
 ```php
-createOverrideExceptions($deleteExceptionsRequest): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
+createOverrideExceptions($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\DeleteExceptionResponse
 ```
 Create override exceptions
 
@@ -219,10 +219,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->rules();
 
-$deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest | Request fields
+$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
-    $result = $api->createOverrideExceptions($deleteExceptionsRequest);
+    $result = $api->createOverrideExceptions($inactivateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->createOverrideExceptions: {$e->getMessage()}\n";
@@ -232,12 +232,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deleteExceptionsRequest** | [**\Walmart\Models\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\DeleteExceptions200Response**](../Model/DeleteExceptions200Response.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../Model/DeleteExceptionResponse.md)
 
 ### Authorization
 
@@ -255,7 +255,7 @@ try {
 ## `deleteExceptions()`
 
 ```php
-deleteExceptions($deleteExceptionsRequest): \Walmart\Models\MP\US\Rules\DeleteExceptions200Response
+deleteExceptions($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\DeleteExceptionResponse
 ```
 Delete exceptions
 
@@ -276,10 +276,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->rules();
 
-$deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest | Request fields
+$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
-    $result = $api->deleteExceptions($deleteExceptionsRequest);
+    $result = $api->deleteExceptions($inactivateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->deleteExceptions: {$e->getMessage()}\n";
@@ -289,12 +289,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **deleteExceptionsRequest** | [**\Walmart\Models\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\DeleteExceptions200Response**](../Model/DeleteExceptions200Response.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../Model/DeleteExceptionResponse.md)
 
 ### Authorization
 
@@ -312,7 +312,7 @@ try {
 ## `deleteRule()`
 
 ```php
-deleteRule($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\DeleteRule200Response
+deleteRule($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\InactivateRuleResponse
 ```
 Delete rule
 
@@ -353,7 +353,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\DeleteRule200Response**](../Model/DeleteRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../Model/InactivateRuleResponse.md)
 
 ### Authorization
 
@@ -484,7 +484,7 @@ try {
 ## `getARule()`
 
 ```php
-getARule($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
+getARule($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\GetAllRulesResponse
 ```
 Get a rule
 
@@ -525,7 +525,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
 
 ### Authorization
 
@@ -543,7 +543,7 @@ try {
 ## `getAllAreas()`
 
 ```php
-getAllAreas(): \Walmart\Models\MP\US\Rules\GetAllAreas200Response
+getAllAreas(): \Walmart\Models\MP\US\Rules\ChangeAssortmentResponse
 ```
 Get all areas
 
@@ -579,7 +579,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllAreas200Response**](../Model/GetAllAreas200Response.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../Model/ChangeAssortmentResponse.md)
 
 ### Authorization
 
@@ -597,7 +597,7 @@ This endpoint does not need any parameter.
 ## `getAllExceptions()`
 
 ```php
-getAllExceptions(): \Walmart\Models\MP\US\Rules\GetAllExceptions200Response
+getAllExceptions(): \Walmart\Models\MP\US\Rules\GetAllExceptionsResponse
 ```
 Gets all exceptions
 
@@ -633,7 +633,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllExceptions200Response**](../Model/GetAllExceptions200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllExceptionsResponse**](../Model/GetAllExceptionsResponse.md)
 
 ### Authorization
 
@@ -651,7 +651,7 @@ This endpoint does not need any parameter.
 ## `getAllRules()`
 
 ```php
-getAllRules(): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
+getAllRules(): \Walmart\Models\MP\US\Rules\GetAllRulesResponse
 ```
 Get all rules
 
@@ -687,7 +687,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
 
 ### Authorization
 
@@ -705,7 +705,7 @@ This endpoint does not need any parameter.
 ## `getAllSubCategories()`
 
 ```php
-getAllSubCategories(): \Walmart\Models\MP\US\Rules\GetAllSubCategories200Response
+getAllSubCategories(): \Walmart\Models\MP\US\Rules\ChangeAssortmentResponse
 ```
 Get all sub-categories
 
@@ -741,7 +741,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllSubCategories200Response**](../Model/GetAllSubCategories200Response.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../Model/ChangeAssortmentResponse.md)
 
 ### Authorization
 
@@ -759,7 +759,7 @@ This endpoint does not need any parameter.
 ## `getSimulationResult()`
 
 ```php
-getSimulationResult($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\GetSimulationResult200Response
+getSimulationResult($ruleId, $ruleStatus): \Walmart\Models\MP\US\Rules\GetSimulationCountResponse
 ```
 Get simulation result
 
@@ -800,7 +800,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetSimulationResult200Response**](../Model/GetSimulationResult200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetSimulationCountResponse**](../Model/GetSimulationCountResponse.md)
 
 ### Authorization
 
@@ -818,7 +818,7 @@ try {
 ## `inactivateRule()`
 
 ```php
-inactivateRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\InactivateRule200Response
+inactivateRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\InactivateRuleResponse
 ```
 Inactivate rule
 
@@ -857,7 +857,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\InactivateRule200Response**](../Model/InactivateRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../Model/InactivateRuleResponse.md)
 
 ### Authorization
 
@@ -875,7 +875,7 @@ try {
 ## `updateRule()`
 
 ```php
-updateRule($updateRuleRequest): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
+updateRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\GetAllRulesResponse
 ```
 Update rule
 
@@ -896,10 +896,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->rules();
 
-$updateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"511","ruleStatus":"Submitted","name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}]}; // \Walmart\Models\MP\US\Rules\UpdateRuleRequest | Request fields
+$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"511","ruleStatus":"Submitted","name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}]}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
-    $result = $api->updateRule($updateRuleRequest);
+    $result = $api->updateRule($inactivateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->updateRule: {$e->getMessage()}\n";
@@ -909,12 +909,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateRuleRequest** | [**\Walmart\Models\MP\US\Rules\UpdateRuleRequest**](../Model/UpdateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
 
 ### Authorization
 
@@ -932,7 +932,7 @@ try {
 ## `updateShippingAreaToRule()`
 
 ```php
-updateShippingAreaToRule($updateShippingAreaToRuleRequest): \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response
+updateShippingAreaToRule($inactivateRuleRequest): \Walmart\Models\MP\US\Rules\GetAllRulesResponse
 ```
 Update shipping area to rules
 
@@ -953,10 +953,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->rules();
 
-$updateShippingAreaToRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"ruleId":"612","ruleStatus":"Submitted","actions":[{"twoDayShippingRegions":[{"regionCode":"NE","subRegions":[{"subRegionCode":"NY1"},{"subRegionCode":"NY2"}]}]}]}}; // \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest | Request fields
+$inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"ruleId":"612","ruleStatus":"Submitted","actions":[{"twoDayShippingRegions":[{"regionCode":"NE","subRegions":[{"subRegionCode":"NY1"},{"subRegionCode":"NY2"}]}]}]}}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
-    $result = $api->updateShippingAreaToRule($updateShippingAreaToRuleRequest);
+    $result = $api->updateShippingAreaToRule($inactivateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->updateShippingAreaToRule: {$e->getMessage()}\n";
@@ -966,12 +966,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShippingAreaToRuleRequest** | [**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest**](../Model/UpdateShippingAreaToRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200Response**](../Model/UpdateShippingAreaToRule200Response.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
 
 ### Authorization
 

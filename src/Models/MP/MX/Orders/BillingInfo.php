@@ -53,7 +53,7 @@ class BillingInfo extends BaseModel
       */
     protected static array $openAPITypes = [
         'phone' => 'string',
-        'postalAddress' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress'
+        'postalAddress' => '\Walmart\Models\MP\MX\Orders\PostalAddress'
     ];
 
     /**
@@ -166,7 +166,7 @@ class BillingInfo extends BaseModel
     /**
      * Gets postalAddress
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress|null
+     * @return \Walmart\Models\MP\MX\Orders\PostalAddress|null
     
      */
     public function getPostalAddress()
@@ -177,7 +177,7 @@ class BillingInfo extends BaseModel
     /**
      * Sets postalAddress
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress|null $postalAddress postalAddress
+     * @param \Walmart\Models\MP\MX\Orders\PostalAddress|null $postalAddress postalAddress
      *
      * @return self
     

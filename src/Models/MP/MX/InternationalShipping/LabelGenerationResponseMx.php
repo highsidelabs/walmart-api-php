@@ -54,12 +54,12 @@ class LabelGenerationResponseMx extends BaseModel
     protected static array $openAPITypes = [
         'purchaseOrderId' => 'string',
         'trackingNo' => 'string',
-        'boxItems' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseDataBoxItemsInner[]',
+        'boxItems' => '\Walmart\Models\MP\MX\InternationalShipping\MXBoxItemResponse[]',
         'carrierName' => 'string',
         'carrierFullName' => 'string',
         'carrierServiceType' => 'string',
         'trackingUrl' => 'string',
-        'shippingDocuments' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseDataShippingDocuments'
+        'shippingDocuments' => '\Walmart\Models\MP\MX\InternationalShipping\ShippingDocument'
     ];
 
     /**
@@ -237,7 +237,7 @@ class LabelGenerationResponseMx extends BaseModel
     /**
      * Gets boxItems
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseDataBoxItemsInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\MXBoxItemResponse[]|null
     
      */
     public function getBoxItems()
@@ -248,7 +248,7 @@ class LabelGenerationResponseMx extends BaseModel
     /**
      * Sets boxItems
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseDataBoxItemsInner[]|null $boxItems Box Items
+     * @param \Walmart\Models\MP\MX\InternationalShipping\MXBoxItemResponse[]|null $boxItems Box Items
      *
      * @return self
     
@@ -382,7 +382,7 @@ class LabelGenerationResponseMx extends BaseModel
     /**
      * Gets shippingDocuments
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\ShippingDocument|null
     
      */
     public function getShippingDocuments()
@@ -393,7 +393,7 @@ class LabelGenerationResponseMx extends BaseModel
     /**
      * Sets shippingDocuments
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null $shippingDocuments shippingDocuments
+     * @param \Walmart\Models\MP\MX\InternationalShipping\ShippingDocument|null $shippingDocuments shippingDocuments
      *
      * @return self
     

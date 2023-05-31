@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**errors** | [**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200ResponseErrorsInner[]**](UpdatePromotionalPrices200ResponseErrorsInner.md) |  | [optional]
+**errors** | [**\Walmart\Models\MP\US\Promotions\GatewayError[]**](GatewayError.md) |  | [optional]
 **statusCode** | **int** |  | [optional]
 **mart** | **string** | Marketplace name. Example: Walmart-US | [optional]
 **sku** | **string** | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. | [optional]

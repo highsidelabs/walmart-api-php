@@ -57,7 +57,7 @@ class ShipmentPackage extends BaseModel
         'height' => 'float',
         'width' => 'float',
         'lengthUOM' => 'string',
-        'labelInformation' => '\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInnerLabelInformation',
+        'labelInformation' => '\Walmart\Models\MP\US\Fulfillment\LabelInformation',
         'billingWeight' => 'float',
         'netCharge' => 'float',
         'nominalCharge' => 'float',
@@ -533,7 +533,7 @@ class ShipmentPackage extends BaseModel
     /**
      * Gets labelInformation
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInnerLabelInformation|null
+     * @return \Walmart\Models\MP\US\Fulfillment\LabelInformation|null
     
      */
     public function getLabelInformation()
@@ -544,7 +544,7 @@ class ShipmentPackage extends BaseModel
     /**
      * Sets labelInformation
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseShipmentPackagesInnerLabelInformation|null $labelInformation labelInformation
+     * @param \Walmart\Models\MP\US\Fulfillment\LabelInformation|null $labelInformation labelInformation
      *
      * @return self
     

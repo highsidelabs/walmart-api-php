@@ -64,8 +64,8 @@ class GetOrderResponseRecord extends BaseModel
         'shippingInfo' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo',
         'orderLines' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines',
         'paymentTypes' => 'string[]',
-        'orderSummary' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderSummary',
-        'pickupPersons' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInner[]',
+        'orderSummary' => '\Walmart\Models\DSV\US\Orders\OrderSummary',
+        'pickupPersons' => '\Walmart\Models\DSV\US\Orders\PickupPerson[]',
         'shipNode' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShipNode'
     ];
 
@@ -594,7 +594,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets orderSummary
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderSummary|null
+     * @return \Walmart\Models\DSV\US\Orders\OrderSummary|null
     
      */
     public function getOrderSummary()
@@ -605,7 +605,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets orderSummary
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderSummary|null $orderSummary orderSummary
+     * @param \Walmart\Models\DSV\US\Orders\OrderSummary|null $orderSummary orderSummary
      *
      * @return self
     
@@ -623,7 +623,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets pickupPersons
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\PickupPerson[]|null
     
      */
     public function getPickupPersons()
@@ -634,7 +634,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets pickupPersons
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInner[]|null $pickupPersons List of pickup persons
+     * @param \Walmart\Models\DSV\US\Orders\PickupPerson[]|null $pickupPersons List of pickup persons
      *
      * @return self
     

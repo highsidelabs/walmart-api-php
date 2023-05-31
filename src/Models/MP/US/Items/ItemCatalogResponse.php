@@ -63,20 +63,20 @@ class ItemCatalogResponse extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerPrice',
+        'price' => '\Walmart\Models\MP\US\Items\Price',
         'brand' => 'string',
         'numReviews' => 'string',
         'customerRating' => 'string',
         'manufacturer' => 'string',
         'fulfillmentType' => 'string',
-        'publishedStatus' => '\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerPublishedStatus',
+        'publishedStatus' => '\Walmart\Models\MP\US\Items\PublishedStatus',
         'inventoryStatus' => 'string',
         'lifecycleStatus' => 'string',
         'shopRef' => 'string',
         'shopProductId' => 'string',
         'shopVariantId' => 'string',
         'variantGroupId' => 'string',
-        'variantGroupInfo' => '\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo'
+        'variantGroupInfo' => '\Walmart\Models\MP\US\Items\VariantGroupInfo'
     ];
 
     /**
@@ -660,7 +660,7 @@ class ItemCatalogResponse extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerPrice|null
+     * @return \Walmart\Models\MP\US\Items\Price|null
     
      */
     public function getPrice()
@@ -671,7 +671,7 @@ class ItemCatalogResponse extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerPrice|null $price price
+     * @param \Walmart\Models\MP\US\Items\Price|null $price price
      *
      * @return self
     
@@ -834,7 +834,7 @@ class ItemCatalogResponse extends BaseModel
     /**
      * Gets publishedStatus
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerPublishedStatus|null
+     * @return \Walmart\Models\MP\US\Items\PublishedStatus|null
     
      */
     public function getPublishedStatus()
@@ -845,7 +845,7 @@ class ItemCatalogResponse extends BaseModel
     /**
      * Sets publishedStatus
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerPublishedStatus|null $publishedStatus publishedStatus
+     * @param \Walmart\Models\MP\US\Items\PublishedStatus|null $publishedStatus publishedStatus
      *
      * @return self
     
@@ -1037,7 +1037,7 @@ class ItemCatalogResponse extends BaseModel
     /**
      * Gets variantGroupInfo
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null
+     * @return \Walmart\Models\MP\US\Items\VariantGroupInfo|null
     
      */
     public function getVariantGroupInfo()
@@ -1048,7 +1048,7 @@ class ItemCatalogResponse extends BaseModel
     /**
      * Sets variantGroupInfo
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfo|null $variantGroupInfo variantGroupInfo
+     * @param \Walmart\Models\MP\US\Items\VariantGroupInfo|null $variantGroupInfo variantGroupInfo
      *
      * @return self
     

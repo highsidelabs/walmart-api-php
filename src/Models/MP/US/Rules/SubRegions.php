@@ -53,7 +53,7 @@ class SubRegions extends BaseModel
       */
     protected static array $openAPITypes = [
         'regionCode' => 'string',
-        'subRegions' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]'
+        'subRegions' => '\Walmart\Models\MP\US\Rules\SubRegionCode[]'
     ];
 
     /**
@@ -166,7 +166,7 @@ class SubRegions extends BaseModel
     /**
      * Gets subRegions
      *
-     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\SubRegionCode[]|null
     
      */
     public function getSubRegions()
@@ -177,7 +177,7 @@ class SubRegions extends BaseModel
     /**
      * Sets subRegions
      *
-     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInnerTwoDayShippingRegionsInnerSubRegionsInner[]|null $subRegions subRegions
+     * @param \Walmart\Models\MP\US\Rules\SubRegionCode[]|null $subRegions subRegions
      *
      * @return self
     

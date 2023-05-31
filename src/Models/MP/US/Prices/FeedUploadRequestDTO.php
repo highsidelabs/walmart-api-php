@@ -50,8 +50,8 @@ class FeedUploadRequestDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'itemFeedHeader' => '\Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader',
-        'item' => '\Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInner[]'
+        'itemFeedHeader' => '\Walmart\Models\MP\US\Prices\FeedItemsHeaderRequestDTO',
+        'item' => '\Walmart\Models\MP\US\Prices\StrategyDetailsRequestDTO[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Gets itemFeedHeader
      *
-     * @return \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader|null
+     * @return \Walmart\Models\MP\US\Prices\FeedItemsHeaderRequestDTO|null
     
      */
     public function getItemFeedHeader()
@@ -146,7 +146,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Sets itemFeedHeader
      *
-     * @param \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemFeedHeader|null $itemFeedHeader itemFeedHeader
+     * @param \Walmart\Models\MP\US\Prices\FeedItemsHeaderRequestDTO|null $itemFeedHeader itemFeedHeader
      *
      * @return self
     
@@ -164,7 +164,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Gets item
      *
-     * @return \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInner[]|null
+     * @return \Walmart\Models\MP\US\Prices\StrategyDetailsRequestDTO[]|null
     
      */
     public function getItem()
@@ -175,7 +175,7 @@ class FeedUploadRequestDTO extends BaseModel
     /**
      * Sets item
      *
-     * @param \Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInner[]|null $item item
+     * @param \Walmart\Models\MP\US\Prices\StrategyDetailsRequestDTO[]|null $item item
      *
      * @return self
     

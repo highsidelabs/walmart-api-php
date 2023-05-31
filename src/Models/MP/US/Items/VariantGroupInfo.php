@@ -53,7 +53,7 @@ class VariantGroupInfo extends BaseModel
       */
     protected static array $openAPITypes = [
         'isPrimary' => 'bool',
-        'groupingAttributes' => '\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfoGroupingAttributes',
+        'groupingAttributes' => '\Walmart\Models\MP\US\Items\GroupingAttributes',
         'primary' => 'bool'
     ];
 
@@ -173,7 +173,7 @@ class VariantGroupInfo extends BaseModel
     /**
      * Gets groupingAttributes
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfoGroupingAttributes|null
+     * @return \Walmart\Models\MP\US\Items\GroupingAttributes|null
     
      */
     public function getGroupingAttributes()
@@ -184,7 +184,7 @@ class VariantGroupInfo extends BaseModel
     /**
      * Sets groupingAttributes
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInnerVariantGroupInfoGroupingAttributes|null $groupingAttributes groupingAttributes
+     * @param \Walmart\Models\MP\US\Items\GroupingAttributes|null $groupingAttributes groupingAttributes
      *
      * @return self
     

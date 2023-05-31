@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **info** | **string** |  | [optional]
 **severity** | **string** |  | [optional]
 **category** | **string** |  | [optional]
-**causes** | [**\Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInnerCausesInner[]**](FeedRecordResponseErrorsInnerCausesInner.md) |  | [optional]
+**causes** | [**\Walmart\Models\CP\US\Feeds\Cause[]**](Cause.md) |  | [optional]
 **errorIdentifiers** | **array<string,object>** |  | [optional]
 **component** | **string** |  | [optional]
 **type** | **string** |  | [optional]

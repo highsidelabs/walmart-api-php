@@ -52,7 +52,7 @@ class GenerateReportPayload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rowFilters' => '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]',
+        'rowFilters' => '\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayloadRowFiltersInner[]',
         'excludeColumns' => 'string[]'
     ];
 
@@ -137,7 +137,7 @@ class GenerateReportPayload extends BaseModel
     /**
      * Gets rowFilters
      *
-     * @return \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]|null
+     * @return \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayloadRowFiltersInner[]|null
     
      */
     public function getRowFilters()
@@ -148,7 +148,7 @@ class GenerateReportPayload extends BaseModel
     /**
      * Sets rowFilters
      *
-     * @param \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayloadRowFiltersInner[]|null $rowFilters Row Level filters
+     * @param \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayloadRowFiltersInner[]|null $rowFilters Row Level filters
      *
      * @return self
     

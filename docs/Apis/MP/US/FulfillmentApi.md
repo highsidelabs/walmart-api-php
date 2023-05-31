@@ -31,7 +31,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `cancelFulfillment()`
 
 ```php
-cancelFulfillment($cancelFulfillmentRequest): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
+cancelFulfillment($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
 ```
 Cancel Customer Order
 
@@ -52,10 +52,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$cancelFulfillmentRequest = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"sellerOrderId":"301878911210253","orderItems":[{"sellerLineId":"1232456","qty":{"unitOfMeasure":"EACH","measurementValue":2}}]}}; // \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest | Request fields
+$createCustomerOrderRequestWrapper = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"sellerOrderId":"301878911210253","orderItems":[{"sellerLineId":"1232456","qty":{"unitOfMeasure":"EACH","measurementValue":2}}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper | Request fields
 
 try {
-    $result = $api->cancelFulfillment($cancelFulfillmentRequest);
+    $result = $api->cancelFulfillment($createCustomerOrderRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->cancelFulfillment: {$e->getMessage()}\n";
@@ -65,12 +65,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **cancelFulfillmentRequest** | [**\Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequest**](../Model/CancelFulfillmentRequest.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response**](../Model/CreateFulfillment200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ try {
 ## `confirmCarrierRateQuote()`
 
 ```php
-confirmCarrierRateQuote($confirmCarrierRateQuoteRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+confirmCarrierRateQuote($carrierQuoteConfirmRequestWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Confirm Carrier Rate Quote
 
@@ -166,10 +166,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$confirmCarrierRateQuoteRequest = new \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest(); // \Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest | Request fields
+$carrierQuoteConfirmRequestWrapper = new \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper(); // \Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper | Request fields
 
 try {
-    $result = $api->confirmCarrierRateQuote($confirmCarrierRateQuoteRequest);
+    $result = $api->confirmCarrierRateQuote($carrierQuoteConfirmRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->confirmCarrierRateQuote: {$e->getMessage()}\n";
@@ -179,7 +179,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **confirmCarrierRateQuoteRequest** | [**\Walmart\Models\MP\US\Fulfillment\ConfirmCarrierRateQuoteRequest**](../Model/ConfirmCarrierRateQuoteRequest.md)| Request fields | |
+| **carrierQuoteConfirmRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper**](../Model/CarrierQuoteConfirmRequestWrapper.md)| Request fields | |
 
 
 ### Return type
@@ -202,7 +202,7 @@ try {
 ## `convertItemForWfs()`
 
 ```php
-convertItemForWfs($feedType, $convertItemForWfsRequest): \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response
+convertItemForWfs($feedType, $convertItemForWfsRequest): \Walmart\Models\MP\US\Fulfillment\FeedId
 ```
 Convert items for WFS
 
@@ -243,7 +243,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfs200Response**](../Model/ConvertItemForWfs200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ try {
 ## `createCarrierRateQuotes()`
 
 ```php
-createCarrierRateQuotes($createCarrierRateQuotesRequest): \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response
+createCarrierRateQuotes($carrierQuoteRequestV2Wrapper): \Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper
 ```
 Create Carrier Rate Quote
 
@@ -282,10 +282,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$createCarrierRateQuotesRequest = new \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest(); // \Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest | Request fields
+$carrierQuoteRequestV2Wrapper = new \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper(); // \Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper | Request fields
 
 try {
-    $result = $api->createCarrierRateQuotes($createCarrierRateQuotesRequest);
+    $result = $api->createCarrierRateQuotes($carrierQuoteRequestV2Wrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->createCarrierRateQuotes: {$e->getMessage()}\n";
@@ -295,12 +295,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCarrierRateQuotesRequest** | [**\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotesRequest**](../Model/CreateCarrierRateQuotesRequest.md)| Request fields | |
+| **carrierQuoteRequestV2Wrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper**](../Model/CarrierQuoteRequestV2Wrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CreateCarrierRateQuotes200Response**](../Model/CreateCarrierRateQuotes200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper**](../Model/QuoteResponseV2Wrapper.md)
 
 ### Authorization
 
@@ -318,7 +318,7 @@ try {
 ## `createFulfillment()`
 
 ```php
-createFulfillment($createFulfillmentRequest): \Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response
+createFulfillment($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
 ```
 Create Customer Order
 
@@ -339,10 +339,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$createFulfillmentRequest = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"orderChannelId":"1B66575C0D9411EBADC10242AC120002","sellerOrderId":"002","orderPlacedTime":"2022-03-25T21:58:30.143Z","needsConfirmation":false,"partialFulfillments":false,"customer":{"contact":{"name":{"firstName":"Jason","lastName":"Bourne"},"phone":"6462285574","email":"jason.bourne@gmail.com"}},"orderItems":[{"fulfillmentType":"S2H","sellerLineId":"1","itemDetail":{"itemId":"452139670","description":"Ipad white"},"qty":{"unitOfMeasure":"EACH","measurementValue":2},"shippingMethod":"RUSH","shippingTo":{"contact":{"name":{"firstName":"Oscar","lastName":"Merino"},"phone":"6462285574"},"address":{"line1":"56 east 41 st street","line2":"Food Trends Store","line3":"","city":"New york","state":"NY","country":"USA","zip":"10017","addressType":"RESIDENTIAL"}},"chargeDetails":[{"chargeCategory":"PRODUCT","chargeName":"Sale Price","chargePerUnit":{"currencyAmount":5,"currencyUnit":"USD"},"taxDetails":{"taxPerLine":{"currencyAmount":1.04,"currencyUnit":"USD"}}}]}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest | Request fields
+$createCustomerOrderRequestWrapper = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"orderChannelId":"Enter the orderChannelId","sellerOrderId":"Enter a unique orderId","orderPlacedTime":"Enter order placed time, format : 2022-03-25T21:58:30.143Z","needsConfirmation":false,"partialFulfillments":false,"customer":{"contact":{"name":{"firstName":"Enter Customer firstName","lastName":"Enter Customer lastName"},"phone":"Enter Customer phone number","email":"Enter Customer email"}},"orderItems":[{"sellerLineId":"1, increment for the next line","fulfillmentType":"DELIVERY","shippingMethod":"EXPEDITED","itemDetail":{"sku":"Enter sku of the item","description":"Enter item description"},"qty":{"unitOfMeasure":"EACH","measurementValue":2},"shippingTo":{"contact":{"name":{"firstName":"Enter delivery info : firstName","lastName":"Enter delivery info : lastName"},"phone":"Enter delivery info : phone number"},"address":{"line1":"Enter delivery address line1","line2":"Enter delivery address line2","city":"Enter delivery city","state":"Enter delivery state","country":"USA","zip":"Enter delivery zip code","addressType":"RESIDENTIAL"}},"chargeDetails":[{"chargeCategory":"PRODUCT","chargeName":"Sale Price","chargePerUnit":{"currencyAmount":0,"currencyUnit":"USD"},"taxDetails":{"taxPerLine":{"currencyAmount":0,"currencyUnit":"USD"}}}]}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper | Request fields
 
 try {
-    $result = $api->createFulfillment($createFulfillmentRequest);
+    $result = $api->createFulfillment($createCustomerOrderRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->createFulfillment: {$e->getMessage()}\n";
@@ -352,12 +352,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createFulfillmentRequest** | [**\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequest**](../Model/CreateFulfillmentRequest.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CreateFulfillment200Response**](../Model/CreateFulfillment200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -432,7 +432,7 @@ try {
 ## `createInboundShipmentLabelV2()`
 
 ```php
-createInboundShipmentLabelV2($createInboundShipmentLabelV2Request): string
+createInboundShipmentLabelV2($labelV2RequestWrapper): string
 ```
 Create Inbound Shipment label
 
@@ -453,10 +453,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$createInboundShipmentLabelV2Request = new \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request(); // \Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request | Request fields
+$labelV2RequestWrapper = new \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper(); // \Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper | Request fields
 
 try {
-    $result = $api->createInboundShipmentLabelV2($createInboundShipmentLabelV2Request);
+    $result = $api->createInboundShipmentLabelV2($labelV2RequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->createInboundShipmentLabelV2: {$e->getMessage()}\n";
@@ -466,7 +466,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createInboundShipmentLabelV2Request** | [**\Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request**](../Model/CreateInboundShipmentLabelV2Request.md)| Request fields | |
+| **labelV2RequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper**](../Model/LabelV2RequestWrapper.md)| Request fields | |
 
 
 ### Return type
@@ -489,7 +489,7 @@ try {
 ## `createShipment()`
 
 ```php
-createShipment($createShipmentRequest): \Walmart\Models\MP\US\Fulfillment\CreateShipment200Response
+createShipment($inboundShipmentRequestWrapper): \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO
 ```
 Create Inbound Shipment
 
@@ -510,10 +510,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$createShipmentRequest = {"inboundOrderId":"8778881015027","inboundServices":{"inventoryTransferService":"Y"},"returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"USA","postalCode":"94086"},"orderItems":[{"productId":"00894147009695","productType":"GTIN","sku":"WILL-SL969","itemDesc":"Blue jeans","itemQty":10,"vendorPackQty":10,"innerPackQty":1,"expectedDeliveryDate":"2020-11-21T00:00:00.000Z"}]}; // \Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest | Request fields
+$inboundShipmentRequestWrapper = {"inboundOrderId":"8778881015027","inboundServices":{"inventoryTransferService":"Y"},"returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"USA","postalCode":"94086"},"orderItems":[{"productId":"00894147009695","productType":"GTIN","sku":"WILL-SL969","itemDesc":"Blue jeans","itemQty":10,"vendorPackQty":10,"innerPackQty":1,"expectedDeliveryDate":"2020-11-21T00:00:00.000Z"}]}; // \Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper | Request fields
 
 try {
-    $result = $api->createShipment($createShipmentRequest);
+    $result = $api->createShipment($inboundShipmentRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->createShipment: {$e->getMessage()}\n";
@@ -523,12 +523,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createShipmentRequest** | [**\Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest**](../Model/CreateShipmentRequest.md)| Request fields | |
+| **inboundShipmentRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper**](../Model/InboundShipmentRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CreateShipment200Response**](../Model/CreateShipment200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../Model/InboundShipmentCreateResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -546,7 +546,7 @@ try {
 ## `getCarrierRateQuote()`
 
 ```php
-getCarrierRateQuote($shipmentId, $mode): \Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response
+getCarrierRateQuote($shipmentId, $mode): \Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper
 ```
 Get Carrier Rate Quote
 
@@ -587,7 +587,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200Response**](../Model/GetCarrierRateQuote200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper**](../Model/GetRateQuoteInfoResponseWrapper.md)
 
 ### Authorization
 
@@ -605,7 +605,7 @@ try {
 ## `getFulfillmentOrdersStatus()`
 
 ```php
-getFulfillmentOrdersStatus($orgId, $limit, $offset, $orderNumber, $trackingNumber, $shipmentNumber, $fromOrderDate, $toOrderDate, $sortOrder, $sortBy): \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response
+getFulfillmentOrdersStatus($orgId, $limit, $offset, $orderNumber, $trackingNumber, $shipmentNumber, $fromOrderDate, $toOrderDate, $sortOrder, $sortBy): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
 ```
 Get fulfillment orders status
 
@@ -662,7 +662,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200Response**](../Model/GetFulfillmentOrdersStatus200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -680,7 +680,7 @@ try {
 ## `getInboundOrderErrors()`
 
 ```php
-getInboundOrderErrors($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response
+getInboundOrderErrors($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
 ```
 Get Inbound Shipment errors
 
@@ -723,7 +723,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetInboundOrderErrors200Response**](../Model/GetInboundOrderErrors200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
@@ -741,7 +741,7 @@ try {
 ## `getInboundShipmentItems()`
 
 ```php
-getInboundShipmentItems($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response
+getInboundShipmentItems($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
 ```
 Get Inbound Shipment Items
 
@@ -784,7 +784,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetInboundShipmentItems200Response**](../Model/GetInboundShipmentItems200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
@@ -802,7 +802,7 @@ try {
 ## `getInboundShipments()`
 
 ```php
-getInboundShipments($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate): \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response
+getInboundShipments($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
 ```
 Get Shipments
 
@@ -853,7 +853,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200Response**](../Model/GetInboundShipments200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
@@ -925,7 +925,7 @@ This endpoint does not need any parameter.
 ## `getWFSInventoryLog()`
 
 ```php
-getWFSInventoryLog($gtin, $shipmentId, $transactionType, $transactionLocation, $startDate, $endDate, $sortBy, $sortOrder, $offset, $limit): \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response
+getWFSInventoryLog($gtin, $shipmentId, $transactionType, $transactionLocation, $startDate, $endDate, $sortBy, $sortOrder, $offset, $limit): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
 ```
 Get Inventory Log for a WFS item
 
@@ -982,7 +982,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200Response**](../Model/GetWFSInventoryLog200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
@@ -1000,7 +1000,7 @@ try {
 ## `inboundPreview()`
 
 ```php
-inboundPreview($inboundPreviewRequest): \Walmart\Models\MP\US\Fulfillment\InboundPreview200Response
+inboundPreview($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO
 ```
 Fetch Inbound Preview
 
@@ -1021,10 +1021,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$inboundPreviewRequest = {"header":{"headerAttributes":{"buId":"0","martId":"0"}},"payload":{"inboundOrderId":"WFS_P132398111-ITS1011","returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"US","postalCode":"94086"},"orderItems":[{"productId":"06484856148873","productType":"GTIN","sku":"SKU-06476211912694","itemDesc":"tennis ball","itemQty":5,"vendorPackQty":5,"innerPackQty":1,"expectedDeliveryDate":"2023-05-25T15:33:33-07:00","addOnServices":[{"serviceType":"LABEL"}]}]}}; // \Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest | Request fields
+$createCustomerOrderRequestWrapper = {"header":{"headerAttributes":{"buId":"0","martId":"0"}},"payload":{"inboundOrderId":"WFS_P132398111-ITS1011","returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"US","postalCode":"94086"},"orderItems":[{"productId":"06484856148873","productType":"GTIN","sku":"SKU-06476211912694","itemDesc":"tennis ball","itemQty":5,"vendorPackQty":5,"innerPackQty":1,"expectedDeliveryDate":"2023-05-25T15:33:33-07:00","addOnServices":[{"serviceType":"LABEL"}]}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper | Request fields
 
 try {
-    $result = $api->inboundPreview($inboundPreviewRequest);
+    $result = $api->inboundPreview($createCustomerOrderRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->inboundPreview: {$e->getMessage()}\n";
@@ -1034,12 +1034,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inboundPreviewRequest** | [**\Walmart\Models\MP\US\Fulfillment\InboundPreviewRequest**](../Model/InboundPreviewRequest.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InboundPreview200Response**](../Model/InboundPreview200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../Model/InboundShipmentCreateResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -1057,7 +1057,7 @@ try {
 ## `printCarrierLabel()`
 
 ```php
-printCarrierLabel($shipmentId, $printCarrierLabelRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+printCarrierLabel($shipmentId, $carrierLabelRequestWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Print Carrier Label
 
@@ -1079,10 +1079,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->fulfillment();
 
 $shipmentId = 'shipmentId_example'; // string | Unique ID identifying each shipment.
-$printCarrierLabelRequest = new \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest(); // \Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest
+$carrierLabelRequestWrapper = new \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper(); // \Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper
 
 try {
-    $result = $api->printCarrierLabel($shipmentId, $printCarrierLabelRequest);
+    $result = $api->printCarrierLabel($shipmentId, $carrierLabelRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->printCarrierLabel: {$e->getMessage()}\n";
@@ -1093,7 +1093,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **shipmentId** | **string**| Unique ID identifying each shipment. | |
-| **printCarrierLabelRequest** | [**\Walmart\Models\MP\US\Fulfillment\PrintCarrierLabelRequest**](../Model/PrintCarrierLabelRequest.md)|  | |
+| **carrierLabelRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper**](../Model/CarrierLabelRequestWrapper.md)|  | |
 
 
 ### Return type
@@ -1116,7 +1116,7 @@ try {
 ## `promiseFulfillments()`
 
 ```php
-promiseFulfillments($promiseFulfillmentsRequest): \Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response
+promiseFulfillments($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
 ```
 Fetch Delivery Promise Details
 
@@ -1137,10 +1137,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$promiseFulfillmentsRequest = {"header":{"headerAttributes":{"martId":"202","buId":"0"}},"payload":{"requestId":"dcd127e2-c944-4a40-ac88-d1058c73e33e","destinations":[{"address":{"city":"Milpitas","addressType":"RESIDENTIAL","postalCode":"95035","addressLineOne":"261 Odyssey Ln","addressLineTwo":"222","isPOBox":false,"countryCode":"US","stateCode":"CA"},"fulfillmentType":"DELIVERY"}],"offerSelections":[{"offers":[{"sku":"OMP-B01-L","lineId":"249ac8e1-e6c2-4806-81a5-54215eb16b00","salesUnit":"Each","requestedQuantity":{"measurementValue":1,"unitOfMeasure":"EA"}}]}]}}; // \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest | Request fields
+$createCustomerOrderRequestWrapper = {"header":{"headerAttributes":{"martId":"202","buId":"0"}},"payload":{"requestId":"dcd127e2-c944-4a40-ac88-d1058c73e33e","destinations":[{"address":{"city":"Milpitas","addressType":"RESIDENTIAL","postalCode":"95035","addressLineOne":"261 Odyssey Ln","addressLineTwo":"222","isPOBox":false,"countryCode":"US","stateCode":"CA"},"fulfillmentType":"DELIVERY"}],"offerSelections":[{"offers":[{"sku":"OMP-B01-L","lineId":"249ac8e1-e6c2-4806-81a5-54215eb16b00","salesUnit":"Each","requestedQuantity":{"measurementValue":1,"unitOfMeasure":"EA"}}]}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper | Request fields
 
 try {
-    $result = $api->promiseFulfillments($promiseFulfillmentsRequest);
+    $result = $api->promiseFulfillments($createCustomerOrderRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->promiseFulfillments: {$e->getMessage()}\n";
@@ -1150,12 +1150,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **promiseFulfillmentsRequest** | [**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequest**](../Model/PromiseFulfillmentsRequest.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200Response**](../Model/PromiseFulfillments200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -1173,7 +1173,7 @@ try {
 ## `updateShipmentQuantity()`
 
 ```php
-updateShipmentQuantity($updateShipmentQuantityRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+updateShipmentQuantity($inboundShipmentUpdateQtyWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Update Shipment Quantities
 
@@ -1194,10 +1194,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$updateShipmentQuantityRequest = {"inboundOrderId":"123543","shipmentId":"1234","orderItems":[{"sku":"WILL-SL969","updatedShipmentQty":11}]}; // \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest | Request fields
+$inboundShipmentUpdateQtyWrapper = {"inboundOrderId":"123543","shipmentId":"1234","orderItems":[{"sku":"WILL-SL969","updatedShipmentQty":11}]}; // \Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper | Request fields
 
 try {
-    $result = $api->updateShipmentQuantity($updateShipmentQuantityRequest);
+    $result = $api->updateShipmentQuantity($inboundShipmentUpdateQtyWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->updateShipmentQuantity: {$e->getMessage()}\n";
@@ -1207,7 +1207,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShipmentQuantityRequest** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantityRequest**](../Model/UpdateShipmentQuantityRequest.md)| Request fields | |
+| **inboundShipmentUpdateQtyWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper**](../Model/InboundShipmentUpdateQtyWrapper.md)| Request fields | |
 
 
 ### Return type
@@ -1230,7 +1230,7 @@ try {
 ## `updateShipmentTrackingDetails()`
 
 ```php
-updateShipmentTrackingDetails($updateShipmentTrackingDetailsRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+updateShipmentTrackingDetails($trackingInfoWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 ```
 Update Shipment Tracking
 
@@ -1251,10 +1251,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$updateShipmentTrackingDetailsRequest = {"shipmentId":"12345","carrierName":"UPS","trackingInfo":["123","456-1","789-2"]}; // \Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest | Request fields
+$trackingInfoWrapper = {"shipmentId":"12345","carrierName":"UPS","trackingInfo":["123","456-1","789-2"]}; // \Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper | Request fields
 
 try {
-    $result = $api->updateShipmentTrackingDetails($updateShipmentTrackingDetailsRequest);
+    $result = $api->updateShipmentTrackingDetails($trackingInfoWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->updateShipmentTrackingDetails: {$e->getMessage()}\n";
@@ -1264,7 +1264,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShipmentTrackingDetailsRequest** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentTrackingDetailsRequest**](../Model/UpdateShipmentTrackingDetailsRequest.md)| Request fields | |
+| **trackingInfoWrapper** | [**\Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper**](../Model/TrackingInfoWrapper.md)| Request fields | |
 
 
 ### Return type

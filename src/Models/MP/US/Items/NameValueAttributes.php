@@ -52,7 +52,7 @@ class NameValueAttributes extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'nameValueAttribute' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]'
+        'nameValueAttribute' => '\Walmart\Models\MP\US\Items\NameValueAttribute[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class NameValueAttributes extends BaseModel
     /**
      * Gets nameValueAttribute
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]|null
+     * @return \Walmart\Models\MP\US\Items\NameValueAttribute[]|null
     
      */
     public function getNameValueAttribute()
@@ -141,7 +141,7 @@ class NameValueAttributes extends BaseModel
     /**
      * Sets nameValueAttribute
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner[]|null $nameValueAttribute nameValueAttribute
+     * @param \Walmart\Models\MP\US\Items\NameValueAttribute[]|null $nameValueAttribute nameValueAttribute
      *
      * @return self
     

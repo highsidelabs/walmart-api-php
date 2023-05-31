@@ -44,7 +44,7 @@ class PurchaseOrderTypeV3List extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'PurchaseOrderTypeV3List';
+    protected static string $openAPIModelName = 'PurchaseOrderTypeV3_list';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -52,9 +52,9 @@ class PurchaseOrderTypeV3List extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInner[]',
-        'meta' => '\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListMeta',
-        'elements' => '\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListElements'
+        'errors' => '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListErrorsInner[]',
+        'meta' => '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListMeta',
+        'elements' => '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListElements'
     ];
 
     /**
@@ -150,7 +150,7 @@ class PurchaseOrderTypeV3List extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListErrorsInner[]|null
     
      */
     public function getErrors()
@@ -161,7 +161,7 @@ class PurchaseOrderTypeV3List extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListErrorsInner[]|null $errors errors
      *
      * @return self
     
@@ -179,7 +179,7 @@ class PurchaseOrderTypeV3List extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListMeta
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListMeta
     
      */
     public function getMeta()
@@ -190,7 +190,7 @@ class PurchaseOrderTypeV3List extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListMeta $meta meta
+     * @param \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListMeta $meta meta
      *
      * @return self
     
@@ -208,7 +208,7 @@ class PurchaseOrderTypeV3List extends BaseModel
     /**
      * Gets elements
      *
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListElements
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListElements
     
      */
     public function getElements()
@@ -219,7 +219,7 @@ class PurchaseOrderTypeV3List extends BaseModel
     /**
      * Sets elements
      *
-     * @param \Walmart\Models\MP\US\Orders\GetAllOrders200ResponseListElements $elements elements
+     * @param \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3ListElements $elements elements
      *
      * @return self
     

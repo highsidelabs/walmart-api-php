@@ -50,8 +50,8 @@ class WfsInventoryDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headers' => '\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders',
-        'payload' => '\Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayload'
+        'headers' => '\Walmart\Models\MP\US\Inventory\Headers',
+        'payload' => '\Walmart\Models\MP\US\Inventory\Payload'
     ];
 
     /**
@@ -135,7 +135,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders|null
+     * @return \Walmart\Models\MP\US\Inventory\Headers|null
     
      */
     public function getHeaders()
@@ -146,7 +146,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Inventory\Headers|null $headers headers
      *
      * @return self
     
@@ -164,7 +164,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Inventory\Payload|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class WfsInventoryDTO extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Inventory\Payload|null $payload payload
      *
      * @return self
     

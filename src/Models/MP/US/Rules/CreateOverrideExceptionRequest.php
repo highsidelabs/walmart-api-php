@@ -50,8 +50,8 @@ class CreateOverrideExceptionRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ruleHeader' => '\Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader',
-        'rules' => '\Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRules'
+        'ruleHeader' => '\Walmart\Models\MP\US\Rules\RuleHeader',
+        'rules' => '\Walmart\Models\MP\US\Rules\ExceptionInfo'
     ];
 
     /**
@@ -135,7 +135,7 @@ class CreateOverrideExceptionRequest extends BaseModel
     /**
      * Gets ruleHeader
      *
-     * @return \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null
+     * @return \Walmart\Models\MP\US\Rules\RuleHeader|null
     
      */
     public function getRuleHeader()
@@ -146,7 +146,7 @@ class CreateOverrideExceptionRequest extends BaseModel
     /**
      * Sets ruleHeader
      *
-     * @param \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null $ruleHeader ruleHeader
+     * @param \Walmart\Models\MP\US\Rules\RuleHeader|null $ruleHeader ruleHeader
      *
      * @return self
     
@@ -164,7 +164,7 @@ class CreateOverrideExceptionRequest extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRules|null
+     * @return \Walmart\Models\MP\US\Rules\ExceptionInfo|null
     
      */
     public function getRules()
@@ -175,7 +175,7 @@ class CreateOverrideExceptionRequest extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRules|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\ExceptionInfo|null $rules rules
      *
      * @return self
     

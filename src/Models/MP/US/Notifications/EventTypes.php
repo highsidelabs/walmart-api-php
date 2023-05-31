@@ -50,7 +50,7 @@ class EventTypes extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'eventTypes' => '\Walmart\Models\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]'
+        'eventTypes' => '\Walmart\Models\MP\US\Notifications\EventType[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class EventTypes extends BaseModel
     /**
      * Gets eventTypes
      *
-     * @return \Walmart\Models\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]|null
+     * @return \Walmart\Models\MP\US\Notifications\EventType[]|null
     
      */
     public function getEventTypes()
@@ -139,7 +139,7 @@ class EventTypes extends BaseModel
     /**
      * Sets eventTypes
      *
-     * @param \Walmart\Models\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]|null $eventTypes List of event types
+     * @param \Walmart\Models\MP\US\Notifications\EventType[]|null $eventTypes List of event types
      *
      * @return self
     

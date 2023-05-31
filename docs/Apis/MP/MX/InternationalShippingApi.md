@@ -14,7 +14,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createLabel()`
 
 ```php
-createLabel($accept, $createLabelRequest): \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200Response
+createLabel($accept, $labelGenerationRequestMx): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
 ```
 Create label
 
@@ -39,10 +39,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->internationalShipping();
 
 $accept = application/json; // string | Only supported Media Type : application/json
-$createLabelRequest = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1,"countryOfOrigin":"US"}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY"}; // \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequest | Label fields
+$labelGenerationRequestMx = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1,"countryOfOrigin":"US"}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY"}; // \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx | Label fields
 
 try {
-    $result = $api->createLabel($accept, $createLabelRequest);
+    $result = $api->createLabel($accept, $labelGenerationRequestMx);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createLabel: {$e->getMessage()}\n";
@@ -53,12 +53,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
-| **createLabelRequest** | [**\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequest**](../Model/CreateLabelRequest.md)| Label fields | |
+| **labelGenerationRequestMx** | [**\Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx**](../Model/LabelGenerationRequestMx.md)| Label fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200Response**](../Model/CreateLabel200Response.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ try {
 ## `discardLabel()`
 
 ```php
-discardLabel($carrierShortName, $trackingNo, $accept): \Walmart\Models\MP\MX\InternationalShipping\DiscardLabel200Response
+discardLabel($carrierShortName, $trackingNo, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
 ```
 Discard label
 
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\DiscardLabel200Response**](../Model/DiscardLabel200Response.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ try {
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $accept): \Walmart\Models\MP\MX\InternationalShipping\GetCarrierPackageTypes200Response
+getCarrierPackageTypes($carrierShortName, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
 ```
 Supported carrier package types
 
@@ -184,7 +184,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\GetCarrierPackageTypes200Response**](../Model/GetCarrierPackageTypes200Response.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ try {
 ## `getCarriers()`
 
 ```php
-getCarriers($accept): \Walmart\Models\MP\MX\InternationalShipping\GetCarriers200Response
+getCarriers($accept): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse
 ```
 Supported carriers
 
@@ -244,7 +244,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\GetCarriers200Response**](../Model/GetCarriers200Response.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../Model/CarrierCommonResponseListCarrierResponse.md)
 
 ### Authorization
 
@@ -262,7 +262,7 @@ try {
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $accept): \Walmart\Models\MP\MX\InternationalShipping\GetLabel200Response
+getLabel($purchaseOrderId, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
 ```
 Labels detail by purchase order id
 
@@ -306,7 +306,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\GetLabel200Response**](../Model/GetLabel200Response.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 

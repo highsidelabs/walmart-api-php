@@ -51,7 +51,7 @@ class UpdateInventoryForAnItemRequest extends BaseModel
       */
     protected static array $openAPITypes = [
         'sku' => 'string',
-        'quantity' => '\Walmart\Models\MP\MX\Inventory\GetInventory200ResponseQuantity'
+        'quantity' => '\Walmart\Models\MP\MX\Inventory\UpdateInventoryForAnItemRequestQuantity'
     ];
 
     /**
@@ -170,7 +170,7 @@ class UpdateInventoryForAnItemRequest extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Models\MP\MX\Inventory\GetInventory200ResponseQuantity
+     * @return \Walmart\Models\MP\MX\Inventory\UpdateInventoryForAnItemRequestQuantity
     
      */
     public function getQuantity()
@@ -181,7 +181,7 @@ class UpdateInventoryForAnItemRequest extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Models\MP\MX\Inventory\GetInventory200ResponseQuantity $quantity quantity
+     * @param \Walmart\Models\MP\MX\Inventory\UpdateInventoryForAnItemRequestQuantity $quantity quantity
      *
      * @return self
     

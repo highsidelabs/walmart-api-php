@@ -50,14 +50,14 @@ class RuleInfo extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'conditions' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]',
+        'conditions' => '\Walmart\Models\MP\US\Rules\Condition[]',
         'description' => 'string',
         'name' => 'string',
         'priority' => 'string',
         'ruleId' => 'string',
         'ruleStatus' => 'string',
         'skuProcessingStatus' => 'string',
-        'ruleAction' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInner'
+        'ruleAction' => '\Walmart\Models\MP\US\Rules\RuleAction'
     ];
 
     /**
@@ -177,7 +177,7 @@ class RuleInfo extends BaseModel
     /**
      * Gets conditions
      *
-     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\Condition[]|null
     
      */
     public function getConditions()
@@ -188,7 +188,7 @@ class RuleInfo extends BaseModel
     /**
      * Sets conditions
      *
-     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]|null $conditions Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.
+     * @param \Walmart\Models\MP\US\Rules\Condition[]|null $conditions Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.
      *
      * @return self
     
@@ -380,7 +380,7 @@ class RuleInfo extends BaseModel
     /**
      * Gets ruleAction
      *
-     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInner|null
+     * @return \Walmart\Models\MP\US\Rules\RuleAction|null
     
      */
     public function getRuleAction()
@@ -391,7 +391,7 @@ class RuleInfo extends BaseModel
     /**
      * Sets ruleAction
      *
-     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInner|null $ruleAction ruleAction
+     * @param \Walmart\Models\MP\US\Rules\RuleAction|null $ruleAction ruleAction
      *
      * @return self
     

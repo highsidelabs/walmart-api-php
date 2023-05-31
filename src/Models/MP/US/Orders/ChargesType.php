@@ -52,7 +52,7 @@ class ChargesType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'charge' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner[]'
+        'charge' => '\Walmart\Models\MP\US\Orders\ChargeType[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class ChargesType extends BaseModel
     /**
      * Gets charge
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner[]|null
+     * @return \Walmart\Models\MP\US\Orders\ChargeType[]|null
     
      */
     public function getCharge()
@@ -141,7 +141,7 @@ class ChargesType extends BaseModel
     /**
      * Sets charge
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerChargesChargeInner[]|null $charge Information relating to the charge for the orderLine
+     * @param \Walmart\Models\MP\US\Orders\ChargeType[]|null $charge Information relating to the charge for the orderLine
      *
      * @return self
     

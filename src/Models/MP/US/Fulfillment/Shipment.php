@@ -65,8 +65,8 @@ class Shipment extends BaseModel
         'carrierServiceCode' => 'string',
         'packageId' => 'string',
         'lastModified' => 'string',
-        'shipmentLines' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]',
-        'shipmentDates' => '\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]'
+        'shipmentLines' => '\Walmart\Models\MP\US\Fulfillment\ShipmentLine[]',
+        'shipmentDates' => '\Walmart\Models\MP\US\Fulfillment\OrderDate[]'
     ];
 
     /**
@@ -605,7 +605,7 @@ class Shipment extends BaseModel
     /**
      * Gets shipmentLines
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ShipmentLine[]|null
     
      */
     public function getShipmentLines()
@@ -616,7 +616,7 @@ class Shipment extends BaseModel
     /**
      * Sets shipmentLines
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentLinesInner[]|null $shipmentLines Shipment line details
+     * @param \Walmart\Models\MP\US\Fulfillment\ShipmentLine[]|null $shipmentLines Shipment line details
      *
      * @return self
     
@@ -634,7 +634,7 @@ class Shipment extends BaseModel
     /**
      * Gets shipmentDates
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\OrderDate[]|null
     
      */
     public function getShipmentDates()
@@ -645,7 +645,7 @@ class Shipment extends BaseModel
     /**
      * Sets shipmentDates
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]|null $shipmentDates Shipment dates
+     * @param \Walmart\Models\MP\US\Fulfillment\OrderDate[]|null $shipmentDates Shipment dates
      *
      * @return self
     

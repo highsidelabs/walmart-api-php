@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **badgedSince** | **\DateTime** | Specifies when the seller received their badge | [optional]
 **isProhibited** | **bool** | Specifies whether the seller is prohibited from participating in the Pro Seller badge program. | [optional]
 **badgeStatus** | **string** | Specifies the seller's badge status in detail. The possible values are \"Become a Pro Seller\", \"You are a Pro Seller\", \"Pro Seller Badge at risk\", \"Eligible starting from YYYY-MM-DD\", and \"Not eligible for the Pro Seller Badge\" | [optional]
-**meetsCriteria** | [**\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria**](GetProSellerBadgeInfo200ResponseMeetsCriteria.md) |  | [optional]
-**criteriaData** | [**\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData**](GetProSellerBadgeInfo200ResponseCriteriaData.md) |  | [optional]
-**recommendations** | [**\Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseRecommendations**](GetProSellerBadgeInfo200ResponseRecommendations.md) |  | [optional]
+**meetsCriteria** | [**\Walmart\Models\MP\US\Insights\MeetsCriteria**](MeetsCriteria.md) |  | [optional]
+**criteriaData** | [**\Walmart\Models\MP\US\Insights\CriteriaData**](CriteriaData.md) |  | [optional]
+**recommendations** | [**\Walmart\Models\MP\US\Insights\Recommendations**](Recommendations.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

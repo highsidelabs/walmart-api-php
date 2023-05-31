@@ -63,11 +63,11 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     public function acknowledgeOrders(
         string $purchaseOrderId
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
         return $this->acknowledgeOrdersWithHttpInfo($purchaseOrderId);
     }
 
@@ -80,11 +80,11 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     protected function acknowledgeOrdersWithHttpInfo(
         string $purchaseOrderId,
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
         $request = $this->acknowledgeOrdersRequest($purchaseOrderId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -134,19 +134,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\GetOrderResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
+            $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -162,7 +162,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response',
+                        '\Walmart\Models\MP\US\Orders\GetOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -209,7 +209,7 @@ class OrdersApi extends BaseApi
     protected function acknowledgeOrdersAsyncWithHttpInfo(
         string $purchaseOrderId,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
+        $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
         $request = $this->acknowledgeOrdersRequest($purchaseOrderId, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -349,17 +349,17 @@ class OrdersApi extends BaseApi
      * Cancel Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     public function cancelOrderLines(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
-        return $this->cancelOrderLinesWithHttpInfo($purchaseOrderId, $cancelOrderLinesRequest);
+        \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
+        return $this->cancelOrderLinesWithHttpInfo($purchaseOrderId, $orderCancellationResponse);
     }
 
     /**
@@ -368,17 +368,17 @@ class OrdersApi extends BaseApi
      * Cancel Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     protected function cancelOrderLinesWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest,
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
-        $request = $this->cancelOrderLinesRequest($purchaseOrderId, $cancelOrderLinesRequest, );
+        \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse,
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
+        $request = $this->cancelOrderLinesRequest($purchaseOrderId, $orderCancellationResponse, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -427,19 +427,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\GetOrderResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
+            $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -455,7 +455,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response',
+                        '\Walmart\Models\MP\US\Orders\GetOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -473,16 +473,16 @@ class OrdersApi extends BaseApi
      * Cancel Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function cancelOrderLinesAsync(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest
+        \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse
     ): PromiseInterface {
-        return $this->cancelOrderLinesAsyncWithHttpInfo($purchaseOrderId, $cancelOrderLinesRequest)
+        return $this->cancelOrderLinesAsyncWithHttpInfo($purchaseOrderId, $orderCancellationResponse)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -497,17 +497,17 @@ class OrdersApi extends BaseApi
      * Cancel Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function cancelOrderLinesAsyncWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest,
+        \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
-        $request = $this->cancelOrderLinesRequest($purchaseOrderId, $cancelOrderLinesRequest, );
+        $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
+        $request = $this->cancelOrderLinesRequest($purchaseOrderId, $orderCancellationResponse, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -553,14 +553,14 @@ class OrdersApi extends BaseApi
      * Create request for operation 'cancelOrderLines'
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function cancelOrderLinesRequest(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\CancelOrderLinesRequest $cancelOrderLinesRequest,
+        \Walmart\Models\MP\US\Orders\OrderCancellationResponse $orderCancellationResponse,
     ): Request {
         $contentType = self::contentTypes['cancelOrderLines'];
 
@@ -570,10 +570,10 @@ class OrdersApi extends BaseApi
                 'Missing the required parameter $purchaseOrderId when calling cancelOrderLines'
             );
         }
-        // verify the required parameter 'cancelOrderLinesRequest' is set
-        if ($cancelOrderLinesRequest === null || (is_array($cancelOrderLinesRequest) && count($cancelOrderLinesRequest) === 0)) {
+        // verify the required parameter 'orderCancellationResponse' is set
+        if ($orderCancellationResponse === null || (is_array($orderCancellationResponse) && count($orderCancellationResponse) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $cancelOrderLinesRequest when calling cancelOrderLines'
+                'Missing the required parameter $orderCancellationResponse when calling cancelOrderLines'
             );
         }
         $resourcePath = '/v3/orders/{purchaseOrderId}/cancel';
@@ -609,12 +609,12 @@ class OrdersApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($cancelOrderLinesRequest)) {
+        if (isset($orderCancellationResponse)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($cancelOrderLinesRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orderCancellationResponse));
             } else {
-                $httpBody = $cancelOrderLinesRequest;
+                $httpBody = $orderCancellationResponse;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -679,7 +679,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
      */
     public function getAllOrders(
         ?string $sku = null,
@@ -698,7 +698,7 @@ class OrdersApi extends BaseApi
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
         ?string $orderType = null
-    ): \Walmart\Models\MP\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3 {
         return $this->getAllOrdersWithHttpInfo($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType);
     }
 
@@ -726,7 +726,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
      */
     protected function getAllOrdersWithHttpInfo(
         ?string $sku = null,
@@ -745,7 +745,7 @@ class OrdersApi extends BaseApi
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
         ?string $orderType = null,
-    ): \Walmart\Models\MP\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3 {
         $request = $this->getAllOrdersRequest($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -795,19 +795,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Orders\GetAllOrders200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Orders\GetAllOrders200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\GetAllOrders200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Orders\GetAllOrders200Response';
+            $returnType = '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -823,7 +823,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Orders\GetAllOrders200Response',
+                        '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -930,7 +930,7 @@ class OrdersApi extends BaseApi
         ?string $replacementInfo = 'false',
         ?string $orderType = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Orders\GetAllOrders200Response';
+        $returnType = '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3';
         $request = $this->getAllOrdersRequest($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1232,7 +1232,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
      */
     public function getAllReleasedOrders(
         ?string $createdStartDate = null,
@@ -1248,7 +1248,7 @@ class OrdersApi extends BaseApi
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
         ?string $orderType = null
-    ): \Walmart\Models\MP\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3 {
         return $this->getAllReleasedOrdersWithHttpInfo($createdStartDate, $createdEndDate, $limit, $productInfo, $shipNodeType, $sku, $customerOrderId, $purchaseOrderId, $fromExpectedShipDate, $toExpectedShipDate, $shippingProgramType, $replacementInfo, $orderType);
     }
 
@@ -1273,7 +1273,7 @@ class OrdersApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\GetAllOrders200Response
+     * @return \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
      */
     protected function getAllReleasedOrdersWithHttpInfo(
         ?string $createdStartDate = null,
@@ -1289,7 +1289,7 @@ class OrdersApi extends BaseApi
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
         ?string $orderType = null,
-    ): \Walmart\Models\MP\US\Orders\GetAllOrders200Response {
+    ): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3 {
         $request = $this->getAllReleasedOrdersRequest($createdStartDate, $createdEndDate, $limit, $productInfo, $shipNodeType, $sku, $customerOrderId, $purchaseOrderId, $fromExpectedShipDate, $toExpectedShipDate, $shippingProgramType, $replacementInfo, $orderType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1339,19 +1339,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Orders\GetAllOrders200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Orders\GetAllOrders200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\GetAllOrders200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Orders\GetAllOrders200Response';
+            $returnType = '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1367,7 +1367,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Orders\GetAllOrders200Response',
+                        '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1462,7 +1462,7 @@ class OrdersApi extends BaseApi
         ?string $replacementInfo = 'false',
         ?string $orderType = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Orders\GetAllOrders200Response';
+        $returnType = '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3';
         $request = $this->getAllReleasedOrdersRequest($createdStartDate, $createdEndDate, $limit, $productInfo, $shipNodeType, $sku, $customerOrderId, $purchaseOrderId, $fromExpectedShipDate, $toExpectedShipDate, $shippingProgramType, $replacementInfo, $orderType, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2048,17 +2048,17 @@ class OrdersApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     public function refundOrderLines(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
-        return $this->refundOrderLinesWithHttpInfo($purchaseOrderId, $refundOrderLinesRequest);
+        \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
+        return $this->refundOrderLinesWithHttpInfo($purchaseOrderId, $orderRefundJson);
     }
 
     /**
@@ -2067,17 +2067,17 @@ class OrdersApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     protected function refundOrderLinesWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest,
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
-        $request = $this->refundOrderLinesRequest($purchaseOrderId, $refundOrderLinesRequest, );
+        \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson,
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
+        $request = $this->refundOrderLinesRequest($purchaseOrderId, $orderRefundJson, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2126,19 +2126,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\GetOrderResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
+            $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2154,7 +2154,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response',
+                        '\Walmart\Models\MP\US\Orders\GetOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2172,16 +2172,16 @@ class OrdersApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function refundOrderLinesAsync(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest
+        \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson
     ): PromiseInterface {
-        return $this->refundOrderLinesAsyncWithHttpInfo($purchaseOrderId, $refundOrderLinesRequest)
+        return $this->refundOrderLinesAsyncWithHttpInfo($purchaseOrderId, $orderRefundJson)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2196,17 +2196,17 @@ class OrdersApi extends BaseApi
      * Refund Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function refundOrderLinesAsyncWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest,
+        \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
-        $request = $this->refundOrderLinesRequest($purchaseOrderId, $refundOrderLinesRequest, );
+        $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
+        $request = $this->refundOrderLinesRequest($purchaseOrderId, $orderRefundJson, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2252,14 +2252,14 @@ class OrdersApi extends BaseApi
      * Create request for operation 'refundOrderLines'
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function refundOrderLinesRequest(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\RefundOrderLinesRequest $refundOrderLinesRequest,
+        \Walmart\Models\MP\US\Orders\OrderRefundJson $orderRefundJson,
     ): Request {
         $contentType = self::contentTypes['refundOrderLines'];
 
@@ -2269,10 +2269,10 @@ class OrdersApi extends BaseApi
                 'Missing the required parameter $purchaseOrderId when calling refundOrderLines'
             );
         }
-        // verify the required parameter 'refundOrderLinesRequest' is set
-        if ($refundOrderLinesRequest === null || (is_array($refundOrderLinesRequest) && count($refundOrderLinesRequest) === 0)) {
+        // verify the required parameter 'orderRefundJson' is set
+        if ($orderRefundJson === null || (is_array($orderRefundJson) && count($orderRefundJson) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $refundOrderLinesRequest when calling refundOrderLines'
+                'Missing the required parameter $orderRefundJson when calling refundOrderLines'
             );
         }
         $resourcePath = '/v3/orders/{purchaseOrderId}/refund';
@@ -2308,12 +2308,12 @@ class OrdersApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($refundOrderLinesRequest)) {
+        if (isset($orderRefundJson)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($refundOrderLinesRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orderRefundJson));
             } else {
-                $httpBody = $refundOrderLinesRequest;
+                $httpBody = $orderRefundJson;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {
@@ -2360,17 +2360,17 @@ class OrdersApi extends BaseApi
      * Ship Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     public function shippingUpdates(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
-        return $this->shippingUpdatesWithHttpInfo($purchaseOrderId, $shippingUpdatesRequest);
+        \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
+        return $this->shippingUpdatesWithHttpInfo($purchaseOrderId, $orderShipment);
     }
 
     /**
@@ -2379,17 +2379,17 @@ class OrdersApi extends BaseApi
      * Ship Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200Response
+     * @return \Walmart\Models\MP\US\Orders\GetOrderResponse
      */
     protected function shippingUpdatesWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest,
-    ): \Walmart\Models\MP\US\Orders\ShippingUpdates200Response {
-        $request = $this->shippingUpdatesRequest($purchaseOrderId, $shippingUpdatesRequest, );
+        \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment,
+    ): \Walmart\Models\MP\US\Orders\GetOrderResponse {
+        $request = $this->shippingUpdatesRequest($purchaseOrderId, $orderShipment, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2438,19 +2438,19 @@ class OrdersApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Orders\ShippingUpdates200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Orders\GetOrderResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\GetOrderResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
+            $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2466,7 +2466,7 @@ class OrdersApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response',
+                        '\Walmart\Models\MP\US\Orders\GetOrderResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2484,16 +2484,16 @@ class OrdersApi extends BaseApi
      * Ship Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function shippingUpdatesAsync(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest
+        \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment
     ): PromiseInterface {
-        return $this->shippingUpdatesAsyncWithHttpInfo($purchaseOrderId, $shippingUpdatesRequest)
+        return $this->shippingUpdatesAsyncWithHttpInfo($purchaseOrderId, $orderShipment)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2508,17 +2508,17 @@ class OrdersApi extends BaseApi
      * Ship Order Lines
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function shippingUpdatesAsyncWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest,
+        \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Orders\ShippingUpdates200Response';
-        $request = $this->shippingUpdatesRequest($purchaseOrderId, $shippingUpdatesRequest, );
+        $returnType = '\Walmart\Models\MP\US\Orders\GetOrderResponse';
+        $request = $this->shippingUpdatesRequest($purchaseOrderId, $orderShipment, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2564,14 +2564,14 @@ class OrdersApi extends BaseApi
      * Create request for operation 'shippingUpdates'
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function shippingUpdatesRequest(
         string $purchaseOrderId,
-        \Walmart\Models\MP\US\Orders\ShippingUpdatesRequest $shippingUpdatesRequest,
+        \Walmart\Models\MP\US\Orders\OrderShipment $orderShipment,
     ): Request {
         $contentType = self::contentTypes['shippingUpdates'];
 
@@ -2581,10 +2581,10 @@ class OrdersApi extends BaseApi
                 'Missing the required parameter $purchaseOrderId when calling shippingUpdates'
             );
         }
-        // verify the required parameter 'shippingUpdatesRequest' is set
-        if ($shippingUpdatesRequest === null || (is_array($shippingUpdatesRequest) && count($shippingUpdatesRequest) === 0)) {
+        // verify the required parameter 'orderShipment' is set
+        if ($orderShipment === null || (is_array($orderShipment) && count($orderShipment) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $shippingUpdatesRequest when calling shippingUpdates'
+                'Missing the required parameter $orderShipment when calling shippingUpdates'
             );
         }
         $resourcePath = '/v3/orders/{purchaseOrderId}/shipping';
@@ -2620,12 +2620,12 @@ class OrdersApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($shippingUpdatesRequest)) {
+        if (isset($orderShipment)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($shippingUpdatesRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($orderShipment));
             } else {
-                $httpBody = $shippingUpdatesRequest;
+                $httpBody = $orderShipment;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

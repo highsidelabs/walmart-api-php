@@ -17,7 +17,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `acknowledgeOrders()`
 
 ```php
-acknowledgeOrders($purchaseOrderId, $acknowledgeOrdersRequest): string
+acknowledgeOrders($purchaseOrderId, $orderAckRequest): string
 ```
 Acknowledge Orders
 
@@ -42,10 +42,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$acknowledgeOrdersRequest = {"orderAcknowledge":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Acknowledged","statusQuantity":{"unitOfMeasurement":"EACH","amount":"4"}}]}}]}}}; // \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequest
+$orderAckRequest = {"orderAcknowledge":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Acknowledged","statusQuantity":{"unitOfMeasurement":"EACH","amount":"4"}}]}}]}}}; // \Walmart\Models\MP\MX\Orders\OrderAckRequest
 
 try {
-    $result = $api->acknowledgeOrders($purchaseOrderId, $acknowledgeOrdersRequest);
+    $result = $api->acknowledgeOrders($purchaseOrderId, $orderAckRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->acknowledgeOrders: {$e->getMessage()}\n";
@@ -56,7 +56,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **acknowledgeOrdersRequest** | [**\Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequest**](../Model/AcknowledgeOrdersRequest.md)|  | |
+| **orderAckRequest** | [**\Walmart\Models\MP\MX\Orders\OrderAckRequest**](../Model/OrderAckRequest.md)|  | |
 
 
 ### Return type
@@ -79,7 +79,7 @@ try {
 ## `cancelOrderLines()`
 
 ```php
-cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest): string
+cancelOrderLines($purchaseOrderId, $orderCancellationRequest): string
 ```
 Cancel Order Lines
 
@@ -104,10 +104,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$cancelOrderLinesRequest = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"5","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Models\MP\MX\Orders\CancelOrderLinesRequest | File fields
+$orderCancellationRequest = {"orderCancellation":{"orderLines":{"orderLine":[{"lineNumber":"5","orderLineStatuses":{"orderLineStatus":[{"status":"Cancelled","cancellationReason":"CUSTOMER_REQUESTED_SELLER_TO_CANCEL","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Models\MP\MX\Orders\OrderCancellationRequest | File fields
 
 try {
-    $result = $api->cancelOrderLines($purchaseOrderId, $cancelOrderLinesRequest);
+    $result = $api->cancelOrderLines($purchaseOrderId, $orderCancellationRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->cancelOrderLines: {$e->getMessage()}\n";
@@ -118,7 +118,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **cancelOrderLinesRequest** | [**\Walmart\Models\MP\MX\Orders\CancelOrderLinesRequest**](../Model/CancelOrderLinesRequest.md)| File fields | |
+| **orderCancellationRequest** | [**\Walmart\Models\MP\MX\Orders\OrderCancellationRequest**](../Model/OrderCancellationRequest.md)| File fields | |
 
 
 ### Return type
@@ -141,7 +141,7 @@ try {
 ## `deliveryUpdates()`
 
 ```php
-deliveryUpdates($purchaseOrderId, $deliveryUpdatesRequest): string
+deliveryUpdates($purchaseOrderId, $deliver): string
 ```
 Delivery Updates
 
@@ -166,10 +166,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$deliveryUpdatesRequest = {"packages":[{"trackingNo":"P100011150a","eventTime":"1540845015000","eventName":"DELIVERY_UPDATE","purchaseOrderNo":"P100011150","packageNo":"144553632_123456"}]}; // \Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequest | File fields
+$deliver = {"packages":[{"trackingNo":"P100011150a","eventTime":"1540845015000","eventName":"DELIVERY_UPDATE","purchaseOrderNo":"P100011150","packageNo":"144553632_123456"}]}; // \Walmart\Models\MP\MX\Orders\Deliver | File fields
 
 try {
-    $result = $api->deliveryUpdates($purchaseOrderId, $deliveryUpdatesRequest);
+    $result = $api->deliveryUpdates($purchaseOrderId, $deliver);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->deliveryUpdates: {$e->getMessage()}\n";
@@ -180,7 +180,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **deliveryUpdatesRequest** | [**\Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequest**](../Model/DeliveryUpdatesRequest.md)| File fields | |
+| **deliver** | [**\Walmart\Models\MP\MX\Orders\Deliver**](../Model/Deliver.md)| File fields | |
 
 
 ### Return type
@@ -203,7 +203,7 @@ try {
 ## `getAllOrders()`
 
 ```php
-getAllOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $purchaseOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\GetAllOrders200Response
+getAllOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $purchaseOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\MxOrder
 ```
 Get all orders
 
@@ -257,7 +257,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../Model/MxOrder.md)
 
 ### Authorization
 
@@ -275,7 +275,7 @@ try {
 ## `getAllOrdersUsingCursor()`
 
 ```php
-getAllOrdersUsingCursor($statusCodeFilter, $createdStartDate, $createdEndDate, $limit, $cursorMark, $customerOrderId, $purchaseOrderId): \Walmart\Models\MP\MX\Orders\GetAllOrdersUsingCursor200Response
+getAllOrdersUsingCursor($statusCodeFilter, $createdStartDate, $createdEndDate, $limit, $cursorMark, $customerOrderId, $purchaseOrderId): \Walmart\Models\MP\MX\Orders\MxOrder
 ```
 Get all orders using cursor mark
 
@@ -329,7 +329,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\GetAllOrdersUsingCursor200Response**](../Model/GetAllOrdersUsingCursor200Response.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../Model/MxOrder.md)
 
 ### Authorization
 
@@ -347,7 +347,7 @@ try {
 ## `getAllWFSOrders()`
 
 ```php
-getAllWFSOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\GetAllWFSOrders200Response
+getAllWFSOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\MxOrder
 ```
 Get all WFS orders
 
@@ -399,7 +399,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\GetAllWFSOrders200Response**](../Model/GetAllWFSOrders200Response.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../Model/MxOrder.md)
 
 ### Authorization
 
@@ -477,7 +477,7 @@ try {
 ## `postBulkShippingLabel()`
 
 ```php
-postBulkShippingLabel($postBulkShippingLabelRequest, $fORMAT): string
+postBulkShippingLabel($shippingLabelRequest, $fORMAT): string
 ```
 Bulk Shipping Label
 
@@ -501,11 +501,11 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 
 $api = Walmart::marketplace($config)->orders();
 
-$postBulkShippingLabelRequest = {"trackingNumbers":["499903935503","477502530976"]}; // \Walmart\Models\MP\MX\Orders\PostBulkShippingLabelRequest | Request body with list of tracking numbers
+$shippingLabelRequest = {"trackingNumbers":["499903935503","477502530976"]}; // \Walmart\Models\MP\MX\Orders\ShippingLabelRequest | Request body with list of tracking numbers
 $fORMAT = 'ZIP'; // string | format in which you want to download bulk labels, expected values are ZIP/ PDF only
 
 try {
-    $result = $api->postBulkShippingLabel($postBulkShippingLabelRequest, $fORMAT);
+    $result = $api->postBulkShippingLabel($shippingLabelRequest, $fORMAT);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->postBulkShippingLabel: {$e->getMessage()}\n";
@@ -515,7 +515,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **postBulkShippingLabelRequest** | [**\Walmart\Models\MP\MX\Orders\PostBulkShippingLabelRequest**](../Model/PostBulkShippingLabelRequest.md)| Request body with list of tracking numbers | |
+| **shippingLabelRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingLabelRequest**](../Model/ShippingLabelRequest.md)| Request body with list of tracking numbers | |
 | **fORMAT** | **string**| format in which you want to download bulk labels, expected values are ZIP/ PDF only | [optional] [default to 'ZIP'] |
 
 

@@ -52,7 +52,7 @@ class RuleToUpdate extends BaseModel
     protected static array $openAPITypes = [
         'ruleId' => 'string',
         'ruleStatus' => 'string',
-        'actions' => '\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInner[]'
+        'actions' => '\Walmart\Models\MP\US\Rules\RuleAction[]'
     ];
 
     /**
@@ -200,7 +200,7 @@ class RuleToUpdate extends BaseModel
     /**
      * Gets actions
      *
-     * @return \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\RuleAction[]|null
     
      */
     public function getActions()
@@ -211,7 +211,7 @@ class RuleToUpdate extends BaseModel
     /**
      * Sets actions
      *
-     * @param \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRulesActionsInner[]|null $actions Defines the two day state coverage areas.
+     * @param \Walmart\Models\MP\US\Rules\RuleAction[]|null $actions Defines the two day state coverage areas.
      *
      * @return self
     

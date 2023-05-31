@@ -53,7 +53,7 @@ class Tax extends BaseModel
       */
     protected static array $openAPITypes = [
         'taxName' => 'string',
-        'taxAmount' => '\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInnerTaxAmount'
+        'taxAmount' => '\Walmart\Models\MP\MX\Returns\ChargeAmount'
     ];
 
     /**
@@ -166,7 +166,7 @@ class Tax extends BaseModel
     /**
      * Gets taxAmount
      *
-     * @return \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInnerTaxAmount|null
+     * @return \Walmart\Models\MP\MX\Returns\ChargeAmount|null
     
      */
     public function getTaxAmount()
@@ -177,7 +177,7 @@ class Tax extends BaseModel
     /**
      * Sets taxAmount
      *
-     * @param \Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInnerTaxAmount|null $taxAmount taxAmount
+     * @param \Walmart\Models\MP\MX\Returns\ChargeAmount|null $taxAmount taxAmount
      *
      * @return self
     

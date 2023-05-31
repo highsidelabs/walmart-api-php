@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAllReturnsUsingCursor()`
 
 ```php
-getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response
+getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse
 ```
 Get all returns with cursor mark
 
@@ -67,7 +67,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response**](../Model/GetAllReturnsUsingCursor200Response.md)
+[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse**](../Model/GetReturnOrdersResponse.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ try {
 ## `getReturns()`
 
 ```php
-getReturns($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetReturns200Response
+getReturns($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse
 ```
 Get Returns
 
@@ -141,7 +141,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Returns\GetReturns200Response**](../Model/GetReturns200Response.md)
+[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse**](../Model/GetReturnOrdersResponse.md)
 
 ### Authorization
 
@@ -159,7 +159,7 @@ try {
 ## `refundOrderLines()`
 
 ```php
-refundOrderLines($returnOrderId, $refundOrderLinesRequest): string
+refundOrderLines($returnOrderId, $orderRefundRequest): string
 ```
 Refund Order Lines
 
@@ -184,10 +184,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->returns();
 
 $returnOrderId = 'returnOrderId_example'; // string | returnOrderId
-$refundOrderLinesRequest = {"orderRefund":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Received","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest | OrderRefund request body
+$orderRefundRequest = {"orderRefund":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Received","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Models\MP\MX\Returns\OrderRefundRequest | OrderRefund request body
 
 try {
-    $result = $api->refundOrderLines($returnOrderId, $refundOrderLinesRequest);
+    $result = $api->refundOrderLines($returnOrderId, $orderRefundRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->refundOrderLines: {$e->getMessage()}\n";
@@ -198,7 +198,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| returnOrderId | |
-| **refundOrderLinesRequest** | [**\Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest**](../Model/RefundOrderLinesRequest.md)| OrderRefund request body | |
+| **orderRefundRequest** | [**\Walmart\Models\MP\MX\Returns\OrderRefundRequest**](../Model/OrderRefundRequest.md)| OrderRefund request body | |
 
 
 ### Return type

@@ -53,8 +53,8 @@ class Tax extends BaseModel
       */
     protected static array $openAPITypes = [
         'taxName' => 'string',
-        'excessTax' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount',
-        'taxPerUnit' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount'
+        'excessTax' => '\Walmart\Models\MP\US\Returns\Money',
+        'taxPerUnit' => '\Walmart\Models\MP\US\Returns\Money'
     ];
 
     /**
@@ -173,7 +173,7 @@ class Tax extends BaseModel
     /**
      * Gets excessTax
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\Money|null
     
      */
     public function getExcessTax()
@@ -184,7 +184,7 @@ class Tax extends BaseModel
     /**
      * Sets excessTax
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $excessTax excessTax
+     * @param \Walmart\Models\MP\US\Returns\Money|null $excessTax excessTax
      *
      * @return self
     
@@ -202,7 +202,7 @@ class Tax extends BaseModel
     /**
      * Gets taxPerUnit
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null
+     * @return \Walmart\Models\MP\US\Returns\Money|null
     
      */
     public function getTaxPerUnit()
@@ -213,7 +213,7 @@ class Tax extends BaseModel
     /**
      * Sets taxPerUnit
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount|null $taxPerUnit taxPerUnit
+     * @param \Walmart\Models\MP\US\Returns\Money|null $taxPerUnit taxPerUnit
      *
      * @return self
     

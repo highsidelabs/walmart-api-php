@@ -51,7 +51,7 @@ class CommonResponseBoolean extends BaseModel
       */
     protected static array $openAPITypes = [
         'data' => 'bool',
-        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]'
+        'errors' => '\Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class CommonResponseBoolean extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]|null
     
      */
     public function getErrors()
@@ -175,7 +175,7 @@ class CommonResponseBoolean extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\MX\InternationalShipping\ErrorResponse[]|null $errors errors
      *
      * @return self
     

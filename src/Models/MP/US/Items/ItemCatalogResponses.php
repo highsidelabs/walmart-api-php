@@ -51,7 +51,7 @@ class ItemCatalogResponses extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInner[]',
+        'payload' => '\Walmart\Models\MP\US\Items\ItemCatalogResponse[]',
         'totalItems' => 'int',
         'limit' => 'int',
         'nextCursor' => 'string',
@@ -192,7 +192,7 @@ class ItemCatalogResponses extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Items\ItemCatalogResponse[]|null
     
      */
     public function getPayload()
@@ -203,7 +203,7 @@ class ItemCatalogResponses extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Items\GetCatalogSearch200ResponsePayloadInner[]|null $payload Items included in the response list
+     * @param \Walmart\Models\MP\US\Items\ItemCatalogResponse[]|null $payload Items included in the response list
      *
      * @return self
     

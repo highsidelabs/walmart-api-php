@@ -50,7 +50,7 @@ class ElementsType extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'order' => '\Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]'
+        'order' => '\Walmart\Models\DSV\US\Orders\Order[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ElementsType extends BaseModel
     /**
      * Gets order
      *
-     * @return \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]|null
+     * @return \Walmart\Models\DSV\US\Orders\Order[]|null
     
      */
     public function getOrder()
@@ -139,7 +139,7 @@ class ElementsType extends BaseModel
     /**
      * Sets order
      *
-     * @param \Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElementsOrderInner[]|null $order order
+     * @param \Walmart\Models\DSV\US\Orders\Order[]|null $order order
      *
      * @return self
     

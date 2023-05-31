@@ -53,13 +53,13 @@ class WFSOrder extends BaseModel
         'customerOrderId' => 'string',
         'customerEmailId' => 'string',
         'orderDate' => 'string',
-        'shippingInfo' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShippingInfo',
-        'billingInfo' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerBillingInfo',
+        'shippingInfo' => '\Walmart\Models\MP\MX\Orders\ShippingInfo',
+        'billingInfo' => '\Walmart\Models\MP\MX\Orders\BillingInfo',
         'totalLines' => 'string',
         'totalQuantity' => 'string',
-        'orderLines' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInner[]',
-        'shipments' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInner[]',
-        'orderTotal' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderTotal',
+        'orderLines' => '\Walmart\Models\MP\MX\Orders\OrderLine[]',
+        'shipments' => '\Walmart\Models\MP\MX\Orders\Shipment[]',
+        'orderTotal' => '\Walmart\Models\MP\MX\Orders\ChargeAmount',
         'rfc' => 'string',
         'paymentMethod' => 'string',
         'cfdi' => 'string'
@@ -299,7 +299,7 @@ class WFSOrder extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShippingInfo|null
+     * @return \Walmart\Models\MP\MX\Orders\ShippingInfo|null
     
      */
     public function getShippingInfo()
@@ -310,7 +310,7 @@ class WFSOrder extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShippingInfo|null $shippingInfo shippingInfo
+     * @param \Walmart\Models\MP\MX\Orders\ShippingInfo|null $shippingInfo shippingInfo
      *
      * @return self
     
@@ -328,7 +328,7 @@ class WFSOrder extends BaseModel
     /**
      * Gets billingInfo
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerBillingInfo|null
+     * @return \Walmart\Models\MP\MX\Orders\BillingInfo|null
     
      */
     public function getBillingInfo()
@@ -339,7 +339,7 @@ class WFSOrder extends BaseModel
     /**
      * Sets billingInfo
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerBillingInfo|null $billingInfo billingInfo
+     * @param \Walmart\Models\MP\MX\Orders\BillingInfo|null $billingInfo billingInfo
      *
      * @return self
     
@@ -415,7 +415,7 @@ class WFSOrder extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\OrderLine[]|null
     
      */
     public function getOrderLines()
@@ -426,7 +426,7 @@ class WFSOrder extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInner[]|null $orderLines orderLines
+     * @param \Walmart\Models\MP\MX\Orders\OrderLine[]|null $orderLines orderLines
      *
      * @return self
     
@@ -444,7 +444,7 @@ class WFSOrder extends BaseModel
     /**
      * Gets shipments
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\Shipment[]|null
     
      */
     public function getShipments()
@@ -455,7 +455,7 @@ class WFSOrder extends BaseModel
     /**
      * Sets shipments
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInner[]|null $shipments shipments
+     * @param \Walmart\Models\MP\MX\Orders\Shipment[]|null $shipments shipments
      *
      * @return self
     
@@ -473,7 +473,7 @@ class WFSOrder extends BaseModel
     /**
      * Gets orderTotal
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderTotal|null
+     * @return \Walmart\Models\MP\MX\Orders\ChargeAmount|null
     
      */
     public function getOrderTotal()
@@ -484,7 +484,7 @@ class WFSOrder extends BaseModel
     /**
      * Sets orderTotal
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderTotal|null $orderTotal orderTotal
+     * @param \Walmart\Models\MP\MX\Orders\ChargeAmount|null $orderTotal orderTotal
      *
      * @return self
     

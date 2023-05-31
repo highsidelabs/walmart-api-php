@@ -42,7 +42,7 @@ class Associate3PFulfillmentCenterRequest extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'associate3PFulfillmentCenter_request';
+    protected static string $openAPIModelName = 'Associate3PFulfillmentCenterRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -50,8 +50,8 @@ class Associate3PFulfillmentCenterRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipNodeHeader' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeHeader',
-        'shipNode' => '\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]'
+        'shipNodeHeader' => '\Walmart\Models\MP\US\Settings\ShipNodeHeader',
+        'shipNode' => '\Walmart\Models\MP\US\Settings\ThirdPartyShipNode1[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class Associate3PFulfillmentCenterRequest extends BaseModel
     /**
      * Gets shipNodeHeader
      *
-     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeHeader|null
+     * @return \Walmart\Models\MP\US\Settings\ShipNodeHeader|null
     
      */
     public function getShipNodeHeader()
@@ -146,7 +146,7 @@ class Associate3PFulfillmentCenterRequest extends BaseModel
     /**
      * Sets shipNodeHeader
      *
-     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeHeader|null $shipNodeHeader shipNodeHeader
+     * @param \Walmart\Models\MP\US\Settings\ShipNodeHeader|null $shipNodeHeader shipNodeHeader
      *
      * @return self
     
@@ -164,7 +164,7 @@ class Associate3PFulfillmentCenterRequest extends BaseModel
     /**
      * Gets shipNode
      *
-     * @return \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\ThirdPartyShipNode1[]|null
     
      */
     public function getShipNode()
@@ -175,7 +175,7 @@ class Associate3PFulfillmentCenterRequest extends BaseModel
     /**
      * Sets shipNode
      *
-     * @param \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]|null $shipNode shipNode
+     * @param \Walmart\Models\MP\US\Settings\ThirdPartyShipNode1[]|null $shipNode shipNode
      *
      * @return self
     

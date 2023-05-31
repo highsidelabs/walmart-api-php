@@ -53,7 +53,7 @@ class PartnerConfig extends BaseModel
       */
     protected static array $openAPITypes = [
         'configurationName' => 'string',
-        'configuration' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration'
+        'configuration' => '\Walmart\Models\MP\US\Settings\PartnerConfigAnyOf1Configuration'
     ];
 
     /**
@@ -166,7 +166,7 @@ class PartnerConfig extends BaseModel
     /**
      * Gets configuration
      *
-     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration|null
+     * @return \Walmart\Models\MP\US\Settings\PartnerConfigAnyOf1Configuration|null
     
      */
     public function getConfiguration()
@@ -177,7 +177,7 @@ class PartnerConfig extends BaseModel
     /**
      * Sets configuration
      *
-     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration|null $configuration configuration
+     * @param \Walmart\Models\MP\US\Settings\PartnerConfigAnyOf1Configuration|null $configuration configuration
      *
      * @return self
     

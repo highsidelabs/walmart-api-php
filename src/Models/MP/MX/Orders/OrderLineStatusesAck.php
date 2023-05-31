@@ -50,7 +50,7 @@ class OrderLineStatusesAck extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLineStatus' => '\Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]'
+        'orderLineStatus' => '\Walmart\Models\MP\MX\Orders\OrderLineStatusAck[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class OrderLineStatusesAck extends BaseModel
     /**
      * Gets orderLineStatus
      *
-     * @return \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\OrderLineStatusAck[]|null
     
      */
     public function getOrderLineStatus()
@@ -139,7 +139,7 @@ class OrderLineStatusesAck extends BaseModel
     /**
      * Sets orderLineStatus
      *
-     * @param \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledgeOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]|null $orderLineStatus orderLineStatus
+     * @param \Walmart\Models\MP\MX\Orders\OrderLineStatusAck[]|null $orderLineStatus orderLineStatus
      *
      * @return self
     

@@ -50,7 +50,7 @@ class OrderAckRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderAcknowledge' => '\Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledge'
+        'orderAcknowledge' => '\Walmart\Models\MP\MX\Orders\OrderCancellation'
     ];
 
     /**
@@ -128,7 +128,7 @@ class OrderAckRequest extends BaseModel
     /**
      * Gets orderAcknowledge
      *
-     * @return \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledge|null
+     * @return \Walmart\Models\MP\MX\Orders\OrderCancellation|null
     
      */
     public function getOrderAcknowledge()
@@ -139,7 +139,7 @@ class OrderAckRequest extends BaseModel
     /**
      * Sets orderAcknowledge
      *
-     * @param \Walmart\Models\MP\MX\Orders\AcknowledgeOrdersRequestOrderAcknowledge|null $orderAcknowledge orderAcknowledge
+     * @param \Walmart\Models\MP\MX\Orders\OrderCancellation|null $orderAcknowledge orderAcknowledge
      *
      * @return self
     

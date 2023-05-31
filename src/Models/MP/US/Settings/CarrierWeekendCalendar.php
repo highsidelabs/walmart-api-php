@@ -52,8 +52,8 @@ class CarrierWeekendCalendar extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'sunday' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday',
-        'saturday' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday'
+        'sunday' => '\Walmart\Models\MP\US\Settings\CarrierWeekendCalendarDay',
+        'saturday' => '\Walmart\Models\MP\US\Settings\CarrierWeekendCalendarDay'
     ];
 
     /**
@@ -137,7 +137,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Gets sunday
      *
-     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null
+     * @return \Walmart\Models\MP\US\Settings\CarrierWeekendCalendarDay|null
     
      */
     public function getSunday()
@@ -148,7 +148,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Sets sunday
      *
-     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null $sunday sunday
+     * @param \Walmart\Models\MP\US\Settings\CarrierWeekendCalendarDay|null $sunday sunday
      *
      * @return self
     
@@ -166,7 +166,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Gets saturday
      *
-     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null
+     * @return \Walmart\Models\MP\US\Settings\CarrierWeekendCalendarDay|null
     
      */
     public function getSaturday()
@@ -177,7 +177,7 @@ class CarrierWeekendCalendar extends BaseModel
     /**
      * Sets saturday
      *
-     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendarSunday|null $saturday saturday
+     * @param \Walmart\Models\MP\US\Settings\CarrierWeekendCalendarDay|null $saturday saturday
      *
      * @return self
     

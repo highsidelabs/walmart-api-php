@@ -14,7 +14,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAvailableReconReportDates()`
 
 ```php
-getAvailableReconReportDates(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+getAvailableReconReportDates(): \Walmart\Models\MP\US\Reports\ReconReportDateResponse
 ```
 Available recon report dates(Legacy)
 
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response**](../Model/GetAvailableReconReportDates200Response.md)
+[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../Model/ReconReportDateResponse.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ This endpoint does not need any parameter.
 ## `getAvailableV1ReconReportDates()`
 
 ```php
-getAvailableV1ReconReportDates(): \Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response
+getAvailableV1ReconReportDates(): \Walmart\Models\MP\US\Reports\ReconReportDateResponse
 ```
 Available recon report dates
 
@@ -104,7 +104,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\GetAvailableReconReportDates200Response**](../Model/GetAvailableReconReportDates200Response.md)
+[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../Model/ReconReportDateResponse.md)
 
 ### Authorization
 
@@ -122,7 +122,7 @@ This endpoint does not need any parameter.
 ## `getPartnerPerformance()`
 
 ```php
-getPartnerPerformance(): \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response
+getPartnerPerformance(): \Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes
 ```
 Performance Report
 
@@ -158,7 +158,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response**](../Model/GetPartnerPerformance200Response.md)
+[**\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes**](../Model/PartnerProgramPerformanceRes.md)
 
 ### Authorization
 
@@ -176,7 +176,7 @@ This endpoint does not need any parameter.
 ## `getPartnerStatement()`
 
 ```php
-getPartnerStatement(): \Walmart\Models\MP\US\Reports\GetPartnerStatement200Response
+getPartnerStatement(): \Walmart\Models\MP\US\Reports\PartnerProgramStatementRes
 ```
 Payment Statement Report
 
@@ -212,7 +212,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\GetPartnerStatement200Response**](../Model/GetPartnerStatement200Response.md)
+[**\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes**](../Model/PartnerProgramStatementRes.md)
 
 ### Authorization
 

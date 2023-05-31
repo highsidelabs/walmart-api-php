@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getInventory()`
 
 ```php
-getInventory($sku): \Walmart\Models\MP\CA\Inventory\GetInventory200Response
+getInventory($sku): \Walmart\Models\MP\CA\Inventory\InventoryV2
 ```
 Inventory
 
@@ -57,7 +57,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../Model/InventoryV2.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ try {
 ## `updateInventoryForAnItemCA()`
 
 ```php
-updateInventoryForAnItemCA($sku, $updateInventoryForAnItemCARequest): \Walmart\Models\MP\CA\Inventory\GetInventory200Response
+updateInventoryForAnItemCA($sku, $inventoryV2): \Walmart\Models\MP\CA\Inventory\InventoryV2
 ```
 Update inventory
 
@@ -170,7 +170,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, identifying each item.
-$updateInventoryForAnItemCARequest = <?xml version="1.0" encoding="UTF-8"?>
+$inventoryV2 = <?xml version="1.0" encoding="UTF-8"?>
 <inventory xmlns="http://walmart.com/">
     <sku>1068155</sku>
     <quantity>
@@ -178,10 +178,10 @@ $updateInventoryForAnItemCARequest = <?xml version="1.0" encoding="UTF-8"?>
         <amount>3</amount>
     </quantity>
     <fulfillmentLagTime>1</fulfillmentLagTime>
-</inventory>; // \Walmart\Models\MP\CA\Inventory\UpdateInventoryForAnItemCARequest | File fields
+</inventory>; // \Walmart\Models\MP\CA\Inventory\InventoryV2 | File fields
 
 try {
-    $result = $api->updateInventoryForAnItemCA($sku, $updateInventoryForAnItemCARequest);
+    $result = $api->updateInventoryForAnItemCA($sku, $inventoryV2);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateInventoryForAnItemCA: {$e->getMessage()}\n";
@@ -192,12 +192,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
-| **updateInventoryForAnItemCARequest** | [**\Walmart\Models\MP\CA\Inventory\UpdateInventoryForAnItemCARequest**](../Model/UpdateInventoryForAnItemCARequest.md)| File fields | |
+| **inventoryV2** | [**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../Model/InventoryV2.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../Model/InventoryV2.md)
 
 ### Authorization
 

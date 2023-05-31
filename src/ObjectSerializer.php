@@ -188,12 +188,12 @@ class ObjectSerializer
             case 'float':
                 return $value !== 0 && $value !== 0.0;
 
-            # For boolean values, '' is considered empty
+                # For boolean values, '' is considered empty
             case 'bool':
             case 'boolean':
                 return !in_array($value, [false, 0], true);
 
-            # For all the other types, any value at this point can be considered empty.
+                # For all the other types, any value at this point can be considered empty.
             default:
                 return true;
         }

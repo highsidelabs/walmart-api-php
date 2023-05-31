@@ -56,7 +56,7 @@ class GatewayError extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInnerCausesInner[]',
+        'causes' => '\Walmart\Models\CP\US\Feeds\Cause[]',
         'errorIdentifiers' => 'array<string,object>',
         'component' => 'string',
         'type' => 'string',
@@ -495,7 +495,7 @@ class GatewayError extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\CP\US\Feeds\Cause[]|null
     
      */
     public function getCauses()
@@ -506,7 +506,7 @@ class GatewayError extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Models\CP\US\Feeds\FeedRecordResponseErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\CP\US\Feeds\Cause[]|null $causes causes
      *
      * @return self
     

@@ -50,8 +50,8 @@ class ShippingConfigsResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'partner' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner',
-        'configurations' => '\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]'
+        'partner' => '\Walmart\Models\MP\US\Settings\PartnerInfoDTO',
+        'configurations' => '\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTOConfigurationsInner[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Gets partner
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null
+     * @return \Walmart\Models\MP\US\Settings\PartnerInfoDTO|null
     
      */
     public function getPartner()
@@ -146,7 +146,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Sets partner
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponsePartner|null $partner partner
+     * @param \Walmart\Models\MP\US\Settings\PartnerInfoDTO|null $partner partner
      *
      * @return self
     
@@ -164,7 +164,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Gets configurations
      *
-     * @return \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]|null
+     * @return \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTOConfigurationsInner[]|null
     
      */
     public function getConfigurations()
@@ -175,7 +175,7 @@ class ShippingConfigsResponseDTO extends BaseModel
     /**
      * Sets configurations
      *
-     * @param \Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]|null $configurations List of seller configurations like Lag Time
+     * @param \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTOConfigurationsInner[]|null $configurations List of seller configurations like Lag Time
      *
      * @return self
     

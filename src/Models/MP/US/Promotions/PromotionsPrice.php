@@ -50,13 +50,13 @@ class PromotionsPrice extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'value' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
+        'value' => '\Walmart\Models\MP\US\Promotions\MoneyType',
         'uomType' => 'string',
-        'minValue' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
-        'maxValue' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
-        'perUnitValue' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
-        'minUnitValue' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue',
-        'maxUnitValue' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue'
+        'minValue' => '\Walmart\Models\MP\US\Promotions\MoneyType',
+        'maxValue' => '\Walmart\Models\MP\US\Promotions\MoneyType',
+        'perUnitValue' => '\Walmart\Models\MP\US\Promotions\MoneyType',
+        'minUnitValue' => '\Walmart\Models\MP\US\Promotions\MoneyType',
+        'maxUnitValue' => '\Walmart\Models\MP\US\Promotions\MoneyType'
     ];
 
     /**
@@ -170,7 +170,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Gets value
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType|null
     
      */
     public function getValue()
@@ -181,7 +181,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Sets value
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $value value
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType|null $value value
      *
      * @return self
     
@@ -228,7 +228,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Gets minValue
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType|null
     
      */
     public function getMinValue()
@@ -239,7 +239,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Sets minValue
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $minValue minValue
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType|null $minValue minValue
      *
      * @return self
     
@@ -257,7 +257,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Gets maxValue
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType|null
     
      */
     public function getMaxValue()
@@ -268,7 +268,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Sets maxValue
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $maxValue maxValue
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType|null $maxValue maxValue
      *
      * @return self
     
@@ -286,7 +286,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Gets perUnitValue
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType|null
     
      */
     public function getPerUnitValue()
@@ -297,7 +297,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Sets perUnitValue
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $perUnitValue perUnitValue
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType|null $perUnitValue perUnitValue
      *
      * @return self
     
@@ -315,7 +315,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Gets minUnitValue
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType|null
     
      */
     public function getMinUnitValue()
@@ -326,7 +326,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Sets minUnitValue
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $minUnitValue minUnitValue
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType|null $minUnitValue minUnitValue
      *
      * @return self
     
@@ -344,7 +344,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Gets maxUnitValue
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType|null
     
      */
     public function getMaxUnitValue()
@@ -355,7 +355,7 @@ class PromotionsPrice extends BaseModel
     /**
      * Sets maxUnitValue
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $maxUnitValue maxUnitValue
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType|null $maxUnitValue maxUnitValue
      *
      * @return self
     

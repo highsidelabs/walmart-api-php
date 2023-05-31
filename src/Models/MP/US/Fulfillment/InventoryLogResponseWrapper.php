@@ -50,8 +50,8 @@ class InventoryLogResponseWrapper extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'headers' => '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders',
-        'payload' => '\Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload'
+        'headers' => '\Walmart\Models\MP\US\Fulfillment\PaginationMetadata',
+        'payload' => '\Walmart\Models\MP\US\Fulfillment\GetInventoryLogsResponsePayload'
     ];
 
     /**
@@ -135,7 +135,7 @@ class InventoryLogResponseWrapper extends BaseModel
     /**
      * Gets headers
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PaginationMetadata|null
     
      */
     public function getHeaders()
@@ -146,7 +146,7 @@ class InventoryLogResponseWrapper extends BaseModel
     /**
      * Sets headers
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponseHeaders|null $headers headers
+     * @param \Walmart\Models\MP\US\Fulfillment\PaginationMetadata|null $headers headers
      *
      * @return self
     
@@ -164,7 +164,7 @@ class InventoryLogResponseWrapper extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Fulfillment\GetInventoryLogsResponsePayload|null
     
      */
     public function getPayload()
@@ -175,7 +175,7 @@ class InventoryLogResponseWrapper extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetWFSInventoryLog200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Fulfillment\GetInventoryLogsResponsePayload|null $payload payload
      *
      * @return self
     

@@ -53,7 +53,7 @@ class CancelCustomerOrderRequestPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'sellerOrderId' => 'string',
-        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[]'
+        'orderItems' => '\Walmart\Models\MP\US\Fulfillment\OrderCancelItem[]'
     ];
 
     /**
@@ -172,7 +172,7 @@ class CancelCustomerOrderRequestPayload extends BaseModel
     /**
      * Gets orderItems
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\OrderCancelItem[]
     
      */
     public function getOrderItems()
@@ -183,7 +183,7 @@ class CancelCustomerOrderRequestPayload extends BaseModel
     /**
      * Sets orderItems
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInner[] $orderItems orderItems
+     * @param \Walmart\Models\MP\US\Fulfillment\OrderCancelItem[] $orderItems orderItems
      *
      * @return self
     

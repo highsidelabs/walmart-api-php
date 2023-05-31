@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **variantItemsNum** | **string** |  | [optional]
 **numReviews** | **string** |  | [optional]
 **categories** | **string[]** |  | [optional]
-**variants** | [**\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariants**](GetSearchResult200ResponseItemsInnerPropertiesVariants.md) |  | [optional]
+**variants** | [**\Walmart\Models\MP\US\Items\Variants**](Variants.md) |  | [optional]
 **nextDayEligible** | **bool** |  | [optional]
 
 

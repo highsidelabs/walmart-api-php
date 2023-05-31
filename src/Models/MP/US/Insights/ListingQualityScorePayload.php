@@ -51,8 +51,8 @@ class ListingQualityScorePayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'overAllQuality' => 'float',
-        'score' => '\Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayloadScore',
-        'postPurchaseQuality' => '\Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayloadPostPurchaseQuality'
+        'score' => '\Walmart\Models\MP\US\Insights\Score',
+        'postPurchaseQuality' => '\Walmart\Models\MP\US\Insights\PostPurchaseQuality'
     ];
 
     /**
@@ -171,7 +171,7 @@ class ListingQualityScorePayload extends BaseModel
     /**
      * Gets score
      *
-     * @return \Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayloadScore|null
+     * @return \Walmart\Models\MP\US\Insights\Score|null
     
      */
     public function getScore()
@@ -182,7 +182,7 @@ class ListingQualityScorePayload extends BaseModel
     /**
      * Sets score
      *
-     * @param \Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayloadScore|null $score score
+     * @param \Walmart\Models\MP\US\Insights\Score|null $score score
      *
      * @return self
     
@@ -200,7 +200,7 @@ class ListingQualityScorePayload extends BaseModel
     /**
      * Gets postPurchaseQuality
      *
-     * @return \Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayloadPostPurchaseQuality|null
+     * @return \Walmart\Models\MP\US\Insights\PostPurchaseQuality|null
     
      */
     public function getPostPurchaseQuality()
@@ -211,7 +211,7 @@ class ListingQualityScorePayload extends BaseModel
     /**
      * Sets postPurchaseQuality
      *
-     * @param \Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayloadPostPurchaseQuality|null $postPurchaseQuality postPurchaseQuality
+     * @param \Walmart\Models\MP\US\Insights\PostPurchaseQuality|null $postPurchaseQuality postPurchaseQuality
      *
      * @return self
     

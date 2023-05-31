@@ -52,7 +52,7 @@ class ItemDetailsLQResponsePayload extends BaseModel
     protected static array $openAPITypes = [
         'nextCursor' => 'string',
         'totalItems' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]',
+        'payload' => '\Walmart\Models\MP\US\Insights\ItemDetailsForListingQualityPayload[]',
         'status' => 'string'
     ];
 
@@ -207,7 +207,7 @@ class ItemDetailsLQResponsePayload extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ItemDetailsForListingQualityPayload[]|null
     
      */
     public function getPayload()
@@ -218,7 +218,7 @@ class ItemDetailsLQResponsePayload extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner[]|null $payload payload
+     * @param \Walmart\Models\MP\US\Insights\ItemDetailsForListingQualityPayload[]|null $payload payload
      *
      * @return self
     

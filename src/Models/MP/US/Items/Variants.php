@@ -50,8 +50,8 @@ class Variants extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'variantMeta' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantMetaInner[]',
-        'variantData' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner[]'
+        'variantMeta' => '\Walmart\Models\MP\US\Items\VariantMetum[]',
+        'variantData' => '\Walmart\Models\MP\US\Items\VariantDatum[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class Variants extends BaseModel
     /**
      * Gets variantMeta
      *
-     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantMetaInner[]|null
+     * @return \Walmart\Models\MP\US\Items\VariantMetum[]|null
     
      */
     public function getVariantMeta()
@@ -146,7 +146,7 @@ class Variants extends BaseModel
     /**
      * Sets variantMeta
      *
-     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantMetaInner[]|null $variantMeta variantMeta
+     * @param \Walmart\Models\MP\US\Items\VariantMetum[]|null $variantMeta variantMeta
      *
      * @return self
     
@@ -164,7 +164,7 @@ class Variants extends BaseModel
     /**
      * Gets variantData
      *
-     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner[]|null
+     * @return \Walmart\Models\MP\US\Items\VariantDatum[]|null
     
      */
     public function getVariantData()
@@ -175,7 +175,7 @@ class Variants extends BaseModel
     /**
      * Sets variantData
      *
-     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInner[]|null $variantData variantData
+     * @param \Walmart\Models\MP\US\Items\VariantDatum[]|null $variantData variantData
      *
      * @return self
     

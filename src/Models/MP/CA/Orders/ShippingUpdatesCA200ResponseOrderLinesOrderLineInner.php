@@ -56,7 +56,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInner extends BaseModel
         'shipFromCountry' => 'string',
         'item' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerItem',
         'charges' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges',
-        'orderLineQuantity' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity',
+        'orderLineQuantity' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity',
         'statusDate' => '\DateTime',
         'orderLineStatuses' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses',
         'refund' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund',
@@ -1126,7 +1126,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Gets orderLineQuantity
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity
+     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity
     
      */
     public function getOrderLineQuantity()
@@ -1137,7 +1137,7 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInner extends BaseModel
     /**
      * Sets orderLineQuantity
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity $orderLineQuantity orderLineQuantity
+     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineQuantity $orderLineQuantity orderLineQuantity
      *
      * @return self
     

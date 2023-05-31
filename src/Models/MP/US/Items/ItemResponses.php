@@ -50,8 +50,8 @@ class ItemResponses extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseErrorsInner[]',
-        'itemResponse' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInner[]',
+        'errors' => '\Walmart\Models\MP\US\Items\GatewayError[]',
+        'itemResponse' => '\Walmart\Models\MP\US\Items\ItemResponse[]',
         'additionalAttributes' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes',
         'totalItems' => 'int',
         'nextCursor' => 'string'
@@ -159,7 +159,7 @@ class ItemResponses extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\GatewayError[]|null
     
      */
     public function getErrors()
@@ -170,7 +170,7 @@ class ItemResponses extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Items\GatewayError[]|null $errors errors
      *
      * @return self
     
@@ -188,7 +188,7 @@ class ItemResponses extends BaseModel
     /**
      * Gets itemResponse
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInner[]
+     * @return \Walmart\Models\MP\US\Items\ItemResponse[]
     
      */
     public function getItemResponse()
@@ -199,7 +199,7 @@ class ItemResponses extends BaseModel
     /**
      * Sets itemResponse
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInner[] $itemResponse Items included in the response list
+     * @param \Walmart\Models\MP\US\Items\ItemResponse[] $itemResponse Items included in the response list
      *
      * @return self
     

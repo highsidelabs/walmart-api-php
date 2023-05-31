@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**list** | [**\Walmart\Models\MP\US\Orders\GetAllOrders200ResponseList**](GetAllOrders200ResponseList.md) |  | [optional]
+**list** | [**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3List**](PurchaseOrderTypeV3List.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

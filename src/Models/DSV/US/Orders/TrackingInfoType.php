@@ -53,7 +53,7 @@ class TrackingInfoType extends BaseModel
       */
     protected static array $openAPITypes = [
         'shipDateTime' => '\DateTime',
-        'carrierName' => '\Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName',
+        'carrierName' => '\Walmart\Models\DSV\US\Orders\CarrierNameType',
         'methodCode' => 'string',
         'trackingNumber' => 'string',
         'trackingURL' => 'string'
@@ -238,7 +238,7 @@ class TrackingInfoType extends BaseModel
     /**
      * Gets carrierName
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName
+     * @return \Walmart\Models\DSV\US\Orders\CarrierNameType
     
      */
     public function getCarrierName()
@@ -249,7 +249,7 @@ class TrackingInfoType extends BaseModel
     /**
      * Sets carrierName
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfoCarrierName $carrierName carrierName
+     * @param \Walmart\Models\DSV\US\Orders\CarrierNameType $carrierName carrierName
      *
      * @return self
     

@@ -50,7 +50,7 @@ class UpdateInventoriesRequestDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'nodes' => '\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[]'
+        'nodes' => '\Walmart\Models\MP\US\Inventory\UpdateInventoriesRequestNodeDTO[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class UpdateInventoriesRequestDTO extends BaseModel
     /**
      * Gets nodes
      *
-     * @return \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[]
+     * @return \Walmart\Models\MP\US\Inventory\UpdateInventoriesRequestNodeDTO[]
     
      */
     public function getNodes()
@@ -142,7 +142,7 @@ class UpdateInventoriesRequestDTO extends BaseModel
     /**
      * Sets nodes
      *
-     * @param \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner[] $nodes nodes
+     * @param \Walmart\Models\MP\US\Inventory\UpdateInventoriesRequestNodeDTO[] $nodes nodes
      *
      * @return self
     

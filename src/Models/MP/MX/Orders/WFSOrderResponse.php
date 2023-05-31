@@ -50,9 +50,9 @@ class WFSOrderResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseMeta',
-        'order' => '\Walmart\Models\MP\MX\Orders\GetAllWFSOrders200ResponseOrderInner[]',
-        'error' => '\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError'
+        'meta' => '\Walmart\Models\MP\MX\Orders\MetaWithoutCursor',
+        'order' => '\Walmart\Models\MP\MX\Orders\WFSOrder[]',
+        'error' => '\Walmart\Models\MP\MX\Orders\Error'
     ];
 
     /**
@@ -142,7 +142,7 @@ class WFSOrderResponse extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseMeta|null
+     * @return \Walmart\Models\MP\MX\Orders\MetaWithoutCursor|null
     
      */
     public function getMeta()
@@ -153,7 +153,7 @@ class WFSOrderResponse extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseMeta|null $meta meta
+     * @param \Walmart\Models\MP\MX\Orders\MetaWithoutCursor|null $meta meta
      *
      * @return self
     
@@ -171,7 +171,7 @@ class WFSOrderResponse extends BaseModel
     /**
      * Gets order
      *
-     * @return \Walmart\Models\MP\MX\Orders\GetAllWFSOrders200ResponseOrderInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\WFSOrder[]|null
     
      */
     public function getOrder()
@@ -182,7 +182,7 @@ class WFSOrderResponse extends BaseModel
     /**
      * Sets order
      *
-     * @param \Walmart\Models\MP\MX\Orders\GetAllWFSOrders200ResponseOrderInner[]|null $order order
+     * @param \Walmart\Models\MP\MX\Orders\WFSOrder[]|null $order order
      *
      * @return self
     
@@ -200,7 +200,7 @@ class WFSOrderResponse extends BaseModel
     /**
      * Gets error
      *
-     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null
+     * @return \Walmart\Models\MP\MX\Orders\Error|null
     
      */
     public function getError()
@@ -211,7 +211,7 @@ class WFSOrderResponse extends BaseModel
     /**
      * Sets error
      *
-     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseError|null $error error
+     * @param \Walmart\Models\MP\MX\Orders\Error|null $error error
      *
      * @return self
     

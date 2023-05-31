@@ -51,7 +51,7 @@ class PickupDiscount extends BaseModel
       */
     protected static array $openAPITypes = [
         'isPickUpDiscountEligible' => 'bool',
-        'pickupDiscountAmt' => '\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue'
+        'pickupDiscountAmt' => '\Walmart\Models\MP\US\Promotions\MoneyType'
     ];
 
     /**
@@ -164,7 +164,7 @@ class PickupDiscount extends BaseModel
     /**
      * Gets pickupDiscountAmt
      *
-     * @return \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null
+     * @return \Walmart\Models\MP\US\Promotions\MoneyType|null
     
      */
     public function getPickupDiscountAmt()
@@ -175,7 +175,7 @@ class PickupDiscount extends BaseModel
     /**
      * Sets pickupDiscountAmt
      *
-     * @param \Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue|null $pickupDiscountAmt pickupDiscountAmt
+     * @param \Walmart\Models\MP\US\Promotions\MoneyType|null $pickupDiscountAmt pickupDiscountAmt
      *
      * @return self
     

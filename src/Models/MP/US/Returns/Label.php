@@ -53,7 +53,7 @@ class Label extends BaseModel
       */
     protected static array $openAPITypes = [
         'labelImageURL' => 'string',
-        'carrierInfoList' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]'
+        'carrierInfoList' => '\Walmart\Models\MP\US\Returns\CarrierInfoList[]'
     ];
 
     /**
@@ -166,7 +166,7 @@ class Label extends BaseModel
     /**
      * Gets carrierInfoList
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]|null
+     * @return \Walmart\Models\MP\US\Returns\CarrierInfoList[]|null
     
      */
     public function getCarrierInfoList()
@@ -177,7 +177,7 @@ class Label extends BaseModel
     /**
      * Sets carrierInfoList
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnLineGroupsInnerLabelsInnerCarrierInfoListInner[]|null $carrierInfoList Carrier information for the return
+     * @param \Walmart\Models\MP\US\Returns\CarrierInfoList[]|null $carrierInfoList Carrier information for the return
      *
      * @return self
     

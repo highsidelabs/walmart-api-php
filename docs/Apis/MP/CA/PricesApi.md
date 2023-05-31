@@ -76,7 +76,7 @@ try {
 ## `updatePriceCA()`
 
 ```php
-updatePriceCA($body): \Walmart\Models\MP\CA\Prices\UpdatePriceCA200Response
+updatePriceCA($body): \Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2
 ```
 Update a price
 
@@ -133,7 +133,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Prices\UpdatePriceCA200Response**](../Model/UpdatePriceCA200Response.md)
+[**\Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2**](../Model/MPItemPriceResponseV2.md)
 
 ### Authorization
 

@@ -54,11 +54,11 @@ class PartnerProgramPerformanceRes extends BaseModel
         'status' => 'string',
         'error' => 'string',
         'partnerId' => 'string',
-        '_7dAY' => '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY',
-        '_14dAY' => '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY',
-        '_30dAY' => '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY',
-        '_60dAY' => '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY',
-        '_90dAY' => '\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY'
+        '_7dAY' => '\Walmart\Models\MP\US\Reports\PartnerProgramPerformance',
+        '_14dAY' => '\Walmart\Models\MP\US\Reports\PartnerProgramPerformance',
+        '_30dAY' => '\Walmart\Models\MP\US\Reports\PartnerProgramPerformance',
+        '_60dAY' => '\Walmart\Models\MP\US\Reports\PartnerProgramPerformance',
+        '_90dAY' => '\Walmart\Models\MP\US\Reports\PartnerProgramPerformance'
     ];
 
     /**
@@ -300,7 +300,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Gets _7dAY
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null
     
      */
     public function get7dAY()
@@ -311,7 +311,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Sets _7dAY
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null $_7dAY _7dAY
+     * @param \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null $_7dAY _7dAY
      *
      * @return self
     
@@ -329,7 +329,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Gets _14dAY
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null
     
      */
     public function get14dAY()
@@ -340,7 +340,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Sets _14dAY
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null $_14dAY _14dAY
+     * @param \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null $_14dAY _14dAY
      *
      * @return self
     
@@ -358,7 +358,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Gets _30dAY
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null
     
      */
     public function get30dAY()
@@ -369,7 +369,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Sets _30dAY
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null $_30dAY _30dAY
+     * @param \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null $_30dAY _30dAY
      *
      * @return self
     
@@ -387,7 +387,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Gets _60dAY
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null
     
      */
     public function get60dAY()
@@ -398,7 +398,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Sets _60dAY
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null $_60dAY _60dAY
+     * @param \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null $_60dAY _60dAY
      *
      * @return self
     
@@ -416,7 +416,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Gets _90dAY
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null
     
      */
     public function get90dAY()
@@ -427,7 +427,7 @@ class PartnerProgramPerformanceRes extends BaseModel
     /**
      * Sets _90dAY
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY|null $_90dAY _90dAY
+     * @param \Walmart\Models\MP\US\Reports\PartnerProgramPerformance|null $_90dAY _90dAY
      *
      * @return self
     

@@ -53,7 +53,7 @@ class Properties extends BaseModel
         'variantItemsNum' => 'string',
         'numReviews' => 'string',
         'categories' => 'string[]',
-        'variants' => '\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariants',
+        'variants' => '\Walmart\Models\MP\US\Items\Variants',
         'nextDayEligible' => 'bool'
     ];
 
@@ -243,7 +243,7 @@ class Properties extends BaseModel
     /**
      * Gets variants
      *
-     * @return \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariants|null
+     * @return \Walmart\Models\MP\US\Items\Variants|null
     
      */
     public function getVariants()
@@ -254,7 +254,7 @@ class Properties extends BaseModel
     /**
      * Sets variants
      *
-     * @param \Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariants|null $variants variants
+     * @param \Walmart\Models\MP\US\Items\Variants|null $variants variants
      *
      * @return self
     

@@ -54,7 +54,7 @@ class NameValueAttribute extends BaseModel
         'type' => 'string',
         'isVariant' => 'bool',
         'variantResourceType' => 'string',
-        'value' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]'
+        'value' => '\Walmart\Models\MP\US\Items\GenericAttributeValue[]'
     ];
 
     /**
@@ -333,7 +333,7 @@ class NameValueAttribute extends BaseModel
     /**
      * Gets value
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]
+     * @return \Walmart\Models\MP\US\Items\GenericAttributeValue[]
     
      */
     public function getValue()
@@ -344,7 +344,7 @@ class NameValueAttribute extends BaseModel
     /**
      * Sets value
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[] $value value
+     * @param \Walmart\Models\MP\US\Items\GenericAttributeValue[] $value value
      *
      * @return self
     

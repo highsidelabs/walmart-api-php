@@ -52,7 +52,7 @@ class State extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'stateSubregions' => '\Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInnerStateSubregionsInner[]'
+        'stateSubregions' => '\Walmart\Models\MP\US\Rules\StateSubRegion[]'
     ];
 
     /**
@@ -130,7 +130,7 @@ class State extends BaseModel
     /**
      * Gets stateSubregions
      *
-     * @return \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInnerStateSubregionsInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\StateSubRegion[]|null
     
      */
     public function getStateSubregions()
@@ -141,7 +141,7 @@ class State extends BaseModel
     /**
      * Sets stateSubregions
      *
-     * @param \Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInnerStateSubregionsInner[]|null $stateSubregions statesubregions
+     * @param \Walmart\Models\MP\US\Rules\StateSubRegion[]|null $stateSubregions statesubregions
      *
      * @return self
     

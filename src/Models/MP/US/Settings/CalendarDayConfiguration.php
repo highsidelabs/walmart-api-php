@@ -52,9 +52,9 @@ class CalendarDayConfiguration extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'standardProcessingSchedule' => '\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule',
+        'standardProcessingSchedule' => '\Walmart\Models\MP\US\Settings\StandardProcessingScheduleResponse',
         'additionalDaysOff' => 'string[]',
-        'carrierWeekendCalendar' => '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar'
+        'carrierWeekendCalendar' => '\Walmart\Models\MP\US\Settings\CarrierWeekendCalendar'
     ];
 
     /**
@@ -150,7 +150,7 @@ class CalendarDayConfiguration extends BaseModel
     /**
      * Gets standardProcessingSchedule
      *
-     * @return \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule
+     * @return \Walmart\Models\MP\US\Settings\StandardProcessingScheduleResponse
     
      */
     public function getStandardProcessingSchedule()
@@ -161,7 +161,7 @@ class CalendarDayConfiguration extends BaseModel
     /**
      * Sets standardProcessingSchedule
      *
-     * @param \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule $standardProcessingSchedule standardProcessingSchedule
+     * @param \Walmart\Models\MP\US\Settings\StandardProcessingScheduleResponse $standardProcessingSchedule standardProcessingSchedule
      *
      * @return self
     
@@ -208,7 +208,7 @@ class CalendarDayConfiguration extends BaseModel
     /**
      * Gets carrierWeekendCalendar
      *
-     * @return \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar|null
+     * @return \Walmart\Models\MP\US\Settings\CarrierWeekendCalendar|null
     
      */
     public function getCarrierWeekendCalendar()
@@ -219,7 +219,7 @@ class CalendarDayConfiguration extends BaseModel
     /**
      * Sets carrierWeekendCalendar
      *
-     * @param \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar|null $carrierWeekendCalendar carrierWeekendCalendar
+     * @param \Walmart\Models\MP\US\Settings\CarrierWeekendCalendar|null $carrierWeekendCalendar carrierWeekendCalendar
      *
      * @return self
     

@@ -50,7 +50,7 @@ class FeedRecordResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'errors' => '\Walmart\Models\MP\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\US\Feeds\GatewayError[]',
         'totalResults' => 'int',
         'offset' => 'int',
         'limit' => 'int',
@@ -156,7 +156,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Feeds\GatewayError[]|null
     
      */
     public function getErrors()
@@ -167,7 +167,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Feeds\GetAllFeedStatuses200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Feeds\GatewayError[]|null $errors errors
      *
      * @return self
     

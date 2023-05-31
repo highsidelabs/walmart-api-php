@@ -50,7 +50,7 @@ class ItemsAssociationsRequestDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'items' => '\Walmart\Models\MP\US\Items\GetItemAssociationsRequestItemsInner[]'
+        'items' => '\Walmart\Models\MP\US\Items\RequestItem[]'
     ];
 
     /**
@@ -131,7 +131,7 @@ class ItemsAssociationsRequestDTO extends BaseModel
     /**
      * Gets items
      *
-     * @return \Walmart\Models\MP\US\Items\GetItemAssociationsRequestItemsInner[]
+     * @return \Walmart\Models\MP\US\Items\RequestItem[]
     
      */
     public function getItems()
@@ -142,7 +142,7 @@ class ItemsAssociationsRequestDTO extends BaseModel
     /**
      * Sets items
      *
-     * @param \Walmart\Models\MP\US\Items\GetItemAssociationsRequestItemsInner[] $items List of items whose associations need to be fetched. It should not have more than 50 items.
+     * @param \Walmart\Models\MP\US\Items\RequestItem[] $items List of items whose associations need to be fetched. It should not have more than 50 items.
      *
      * @return self
     

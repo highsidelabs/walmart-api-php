@@ -55,7 +55,7 @@ class RequestStatusResponse extends BaseModel
         'requestSubmissionDate' => 'string',
         'reportType' => 'string',
         'reportVersion' => 'string',
-        'payload' => '\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload',
+        'payload' => '\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload',
         'reportGenerationDate' => 'string'
     ];
 
@@ -419,7 +419,7 @@ class RequestStatusResponse extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload|null
+     * @return \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload|null
     
      */
     public function getPayload()
@@ -430,7 +430,7 @@ class RequestStatusResponse extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInnerPayload|null $payload payload
+     * @param \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload|null $payload payload
      *
      * @return self
     

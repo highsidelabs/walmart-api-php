@@ -52,7 +52,7 @@ class ItemCost extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'shipNode' => 'string',
-        'unitCost' => '\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost'
+        'unitCost' => '\Walmart\Models\DSV\US\Cost\UnitCost'
     ];
 
     /**
@@ -200,7 +200,7 @@ class ItemCost extends BaseModel
     /**
      * Gets unitCost
      *
-     * @return \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost|null
+     * @return \Walmart\Models\DSV\US\Cost\UnitCost|null
     
      */
     public function getUnitCost()
@@ -211,7 +211,7 @@ class ItemCost extends BaseModel
     /**
      * Sets unitCost
      *
-     * @param \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost|null $unitCost unitCost
+     * @param \Walmart\Models\DSV\US\Cost\UnitCost|null $unitCost unitCost
      *
      * @return self
     

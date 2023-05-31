@@ -51,7 +51,7 @@ class OrderCancelItem extends BaseModel
       */
     protected static array $openAPITypes = [
         'sellerLineId' => 'string',
-        'qty' => '\Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInnerQty'
+        'qty' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType'
     ];
 
     /**
@@ -195,7 +195,7 @@ class OrderCancelItem extends BaseModel
     /**
      * Gets qty
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInnerQty
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType
     
      */
     public function getQty()
@@ -206,7 +206,7 @@ class OrderCancelItem extends BaseModel
     /**
      * Sets qty
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInnerQty $qty qty
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType $qty qty
      *
      * @return self
     

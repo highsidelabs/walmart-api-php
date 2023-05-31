@@ -51,8 +51,8 @@ class ServiceResponse extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'header' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader',
-        'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]',
+        'header' => '\Walmart\Models\MP\US\Fulfillment\ServiceHeader',
+        'errors' => '\Walmart\Models\MP\US\Fulfillment\Error[]',
         'payload' => 'object'
     ];
 
@@ -287,7 +287,7 @@ class ServiceResponse extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ServiceHeader|null
     
      */
     public function getHeader()
@@ -298,7 +298,7 @@ class ServiceResponse extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader|null $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\ServiceHeader|null $header header
      *
      * @return self
     
@@ -316,7 +316,7 @@ class ServiceResponse extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Error[]|null
     
      */
     public function getErrors()
@@ -327,7 +327,7 @@ class ServiceResponse extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Fulfillment\Error[]|null $errors errors
      *
      * @return self
     

@@ -53,8 +53,8 @@ class PromiseOrderRequestPayload extends BaseModel
       */
     protected static array $openAPITypes = [
         'requestId' => 'string',
-        'destinations' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[]',
-        'offerSelections' => '\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]'
+        'destinations' => '\Walmart\Models\MP\US\Fulfillment\PromiseDestination[]',
+        'offerSelections' => '\Walmart\Models\MP\US\Fulfillment\OfferSelection[]'
     ];
 
     /**
@@ -182,7 +182,7 @@ class PromiseOrderRequestPayload extends BaseModel
     /**
      * Gets destinations
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\PromiseDestination[]
     
      */
     public function getDestinations()
@@ -193,7 +193,7 @@ class PromiseOrderRequestPayload extends BaseModel
     /**
      * Sets destinations
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner[] $destinations Customer order destination details.
+     * @param \Walmart\Models\MP\US\Fulfillment\PromiseDestination[] $destinations Customer order destination details.
      *
      * @return self
     
@@ -211,7 +211,7 @@ class PromiseOrderRequestPayload extends BaseModel
     /**
      * Gets offerSelections
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]
+     * @return \Walmart\Models\MP\US\Fulfillment\OfferSelection[]
     
      */
     public function getOfferSelections()
@@ -222,7 +222,7 @@ class PromiseOrderRequestPayload extends BaseModel
     /**
      * Sets offerSelections
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[] $offerSelections Offer Selection details. List of offers - number of offer inside offer selection should be less than or equal to 30.
+     * @param \Walmart\Models\MP\US\Fulfillment\OfferSelection[] $offerSelections Offer Selection details. List of offers - number of offer inside offer selection should be less than or equal to 30.
      *
      * @return self
     

@@ -53,7 +53,7 @@ class PublishAndTransactable extends BaseModel
         'issueTitle' => 'string',
         'totalIssue' => 'int',
         'maxIssue' => 'int',
-        'issues' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]',
+        'issues' => '\Walmart\Models\MP\US\Insights\Issue[]',
         'score' => 'int'
     ];
 
@@ -243,7 +243,7 @@ class PublishAndTransactable extends BaseModel
     /**
      * Gets issues
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\Issue[]|null
     
      */
     public function getIssues()
@@ -254,7 +254,7 @@ class PublishAndTransactable extends BaseModel
     /**
      * Sets issues
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsOfferPublishAndTransactableIssuesInner[]|null $issues issues
+     * @param \Walmart\Models\MP\US\Insights\Issue[]|null $issues issues
      *
      * @return self
     

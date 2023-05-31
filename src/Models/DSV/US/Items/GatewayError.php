@@ -56,7 +56,7 @@ class GatewayError extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Models\DSV\US\Items\GetAllItems200ResponseErrorsInnerCausesInner[]',
+        'causes' => '\Walmart\Models\DSV\US\Items\Cause[]',
         'errorIdentifiers' => 'array<string,object>',
         'component' => 'string',
         'type' => 'string',
@@ -495,7 +495,7 @@ class GatewayError extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Models\DSV\US\Items\GetAllItems200ResponseErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\DSV\US\Items\Cause[]|null
     
      */
     public function getCauses()
@@ -506,7 +506,7 @@ class GatewayError extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Models\DSV\US\Items\GetAllItems200ResponseErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\DSV\US\Items\Cause[]|null $causes causes
      *
      * @return self
     

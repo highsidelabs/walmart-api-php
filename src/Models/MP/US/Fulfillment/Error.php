@@ -56,7 +56,7 @@ class Error extends BaseModel
         'info' => 'string',
         'severity' => 'string',
         'category' => 'string',
-        'causes' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]'
+        'causes' => '\Walmart\Models\MP\US\Fulfillment\Cause[]'
     ];
 
     /**
@@ -430,7 +430,7 @@ class Error extends BaseModel
     /**
      * Gets causes
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Cause[]|null
     
      */
     public function getCauses()
@@ -441,7 +441,7 @@ class Error extends BaseModel
     /**
      * Sets causes
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]|null $causes causes
+     * @param \Walmart\Models\MP\US\Fulfillment\Cause[]|null $causes causes
      *
      * @return self
     

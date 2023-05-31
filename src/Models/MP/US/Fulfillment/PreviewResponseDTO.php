@@ -56,10 +56,10 @@ class PreviewResponseDTO extends BaseModel
         'isSortable' => 'bool',
         'isNonSortable' => 'bool',
         'nodeType' => 'string',
-        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress',
+        'shipToAddress' => '\Walmart\Models\MP\US\Fulfillment\ShipToAddress',
         'totalNetTransferCharge' => 'float',
         'currencyUnit' => 'string',
-        'shipmentItems' => '\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]'
+        'shipmentItems' => '\Walmart\Models\MP\US\Fulfillment\PreviewShipmentItem[]'
     ];
 
     /**
@@ -295,7 +295,7 @@ class PreviewResponseDTO extends BaseModel
     /**
      * Gets shipToAddress
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null
+     * @return \Walmart\Models\MP\US\Fulfillment\ShipToAddress|null
     
      */
     public function getShipToAddress()
@@ -306,7 +306,7 @@ class PreviewResponseDTO extends BaseModel
     /**
      * Sets shipToAddress
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress|null $shipToAddress shipToAddress
+     * @param \Walmart\Models\MP\US\Fulfillment\ShipToAddress|null $shipToAddress shipToAddress
      *
      * @return self
     
@@ -382,7 +382,7 @@ class PreviewResponseDTO extends BaseModel
     /**
      * Gets shipmentItems
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\PreviewShipmentItem[]|null
     
      */
     public function getShipmentItems()
@@ -393,7 +393,7 @@ class PreviewResponseDTO extends BaseModel
     /**
      * Sets shipmentItems
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner[]|null $shipmentItems Shipment items
+     * @param \Walmart\Models\MP\US\Fulfillment\PreviewShipmentItem[]|null $shipmentItems Shipment items
      *
      * @return self
     

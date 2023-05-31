@@ -145,7 +145,7 @@ try {
 ## `getFeedItemStatus()`
 
 ```php
-getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response
+getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Models\MP\CA\Feeds\PartnerFeedResponse
 ```
 Get feed and item status
 
@@ -197,7 +197,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Feeds\GetFeedItemStatus200Response**](../Model/GetFeedItemStatus200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\PartnerFeedResponse**](../Model/PartnerFeedResponse.md)
 
 ### Authorization
 

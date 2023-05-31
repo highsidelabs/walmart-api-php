@@ -74,7 +74,7 @@ try {
 ## `getMultiNodeInventoryForAllSkuAndAllShipNodes()`
 
 ```php
-getMultiNodeInventoryForAllSkuAndAllShipNodes($limit, $nextCursor): \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response
+getMultiNodeInventoryForAllSkuAndAllShipNodes($limit, $nextCursor): \Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO
 ```
 Multiple Item Inventory for All Ship Nodes
 
@@ -115,7 +115,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response**](../Model/GetMultiNodeInventoryForAllSkuAndAllShipNodes200Response.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO**](../Model/MultiNodeInventoryFetchResponseDTO.md)
 
 ### Authorization
 
@@ -133,7 +133,7 @@ try {
 ## `getMultiNodeInventoryForSkuAndAllShipnodes()`
 
 ```php
-getMultiNodeInventoryForSkuAndAllShipnodes($sku, $shipNode): \Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
+getMultiNodeInventoryForSkuAndAllShipnodes($sku, $shipNode): \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO
 ```
 Single Item Inventory by Ship Node
 
@@ -174,7 +174,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response**](../Model/GetMultiNodeInventoryForSkuAndAllShipnodes200Response.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../Model/MultiNodeInventoryUpdateResponseDTO.md)
 
 ### Authorization
 
@@ -192,7 +192,7 @@ try {
 ## `getWFSInventory()`
 
 ```php
-getWFSInventory($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset): \Walmart\Models\MP\US\Inventory\GetWFSInventory200Response
+getWFSInventory($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset): \Walmart\Models\MP\US\Inventory\WfsInventoryDTO
 ```
 WFS Inventory
 
@@ -239,7 +239,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\GetWFSInventory200Response**](../Model/GetWFSInventory200Response.md)
+[**\Walmart\Models\MP\US\Inventory\WfsInventoryDTO**](../Model/WfsInventoryDTO.md)
 
 ### Authorization
 
@@ -257,7 +257,7 @@ try {
 ## `updateBulkInventory()`
 
 ```php
-updateBulkInventory($feedType, $file, $shipNode): \Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response
+updateBulkInventory($feedType, $file, $shipNode): \Walmart\Models\MP\US\Inventory\FeedId
 ```
 Bulk Item Inventory Update
 
@@ -300,7 +300,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\UpdateBulkInventory200Response**](../Model/UpdateBulkInventory200Response.md)
+[**\Walmart\Models\MP\US\Inventory\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ try {
 ## `updateMultiNodeInventory()`
 
 ```php
-updateMultiNodeInventory($sku, $updateMultiNodeInventoryRequest): \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response
+updateMultiNodeInventory($sku, $multiNodeInventoryUpdateRequestDTO): \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO
 ```
 Update Item Inventory per Ship Node
 
@@ -401,10 +401,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded.
-$updateMultiNodeInventoryRequest = {"inventories":{"nodes":[{"shipNode":"1000005050","inputQty":{"unit":"EACH","amount":88}},{"shipNode":"79897837271126017","inputQty":{"unit":"EACH","amount":55}}]}}; // \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest | Request fields
+$multiNodeInventoryUpdateRequestDTO = {"inventories":{"nodes":[{"shipNode":"1000005050","inputQty":{"unit":"EACH","amount":88}},{"shipNode":"79897837271126017","inputQty":{"unit":"EACH","amount":55}}]}}; // \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO | Request fields
 
 try {
-    $result = $api->updateMultiNodeInventory($sku, $updateMultiNodeInventoryRequest);
+    $result = $api->updateMultiNodeInventory($sku, $multiNodeInventoryUpdateRequestDTO);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateMultiNodeInventory: {$e->getMessage()}\n";
@@ -415,12 +415,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
-| **updateMultiNodeInventoryRequest** | [**\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest**](../Model/UpdateMultiNodeInventoryRequest.md)| Request fields | |
+| **multiNodeInventoryUpdateRequestDTO** | [**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO**](../Model/MultiNodeInventoryUpdateRequestDTO.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200Response**](../Model/UpdateMultiNodeInventory200Response.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../Model/MultiNodeInventoryUpdateResponseDTO.md)
 
 ### Authorization
 

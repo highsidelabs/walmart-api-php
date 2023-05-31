@@ -53,7 +53,7 @@ class ChargeTotal extends BaseModel
       */
     protected static array $openAPITypes = [
         'name' => 'string',
-        'value' => '\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount'
+        'value' => '\Walmart\Models\MP\US\Returns\Money'
     ];
 
     /**
@@ -172,7 +172,7 @@ class ChargeTotal extends BaseModel
     /**
      * Gets value
      *
-     * @return \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount
+     * @return \Walmart\Models\MP\US\Returns\Money
     
      */
     public function getValue()
@@ -183,7 +183,7 @@ class ChargeTotal extends BaseModel
     /**
      * Sets value
      *
-     * @param \Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerTotalRefundAmount $value value
+     * @param \Walmart\Models\MP\US\Returns\Money $value value
      *
      * @return self
     

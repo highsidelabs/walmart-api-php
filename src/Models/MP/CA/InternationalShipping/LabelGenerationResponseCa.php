@@ -55,12 +55,12 @@ class LabelGenerationResponseCa extends BaseModel
         'purchaseOrderId' => 'string',
         'id' => 'string',
         'trackingNo' => 'string',
-        'boxItems' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]',
+        'boxItems' => '\Walmart\Models\MP\CA\InternationalShipping\CABoxItem[]',
         'carrierName' => 'string',
         'carrierFullName' => 'string',
         'carrierServiceType' => 'string',
         'trackingUrl' => 'string',
-        'shippingDocuments' => '\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments'
+        'shippingDocuments' => '\Walmart\Models\MP\CA\InternationalShipping\ShippingDocument'
     ];
 
     /**
@@ -273,7 +273,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Gets boxItems
      *
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CABoxItem[]|null
     
      */
     public function getBoxItems()
@@ -284,7 +284,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Sets boxItems
      *
-     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequestBoxItemsInner[]|null $boxItems Box Items
+     * @param \Walmart\Models\MP\CA\InternationalShipping\CABoxItem[]|null $boxItems Box Items
      *
      * @return self
     
@@ -418,7 +418,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Gets shippingDocuments
      *
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null
+     * @return \Walmart\Models\MP\CA\InternationalShipping\ShippingDocument|null
     
      */
     public function getShippingDocuments()
@@ -429,7 +429,7 @@ class LabelGenerationResponseCa extends BaseModel
     /**
      * Sets shippingDocuments
      *
-     * @param \Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments|null $shippingDocuments shippingDocuments
+     * @param \Walmart\Models\MP\CA\InternationalShipping\ShippingDocument|null $shippingDocuments shippingDocuments
      *
      * @return self
     

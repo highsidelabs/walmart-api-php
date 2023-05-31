@@ -50,7 +50,7 @@ class ExceptionInfo extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'skus' => '\Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]'
+        'skus' => '\Walmart\Models\MP\US\Rules\OverrideItem[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ExceptionInfo extends BaseModel
     /**
      * Gets skus
      *
-     * @return \Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\OverrideItem[]|null
     
      */
     public function getSkus()
@@ -139,7 +139,7 @@ class ExceptionInfo extends BaseModel
     /**
      * Sets skus
      *
-     * @param \Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]|null $skus skus
+     * @param \Walmart\Models\MP\US\Rules\OverrideItem[]|null $skus skus
      *
      * @return self
     

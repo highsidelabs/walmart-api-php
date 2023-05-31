@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**events** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestEventsInner[]**](CreateSubscriptionRequestEventsInner.md) |  | [optional]
+**events** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord[]**](CreateSubscriptionRequestRecord.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

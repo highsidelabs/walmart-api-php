@@ -80,7 +80,7 @@ try {
 ## `cancelOrderLinesCA()`
 
 ```php
-cancelOrderLinesCA($purchaseOrderId, $cancelOrderLinesCARequest): \Walmart\Models\MP\CA\Orders\CancelOrderLinesCA200Response
+cancelOrderLinesCA($purchaseOrderId, $orderShipment): \Walmart\Models\MP\CA\Orders\OrderShipment
 ```
 Cancel Order Lines
 
@@ -109,7 +109,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
-$cancelOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
+$orderShipment = <?xml version="1.0" encoding="UTF-8"?>
 <orderCancellation xmlns="http://walmart.com/mp/v3/orders">
     <orderLines>
         <orderLine>
@@ -126,10 +126,10 @@ $cancelOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
             </orderLineStatuses>
         </orderLine>
     </orderLines>
-</orderCancellation>; // \Walmart\Models\MP\CA\Orders\CancelOrderLinesCARequest | File fields
+</orderCancellation>; // \Walmart\Models\MP\CA\Orders\OrderShipment | File fields
 
 try {
-    $result = $api->cancelOrderLinesCA($purchaseOrderId, $cancelOrderLinesCARequest);
+    $result = $api->cancelOrderLinesCA($purchaseOrderId, $orderShipment);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->cancelOrderLinesCA: {$e->getMessage()}\n";
@@ -140,12 +140,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **cancelOrderLinesCARequest** | [**\Walmart\Models\MP\CA\Orders\CancelOrderLinesCARequest**](../Model/CancelOrderLinesCARequest.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../Model/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\CancelOrderLinesCA200Response**](../Model/CancelOrderLinesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\OrderShipment**](../Model/OrderShipment.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ try {
 ## `getAllWFSOrders()`
 
 ```php
-getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset): \Walmart\Models\MP\CA\Orders\GetAllOrders200Response
+getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset): \Walmart\Models\MP\CA\Orders\OrdersListType
 ```
 Get all WFS orders
 
@@ -371,7 +371,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\OrdersListType**](../Model/OrdersListType.md)
 
 ### Authorization
 
@@ -455,7 +455,7 @@ try {
 ## `refundOrderLinesCA()`
 
 ```php
-refundOrderLinesCA($purchaseOrderId, $refundOrderLinesCARequest): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
+refundOrderLinesCA($purchaseOrderId, $orderRefund): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
 ```
 Refund Order Lines
 
@@ -484,7 +484,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
-$refundOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
+$orderRefund = <?xml version="1.0" encoding="UTF-8"?>
 <orderRefund
   xmlns:ns2="http://walmart.com/mp/v3/orders"
   xmlns:ns3="http://walmart.com/">
@@ -537,10 +537,10 @@ $refundOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
             </refunds>
         </orderLine>
     </orderLines>
-</orderRefund>; // \Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequest | File fields
+</orderRefund>; // \Walmart\Models\MP\CA\Orders\OrderRefund | File fields
 
 try {
-    $result = $api->refundOrderLinesCA($purchaseOrderId, $refundOrderLinesCARequest);
+    $result = $api->refundOrderLinesCA($purchaseOrderId, $orderRefund);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->refundOrderLinesCA: {$e->getMessage()}\n";
@@ -551,7 +551,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **refundOrderLinesCARequest** | [**\Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequest**](../Model/RefundOrderLinesCARequest.md)| File fields | |
+| **orderRefund** | [**\Walmart\Models\MP\CA\Orders\OrderRefund**](../Model/OrderRefund.md)| File fields | |
 
 
 ### Return type
@@ -574,7 +574,7 @@ try {
 ## `shippingUpdatesCA()`
 
 ```php
-shippingUpdatesCA($purchaseOrderId, $shippingUpdatesCARequest): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
+shippingUpdatesCA($purchaseOrderId, $orderShipment): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
 ```
 Shipping Updates
 
@@ -603,7 +603,7 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
-$shippingUpdatesCARequest = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+$orderShipment = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <orderShipment
   xmlns:ns2="http://walmart.com/mp/v3/orders"
   xmlns:ns3="http://walmart.com/">
@@ -631,10 +631,10 @@ $shippingUpdatesCARequest = <?xml version="1.0" encoding="UTF-8" standalone="yes
             </orderLineStatuses>
         </orderLine>
     </orderLines>
-</orderShipment>; // \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequest | File fields
+</orderShipment>; // \Walmart\Models\MP\CA\Orders\OrderShipment | File fields
 
 try {
-    $result = $api->shippingUpdatesCA($purchaseOrderId, $shippingUpdatesCARequest);
+    $result = $api->shippingUpdatesCA($purchaseOrderId, $orderShipment);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->shippingUpdatesCA: {$e->getMessage()}\n";
@@ -645,7 +645,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **shippingUpdatesCARequest** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequest**](../Model/ShippingUpdatesCARequest.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../Model/OrderShipment.md)| File fields | |
 
 
 ### Return type

@@ -54,7 +54,7 @@ class ShippingLineType extends BaseModel
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
         'shipFromCountry' => 'string',
-        'orderLineStatuses' => '\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatuses'
+        'orderLineStatuses' => '\Walmart\Models\MP\CA\Orders\OrderLineStatusesType'
     ];
 
     /**
@@ -989,7 +989,7 @@ class ShippingLineType extends BaseModel
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatuses
+     * @return \Walmart\Models\MP\CA\Orders\OrderLineStatusesType
     
      */
     public function getOrderLineStatuses()
@@ -1000,7 +1000,7 @@ class ShippingLineType extends BaseModel
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequestOrderLinesOrderLineInnerOrderLineStatuses $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\MP\CA\Orders\OrderLineStatusesType $orderLineStatuses orderLineStatuses
      *
      * @return self
     

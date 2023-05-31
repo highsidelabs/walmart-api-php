@@ -50,7 +50,7 @@ class Deliver extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'packages' => '\Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]'
+        'packages' => '\Walmart\Models\MP\MX\Orders\Package[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class Deliver extends BaseModel
     /**
      * Gets packages
      *
-     * @return \Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\Package[]|null
     
      */
     public function getPackages()
@@ -139,7 +139,7 @@ class Deliver extends BaseModel
     /**
      * Sets packages
      *
-     * @param \Walmart\Models\MP\MX\Orders\DeliveryUpdatesRequestPackagesInner[]|null $packages packages
+     * @param \Walmart\Models\MP\MX\Orders\Package[]|null $packages packages
      *
      * @return self
     

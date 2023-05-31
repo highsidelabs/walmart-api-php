@@ -51,7 +51,7 @@ class AccountConfig extends BaseModel
       */
     protected static array $openAPITypes = [
         'configurationName' => 'string',
-        'configuration' => '\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration'
+        'configuration' => '\Walmart\Models\MP\US\Settings\AccountInfoDTO'
     ];
 
     /**
@@ -164,7 +164,7 @@ class AccountConfig extends BaseModel
     /**
      * Gets configuration
      *
-     * @return \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null
+     * @return \Walmart\Models\MP\US\Settings\AccountInfoDTO|null
     
      */
     public function getConfiguration()
@@ -175,7 +175,7 @@ class AccountConfig extends BaseModel
     /**
      * Sets configuration
      *
-     * @param \Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOfConfiguration|null $configuration configuration
+     * @param \Walmart\Models\MP\US\Settings\AccountInfoDTO|null $configuration configuration
      *
      * @return self
     

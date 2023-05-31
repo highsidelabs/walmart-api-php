@@ -54,7 +54,7 @@ class PartnerProgramStatementRes extends BaseModel
         'status' => 'string',
         'error' => 'string',
         'partnerId' => 'string',
-        'payload' => '\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayload'
+        'payload' => '\Walmart\Models\MP\US\Reports\PartnerProgramStatementDO'
     ];
 
     /**
@@ -272,7 +272,7 @@ class PartnerProgramStatementRes extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayload|null
+     * @return \Walmart\Models\MP\US\Reports\PartnerProgramStatementDO|null
     
      */
     public function getPayload()
@@ -283,7 +283,7 @@ class PartnerProgramStatementRes extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Reports\PartnerProgramStatementDO|null $payload payload
      *
      * @return self
     

@@ -42,7 +42,7 @@ class UpdateRuleRequest extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'updateRule_request';
+    protected static string $openAPIModelName = 'UpdateRuleRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -50,8 +50,8 @@ class UpdateRuleRequest extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'ruleHeader' => '\Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader',
-        'rules' => '\Walmart\Models\MP\US\Rules\UpdateRuleRequestRulesInner[]'
+        'ruleHeader' => '\Walmart\Models\MP\US\Rules\RuleHeader',
+        'rules' => '\Walmart\Models\MP\US\Rules\UpdateRuleInfo[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class UpdateRuleRequest extends BaseModel
     /**
      * Gets ruleHeader
      *
-     * @return \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null
+     * @return \Walmart\Models\MP\US\Rules\RuleHeader|null
     
      */
     public function getRuleHeader()
@@ -146,7 +146,7 @@ class UpdateRuleRequest extends BaseModel
     /**
      * Sets ruleHeader
      *
-     * @param \Walmart\Models\MP\US\Rules\InactivateRuleRequestRuleHeader|null $ruleHeader ruleHeader
+     * @param \Walmart\Models\MP\US\Rules\RuleHeader|null $ruleHeader ruleHeader
      *
      * @return self
     
@@ -164,7 +164,7 @@ class UpdateRuleRequest extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Models\MP\US\Rules\UpdateRuleRequestRulesInner[]|null
+     * @return \Walmart\Models\MP\US\Rules\UpdateRuleInfo[]|null
     
      */
     public function getRules()
@@ -175,7 +175,7 @@ class UpdateRuleRequest extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Models\MP\US\Rules\UpdateRuleRequestRulesInner[]|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\UpdateRuleInfo[]|null $rules rules
      *
      * @return self
     

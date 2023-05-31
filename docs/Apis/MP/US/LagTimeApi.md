@@ -67,7 +67,7 @@ try {
 ## `updateLagTimeBulk()`
 
 ```php
-updateLagTimeBulk($feedType, $updateLagTimeBulkRequest): \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response
+updateLagTimeBulk($feedType, $updateLagTimeBulkRequest): \Walmart\Models\MP\US\LagTime\FeedId
 ```
 Update lag time
 
@@ -108,7 +108,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response**](../Model/UpdateLagTimeBulk200Response.md)
+[**\Walmart\Models\MP\US\LagTime\FeedId**](../Model/FeedId.md)
 
 ### Authorization
 

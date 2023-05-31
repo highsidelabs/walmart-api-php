@@ -55,7 +55,7 @@ class ItemType extends BaseModel
         'productName' => 'string',
         'sku' => 'string',
         'imageUrl' => 'string',
-        'weight' => '\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItemWeight'
+        'weight' => '\Walmart\Models\MP\US\Orders\WeightType'
     ];
 
     /**
@@ -244,7 +244,7 @@ class ItemType extends BaseModel
     /**
      * Gets weight
      *
-     * @return \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItemWeight|null
+     * @return \Walmart\Models\MP\US\Orders\WeightType|null
     
      */
     public function getWeight()
@@ -255,7 +255,7 @@ class ItemType extends BaseModel
     /**
      * Sets weight
      *
-     * @param \Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerItemWeight|null $weight weight
+     * @param \Walmart\Models\MP\US\Orders\WeightType|null $weight weight
      *
      * @return self
     

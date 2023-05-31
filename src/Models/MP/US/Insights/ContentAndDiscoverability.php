@@ -51,7 +51,7 @@ class ContentAndDiscoverability extends BaseModel
       */
     protected static array $openAPITypes = [
         'issueCount' => 'int',
-        'issues' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]'
+        'issues' => '\Walmart\Models\MP\US\Insights\ContentDiscoverabilityIssue[]'
     ];
 
     /**
@@ -164,7 +164,7 @@ class ContentAndDiscoverability extends BaseModel
     /**
      * Gets issues
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\ContentDiscoverabilityIssue[]|null
     
      */
     public function getIssues()
@@ -175,7 +175,7 @@ class ContentAndDiscoverability extends BaseModel
     /**
      * Sets issues
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInner[]|null $issues issues
+     * @param \Walmart\Models\MP\US\Insights\ContentDiscoverabilityIssue[]|null $issues issues
      *
      * @return self
     

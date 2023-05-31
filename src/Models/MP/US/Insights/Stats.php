@@ -50,7 +50,7 @@ class Stats extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'gmv' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv',
+        'gmv' => '\Walmart\Models\MP\US\Insights\Gmv',
         'pageViews' => 'string',
         'orders' => 'string',
         'conversionRate' => 'string',
@@ -156,7 +156,7 @@ class Stats extends BaseModel
     /**
      * Gets gmv
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv|null
+     * @return \Walmart\Models\MP\US\Insights\Gmv|null
     
      */
     public function getGmv()
@@ -167,7 +167,7 @@ class Stats extends BaseModel
     /**
      * Sets gmv
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerStatsGmv|null $gmv gmv
+     * @param \Walmart\Models\MP\US\Insights\Gmv|null $gmv gmv
      *
      * @return self
     

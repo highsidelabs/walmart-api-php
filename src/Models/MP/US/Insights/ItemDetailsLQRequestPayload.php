@@ -50,8 +50,8 @@ class ItemDetailsLQRequestPayload extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'query' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestQuery',
-        'filters' => '\Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]'
+        'query' => '\Walmart\Models\MP\US\Insights\Query',
+        'filters' => '\Walmart\Models\MP\US\Insights\Filter[]'
     ];
 
     /**
@@ -135,7 +135,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Gets query
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestQuery|null
+     * @return \Walmart\Models\MP\US\Insights\Query|null
     
      */
     public function getQuery()
@@ -146,7 +146,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Sets query
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestQuery|null $query query
+     * @param \Walmart\Models\MP\US\Insights\Query|null $query query
      *
      * @return self
     
@@ -164,7 +164,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Gets filters
      *
-     * @return \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]|null
+     * @return \Walmart\Models\MP\US\Insights\Filter[]|null
     
      */
     public function getFilters()
@@ -175,7 +175,7 @@ class ItemDetailsLQRequestPayload extends BaseModel
     /**
      * Sets filters
      *
-     * @param \Walmart\Models\MP\US\Insights\ItemsDetailsForListingRequestFiltersInner[]|null $filters filters
+     * @param \Walmart\Models\MP\US\Insights\Filter[]|null $filters filters
      *
      * @return self
     
