@@ -492,5 +492,3 @@ class ResponseItemErrorsInner extends BaseModel
         return $this;
     }
 }
-
-

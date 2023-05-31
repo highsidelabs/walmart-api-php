@@ -226,5 +226,3 @@ class GetSimulationCountResponse extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class StatusQuantity extends BaseModel
         return $this;
     }
 }
-
-

@@ -226,5 +226,3 @@ class GetCoverageForFulfillmentCenters200ResponseInner extends BaseModel
         return $this;
     }
 }
-
-

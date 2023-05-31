@@ -157,5 +157,3 @@ class UpdateInventoriesRequestDTO extends BaseModel
         return $this;
     }
 }
-
-

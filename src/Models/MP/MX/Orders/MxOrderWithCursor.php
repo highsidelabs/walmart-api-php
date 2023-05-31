@@ -226,5 +226,3 @@ class MxOrderWithCursor extends BaseModel
         return $this;
     }
 }
-
-

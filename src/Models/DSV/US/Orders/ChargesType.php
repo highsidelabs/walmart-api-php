@@ -156,5 +156,3 @@ class ChargesType extends BaseModel
         return $this;
     }
 }
-
-

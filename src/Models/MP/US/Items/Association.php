@@ -228,5 +228,3 @@ class Association extends BaseModel
         return $this;
     }
 }
-
-

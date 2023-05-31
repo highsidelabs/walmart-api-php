@@ -320,5 +320,3 @@ class ShippingMethod extends BaseModel
         return $this;
     }
 }
-
-

@@ -408,5 +408,3 @@ class LabelGenerationResponseMx extends BaseModel
         return $this;
     }
 }
-
-

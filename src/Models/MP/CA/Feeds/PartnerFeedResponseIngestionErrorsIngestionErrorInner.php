@@ -272,5 +272,3 @@ class PartnerFeedResponseIngestionErrorsIngestionErrorInner extends BaseModel
         return $this;
     }
 }
-
-

@@ -232,5 +232,3 @@ class RefundLineType extends BaseModel
         return $this;
     }
 }
-
-

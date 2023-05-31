@@ -156,5 +156,3 @@ class Image extends BaseModel
         return $this;
     }
 }
-
-

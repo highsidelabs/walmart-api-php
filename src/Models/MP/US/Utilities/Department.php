@@ -190,5 +190,3 @@ class Department extends BaseModel
         return $this;
     }
 }
-
-

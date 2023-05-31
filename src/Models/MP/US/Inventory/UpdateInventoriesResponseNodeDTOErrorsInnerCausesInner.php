@@ -262,5 +262,3 @@ class UpdateInventoriesResponseNodeDTOErrorsInnerCausesInner extends BaseModel
         return $this;
     }
 }
-
-

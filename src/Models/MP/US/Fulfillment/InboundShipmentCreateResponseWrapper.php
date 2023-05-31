@@ -264,5 +264,3 @@ class InboundShipmentCreateResponseWrapper extends BaseModel
         return $this;
     }
 }
-
-

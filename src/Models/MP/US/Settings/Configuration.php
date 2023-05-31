@@ -338,5 +338,3 @@ class Configuration extends BaseModel
         return $this;
     }
 }
-
-

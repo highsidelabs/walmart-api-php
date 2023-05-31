@@ -229,5 +229,3 @@ class ReservedQty extends BaseModel
         return $this;
     }
 }
-
-

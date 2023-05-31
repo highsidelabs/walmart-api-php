@@ -537,5 +537,3 @@ class CustomerAddress extends BaseModel
         return $this;
     }
 }
-
-

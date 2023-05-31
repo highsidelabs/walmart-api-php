@@ -322,5 +322,3 @@ class ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineSta
         return $this;
     }
 }
-
-

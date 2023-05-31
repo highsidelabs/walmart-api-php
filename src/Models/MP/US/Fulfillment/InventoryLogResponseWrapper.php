@@ -190,5 +190,3 @@ class InventoryLogResponseWrapper extends BaseModel
         return $this;
     }
 }
-
-

@@ -196,5 +196,3 @@ class OrdersListType extends BaseModel
         return $this;
     }
 }
-
-

@@ -273,5 +273,3 @@ class ChargeDetails extends BaseModel
         return $this;
     }
 }
-
-

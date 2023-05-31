@@ -159,5 +159,3 @@ class CancelOrderLinesRequest extends BaseModel
         return $this;
     }
 }
-
-

@@ -192,5 +192,3 @@ class GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShipping
         return $this;
     }
 }
-
-

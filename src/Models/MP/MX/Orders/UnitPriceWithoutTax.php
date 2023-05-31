@@ -192,5 +192,3 @@ class UnitPriceWithoutTax extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationStandardPr
         return $this;
     }
 }
-
-

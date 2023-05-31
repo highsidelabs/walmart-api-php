@@ -156,5 +156,3 @@ class RuleAction extends BaseModel
         return $this;
     }
 }
-
-

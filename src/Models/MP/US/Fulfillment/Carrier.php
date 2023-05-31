@@ -190,5 +190,3 @@ class Carrier extends BaseModel
         return $this;
     }
 }
-
-

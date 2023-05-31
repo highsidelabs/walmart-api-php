@@ -193,5 +193,3 @@ class PricingListType extends BaseModel
         return $this;
     }
 }
-
-

@@ -730,5 +730,3 @@ class GetAllItems200ResponseItemResponseInnerPrice extends BaseModel
         return $this;
     }
 }
-
-

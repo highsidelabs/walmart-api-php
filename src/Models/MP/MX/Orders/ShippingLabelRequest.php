@@ -154,5 +154,3 @@ class ShippingLabelRequest extends BaseModel
         return $this;
     }
 }
-
-

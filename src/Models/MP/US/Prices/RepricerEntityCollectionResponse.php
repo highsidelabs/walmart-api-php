@@ -190,5 +190,3 @@ class RepricerEntityCollectionResponse extends BaseModel
         return $this;
     }
 }
-
-

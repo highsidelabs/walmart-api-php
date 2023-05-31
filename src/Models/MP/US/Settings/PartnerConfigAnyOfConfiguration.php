@@ -203,5 +203,3 @@ class PartnerConfigAnyOfConfiguration extends BaseModel
         return $this;
     }
 }
-
-

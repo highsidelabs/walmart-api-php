@@ -196,5 +196,3 @@ class RetireAnItem200Response extends BaseModel
         return $this;
     }
 }
-
-

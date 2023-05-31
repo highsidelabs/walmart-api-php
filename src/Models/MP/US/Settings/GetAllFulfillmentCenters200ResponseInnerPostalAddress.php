@@ -300,5 +300,3 @@ class GetAllFulfillmentCenters200ResponseInnerPostalAddress extends BaseModel
         return $this;
     }
 }
-
-

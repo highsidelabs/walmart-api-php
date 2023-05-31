@@ -192,5 +192,3 @@ class GetAnOrder200ResponsePickupPersonsInner extends BaseModel
         return $this;
     }
 }
-
-

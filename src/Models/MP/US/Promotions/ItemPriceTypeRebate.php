@@ -338,5 +338,3 @@ class ItemPriceTypeRebate extends BaseModel
         return $this;
     }
 }
-
-

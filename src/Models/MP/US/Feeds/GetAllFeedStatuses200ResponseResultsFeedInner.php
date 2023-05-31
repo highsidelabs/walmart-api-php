@@ -552,5 +552,3 @@ class GetAllFeedStatuses200ResponseResultsFeedInner extends BaseModel
         return $this;
     }
 }
-
-

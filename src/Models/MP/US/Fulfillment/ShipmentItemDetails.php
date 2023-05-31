@@ -624,5 +624,3 @@ class ShipmentItemDetails extends BaseModel
         return $this;
     }
 }
-
-

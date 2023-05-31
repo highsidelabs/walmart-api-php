@@ -385,5 +385,3 @@ class PartnerFeedResponseItemDetailsItemIngestionStatusInner extends BaseModel
         return $this;
     }
 }
-
-

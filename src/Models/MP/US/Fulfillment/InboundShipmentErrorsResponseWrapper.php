@@ -300,5 +300,3 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
         return $this;
     }
 }
-
-

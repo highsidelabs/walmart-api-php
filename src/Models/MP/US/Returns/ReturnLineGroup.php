@@ -264,5 +264,3 @@ class ReturnLineGroup extends BaseModel
         return $this;
     }
 }
-
-

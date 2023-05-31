@@ -190,5 +190,3 @@ class CarrierCommonResponseListCarrierResponse extends BaseModel
         return $this;
     }
 }
-
-

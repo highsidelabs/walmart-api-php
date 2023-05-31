@@ -157,5 +157,3 @@ class ContentProductFeed200Response extends BaseModel
         return $this;
     }
 }
-
-

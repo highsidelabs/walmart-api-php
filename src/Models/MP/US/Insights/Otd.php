@@ -226,5 +226,3 @@ class Otd extends BaseModel
         return $this;
     }
 }
-
-

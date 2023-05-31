@@ -198,5 +198,3 @@ class ChargePerItem extends BaseModel
         return $this;
     }
 }
-
-

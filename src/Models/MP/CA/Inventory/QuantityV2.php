@@ -232,5 +232,3 @@ class QuantityV2 extends BaseModel
         return $this;
     }
 }
-
-

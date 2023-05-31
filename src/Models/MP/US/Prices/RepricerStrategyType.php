@@ -303,5 +303,3 @@ class RepricerStrategyType extends BaseModel
         return $this;
     }
 }
-
-

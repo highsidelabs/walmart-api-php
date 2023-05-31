@@ -154,5 +154,3 @@ class OrderAckRequest extends BaseModel
         return $this;
     }
 }
-
-

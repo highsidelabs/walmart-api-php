@@ -338,5 +338,3 @@ class Rebate extends BaseModel
         return $this;
     }
 }
-
-

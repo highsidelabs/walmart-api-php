@@ -190,5 +190,3 @@ class InactivateRuleRequest extends BaseModel
         return $this;
     }
 }
-
-

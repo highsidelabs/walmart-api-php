@@ -229,5 +229,3 @@ class UpdateInventoryForAnItemRequestQuantity extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class VariantCountResponses extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class CommonResponseLabelGenerationResponseMx extends BaseModel
         return $this;
     }
 }
-
-

@@ -226,5 +226,3 @@ class AreaEntity extends BaseModel
         return $this;
     }
 }
-
-

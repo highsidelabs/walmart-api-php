@@ -229,5 +229,3 @@ class ComparisonPrice extends BaseModel
         return $this;
     }
 }
-
-

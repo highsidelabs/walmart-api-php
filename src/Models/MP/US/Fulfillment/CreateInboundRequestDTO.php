@@ -278,5 +278,3 @@ class CreateInboundRequestDTO extends BaseModel
         return $this;
     }
 }
-
-

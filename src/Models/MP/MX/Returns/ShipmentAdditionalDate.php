@@ -298,5 +298,3 @@ class ShipmentAdditionalDate extends BaseModel
         return $this;
     }
 }
-
-

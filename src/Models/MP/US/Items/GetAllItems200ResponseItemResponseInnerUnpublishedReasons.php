@@ -156,5 +156,3 @@ class GetAllItems200ResponseItemResponseInnerUnpublishedReasons extends BaseMode
         return $this;
     }
 }
-
-

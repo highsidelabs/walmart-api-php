@@ -271,5 +271,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInner ext
         return $this;
     }
 }
-
-

@@ -315,5 +315,3 @@ class UpdateBulkInventoryRequestInventoryFeedHeader extends BaseModel
         return $this;
     }
 }
-
-

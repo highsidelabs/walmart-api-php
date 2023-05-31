@@ -267,5 +267,3 @@ class PerShippingCharge extends BaseModel
         return $this;
     }
 }
-
-

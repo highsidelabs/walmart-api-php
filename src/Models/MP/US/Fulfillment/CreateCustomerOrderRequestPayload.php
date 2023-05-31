@@ -405,5 +405,3 @@ class CreateCustomerOrderRequestPayload extends BaseModel
         return $this;
     }
 }
-
-

@@ -154,5 +154,3 @@ class RuleHeader extends BaseModel
         return $this;
     }
 }
-
-

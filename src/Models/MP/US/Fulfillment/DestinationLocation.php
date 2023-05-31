@@ -232,5 +232,3 @@ class DestinationLocation extends BaseModel
         return $this;
     }
 }
-
-

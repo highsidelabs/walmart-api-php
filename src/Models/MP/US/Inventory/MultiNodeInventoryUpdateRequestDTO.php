@@ -157,5 +157,3 @@ class MultiNodeInventoryUpdateRequestDTO extends BaseModel
         return $this;
     }
 }
-
-

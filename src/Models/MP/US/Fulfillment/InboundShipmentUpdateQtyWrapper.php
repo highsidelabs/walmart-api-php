@@ -255,5 +255,3 @@ class InboundShipmentUpdateQtyWrapper extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerCharges extends BaseMo
         return $this;
     }
 }
-
-

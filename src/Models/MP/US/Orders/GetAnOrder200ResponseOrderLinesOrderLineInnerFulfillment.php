@@ -336,5 +336,3 @@ class GetAnOrder200ResponseOrderLinesOrderLineInnerFulfillment extends BaseModel
         return $this;
     }
 }
-
-

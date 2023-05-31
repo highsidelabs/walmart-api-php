@@ -301,5 +301,3 @@ class GenericAttributeValue extends BaseModel
         return $this;
     }
 }
-
-

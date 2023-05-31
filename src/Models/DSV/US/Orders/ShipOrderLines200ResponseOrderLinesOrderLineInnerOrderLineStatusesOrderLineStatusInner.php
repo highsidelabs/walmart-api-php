@@ -319,5 +319,3 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLin
         return $this;
     }
 }
-
-

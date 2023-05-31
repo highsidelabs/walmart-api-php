@@ -190,5 +190,3 @@ class CommonResponseListLabelGenerationResponseCa extends BaseModel
         return $this;
     }
 }
-
-

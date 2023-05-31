@@ -192,5 +192,3 @@ class RefundAmount extends BaseModel
         return $this;
     }
 }
-
-

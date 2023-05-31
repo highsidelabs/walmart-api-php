@@ -229,5 +229,3 @@ class ItemRetireResponseV2 extends BaseModel
         return $this;
     }
 }
-
-

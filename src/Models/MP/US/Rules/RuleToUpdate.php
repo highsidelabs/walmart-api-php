@@ -226,5 +226,3 @@ class RuleToUpdate extends BaseModel
         return $this;
     }
 }
-
-

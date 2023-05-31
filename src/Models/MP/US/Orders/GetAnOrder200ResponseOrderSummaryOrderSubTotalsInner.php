@@ -190,5 +190,3 @@ class GetAnOrder200ResponseOrderSummaryOrderSubTotalsInner extends BaseModel
         return $this;
     }
 }
-
-

@@ -704,5 +704,3 @@ class GetAllItems200ResponseItemResponseInner extends BaseModel
         return $this;
     }
 }
-
-

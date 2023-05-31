@@ -154,5 +154,3 @@ class OrderAcknowledge extends BaseModel
         return $this;
     }
 }
-
-

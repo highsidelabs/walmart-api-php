@@ -355,5 +355,3 @@ class GetAnOrder200ResponseOrderLinesOrderLineInnerOrderLineStatusesOrderLineSta
         return $this;
     }
 }
-
-

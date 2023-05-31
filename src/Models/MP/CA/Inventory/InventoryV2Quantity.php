@@ -232,5 +232,3 @@ class InventoryV2Quantity extends BaseModel
         return $this;
     }
 }
-
-

@@ -228,5 +228,3 @@ class GetAllItems200ResponseItemResponseInnerVariantGroupInfo extends BaseModel
         return $this;
     }
 }
-
-

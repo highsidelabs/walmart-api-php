@@ -190,5 +190,3 @@ class GetTrendingResult extends BaseModel
         return $this;
     }
 }
-
-

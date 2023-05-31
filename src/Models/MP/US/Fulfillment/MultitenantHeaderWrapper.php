@@ -159,5 +159,3 @@ class MultitenantHeaderWrapper extends BaseModel
         return $this;
     }
 }
-
-

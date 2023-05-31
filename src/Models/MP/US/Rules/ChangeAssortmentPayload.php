@@ -154,5 +154,3 @@ class ChangeAssortmentPayload extends BaseModel
         return $this;
     }
 }
-
-

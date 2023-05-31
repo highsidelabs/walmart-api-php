@@ -156,5 +156,3 @@ class PartnerFeedResponseItemDetails extends BaseModel
         return $this;
     }
 }
-
-

@@ -226,5 +226,3 @@ class GetUnpublishedItem extends BaseModel
         return $this;
     }
 }
-
-

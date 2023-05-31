@@ -190,5 +190,3 @@ class Associate3PFulfillmentCenterRequest extends BaseModel
         return $this;
     }
 }
-
-

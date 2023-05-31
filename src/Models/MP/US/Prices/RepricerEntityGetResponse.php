@@ -334,5 +334,3 @@ class RepricerEntityGetResponse extends BaseModel
         return $this;
     }
 }
-
-

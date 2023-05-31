@@ -310,5 +310,3 @@ class ShipmentDto extends BaseModel
         return $this;
     }
 }
-
-

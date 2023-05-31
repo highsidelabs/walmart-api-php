@@ -192,5 +192,3 @@ class GetAllItems200ResponseItemResponseInnerVariantGroupInfoGroupingAttributes 
         return $this;
     }
 }
-
-

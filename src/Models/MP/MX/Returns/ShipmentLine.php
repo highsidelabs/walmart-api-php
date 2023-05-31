@@ -226,5 +226,3 @@ class ShipmentLine extends BaseModel
         return $this;
     }
 }
-
-

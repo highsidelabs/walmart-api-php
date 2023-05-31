@@ -156,5 +156,3 @@ class CustomerOrderResponseWrapper extends BaseModel
         return $this;
     }
 }
-
-

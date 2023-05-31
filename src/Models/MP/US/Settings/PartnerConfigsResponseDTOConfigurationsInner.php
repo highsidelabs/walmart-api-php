@@ -192,5 +192,3 @@ class PartnerConfigsResponseDTOConfigurationsInner extends BaseModel
         return $this;
     }
 }
-
-

@@ -461,5 +461,3 @@ class ErrorResponse extends BaseModel
         return $this;
     }
 }
-
-

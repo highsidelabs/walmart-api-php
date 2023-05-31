@@ -226,5 +226,3 @@ class Cancellations extends BaseModel
         return $this;
     }
 }
-
-

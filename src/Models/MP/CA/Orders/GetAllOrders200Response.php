@@ -199,5 +199,3 @@ class GetAllOrders200Response extends BaseModel
         return $this;
     }
 }
-
-

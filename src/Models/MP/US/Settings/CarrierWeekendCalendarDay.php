@@ -154,5 +154,3 @@ class CarrierWeekendCalendarDay extends BaseModel
         return $this;
     }
 }
-
-

@@ -228,5 +228,3 @@ class Condition extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class BuyerInfo extends BaseModel
         return $this;
     }
 }
-
-

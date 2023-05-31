@@ -198,5 +198,3 @@ class MXBoxItemResponse extends BaseModel
         return $this;
     }
 }
-
-

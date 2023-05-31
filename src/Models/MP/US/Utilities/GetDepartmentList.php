@@ -190,5 +190,3 @@ class GetDepartmentList extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class InboundPreviewResponseWrapper extends BaseModel
         return $this;
     }
 }
-
-

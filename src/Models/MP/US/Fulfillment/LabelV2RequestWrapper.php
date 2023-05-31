@@ -265,5 +265,3 @@ class LabelV2RequestWrapper extends BaseModel
         return $this;
     }
 }
-
-

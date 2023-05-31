@@ -190,5 +190,3 @@ class UpdateShippingAreaToRulesRequest extends BaseModel
         return $this;
     }
 }
-
-

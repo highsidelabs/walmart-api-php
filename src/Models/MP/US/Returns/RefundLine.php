@@ -159,5 +159,3 @@ class RefundLine extends BaseModel
         return $this;
     }
 }
-
-

@@ -300,5 +300,3 @@ class FulfillmentOption extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class CategoryInfo extends BaseModel
         return $this;
     }
 }
-
-

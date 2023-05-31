@@ -190,5 +190,3 @@ class GetAllInventoriesDTO extends BaseModel
         return $this;
     }
 }
-
-

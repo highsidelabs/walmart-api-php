@@ -238,5 +238,3 @@ class GetInventoryForAnItem200Response extends BaseModel
         return $this;
     }
 }
-
-

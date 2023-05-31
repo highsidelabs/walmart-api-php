@@ -192,5 +192,3 @@ class UnitPrice extends BaseModel
         return $this;
     }
 }
-
-

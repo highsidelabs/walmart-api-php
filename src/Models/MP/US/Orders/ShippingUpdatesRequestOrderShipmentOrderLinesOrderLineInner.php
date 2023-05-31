@@ -309,5 +309,3 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInner extends BaseMo
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class SubscriptionResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

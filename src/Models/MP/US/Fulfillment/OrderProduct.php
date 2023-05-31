@@ -156,5 +156,3 @@ class OrderProduct extends BaseModel
         return $this;
     }
 }
-
-

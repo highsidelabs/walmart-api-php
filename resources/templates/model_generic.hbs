@@ -1,9 +1,8 @@
 class {{classname}} extends BaseModel
 {
     {{~#if vendorExtensions.x-expose-headers}}
-    use HasResponseHeaders;
+    use HasResponseHeaders;{{/if}}
     
-    {{/if}}
     public const DISCRIMINATOR = {{#if discriminator}}'{{discriminatorName}}'{{else}}null{{/if}};
 
     /**

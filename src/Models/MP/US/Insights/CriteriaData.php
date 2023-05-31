@@ -300,5 +300,3 @@ class CriteriaData extends BaseModel
         return $this;
     }
 }
-
-

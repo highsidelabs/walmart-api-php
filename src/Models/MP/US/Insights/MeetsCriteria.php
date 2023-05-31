@@ -300,5 +300,3 @@ class MeetsCriteria extends BaseModel
         return $this;
     }
 }
-
-

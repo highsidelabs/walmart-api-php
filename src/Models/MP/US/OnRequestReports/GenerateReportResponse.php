@@ -438,5 +438,3 @@ class GenerateReportResponse extends BaseModel
         return $this;
     }
 }
-
-

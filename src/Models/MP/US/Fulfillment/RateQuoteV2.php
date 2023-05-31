@@ -1198,5 +1198,3 @@ class RateQuoteV2 extends BaseModel
         return $this;
     }
 }
-
-

@@ -196,5 +196,3 @@ class UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner extends Base
         return $this;
     }
 }
-
-

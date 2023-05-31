@@ -408,5 +408,3 @@ class CustomerOrderDetailsResponse extends BaseModel
         return $this;
     }
 }
-
-

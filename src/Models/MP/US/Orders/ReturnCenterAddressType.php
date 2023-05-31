@@ -459,5 +459,3 @@ class ReturnCenterAddressType extends BaseModel
         return $this;
     }
 }
-
-

@@ -298,5 +298,3 @@ class RequestsStatusResponse extends BaseModel
         return $this;
     }
 }
-
-

@@ -198,5 +198,3 @@ class CancelCustomerOrderRequestPayload extends BaseModel
         return $this;
     }
 }
-
-

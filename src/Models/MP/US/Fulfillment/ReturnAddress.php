@@ -351,5 +351,3 @@ class ReturnAddress extends BaseModel
         return $this;
     }
 }
-
-

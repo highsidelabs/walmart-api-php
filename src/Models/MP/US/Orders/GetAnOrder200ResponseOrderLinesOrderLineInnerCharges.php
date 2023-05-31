@@ -156,5 +156,3 @@ class GetAnOrder200ResponseOrderLinesOrderLineInnerCharges extends BaseModel
         return $this;
     }
 }
-
-

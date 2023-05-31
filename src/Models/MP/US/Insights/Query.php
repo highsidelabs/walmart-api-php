@@ -230,5 +230,3 @@ class Query extends BaseModel
         return $this;
     }
 }
-
-

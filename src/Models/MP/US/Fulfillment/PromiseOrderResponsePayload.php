@@ -264,5 +264,3 @@ class PromiseOrderResponsePayload extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class GetAllItems200ResponseItemResponseInnerAdditionalAttributes extends BaseMo
         return $this;
     }
 }
-
-

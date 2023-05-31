@@ -632,5 +632,3 @@ class ItemResponseRecord extends BaseModel
         return $this;
     }
 }
-
-

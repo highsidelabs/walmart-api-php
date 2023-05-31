@@ -364,5 +364,3 @@ class ShippingUpdatesCA200ResponseShippingInfo extends BaseModel
         return $this;
     }
 }
-
-

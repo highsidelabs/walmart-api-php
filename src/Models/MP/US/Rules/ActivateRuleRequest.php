@@ -190,5 +190,3 @@ class ActivateRuleRequest extends BaseModel
         return $this;
     }
 }
-
-

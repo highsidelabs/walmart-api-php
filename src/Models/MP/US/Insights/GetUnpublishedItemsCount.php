@@ -154,5 +154,3 @@ class GetUnpublishedItemsCount extends BaseModel
         return $this;
     }
 }
-
-

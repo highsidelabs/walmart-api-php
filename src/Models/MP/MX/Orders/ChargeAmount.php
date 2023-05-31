@@ -190,5 +190,3 @@ class ChargeAmount extends BaseModel
         return $this;
     }
 }
-
-

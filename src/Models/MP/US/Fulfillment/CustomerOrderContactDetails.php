@@ -159,5 +159,3 @@ class CustomerOrderContactDetails extends BaseModel
         return $this;
     }
 }
-
-

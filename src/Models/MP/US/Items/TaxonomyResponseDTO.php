@@ -190,5 +190,3 @@ class TaxonomyResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

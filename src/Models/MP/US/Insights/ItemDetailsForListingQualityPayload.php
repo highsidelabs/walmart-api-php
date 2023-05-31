@@ -694,5 +694,3 @@ class ItemDetailsForListingQualityPayload extends BaseModel
         return $this;
     }
 }
-
-

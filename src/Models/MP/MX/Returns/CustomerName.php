@@ -192,5 +192,3 @@ class CustomerName extends BaseModel
         return $this;
     }
 }
-
-

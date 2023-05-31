@@ -226,5 +226,3 @@ class FileSize extends BaseModel
         return $this;
     }
 }
-
-

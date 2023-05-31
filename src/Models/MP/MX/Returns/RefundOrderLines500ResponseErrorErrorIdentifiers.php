@@ -154,5 +154,3 @@ class RefundOrderLines500ResponseErrorErrorIdentifiers extends BaseModel
         return $this;
     }
 }
-
-

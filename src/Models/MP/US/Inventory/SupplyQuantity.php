@@ -232,5 +232,3 @@ class SupplyQuantity extends BaseModel
         return $this;
     }
 }
-
-

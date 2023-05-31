@@ -159,5 +159,3 @@ class ShipOrderLinesRequest extends BaseModel
         return $this;
     }
 }
-
-

@@ -237,5 +237,3 @@ class MXBoxItemReq extends BaseModel
         return $this;
     }
 }
-
-

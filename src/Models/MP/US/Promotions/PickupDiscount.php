@@ -190,5 +190,3 @@ class PickupDiscount extends BaseModel
         return $this;
     }
 }
-
-

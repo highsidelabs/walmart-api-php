@@ -226,5 +226,3 @@ class Issue extends BaseModel
         return $this;
     }
 }
-
-

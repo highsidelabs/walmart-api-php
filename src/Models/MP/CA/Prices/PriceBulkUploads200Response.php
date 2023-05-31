@@ -241,5 +241,3 @@ class PriceBulkUploads200Response extends BaseModel
         return $this;
     }
 }
-
-

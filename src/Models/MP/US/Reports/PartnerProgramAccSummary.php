@@ -622,5 +622,3 @@ class PartnerProgramAccSummary extends BaseModel
         return $this;
     }
 }
-
-

@@ -273,5 +273,3 @@ class RefundOrderLinesRequestOrderLinesOrderLineInnerRefundsRefundInnerRefundCha
         return $this;
     }
 }
-
-

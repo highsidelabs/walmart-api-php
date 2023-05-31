@@ -226,5 +226,3 @@ class CustomerOrderDetailsResponseWrapperDTO extends BaseModel
         return $this;
     }
 }
-
-

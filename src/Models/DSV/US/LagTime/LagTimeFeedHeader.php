@@ -315,5 +315,3 @@ class LagTimeFeedHeader extends BaseModel
         return $this;
     }
 }
-
-

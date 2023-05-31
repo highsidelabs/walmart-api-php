@@ -154,5 +154,3 @@ class OrderCancellationResponse extends BaseModel
         return $this;
     }
 }
-
-

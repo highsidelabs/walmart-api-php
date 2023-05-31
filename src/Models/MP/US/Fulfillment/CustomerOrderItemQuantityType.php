@@ -242,5 +242,3 @@ class CustomerOrderItemQuantityType extends BaseModel
         return $this;
     }
 }
-
-

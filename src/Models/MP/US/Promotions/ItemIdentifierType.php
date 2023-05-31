@@ -298,5 +298,3 @@ class ItemIdentifierType extends BaseModel
         return $this;
     }
 }
-
-

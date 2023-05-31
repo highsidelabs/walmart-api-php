@@ -196,5 +196,3 @@ class InventoryFeedV2 extends BaseModel
         return $this;
     }
 }
-
-

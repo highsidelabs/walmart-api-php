@@ -734,5 +734,3 @@ class GetAnOrder200ResponseOrderSummaryTotalAmount extends BaseModel
         return $this;
     }
 }
-
-

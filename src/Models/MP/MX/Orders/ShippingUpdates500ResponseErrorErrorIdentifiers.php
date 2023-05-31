@@ -154,5 +154,3 @@ class ShippingUpdates500ResponseErrorErrorIdentifiers extends BaseModel
         return $this;
     }
 }
-
-

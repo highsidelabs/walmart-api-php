@@ -159,5 +159,3 @@ class RequestItem extends BaseModel
         return $this;
     }
 }
-
-

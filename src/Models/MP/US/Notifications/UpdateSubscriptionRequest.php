@@ -370,5 +370,3 @@ class UpdateSubscriptionRequest extends BaseModel
         return $this;
     }
 }
-
-

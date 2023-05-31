@@ -228,5 +228,3 @@ class LineItemAttributes extends BaseModel
         return $this;
     }
 }
-
-

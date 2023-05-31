@@ -193,5 +193,3 @@ class StateSubregion extends BaseModel
         return $this;
     }
 }
-
-

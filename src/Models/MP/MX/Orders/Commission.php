@@ -192,5 +192,3 @@ class Commission extends BaseModel
         return $this;
     }
 }
-
-

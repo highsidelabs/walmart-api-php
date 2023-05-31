@@ -734,5 +734,3 @@ class MoneyType extends BaseModel
         return $this;
     }
 }
-
-

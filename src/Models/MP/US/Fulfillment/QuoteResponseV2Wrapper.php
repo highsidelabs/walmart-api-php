@@ -226,5 +226,3 @@ class QuoteResponseV2Wrapper extends BaseModel
         return $this;
     }
 }
-
-

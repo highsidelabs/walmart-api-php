@@ -485,5 +485,3 @@ class EventResponse extends BaseModel
         return $this;
     }
 }
-
-

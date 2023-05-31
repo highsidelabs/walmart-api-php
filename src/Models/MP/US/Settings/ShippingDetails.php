@@ -156,5 +156,3 @@ class ShippingDetails extends BaseModel
         return $this;
     }
 }
-
-

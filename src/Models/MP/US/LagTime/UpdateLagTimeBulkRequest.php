@@ -193,5 +193,3 @@ class UpdateLagTimeBulkRequest extends BaseModel
         return $this;
     }
 }
-
-

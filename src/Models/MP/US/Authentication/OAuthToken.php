@@ -229,5 +229,3 @@ class OAuthToken extends BaseModel
         return $this;
     }
 }
-
-

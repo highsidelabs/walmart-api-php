@@ -190,5 +190,3 @@ class GetAllAreasResponse extends BaseModel
         return $this;
     }
 }
-
-

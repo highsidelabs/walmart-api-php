@@ -228,5 +228,3 @@ class GetAllOrders200ResponseMeta extends BaseModel
         return $this;
     }
 }
-
-

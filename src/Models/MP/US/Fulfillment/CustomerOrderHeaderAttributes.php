@@ -192,5 +192,3 @@ class CustomerOrderHeaderAttributes extends BaseModel
         return $this;
     }
 }
-
-

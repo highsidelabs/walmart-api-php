@@ -156,5 +156,3 @@ class FulfillmentTime extends BaseModel
         return $this;
     }
 }
-
-

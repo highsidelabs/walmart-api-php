@@ -156,5 +156,3 @@ class ItemDetails extends BaseModel
         return $this;
     }
 }
-
-

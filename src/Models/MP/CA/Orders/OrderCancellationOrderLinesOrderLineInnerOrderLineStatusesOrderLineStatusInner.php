@@ -335,5 +335,3 @@ class OrderCancellationOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusI
         return $this;
     }
 }
-
-

@@ -372,5 +372,3 @@ class ReturnOrder extends BaseModel
         return $this;
     }
 }
-
-

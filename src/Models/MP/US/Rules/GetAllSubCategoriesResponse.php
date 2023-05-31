@@ -190,5 +190,3 @@ class GetAllSubCategoriesResponse extends BaseModel
         return $this;
     }
 }
-
-

@@ -370,5 +370,3 @@ class ContentDiscoverabilityIssue extends BaseModel
         return $this;
     }
 }
-
-

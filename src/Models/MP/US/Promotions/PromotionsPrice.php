@@ -370,5 +370,3 @@ class PromotionsPrice extends BaseModel
         return $this;
     }
 }
-
-

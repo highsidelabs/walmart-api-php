@@ -264,5 +264,3 @@ class GetInventoryLogsResponsePayload extends BaseModel
         return $this;
     }
 }
-
-

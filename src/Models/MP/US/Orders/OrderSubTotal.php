@@ -190,5 +190,3 @@ class OrderSubTotal extends BaseModel
         return $this;
     }
 }
-
-

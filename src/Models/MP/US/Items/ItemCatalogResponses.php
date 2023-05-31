@@ -334,5 +334,3 @@ class ItemCatalogResponses extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class IngestionErrors extends BaseModel
         return $this;
     }
 }
-
-

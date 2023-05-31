@@ -226,5 +226,3 @@ class PartnerConfigAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerFile
         return $this;
     }
 }
-
-

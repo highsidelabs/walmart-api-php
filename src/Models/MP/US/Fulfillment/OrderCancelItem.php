@@ -221,5 +221,3 @@ class OrderCancelItem extends BaseModel
         return $this;
     }
 }
-
-

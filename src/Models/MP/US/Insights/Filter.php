@@ -342,5 +342,3 @@ class Filter extends BaseModel
         return $this;
     }
 }
-
-

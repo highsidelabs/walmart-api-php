@@ -552,5 +552,3 @@ class FeedRecord extends BaseModel
         return $this;
     }
 }
-
-

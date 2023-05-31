@@ -226,5 +226,3 @@ class ItemCost extends BaseModel
         return $this;
     }
 }
-
-

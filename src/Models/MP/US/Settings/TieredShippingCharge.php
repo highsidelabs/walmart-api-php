@@ -234,5 +234,3 @@ class TieredShippingCharge extends BaseModel
         return $this;
     }
 }
-
-

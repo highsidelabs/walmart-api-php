@@ -300,5 +300,3 @@ class ReturnTrackingDetail extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class ShippingUpdatesCA200ResponseOrderLines extends BaseModel
         return $this;
     }
 }
-
-

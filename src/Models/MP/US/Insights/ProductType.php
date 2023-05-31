@@ -192,5 +192,3 @@ class ProductType extends BaseModel
         return $this;
     }
 }
-
-

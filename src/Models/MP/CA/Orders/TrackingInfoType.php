@@ -361,5 +361,3 @@ class TrackingInfoType extends BaseModel
         return $this;
     }
 }
-
-

@@ -192,5 +192,3 @@ class PartnerConfig extends BaseModel
         return $this;
     }
 }
-
-

@@ -406,5 +406,3 @@ class WfsAggr extends BaseModel
         return $this;
     }
 }
-
-

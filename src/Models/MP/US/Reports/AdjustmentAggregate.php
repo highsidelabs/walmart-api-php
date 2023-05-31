@@ -298,5 +298,3 @@ class AdjustmentAggregate extends BaseModel
         return $this;
     }
 }
-
-

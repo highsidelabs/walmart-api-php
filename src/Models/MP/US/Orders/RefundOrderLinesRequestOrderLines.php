@@ -157,5 +157,3 @@ class RefundOrderLinesRequestOrderLines extends BaseModel
         return $this;
     }
 }
-
-

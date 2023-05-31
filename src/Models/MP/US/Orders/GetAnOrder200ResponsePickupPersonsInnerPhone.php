@@ -410,5 +410,3 @@ class GetAnOrder200ResponsePickupPersonsInnerPhone extends BaseModel
         return $this;
     }
 }
-
-

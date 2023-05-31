@@ -217,5 +217,3 @@ class AvailableQuantity extends BaseModel
         return $this;
     }
 }
-
-

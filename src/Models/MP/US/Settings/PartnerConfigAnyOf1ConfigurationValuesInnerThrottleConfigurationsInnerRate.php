@@ -192,5 +192,3 @@ class PartnerConfigAnyOf1ConfigurationValuesInnerThrottleConfigurationsInnerRate
         return $this;
     }
 }
-
-

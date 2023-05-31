@@ -478,5 +478,3 @@ class GetRateQuoteInfoResponseWrapper extends BaseModel
         return $this;
     }
 }
-
-

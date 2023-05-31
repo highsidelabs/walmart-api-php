@@ -192,5 +192,3 @@ class Rate extends BaseModel
         return $this;
     }
 }
-
-

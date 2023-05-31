@@ -198,5 +198,3 @@ class OrderCancellationOrderLinesOrderLineInner extends BaseModel
         return $this;
     }
 }
-
-

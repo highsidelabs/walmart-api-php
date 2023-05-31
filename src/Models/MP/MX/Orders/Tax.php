@@ -190,5 +190,3 @@ class Tax extends BaseModel
         return $this;
     }
 }
-
-

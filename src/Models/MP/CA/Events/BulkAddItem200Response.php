@@ -157,5 +157,3 @@ class BulkAddItem200Response extends BaseModel
         return $this;
     }
 }
-
-

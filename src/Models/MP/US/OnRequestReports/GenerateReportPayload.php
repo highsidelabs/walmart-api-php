@@ -192,5 +192,3 @@ class GenerateReportPayload extends BaseModel
         return $this;
     }
 }
-
-

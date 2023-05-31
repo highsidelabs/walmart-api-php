@@ -235,5 +235,3 @@ class InventoryResponse extends BaseModel
         return $this;
     }
 }
-
-

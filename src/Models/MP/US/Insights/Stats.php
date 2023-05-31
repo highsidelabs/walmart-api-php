@@ -298,5 +298,3 @@ class Stats extends BaseModel
         return $this;
     }
 }
-
-

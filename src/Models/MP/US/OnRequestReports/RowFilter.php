@@ -419,5 +419,3 @@ class RowFilter extends BaseModel
         return $this;
     }
 }
-
-

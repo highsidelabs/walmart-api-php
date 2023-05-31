@@ -424,5 +424,3 @@ class LabelGenerationRequestCa extends BaseModel
         return $this;
     }
 }
-
-

@@ -226,5 +226,3 @@ class ItemPriceTypePricingListPricingInnerCurrentPriceValue extends BaseModel
         return $this;
     }
 }
-
-

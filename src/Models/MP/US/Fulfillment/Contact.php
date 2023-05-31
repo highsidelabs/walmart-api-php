@@ -287,5 +287,3 @@ class Contact extends BaseModel
         return $this;
     }
 }
-
-

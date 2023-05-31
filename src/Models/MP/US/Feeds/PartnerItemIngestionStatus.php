@@ -385,5 +385,3 @@ class PartnerItemIngestionStatus extends BaseModel
         return $this;
     }
 }
-
-

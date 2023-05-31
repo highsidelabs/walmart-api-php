@@ -156,5 +156,3 @@ class TaxDetails extends BaseModel
         return $this;
     }
 }
-
-

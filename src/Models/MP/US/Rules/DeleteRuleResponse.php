@@ -190,5 +190,3 @@ class DeleteRuleResponse extends BaseModel
         return $this;
     }
 }
-
-

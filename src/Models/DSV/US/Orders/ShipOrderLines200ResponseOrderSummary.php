@@ -192,5 +192,3 @@ class ShipOrderLines200ResponseOrderSummary extends BaseModel
         return $this;
     }
 }
-
-

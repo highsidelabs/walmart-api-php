@@ -226,5 +226,3 @@ class TimeWindow extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class OrderLineStatusAck extends BaseModel
         return $this;
     }
 }
-
-

@@ -192,5 +192,3 @@ class TotalGmvAmount extends BaseModel
         return $this;
     }
 }
-
-

@@ -232,5 +232,3 @@ class AvailToSellQty extends BaseModel
         return $this;
     }
 }
-
-

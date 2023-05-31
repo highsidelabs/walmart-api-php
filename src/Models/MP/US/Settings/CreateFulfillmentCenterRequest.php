@@ -190,5 +190,3 @@ class CreateFulfillmentCenterRequest extends BaseModel
         return $this;
     }
 }
-
-

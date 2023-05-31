@@ -642,5 +642,3 @@ class OrderLineType extends BaseModel
         return $this;
     }
 }
-
-

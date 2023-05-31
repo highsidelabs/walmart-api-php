@@ -192,5 +192,3 @@ class PostPurchaseQuality extends BaseModel
         return $this;
     }
 }
-
-

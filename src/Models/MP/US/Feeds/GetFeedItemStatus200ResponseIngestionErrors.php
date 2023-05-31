@@ -156,5 +156,3 @@ class GetFeedItemStatus200ResponseIngestionErrors extends BaseModel
         return $this;
     }
 }
-
-

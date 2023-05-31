@@ -192,5 +192,3 @@ class ShippingConfigAnyOfConfigurationCategoriesInner extends BaseModel
         return $this;
     }
 }
-
-

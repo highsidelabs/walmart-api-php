@@ -372,5 +372,3 @@ class AuthDetails extends BaseModel
         return $this;
     }
 }
-
-

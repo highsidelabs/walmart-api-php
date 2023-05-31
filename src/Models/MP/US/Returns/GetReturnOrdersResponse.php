@@ -196,5 +196,3 @@ class GetReturnOrdersResponse extends BaseModel
         return $this;
     }
 }
-
-

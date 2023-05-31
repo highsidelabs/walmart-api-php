@@ -228,5 +228,3 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration extends B
         return $this;
     }
 }
-
-

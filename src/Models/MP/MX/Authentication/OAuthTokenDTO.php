@@ -229,5 +229,3 @@ class OAuthTokenDTO extends BaseModel
         return $this;
     }
 }
-
-

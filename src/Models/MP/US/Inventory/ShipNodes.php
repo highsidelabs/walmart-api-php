@@ -262,5 +262,3 @@ class ShipNodes extends BaseModel
         return $this;
     }
 }
-
-

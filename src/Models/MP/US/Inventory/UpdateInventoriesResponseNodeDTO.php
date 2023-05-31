@@ -226,5 +226,3 @@ class UpdateInventoriesResponseNodeDTO extends BaseModel
         return $this;
     }
 }
-
-

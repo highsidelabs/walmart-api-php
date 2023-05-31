@@ -370,5 +370,3 @@ class ShippingUpdates500ResponseError extends BaseModel
         return $this;
     }
 }
-
-

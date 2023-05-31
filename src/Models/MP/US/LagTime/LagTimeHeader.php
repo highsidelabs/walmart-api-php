@@ -190,5 +190,3 @@ class LagTimeHeader extends BaseModel
         return $this;
     }
 }
-
-

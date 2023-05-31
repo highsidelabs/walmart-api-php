@@ -157,5 +157,3 @@ class RefundOrderLines500Response extends BaseModel
         return $this;
     }
 }
-
-

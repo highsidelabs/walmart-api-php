@@ -192,5 +192,3 @@ class BillingInfo extends BaseModel
         return $this;
     }
 }
-
-

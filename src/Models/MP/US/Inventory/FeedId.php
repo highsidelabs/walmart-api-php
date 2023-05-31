@@ -238,5 +238,3 @@ class FeedId extends BaseModel
         return $this;
     }
 }
-
-

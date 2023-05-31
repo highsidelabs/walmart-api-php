@@ -393,5 +393,3 @@ class StandardProcessingSchedule extends BaseModel
         return $this;
     }
 }
-
-

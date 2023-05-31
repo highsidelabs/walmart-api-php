@@ -234,5 +234,3 @@ class CalendarDayConfiguration extends BaseModel
         return $this;
     }
 }
-
-

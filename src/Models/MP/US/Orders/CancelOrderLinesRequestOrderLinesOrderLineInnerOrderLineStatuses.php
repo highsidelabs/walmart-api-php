@@ -159,5 +159,3 @@ class CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses extends B
         return $this;
     }
 }
-
-

@@ -192,5 +192,3 @@ class GroupingAttributes extends BaseModel
         return $this;
     }
 }
-
-

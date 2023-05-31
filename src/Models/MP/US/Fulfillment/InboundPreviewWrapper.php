@@ -196,5 +196,3 @@ class InboundPreviewWrapper extends BaseModel
         return $this;
     }
 }
-
-

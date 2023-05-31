@@ -229,5 +229,3 @@ class InputQty extends BaseModel
         return $this;
     }
 }
-
-

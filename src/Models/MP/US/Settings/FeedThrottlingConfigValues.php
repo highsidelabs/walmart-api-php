@@ -154,5 +154,3 @@ class FeedThrottlingConfigValues extends BaseModel
         return $this;
     }
 }
-
-

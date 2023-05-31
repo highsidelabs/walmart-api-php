@@ -315,5 +315,3 @@ class UpdateLagTimeBulkRequestLagtimeFeedHeader extends BaseModel
         return $this;
     }
 }
-
-

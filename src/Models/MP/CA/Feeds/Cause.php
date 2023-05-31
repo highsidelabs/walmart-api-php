@@ -262,5 +262,3 @@ class Cause extends BaseModel
         return $this;
     }
 }
-
-

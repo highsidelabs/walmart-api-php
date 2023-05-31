@@ -196,5 +196,3 @@ class WFSOrdersListType extends BaseModel
         return $this;
     }
 }
-
-

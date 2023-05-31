@@ -385,5 +385,3 @@ class GetFeedItemStatus200ResponseItemDetailsItemIngestionStatusInner extends Ba
         return $this;
     }
 }
-
-

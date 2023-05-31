@@ -235,5 +235,3 @@ class ConsolidationRequest extends BaseModel
         return $this;
     }
 }
-
-

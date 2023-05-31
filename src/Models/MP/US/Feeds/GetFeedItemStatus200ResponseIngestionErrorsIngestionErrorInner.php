@@ -272,5 +272,3 @@ class GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner extends Bas
         return $this;
     }
 }
-
-

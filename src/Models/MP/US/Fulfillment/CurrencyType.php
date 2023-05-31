@@ -736,5 +736,3 @@ class CurrencyType extends BaseModel
         return $this;
     }
 }
-
-

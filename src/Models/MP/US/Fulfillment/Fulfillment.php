@@ -372,5 +372,3 @@ class Fulfillment extends BaseModel
         return $this;
     }
 }
-
-

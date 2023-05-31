@@ -301,5 +301,3 @@ class GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttrib
         return $this;
     }
 }
-
-

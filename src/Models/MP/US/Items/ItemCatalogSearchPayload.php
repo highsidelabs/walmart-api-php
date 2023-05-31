@@ -226,5 +226,3 @@ class ItemCatalogSearchPayload extends BaseModel
         return $this;
     }
 }
-
-

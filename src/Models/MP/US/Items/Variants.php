@@ -190,5 +190,3 @@ class Variants extends BaseModel
         return $this;
     }
 }
-
-

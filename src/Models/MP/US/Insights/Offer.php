@@ -262,5 +262,3 @@ class Offer extends BaseModel
         return $this;
     }
 }
-
-

@@ -154,5 +154,3 @@ class SubRegionCode extends BaseModel
         return $this;
     }
 }
-
-

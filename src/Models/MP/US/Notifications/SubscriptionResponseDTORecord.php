@@ -442,5 +442,3 @@ class SubscriptionResponseDTORecord extends BaseModel
         return $this;
     }
 }
-
-

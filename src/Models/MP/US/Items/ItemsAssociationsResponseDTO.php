@@ -157,5 +157,3 @@ class ItemsAssociationsResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

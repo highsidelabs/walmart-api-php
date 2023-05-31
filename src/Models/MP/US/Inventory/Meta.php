@@ -190,5 +190,3 @@ class Meta extends BaseModel
         return $this;
     }
 }
-
-

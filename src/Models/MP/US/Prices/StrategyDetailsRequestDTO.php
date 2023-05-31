@@ -154,5 +154,3 @@ class StrategyDetailsRequestDTO extends BaseModel
         return $this;
     }
 }
-
-

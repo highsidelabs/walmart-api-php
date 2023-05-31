@@ -193,5 +193,3 @@ class ItemPriceTypePricingList extends BaseModel
         return $this;
     }
 }
-
-

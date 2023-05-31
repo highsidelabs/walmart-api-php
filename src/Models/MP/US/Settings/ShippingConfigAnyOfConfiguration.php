@@ -154,5 +154,3 @@ class ShippingConfigAnyOfConfiguration extends BaseModel
         return $this;
     }
 }
-
-

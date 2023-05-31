@@ -156,5 +156,3 @@ class ReturnLine extends BaseModel
         return $this;
     }
 }
-
-

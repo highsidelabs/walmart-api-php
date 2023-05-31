@@ -156,5 +156,3 @@ class FulfillmentPlan extends BaseModel
         return $this;
     }
 }
-
-

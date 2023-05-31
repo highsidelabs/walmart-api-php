@@ -190,5 +190,3 @@ class GetAllExceptionsResponse extends BaseModel
         return $this;
     }
 }
-
-

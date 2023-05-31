@@ -228,5 +228,3 @@ class PromiseDestinationResponse extends BaseModel
         return $this;
     }
 }
-
-

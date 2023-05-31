@@ -198,5 +198,3 @@ class TaxType extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class CategoryPayload extends BaseModel
         return $this;
     }
 }
-
-

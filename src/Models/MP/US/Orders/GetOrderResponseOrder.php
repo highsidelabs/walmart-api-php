@@ -678,5 +678,3 @@ class GetOrderResponseOrder extends BaseModel
         return $this;
     }
 }
-
-

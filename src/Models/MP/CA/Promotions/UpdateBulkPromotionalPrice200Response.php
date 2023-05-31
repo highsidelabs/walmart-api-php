@@ -241,5 +241,3 @@ class UpdateBulkPromotionalPrice200Response extends BaseModel
         return $this;
     }
 }
-
-

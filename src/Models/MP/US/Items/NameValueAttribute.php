@@ -359,5 +359,3 @@ class NameValueAttribute extends BaseModel
         return $this;
     }
 }
-
-

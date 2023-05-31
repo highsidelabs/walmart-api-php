@@ -408,5 +408,3 @@ class CustomerOrderLinesDetails extends BaseModel
         return $this;
     }
 }
-
-

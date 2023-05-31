@@ -190,5 +190,3 @@ class ActivateDeactivateRuleInfo extends BaseModel
         return $this;
     }
 }
-
-

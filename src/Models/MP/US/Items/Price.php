@@ -730,5 +730,3 @@ class Price extends BaseModel
         return $this;
     }
 }
-
-

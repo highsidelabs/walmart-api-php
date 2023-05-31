@@ -154,5 +154,3 @@ class ExceptionInfo extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class SubscriptionDeleteResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

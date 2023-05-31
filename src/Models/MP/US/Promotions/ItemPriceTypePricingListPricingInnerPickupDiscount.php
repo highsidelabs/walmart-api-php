@@ -190,5 +190,3 @@ class ItemPriceTypePricingListPricingInnerPickupDiscount extends BaseModel
         return $this;
     }
 }
-
-

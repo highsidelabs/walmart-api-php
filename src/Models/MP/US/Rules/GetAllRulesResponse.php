@@ -190,5 +190,3 @@ class GetAllRulesResponse extends BaseModel
         return $this;
     }
 }
-
-

@@ -157,5 +157,3 @@ class ItemBulkUploads200Response extends BaseModel
         return $this;
     }
 }
-
-

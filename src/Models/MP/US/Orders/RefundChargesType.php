@@ -154,5 +154,3 @@ class RefundChargesType extends BaseModel
         return $this;
     }
 }
-
-

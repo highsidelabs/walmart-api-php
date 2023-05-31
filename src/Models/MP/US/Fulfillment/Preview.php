@@ -192,5 +192,3 @@ class Preview extends BaseModel
         return $this;
     }
 }
-
-

@@ -501,5 +501,3 @@ class Address extends BaseModel
         return $this;
     }
 }
-
-

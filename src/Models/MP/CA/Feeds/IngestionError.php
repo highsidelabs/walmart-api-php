@@ -272,5 +272,3 @@ class IngestionError extends BaseModel
         return $this;
     }
 }
-
-

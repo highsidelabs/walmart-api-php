@@ -228,5 +228,3 @@ class ShippingInfo extends BaseModel
         return $this;
     }
 }
-
-

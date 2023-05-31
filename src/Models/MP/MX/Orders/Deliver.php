@@ -154,5 +154,3 @@ class Deliver extends BaseModel
         return $this;
     }
 }
-
-

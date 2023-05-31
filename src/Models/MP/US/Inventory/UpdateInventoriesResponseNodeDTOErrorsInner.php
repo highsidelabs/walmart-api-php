@@ -492,5 +492,3 @@ class UpdateInventoriesResponseNodeDTOErrorsInner extends BaseModel
         return $this;
     }
 }
-
-

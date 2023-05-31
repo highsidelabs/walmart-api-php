@@ -354,5 +354,3 @@ class GetAllOrders200ResponseElementsOrderInner extends BaseModel
         return $this;
     }
 }
-
-

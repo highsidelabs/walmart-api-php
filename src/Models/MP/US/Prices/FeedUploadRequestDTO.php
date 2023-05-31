@@ -190,5 +190,3 @@ class FeedUploadRequestDTO extends BaseModel
         return $this;
     }
 }
-
-

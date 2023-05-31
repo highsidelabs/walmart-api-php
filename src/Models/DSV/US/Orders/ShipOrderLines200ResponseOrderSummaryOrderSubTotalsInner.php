@@ -190,5 +190,3 @@ class ShipOrderLines200ResponseOrderSummaryOrderSubTotalsInner extends BaseModel
         return $this;
     }
 }
-
-

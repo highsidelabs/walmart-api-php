@@ -660,5 +660,3 @@ class Shipment extends BaseModel
         return $this;
     }
 }
-
-

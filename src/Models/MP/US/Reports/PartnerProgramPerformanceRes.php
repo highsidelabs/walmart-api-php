@@ -442,5 +442,3 @@ class PartnerProgramPerformanceRes extends BaseModel
         return $this;
     }
 }
-
-

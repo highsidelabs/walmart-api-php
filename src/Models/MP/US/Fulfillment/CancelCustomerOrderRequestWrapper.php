@@ -193,5 +193,3 @@ class CancelCustomerOrderRequestWrapper extends BaseModel
         return $this;
     }
 }
-
-

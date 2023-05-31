@@ -228,5 +228,3 @@ class Recommendations extends BaseModel
         return $this;
     }
 }
-
-

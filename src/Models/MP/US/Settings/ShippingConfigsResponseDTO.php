@@ -190,5 +190,3 @@ class ShippingConfigsResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

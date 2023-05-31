@@ -560,5 +560,3 @@ class GetFeedItemStatus200Response extends BaseModel
         return $this;
     }
 }
-
-

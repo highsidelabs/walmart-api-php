@@ -198,5 +198,3 @@ class Quantity extends BaseModel
         return $this;
     }
 }
-
-

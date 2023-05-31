@@ -190,5 +190,3 @@ class PartnerConfigsResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

@@ -298,5 +298,3 @@ class CreateShippingTemplateRequest extends BaseModel
         return $this;
     }
 }
-
-

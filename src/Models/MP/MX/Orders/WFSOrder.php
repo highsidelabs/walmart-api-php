@@ -586,5 +586,3 @@ class WFSOrder extends BaseModel
         return $this;
     }
 }
-
-

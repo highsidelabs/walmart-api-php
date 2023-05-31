@@ -626,5 +626,3 @@ class ShippingTemplate extends BaseModel
         return $this;
     }
 }
-
-

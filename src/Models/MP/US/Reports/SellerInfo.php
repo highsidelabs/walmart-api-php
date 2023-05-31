@@ -262,5 +262,3 @@ class SellerInfo extends BaseModel
         return $this;
     }
 }
-
-

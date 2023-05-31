@@ -226,5 +226,3 @@ class ListingQualityScorePayload extends BaseModel
         return $this;
     }
 }
-
-

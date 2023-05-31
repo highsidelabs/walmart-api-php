@@ -226,5 +226,3 @@ class ShippingTemplateActivationStatus extends BaseModel
         return $this;
     }
 }
-
-

@@ -192,5 +192,3 @@ class ShipOrderLines200ResponsePickupPersonsInner extends BaseModel
         return $this;
     }
 }
-
-

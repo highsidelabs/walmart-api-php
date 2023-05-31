@@ -190,5 +190,3 @@ class OrderLineCancel extends BaseModel
         return $this;
     }
 }
-
-

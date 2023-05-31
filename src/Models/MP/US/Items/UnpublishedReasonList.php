@@ -156,5 +156,3 @@ class UnpublishedReasonList extends BaseModel
         return $this;
     }
 }
-
-

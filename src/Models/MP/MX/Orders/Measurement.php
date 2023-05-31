@@ -190,5 +190,3 @@ class Measurement extends BaseModel
         return $this;
     }
 }
-
-

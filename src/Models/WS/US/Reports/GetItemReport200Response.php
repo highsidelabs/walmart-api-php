@@ -1345,5 +1345,3 @@ class GetItemReport200Response extends BaseModel
         return $this;
     }
 }
-
-

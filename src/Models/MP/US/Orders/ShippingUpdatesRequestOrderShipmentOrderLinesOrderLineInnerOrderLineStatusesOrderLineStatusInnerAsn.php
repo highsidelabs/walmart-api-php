@@ -193,5 +193,3 @@ class ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatus
         return $this;
     }
 }
-
-

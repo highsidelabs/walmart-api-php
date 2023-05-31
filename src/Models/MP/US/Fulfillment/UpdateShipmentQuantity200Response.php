@@ -374,5 +374,3 @@ class UpdateShipmentQuantity200Response extends BaseModel
         return $this;
     }
 }
-
-

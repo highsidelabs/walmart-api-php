@@ -154,5 +154,3 @@ class OrderRefundJson extends BaseModel
         return $this;
     }
 }
-
-

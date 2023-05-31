@@ -157,5 +157,3 @@ class ConvertItemForWfsRequest extends BaseModel
         return $this;
     }
 }
-
-

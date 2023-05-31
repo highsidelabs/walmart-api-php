@@ -226,5 +226,3 @@ class FulfillmentCenterCoverageDetail extends BaseModel
         return $this;
     }
 }
-
-

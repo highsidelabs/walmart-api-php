@@ -410,5 +410,3 @@ class Phone extends BaseModel
         return $this;
     }
 }
-
-

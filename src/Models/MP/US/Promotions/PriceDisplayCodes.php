@@ -370,5 +370,3 @@ class PriceDisplayCodes extends BaseModel
         return $this;
     }
 }
-
-

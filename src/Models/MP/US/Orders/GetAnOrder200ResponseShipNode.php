@@ -228,5 +228,3 @@ class GetAnOrder200ResponseShipNode extends BaseModel
         return $this;
     }
 }
-
-

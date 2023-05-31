@@ -159,5 +159,3 @@ class ShipOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatuses extends Bas
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class WfsInventoryDTO extends BaseModel
         return $this;
     }
 }
-
-

@@ -228,5 +228,3 @@ class Score extends BaseModel
         return $this;
     }
 }
-
-

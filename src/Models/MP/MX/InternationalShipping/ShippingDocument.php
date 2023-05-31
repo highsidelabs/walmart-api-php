@@ -228,5 +228,3 @@ class ShippingDocument extends BaseModel
         return $this;
     }
 }
-
-

@@ -262,5 +262,3 @@ class GetAllItems200ResponseErrorsInnerCausesInner extends BaseModel
         return $this;
     }
 }
-
-

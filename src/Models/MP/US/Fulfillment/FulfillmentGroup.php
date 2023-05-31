@@ -156,5 +156,3 @@ class FulfillmentGroup extends BaseModel
         return $this;
     }
 }
-
-

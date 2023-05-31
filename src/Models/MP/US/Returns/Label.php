@@ -192,5 +192,3 @@ class Label extends BaseModel
         return $this;
     }
 }
-
-

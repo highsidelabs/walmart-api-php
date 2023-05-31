@@ -332,5 +332,3 @@ class CancelOrderLinesRequestOrderLinesOrderLineInnerOrderLineStatusesOrderLineS
         return $this;
     }
 }
-
-

@@ -157,5 +157,3 @@ class CarrierQuoteConfirmRequestWrapper extends BaseModel
         return $this;
     }
 }
-
-

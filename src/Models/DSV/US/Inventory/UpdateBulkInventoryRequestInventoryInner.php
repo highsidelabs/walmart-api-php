@@ -310,5 +310,3 @@ class UpdateBulkInventoryRequestInventoryInner extends BaseModel
         return $this;
     }
 }
-
-

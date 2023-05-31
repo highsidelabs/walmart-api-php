@@ -154,5 +154,3 @@ class OrderLineStatusesCancel extends BaseModel
         return $this;
     }
 }
-
-

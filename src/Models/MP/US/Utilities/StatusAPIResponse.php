@@ -154,5 +154,3 @@ class StatusAPIResponse extends BaseModel
         return $this;
     }
 }
-
-

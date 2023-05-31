@@ -228,5 +228,3 @@ class Name extends BaseModel
         return $this;
     }
 }
-
-

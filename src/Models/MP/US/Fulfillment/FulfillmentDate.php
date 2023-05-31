@@ -192,5 +192,3 @@ class FulfillmentDate extends BaseModel
         return $this;
     }
 }
-
-

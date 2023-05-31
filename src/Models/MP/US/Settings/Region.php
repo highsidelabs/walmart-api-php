@@ -231,5 +231,3 @@ class Region extends BaseModel
         return $this;
     }
 }
-
-

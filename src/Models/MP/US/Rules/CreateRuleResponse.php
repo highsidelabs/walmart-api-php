@@ -190,5 +190,3 @@ class CreateRuleResponse extends BaseModel
         return $this;
     }
 }
-
-

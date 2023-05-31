@@ -190,5 +190,3 @@ class GetShipmentItemsDTO extends BaseModel
         return $this;
     }
 }
-
-

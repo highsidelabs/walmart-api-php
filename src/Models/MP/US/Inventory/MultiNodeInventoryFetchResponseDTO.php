@@ -190,5 +190,3 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

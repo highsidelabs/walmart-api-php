@@ -510,5 +510,3 @@ class DownloadReportResponse extends BaseModel
         return $this;
     }
 }
-
-

@@ -193,5 +193,3 @@ class AsnType extends BaseModel
         return $this;
     }
 }
-
-

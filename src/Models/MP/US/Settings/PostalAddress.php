@@ -300,5 +300,3 @@ class PostalAddress extends BaseModel
         return $this;
     }
 }
-
-

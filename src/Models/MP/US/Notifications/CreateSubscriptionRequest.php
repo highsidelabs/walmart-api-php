@@ -154,5 +154,3 @@ class CreateSubscriptionRequest extends BaseModel
         return $this;
     }
 }
-
-

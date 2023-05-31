@@ -226,5 +226,3 @@ class ShippingConfig extends BaseModel
         return $this;
     }
 }
-
-

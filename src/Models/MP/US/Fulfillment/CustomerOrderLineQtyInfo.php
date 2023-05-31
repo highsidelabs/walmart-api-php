@@ -228,5 +228,3 @@ class CustomerOrderLineQtyInfo extends BaseModel
         return $this;
     }
 }
-
-

@@ -226,5 +226,3 @@ class WercsFeedbackRequest extends BaseModel
         return $this;
     }
 }
-
-

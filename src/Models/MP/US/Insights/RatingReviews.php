@@ -190,5 +190,3 @@ class RatingReviews extends BaseModel
         return $this;
     }
 }
-
-

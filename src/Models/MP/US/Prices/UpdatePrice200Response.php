@@ -301,5 +301,3 @@ class UpdatePrice200Response extends BaseModel
         return $this;
     }
 }
-
-

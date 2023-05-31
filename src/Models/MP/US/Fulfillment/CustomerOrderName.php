@@ -248,5 +248,3 @@ class CustomerOrderName extends BaseModel
         return $this;
     }
 }
-
-

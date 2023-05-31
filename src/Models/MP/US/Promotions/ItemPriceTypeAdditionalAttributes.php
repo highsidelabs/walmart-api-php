@@ -157,5 +157,3 @@ class ItemPriceTypeAdditionalAttributes extends BaseModel
         return $this;
     }
 }
-
-

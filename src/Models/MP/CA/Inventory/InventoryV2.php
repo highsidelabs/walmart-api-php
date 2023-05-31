@@ -307,5 +307,3 @@ class InventoryV2 extends BaseModel
         return $this;
     }
 }
-
-

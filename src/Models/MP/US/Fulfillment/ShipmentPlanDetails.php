@@ -588,5 +588,3 @@ class ShipmentPlanDetails extends BaseModel
         return $this;
     }
 }
-
-

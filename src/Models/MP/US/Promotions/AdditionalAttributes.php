@@ -157,5 +157,3 @@ class AdditionalAttributes extends BaseModel
         return $this;
     }
 }
-
-

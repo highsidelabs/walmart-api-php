@@ -154,5 +154,3 @@ class ShipmentMx extends BaseModel
         return $this;
     }
 }
-
-

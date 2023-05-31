@@ -190,5 +190,3 @@ class CommonResponseBoolean extends BaseModel
         return $this;
     }
 }
-
-

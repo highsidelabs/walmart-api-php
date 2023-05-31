@@ -190,5 +190,3 @@ class GmvAmount extends BaseModel
         return $this;
     }
 }
-
-

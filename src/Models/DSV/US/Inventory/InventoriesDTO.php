@@ -232,5 +232,3 @@ class InventoriesDTO extends BaseModel
         return $this;
     }
 }
-
-

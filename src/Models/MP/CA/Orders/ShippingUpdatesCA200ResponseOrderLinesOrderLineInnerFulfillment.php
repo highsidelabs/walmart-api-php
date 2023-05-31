@@ -334,5 +334,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerFulfillment extends Ba
         return $this;
     }
 }
-
-

@@ -300,5 +300,3 @@ class PromiseResponseOffer extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class PrimaryContactDetails extends BaseModel
         return $this;
     }
 }
-
-

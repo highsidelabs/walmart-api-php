@@ -265,5 +265,3 @@ class CarrierNameType extends BaseModel
         return $this;
     }
 }
-
-

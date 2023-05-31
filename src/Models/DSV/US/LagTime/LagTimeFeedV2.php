@@ -196,5 +196,3 @@ class LagTimeFeedV2 extends BaseModel
         return $this;
     }
 }
-
-

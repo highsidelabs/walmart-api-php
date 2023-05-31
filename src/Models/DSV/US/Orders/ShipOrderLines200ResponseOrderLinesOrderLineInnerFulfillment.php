@@ -334,5 +334,3 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerFulfillment extends BaseM
         return $this;
     }
 }
-
-

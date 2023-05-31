@@ -416,5 +416,3 @@ class BoxDimensions extends BaseModel
         return $this;
     }
 }
-
-

@@ -305,5 +305,3 @@ class RangeFilter extends BaseModel
         return $this;
     }
 }
-
-

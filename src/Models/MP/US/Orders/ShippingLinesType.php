@@ -159,5 +159,3 @@ class ShippingLinesType extends BaseModel
         return $this;
     }
 }
-
-

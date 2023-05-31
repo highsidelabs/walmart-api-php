@@ -190,5 +190,3 @@ class MultiNodeInventoryUpdateResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

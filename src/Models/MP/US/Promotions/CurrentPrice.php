@@ -227,5 +227,3 @@ class CurrentPrice extends BaseModel
         return $this;
     }
 }
-
-

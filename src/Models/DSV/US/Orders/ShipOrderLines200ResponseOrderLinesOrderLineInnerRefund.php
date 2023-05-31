@@ -231,5 +231,3 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerRefund extends BaseModel
         return $this;
     }
 }
-
-

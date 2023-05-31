@@ -272,5 +272,3 @@ class Inventory extends BaseModel
         return $this;
     }
 }
-
-

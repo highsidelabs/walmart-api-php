@@ -224,5 +224,3 @@ class LagTimeConfig extends BaseModel
         return $this;
     }
 }
-
-

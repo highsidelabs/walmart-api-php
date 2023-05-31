@@ -676,5 +676,3 @@ class GetAllFeedStatuses200ResponseErrorsInner extends BaseModel
         return $this;
     }
 }
-
-

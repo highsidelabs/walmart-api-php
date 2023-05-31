@@ -154,5 +154,3 @@ class ShipNodeHeader extends BaseModel
         return $this;
     }
 }
-
-

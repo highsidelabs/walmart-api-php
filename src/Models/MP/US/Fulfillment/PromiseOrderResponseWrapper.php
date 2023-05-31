@@ -226,5 +226,3 @@ class PromiseOrderResponseWrapper extends BaseModel
         return $this;
     }
 }
-
-

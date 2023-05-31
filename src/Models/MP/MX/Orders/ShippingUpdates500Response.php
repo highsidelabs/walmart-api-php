@@ -157,5 +157,3 @@ class ShippingUpdates500Response extends BaseModel
         return $this;
     }
 }
-
-

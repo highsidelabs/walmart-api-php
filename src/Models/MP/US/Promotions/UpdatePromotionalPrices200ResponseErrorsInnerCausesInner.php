@@ -262,5 +262,3 @@ class UpdatePromotionalPrices200ResponseErrorsInnerCausesInner extends BaseModel
         return $this;
     }
 }
-
-

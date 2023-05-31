@@ -154,5 +154,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges ex
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class InventoryWFS extends BaseModel
         return $this;
     }
 }
-
-

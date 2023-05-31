@@ -226,5 +226,3 @@ class ShippingUpdatesRequestShipmentsInnerShipmentLinesInner extends BaseModel
         return $this;
     }
 }
-
-

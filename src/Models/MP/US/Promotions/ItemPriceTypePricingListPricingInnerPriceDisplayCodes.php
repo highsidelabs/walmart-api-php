@@ -370,5 +370,3 @@ class ItemPriceTypePricingListPricingInnerPriceDisplayCodes extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class MetaWithoutCursor extends BaseModel
         return $this;
     }
 }
-
-

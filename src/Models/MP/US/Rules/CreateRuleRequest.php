@@ -190,5 +190,3 @@ class CreateRuleRequest extends BaseModel
         return $this;
     }
 }
-
-

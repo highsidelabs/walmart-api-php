@@ -298,5 +298,3 @@ class PublishAndTransactable extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class ThirdPartyShipNode2 extends BaseModel
         return $this;
     }
 }
-
-

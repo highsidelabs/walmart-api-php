@@ -298,5 +298,3 @@ class VariantDatum extends BaseModel
         return $this;
     }
 }
-
-

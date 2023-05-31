@@ -203,5 +203,3 @@ class AccountInfoDTO extends BaseModel
         return $this;
     }
 }
-
-

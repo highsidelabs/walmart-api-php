@@ -364,5 +364,3 @@ class GetAnOrder200ResponseShippingInfo extends BaseModel
         return $this;
     }
 }
-
-

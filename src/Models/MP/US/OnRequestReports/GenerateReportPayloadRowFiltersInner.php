@@ -419,5 +419,3 @@ class GenerateReportPayloadRowFiltersInner extends BaseModel
         return $this;
     }
 }
-
-

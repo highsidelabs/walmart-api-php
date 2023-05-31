@@ -264,5 +264,3 @@ class CarrierInfoList extends BaseModel
         return $this;
     }
 }
-
-

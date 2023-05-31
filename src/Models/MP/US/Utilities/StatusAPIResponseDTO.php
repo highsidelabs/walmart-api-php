@@ -335,5 +335,3 @@ class StatusAPIResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

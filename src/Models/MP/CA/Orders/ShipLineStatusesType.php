@@ -159,5 +159,3 @@ class ShipLineStatusesType extends BaseModel
         return $this;
     }
 }
-
-

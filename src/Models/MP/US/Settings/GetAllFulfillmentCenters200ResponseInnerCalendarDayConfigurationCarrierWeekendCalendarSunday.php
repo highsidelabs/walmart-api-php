@@ -154,5 +154,3 @@ class GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWee
         return $this;
     }
 }
-
-

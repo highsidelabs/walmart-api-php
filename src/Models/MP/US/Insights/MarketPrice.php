@@ -190,5 +190,3 @@ class MarketPrice extends BaseModel
         return $this;
     }
 }
-
-

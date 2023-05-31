@@ -1342,5 +1342,3 @@ class ReportDTO extends BaseModel
         return $this;
     }
 }
-
-

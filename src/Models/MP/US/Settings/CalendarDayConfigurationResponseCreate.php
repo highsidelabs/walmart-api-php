@@ -192,5 +192,3 @@ class CalendarDayConfigurationResponseCreate extends BaseModel
         return $this;
     }
 }
-
-

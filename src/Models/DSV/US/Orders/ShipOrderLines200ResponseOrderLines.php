@@ -156,5 +156,3 @@ class ShipOrderLines200ResponseOrderLines extends BaseModel
         return $this;
     }
 }
-
-

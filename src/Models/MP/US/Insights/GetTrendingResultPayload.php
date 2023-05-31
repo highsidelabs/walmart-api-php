@@ -190,5 +190,3 @@ class GetTrendingResultPayload extends BaseModel
         return $this;
     }
 }
-
-

@@ -301,5 +301,3 @@ class GetAllFeedStatuses200Response extends BaseModel
         return $this;
     }
 }
-
-

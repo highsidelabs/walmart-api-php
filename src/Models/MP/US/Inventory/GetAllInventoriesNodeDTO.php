@@ -262,5 +262,3 @@ class GetAllInventoriesNodeDTO extends BaseModel
         return $this;
     }
 }
-
-

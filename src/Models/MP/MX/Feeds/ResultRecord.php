@@ -156,5 +156,3 @@ class ResultRecord extends BaseModel
         return $this;
     }
 }
-
-

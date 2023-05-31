@@ -159,5 +159,3 @@ class OfferSelection extends BaseModel
         return $this;
     }
 }
-
-

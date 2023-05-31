@@ -198,5 +198,3 @@ class ChargeTotal extends BaseModel
         return $this;
     }
 }
-
-

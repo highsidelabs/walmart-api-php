@@ -370,5 +370,3 @@ class ItemPriceTypePricingListPricingInnerCurrentPrice extends BaseModel
         return $this;
     }
 }
-
-

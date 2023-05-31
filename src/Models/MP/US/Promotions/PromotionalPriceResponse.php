@@ -226,5 +226,3 @@ class PromotionalPriceResponse extends BaseModel
         return $this;
     }
 }
-
-

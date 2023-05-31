@@ -196,5 +196,3 @@ class ReturnLocation extends BaseModel
         return $this;
     }
 }
-
-

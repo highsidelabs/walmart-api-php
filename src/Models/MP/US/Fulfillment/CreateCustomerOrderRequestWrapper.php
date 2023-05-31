@@ -196,5 +196,3 @@ class CreateCustomerOrderRequestWrapper extends BaseModel
         return $this;
     }
 }
-
-

@@ -192,5 +192,3 @@ class CustomerShipToAddress extends BaseModel
         return $this;
     }
 }
-
-

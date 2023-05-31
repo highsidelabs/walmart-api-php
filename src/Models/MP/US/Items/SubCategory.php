@@ -192,5 +192,3 @@ class SubCategory extends BaseModel
         return $this;
     }
 }
-
-

@@ -232,5 +232,3 @@ class RefundOrderLinesRequestOrderLinesOrderLineInner extends BaseModel
         return $this;
     }
 }
-
-

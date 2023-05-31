@@ -154,5 +154,3 @@ class GetAllAreasPayload extends BaseModel
         return $this;
     }
 }
-
-

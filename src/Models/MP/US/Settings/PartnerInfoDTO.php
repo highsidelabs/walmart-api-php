@@ -336,5 +336,3 @@ class PartnerInfoDTO extends BaseModel
         return $this;
     }
 }
-
-

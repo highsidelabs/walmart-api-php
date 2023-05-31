@@ -262,5 +262,3 @@ class UpdatePrice200ResponseErrorsInnerCausesInner extends BaseModel
         return $this;
     }
 }
-
-

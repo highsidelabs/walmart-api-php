@@ -190,5 +190,3 @@ class InboundShipmentErrorResponseWrapperDTO extends BaseModel
         return $this;
     }
 }
-
-

@@ -154,5 +154,3 @@ class GetCategoriesResponse extends BaseModel
         return $this;
     }
 }
-
-

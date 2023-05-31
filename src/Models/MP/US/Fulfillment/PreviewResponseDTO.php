@@ -408,5 +408,3 @@ class PreviewResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

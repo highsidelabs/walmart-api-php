@@ -156,5 +156,3 @@ class PurchaseOrderTypeV3ListElements extends BaseModel
         return $this;
     }
 }
-
-

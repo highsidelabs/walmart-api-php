@@ -298,5 +298,3 @@ class TokenDetailResponse extends BaseModel
         return $this;
     }
 }
-
-

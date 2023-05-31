@@ -156,5 +156,3 @@ class AccessMode extends BaseModel
         return $this;
     }
 }
-
-

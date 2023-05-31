@@ -262,5 +262,3 @@ class UpdateShipmentQuantity200ResponseErrorsInnerCausesInner extends BaseModel
         return $this;
     }
 }
-
-

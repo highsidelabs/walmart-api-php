@@ -228,5 +228,3 @@ class MetaType extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class ReturnChannel extends BaseModel
         return $this;
     }
 }
-
-

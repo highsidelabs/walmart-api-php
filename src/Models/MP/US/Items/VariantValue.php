@@ -190,5 +190,3 @@ class VariantValue extends BaseModel
         return $this;
     }
 }
-
-

@@ -298,5 +298,3 @@ class Properties extends BaseModel
         return $this;
     }
 }
-
-

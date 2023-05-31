@@ -190,5 +190,3 @@ class ContentDiscoverabilityIssuesDesc extends BaseModel
         return $this;
     }
 }
-
-

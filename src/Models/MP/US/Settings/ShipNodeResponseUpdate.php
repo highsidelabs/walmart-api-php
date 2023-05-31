@@ -478,5 +478,3 @@ class ShipNodeResponseUpdate extends BaseModel
         return $this;
     }
 }
-
-

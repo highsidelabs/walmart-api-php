@@ -198,5 +198,3 @@ class WeightType extends BaseModel
         return $this;
     }
 }
-
-

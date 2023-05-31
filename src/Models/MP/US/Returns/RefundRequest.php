@@ -196,5 +196,3 @@ class RefundRequest extends BaseModel
         return $this;
     }
 }
-
-

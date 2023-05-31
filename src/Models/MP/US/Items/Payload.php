@@ -192,5 +192,3 @@ class Payload extends BaseModel
         return $this;
     }
 }
-
-

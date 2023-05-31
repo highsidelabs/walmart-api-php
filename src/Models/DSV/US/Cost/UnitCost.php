@@ -190,5 +190,3 @@ class UnitCost extends BaseModel
         return $this;
     }
 }
-
-

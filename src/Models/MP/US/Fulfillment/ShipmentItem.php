@@ -192,5 +192,3 @@ class ShipmentItem extends BaseModel
         return $this;
     }
 }
-
-

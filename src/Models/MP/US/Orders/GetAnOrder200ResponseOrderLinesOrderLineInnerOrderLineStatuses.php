@@ -156,5 +156,3 @@ class GetAnOrder200ResponseOrderLinesOrderLineInnerOrderLineStatuses extends Bas
         return $this;
     }
 }
-
-

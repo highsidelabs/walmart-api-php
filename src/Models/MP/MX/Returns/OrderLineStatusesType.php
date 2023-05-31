@@ -157,5 +157,3 @@ class OrderLineStatusesType extends BaseModel
         return $this;
     }
 }
-
-

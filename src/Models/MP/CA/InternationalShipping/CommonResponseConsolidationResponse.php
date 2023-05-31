@@ -190,5 +190,3 @@ class CommonResponseConsolidationResponse extends BaseModel
         return $this;
     }
 }
-
-

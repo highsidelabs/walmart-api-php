@@ -372,5 +372,3 @@ class ShipToAddress extends BaseModel
         return $this;
     }
 }
-
-

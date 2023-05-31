@@ -192,5 +192,3 @@ class OrderTotal extends BaseModel
         return $this;
     }
 }
-
-

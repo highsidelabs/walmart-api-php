@@ -632,5 +632,3 @@ class ItemResponseJsonResponseRecord extends BaseModel
         return $this;
     }
 }
-
-

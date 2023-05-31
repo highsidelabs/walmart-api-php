@@ -705,5 +705,3 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
         return $this;
     }
 }
-
-

@@ -309,5 +309,3 @@ class InboundShipmentRequestWrapper extends BaseModel
         return $this;
     }
 }
-
-

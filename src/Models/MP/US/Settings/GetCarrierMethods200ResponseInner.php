@@ -262,5 +262,3 @@ class GetCarrierMethods200ResponseInner extends BaseModel
         return $this;
     }
 }
-
-

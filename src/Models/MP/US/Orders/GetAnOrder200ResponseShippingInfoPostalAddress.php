@@ -426,5 +426,3 @@ class GetAnOrder200ResponseShippingInfoPostalAddress extends BaseModel
         return $this;
     }
 }
-
-

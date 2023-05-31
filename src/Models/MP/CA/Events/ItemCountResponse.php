@@ -442,5 +442,3 @@ class ItemCountResponse extends BaseModel
         return $this;
     }
 }
-
-

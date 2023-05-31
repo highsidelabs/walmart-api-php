@@ -334,5 +334,3 @@ class FeedItemsHeaderRequestDTO extends BaseModel
         return $this;
     }
 }
-
-

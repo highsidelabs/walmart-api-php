@@ -232,5 +232,3 @@ class OriginLocation extends BaseModel
         return $this;
     }
 }
-
-

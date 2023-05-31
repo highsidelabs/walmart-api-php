@@ -190,5 +190,3 @@ class OrderLineAck extends BaseModel
         return $this;
     }
 }
-
-

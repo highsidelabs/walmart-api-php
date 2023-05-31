@@ -156,5 +156,3 @@ class CustomerOrderHeader extends BaseModel
         return $this;
     }
 }
-
-

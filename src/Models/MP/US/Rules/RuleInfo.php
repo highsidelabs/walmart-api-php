@@ -406,5 +406,3 @@ class RuleInfo extends BaseModel
         return $this;
     }
 }
-
-

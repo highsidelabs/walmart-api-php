@@ -273,5 +273,3 @@ class ChargeType extends BaseModel
         return $this;
     }
 }
-
-

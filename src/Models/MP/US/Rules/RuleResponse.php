@@ -406,5 +406,3 @@ class RuleResponse extends BaseModel
         return $this;
     }
 }
-
-

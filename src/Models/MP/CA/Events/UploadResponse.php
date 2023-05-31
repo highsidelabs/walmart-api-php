@@ -154,5 +154,3 @@ class UploadResponse extends BaseModel
         return $this;
     }
 }
-
-

@@ -217,5 +217,3 @@ class RequestedQuantity extends BaseModel
         return $this;
     }
 }
-
-

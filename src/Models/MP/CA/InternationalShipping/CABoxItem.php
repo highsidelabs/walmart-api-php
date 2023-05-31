@@ -198,5 +198,3 @@ class CABoxItem extends BaseModel
         return $this;
     }
 }
-
-

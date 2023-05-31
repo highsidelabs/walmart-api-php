@@ -270,5 +270,3 @@ class ItemType extends BaseModel
         return $this;
     }
 }
-
-

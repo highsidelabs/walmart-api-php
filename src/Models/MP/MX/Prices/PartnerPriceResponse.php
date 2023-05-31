@@ -298,5 +298,3 @@ class PartnerPriceResponse extends BaseModel
         return $this;
     }
 }
-
-

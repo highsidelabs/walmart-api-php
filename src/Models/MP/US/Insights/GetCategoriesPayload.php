@@ -226,5 +226,3 @@ class GetCategoriesPayload extends BaseModel
         return $this;
     }
 }
-
-

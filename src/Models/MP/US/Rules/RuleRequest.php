@@ -262,5 +262,3 @@ class RuleRequest extends BaseModel
         return $this;
     }
 }
-
-

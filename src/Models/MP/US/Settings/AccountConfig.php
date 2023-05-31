@@ -190,5 +190,3 @@ class AccountConfig extends BaseModel
         return $this;
     }
 }
-
-

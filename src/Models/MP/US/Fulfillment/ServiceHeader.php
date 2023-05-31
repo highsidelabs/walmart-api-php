@@ -154,5 +154,3 @@ class ServiceHeader extends BaseModel
         return $this;
     }
 }
-
-

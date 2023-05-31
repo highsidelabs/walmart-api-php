@@ -190,5 +190,3 @@ class ItemDetailsLQRequestPayload extends BaseModel
         return $this;
     }
 }
-
-

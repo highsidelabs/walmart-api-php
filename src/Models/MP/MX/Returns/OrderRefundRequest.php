@@ -154,5 +154,3 @@ class OrderRefundRequest extends BaseModel
         return $this;
     }
 }
-
-

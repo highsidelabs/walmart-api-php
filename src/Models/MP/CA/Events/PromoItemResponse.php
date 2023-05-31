@@ -888,5 +888,3 @@ class PromoItemResponse extends BaseModel
         return $this;
     }
 }
-
-

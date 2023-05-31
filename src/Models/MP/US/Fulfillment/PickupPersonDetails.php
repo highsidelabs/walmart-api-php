@@ -195,5 +195,3 @@ class PickupPersonDetails extends BaseModel
         return $this;
     }
 }
-
-

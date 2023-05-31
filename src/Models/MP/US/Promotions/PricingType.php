@@ -697,5 +697,3 @@ class PricingType extends BaseModel
         return $this;
     }
 }
-
-

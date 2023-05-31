@@ -276,5 +276,3 @@ class Sort extends BaseModel
         return $this;
     }
 }
-
-

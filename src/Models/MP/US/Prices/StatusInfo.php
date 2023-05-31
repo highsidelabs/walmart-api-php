@@ -190,5 +190,3 @@ class StatusInfo extends BaseModel
         return $this;
     }
 }
-
-

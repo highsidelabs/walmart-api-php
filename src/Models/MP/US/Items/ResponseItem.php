@@ -229,5 +229,3 @@ class ResponseItem extends BaseModel
         return $this;
     }
 }
-
-

@@ -226,5 +226,3 @@ class RefundResponse extends BaseModel
         return $this;
     }
 }
-
-

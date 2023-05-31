@@ -262,5 +262,3 @@ class Charge extends BaseModel
         return $this;
     }
 }
-
-

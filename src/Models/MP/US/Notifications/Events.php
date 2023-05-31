@@ -154,5 +154,3 @@ class Events extends BaseModel
         return $this;
     }
 }
-
-

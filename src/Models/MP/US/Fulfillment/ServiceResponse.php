@@ -371,5 +371,3 @@ class ServiceResponse extends BaseModel
         return $this;
     }
 }
-
-

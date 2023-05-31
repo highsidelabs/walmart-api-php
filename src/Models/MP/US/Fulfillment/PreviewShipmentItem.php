@@ -336,5 +336,3 @@ class PreviewShipmentItem extends BaseModel
         return $this;
     }
 }
-
-

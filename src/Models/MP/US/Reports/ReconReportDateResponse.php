@@ -154,5 +154,3 @@ class ReconReportDateResponse extends BaseModel
         return $this;
     }
 }
-
-

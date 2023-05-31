@@ -157,5 +157,3 @@ class OrderRefundOrderLinesOrderLineInnerRefunds extends BaseModel
         return $this;
     }
 }
-
-

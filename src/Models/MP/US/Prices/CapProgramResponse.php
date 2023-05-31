@@ -190,5 +190,3 @@ class CapProgramResponse extends BaseModel
         return $this;
     }
 }
-
-

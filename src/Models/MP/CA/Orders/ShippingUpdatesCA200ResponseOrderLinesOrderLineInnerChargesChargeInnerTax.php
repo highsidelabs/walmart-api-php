@@ -198,5 +198,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax 
         return $this;
     }
 }
-
-

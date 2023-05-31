@@ -410,5 +410,3 @@ class ShipOrderLines200ResponsePickupPersonsInnerPhone extends BaseModel
         return $this;
     }
 }
-
-

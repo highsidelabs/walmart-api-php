@@ -193,5 +193,3 @@ class CalendarDayShift extends BaseModel
         return $this;
     }
 }
-
-

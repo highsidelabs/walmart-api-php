@@ -159,5 +159,3 @@ class CancelLineStatusesType extends BaseModel
         return $this;
     }
 }
-
-

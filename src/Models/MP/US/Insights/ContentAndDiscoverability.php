@@ -190,5 +190,3 @@ class ContentAndDiscoverability extends BaseModel
         return $this;
     }
 }
-
-

@@ -231,5 +231,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefund extends BaseMod
         return $this;
     }
 }
-
-

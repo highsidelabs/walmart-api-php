@@ -192,5 +192,3 @@ class InboundPreviewResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

@@ -298,5 +298,3 @@ class ItemPriceResponse extends BaseModel
         return $this;
     }
 }
-
-

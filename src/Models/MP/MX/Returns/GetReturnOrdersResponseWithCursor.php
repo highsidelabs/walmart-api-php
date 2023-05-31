@@ -196,5 +196,3 @@ class GetReturnOrdersResponseWithCursor extends BaseModel
         return $this;
     }
 }
-
-

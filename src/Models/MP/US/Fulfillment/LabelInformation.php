@@ -442,5 +442,3 @@ class LabelInformation extends BaseModel
         return $this;
     }
 }
-
-

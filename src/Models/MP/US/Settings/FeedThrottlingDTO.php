@@ -262,5 +262,3 @@ class FeedThrottlingDTO extends BaseModel
         return $this;
     }
 }
-
-

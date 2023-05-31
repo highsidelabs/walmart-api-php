@@ -229,5 +229,3 @@ class State extends BaseModel
         return $this;
     }
 }
-
-

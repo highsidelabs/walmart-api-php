@@ -240,5 +240,3 @@ class QuantityType extends BaseModel
         return $this;
     }
 }
-
-

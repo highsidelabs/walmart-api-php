@@ -228,5 +228,3 @@ class OrderDate extends BaseModel
         return $this;
     }
 }
-
-

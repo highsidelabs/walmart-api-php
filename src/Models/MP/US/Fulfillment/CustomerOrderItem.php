@@ -452,5 +452,3 @@ class CustomerOrderItem extends BaseModel
         return $this;
     }
 }
-
-

@@ -676,5 +676,3 @@ class PurchaseOrderTypeV3ListErrorsInner extends BaseModel
         return $this;
     }
 }
-
-

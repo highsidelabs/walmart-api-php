@@ -190,5 +190,3 @@ class Associate3PFulfillmentCenter200ResponseInner extends BaseModel
         return $this;
     }
 }
-
-

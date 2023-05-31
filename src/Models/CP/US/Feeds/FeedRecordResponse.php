@@ -298,5 +298,3 @@ class FeedRecordResponse extends BaseModel
         return $this;
     }
 }
-
-

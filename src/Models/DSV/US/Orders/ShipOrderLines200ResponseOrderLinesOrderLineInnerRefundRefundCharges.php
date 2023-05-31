@@ -154,5 +154,3 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerRefundRefundCharges exten
         return $this;
     }
 }
-
-

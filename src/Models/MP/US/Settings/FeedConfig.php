@@ -190,5 +190,3 @@ class FeedConfig extends BaseModel
         return $this;
     }
 }
-
-

@@ -241,5 +241,3 @@ class BulkItemSetupCA200Response extends BaseModel
         return $this;
     }
 }
-
-

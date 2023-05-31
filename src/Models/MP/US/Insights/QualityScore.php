@@ -190,5 +190,3 @@ class QualityScore extends BaseModel
         return $this;
     }
 }
-
-

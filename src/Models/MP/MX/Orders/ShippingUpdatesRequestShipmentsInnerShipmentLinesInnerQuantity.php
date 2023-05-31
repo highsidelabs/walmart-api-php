@@ -192,5 +192,3 @@ class ShippingUpdatesRequestShipmentsInnerShipmentLinesInnerQuantity extends Bas
         return $this;
     }
 }
-
-

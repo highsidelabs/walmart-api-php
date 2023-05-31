@@ -444,5 +444,3 @@ class InventoryLog extends BaseModel
         return $this;
     }
 }
-
-

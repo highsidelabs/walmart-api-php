@@ -736,5 +736,3 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeA
         return $this;
     }
 }
-
-

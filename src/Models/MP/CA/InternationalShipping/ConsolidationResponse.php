@@ -264,5 +264,3 @@ class ConsolidationResponse extends BaseModel
         return $this;
     }
 }
-
-

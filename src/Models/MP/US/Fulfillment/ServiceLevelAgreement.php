@@ -192,5 +192,3 @@ class ServiceLevelAgreement extends BaseModel
         return $this;
     }
 }
-
-

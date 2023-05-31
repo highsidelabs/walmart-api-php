@@ -156,5 +156,3 @@ class ElementsType extends BaseModel
         return $this;
     }
 }
-
-

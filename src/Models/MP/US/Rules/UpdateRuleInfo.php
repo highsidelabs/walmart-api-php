@@ -334,5 +334,3 @@ class UpdateRuleInfo extends BaseModel
         return $this;
     }
 }
-
-

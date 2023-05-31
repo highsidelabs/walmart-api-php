@@ -730,5 +730,3 @@ class SaleRefundAggr extends BaseModel
         return $this;
     }
 }
-
-

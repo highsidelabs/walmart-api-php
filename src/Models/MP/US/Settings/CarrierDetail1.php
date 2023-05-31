@@ -192,5 +192,3 @@ class CarrierDetail1 extends BaseModel
         return $this;
     }
 }
-
-

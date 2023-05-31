@@ -231,5 +231,3 @@ class RefundType extends BaseModel
         return $this;
     }
 }
-
-

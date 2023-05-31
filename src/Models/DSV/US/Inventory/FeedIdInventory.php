@@ -154,5 +154,3 @@ class FeedIdInventory extends BaseModel
         return $this;
     }
 }
-
-

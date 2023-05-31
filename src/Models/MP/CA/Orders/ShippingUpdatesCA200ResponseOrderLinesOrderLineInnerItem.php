@@ -198,5 +198,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerItem extends BaseModel
         return $this;
     }
 }
-
-

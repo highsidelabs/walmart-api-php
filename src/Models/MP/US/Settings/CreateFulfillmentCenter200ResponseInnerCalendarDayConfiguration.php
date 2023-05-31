@@ -192,5 +192,3 @@ class CreateFulfillmentCenter200ResponseInnerCalendarDayConfiguration extends Ba
         return $this;
     }
 }
-
-

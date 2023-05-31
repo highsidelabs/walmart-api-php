@@ -192,5 +192,3 @@ class ItemSearchPrice extends BaseModel
         return $this;
     }
 }
-
-

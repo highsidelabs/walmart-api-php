@@ -445,5 +445,3 @@ class GetTotalItemCount200Response extends BaseModel
         return $this;
     }
 }
-
-

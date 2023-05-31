@@ -154,5 +154,3 @@ class ItemSearch extends BaseModel
         return $this;
     }
 }
-
-

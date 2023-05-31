@@ -190,5 +190,3 @@ class UpdateRuleRequest extends BaseModel
         return $this;
     }
 }
-
-

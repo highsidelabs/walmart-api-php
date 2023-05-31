@@ -156,5 +156,3 @@ class ResultRecordJson extends BaseModel
         return $this;
     }
 }
-
-

@@ -198,5 +198,3 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax ext
         return $this;
     }
 }
-
-

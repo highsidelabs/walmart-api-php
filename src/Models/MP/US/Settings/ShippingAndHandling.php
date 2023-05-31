@@ -198,5 +198,3 @@ class ShippingAndHandling extends BaseModel
         return $this;
     }
 }
-
-

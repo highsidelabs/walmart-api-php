@@ -270,5 +270,3 @@ class GetAnOrder200ResponseOrderLinesOrderLineInnerItem extends BaseModel
         return $this;
     }
 }
-
-

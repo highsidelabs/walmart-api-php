@@ -196,5 +196,3 @@ class ItemPriceTypeAdditionalAttributesAdditionalAttributeInner extends BaseMode
         return $this;
     }
 }
-
-

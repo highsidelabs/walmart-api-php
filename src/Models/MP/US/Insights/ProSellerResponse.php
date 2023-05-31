@@ -406,5 +406,3 @@ class ProSellerResponse extends BaseModel
         return $this;
     }
 }
-
-

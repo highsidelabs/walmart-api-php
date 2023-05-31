@@ -154,5 +154,3 @@ class CategoriesLagTimeDTO extends BaseModel
         return $this;
     }
 }
-
-

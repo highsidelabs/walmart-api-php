@@ -478,5 +478,3 @@ class GetAllFulfillmentCenters200ResponseInner extends BaseModel
         return $this;
     }
 }
-
-

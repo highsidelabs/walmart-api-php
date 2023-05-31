@@ -235,5 +235,3 @@ class LagTimeResponse extends BaseModel
         return $this;
     }
 }
-
-

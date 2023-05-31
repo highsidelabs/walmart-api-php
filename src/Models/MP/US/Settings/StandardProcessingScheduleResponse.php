@@ -372,5 +372,3 @@ class StandardProcessingScheduleResponse extends BaseModel
         return $this;
     }
 }
-
-

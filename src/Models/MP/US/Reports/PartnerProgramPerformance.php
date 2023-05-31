@@ -370,5 +370,3 @@ class PartnerProgramPerformance extends BaseModel
         return $this;
     }
 }
-
-

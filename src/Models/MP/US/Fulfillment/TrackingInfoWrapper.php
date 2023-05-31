@@ -255,5 +255,3 @@ class TrackingInfoWrapper extends BaseModel
         return $this;
     }
 }
-
-

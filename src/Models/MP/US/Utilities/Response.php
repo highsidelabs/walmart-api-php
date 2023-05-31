@@ -226,5 +226,3 @@ class Response extends BaseModel
         return $this;
     }
 }
-
-

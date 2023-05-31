@@ -198,5 +198,3 @@ class PromiseDestination extends BaseModel
         return $this;
     }
 }
-
-

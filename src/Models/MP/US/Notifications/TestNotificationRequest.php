@@ -346,5 +346,3 @@ class TestNotificationRequest extends BaseModel
         return $this;
     }
 }
-
-

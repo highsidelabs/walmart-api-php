@@ -802,5 +802,3 @@ class GetUnpublishedItemsPayload extends BaseModel
         return $this;
     }
 }
-
-

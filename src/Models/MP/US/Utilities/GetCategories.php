@@ -190,5 +190,3 @@ class GetCategories extends BaseModel
         return $this;
     }
 }
-
-

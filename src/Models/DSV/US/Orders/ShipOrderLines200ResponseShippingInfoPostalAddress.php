@@ -426,5 +426,3 @@ class ShipOrderLines200ResponseShippingInfoPostalAddress extends BaseModel
         return $this;
     }
 }
-
-

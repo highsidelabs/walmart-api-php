@@ -190,5 +190,3 @@ class CommonResponseListCarrierPackageResponse extends BaseModel
         return $this;
     }
 }
-
-

@@ -226,5 +226,3 @@ class DsvCostUpdateResponse extends BaseModel
         return $this;
     }
 }
-
-

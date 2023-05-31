@@ -192,5 +192,3 @@ class FulfillmentModule extends BaseModel
         return $this;
     }
 }
-
-

@@ -446,5 +446,3 @@ class UpdateShippingTemplateRequest extends BaseModel
         return $this;
     }
 }
-
-

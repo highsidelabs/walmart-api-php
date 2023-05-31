@@ -190,5 +190,3 @@ class DeleteExceptionRequest extends BaseModel
         return $this;
     }
 }
-
-

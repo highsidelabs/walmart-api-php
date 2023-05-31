@@ -154,5 +154,3 @@ class VariantMetum extends BaseModel
         return $this;
     }
 }
-
-

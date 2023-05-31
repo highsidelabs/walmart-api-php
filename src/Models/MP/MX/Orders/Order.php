@@ -624,5 +624,3 @@ class Order extends BaseModel
         return $this;
     }
 }
-
-

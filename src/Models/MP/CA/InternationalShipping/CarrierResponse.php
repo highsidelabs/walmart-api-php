@@ -228,5 +228,3 @@ class CarrierResponse extends BaseModel
         return $this;
     }
 }
-
-

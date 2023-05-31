@@ -364,5 +364,3 @@ class ShippingInfoType extends BaseModel
         return $this;
     }
 }
-
-

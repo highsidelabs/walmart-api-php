@@ -269,5 +269,3 @@ class EnumFilter extends BaseModel
         return $this;
     }
 }
-
-

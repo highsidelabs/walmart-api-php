@@ -232,5 +232,3 @@ class TokenAPI200Response extends BaseModel
         return $this;
     }
 }
-
-

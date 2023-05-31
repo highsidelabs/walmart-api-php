@@ -228,5 +228,3 @@ class PaginationMetadata extends BaseModel
         return $this;
     }
 }
-
-

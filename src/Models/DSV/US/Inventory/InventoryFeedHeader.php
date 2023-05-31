@@ -315,5 +315,3 @@ class InventoryFeedHeader extends BaseModel
         return $this;
     }
 }
-
-

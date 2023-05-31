@@ -319,5 +319,3 @@ class OrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner
         return $this;
     }
 }
-
-

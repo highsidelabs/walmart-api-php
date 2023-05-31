@@ -192,5 +192,3 @@ class OrderSummary extends BaseModel
         return $this;
     }
 }
-
-

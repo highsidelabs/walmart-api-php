@@ -238,5 +238,3 @@ class GetLagTime200Response extends BaseModel
         return $this;
     }
 }
-
-

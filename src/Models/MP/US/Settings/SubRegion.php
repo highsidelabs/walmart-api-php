@@ -229,5 +229,3 @@ class SubRegion extends BaseModel
         return $this;
     }
 }
-
-

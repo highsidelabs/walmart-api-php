@@ -414,5 +414,3 @@ class PromiseAddress extends BaseModel
         return $this;
     }
 }
-
-

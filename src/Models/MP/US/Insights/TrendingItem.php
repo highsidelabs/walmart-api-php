@@ -588,5 +588,3 @@ class TrendingItem extends BaseModel
         return $this;
     }
 }
-
-

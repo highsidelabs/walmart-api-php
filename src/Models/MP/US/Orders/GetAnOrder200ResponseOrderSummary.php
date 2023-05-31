@@ -192,5 +192,3 @@ class GetAnOrder200ResponseOrderSummary extends BaseModel
         return $this;
     }
 }
-
-

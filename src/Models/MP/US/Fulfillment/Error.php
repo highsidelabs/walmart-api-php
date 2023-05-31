@@ -456,5 +456,3 @@ class Error extends BaseModel
         return $this;
     }
 }
-
-

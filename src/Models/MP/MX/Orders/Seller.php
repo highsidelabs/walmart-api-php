@@ -226,5 +226,3 @@ class Seller extends BaseModel
         return $this;
     }
 }
-
-

@@ -190,5 +190,3 @@ class ChangeAssortmentResponse extends BaseModel
         return $this;
     }
 }
-
-

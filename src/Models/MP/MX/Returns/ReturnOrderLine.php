@@ -884,5 +884,3 @@ class ReturnOrderLine extends BaseModel
         return $this;
     }
 }
-
-

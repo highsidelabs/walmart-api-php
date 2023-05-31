@@ -228,5 +228,3 @@ class VariantGroupInfo extends BaseModel
         return $this;
     }
 }
-
-

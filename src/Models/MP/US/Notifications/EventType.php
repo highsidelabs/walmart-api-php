@@ -264,5 +264,3 @@ class EventType extends BaseModel
         return $this;
     }
 }
-
-

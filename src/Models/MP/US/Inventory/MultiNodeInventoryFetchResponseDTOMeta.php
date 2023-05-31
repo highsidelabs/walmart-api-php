@@ -190,5 +190,3 @@ class MultiNodeInventoryFetchResponseDTOMeta extends BaseModel
         return $this;
     }
 }
-
-

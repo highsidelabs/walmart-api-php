@@ -190,5 +190,3 @@ class PartnerTxns extends BaseModel
         return $this;
     }
 }
-
-

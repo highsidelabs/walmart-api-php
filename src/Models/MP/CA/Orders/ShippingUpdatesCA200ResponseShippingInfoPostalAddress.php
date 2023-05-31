@@ -426,5 +426,3 @@ class ShippingUpdatesCA200ResponseShippingInfoPostalAddress extends BaseModel
         return $this;
     }
 }
-
-

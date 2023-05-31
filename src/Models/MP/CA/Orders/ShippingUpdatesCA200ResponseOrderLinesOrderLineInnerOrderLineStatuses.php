@@ -156,5 +156,3 @@ class ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerOrderLineStatuses exte
         return $this;
     }
 }
-
-

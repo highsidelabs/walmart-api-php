@@ -956,5 +956,3 @@ class Scopes extends BaseModel
         return $this;
     }
 }
-
-

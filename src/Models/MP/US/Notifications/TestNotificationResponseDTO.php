@@ -154,5 +154,3 @@ class TestNotificationResponseDTO extends BaseModel
         return $this;
     }
 }
-
-

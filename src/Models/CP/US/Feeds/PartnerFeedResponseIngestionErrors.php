@@ -156,5 +156,3 @@ class PartnerFeedResponseIngestionErrors extends BaseModel
         return $this;
     }
 }
-
-

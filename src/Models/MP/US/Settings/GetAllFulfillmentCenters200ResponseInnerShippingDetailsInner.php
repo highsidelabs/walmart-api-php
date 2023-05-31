@@ -156,5 +156,3 @@ class GetAllFulfillmentCenters200ResponseInnerShippingDetailsInner extends BaseM
         return $this;
     }
 }
-
-

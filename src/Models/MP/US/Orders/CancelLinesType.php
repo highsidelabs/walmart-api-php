@@ -159,5 +159,3 @@ class CancelLinesType extends BaseModel
         return $this;
     }
 }
-
-

@@ -298,5 +298,3 @@ class PartnerProgramStatementRes extends BaseModel
         return $this;
     }
 }
-
-

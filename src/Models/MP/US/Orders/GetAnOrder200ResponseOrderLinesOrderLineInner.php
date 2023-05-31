@@ -642,5 +642,3 @@ class GetAnOrder200ResponseOrderLinesOrderLineInner extends BaseModel
         return $this;
     }
 }
-
-

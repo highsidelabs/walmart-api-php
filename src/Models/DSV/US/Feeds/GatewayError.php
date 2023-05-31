@@ -676,5 +676,3 @@ class GatewayError extends BaseModel
         return $this;
     }
 }
-
-

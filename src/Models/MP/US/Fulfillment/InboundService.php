@@ -156,5 +156,3 @@ class InboundService extends BaseModel
         return $this;
     }
 }
-
-

@@ -156,5 +156,3 @@ class Headers extends BaseModel
         return $this;
     }
 }
-
-

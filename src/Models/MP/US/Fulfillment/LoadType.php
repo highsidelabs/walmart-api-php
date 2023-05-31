@@ -190,5 +190,3 @@ class LoadType extends BaseModel
         return $this;
     }
 }
-
-

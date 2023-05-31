@@ -271,5 +271,3 @@ class ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInner extend
         return $this;
     }
 }
-
-

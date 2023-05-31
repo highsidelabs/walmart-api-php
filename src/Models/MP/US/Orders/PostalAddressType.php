@@ -426,5 +426,3 @@ class PostalAddressType extends BaseModel
         return $this;
     }
 }
-
-

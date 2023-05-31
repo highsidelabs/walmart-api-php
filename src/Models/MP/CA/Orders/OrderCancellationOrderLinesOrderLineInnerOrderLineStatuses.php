@@ -159,5 +159,3 @@ class OrderCancellationOrderLinesOrderLineInnerOrderLineStatuses extends BaseMod
         return $this;
     }
 }
-
-

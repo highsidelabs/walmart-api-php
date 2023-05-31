@@ -192,5 +192,3 @@ class PublishedStatus extends BaseModel
         return $this;
     }
 }
-
-

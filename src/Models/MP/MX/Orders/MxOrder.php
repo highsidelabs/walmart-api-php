@@ -226,5 +226,3 @@ class MxOrder extends BaseModel
         return $this;
     }
 }
-
-

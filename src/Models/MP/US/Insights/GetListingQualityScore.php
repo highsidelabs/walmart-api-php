@@ -154,5 +154,3 @@ class GetListingQualityScore extends BaseModel
         return $this;
     }
 }
-
-

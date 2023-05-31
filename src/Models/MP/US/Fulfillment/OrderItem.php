@@ -705,5 +705,3 @@ class OrderItem extends BaseModel
         return $this;
     }
 }
-
-

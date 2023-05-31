@@ -334,5 +334,3 @@ class MPItemPriceResponseV2 extends BaseModel
         return $this;
     }
 }
-
-

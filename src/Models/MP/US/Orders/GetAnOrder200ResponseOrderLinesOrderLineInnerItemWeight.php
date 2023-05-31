@@ -198,5 +198,3 @@ class GetAnOrder200ResponseOrderLinesOrderLineInnerItemWeight extends BaseModel
         return $this;
     }
 }
-
-

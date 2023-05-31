@@ -198,5 +198,3 @@ class ShipCharge extends BaseModel
         return $this;
     }
 }
-
-

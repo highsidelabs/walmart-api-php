@@ -198,5 +198,3 @@ class Money extends BaseModel
         return $this;
     }
 }
-
-

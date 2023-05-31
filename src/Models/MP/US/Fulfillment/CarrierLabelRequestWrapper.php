@@ -157,5 +157,3 @@ class CarrierLabelRequestWrapper extends BaseModel
         return $this;
     }
 }
-
-

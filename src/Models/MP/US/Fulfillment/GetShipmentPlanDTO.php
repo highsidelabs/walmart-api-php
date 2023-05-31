@@ -190,5 +190,3 @@ class GetShipmentPlanDTO extends BaseModel
         return $this;
     }
 }
-
-

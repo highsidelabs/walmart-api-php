@@ -304,5 +304,3 @@ class GetAllItems200Response extends BaseModel
         return $this;
     }
 }
-
-

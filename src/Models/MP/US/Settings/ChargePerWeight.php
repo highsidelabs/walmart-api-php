@@ -198,5 +198,3 @@ class ChargePerWeight extends BaseModel
         return $this;
     }
 }
-
-
