@@ -16,7 +16,7 @@ A PHP library for connecting to Walmart's [Marketplace](https://developer.walmar
 ### Related packages
 
 * [`jlevers/selling-partner-api`](https://github.com/jlevers/selling-partner-api): A PHP library for Amazon's [Selling Partner API](https://developer-docs.amazon.com/sp-api/docs), with a similar interface to this package. Our most popular package.
-* [`highsidelabs/laravel-spapi`](https://github.com/highsidelabs/laravel-spapi): An Laravel wrapper for the package above, making Selling Partner API integration in Laravel projects quick and easy.
+* [`highsidelabs/laravel-spapi`](https://github.com/highsidelabs/laravel-spapi): A [Laravel](https://laravel.com) wrapper for the package above, making Selling Partner API integration in Laravel projects quick and easy.
 * [`highsidelabs/amazon-business-api`](https://github.com/highsidelabs/amazon-business-api): A PHP library for Amazon's [Business API](https://developer-docs.amazon.com/amazon-business/docs), with a near-identical interface to [`jlevers/selling-partner-api`](https://github.com/jlevers/selling-partner-api).
 
 ---
