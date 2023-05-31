@@ -62,16 +62,16 @@ Note: the input parameter is an associative array with the keys listed as the pa
 {{~/if}}
 {{#unless allParams}}This endpoint does not need any parameter.{{/unless}}{{#each allParams}}{{#if @last}}| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |{{/if}}{{/each}}
-{{#allParams}}| **{{paramName}}** | {{#if isFile}}**{{{dataType}}}**{{/if}}{{#if isPrimitiveType}}**{{{dataType}}}**{{else}}{{#unless isFile}}[**{{{dataType}}}**](../Model/{{baseType}}.md){{/unless}}{{/if}}| {{{description}}} |{{#unless required}} [optional]{{/unless}}{{#if defaultValue}} [default to {{{defaultValue}}}]{{/if}} |
+{{#allParams}}| **{{paramName}}** | {{#if isFile}}**{{{dataType}}}**{{/if}}{{#if isPrimitiveType}}**{{{dataType}}}**{{else}}{{#unless isFile}}[**{{{dataType}}}**](../../../Models/{{x-walmart-api-category}}/{{x-walmart-country}}/{{x-walmart-api-name}}/{{baseType}}.md){{/unless}}{{/if}}| {{{description}}} |{{#unless required}} [optional]{{/unless}}{{#if defaultValue}} [default to {{{defaultValue}}}]{{/if}} |
 {{/allParams}}
 
 ### Return type
 
-{{#if returnType}}{{#if returnTypeIsPrimitive}}**{{{returnType}}}**{{else}}[**{{{returnType}}}**](../Model/{{returnBaseType}}.md){{/if}}{{else}}void (empty response body){{/if}}
+{{#if returnType}}{{#if returnTypeIsPrimitive}}**{{{returnType}}}**{{else}}[**{{{returnType}}}**](../../../Models/{{x-walmart-api-category}}/{{x-walmart-country}}/{{x-walmart-api-name}}/{{returnBaseType}}.md){{/if}}{{else}}void (empty response body){{/if}}
 
 ### Authorization
 
-{{#unless authMethods}}No authorization required{{/unless}}{{#each authMethods}}[{{{name}}}](../../README.md#{{{name}}}){{#unless @last}}, {{/unless}}{{/each}}
+{{#unless authMethods}}No authorization required{{/unless}}{{#each authMethods}}[{{{name}}}](../../../README.md#{{{name}}}){{#unless @last}}, {{/unless}}{{/each}}
 
 ### HTTP request headers
 
