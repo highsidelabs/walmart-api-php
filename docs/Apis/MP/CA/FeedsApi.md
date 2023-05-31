@@ -59,11 +59,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response**](../Model/BulkContentSetup200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response**](../../../Models/MP/CA/feeds/BulkContentSetup200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -127,11 +127,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response**](../Model/GetAllFeedStatuses200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response**](../../../Models/MP/CA/feeds/GetAllFeedStatuses200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -197,11 +197,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Feeds\PartnerFeedResponse**](../Model/PartnerFeedResponse.md)
+[**\Walmart\Models\MP\CA\Feeds\PartnerFeedResponse**](../../../Models/MP/CA/feeds/PartnerFeedResponse.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

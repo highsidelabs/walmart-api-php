@@ -60,11 +60,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Feeds\FeedRecordResponse**](../Model/FeedRecordResponse.md)
+[**\Walmart\Models\WS\US\Feeds\FeedRecordResponse**](../../../Models/WS/US/feeds/FeedRecordResponse.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -130,11 +130,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Feeds\PartnerFeedResponse**](../Model/PartnerFeedResponse.md)
+[**\Walmart\Models\WS\US\Feeds\PartnerFeedResponse**](../../../Models/WS/US/feeds/PartnerFeedResponse.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

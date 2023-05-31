@@ -56,7 +56,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderAckRequest** | [**\Walmart\Models\MP\MX\Orders\OrderAckRequest**](../Model/OrderAckRequest.md)|  | |
+| **orderAckRequest** | [**\Walmart\Models\MP\MX\Orders\OrderAckRequest**](../../../Models/MP/MX/orders/OrderAckRequest.md)|  | |
 
 
 ### Return type
@@ -65,7 +65,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -118,7 +118,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderCancellationRequest** | [**\Walmart\Models\MP\MX\Orders\OrderCancellationRequest**](../Model/OrderCancellationRequest.md)| File fields | |
+| **orderCancellationRequest** | [**\Walmart\Models\MP\MX\Orders\OrderCancellationRequest**](../../../Models/MP/MX/orders/OrderCancellationRequest.md)| File fields | |
 
 
 ### Return type
@@ -127,7 +127,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -180,7 +180,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **deliver** | [**\Walmart\Models\MP\MX\Orders\Deliver**](../Model/Deliver.md)| File fields | |
+| **deliver** | [**\Walmart\Models\MP\MX\Orders\Deliver**](../../../Models/MP/MX/orders/Deliver.md)| File fields | |
 
 
 ### Return type
@@ -189,7 +189,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -257,11 +257,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../Model/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/orders/MxOrder.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -329,11 +329,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../Model/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/orders/MxOrder.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -399,11 +399,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../Model/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/orders/MxOrder.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -463,7 +463,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -515,7 +515,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **shippingLabelRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingLabelRequest**](../Model/ShippingLabelRequest.md)| Request body with list of tracking numbers | |
+| **shippingLabelRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingLabelRequest**](../../../Models/MP/MX/orders/ShippingLabelRequest.md)| Request body with list of tracking numbers | |
 | **fORMAT** | **string**| format in which you want to download bulk labels, expected values are ZIP/ PDF only | [optional] [default to 'ZIP'] |
 
 
@@ -525,7 +525,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -578,7 +578,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **shippingUpdatesRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest**](../Model/ShippingUpdatesRequest.md)| File fields | |
+| **shippingUpdatesRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest**](../../../Models/MP/MX/orders/ShippingUpdatesRequest.md)| File fields | |
 
 
 ### Return type
@@ -587,7 +587,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

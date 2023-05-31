@@ -59,16 +59,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../Model/InactivateRuleResponse.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/rules/InactivateRuleResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -123,11 +123,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../Model/ChangeAssortmentResponse.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/rules/ChangeAssortmentResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -175,16 +175,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -232,16 +232,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../Model/DeleteExceptionResponse.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../../../Models/MP/US/rules/DeleteExceptionResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -289,16 +289,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../Model/DeleteExceptionResponse.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../../../Models/MP/US/rules/DeleteExceptionResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -353,11 +353,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../Model/InactivateRuleResponse.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/rules/InactivateRuleResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -411,7 +411,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -470,7 +470,7 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -525,11 +525,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -579,11 +579,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../Model/ChangeAssortmentResponse.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/rules/ChangeAssortmentResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -633,11 +633,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllExceptionsResponse**](../Model/GetAllExceptionsResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllExceptionsResponse**](../../../Models/MP/US/rules/GetAllExceptionsResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -687,11 +687,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -741,11 +741,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../Model/ChangeAssortmentResponse.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/rules/ChangeAssortmentResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -800,11 +800,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetSimulationCountResponse**](../Model/GetSimulationCountResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetSimulationCountResponse**](../../../Models/MP/US/rules/GetSimulationCountResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -852,16 +852,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../Model/InactivateRuleResponse.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/rules/InactivateRuleResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -909,16 +909,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -966,16 +966,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../Model/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

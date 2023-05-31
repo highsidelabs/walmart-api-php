@@ -52,11 +52,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\US\Returns\FeedId**](../../../Models/MP/US/returns/FeedId.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -127,11 +127,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse**](../Model/GetReturnOrdersResponse.md)
+[**\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse**](../../../Models/MP/US/returns/GetReturnOrdersResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -181,16 +181,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| The return order ID | |
-| **refundRequest** | [**\Walmart\Models\MP\US\Returns\RefundRequest**](../Model/RefundRequest.md)| File fields | |
+| **refundRequest** | [**\Walmart\Models\MP\US\Returns\RefundRequest**](../../../Models/MP/US/returns/RefundRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\RefundResponse**](../Model/RefundResponse.md)
+[**\Walmart\Models\MP\US\Returns\RefundResponse**](../../../Models/MP/US/returns/RefundResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

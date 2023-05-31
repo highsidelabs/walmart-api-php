@@ -69,11 +69,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetAllItems200Response**](../Model/GetAllItems200Response.md)
+[**\Walmart\Models\MP\US\Items\GetAllItems200Response**](../../../Models/MP/US/items/GetAllItems200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -128,11 +128,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemResponseJson**](../Model/ItemResponseJson.md)
+[**\Walmart\Models\MP\US\Items\ItemResponseJson**](../../../Models/MP/US/items/ItemResponseJson.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -183,7 +183,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemCatalogSearchPayload** | [**\Walmart\Models\MP\US\Items\ItemCatalogSearchPayload**](../Model/ItemCatalogSearchPayload.md)| Request fields | |
+| **itemCatalogSearchPayload** | [**\Walmart\Models\MP\US\Items\ItemCatalogSearchPayload**](../../../Models/MP/US/items/ItemCatalogSearchPayload.md)| Request fields | |
 | **page** | **int**| number of page | [optional] [default to 0] |
 | **limit** | **int**| number of items | [optional] [default to 100] |
 | **nextCursor** | **string**| nextCursor | [optional] |
@@ -191,11 +191,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemCatalogResponses**](../Model/ItemCatalogResponses.md)
+[**\Walmart\Models\MP\US\Items\ItemCatalogResponses**](../../../Models/MP/US/items/ItemCatalogResponses.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -252,7 +252,7 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -300,16 +300,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemsAssociationsResponseDTO** | [**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../Model/ItemsAssociationsResponseDTO.md)| Request fields | |
+| **itemsAssociationsResponseDTO** | [**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/items/ItemsAssociationsResponseDTO.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../Model/ItemsAssociationsResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/items/ItemsAssociationsResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -366,11 +366,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../Model/ItemsAssociationsResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/items/ItemsAssociationsResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -420,11 +420,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../../../Models/MP/US/items/TaxonomyResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -477,11 +477,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../../../Models/MP/US/items/TaxonomyResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -536,11 +536,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\US\Items\FeedId**](../../../Models/MP/US/items/FeedId.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -593,11 +593,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\RetireAnItem200Response**](../Model/RetireAnItem200Response.md)
+[**\Walmart\Models\MP\US\Items\RetireAnItem200Response**](../../../Models/MP/US/items/RetireAnItem200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

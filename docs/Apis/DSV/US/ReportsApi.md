@@ -57,11 +57,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Reports\GetItemReport200Response**](../Model/GetItemReport200Response.md)
+[**\Walmart\Models\DSV\US\Reports\GetItemReport200Response**](../../../Models/DSV/US/reports/GetItemReport200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

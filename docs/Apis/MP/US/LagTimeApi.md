@@ -49,11 +49,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\LagTime\GetLagTime200Response**](../Model/GetLagTime200Response.md)
+[**\Walmart\Models\MP\US\LagTime\GetLagTime200Response**](../../../Models/MP/US/lagTime/GetLagTime200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -103,16 +103,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Use 'lagtime' | |
-| **updateLagTimeBulkRequest** | [**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest**](../Model/UpdateLagTimeBulkRequest.md)| File fields | |
+| **updateLagTimeBulkRequest** | [**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest**](../../../Models/MP/US/lagTime/UpdateLagTimeBulkRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\LagTime\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\US\LagTime\FeedId**](../../../Models/MP/US/lagTime/FeedId.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

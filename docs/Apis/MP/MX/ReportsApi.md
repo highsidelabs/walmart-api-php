@@ -55,7 +55,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

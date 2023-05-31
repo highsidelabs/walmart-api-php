@@ -65,16 +65,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -127,11 +127,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -179,16 +179,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **carrierQuoteConfirmRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper**](../Model/CarrierQuoteConfirmRequestWrapper.md)| Request fields | |
+| **carrierQuoteConfirmRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper**](../../../Models/MP/US/fulfillment/CarrierQuoteConfirmRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -238,16 +238,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'OMNI_WFS'] |
-| **convertItemForWfsRequest** | [**\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest**](../Model/ConvertItemForWfsRequest.md)|  | [optional] |
+| **convertItemForWfsRequest** | [**\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest**](../../../Models/MP/US/fulfillment/ConvertItemForWfsRequest.md)|  | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\US\Fulfillment\FeedId**](../../../Models/MP/US/fulfillment/FeedId.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -295,16 +295,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **carrierQuoteRequestV2Wrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper**](../Model/CarrierQuoteRequestV2Wrapper.md)| Request fields | |
+| **carrierQuoteRequestV2Wrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper**](../../../Models/MP/US/fulfillment/CarrierQuoteRequestV2Wrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper**](../Model/QuoteResponseV2Wrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper**](../../../Models/MP/US/fulfillment/QuoteResponseV2Wrapper.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -352,16 +352,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -418,7 +418,7 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -466,7 +466,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **labelV2RequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper**](../Model/LabelV2RequestWrapper.md)| Request fields | |
+| **labelV2RequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper**](../../../Models/MP/US/fulfillment/LabelV2RequestWrapper.md)| Request fields | |
 
 
 ### Return type
@@ -475,7 +475,7 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -523,16 +523,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inboundShipmentRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper**](../Model/InboundShipmentRequestWrapper.md)| Request fields | |
+| **inboundShipmentRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper**](../../../Models/MP/US/fulfillment/InboundShipmentRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../Model/InboundShipmentCreateResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../../../Models/MP/US/fulfillment/InboundShipmentCreateResponseWrapperDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -587,11 +587,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper**](../Model/GetRateQuoteInfoResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper**](../../../Models/MP/US/fulfillment/GetRateQuoteInfoResponseWrapper.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -662,11 +662,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -723,11 +723,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -784,11 +784,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -853,11 +853,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -911,7 +911,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -982,11 +982,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../Model/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -1034,16 +1034,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../Model/InboundShipmentCreateResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../../../Models/MP/US/fulfillment/InboundShipmentCreateResponseWrapperDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -1093,16 +1093,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **shipmentId** | **string**| Unique ID identifying each shipment. | |
-| **carrierLabelRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper**](../Model/CarrierLabelRequestWrapper.md)|  | |
+| **carrierLabelRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper**](../../../Models/MP/US/fulfillment/CarrierLabelRequestWrapper.md)|  | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -1150,16 +1150,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../Model/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../Model/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -1207,16 +1207,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inboundShipmentUpdateQtyWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper**](../Model/InboundShipmentUpdateQtyWrapper.md)| Request fields | |
+| **inboundShipmentUpdateQtyWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper**](../../../Models/MP/US/fulfillment/InboundShipmentUpdateQtyWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -1264,16 +1264,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trackingInfoWrapper** | [**\Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper**](../Model/TrackingInfoWrapper.md)| Request fields | |
+| **trackingInfoWrapper** | [**\Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper**](../../../Models/MP/US/fulfillment/TrackingInfoWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -1326,11 +1326,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -1380,16 +1380,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
-| **wercsFeedbackRequest** | [**\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest**](../Model/WercsFeedbackRequest.md)| Request fields | |
+| **wercsFeedbackRequest** | [**\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest**](../../../Models/MP/US/fulfillment/WercsFeedbackRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../Model/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

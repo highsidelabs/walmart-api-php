@@ -53,11 +53,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\Inventory**](../Model/Inventory.md)
+[**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/inventory/Inventory.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -115,11 +115,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\MX\Inventory\FeedId**](../../../Models/MP/MX/inventory/FeedId.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -172,16 +172,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
-| **inventory** | [**\Walmart\Models\MP\MX\Inventory\Inventory**](../Model/Inventory.md)| File fields | |
+| **inventory** | [**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/inventory/Inventory.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\Inventory**](../Model/Inventory.md)
+[**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/inventory/Inventory.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

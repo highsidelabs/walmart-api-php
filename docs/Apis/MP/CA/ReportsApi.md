@@ -61,7 +61,7 @@ try {
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

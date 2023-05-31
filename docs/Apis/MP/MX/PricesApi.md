@@ -54,11 +54,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Prices\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\MX\Prices\FeedId**](../../../Models/MP/MX/prices/FeedId.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -126,11 +126,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Prices\UpdatePrice200Response**](../Model/UpdatePrice200Response.md)
+[**\Walmart\Models\MP\MX\Prices\UpdatePrice200Response**](../../../Models/MP/MX/prices/UpdatePrice200Response.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

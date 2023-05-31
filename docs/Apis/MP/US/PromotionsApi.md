@@ -50,11 +50,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse**](../Model/PromotionalPriceResponse.md)
+[**\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse**](../../../Models/MP/US/promotions/PromotionalPriceResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -109,11 +109,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\US\Promotions\FeedId**](../../../Models/MP/US/promotions/FeedId.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -163,16 +163,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promo** | **bool**| The promotional price. Set to 'true' in order to retrieve promotional prices | [default to true] |
-| **price** | [**\Walmart\Models\MP\US\Promotions\Price**](../Model/Price.md)| The request body consists of a Feed file attached to the request. | |
+| **price** | [**\Walmart\Models\MP\US\Promotions\Price**](../../../Models/MP/US/promotions/Price.md)| The request body consists of a Feed file attached to the request. | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response**](../Model/UpdatePromotionalPrices200Response.md)
+[**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response**](../../../Models/MP/US/promotions/UpdatePromotionalPrices200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

@@ -59,11 +59,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\ItemResponses**](../Model/ItemResponses.md)
+[**\Walmart\Models\DSV\US\Items\ItemResponses**](../../../Models/DSV/US/items/ItemResponses.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -123,11 +123,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\ItemResponse**](../Model/ItemResponse.md)
+[**\Walmart\Models\DSV\US\Items\ItemResponse**](../../../Models/DSV/US/items/ItemResponse.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -189,11 +189,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response**](../Model/ItemBulkUploads200Response.md)
+[**\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response**](../../../Models/DSV/US/items/ItemBulkUploads200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

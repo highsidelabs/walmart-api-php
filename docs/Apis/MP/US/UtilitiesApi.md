@@ -48,11 +48,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\StatusAPIResponse**](../Model/StatusAPIResponse.md)
+[**\Walmart\Models\MP\US\Utilities\StatusAPIResponse**](../../../Models/MP/US/utilities/StatusAPIResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -105,11 +105,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\GetCategories**](../Model/GetCategories.md)
+[**\Walmart\Models\MP\US\Utilities\GetCategories**](../../../Models/MP/US/utilities/GetCategories.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -159,11 +159,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../../../Models/MP/US/utilities/TaxonomyResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -218,11 +218,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../Model/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../../../Models/MP/US/utilities/TaxonomyResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

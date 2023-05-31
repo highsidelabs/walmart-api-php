@@ -56,11 +56,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200Response**](../Model/GetAllFeedStatuses200Response.md)
+[**\Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200Response**](../../../Models/MP/MX/feeds/GetAllFeedStatuses200Response.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -122,11 +122,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200Response**](../Model/GetFeedItemStatus200Response.md)
+[**\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200Response**](../../../Models/MP/MX/feeds/GetFeedItemStatus200Response.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

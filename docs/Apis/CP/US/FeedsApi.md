@@ -57,11 +57,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response**](../Model/ContentProductFeed200Response.md)
+[**\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response**](../../../Models/CP/US/feeds/ContentProductFeed200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

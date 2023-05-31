@@ -57,16 +57,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[]**](../Model/Associate3PFulfillmentCenter200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[]**](../../../Models/MP/US/settings/Associate3PFulfillmentCenter200ResponseInner.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -114,16 +114,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]**](../Model/CreateFulfillmentCenter200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]**](../../../Models/MP/US/settings/CreateFulfillmentCenter200ResponseInner.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -171,16 +171,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../Model/UpdateShippingTemplateRequest.md)| Request fields | |
+| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../../../Models/MP/US/settings/UpdateShippingTemplateRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../Model/ShippingTemplate.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/settings/ShippingTemplate.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -233,11 +233,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplateId**](../Model/ShippingTemplateId.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplateId**](../../../Models/MP/US/settings/ShippingTemplateId.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -287,11 +287,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]**](../Model/Get3PFulfillmentProviders200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]**](../../../Models/MP/US/settings/Get3PFulfillmentProviders200ResponseInner.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -344,11 +344,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]**](../Model/GetAllFulfillmentCenters200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]**](../../../Models/MP/US/settings/GetAllFulfillmentCenters200ResponseInner.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -398,11 +398,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplatesSummary**](../Model/ShippingTemplatesSummary.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplatesSummary**](../../../Models/MP/US/settings/ShippingTemplatesSummary.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -452,11 +452,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]**](../Model/GetCarrierMethods200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]**](../../../Models/MP/US/settings/GetCarrierMethods200ResponseInner.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -506,11 +506,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]**](../Model/GetCoverageForFulfillmentCenters200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]**](../../../Models/MP/US/settings/GetCoverageForFulfillmentCenters200ResponseInner.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -560,11 +560,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../Model/ShippingConfigsResponseDTO.md)
+[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../../../Models/MP/US/settings/ShippingConfigsResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -614,11 +614,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../Model/ShippingConfigsResponseDTO.md)
+[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../../../Models/MP/US/settings/ShippingConfigsResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -668,11 +668,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus**](../Model/ShippingTemplateActivationStatus.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus**](../../../Models/MP/US/settings/ShippingTemplateActivationStatus.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -725,11 +725,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../Model/ShippingTemplate.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/settings/ShippingTemplate.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -777,16 +777,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate**](../Model/ShipNodeResponseUpdate.md)
+[**\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate**](../../../Models/MP/US/settings/ShipNodeResponseUpdate.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -836,16 +836,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **templateId** | **string**| templateId | |
-| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../Model/UpdateShippingTemplateRequest.md)| Request fields | |
+| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../../../Models/MP/US/settings/UpdateShippingTemplateRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../Model/ShippingTemplate.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/settings/ShippingTemplate.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

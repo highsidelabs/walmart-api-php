@@ -57,11 +57,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../Model/InventoryV2.md)
+[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/inventory/InventoryV2.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -123,11 +123,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response**](../Model/UpdateBulkInventory200Response.md)
+[**\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response**](../../../Models/MP/CA/inventory/UpdateBulkInventory200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -192,16 +192,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
-| **inventoryV2** | [**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../Model/InventoryV2.md)| File fields | |
+| **inventoryV2** | [**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/inventory/InventoryV2.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../Model/InventoryV2.md)
+[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/inventory/InventoryV2.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

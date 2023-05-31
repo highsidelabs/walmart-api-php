@@ -58,11 +58,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Prices\PriceBulkUploads200Response**](../Model/PriceBulkUploads200Response.md)
+[**\Walmart\Models\MP\CA\Prices\PriceBulkUploads200Response**](../../../Models/MP/CA/prices/PriceBulkUploads200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -133,11 +133,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2**](../Model/MPItemPriceResponseV2.md)
+[**\Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2**](../../../Models/MP/CA/prices/MPItemPriceResponseV2.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

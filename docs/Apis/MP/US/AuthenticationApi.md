@@ -46,11 +46,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Authentication\TokenDetailResponse**](../Model/TokenDetailResponse.md)
+[**\Walmart\Models\MP\US\Authentication\TokenDetailResponse**](../../../Models/MP/US/authentication/TokenDetailResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -103,11 +103,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Authentication\OAuthToken**](../Model/OAuthToken.md)
+[**\Walmart\Models\MP\US\Authentication\OAuthToken**](../../../Models/MP/US/authentication/OAuthToken.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme)
+[basicScheme](../../../README.md#basicScheme)
 
 ### HTTP request headers
 

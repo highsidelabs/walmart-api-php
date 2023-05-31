@@ -50,11 +50,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../Model/ReconReportDateResponse.md)
+[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../../../Models/MP/US/reports/ReconReportDateResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -104,11 +104,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../Model/ReconReportDateResponse.md)
+[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../../../Models/MP/US/reports/ReconReportDateResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -158,11 +158,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes**](../Model/PartnerProgramPerformanceRes.md)
+[**\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes**](../../../Models/MP/US/reports/PartnerProgramPerformanceRes.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -212,11 +212,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes**](../Model/PartnerProgramStatementRes.md)
+[**\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes**](../../../Models/MP/US/reports/PartnerProgramStatementRes.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -273,7 +273,7 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -332,7 +332,7 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

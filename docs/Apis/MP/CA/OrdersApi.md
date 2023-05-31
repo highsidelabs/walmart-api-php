@@ -62,11 +62,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -140,16 +140,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../Model/OrderShipment.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/orders/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\OrderShipment**](../Model/OrderShipment.md)
+[**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/orders/OrderShipment.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -227,11 +227,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../../../Models/MP/CA/orders/GetAllOrders200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -297,11 +297,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../Model/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../../../Models/MP/CA/orders/GetAllOrders200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -371,11 +371,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\OrdersListType**](../Model/OrdersListType.md)
+[**\Walmart\Models\MP\CA\Orders\OrdersListType**](../../../Models/MP/CA/orders/OrdersListType.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -437,11 +437,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -551,16 +551,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **orderRefund** | [**\Walmart\Models\MP\CA\Orders\OrderRefund**](../Model/OrderRefund.md)| File fields | |
+| **orderRefund** | [**\Walmart\Models\MP\CA\Orders\OrderRefund**](../../../Models/MP/CA/orders/OrderRefund.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -645,16 +645,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../Model/OrderShipment.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/orders/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../Model/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

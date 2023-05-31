@@ -64,11 +64,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../Model/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/insights/GetUnpublishedItemsCount.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -123,11 +123,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../Model/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/insights/GetUnpublishedItemsCount.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -177,11 +177,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\ProSellerResponse**](../Model/ProSellerResponse.md)
+[**\Walmart\Models\MP\US\Insights\ProSellerResponse**](../../../Models/MP/US/insights/ProSellerResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -242,11 +242,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetTrendingResult**](../Model/GetTrendingResult.md)
+[**\Walmart\Models\MP\US\Insights\GetTrendingResult**](../../../Models/MP/US/insights/GetTrendingResult.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -299,11 +299,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../Model/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/insights/GetUnpublishedItemsCount.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -366,11 +366,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItem**](../Model/GetUnpublishedItem.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItem**](../../../Models/MP/US/insights/GetUnpublishedItem.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -420,18 +420,18 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemDetailsLQRequestPayload** | [**\Walmart\Models\MP\US\Insights\ItemDetailsLQRequestPayload**](../Model/ItemDetailsLQRequestPayload.md)| Request payload | |
+| **itemDetailsLQRequestPayload** | [**\Walmart\Models\MP\US\Insights\ItemDetailsLQRequestPayload**](../../../Models/MP/US/insights/ItemDetailsLQRequestPayload.md)| Request payload | |
 | **limit** | **string**| Specify number of items to return. If no limit is specified, API returns 200 items by default. | [optional] [default to '200'] |
 | **nextCursor** | **string**| Specify pagination for long list of items. | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload**](../Model/ItemDetailsLQResponsePayload.md)
+[**\Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload**](../../../Models/MP/US/insights/ItemDetailsLQResponsePayload.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

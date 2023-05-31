@@ -54,11 +54,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -108,16 +108,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderCancellationResponse** | [**\Walmart\Models\MP\US\Orders\OrderCancellationResponse**](../Model/OrderCancellationResponse.md)| File fields | |
+| **orderCancellationResponse** | [**\Walmart\Models\MP\US\Orders\OrderCancellationResponse**](../../../Models/MP/US/orders/OrderCancellationResponse.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -200,11 +200,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../Model/PurchaseOrderTypeV3.md)
+[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../../../Models/MP/US/orders/PurchaseOrderTypeV3.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -281,11 +281,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../Model/PurchaseOrderTypeV3.md)
+[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../../../Models/MP/US/orders/PurchaseOrderTypeV3.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -342,11 +342,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetAnOrder200Response**](../Model/GetAnOrder200Response.md)
+[**\Walmart\Models\MP\US\Orders\GetAnOrder200Response**](../../../Models/MP/US/orders/GetAnOrder200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -396,16 +396,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderRefundJson** | [**\Walmart\Models\MP\US\Orders\OrderRefundJson**](../Model/OrderRefundJson.md)| File fields | |
+| **orderRefundJson** | [**\Walmart\Models\MP\US\Orders\OrderRefundJson**](../../../Models/MP/US/orders/OrderRefundJson.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -455,16 +455,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderShipment** | [**\Walmart\Models\MP\US\Orders\OrderShipment**](../Model/OrderShipment.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\US\Orders\OrderShipment**](../../../Models/MP/US/orders/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../Model/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme)
+[basicScheme](../../../README.md#basicScheme)
 
 ### HTTP request headers
 
@@ -103,11 +103,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Authentication\TokenAPI200Response**](../Model/TokenAPI200Response.md)
+[**\Walmart\Models\MP\MX\Authentication\TokenAPI200Response**](../../../Models/MP/MX/authentication/TokenAPI200Response.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme)
+[basicScheme](../../../README.md#basicScheme)
 
 ### HTTP request headers
 

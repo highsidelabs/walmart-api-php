@@ -52,16 +52,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'cost'] |
-| **dsvCostUpdateRequest** | [**\Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest**](../Model/DsvCostUpdateRequest.md)| File fields | |
+| **dsvCostUpdateRequest** | [**\Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest**](../../../Models/DSV/US/cost/DsvCostUpdateRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Cost\DsvCostUpdateResponse**](../Model/DsvCostUpdateResponse.md)
+[**\Walmart\Models\DSV\US\Cost\DsvCostUpdateResponse**](../../../Models/DSV/US/cost/DsvCostUpdateResponse.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

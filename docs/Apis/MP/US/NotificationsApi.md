@@ -48,16 +48,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)| Request fields | |
+| **createSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../../../Models/MP/US/notifications/CreateSubscriptionRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../Model/SubscriptionResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../../../Models/MP/US/notifications/SubscriptionResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -110,11 +110,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO**](../Model/SubscriptionDeleteResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO**](../../../Models/MP/US/notifications/SubscriptionDeleteResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -173,11 +173,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)
+[**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../../../Models/MP/US/notifications/CreateSubscriptionRequest.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -227,11 +227,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\EventTypes**](../Model/EventTypes.md)
+[**\Walmart\Models\MP\US\Notifications\EventTypes**](../../../Models/MP/US/notifications/EventTypes.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -279,16 +279,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testNotificationRequest** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequest**](../Model/TestNotificationRequest.md)| Request fields | |
+| **testNotificationRequest** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequest**](../../../Models/MP/US/notifications/TestNotificationRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO**](../Model/TestNotificationResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO**](../../../Models/MP/US/notifications/TestNotificationResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -338,16 +338,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Unique ID for the subscription | |
-| **createSubscriptionRequestRecord** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord**](../Model/CreateSubscriptionRequestRecord.md)| Request fields | |
+| **createSubscriptionRequestRecord** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord**](../../../Models/MP/US/notifications/CreateSubscriptionRequestRecord.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../Model/SubscriptionResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../../../Models/MP/US/notifications/SubscriptionResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

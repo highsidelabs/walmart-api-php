@@ -56,11 +56,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\US\Inventory\GetInventory200Response**](../../../Models/MP/US/inventory/GetInventory200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -115,11 +115,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO**](../Model/MultiNodeInventoryFetchResponseDTO.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryFetchResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -174,11 +174,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../Model/MultiNodeInventoryUpdateResponseDTO.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryUpdateResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -239,11 +239,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\WfsInventoryDTO**](../Model/WfsInventoryDTO.md)
+[**\Walmart\Models\MP\US\Inventory\WfsInventoryDTO**](../../../Models/MP/US/inventory/WfsInventoryDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -300,11 +300,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\FeedId**](../Model/FeedId.md)
+[**\Walmart\Models\MP\US\Inventory\FeedId**](../../../Models/MP/US/inventory/FeedId.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -355,17 +355,17 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
-| **updateInventoryForAnItemRequest** | [**\Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest**](../Model/UpdateInventoryForAnItemRequest.md)| File fields | |
+| **updateInventoryForAnItemRequest** | [**\Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest**](../../../Models/MP/US/inventory/UpdateInventoryForAnItemRequest.md)| File fields | |
 | **shipNode** | **string**| The shipNode for which the inventory is to be updated. | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\GetInventory200Response**](../Model/GetInventory200Response.md)
+[**\Walmart\Models\MP\US\Inventory\GetInventory200Response**](../../../Models/MP/US/inventory/GetInventory200Response.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -415,16 +415,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
-| **multiNodeInventoryUpdateRequestDTO** | [**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO**](../Model/MultiNodeInventoryUpdateRequestDTO.md)| Request fields | |
+| **multiNodeInventoryUpdateRequestDTO** | [**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryUpdateRequestDTO.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../Model/MultiNodeInventoryUpdateResponseDTO.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryUpdateResponseDTO.md)
 
 ### Authorization
 
-[accessTokenScheme](../../README.md#accessTokenScheme)
+[accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

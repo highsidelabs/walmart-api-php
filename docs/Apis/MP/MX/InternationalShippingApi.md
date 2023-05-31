@@ -53,16 +53,16 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
-| **labelGenerationRequestMx** | [**\Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx**](../Model/LabelGenerationRequestMx.md)| Label fields | |
+| **labelGenerationRequestMx** | [**\Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx**](../../../Models/MP/MX/internationalShipping/LabelGenerationRequestMx.md)| Label fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -122,11 +122,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -184,11 +184,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -244,11 +244,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../Model/CarrierCommonResponseListCarrierResponse.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../../../Models/MP/MX/internationalShipping/CarrierCommonResponseListCarrierResponse.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -306,11 +306,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../Model/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 
@@ -374,7 +374,7 @@ try {
 
 ### Authorization
 
-[basicScheme](../../README.md#basicScheme), [accessTokenScheme](../../README.md#accessTokenScheme)
+[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
 ### HTTP request headers
 

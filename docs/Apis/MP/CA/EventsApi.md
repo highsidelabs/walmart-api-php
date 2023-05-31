@@ -62,11 +62,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../Model/BulkAddItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../../../Models/MP/CA/events/BulkAddItem200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -130,11 +130,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../Model/BulkAddItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../../../Models/MP/CA/events/BulkAddItem200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -194,7 +194,7 @@ void (empty response body)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -254,11 +254,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../Model/GetAPromoItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../../../Models/MP/CA/events/GetAPromoItem200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -320,11 +320,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../Model/GetAPromoItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../../../Models/MP/CA/events/GetAPromoItem200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -381,11 +381,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetEvent200Response**](../Model/GetEvent200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetEvent200Response**](../../../Models/MP/CA/events/GetEvent200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -450,7 +450,7 @@ void (empty response body)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -510,11 +510,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response**](../Model/GetTotalItemCount200Response.md)
+[**\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response**](../../../Models/MP/CA/events/GetTotalItemCount200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

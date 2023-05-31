@@ -61,16 +61,16 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
-| **consolidationRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest**](../Model/ConsolidationRequest.md)| Consolidation Request | |
+| **consolidationRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest**](../../../Models/MP/CA/internationalShipping/ConsolidationRequest.md)| Consolidation Request | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/internationalShipping/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -130,17 +130,17 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
-| **labelGenerationRequestCa** | [**\Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa**](../Model/LabelGenerationRequestCa.md)| Label fields | |
+| **labelGenerationRequestCa** | [**\Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa**](../../../Models/MP/CA/internationalShipping/LabelGenerationRequestCa.md)| Label fields | |
 | **wMTESTMODE** | **bool**| For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned. | [optional] [default to false] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/internationalShipping/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -206,11 +206,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/internationalShipping/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -274,11 +274,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/internationalShipping/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -340,11 +340,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../Model/CarrierCommonResponseListCarrierResponse.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../../../Models/MP/CA/internationalShipping/CarrierCommonResponseListCarrierResponse.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -410,11 +410,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/internationalShipping/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -478,11 +478,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../Model/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/internationalShipping/CommonResponseLabelGenerationResponseCa.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -552,7 +552,7 @@ try {
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 

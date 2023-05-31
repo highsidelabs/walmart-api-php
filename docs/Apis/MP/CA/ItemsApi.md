@@ -60,11 +60,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\BulkItemSetupCA200Response**](../Model/BulkItemSetupCA200Response.md)
+[**\Walmart\Models\MP\CA\Items\BulkItemSetupCA200Response**](../../../Models/MP/CA/items/BulkItemSetupCA200Response.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -130,11 +130,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\ItemResponses**](../Model/ItemResponses.md)
+[**\Walmart\Models\MP\CA\Items\ItemResponses**](../../../Models/MP/CA/items/ItemResponses.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -194,11 +194,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\ItemResponse**](../Model/ItemResponse.md)
+[**\Walmart\Models\MP\CA\Items\ItemResponse**](../../../Models/MP/CA/items/ItemResponse.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
@@ -258,11 +258,11 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\ItemRetireResponseV2**](../Model/ItemRetireResponseV2.md)
+[**\Walmart\Models\MP\CA\Items\ItemRetireResponseV2**](../../../Models/MP/CA/items/ItemRetireResponseV2.md)
 
 ### Authorization
 
-[signatureScheme](../../README.md#signatureScheme), [consumerIdScheme](../../README.md#consumerIdScheme)
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
 ### HTTP request headers
 
