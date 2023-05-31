@@ -35,33 +35,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ruleHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "rules": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "ruleId": {
-                                                    "type": "string",
-                                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                                },
-                                                "ruleStatus": {
-                                                    "type": "string",
-                                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -88,18 +62,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Message and status of inactivation of rule"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse"
                                 },
                                 "example": {
                                     "message": "Rules are inactivated: [39, 44]",
@@ -131,21 +94,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "skuIds": {
-                                            "type": "array",
-                                            "description": "A seller-provided Product ID.",
-                                            "items": {
-                                                "type": "string",
-                                                "description": "A seller-provided Product ID."
-                                            }
-                                        },
-                                        "status": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetAllExceptionsResponse"
                                 },
                                 "example": {
                                     "skuIds": [
@@ -177,34 +126,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ruleHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "rules": {
-                                        "type": "object",
-                                        "properties": {
-                                            "skus": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "sku": {
-                                                            "type": "string",
-                                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '\/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded."
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -231,18 +153,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Create Override Exception API, used for tracking a feed file"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/DeleteExceptionResponse"
                                 },
                                 "example": {
                                     "feedId": "5ED712C698FD43B999EC5EEFD5C63655@ATgBAQA",
@@ -271,34 +182,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ruleHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "rules": {
-                                        "type": "object",
-                                        "properties": {
-                                            "skus": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "sku": {
-                                                            "type": "string",
-                                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '\/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded."
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -325,18 +209,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Create Override Exception API, used for tracking a feed file"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/DeleteExceptionResponse"
                                 },
                                 "example": {
                                     "feedId": "5ED712C698FD43B999EC5EEFD5C63655@ATgBAQA",
@@ -388,22 +261,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "string"
-                                        },
-                                        "payload": {
-                                            "type": "object",
-                                            "properties": {
-                                                "id": {
-                                                    "type": "string",
-                                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ChangeAssortmentResponse"
                                 },
                                 "example": {
                                     "status": "OK",
@@ -436,33 +294,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ruleHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "rules": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "ruleId": {
-                                                    "type": "string",
-                                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                                },
-                                                "ruleStatus": {
-                                                    "type": "string",
-                                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -489,18 +321,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Message and ruleId"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse"
                                 },
                                 "example": {
                                     "message": "Rules are activated: [39, 44]",
@@ -531,66 +352,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ruleHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "rules": {
-                                        "type": "object",
-                                        "properties": {
-                                            "ruleId": {
-                                                "type": "string",
-                                                "description": "Unique identifier of the rule created for custom rule assortment."
-                                            },
-                                            "ruleStatus": {
-                                                "type": "string",
-                                                "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                            },
-                                            "actions": {
-                                                "type": "array",
-                                                "description": "Defines the two day state coverage areas.",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "twoDayShippingRegions": {
-                                                            "type": "array",
-                                                            "description": "List of two-day regions.",
-                                                            "items": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                    "regionCode": {
-                                                                        "type": "string",
-                                                                        "description": "regionCode"
-                                                                    },
-                                                                    "subRegions": {
-                                                                        "type": "array",
-                                                                        "items": {
-                                                                            "type": "object",
-                                                                            "properties": {
-                                                                                "subRegionCode": {
-                                                                                    "type": "string",
-                                                                                    "description": "subRegionCode"
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "description": "List of two-day regions."
-                                                            }
-                                                        }
-                                                    },
-                                                    "description": "Defines the two day state coverage areas."
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -628,100 +390,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "rules": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "conditions": {
-                                                        "type": "array",
-                                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "name": {
-                                                                    "type": "string",
-                                                                    "description": "Name of the rule created for custom rule assortment."
-                                                                },
-                                                                "operator": {
-                                                                    "type": "string",
-                                                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                                                },
-                                                                "value": {
-                                                                    "type": "string",
-                                                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                                                }
-                                                            },
-                                                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                                        }
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "Description of the rule created for custom rule assortment."
-                                                    },
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the rule created for custom rule assortment."
-                                                    },
-                                                    "priority": {
-                                                        "type": "string",
-                                                        "description": "Priority of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleId": {
-                                                        "type": "string",
-                                                        "description": "Unique identifier of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleStatus": {
-                                                        "type": "string",
-                                                        "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                    },
-                                                    "skuProcessingStatus": {
-                                                        "type": "string",
-                                                        "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
-                                                    },
-                                                    "ruleAction": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "twoDayShippingRegions": {
-                                                                "type": "array",
-                                                                "description": "List of two-day regions.",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "regionCode": {
-                                                                            "type": "string",
-                                                                            "description": "regionCode"
-                                                                        },
-                                                                        "subRegions": {
-                                                                            "type": "array",
-                                                                            "items": {
-                                                                                "type": "object",
-                                                                                "properties": {
-                                                                                    "subRegionCode": {
-                                                                                        "type": "string",
-                                                                                        "description": "subRegionCode"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    "description": "List of two-day regions."
-                                                                }
-                                                            }
-                                                        },
-                                                        "description": "Defines the two day state coverage areas."
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -788,100 +457,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "rules": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "conditions": {
-                                                        "type": "array",
-                                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "name": {
-                                                                    "type": "string",
-                                                                    "description": "Name of the rule created for custom rule assortment."
-                                                                },
-                                                                "operator": {
-                                                                    "type": "string",
-                                                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                                                },
-                                                                "value": {
-                                                                    "type": "string",
-                                                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                                                }
-                                                            },
-                                                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                                        }
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "Description of the rule created for custom rule assortment."
-                                                    },
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the rule created for custom rule assortment."
-                                                    },
-                                                    "priority": {
-                                                        "type": "string",
-                                                        "description": "Priority of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleId": {
-                                                        "type": "string",
-                                                        "description": "Unique identifier of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleStatus": {
-                                                        "type": "string",
-                                                        "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                    },
-                                                    "skuProcessingStatus": {
-                                                        "type": "string",
-                                                        "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
-                                                    },
-                                                    "ruleAction": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "twoDayShippingRegions": {
-                                                                "type": "array",
-                                                                "description": "List of two-day regions.",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "regionCode": {
-                                                                            "type": "string",
-                                                                            "description": "regionCode"
-                                                                        },
-                                                                        "subRegions": {
-                                                                            "type": "array",
-                                                                            "items": {
-                                                                                "type": "object",
-                                                                                "properties": {
-                                                                                    "subRegionCode": {
-                                                                                        "type": "string",
-                                                                                        "description": "subRegionCode"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    "description": "List of two-day regions."
-                                                                }
-                                                            }
-                                                        },
-                                                        "description": "Defines the two day state coverage areas."
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -995,67 +571,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ruleHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "rules": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "ruleId": {
-                                                    "type": "string",
-                                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                                },
-                                                "ruleStatus": {
-                                                    "type": "string",
-                                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                },
-                                                "name": {
-                                                    "type": "string",
-                                                    "description": "Name of the rule created for custom rule assortment."
-                                                },
-                                                "description": {
-                                                    "type": "string",
-                                                    "description": "Description of the rule created for custom rule assortment."
-                                                },
-                                                "priority": {
-                                                    "type": "string",
-                                                    "description": "Priority of the rule created for custom rule assortment."
-                                                },
-                                                "conditions": {
-                                                    "type": "array",
-                                                    "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "name": {
-                                                                "type": "string",
-                                                                "description": "Name of the rule created for custom rule assortment."
-                                                            },
-                                                            "operator": {
-                                                                "type": "string",
-                                                                "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                                            },
-                                                            "value": {
-                                                                "type": "string",
-                                                                "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                                            }
-                                                        },
-                                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -1088,100 +604,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "rules": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "conditions": {
-                                                        "type": "array",
-                                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "name": {
-                                                                    "type": "string",
-                                                                    "description": "Name of the rule created for custom rule assortment."
-                                                                },
-                                                                "operator": {
-                                                                    "type": "string",
-                                                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                                                },
-                                                                "value": {
-                                                                    "type": "string",
-                                                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                                                }
-                                                            },
-                                                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                                        }
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "Description of the rule created for custom rule assortment."
-                                                    },
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the rule created for custom rule assortment."
-                                                    },
-                                                    "priority": {
-                                                        "type": "string",
-                                                        "description": "Priority of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleId": {
-                                                        "type": "string",
-                                                        "description": "Unique identifier of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleStatus": {
-                                                        "type": "string",
-                                                        "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                    },
-                                                    "skuProcessingStatus": {
-                                                        "type": "string",
-                                                        "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
-                                                    },
-                                                    "ruleAction": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "twoDayShippingRegions": {
-                                                                "type": "array",
-                                                                "description": "List of two-day regions.",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "regionCode": {
-                                                                            "type": "string",
-                                                                            "description": "regionCode"
-                                                                        },
-                                                                        "subRegions": {
-                                                                            "type": "array",
-                                                                            "items": {
-                                                                                "type": "object",
-                                                                                "properties": {
-                                                                                    "subRegionCode": {
-                                                                                        "type": "string",
-                                                                                        "description": "subRegionCode"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    "description": "List of two-day regions."
-                                                                }
-                                                            }
-                                                        },
-                                                        "description": "Defines the two day state coverage areas."
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -1245,55 +668,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ruleHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "rules": {
-                                        "type": "object",
-                                        "properties": {
-                                            "conditions": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "name": {
-                                                            "type": "string",
-                                                            "description": "Name of the rule created for custom rule assortment."
-                                                        },
-                                                        "operator": {
-                                                            "type": "string",
-                                                            "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                                        },
-                                                        "value": {
-                                                            "type": "string",
-                                                            "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                                        }
-                                                    },
-                                                    "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                                }
-                                            },
-                                            "description": {
-                                                "type": "string",
-                                                "description": "Description of the rule created for custom rule assortment."
-                                            },
-                                            "name": {
-                                                "type": "string",
-                                                "description": "Name of the rule created for custom rule assortment."
-                                            },
-                                            "priority": {
-                                                "type": "string",
-                                                "description": "Priority of the rule created for custom rule assortment."
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -1327,71 +702,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "rules": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "conditions": {
-                                                        "type": "array",
-                                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "name": {
-                                                                    "type": "string",
-                                                                    "description": "Name of the rule created for custom rule assortment."
-                                                                },
-                                                                "operator": {
-                                                                    "type": "string",
-                                                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                                                },
-                                                                "value": {
-                                                                    "type": "string",
-                                                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                                                }
-                                                            },
-                                                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                                        }
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "Description of the rule created for custom rule assortment."
-                                                    },
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the rule created for custom rule assortment."
-                                                    },
-                                                    "priority": {
-                                                        "type": "string",
-                                                        "description": "Priority of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleAction": {
-                                                        "type": "string",
-                                                        "description": "Defines the two day state coverage areas."
-                                                    },
-                                                    "ruleId": {
-                                                        "type": "string",
-                                                        "description": "Unique identifier of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleStatus": {
-                                                        "type": "string",
-                                                        "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                    },
-                                                    "skuProcessingStatus": {
-                                                        "type": "string",
-                                                        "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "status": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -1462,100 +773,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "rules": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "conditions": {
-                                                        "type": "array",
-                                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "name": {
-                                                                    "type": "string",
-                                                                    "description": "Name of the rule created for custom rule assortment."
-                                                                },
-                                                                "operator": {
-                                                                    "type": "string",
-                                                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                                                },
-                                                                "value": {
-                                                                    "type": "string",
-                                                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                                                }
-                                                            },
-                                                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                                        }
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "Description of the rule created for custom rule assortment."
-                                                    },
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the rule created for custom rule assortment."
-                                                    },
-                                                    "priority": {
-                                                        "type": "string",
-                                                        "description": "Priority of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleId": {
-                                                        "type": "string",
-                                                        "description": "Unique identifier of the rule created for custom rule assortment."
-                                                    },
-                                                    "ruleStatus": {
-                                                        "type": "string",
-                                                        "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                                    },
-                                                    "skuProcessingStatus": {
-                                                        "type": "string",
-                                                        "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
-                                                    },
-                                                    "ruleAction": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "twoDayShippingRegions": {
-                                                                "type": "array",
-                                                                "description": "List of two-day regions.",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "regionCode": {
-                                                                            "type": "string",
-                                                                            "description": "regionCode"
-                                                                        },
-                                                                        "subRegions": {
-                                                                            "type": "array",
-                                                                            "items": {
-                                                                                "type": "object",
-                                                                                "properties": {
-                                                                                    "subRegionCode": {
-                                                                                        "type": "string",
-                                                                                        "description": "subRegionCode"
-                                                                                    }
-                                                                                }
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    "description": "List of two-day regions."
-                                                                }
-                                                            }
-                                                        },
-                                                        "description": "Defines the two day state coverage areas."
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -1644,22 +862,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "ruleId": {
-                                            "type": "string",
-                                            "description": "Unique identifier of the rule created for custom rule assortment."
-                                        },
-                                        "ruleStatus": {
-                                            "type": "string",
-                                            "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                        },
-                                        "simulationCount": {
-                                            "type": "string",
-                                            "description": "Number of items that would be set for two-day if the rule gets activated."
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetSimulationCountResponse"
                                 },
                                 "example": {
                                     "ruleId": "677",
@@ -1739,43 +942,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "string"
-                                        },
-                                        "payload": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "category": {
-                                                        "type": "string",
-                                                        "description": "category"
-                                                    },
-                                                    "subcategory": {
-                                                        "type": "array",
-                                                        "description": "subCategory",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "subCategoryName": {
-                                                                    "type": "string",
-                                                                    "description": "Name of specific kind of category"
-                                                                },
-                                                                "subCategoryId": {
-                                                                    "type": "string",
-                                                                    "description": "ID of specific kind of category"
-                                                                }
-                                                            },
-                                                            "description": "subCategory"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ChangeAssortmentResponse"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -1868,63 +1035,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "string",
-                                            "description": "Status of the rule post the rule creation."
-                                        },
-                                        "payload": {
-                                            "type": "object",
-                                            "properties": {
-                                                "entities": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "states": {
-                                                                "type": "array",
-                                                                "description": "states.",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "stateSubregions": {
-                                                                            "type": "array",
-                                                                            "description": "statesubregions",
-                                                                            "items": {
-                                                                                "type": "object",
-                                                                                "properties": {
-                                                                                    "stateSubregionCode": {
-                                                                                        "type": "string",
-                                                                                        "description": "stateSubregionCode"
-                                                                                    },
-                                                                                    "stateSubregionName": {
-                                                                                        "type": "string",
-                                                                                        "description": "stateSubregionName"
-                                                                                    }
-                                                                                },
-                                                                                "description": "statesubregions"
-                                                                            }
-                                                                        }
-                                                                    },
-                                                                    "description": "states."
-                                                                }
-                                                            },
-                                                            "regionCode": {
-                                                                "type": "string",
-                                                                "description": "regionCode"
-                                                            },
-                                                            "regionName": {
-                                                                "type": "string",
-                                                                "description": "regionName"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ChangeAssortmentResponse"
                                 },
                                 "example": {
                                     "status": "OK",
@@ -2762,18 +1873,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "description": "Message and status of deletion"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "status"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -2823,27 +1923,12 @@
                 "type": "object",
                 "properties": {
                     "ruleHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleHeader"
                     },
                     "rules": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "ruleId": {
-                                    "type": "string",
-                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                },
-                                "ruleStatus": {
-                                    "type": "string",
-                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/ActivateDeactivateRuleInfo"
                         }
                     }
                 }
@@ -2873,29 +1958,10 @@
                 "type": "object",
                 "properties": {
                     "ruleHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleHeader"
                     },
                     "rules": {
-                        "type": "object",
-                        "properties": {
-                            "skus": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '\/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded."
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/ExceptionInfo"
                     }
                 }
             },
@@ -2905,13 +1971,7 @@
                     "skus": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "sku": {
-                                    "type": "string",
-                                    "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '\/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded."
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/OverrideItem"
                         }
                     }
                 }
@@ -2941,13 +2001,7 @@
                         "type": "string"
                     },
                     "payload": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string",
-                                "description": "Unique identifier of the rule created for custom rule assortment."
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/ChangeAssortmentPayload"
                     }
                 }
             },
@@ -2968,27 +2022,12 @@
                 "type": "object",
                 "properties": {
                     "ruleHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleHeader"
                     },
                     "rules": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "ruleId": {
-                                    "type": "string",
-                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                },
-                                "ruleStatus": {
-                                    "type": "string",
-                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/ActivateDeactivateRuleInfo"
                         }
                     }
                 }
@@ -3017,87 +2056,7 @@
                     "rules": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "conditions": {
-                                    "type": "array",
-                                    "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "name": {
-                                                "type": "string",
-                                                "description": "Name of the rule created for custom rule assortment."
-                                            },
-                                            "operator": {
-                                                "type": "string",
-                                                "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                            },
-                                            "value": {
-                                                "type": "string",
-                                                "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                            }
-                                        },
-                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                    }
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "Description of the rule created for custom rule assortment."
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "Name of the rule created for custom rule assortment."
-                                },
-                                "priority": {
-                                    "type": "string",
-                                    "description": "Priority of the rule created for custom rule assortment."
-                                },
-                                "ruleId": {
-                                    "type": "string",
-                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                },
-                                "ruleStatus": {
-                                    "type": "string",
-                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                },
-                                "skuProcessingStatus": {
-                                    "type": "string",
-                                    "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
-                                },
-                                "ruleAction": {
-                                    "type": "object",
-                                    "properties": {
-                                        "twoDayShippingRegions": {
-                                            "type": "array",
-                                            "description": "List of two-day regions.",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "regionCode": {
-                                                        "type": "string",
-                                                        "description": "regionCode"
-                                                    },
-                                                    "subRegions": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "subRegionCode": {
-                                                                    "type": "string",
-                                                                    "description": "subRegionCode"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                "description": "List of two-day regions."
-                                            }
-                                        }
-                                    },
-                                    "description": "Defines the two day state coverage areas."
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/RuleInfo"
                         }
                     },
                     "status": {
@@ -3113,26 +2072,7 @@
                         "type": "array",
                         "description": "List of two-day regions.",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "regionCode": {
-                                    "type": "string",
-                                    "description": "regionCode"
-                                },
-                                "subRegions": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "subRegionCode": {
-                                                "type": "string",
-                                                "description": "subRegionCode"
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "description": "List of two-day regions."
+                            "$ref": "#\/components\/schemas\/SubRegions"
                         }
                     }
                 },
@@ -3145,22 +2085,7 @@
                         "type": "array",
                         "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "description": "Name of the rule created for custom rule assortment."
-                                },
-                                "operator": {
-                                    "type": "string",
-                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                },
-                                "value": {
-                                    "type": "string",
-                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                }
-                            },
-                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
+                            "$ref": "#\/components\/schemas\/Condition"
                         }
                     },
                     "description": {
@@ -3188,36 +2113,7 @@
                         "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
                     },
                     "ruleAction": {
-                        "type": "object",
-                        "properties": {
-                            "twoDayShippingRegions": {
-                                "type": "array",
-                                "description": "List of two-day regions.",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "regionCode": {
-                                            "type": "string",
-                                            "description": "regionCode"
-                                        },
-                                        "subRegions": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "subRegionCode": {
-                                                        "type": "string",
-                                                        "description": "subRegionCode"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "description": "List of two-day regions."
-                                }
-                            }
-                        },
-                        "description": "Defines the two day state coverage areas."
+                        "$ref": "#\/components\/schemas\/RuleAction"
                     }
                 }
             },
@@ -3240,13 +2136,7 @@
                     "subRegions": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "subRegionCode": {
-                                    "type": "string",
-                                    "description": "subRegionCode"
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/SubRegionCode"
                         }
                     }
                 },
@@ -3267,36 +2157,7 @@
                         "type": "array",
                         "description": "Defines the two day state coverage areas.",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "twoDayShippingRegions": {
-                                    "type": "array",
-                                    "description": "List of two-day regions.",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "regionCode": {
-                                                "type": "string",
-                                                "description": "regionCode"
-                                            },
-                                            "subRegions": {
-                                                "type": "array",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "subRegionCode": {
-                                                            "type": "string",
-                                                            "description": "subRegionCode"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        },
-                                        "description": "List of two-day regions."
-                                    }
-                                }
-                            },
-                            "description": "Defines the two day state coverage areas."
+                            "$ref": "#\/components\/schemas\/RuleAction"
                         }
                     }
                 }
@@ -3305,61 +2166,10 @@
                 "type": "object",
                 "properties": {
                     "ruleHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleHeader"
                     },
                     "rules": {
-                        "type": "object",
-                        "properties": {
-                            "ruleId": {
-                                "type": "string",
-                                "description": "Unique identifier of the rule created for custom rule assortment."
-                            },
-                            "ruleStatus": {
-                                "type": "string",
-                                "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                            },
-                            "actions": {
-                                "type": "array",
-                                "description": "Defines the two day state coverage areas.",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "twoDayShippingRegions": {
-                                            "type": "array",
-                                            "description": "List of two-day regions.",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "regionCode": {
-                                                        "type": "string",
-                                                        "description": "regionCode"
-                                                    },
-                                                    "subRegions": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "subRegionCode": {
-                                                                    "type": "string",
-                                                                    "description": "subRegionCode"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                "description": "List of two-day regions."
-                                            }
-                                        }
-                                    },
-                                    "description": "Defines the two day state coverage areas."
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleToUpdate"
                     }
                 }
             },
@@ -3390,22 +2200,7 @@
                         "type": "array",
                         "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "description": "Name of the rule created for custom rule assortment."
-                                },
-                                "operator": {
-                                    "type": "string",
-                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                },
-                                "value": {
-                                    "type": "string",
-                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                }
-                            },
-                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
+                            "$ref": "#\/components\/schemas\/Condition"
                         }
                     }
                 }
@@ -3414,61 +2209,12 @@
                 "type": "object",
                 "properties": {
                     "ruleHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleHeader"
                     },
                     "rules": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "ruleId": {
-                                    "type": "string",
-                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                },
-                                "ruleStatus": {
-                                    "type": "string",
-                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "Name of the rule created for custom rule assortment."
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "Description of the rule created for custom rule assortment."
-                                },
-                                "priority": {
-                                    "type": "string",
-                                    "description": "Priority of the rule created for custom rule assortment."
-                                },
-                                "conditions": {
-                                    "type": "array",
-                                    "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "name": {
-                                                "type": "string",
-                                                "description": "Name of the rule created for custom rule assortment."
-                                            },
-                                            "operator": {
-                                                "type": "string",
-                                                "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                            },
-                                            "value": {
-                                                "type": "string",
-                                                "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                            }
-                                        },
-                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/UpdateRuleInfo"
                         }
                     }
                 }
@@ -3490,29 +2236,10 @@
                 "type": "object",
                 "properties": {
                     "ruleHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleHeader"
                     },
                     "rules": {
-                        "type": "object",
-                        "properties": {
-                            "skus": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '\/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded."
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/ExceptionInfo"
                     }
                 }
             },
@@ -3522,59 +2249,7 @@
                     "rules": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "conditions": {
-                                    "type": "array",
-                                    "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "name": {
-                                                "type": "string",
-                                                "description": "Name of the rule created for custom rule assortment."
-                                            },
-                                            "operator": {
-                                                "type": "string",
-                                                "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                            },
-                                            "value": {
-                                                "type": "string",
-                                                "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                            }
-                                        },
-                                        "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                    }
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "Description of the rule created for custom rule assortment."
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "Name of the rule created for custom rule assortment."
-                                },
-                                "priority": {
-                                    "type": "string",
-                                    "description": "Priority of the rule created for custom rule assortment."
-                                },
-                                "ruleAction": {
-                                    "type": "string",
-                                    "description": "Defines the two day state coverage areas."
-                                },
-                                "ruleId": {
-                                    "type": "string",
-                                    "description": "Unique identifier of the rule created for custom rule assortment."
-                                },
-                                "ruleStatus": {
-                                    "type": "string",
-                                    "description": "Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted."
-                                },
-                                "skuProcessingStatus": {
-                                    "type": "string",
-                                    "description": "When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed."
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/RuleInfo"
                         }
                     },
                     "status": {
@@ -3589,22 +2264,7 @@
                         "type": "array",
                         "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight.",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "description": "Name of the rule created for custom rule assortment."
-                                },
-                                "operator": {
-                                    "type": "string",
-                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                },
-                                "value": {
-                                    "type": "string",
-                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                }
-                            },
-                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
+                            "$ref": "#\/components\/schemas\/Condition"
                         }
                     },
                     "description": {
@@ -3641,50 +2301,10 @@
                 "type": "object",
                 "properties": {
                     "ruleHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleHeader"
                     },
                     "rules": {
-                        "type": "object",
-                        "properties": {
-                            "conditions": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "name": {
-                                            "type": "string",
-                                            "description": "Name of the rule created for custom rule assortment."
-                                        },
-                                        "operator": {
-                                            "type": "string",
-                                            "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                        },
-                                        "value": {
-                                            "type": "string",
-                                            "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                        }
-                                    },
-                                    "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
-                                }
-                            },
-                            "description": {
-                                "type": "string",
-                                "description": "Description of the rule created for custom rule assortment."
-                            },
-                            "name": {
-                                "type": "string",
-                                "description": "Name of the rule created for custom rule assortment."
-                            },
-                            "priority": {
-                                "type": "string",
-                                "description": "Priority of the rule created for custom rule assortment."
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/RuleRequest"
                     }
                 }
             },
@@ -3694,22 +2314,7 @@
                     "conditions": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "description": "Name of the rule created for custom rule assortment."
-                                },
-                                "operator": {
-                                    "type": "string",
-                                    "description": "Seller uses operator while defining conditions in the rule. Operators allowed for condition price and weight: EQUALS, GREATER_THAN, LESS_THAN,GREATER_THAN_OR_EQUALS,LESS_THAN_OR_EQUALS. and for condition subcategories : IN ."
-                                },
-                                "value": {
-                                    "type": "string",
-                                    "description": "Values for each condition. Value can be a comma separated strings for subcategories and numerical value for price and weight."
-                                }
-                            },
-                            "description": "Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight."
+                            "$ref": "#\/components\/schemas\/Condition"
                         }
                     },
                     "description": {
@@ -3754,18 +2359,7 @@
                         "type": "array",
                         "description": "subCategory",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "subCategoryName": {
-                                    "type": "string",
-                                    "description": "Name of specific kind of category"
-                                },
-                                "subCategoryId": {
-                                    "type": "string",
-                                    "description": "ID of specific kind of category"
-                                }
-                            },
-                            "description": "subCategory"
+                            "$ref": "#\/components\/schemas\/SubCategory"
                         }
                     }
                 }
@@ -3779,31 +2373,7 @@
                     "payload": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "category": {
-                                    "type": "string",
-                                    "description": "category"
-                                },
-                                "subcategory": {
-                                    "type": "array",
-                                    "description": "subCategory",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "subCategoryName": {
-                                                "type": "string",
-                                                "description": "Name of specific kind of category"
-                                            },
-                                            "subCategoryId": {
-                                                "type": "string",
-                                                "description": "ID of specific kind of category"
-                                            }
-                                        },
-                                        "description": "subCategory"
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/CategoryInfo"
                         }
                     }
                 }
@@ -3845,28 +2415,7 @@
                         "type": "array",
                         "description": "states.",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "stateSubregions": {
-                                    "type": "array",
-                                    "description": "statesubregions",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "stateSubregionCode": {
-                                                "type": "string",
-                                                "description": "stateSubregionCode"
-                                            },
-                                            "stateSubregionName": {
-                                                "type": "string",
-                                                "description": "stateSubregionName"
-                                            }
-                                        },
-                                        "description": "statesubregions"
-                                    }
-                                }
-                            },
-                            "description": "states."
+                            "$ref": "#\/components\/schemas\/State"
                         }
                     },
                     "regionCode": {
@@ -3885,45 +2434,7 @@
                     "entities": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "states": {
-                                    "type": "array",
-                                    "description": "states.",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "stateSubregions": {
-                                                "type": "array",
-                                                "description": "statesubregions",
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "stateSubregionCode": {
-                                                            "type": "string",
-                                                            "description": "stateSubregionCode"
-                                                        },
-                                                        "stateSubregionName": {
-                                                            "type": "string",
-                                                            "description": "stateSubregionName"
-                                                        }
-                                                    },
-                                                    "description": "statesubregions"
-                                                }
-                                            }
-                                        },
-                                        "description": "states."
-                                    }
-                                },
-                                "regionCode": {
-                                    "type": "string",
-                                    "description": "regionCode"
-                                },
-                                "regionName": {
-                                    "type": "string",
-                                    "description": "regionName"
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/AreaEntity"
                         }
                     }
                 }
@@ -3936,53 +2447,7 @@
                         "description": "Status of the rule post the rule creation."
                     },
                     "payload": {
-                        "type": "object",
-                        "properties": {
-                            "entities": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "states": {
-                                            "type": "array",
-                                            "description": "states.",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "stateSubregions": {
-                                                        "type": "array",
-                                                        "description": "statesubregions",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "stateSubregionCode": {
-                                                                    "type": "string",
-                                                                    "description": "stateSubregionCode"
-                                                                },
-                                                                "stateSubregionName": {
-                                                                    "type": "string",
-                                                                    "description": "stateSubregionName"
-                                                                }
-                                                            },
-                                                            "description": "statesubregions"
-                                                        }
-                                                    }
-                                                },
-                                                "description": "states."
-                                            }
-                                        },
-                                        "regionCode": {
-                                            "type": "string",
-                                            "description": "regionCode"
-                                        },
-                                        "regionName": {
-                                            "type": "string",
-                                            "description": "regionName"
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/GetAllAreasPayload"
                     }
                 }
             },
@@ -3993,18 +2458,7 @@
                         "type": "array",
                         "description": "statesubregions",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "stateSubregionCode": {
-                                    "type": "string",
-                                    "description": "stateSubregionCode"
-                                },
-                                "stateSubregionName": {
-                                    "type": "string",
-                                    "description": "stateSubregionName"
-                                }
-                            },
-                            "description": "statesubregions"
+                            "$ref": "#\/components\/schemas\/StateSubRegion"
                         }
                     }
                 },

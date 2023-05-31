@@ -139,46 +139,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "availabilityCode",
-                                    "gtin",
-                                    "quantity"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "gtin": {
-                                        "type": "string",
-                                        "description": "Specifies the global trade item number (GTIN) item identifier. \n\nThe global trade item number is a 14-digit number, including the check digit, that is used worldwide and identifies the Each. If the user\u2019s number is less than 14 digits, add zeros at the beginning."
-                                    },
-                                    "availabilityCode": {
-                                        "type": "string",
-                                        "description": "Specifies how to manage the inventory update. \n\nAC: The code used for standard inventory updates. Assign this code to an item with normal inventory. \n\nAA: An item with infinite inventory. If users set AA as the availability code, they do not need to provide inventory for the item.",
-                                        "enum": [
-                                            "AA",
-                                            "AC"
-                                        ]
-                                    },
-                                    "quantity": {
-                                        "required": [
-                                            "unit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "unit": {
-                                                "type": "string",
-                                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                                "enum": [
-                                                    "EACH"
-                                                ]
-                                            },
-                                            "amount": {
-                                                "type": "number",
-                                                "description": "Indicates the value for the quantity of an item."
-                                            }
-                                        },
-                                        "description": "Indicates an object for the quantity that has been ordered by the customers, but not yet shipped."
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/Inventory"
                             },
                             "examples": {
                                 "SKU": {
@@ -638,14 +599,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "Indicates an identifier, returned from the Bulk Upload API, used for tracking the feed file.\""
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedIdInventory"
                                 },
                                 "example": {
                                     "feedId": "991B8779687C4D5DBC06DF18DB167192@AQkBAQA"
@@ -709,96 +663,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "gtin",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "Indicates the stock keeping unit (SKU) item identifier. \n\n This is a product identifier provided by the drop ship vendor (DSV) to identify each item."
-                                        },
-                                        "gtin": {
-                                            "type": "string",
-                                            "description": "Indicates the global trade item number (GTIN) item identifier."
-                                        },
-                                        "nodes": {
-                                            "type": "array",
-                                            "description": "Indicates an array for nodes, to include ship node and allocated quantity.",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "shipNode": {
-                                                        "type": "string",
-                                                        "description": " Indicates the distribution facility distributor identifier for which the inventory is requested."
-                                                    },
-                                                    "inputQty": {
-                                                        "required": [
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Indicates the value for the quantity of an item."
-                                                            }
-                                                        },
-                                                        "description": "Indicates an object for the on-hand inventory quantity of an item that is provided by the supplier. Input or on-hand inventory is the total inventory, with the amount factoring in both 'availToSellQty' and 'reservedQty'."
-                                                    },
-                                                    "availToSellQty": {
-                                                        "required": [
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Indicates the value for the quantity of an item."
-                                                            }
-                                                        },
-                                                        "description": "Indicates an object for the quantity of an item that is available to be allocated to orders."
-                                                    },
-                                                    "reservedQty": {
-                                                        "required": [
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Indicates the value for the quantity of an item."
-                                                            }
-                                                        },
-                                                        "description": "Indicates an object for the quantity that has been ordered by the customers, but not yet shipped."
-                                                    }
-                                                },
-                                                "description": "Indicates an array for nodes, to include ship node and allocated quantity."
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InventoriesDTO"
                                 },
                                 "example": {
                                     "sku": "AR-CTIX-0092",
@@ -935,24 +800,7 @@
                         ]
                     },
                     "quantity": {
-                        "required": [
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Indicates the value for the quantity of an item."
-                            }
-                        },
-                        "description": "Indicates an object for the quantity that has been ordered by the customers, but not yet shipped."
+                        "$ref": "#\/components\/schemas\/Quantity"
                     }
                 }
             },
@@ -1044,55 +892,7 @@
                 "type": "object",
                 "properties": {
                     "inventoryFeedHeader": {
-                        "required": [
-                            "businessUnit",
-                            "feedDate",
-                            "feedType",
-                            "locale",
-                            "version"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string",
-                                "description": "Specifies the inventory feed header version.",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "feedType": {
-                                "type": "string",
-                                "description": "Specifies the feed type for inventory feed header information. \n\nFeed types include: \n`DSV_INVENTORY`",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "feedDate": {
-                                "type": "string",
-                                "description": "Specifies the inventory feed header feed date.",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "locale": {
-                                "type": "string",
-                                "description": "Specifies the inventory feed header locale.",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "businessUnit": {
-                                "type": "string",
-                                "description": "Specifies the inventory feed header business unit.",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            }
-                        },
-                        "description": "Specifies an object for inventory feed header information.",
-                        "xml": {
-                            "name": "InventoryFeedHeader"
-                        }
+                        "$ref": "#\/components\/schemas\/InventoryFeedHeader"
                     },
                     "inventory": {
                         "type": "array",
@@ -1101,51 +901,7 @@
                             "namespace": "http:\/\/walmart.com\/"
                         },
                         "items": {
-                            "required": [
-                                "availabilityCode",
-                                "productId",
-                                "shipNode"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "productId": {
-                                    "type": "string",
-                                    "description": "Specifies the product identifier for the item. \n\n This parameter can only be a global trade item number (GTIN). \n\nThe global trade item number (GTIN) is a 14-digit number, including the check digit, that is used worldwide and identifies the Each. If the user\u2019s number is less than 14 digits, add zeros at the beginning.",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                },
-                                "shipNode": {
-                                    "type": "string",
-                                    "description": "Specifies the distributor identifier for the distribution facility, used to identify each facility.",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                },
-                                "availabilityCode": {
-                                    "type": "string",
-                                    "description": "Specifies the code that identifies how to manage the inventory update. \n\nCodes include: \n\nAC: The code used for standard inventory updates. Assign this code to an item with normal inventory. \n\nAA: An item with infinite inventory. If users set AA as the `availabilityCode`, they do not need to provide inventory for the item.",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    },
-                                    "enum": [
-                                        "AA",
-                                        "AC"
-                                    ]
-                                },
-                                "quantity": {
-                                    "type": "integer",
-                                    "description": "Specifies the item quantity available in the inventory.",
-                                    "format": "int32",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                }
-                            },
-                            "description": "Specifies an object for inventory information.",
-                            "xml": {
-                                "name": "Inventory"
-                            }
+                            "$ref": "#\/components\/schemas\/InventoryV2"
                         }
                     }
                 },
@@ -1219,74 +975,7 @@
                         "type": "array",
                         "description": "Indicates an array for nodes, to include ship node and allocated quantity.",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "shipNode": {
-                                    "type": "string",
-                                    "description": " Indicates the distribution facility distributor identifier for which the inventory is requested."
-                                },
-                                "inputQty": {
-                                    "required": [
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "Indicates the unit of measurement the quantity of an item.",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Indicates the value for the quantity of an item."
-                                        }
-                                    },
-                                    "description": "Indicates an object for the on-hand inventory quantity of an item that is provided by the supplier. Input or on-hand inventory is the total inventory, with the amount factoring in both 'availToSellQty' and 'reservedQty'."
-                                },
-                                "availToSellQty": {
-                                    "required": [
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "Indicates the unit of measurement the quantity of an item.",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Indicates the value for the quantity of an item."
-                                        }
-                                    },
-                                    "description": "Indicates an object for the quantity of an item that is available to be allocated to orders."
-                                },
-                                "reservedQty": {
-                                    "required": [
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "Indicates the unit of measurement the quantity of an item.",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Indicates the value for the quantity of an item."
-                                        }
-                                    },
-                                    "description": "Indicates an object for the quantity that has been ordered by the customers, but not yet shipped."
-                                }
-                            },
-                            "description": "Indicates an array for nodes, to include ship node and allocated quantity."
+                            "$ref": "#\/components\/schemas\/NodeDTO"
                         }
                     }
                 }
@@ -1299,64 +988,13 @@
                         "description": " Indicates the distribution facility distributor identifier for which the inventory is requested."
                     },
                     "inputQty": {
-                        "required": [
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Indicates the value for the quantity of an item."
-                            }
-                        },
-                        "description": "Indicates an object for the on-hand inventory quantity of an item that is provided by the supplier. Input or on-hand inventory is the total inventory, with the amount factoring in both 'availToSellQty' and 'reservedQty'."
+                        "$ref": "#\/components\/schemas\/Quantity"
                     },
                     "availToSellQty": {
-                        "required": [
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Indicates the value for the quantity of an item."
-                            }
-                        },
-                        "description": "Indicates an object for the quantity of an item that is available to be allocated to orders."
+                        "$ref": "#\/components\/schemas\/Quantity"
                     },
                     "reservedQty": {
-                        "required": [
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Indicates the value for the quantity of an item."
-                            }
-                        },
-                        "description": "Indicates an object for the quantity that has been ordered by the customers, but not yet shipped."
+                        "$ref": "#\/components\/schemas\/Quantity"
                     }
                 },
                 "description": "Indicates an array for nodes, to include ship node and allocated quantity."

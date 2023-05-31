@@ -323,164 +323,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                        },
-                                        "nodes": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "shipNode": {
-                                                        "type": "string",
-                                                        "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                                    },
-                                                    "inputQty": {
-                                                        "required": [
-                                                            "amount",
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Inventory Count"
-                                                            }
-                                                        },
-                                                        "description": "Quantity of an item that is input by the seller"
-                                                    },
-                                                    "availToSellQty": {
-                                                        "required": [
-                                                            "amount",
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Inventory Count"
-                                                            }
-                                                        },
-                                                        "description": "Quantity of an item that is available to be allocated to orders"
-                                                    },
-                                                    "errors": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "required": [
-                                                                "code"
-                                                            ],
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "code": {
-                                                                    "type": "string"
-                                                                },
-                                                                "field": {
-                                                                    "type": "string"
-                                                                },
-                                                                "description": {
-                                                                    "type": "string"
-                                                                },
-                                                                "info": {
-                                                                    "type": "string"
-                                                                },
-                                                                "severity": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                        "INFO",
-                                                                        "WARN",
-                                                                        "ERROR"
-                                                                    ]
-                                                                },
-                                                                "category": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                        "APPLICATION",
-                                                                        "SYSTEM",
-                                                                        "REQUEST",
-                                                                        "DATA"
-                                                                    ]
-                                                                },
-                                                                "causes": {
-                                                                    "type": "array",
-                                                                    "xml": {
-                                                                        "wrapped": true
-                                                                    },
-                                                                    "items": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                            "code": {
-                                                                                "type": "string"
-                                                                            },
-                                                                            "field": {
-                                                                                "type": "string"
-                                                                            },
-                                                                            "type": {
-                                                                                "type": "string"
-                                                                            },
-                                                                            "description": {
-                                                                                "type": "string"
-                                                                            }
-                                                                        },
-                                                                        "xml": {
-                                                                            "name": "Cause"
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "errorIdentifiers": {
-                                                                    "type": "object",
-                                                                    "additionalProperties": {
-                                                                        "type": "object"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "xml": {
-                                                                "name": "Error"
-                                                            }
-                                                        }
-                                                    },
-                                                    "reservedQty": {
-                                                        "required": [
-                                                            "amount",
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Inventory Count"
-                                                            }
-                                                        },
-                                                        "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/MultiNodeInventoryUpdateResponseDTO"
                                 },
                                 "example": {
                                     "sku": "AR-CTIX-0092",
@@ -535,57 +378,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "inventories"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "inventories": {
-                                        "required": [
-                                            "nodes"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "nodes": {
-                                                "type": "array",
-                                                "items": {
-                                                    "required": [
-                                                        "inputQty",
-                                                        "shipNode"
-                                                    ],
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "shipNode": {
-                                                            "type": "string",
-                                                            "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                                        },
-                                                        "inputQty": {
-                                                            "required": [
-                                                                "amount",
-                                                                "unit"
-                                                            ],
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "unit": {
-                                                                    "type": "string",
-                                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                                    "enum": [
-                                                                        "EACH"
-                                                                    ]
-                                                                },
-                                                                "amount": {
-                                                                    "type": "number",
-                                                                    "description": "Inventory Count"
-                                                                }
-                                                            },
-                                                            "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/MultiNodeInventoryUpdateRequestDTO"
                             },
                             "example": {
                                 "inventories": {
@@ -617,106 +410,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                        },
-                                        "nodes": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "shipNode": {
-                                                        "type": "string",
-                                                        "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                                    },
-                                                    "status": {
-                                                        "type": "string",
-                                                        "description": "Node Update status. Example: 'Success'"
-                                                    },
-                                                    "errors": {
-                                                        "type": "array",
-                                                        "description": "Node Update Error description.",
-                                                        "items": {
-                                                            "required": [
-                                                                "code"
-                                                            ],
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "code": {
-                                                                    "type": "string"
-                                                                },
-                                                                "field": {
-                                                                    "type": "string"
-                                                                },
-                                                                "description": {
-                                                                    "type": "string"
-                                                                },
-                                                                "info": {
-                                                                    "type": "string"
-                                                                },
-                                                                "severity": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                        "INFO",
-                                                                        "WARN",
-                                                                        "ERROR"
-                                                                    ]
-                                                                },
-                                                                "category": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                        "APPLICATION",
-                                                                        "SYSTEM",
-                                                                        "REQUEST",
-                                                                        "DATA"
-                                                                    ]
-                                                                },
-                                                                "causes": {
-                                                                    "type": "array",
-                                                                    "xml": {
-                                                                        "wrapped": true
-                                                                    },
-                                                                    "items": {
-                                                                        "type": "object",
-                                                                        "properties": {
-                                                                            "code": {
-                                                                                "type": "string"
-                                                                            },
-                                                                            "field": {
-                                                                                "type": "string"
-                                                                            },
-                                                                            "type": {
-                                                                                "type": "string"
-                                                                            },
-                                                                            "description": {
-                                                                                "type": "string"
-                                                                            }
-                                                                        },
-                                                                        "xml": {
-                                                                            "name": "Cause"
-                                                                        }
-                                                                    }
-                                                                },
-                                                                "errorIdentifiers": {
-                                                                    "type": "object",
-                                                                    "additionalProperties": {
-                                                                        "type": "object"
-                                                                    }
-                                                                }
-                                                            },
-                                                            "xml": {
-                                                                "name": "Error"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/MultiNodeInventoryUpdateResponseDTO"
                                 },
                                 "example": {
                                     "sku": "00757642886669_test_01",
@@ -879,22 +573,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedId"
                                 },
                                 "example": {
                                     "feedId": "FFE538D9B25A4000AD2A067ACEDCF4C4@AUoBAQA"
@@ -945,118 +624,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "meta": {
-                                            "type": "object",
-                                            "properties": {
-                                                "totalCount": {
-                                                    "type": "number",
-                                                    "description": "Total number of Skus of the Seller. Example: '235'"
-                                                },
-                                                "nextCursor": {
-                                                    "type": "string",
-                                                    "description": "Used for pagination to fetch the next set of items."
-                                                }
-                                            },
-                                            "xml": {
-                                                "name": "meta"
-                                            }
-                                        },
-                                        "elements": {
-                                            "type": "object",
-                                            "properties": {
-                                                "inventories": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "sku": {
-                                                                "type": "string",
-                                                                "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                                            },
-                                                            "nodes": {
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "shipNode": {
-                                                                            "type": "string",
-                                                                            "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                                                        },
-                                                                        "inputQty": {
-                                                                            "required": [
-                                                                                "amount",
-                                                                                "unit"
-                                                                            ],
-                                                                            "type": "object",
-                                                                            "properties": {
-                                                                                "unit": {
-                                                                                    "type": "string",
-                                                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                                                    "enum": [
-                                                                                        "EACH"
-                                                                                    ]
-                                                                                },
-                                                                                "amount": {
-                                                                                    "type": "number",
-                                                                                    "description": "Inventory Count"
-                                                                                }
-                                                                            },
-                                                                            "description": "Quantity of an item that is input by the seller"
-                                                                        },
-                                                                        "availToSellQty": {
-                                                                            "required": [
-                                                                                "amount",
-                                                                                "unit"
-                                                                            ],
-                                                                            "type": "object",
-                                                                            "properties": {
-                                                                                "unit": {
-                                                                                    "type": "string",
-                                                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                                                    "enum": [
-                                                                                        "EACH"
-                                                                                    ]
-                                                                                },
-                                                                                "amount": {
-                                                                                    "type": "number",
-                                                                                    "description": "Inventory Count"
-                                                                                }
-                                                                            },
-                                                                            "description": "Quantity of an item that is available to be allocated to orders"
-                                                                        },
-                                                                        "reservedQty": {
-                                                                            "required": [
-                                                                                "amount",
-                                                                                "unit"
-                                                                            ],
-                                                                            "type": "object",
-                                                                            "properties": {
-                                                                                "unit": {
-                                                                                    "type": "string",
-                                                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                                                    "enum": [
-                                                                                        "EACH"
-                                                                                    ]
-                                                                                },
-                                                                                "amount": {
-                                                                                    "type": "number",
-                                                                                    "description": "Inventory Count"
-                                                                                }
-                                                                            },
-                                                                            "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/MultiNodeInventoryFetchResponseDTO"
                                 },
                                 "example": {
                                     "meta": {
@@ -1197,73 +765,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "headers": {
-                                            "type": "object",
-                                            "properties": {
-                                                "totalCount": {
-                                                    "type": "integer",
-                                                    "description": "Total number of results for query.",
-                                                    "format": "int32"
-                                                },
-                                                "limit": {
-                                                    "type": "integer",
-                                                    "description": "Information about the quantity in inventory",
-                                                    "format": "int32"
-                                                },
-                                                "offset": {
-                                                    "type": "integer",
-                                                    "description": "Offset is the number of records you wish to skip before selecting results.",
-                                                    "format": "int32"
-                                                }
-                                            }
-                                        },
-                                        "payload": {
-                                            "type": "object",
-                                            "properties": {
-                                                "inventory": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "sku": {
-                                                                "type": "string",
-                                                                "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                                            },
-                                                            "shipNodes": {
-                                                                "type": "array",
-                                                                "items": {
-                                                                    "type": "object",
-                                                                    "properties": {
-                                                                        "modifiedDate": {
-                                                                            "type": "string",
-                                                                            "description": "Last changes date for the item."
-                                                                        },
-                                                                        "availToSellQty": {
-                                                                            "type": "integer",
-                                                                            "description": "The available quantity is the quantity of an item that is available to be allocated to orders.",
-                                                                            "format": "int32"
-                                                                        },
-                                                                        "onHandQty": {
-                                                                            "type": "integer",
-                                                                            "description": "The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.",
-                                                                            "format": "int32"
-                                                                        },
-                                                                        "shipNodeType": {
-                                                                            "type": "string",
-                                                                            "description": "Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory."
-                                                                        }
-                                                                    }
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/WfsInventoryDTO"
                                 }
                             }
                         }
@@ -1398,24 +900,7 @@
                             "wrapped": true
                         },
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "field": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                }
-                            },
-                            "xml": {
-                                "name": "Cause"
-                            }
+                            "$ref": "#\/components\/schemas\/Cause"
                         }
                     },
                     "errorIdentifiers": {
@@ -1439,93 +924,7 @@
                     "nodes": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "shipNode": {
-                                    "type": "string",
-                                    "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                },
-                                "status": {
-                                    "type": "string",
-                                    "description": "Node Update status. Example: 'Success'"
-                                },
-                                "errors": {
-                                    "type": "array",
-                                    "description": "Node Update Error description.",
-                                    "items": {
-                                        "required": [
-                                            "code"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "field": {
-                                                "type": "string"
-                                            },
-                                            "description": {
-                                                "type": "string"
-                                            },
-                                            "info": {
-                                                "type": "string"
-                                            },
-                                            "severity": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "INFO",
-                                                    "WARN",
-                                                    "ERROR"
-                                                ]
-                                            },
-                                            "category": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "APPLICATION",
-                                                    "SYSTEM",
-                                                    "REQUEST",
-                                                    "DATA"
-                                                ]
-                                            },
-                                            "causes": {
-                                                "type": "array",
-                                                "xml": {
-                                                    "wrapped": true
-                                                },
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "code": {
-                                                            "type": "string"
-                                                        },
-                                                        "field": {
-                                                            "type": "string"
-                                                        },
-                                                        "type": {
-                                                            "type": "string"
-                                                        },
-                                                        "description": {
-                                                            "type": "string"
-                                                        }
-                                                    },
-                                                    "xml": {
-                                                        "name": "Cause"
-                                                    }
-                                                }
-                                            },
-                                            "errorIdentifiers": {
-                                                "type": "object",
-                                                "additionalProperties": {
-                                                    "type": "object"
-                                                }
-                                            }
-                                        },
-                                        "xml": {
-                                            "name": "Error"
-                                        }
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/UpdateInventoriesResponseNodeDTO"
                         }
                     }
                 }
@@ -1626,49 +1025,7 @@
                 "type": "object",
                 "properties": {
                     "inventories": {
-                        "required": [
-                            "nodes"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "nodes": {
-                                "type": "array",
-                                "items": {
-                                    "required": [
-                                        "inputQty",
-                                        "shipNode"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "shipNode": {
-                                            "type": "string",
-                                            "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                        },
-                                        "inputQty": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "Inventory Count"
-                                                }
-                                            },
-                                            "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/UpdateInventoriesRequestDTO"
                     }
                 }
             },
@@ -1681,38 +1038,7 @@
                     "nodes": {
                         "type": "array",
                         "items": {
-                            "required": [
-                                "inputQty",
-                                "shipNode"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "shipNode": {
-                                    "type": "string",
-                                    "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                },
-                                "inputQty": {
-                                    "required": [
-                                        "amount",
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "The unit of measurement. Example: 'EACH'",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Inventory Count"
-                                        }
-                                    },
-                                    "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/UpdateInventoriesRequestNodeDTO"
                         }
                     }
                 }
@@ -1729,25 +1055,7 @@
                         "description": "ShipNode Id of the ship node for which the inventory is requested"
                     },
                     "inputQty": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity that has been ordered by the customers but not yet shipped"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     }
                 }
             },
@@ -1774,88 +1082,7 @@
                     "inventories": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "sku": {
-                                    "type": "string",
-                                    "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                },
-                                "nodes": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "shipNode": {
-                                                "type": "string",
-                                                "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                            },
-                                            "inputQty": {
-                                                "required": [
-                                                    "amount",
-                                                    "unit"
-                                                ],
-                                                "type": "object",
-                                                "properties": {
-                                                    "unit": {
-                                                        "type": "string",
-                                                        "description": "The unit of measurement. Example: 'EACH'",
-                                                        "enum": [
-                                                            "EACH"
-                                                        ]
-                                                    },
-                                                    "amount": {
-                                                        "type": "number",
-                                                        "description": "Inventory Count"
-                                                    }
-                                                },
-                                                "description": "Quantity of an item that is input by the seller"
-                                            },
-                                            "availToSellQty": {
-                                                "required": [
-                                                    "amount",
-                                                    "unit"
-                                                ],
-                                                "type": "object",
-                                                "properties": {
-                                                    "unit": {
-                                                        "type": "string",
-                                                        "description": "The unit of measurement. Example: 'EACH'",
-                                                        "enum": [
-                                                            "EACH"
-                                                        ]
-                                                    },
-                                                    "amount": {
-                                                        "type": "number",
-                                                        "description": "Inventory Count"
-                                                    }
-                                                },
-                                                "description": "Quantity of an item that is available to be allocated to orders"
-                                            },
-                                            "reservedQty": {
-                                                "required": [
-                                                    "amount",
-                                                    "unit"
-                                                ],
-                                                "type": "object",
-                                                "properties": {
-                                                    "unit": {
-                                                        "type": "string",
-                                                        "description": "The unit of measurement. Example: 'EACH'",
-                                                        "enum": [
-                                                            "EACH"
-                                                        ]
-                                                    },
-                                                    "amount": {
-                                                        "type": "number",
-                                                        "description": "Inventory Count"
-                                                    }
-                                                },
-                                                "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/MultiNodeInventoryUpdateResponseDTO"
                         }
                     }
                 }
@@ -1870,76 +1097,7 @@
                     "nodes": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "shipNode": {
-                                    "type": "string",
-                                    "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                },
-                                "inputQty": {
-                                    "required": [
-                                        "amount",
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "The unit of measurement. Example: 'EACH'",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Inventory Count"
-                                        }
-                                    },
-                                    "description": "Quantity of an item that is input by the seller"
-                                },
-                                "availToSellQty": {
-                                    "required": [
-                                        "amount",
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "The unit of measurement. Example: 'EACH'",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Inventory Count"
-                                        }
-                                    },
-                                    "description": "Quantity of an item that is available to be allocated to orders"
-                                },
-                                "reservedQty": {
-                                    "required": [
-                                        "amount",
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "The unit of measurement. Example: 'EACH'",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Inventory Count"
-                                        }
-                                    },
-                                    "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/GetAllInventoriesNodeDTO"
                         }
                     }
                 }
@@ -1952,67 +1110,13 @@
                         "description": "ShipNode Id of the ship node for which the inventory is requested"
                     },
                     "inputQty": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity of an item that is input by the seller"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     },
                     "availToSellQty": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity of an item that is available to be allocated to orders"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     },
                     "reservedQty": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity that has been ordered by the customers but not yet shipped"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     }
                 }
             },
@@ -2052,96 +1156,7 @@
                         }
                     },
                     "elements": {
-                        "type": "object",
-                        "properties": {
-                            "inventories": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                        },
-                                        "nodes": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "shipNode": {
-                                                        "type": "string",
-                                                        "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                                    },
-                                                    "inputQty": {
-                                                        "required": [
-                                                            "amount",
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Inventory Count"
-                                                            }
-                                                        },
-                                                        "description": "Quantity of an item that is input by the seller"
-                                                    },
-                                                    "availToSellQty": {
-                                                        "required": [
-                                                            "amount",
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Inventory Count"
-                                                            }
-                                                        },
-                                                        "description": "Quantity of an item that is available to be allocated to orders"
-                                                    },
-                                                    "reservedQty": {
-                                                        "required": [
-                                                            "amount",
-                                                            "unit"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "unit": {
-                                                                "type": "string",
-                                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                                "enum": [
-                                                                    "EACH"
-                                                                ]
-                                                            },
-                                                            "amount": {
-                                                                "type": "number",
-                                                                "description": "Inventory Count"
-                                                            }
-                                                        },
-                                                        "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/MultiNodeInventoryUpdateRequestDTO"
                     }
                 }
             },
@@ -2155,151 +1170,7 @@
                     "nodes": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "shipNode": {
-                                    "type": "string",
-                                    "description": "ShipNode Id of the ship node for which the inventory is requested"
-                                },
-                                "inputQty": {
-                                    "required": [
-                                        "amount",
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "The unit of measurement. Example: 'EACH'",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Inventory Count"
-                                        }
-                                    },
-                                    "description": "Quantity of an item that is input by the seller"
-                                },
-                                "availToSellQty": {
-                                    "required": [
-                                        "amount",
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "The unit of measurement. Example: 'EACH'",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Inventory Count"
-                                        }
-                                    },
-                                    "description": "Quantity of an item that is available to be allocated to orders"
-                                },
-                                "errors": {
-                                    "type": "array",
-                                    "items": {
-                                        "required": [
-                                            "code"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "field": {
-                                                "type": "string"
-                                            },
-                                            "description": {
-                                                "type": "string"
-                                            },
-                                            "info": {
-                                                "type": "string"
-                                            },
-                                            "severity": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "INFO",
-                                                    "WARN",
-                                                    "ERROR"
-                                                ]
-                                            },
-                                            "category": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "APPLICATION",
-                                                    "SYSTEM",
-                                                    "REQUEST",
-                                                    "DATA"
-                                                ]
-                                            },
-                                            "causes": {
-                                                "type": "array",
-                                                "xml": {
-                                                    "wrapped": true
-                                                },
-                                                "items": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "code": {
-                                                            "type": "string"
-                                                        },
-                                                        "field": {
-                                                            "type": "string"
-                                                        },
-                                                        "type": {
-                                                            "type": "string"
-                                                        },
-                                                        "description": {
-                                                            "type": "string"
-                                                        }
-                                                    },
-                                                    "xml": {
-                                                        "name": "Cause"
-                                                    }
-                                                }
-                                            },
-                                            "errorIdentifiers": {
-                                                "type": "object",
-                                                "additionalProperties": {
-                                                    "type": "object"
-                                                }
-                                            }
-                                        },
-                                        "xml": {
-                                            "name": "Error"
-                                        }
-                                    }
-                                },
-                                "reservedQty": {
-                                    "required": [
-                                        "amount",
-                                        "unit"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "unit": {
-                                            "type": "string",
-                                            "description": "The unit of measurement. Example: 'EACH'",
-                                            "enum": [
-                                                "EACH"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "Inventory Count"
-                                        }
-                                    },
-                                    "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/NodeDTO"
                         }
                     }
                 }
@@ -2312,46 +1183,10 @@
                         "description": "ShipNode Id of the ship node for which the inventory is requested"
                     },
                     "inputQty": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity of an item that is input by the seller"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     },
                     "availToSellQty": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity of an item that is available to be allocated to orders"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     },
                     "errors": {
                         "type": "array",
@@ -2429,25 +1264,7 @@
                         }
                     },
                     "reservedQty": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity that has been ordered by the customers but not yet shipped"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     }
                 }
             },
@@ -2481,27 +1298,7 @@
                     "shipNodes": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "modifiedDate": {
-                                    "type": "string",
-                                    "description": "Last changes date for the item."
-                                },
-                                "availToSellQty": {
-                                    "type": "integer",
-                                    "description": "The available quantity is the quantity of an item that is available to be allocated to orders.",
-                                    "format": "int32"
-                                },
-                                "onHandQty": {
-                                    "type": "integer",
-                                    "description": "The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.",
-                                    "format": "int32"
-                                },
-                                "shipNodeType": {
-                                    "type": "string",
-                                    "description": "Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory."
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/ShipNodes"
                         }
                     }
                 }
@@ -2512,39 +1309,7 @@
                     "inventory": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "sku": {
-                                    "type": "string",
-                                    "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                },
-                                "shipNodes": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "modifiedDate": {
-                                                "type": "string",
-                                                "description": "Last changes date for the item."
-                                            },
-                                            "availToSellQty": {
-                                                "type": "integer",
-                                                "description": "The available quantity is the quantity of an item that is available to be allocated to orders.",
-                                                "format": "int32"
-                                            },
-                                            "onHandQty": {
-                                                "type": "integer",
-                                                "description": "The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.",
-                                                "format": "int32"
-                                            },
-                                            "shipNodeType": {
-                                                "type": "string",
-                                                "description": "Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory."
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/InventoryWFS"
                         }
                     }
                 }
@@ -2576,67 +1341,10 @@
                 "type": "object",
                 "properties": {
                     "headers": {
-                        "type": "object",
-                        "properties": {
-                            "totalCount": {
-                                "type": "integer",
-                                "description": "Total number of results for query.",
-                                "format": "int32"
-                            },
-                            "limit": {
-                                "type": "integer",
-                                "description": "Information about the quantity in inventory",
-                                "format": "int32"
-                            },
-                            "offset": {
-                                "type": "integer",
-                                "description": "Offset is the number of records you wish to skip before selecting results.",
-                                "format": "int32"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/Headers"
                     },
                     "payload": {
-                        "type": "object",
-                        "properties": {
-                            "inventory": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
-                                        },
-                                        "shipNodes": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "modifiedDate": {
-                                                        "type": "string",
-                                                        "description": "Last changes date for the item."
-                                                    },
-                                                    "availToSellQty": {
-                                                        "type": "integer",
-                                                        "description": "The available quantity is the quantity of an item that is available to be allocated to orders.",
-                                                        "format": "int32"
-                                                    },
-                                                    "onHandQty": {
-                                                        "type": "integer",
-                                                        "description": "The on-hand balance is the quantity of active inventory stored at the warehouse.Active inventory is defined as the usable amount of an item that is in the warehouse.Inventory is active if it is not damaged, expired or being inspected.",
-                                                        "format": "int32"
-                                                    },
-                                                    "shipNodeType": {
-                                                        "type": "string",
-                                                        "description": "Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory."
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/Payload"
                     }
                 }
             },

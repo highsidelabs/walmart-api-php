@@ -245,22 +245,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedId"
                                 },
                                 "example": {
                                     "feedId": "970302799B194D309B4DBA5471DCEF19@AQYBCgA"
@@ -341,24 +326,7 @@
                             "wrapped": true
                         },
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "field": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                }
-                            },
-                            "xml": {
-                                "name": "Cause"
-                            }
+                            "$ref": "#\/components\/schemas\/Cause"
                         }
                     },
                     "errorIdentifiers": {
@@ -398,93 +366,7 @@
                             "name": "error"
                         },
                         "items": {
-                            "required": [
-                                "code"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "field": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "info": {
-                                    "type": "string"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "enum": [
-                                        "INFO",
-                                        "WARN",
-                                        "ERROR"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SYSTEM",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "causes": {
-                                    "type": "array",
-                                    "xml": {
-                                        "wrapped": true
-                                    },
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "field": {
-                                                "type": "string"
-                                            },
-                                            "type": {
-                                                "type": "string"
-                                            },
-                                            "description": {
-                                                "type": "string"
-                                            }
-                                        },
-                                        "xml": {
-                                            "name": "Cause"
-                                        }
-                                    }
-                                },
-                                "errorIdentifiers": {
-                                    "type": "object",
-                                    "additionalProperties": {
-                                        "type": "object"
-                                    }
-                                },
-                                "component": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "serviceName": {
-                                    "type": "string"
-                                },
-                                "gatewayErrorCategory": {
-                                    "type": "string",
-                                    "enum": [
-                                        "INTERNAL_DATA_ERROR",
-                                        "EXTERNAL_DATA_ERROR",
-                                        "SYSTEM_ERROR"
-                                    ]
-                                }
-                            },
-                            "xml": {
-                                "name": "GatewayError"
-                            }
+                            "$ref": "#\/components\/schemas\/GatewayError"
                         }
                     },
                     "statusCode": {

@@ -238,14 +238,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the Feed File."
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedId"
                                 },
                                 "example": {
                                     "feedId": "E7BB7DBAF3FF461AB63A2169F3BEAADE@AVQBAgA"
@@ -437,57 +430,7 @@
                             "namespace": "http:\/\/walmart.com\/"
                         },
                         "items": {
-                            "required": [
-                                "sku"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "sku": {
-                                    "type": "string",
-                                    "description": "A seller-provided Product ID. Response will have decoded value.",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                },
-                                "fulfillmentLagTime": {
-                                    "type": "integer",
-                                    "description": "The number of days between when the item is ordered and when it is shipped",
-                                    "format": "int32",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                },
-                                "additionalAttributes": {
-                                    "type": "array",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    },
-                                    "items": {
-                                        "required": [
-                                            "name",
-                                            "value"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "name": {
-                                                "type": "string",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "value": {
-                                                "type": "string",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            },
-                            "xml": {
-                                "name": "lagTime"
-                            }
+                            "$ref": "#\/components\/schemas\/LagTime"
                         }
                     }
                 },

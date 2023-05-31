@@ -44,53 +44,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "repricerStrategy": {
-                                        "type": "string",
-                                        "description": "Name of the Strategy Collection",
-                                        "example": "Buy Box Strategy For testing"
-                                    },
-                                    "enabled": {
-                                        "type": "boolean",
-                                        "description": "Status of the Strategy Collection",
-                                        "example": true
-                                    },
-                                    "enableRepricerForPromotion": {
-                                        "type": "boolean",
-                                        "description": "Status of item on promotions to be enable on repricer",
-                                        "example": true
-                                    },
-                                    "strategies": {
-                                        "type": "array",
-                                        "description": "Strategies",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "strategyType": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "Buy Box Price",
-                                                        "External Price",
-                                                        "Competitive Price"
-                                                    ]
-                                                },
-                                                "adjustmentType": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "UNIT",
-                                                        "PERCENTAGE"
-                                                    ]
-                                                },
-                                                "adjustmentValue": {
-                                                    "type": "number",
-                                                    "format": "double",
-                                                    "example": 1.2
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/RepricerEntityRequest"
                             }
                         }
                     },
@@ -102,54 +56,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "repricerStrategy": {
-                                            "type": "string",
-                                            "example": "Buy Box Strategy For testing"
-                                        },
-                                        "strategyCollectionId": {
-                                            "type": "string",
-                                            "example": "41678999-a088-4fd8-9eb4-55f8d8ed4ac8"
-                                        },
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "example": true
-                                        },
-                                        "enableRepricerForPromotion": {
-                                            "type": "boolean",
-                                            "example": true
-                                        },
-                                        "strategies": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "strategyType": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "Buy Box Price",
-                                                            "External Price",
-                                                            "Competitive Price"
-                                                        ]
-                                                    },
-                                                    "adjustmentType": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "UNIT",
-                                                            "PERCENTAGE"
-                                                        ]
-                                                    },
-                                                    "adjustmentValue": {
-                                                        "type": "number",
-                                                        "format": "double",
-                                                        "example": 1.2
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/RepricerEntityResponse"
                                 }
                             }
                         }
@@ -184,14 +91,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "message": {
-                                            "type": "string",
-                                            "example": "Strategy with Strategy Collection Id : 41678999-a088-4fd8-9eb4-55f8d8ed4ac8 deleted successfully"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/RepricerEntityDeleteResponse"
                                 }
                             }
                         }
@@ -218,122 +118,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "pricing",
-                                    "sku"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "offerId": {
-                                        "type": "string",
-                                        "description": "This is applicable only for promotions"
-                                    },
-                                    "sku": {
-                                        "type": "string"
-                                    },
-                                    "replaceAll": {
-                                        "type": "string",
-                                        "description": "This is applicable only for promotions",
-                                        "enum": [
-                                            "true",
-                                            "false"
-                                        ]
-                                    },
-                                    "pricing": {
-                                        "type": "array",
-                                        "items": {
-                                            "required": [
-                                                "currentPrice",
-                                                "currentPriceType"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "effectiveDate": {
-                                                    "type": "string",
-                                                    "description": "This is applicable only for promotions",
-                                                    "format": "date-time"
-                                                },
-                                                "expirationDate": {
-                                                    "type": "string",
-                                                    "description": "This is applicable only for promotions",
-                                                    "format": "date-time"
-                                                },
-                                                "promoId": {
-                                                    "type": "string",
-                                                    "description": "This is applicable only for promotions"
-                                                },
-                                                "processMode": {
-                                                    "type": "string",
-                                                    "description": "This is applicable only for promotions",
-                                                    "enum": [
-                                                        "UPSERT",
-                                                        "DELETE"
-                                                    ]
-                                                },
-                                                "currentPriceType": {
-                                                    "type": "string",
-                                                    "description": "This is applicable only for both promotions and price",
-                                                    "enum": [
-                                                        "BASE",
-                                                        "REDUCED",
-                                                        "CLEARANCE"
-                                                    ]
-                                                },
-                                                "currentPrice": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "currency": {
-                                                            "type": "string",
-                                                            "enum": [
-                                                                "USD",
-                                                                "CAD"
-                                                            ]
-                                                        },
-                                                        "amount": {
-                                                            "type": "number",
-                                                            "format": "double"
-                                                        }
-                                                    }
-                                                },
-                                                "comparisonPriceType": {
-                                                    "type": "string",
-                                                    "description": "This is applicable only for promotions",
-                                                    "enum": [
-                                                        "BASE"
-                                                    ]
-                                                },
-                                                "comparisonPrice": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "currency": {
-                                                            "type": "string",
-                                                            "enum": [
-                                                                "USD",
-                                                                "CAD"
-                                                            ]
-                                                        },
-                                                        "amount": {
-                                                            "type": "number",
-                                                            "format": "double"
-                                                        }
-                                                    },
-                                                    "description": "This is applicable only for promotions"
-                                                },
-                                                "priceDisplayCodes": {
-                                                    "type": "string",
-                                                    "description": "Represent promo placement. This is applicable only for promotions",
-                                                    "enum": [
-                                                        "CART",
-                                                        "CHECKOUT"
-                                                    ]
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "definitions": {
-                                        "type": "object"
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/Price"
                             },
                             "example": {
                                 "sku": "97964_KFTest",
@@ -517,69 +302,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "ItemFeedHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "processMode": {
-                                                "type": "string",
-                                                "example": "REPLACE"
-                                            },
-                                            "subset": {
-                                                "type": "string",
-                                                "example": "EXTERNAL"
-                                            },
-                                            "mart": {
-                                                "type": "string",
-                                                "example": "WALMART_US"
-                                            },
-                                            "sellingChannel": {
-                                                "type": "string",
-                                                "example": "repricerstrategy"
-                                            },
-                                            "version": {
-                                                "type": "string",
-                                                "example": "1.0"
-                                            },
-                                            "locale": {
-                                                "type": "string",
-                                                "example": "en"
-                                            }
-                                        }
-                                    },
-                                    "Item": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "Strategy": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "sku": {
-                                                            "type": "string",
-                                                            "example": "06068064605122shoe"
-                                                        },
-                                                        "repricerStrategy": {
-                                                            "type": "string",
-                                                            "example": "Match Competitive Price"
-                                                        },
-                                                        "minimumSellerAllowedPrice": {
-                                                            "type": "number",
-                                                            "format": "double",
-                                                            "example": 7.2
-                                                        },
-                                                        "maximumSellerAllowedPrice": {
-                                                            "type": "number",
-                                                            "format": "double",
-                                                            "example": 8
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/FeedUploadRequestDTO"
                             }
                         }
                     },
@@ -591,14 +314,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "example": "AFEE4EEC9C3541B6A7B58E694416EC82@AUoBAwA"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedUploadResponseDTO"
                                 }
                             }
                         }
@@ -625,53 +341,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "repricerStrategy": {
-                                        "type": "string",
-                                        "description": "Name of the Strategy Collection",
-                                        "example": "Buy Box Strategy For testing"
-                                    },
-                                    "enabled": {
-                                        "type": "boolean",
-                                        "description": "Status of the Strategy Collection",
-                                        "example": true
-                                    },
-                                    "enableRepricerForPromotion": {
-                                        "type": "boolean",
-                                        "description": "Status of item on promotions to be enable on repricer",
-                                        "example": true
-                                    },
-                                    "strategies": {
-                                        "type": "array",
-                                        "description": "Strategies",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "strategyType": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "Buy Box Price",
-                                                        "External Price",
-                                                        "Competitive Price"
-                                                    ]
-                                                },
-                                                "adjustmentType": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "UNIT",
-                                                        "PERCENTAGE"
-                                                    ]
-                                                },
-                                                "adjustmentValue": {
-                                                    "type": "number",
-                                                    "format": "double",
-                                                    "example": 1.2
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/RepricerEntityRequest"
                             }
                         }
                     },
@@ -683,54 +353,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "repricerStrategy": {
-                                            "type": "string",
-                                            "example": "Buy Box Strategy For testing"
-                                        },
-                                        "strategyCollectionId": {
-                                            "type": "string",
-                                            "example": "41678999-a088-4fd8-9eb4-55f8d8ed4ac8"
-                                        },
-                                        "enabled": {
-                                            "type": "boolean",
-                                            "example": true
-                                        },
-                                        "enableRepricerForPromotion": {
-                                            "type": "boolean",
-                                            "example": true
-                                        },
-                                        "strategies": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "strategyType": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "Buy Box Price",
-                                                            "External Price",
-                                                            "Competitive Price"
-                                                        ]
-                                                    },
-                                                    "adjustmentType": {
-                                                        "type": "string",
-                                                        "enum": [
-                                                            "UNIT",
-                                                            "PERCENTAGE"
-                                                        ]
-                                                    },
-                                                    "adjustmentValue": {
-                                                        "type": "number",
-                                                        "format": "double",
-                                                        "example": 1.2
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/RepricerEntityResponse"
                                 }
                             }
                         }
@@ -841,22 +464,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedId"
                                 },
                                 "example": {
                                     "feedId": "14066B6642344B76A8B77AC094F8C63B@AVMBAgA"
@@ -890,17 +498,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "subsidyEnrolled": {
-                                        "type": "boolean",
-                                        "description": "A Boolean parameter that allows all sellers to completely enroll in or out of the Competitive Price Adjustment program"
-                                    },
-                                    "subsidyPreference": {
-                                        "type": "boolean",
-                                        "description": "A Boolean parameter that determines whether offer level subsidy setting override seller level subsidy setting"
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/StatusInfo"
                             }
                         }
                     },
@@ -912,27 +510,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "martId": {
-                                            "type": "string",
-                                            "description": "A unique ID that a user or seller uses for a marketplace."
-                                        },
-                                        "statusInfo": {
-                                            "type": "object",
-                                            "properties": {
-                                                "subsidyEnrolled": {
-                                                    "type": "boolean",
-                                                    "description": "A Boolean parameter that allows all sellers to completely enroll in or out of the Competitive Price Adjustment program"
-                                                },
-                                                "subsidyPreference": {
-                                                    "type": "boolean",
-                                                    "description": "A Boolean parameter that determines whether offer level subsidy setting override seller level subsidy setting"
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/CapProgramResponse"
                                 }
                             }
                         }
@@ -960,72 +538,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "totalElements": {
-                                            "type": "integer",
-                                            "format": "int32",
-                                            "example": 1
-                                        },
-                                        "strategyCollections": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "repricerStrategy": {
-                                                        "type": "string",
-                                                        "example": "Buy Box Strategy For testing"
-                                                    },
-                                                    "strategyCollectionId": {
-                                                        "type": "string",
-                                                        "example": "41678999-a088-4fd8-9eb4-55f8d8ed4ac8"
-                                                    },
-                                                    "enabled": {
-                                                        "type": "boolean",
-                                                        "example": true
-                                                    },
-                                                    "assignedCount": {
-                                                        "type": "integer",
-                                                        "format": "int32",
-                                                        "example": 1
-                                                    },
-                                                    "enableRepricerForPromotion": {
-                                                        "type": "boolean",
-                                                        "example": true
-                                                    },
-                                                    "strategies": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "strategyType": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                        "Buy Box Price",
-                                                                        "External Price",
-                                                                        "Competitive Price"
-                                                                    ]
-                                                                },
-                                                                "adjustmentType": {
-                                                                    "type": "string",
-                                                                    "enum": [
-                                                                        "UNIT",
-                                                                        "PERCENTAGE"
-                                                                    ]
-                                                                },
-                                                                "adjustmentValue": {
-                                                                    "type": "number",
-                                                                    "format": "double",
-                                                                    "example": 1.2
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/RepricerEntityCollectionResponse"
                                 }
                             }
                         }
@@ -1063,29 +576,7 @@
                     "strategies": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "strategyType": {
-                                    "type": "string",
-                                    "enum": [
-                                        "Buy Box Price",
-                                        "External Price",
-                                        "Competitive Price"
-                                    ]
-                                },
-                                "adjustmentType": {
-                                    "type": "string",
-                                    "enum": [
-                                        "UNIT",
-                                        "PERCENTAGE"
-                                    ]
-                                },
-                                "adjustmentValue": {
-                                    "type": "number",
-                                    "format": "double",
-                                    "example": 1.2
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/RepricerStrategyType"
                         }
                     }
                 }
@@ -1137,29 +628,7 @@
                         "type": "array",
                         "description": "Strategies",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "strategyType": {
-                                    "type": "string",
-                                    "enum": [
-                                        "Buy Box Price",
-                                        "External Price",
-                                        "Competitive Price"
-                                    ]
-                                },
-                                "adjustmentType": {
-                                    "type": "string",
-                                    "enum": [
-                                        "UNIT",
-                                        "PERCENTAGE"
-                                    ]
-                                },
-                                "adjustmentValue": {
-                                    "type": "number",
-                                    "format": "double",
-                                    "example": 1.2
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/RepricerStrategyType"
                         }
                     }
                 }
@@ -1225,24 +694,7 @@
                             "wrapped": true
                         },
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "field": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                }
-                            },
-                            "xml": {
-                                "name": "Cause"
-                            }
+                            "$ref": "#\/components\/schemas\/Cause"
                         }
                     },
                     "errorIdentifiers": {
@@ -1282,93 +734,7 @@
                             "name": "error"
                         },
                         "items": {
-                            "required": [
-                                "code"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "field": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "info": {
-                                    "type": "string"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "enum": [
-                                        "INFO",
-                                        "WARN",
-                                        "ERROR"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SYSTEM",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "causes": {
-                                    "type": "array",
-                                    "xml": {
-                                        "wrapped": true
-                                    },
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "field": {
-                                                "type": "string"
-                                            },
-                                            "type": {
-                                                "type": "string"
-                                            },
-                                            "description": {
-                                                "type": "string"
-                                            }
-                                        },
-                                        "xml": {
-                                            "name": "Cause"
-                                        }
-                                    }
-                                },
-                                "errorIdentifiers": {
-                                    "type": "object",
-                                    "additionalProperties": {
-                                        "type": "object"
-                                    }
-                                },
-                                "component": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "serviceName": {
-                                    "type": "string"
-                                },
-                                "gatewayErrorCategory": {
-                                    "type": "string",
-                                    "enum": [
-                                        "INTERNAL_DATA_ERROR",
-                                        "EXTERNAL_DATA_ERROR",
-                                        "SYSTEM_ERROR"
-                                    ]
-                                }
-                            },
-                            "xml": {
-                                "name": "GatewayError"
-                            }
+                            "$ref": "#\/components\/schemas\/GatewayError"
                         }
                     },
                     "statusCode": {
@@ -1460,92 +826,7 @@
                     "pricing": {
                         "type": "array",
                         "items": {
-                            "required": [
-                                "currentPrice",
-                                "currentPriceType"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "effectiveDate": {
-                                    "type": "string",
-                                    "description": "This is applicable only for promotions",
-                                    "format": "date-time"
-                                },
-                                "expirationDate": {
-                                    "type": "string",
-                                    "description": "This is applicable only for promotions",
-                                    "format": "date-time"
-                                },
-                                "promoId": {
-                                    "type": "string",
-                                    "description": "This is applicable only for promotions"
-                                },
-                                "processMode": {
-                                    "type": "string",
-                                    "description": "This is applicable only for promotions",
-                                    "enum": [
-                                        "UPSERT",
-                                        "DELETE"
-                                    ]
-                                },
-                                "currentPriceType": {
-                                    "type": "string",
-                                    "description": "This is applicable only for both promotions and price",
-                                    "enum": [
-                                        "BASE",
-                                        "REDUCED",
-                                        "CLEARANCE"
-                                    ]
-                                },
-                                "currentPrice": {
-                                    "type": "object",
-                                    "properties": {
-                                        "currency": {
-                                            "type": "string",
-                                            "enum": [
-                                                "USD",
-                                                "CAD"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "format": "double"
-                                        }
-                                    }
-                                },
-                                "comparisonPriceType": {
-                                    "type": "string",
-                                    "description": "This is applicable only for promotions",
-                                    "enum": [
-                                        "BASE"
-                                    ]
-                                },
-                                "comparisonPrice": {
-                                    "type": "object",
-                                    "properties": {
-                                        "currency": {
-                                            "type": "string",
-                                            "enum": [
-                                                "USD",
-                                                "CAD"
-                                            ]
-                                        },
-                                        "amount": {
-                                            "type": "number",
-                                            "format": "double"
-                                        }
-                                    },
-                                    "description": "This is applicable only for promotions"
-                                },
-                                "priceDisplayCodes": {
-                                    "type": "string",
-                                    "description": "Represent promo placement. This is applicable only for promotions",
-                                    "enum": [
-                                        "CART",
-                                        "CHECKOUT"
-                                    ]
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/Pricing"
                         }
                     },
                     "definitions": {
@@ -1592,20 +873,7 @@
                         ]
                     },
                     "currentPrice": {
-                        "type": "object",
-                        "properties": {
-                            "currency": {
-                                "type": "string",
-                                "enum": [
-                                    "USD",
-                                    "CAD"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "format": "double"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/ComparisonPrice"
                     },
                     "comparisonPriceType": {
                         "type": "string",
@@ -1615,21 +883,7 @@
                         ]
                     },
                     "comparisonPrice": {
-                        "type": "object",
-                        "properties": {
-                            "currency": {
-                                "type": "string",
-                                "enum": [
-                                    "USD",
-                                    "CAD"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "format": "double"
-                            }
-                        },
-                        "description": "This is applicable only for promotions"
+                        "$ref": "#\/components\/schemas\/ComparisonPrice"
                     },
                     "priceDisplayCodes": {
                         "type": "string",
@@ -1706,63 +960,12 @@
                 "type": "object",
                 "properties": {
                     "ItemFeedHeader": {
-                        "type": "object",
-                        "properties": {
-                            "processMode": {
-                                "type": "string",
-                                "example": "REPLACE"
-                            },
-                            "subset": {
-                                "type": "string",
-                                "example": "EXTERNAL"
-                            },
-                            "mart": {
-                                "type": "string",
-                                "example": "WALMART_US"
-                            },
-                            "sellingChannel": {
-                                "type": "string",
-                                "example": "repricerstrategy"
-                            },
-                            "version": {
-                                "type": "string",
-                                "example": "1.0"
-                            },
-                            "locale": {
-                                "type": "string",
-                                "example": "en"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/FeedItemsHeaderRequestDTO"
                     },
                     "Item": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "Strategy": {
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "example": "06068064605122shoe"
-                                        },
-                                        "repricerStrategy": {
-                                            "type": "string",
-                                            "example": "Match Competitive Price"
-                                        },
-                                        "minimumSellerAllowedPrice": {
-                                            "type": "number",
-                                            "format": "double",
-                                            "example": 7.2
-                                        },
-                                        "maximumSellerAllowedPrice": {
-                                            "type": "number",
-                                            "format": "double",
-                                            "example": 8
-                                        }
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/StrategyDetailsRequestDTO"
                         }
                     }
                 }
@@ -1771,27 +974,7 @@
                 "type": "object",
                 "properties": {
                     "Strategy": {
-                        "type": "object",
-                        "properties": {
-                            "sku": {
-                                "type": "string",
-                                "example": "06068064605122shoe"
-                            },
-                            "repricerStrategy": {
-                                "type": "string",
-                                "example": "Match Competitive Price"
-                            },
-                            "minimumSellerAllowedPrice": {
-                                "type": "number",
-                                "format": "double",
-                                "example": 7.2
-                            },
-                            "maximumSellerAllowedPrice": {
-                                "type": "number",
-                                "format": "double",
-                                "example": 8
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/FeedItemsRequestDTO"
                     }
                 }
             },
@@ -1820,17 +1003,7 @@
                         "description": "A unique ID that a user or seller uses for a marketplace."
                     },
                     "statusInfo": {
-                        "type": "object",
-                        "properties": {
-                            "subsidyEnrolled": {
-                                "type": "boolean",
-                                "description": "A Boolean parameter that allows all sellers to completely enroll in or out of the Competitive Price Adjustment program"
-                            },
-                            "subsidyPreference": {
-                                "type": "boolean",
-                                "description": "A Boolean parameter that determines whether offer level subsidy setting override seller level subsidy setting"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/StatusInfo"
                     }
                 }
             },
@@ -1858,58 +1031,7 @@
                     "strategyCollections": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "repricerStrategy": {
-                                    "type": "string",
-                                    "example": "Buy Box Strategy For testing"
-                                },
-                                "strategyCollectionId": {
-                                    "type": "string",
-                                    "example": "41678999-a088-4fd8-9eb4-55f8d8ed4ac8"
-                                },
-                                "enabled": {
-                                    "type": "boolean",
-                                    "example": true
-                                },
-                                "assignedCount": {
-                                    "type": "integer",
-                                    "format": "int32",
-                                    "example": 1
-                                },
-                                "enableRepricerForPromotion": {
-                                    "type": "boolean",
-                                    "example": true
-                                },
-                                "strategies": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "strategyType": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "Buy Box Price",
-                                                    "External Price",
-                                                    "Competitive Price"
-                                                ]
-                                            },
-                                            "adjustmentType": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "UNIT",
-                                                    "PERCENTAGE"
-                                                ]
-                                            },
-                                            "adjustmentValue": {
-                                                "type": "number",
-                                                "format": "double",
-                                                "example": 1.2
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/RepricerEntityGetResponse"
                         }
                     }
                 }
@@ -1941,29 +1063,7 @@
                     "strategies": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "strategyType": {
-                                    "type": "string",
-                                    "enum": [
-                                        "Buy Box Price",
-                                        "External Price",
-                                        "Competitive Price"
-                                    ]
-                                },
-                                "adjustmentType": {
-                                    "type": "string",
-                                    "enum": [
-                                        "UNIT",
-                                        "PERCENTAGE"
-                                    ]
-                                },
-                                "adjustmentValue": {
-                                    "type": "number",
-                                    "format": "double",
-                                    "example": 1.2
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/RepricerStrategyType"
                         }
                     }
                 }

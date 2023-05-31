@@ -37,54 +37,7 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "required": [
-                                        "fulfillmentLagTime",
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, seller-specified, identifying each item."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "The number available in the inventory"
-                                                }
-                                            },
-                                            "description": "Information about the quantity in inventory"
-                                        },
-                                        "fulfillmentLagTime": {
-                                            "type": "integer",
-                                            "description": "The number of days between when the item is ordered and when it is shipped",
-                                            "format": "int32"
-                                        },
-                                        "partnerId": {
-                                            "type": "string"
-                                        },
-                                        "offerId": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "inventory"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InventoryV2"
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/inventory>"
                             }
@@ -121,53 +74,7 @@
                     "content": {
                         "application\/xml": {
                             "schema": {
-                                "required": [
-                                    "fulfillmentLagTime",
-                                    "quantity",
-                                    "sku"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "sku": {
-                                        "type": "string",
-                                        "description": "An arbitrary alphanumeric unique ID, seller-specified, identifying each item."
-                                    },
-                                    "quantity": {
-                                        "required": [
-                                            "amount",
-                                            "unit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "unit": {
-                                                "type": "string",
-                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                "enum": [
-                                                    "EACH"
-                                                ]
-                                            },
-                                            "amount": {
-                                                "type": "number",
-                                                "description": "The number available in the inventory"
-                                            }
-                                        },
-                                        "description": "Information about the quantity in inventory"
-                                    },
-                                    "fulfillmentLagTime": {
-                                        "type": "integer",
-                                        "description": "The number of days between when the item is ordered and when it is shipped",
-                                        "format": "int32"
-                                    },
-                                    "partnerId": {
-                                        "type": "string"
-                                    },
-                                    "offerId": {
-                                        "type": "string"
-                                    }
-                                },
-                                "xml": {
-                                    "name": "inventory"
-                                }
+                                "$ref": "#\/components\/schemas\/InventoryV2"
                             },
                             "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>3<\/amount>\n    <\/quantity>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/inventory>"
                         }
@@ -180,54 +87,7 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "required": [
-                                        "fulfillmentLagTime",
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "An arbitrary alphanumeric unique ID, seller-specified, identifying each item."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "The number available in the inventory"
-                                                }
-                                            },
-                                            "description": "Information about the quantity in inventory"
-                                        },
-                                        "fulfillmentLagTime": {
-                                            "type": "integer",
-                                            "description": "The number of days between when the item is ordered and when it is shipped",
-                                            "format": "int32"
-                                        },
-                                        "partnerId": {
-                                            "type": "string"
-                                        },
-                                        "offerId": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "inventory"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InventoryV2"
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <sku>1068155<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n    <fulfillmentLagTime>1<\/fulfillmentLagTime>\n<\/inventory>"
                             }

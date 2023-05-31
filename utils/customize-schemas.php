@@ -2,6 +2,7 @@
 
 use Walmart\Enums\SecurityScheme;
 
+require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/helpers.php';
 require_once __DIR__ . '/constants.php';
 
@@ -58,6 +59,8 @@ function customizeSchema(string $path, string $category, string $name): void
         ],
     ];
     $usedSecuritySchemes = [];
+
+    $componentSchemas = $schema['components']['schemas'] ?? null;
 
     foreach ($schema['paths'] as $p => $apiPath) {
         if (strpos($p, '/' . API_VERSION . '/') === false) {
@@ -163,6 +166,11 @@ function customizeSchema(string $path, string $category, string $name): void
                 $verb['responses'][$code] = $response;
             }
 
+            // Replace inline schemas with component refs
+            if (!is_null($componentSchemas)) {
+                $verb = replaceRequestResponseSchemas($verb, $componentSchemas);
+            }
+
             $apiPath[$x] = $verb;
         }
         $schema['paths'][$p] = $apiPath;
@@ -174,7 +182,150 @@ function customizeSchema(string $path, string $category, string $name): void
         ARRAY_FILTER_USE_KEY
     );
 
+    if (!is_null($componentSchemas)) {
+        $schema['components']['schemas'] = replaceComponentInlineSchemas($componentSchemas);
+    }
+
     file_put_contents($path, json_encode($schema, JSON_PRETTY_PRINT));
+}
+
+/**
+ * For some reason, Walmart includes component schemas for every data type in each API schema, and then
+ * also defines inline request/response schemas for each endpoint. This function removes the inline schemas,
+ * and replaces them with references to the component schemas.
+ *
+ * @param array $verbSchema The OpenAPI schema for a particular verb on an endpoint
+ * @param array $componentSchemas The component schemas for the API
+ * @return array The updated verb schema
+ */
+function replaceRequestResponseSchemas(array $verbSchema, array $componentSchemas): array
+{
+    foreach ($verbSchema['responses'] as $code => $response) {
+        if (!isset($response['content'])) {
+            continue;
+        }
+
+        $contentType = array_key_first($response['content']);
+        $responseSchema = $response['content'][$contentType]['schema'];
+        if (isset($responseSchema['$ref']) || !isset($responseSchema['properties'])) {
+            continue;
+        }
+
+        $matchingRef = findMatchingComponent(
+            array_keys($responseSchema['properties']),
+            $componentSchemas,
+            $contentType === 'application/xml'
+        );
+        if (!is_null($matchingRef)) {
+            $verbSchema['responses'][$code]['content'][$contentType]['schema'] = $matchingRef;
+            break;
+        }
+    }
+
+    if (isset($verbSchema['requestBody'])) {
+        $contentType = array_key_first($verbSchema['requestBody']['content']);
+        $body = $verbSchema['requestBody']['content'][$contentType];
+        if (isset($body['schema']['$ref']) || !isset($body['schema']['properties'])) {
+            return $verbSchema;
+        }
+
+        $matchingRef = findMatchingComponent(
+            array_keys($body['schema']['properties']),
+            $componentSchemas,
+            $contentType === 'application/xml'
+        );
+        if (!is_null($matchingRef)) {
+            $verbSchema['requestBody']['content'][$contentType]['schema'] = $matchingRef;
+        }
+    }
+
+    return $verbSchema;
+}
+
+/**
+ * Combs through components, and replaces inline schemas that are also defined as component schemas
+ * with references to the component schemas.
+ *
+ * @param array $components The components section of an OpenAPI schema
+ * @return array The updated components section
+ */
+function replaceComponentInlineSchemas(array $components): array
+{
+    foreach ($components as $componentName => $component) {
+        if (!isset($component['properties'])) {
+            continue;
+        }
+
+        foreach ($component['properties'] as $propertyName => $property) {
+            if (
+                !isset($property['type'])
+                || (!isset($property['properties']) && !isset($property['items']['properties']))
+            ) {
+                continue;
+            }
+
+            if ($property['type'] === 'object') {
+                $matchingRef = findMatchingComponent(
+                    array_keys($property['properties']),
+                    $components,
+                    isset($component['xml']),
+                );
+                if (!is_null($matchingRef)) {
+                    $component['properties'][$propertyName] = $matchingRef;
+                }
+            } elseif ($property['type'] === 'array' && $property['items']['type'] === 'object') {
+                $matchingRef = findMatchingComponent(
+                    array_keys($property['items']['properties']),
+                    $components,
+                    isset($component['xml']),
+                );
+                if (!is_null($matchingRef)) {
+                    $component['properties'][$propertyName]['items'] = $matchingRef;
+                }
+            }
+        }
+        $components[$componentName] = $component;
+    }
+
+    return $components;
+}
+
+/**
+ * Takes an array of schema properties, and searches $componentSchemas for a matching schema.
+ * If one is found, returns an OpenAPI compatible ref array pointing to the matching component
+ * schema. Otherwise, returns null.
+ *
+ * @param array $properties The properties of the schema to match
+ * @param array $componentSchemas The component schemas to search for a match
+ * @param bool $isXml Whether or not we're searching for XML-specific component schemas
+ * @return array|null
+ */
+function findMatchingComponent(array $properties, array $componentSchemas, bool $isXml): ?array
+{
+    $sortedProperties = $properties;
+    sort($sortedProperties);
+
+    foreach ($componentSchemas as $componentName => $component) {
+        if (!isset($component['properties'])) {
+            continue;
+        }
+
+        $componentIsXml = isset($component['xml']);
+        if ($isXml !== $componentIsXml) {
+            continue;
+        }
+
+        $sortedComponentProperties = array_keys($component['properties']);
+        sort($sortedComponentProperties);
+
+        if ($sortedComponentProperties === $sortedProperties) {
+            return [
+                '$ref' => "#/components/schemas/$componentName",
+            ];
+        }
+    }
+
+    return null;
 }
 
 /**

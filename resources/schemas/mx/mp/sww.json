@@ -46,160 +46,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "boxDimensions",
-                                    "boxItems",
-                                    "carrierName",
-                                    "carrierServiceType",
-                                    "fromAddress",
-                                    "packageType",
-                                    "purchaseOrderId"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "packageType": {
-                                        "type": "string",
-                                        "description": "Package Type. Supported Package Types are - 'CUSTOM_PACKAGE', 'FEDEX_ENVELOPE', 'FEDEX_PAK'"
-                                    },
-                                    "boxDimensions": {
-                                        "required": [
-                                            "boxWeight",
-                                            "boxWeightUnit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "boxDimensionUnit": {
-                                                "type": "string",
-                                                "description": "Box Dimension Unit [CM, IN]. Mandatory for CUSTOM_PACKAGE type, otherwise not required",
-                                                "enum": [
-                                                    "CM",
-                                                    "IN"
-                                                ]
-                                            },
-                                            "boxWeightUnit": {
-                                                "type": "string",
-                                                "description": "Box Weight Unit [LB, KG]",
-                                                "enum": [
-                                                    "LB",
-                                                    "KG"
-                                                ]
-                                            },
-                                            "boxWeight": {
-                                                "type": "number",
-                                                "description": "Box Weight"
-                                            },
-                                            "boxLength": {
-                                                "type": "number",
-                                                "description": "Box Length. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
-                                            },
-                                            "boxWidth": {
-                                                "type": "number",
-                                                "description": "Box Width. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
-                                            },
-                                            "boxHeight": {
-                                                "type": "number",
-                                                "description": "Box Height. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
-                                            }
-                                        },
-                                        "description": "Box Dimensions"
-                                    },
-                                    "boxItems": {
-                                        "type": "array",
-                                        "description": "Box Items",
-                                        "items": {
-                                            "required": [
-                                                "countryOfOrigin",
-                                                "quantity",
-                                                "sku"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "sku": {
-                                                    "type": "string",
-                                                    "description": "sku of an item"
-                                                },
-                                                "quantity": {
-                                                    "type": "integer",
-                                                    "description": "Quantity of Item",
-                                                    "format": "int32"
-                                                },
-                                                "countryOfOrigin": {
-                                                    "type": "integer",
-                                                    "description": "Country Of Origin",
-                                                    "format": "int32"
-                                                }
-                                            },
-                                            "description": "Box Items"
-                                        }
-                                    },
-                                    "fromAddress": {
-                                        "required": [
-                                            "addressLine1",
-                                            "city",
-                                            "contactName",
-                                            "country",
-                                            "phone",
-                                            "postalCode",
-                                            "state"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "contactName": {
-                                                "type": "string",
-                                                "description": "Contact name"
-                                            },
-                                            "companyName": {
-                                                "type": "string",
-                                                "description": "Company name"
-                                            },
-                                            "addressLine1": {
-                                                "type": "string",
-                                                "description": "Address Line 1"
-                                            },
-                                            "addressLine2": {
-                                                "type": "string",
-                                                "description": "Address Line 2"
-                                            },
-                                            "city": {
-                                                "type": "string",
-                                                "description": "city"
-                                            },
-                                            "state": {
-                                                "type": "string",
-                                                "description": "state"
-                                            },
-                                            "postalCode": {
-                                                "type": "string",
-                                                "description": "postal code"
-                                            },
-                                            "country": {
-                                                "type": "string",
-                                                "description": "country"
-                                            },
-                                            "phone": {
-                                                "type": "string",
-                                                "description": "phone"
-                                            },
-                                            "email": {
-                                                "type": "string",
-                                                "description": "email"
-                                            }
-                                        },
-                                        "description": "From Address"
-                                    },
-                                    "purchaseOrderId": {
-                                        "type": "string",
-                                        "description": "Purchase Order Id"
-                                    },
-                                    "carrierName": {
-                                        "type": "string",
-                                        "description": "Carrier Name. For now, the only supported carrier is - 'FedEx'"
-                                    },
-                                    "carrierServiceType": {
-                                        "type": "string",
-                                        "description": "Carrier Service Type. For now, supported values are - 'FEDEX_INTERNATIONAL_PRIORITY' for fedExPak\/fedExEnvelope package types, 'FEDEX_INTERNATIONAL_ECONOMY' and 'FEDEX_INTERNATIONAL_GROUND'"
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/LabelGenerationRequestMx"
                             },
                             "example": {
                                 "packageType": "CUSTOM_PACKAGE",
@@ -244,130 +91,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "object",
-                                            "properties": {
-                                                "purchaseOrderId": {
-                                                    "type": "string",
-                                                    "description": "Purchase Order Id "
-                                                },
-                                                "trackingNo": {
-                                                    "type": "string",
-                                                    "description": "Tracking Number"
-                                                },
-                                                "boxItems": {
-                                                    "type": "array",
-                                                    "description": "Box Items",
-                                                    "items": {
-                                                        "required": [
-                                                            "quantity",
-                                                            "sku"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "sku": {
-                                                                "type": "string",
-                                                                "description": "sku of an item"
-                                                            },
-                                                            "quantity": {
-                                                                "type": "integer",
-                                                                "description": "Quantity of Item",
-                                                                "format": "int32"
-                                                            }
-                                                        },
-                                                        "description": "Box Items"
-                                                    }
-                                                },
-                                                "carrierName": {
-                                                    "type": "string",
-                                                    "description": "Carrier Short Name"
-                                                },
-                                                "carrierFullName": {
-                                                    "type": "string",
-                                                    "description": "Carrier Full Name"
-                                                },
-                                                "carrierServiceType": {
-                                                    "type": "string",
-                                                    "description": "Carrier Service Type"
-                                                },
-                                                "trackingUrl": {
-                                                    "type": "string",
-                                                    "description": "Tracking URL"
-                                                },
-                                                "shippingDocuments": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "documentFormat": {
-                                                            "type": "string"
-                                                        },
-                                                        "documentType": {
-                                                            "type": "string"
-                                                        },
-                                                        "base64EncodedDocument": {
-                                                            "type": "string"
-                                                        }
-                                                    },
-                                                    "description": "Shipping Documents"
-                                                }
-                                            },
-                                            "description": "data"
-                                        },
-                                        "errors": {
-                                            "type": "array",
-                                            "description": "errors",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "info": {
-                                                        "type": "string",
-                                                        "description": "error info"
-                                                    },
-                                                    "code": {
-                                                        "type": "string",
-                                                        "description": "error code"
-                                                    },
-                                                    "field": {
-                                                        "type": "string",
-                                                        "description": "field"
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "error description"
-                                                    },
-                                                    "severity": {
-                                                        "type": "string",
-                                                        "description": "error severity",
-                                                        "enum": [
-                                                            "EMERG",
-                                                            "ALERT",
-                                                            "CRITICAL",
-                                                            "ERROR",
-                                                            "WARN"
-                                                        ]
-                                                    },
-                                                    "category": {
-                                                        "type": "string",
-                                                        "description": "error category",
-                                                        "enum": [
-                                                            "APPLICATION",
-                                                            "SERVICE",
-                                                            "REQUEST",
-                                                            "DATA"
-                                                        ]
-                                                    },
-                                                    "httpStatus": {
-                                                        "type": "integer",
-                                                        "description": "error http status",
-                                                        "format": "int32"
-                                                    }
-                                                },
-                                                "description": "errors"
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
                                 },
                                 "example": {
                                     "data": {
@@ -439,134 +163,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "description": "data",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "purchaseOrderId": {
-                                                        "type": "string",
-                                                        "description": "Purchase Order Id "
-                                                    },
-                                                    "trackingNo": {
-                                                        "type": "string",
-                                                        "description": "Tracking Number"
-                                                    },
-                                                    "boxItems": {
-                                                        "type": "array",
-                                                        "description": "Box Items",
-                                                        "items": {
-                                                            "required": [
-                                                                "quantity",
-                                                                "sku"
-                                                            ],
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "sku": {
-                                                                    "type": "string",
-                                                                    "description": "sku of an item"
-                                                                },
-                                                                "quantity": {
-                                                                    "type": "integer",
-                                                                    "description": "Quantity of Item",
-                                                                    "format": "int32"
-                                                                }
-                                                            },
-                                                            "description": "Box Items"
-                                                        }
-                                                    },
-                                                    "carrierName": {
-                                                        "type": "string",
-                                                        "description": "Carrier Short Name"
-                                                    },
-                                                    "carrierFullName": {
-                                                        "type": "string",
-                                                        "description": "Carrier Full Name"
-                                                    },
-                                                    "carrierServiceType": {
-                                                        "type": "string",
-                                                        "description": "Carrier Service Type"
-                                                    },
-                                                    "trackingUrl": {
-                                                        "type": "string",
-                                                        "description": "Tracking URL"
-                                                    },
-                                                    "shippingDocuments": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "documentFormat": {
-                                                                "type": "string"
-                                                            },
-                                                            "documentType": {
-                                                                "type": "string"
-                                                            },
-                                                            "base64EncodedDocument": {
-                                                                "type": "string"
-                                                            }
-                                                        },
-                                                        "description": "Shipping Documents"
-                                                    }
-                                                },
-                                                "description": "data"
-                                            }
-                                        },
-                                        "errors": {
-                                            "type": "array",
-                                            "description": "errors",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "info": {
-                                                        "type": "string",
-                                                        "description": "error info"
-                                                    },
-                                                    "code": {
-                                                        "type": "string",
-                                                        "description": "error code"
-                                                    },
-                                                    "field": {
-                                                        "type": "string",
-                                                        "description": "field"
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "error description"
-                                                    },
-                                                    "severity": {
-                                                        "type": "string",
-                                                        "description": "error severity",
-                                                        "enum": [
-                                                            "EMERG",
-                                                            "ALERT",
-                                                            "CRITICAL",
-                                                            "ERROR",
-                                                            "WARN"
-                                                        ]
-                                                    },
-                                                    "category": {
-                                                        "type": "string",
-                                                        "description": "error category",
-                                                        "enum": [
-                                                            "APPLICATION",
-                                                            "SERVICE",
-                                                            "REQUEST",
-                                                            "DATA"
-                                                        ]
-                                                    },
-                                                    "httpStatus": {
-                                                        "type": "integer",
-                                                        "description": "error http status",
-                                                        "format": "int32"
-                                                    }
-                                                },
-                                                "description": "errors"
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
                                 },
                                 "example": {
                                     "data": [
@@ -624,84 +221,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "carriers": {
-                                            "type": "array",
-                                            "description": "carriers",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "carrierId": {
-                                                        "type": "string",
-                                                        "description": "The carried Id"
-                                                    },
-                                                    "shortName": {
-                                                        "type": "string",
-                                                        "description": "The carried short name"
-                                                    },
-                                                    "carrierName": {
-                                                        "type": "string",
-                                                        "description": "The carried name"
-                                                    }
-                                                },
-                                                "description": "carriers"
-                                            }
-                                        },
-                                        "errors": {
-                                            "type": "array",
-                                            "description": "errors",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "info": {
-                                                        "type": "string",
-                                                        "description": "error info"
-                                                    },
-                                                    "code": {
-                                                        "type": "string",
-                                                        "description": "error code"
-                                                    },
-                                                    "field": {
-                                                        "type": "string",
-                                                        "description": "field"
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "error description"
-                                                    },
-                                                    "severity": {
-                                                        "type": "string",
-                                                        "description": "error severity",
-                                                        "enum": [
-                                                            "EMERG",
-                                                            "ALERT",
-                                                            "CRITICAL",
-                                                            "ERROR",
-                                                            "WARN"
-                                                        ]
-                                                    },
-                                                    "category": {
-                                                        "type": "string",
-                                                        "description": "error category",
-                                                        "enum": [
-                                                            "APPLICATION",
-                                                            "SERVICE",
-                                                            "REQUEST",
-                                                            "DATA"
-                                                        ]
-                                                    },
-                                                    "httpStatus": {
-                                                        "type": "integer",
-                                                        "description": "error http status",
-                                                        "format": "int32"
-                                                    }
-                                                },
-                                                "description": "errors"
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/CarrierCommonResponseListCarrierResponse"
                                 },
                                 "example": {
                                     "carriers": [
@@ -826,66 +346,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "boolean",
-                                            "description": "data"
-                                        },
-                                        "errors": {
-                                            "type": "array",
-                                            "description": "errors",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "info": {
-                                                        "type": "string",
-                                                        "description": "error info"
-                                                    },
-                                                    "code": {
-                                                        "type": "string",
-                                                        "description": "error code"
-                                                    },
-                                                    "field": {
-                                                        "type": "string",
-                                                        "description": "field"
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "error description"
-                                                    },
-                                                    "severity": {
-                                                        "type": "string",
-                                                        "description": "error severity",
-                                                        "enum": [
-                                                            "EMERG",
-                                                            "ALERT",
-                                                            "CRITICAL",
-                                                            "ERROR",
-                                                            "WARN"
-                                                        ]
-                                                    },
-                                                    "category": {
-                                                        "type": "string",
-                                                        "description": "error category",
-                                                        "enum": [
-                                                            "APPLICATION",
-                                                            "SERVICE",
-                                                            "REQUEST",
-                                                            "DATA"
-                                                        ]
-                                                    },
-                                                    "httpStatus": {
-                                                        "type": "integer",
-                                                        "description": "error http status",
-                                                        "format": "int32"
-                                                    }
-                                                },
-                                                "description": "errors"
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
                                 },
                                 "example": {
                                     "data": "true"
@@ -937,103 +398,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "description": "data",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "id": {
-                                                        "type": "string",
-                                                        "description": "The carrier package Id"
-                                                    },
-                                                    "packageTypeShortName": {
-                                                        "type": "string",
-                                                        "description": "The carrier package short name"
-                                                    },
-                                                    "packageTypeDisplayName": {
-                                                        "type": "string",
-                                                        "description": "The carrier package display name"
-                                                    },
-                                                    "length": {
-                                                        "type": "integer",
-                                                        "description": "The package length",
-                                                        "format": "int32"
-                                                    },
-                                                    "width": {
-                                                        "type": "integer",
-                                                        "description": "The package width",
-                                                        "format": "int32"
-                                                    },
-                                                    "height": {
-                                                        "type": "integer",
-                                                        "description": "The package height",
-                                                        "format": "int32"
-                                                    },
-                                                    "dimensionUnit": {
-                                                        "type": "string",
-                                                        "description": "The package dimension unit"
-                                                    }
-                                                },
-                                                "description": "data"
-                                            }
-                                        },
-                                        "errors": {
-                                            "type": "array",
-                                            "description": "errors",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "info": {
-                                                        "type": "string",
-                                                        "description": "error info"
-                                                    },
-                                                    "code": {
-                                                        "type": "string",
-                                                        "description": "error code"
-                                                    },
-                                                    "field": {
-                                                        "type": "string",
-                                                        "description": "field"
-                                                    },
-                                                    "description": {
-                                                        "type": "string",
-                                                        "description": "error description"
-                                                    },
-                                                    "severity": {
-                                                        "type": "string",
-                                                        "description": "error severity",
-                                                        "enum": [
-                                                            "EMERG",
-                                                            "ALERT",
-                                                            "CRITICAL",
-                                                            "ERROR",
-                                                            "WARN"
-                                                        ]
-                                                    },
-                                                    "category": {
-                                                        "type": "string",
-                                                        "description": "error category",
-                                                        "enum": [
-                                                            "APPLICATION",
-                                                            "SERVICE",
-                                                            "REQUEST",
-                                                            "DATA"
-                                                        ]
-                                                    },
-                                                    "httpStatus": {
-                                                        "type": "integer",
-                                                        "description": "error http status",
-                                                        "format": "int32"
-                                                    }
-                                                },
-                                                "description": "errors"
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
                                 },
                                 "example": {
                                     "data": [
@@ -1195,130 +560,17 @@
                         "description": "Package Type. Supported Package Types are - 'CUSTOM_PACKAGE', 'FEDEX_ENVELOPE', 'FEDEX_PAK'"
                     },
                     "boxDimensions": {
-                        "required": [
-                            "boxWeight",
-                            "boxWeightUnit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "boxDimensionUnit": {
-                                "type": "string",
-                                "description": "Box Dimension Unit [CM, IN]. Mandatory for CUSTOM_PACKAGE type, otherwise not required",
-                                "enum": [
-                                    "CM",
-                                    "IN"
-                                ]
-                            },
-                            "boxWeightUnit": {
-                                "type": "string",
-                                "description": "Box Weight Unit [LB, KG]",
-                                "enum": [
-                                    "LB",
-                                    "KG"
-                                ]
-                            },
-                            "boxWeight": {
-                                "type": "number",
-                                "description": "Box Weight"
-                            },
-                            "boxLength": {
-                                "type": "number",
-                                "description": "Box Length. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
-                            },
-                            "boxWidth": {
-                                "type": "number",
-                                "description": "Box Width. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
-                            },
-                            "boxHeight": {
-                                "type": "number",
-                                "description": "Box Height. Mandatory for CUSTOM_PACKAGE type, otherwise not required"
-                            }
-                        },
-                        "description": "Box Dimensions"
+                        "$ref": "#\/components\/schemas\/BoxDimensions"
                     },
                     "boxItems": {
                         "type": "array",
                         "description": "Box Items",
                         "items": {
-                            "required": [
-                                "countryOfOrigin",
-                                "quantity",
-                                "sku"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "sku": {
-                                    "type": "string",
-                                    "description": "sku of an item"
-                                },
-                                "quantity": {
-                                    "type": "integer",
-                                    "description": "Quantity of Item",
-                                    "format": "int32"
-                                },
-                                "countryOfOrigin": {
-                                    "type": "integer",
-                                    "description": "Country Of Origin",
-                                    "format": "int32"
-                                }
-                            },
-                            "description": "Box Items"
+                            "$ref": "#\/components\/schemas\/MXBoxItemReq"
                         }
                     },
                     "fromAddress": {
-                        "required": [
-                            "addressLine1",
-                            "city",
-                            "contactName",
-                            "country",
-                            "phone",
-                            "postalCode",
-                            "state"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "contactName": {
-                                "type": "string",
-                                "description": "Contact name"
-                            },
-                            "companyName": {
-                                "type": "string",
-                                "description": "Company name"
-                            },
-                            "addressLine1": {
-                                "type": "string",
-                                "description": "Address Line 1"
-                            },
-                            "addressLine2": {
-                                "type": "string",
-                                "description": "Address Line 2"
-                            },
-                            "city": {
-                                "type": "string",
-                                "description": "city"
-                            },
-                            "state": {
-                                "type": "string",
-                                "description": "state"
-                            },
-                            "postalCode": {
-                                "type": "string",
-                                "description": "postal code"
-                            },
-                            "country": {
-                                "type": "string",
-                                "description": "country"
-                            },
-                            "phone": {
-                                "type": "string",
-                                "description": "phone"
-                            },
-                            "email": {
-                                "type": "string",
-                                "description": "email"
-                            }
-                        },
-                        "description": "From Address"
+                        "$ref": "#\/components\/schemas\/Address"
                     },
                     "purchaseOrderId": {
                         "type": "string",
@@ -1363,123 +615,13 @@
                 "type": "object",
                 "properties": {
                     "data": {
-                        "type": "object",
-                        "properties": {
-                            "purchaseOrderId": {
-                                "type": "string",
-                                "description": "Purchase Order Id "
-                            },
-                            "trackingNo": {
-                                "type": "string",
-                                "description": "Tracking Number"
-                            },
-                            "boxItems": {
-                                "type": "array",
-                                "description": "Box Items",
-                                "items": {
-                                    "required": [
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "sku of an item"
-                                        },
-                                        "quantity": {
-                                            "type": "integer",
-                                            "description": "Quantity of Item",
-                                            "format": "int32"
-                                        }
-                                    },
-                                    "description": "Box Items"
-                                }
-                            },
-                            "carrierName": {
-                                "type": "string",
-                                "description": "Carrier Short Name"
-                            },
-                            "carrierFullName": {
-                                "type": "string",
-                                "description": "Carrier Full Name"
-                            },
-                            "carrierServiceType": {
-                                "type": "string",
-                                "description": "Carrier Service Type"
-                            },
-                            "trackingUrl": {
-                                "type": "string",
-                                "description": "Tracking URL"
-                            },
-                            "shippingDocuments": {
-                                "type": "object",
-                                "properties": {
-                                    "documentFormat": {
-                                        "type": "string"
-                                    },
-                                    "documentType": {
-                                        "type": "string"
-                                    },
-                                    "base64EncodedDocument": {
-                                        "type": "string"
-                                    }
-                                },
-                                "description": "Shipping Documents"
-                            }
-                        },
-                        "description": "data"
+                        "$ref": "#\/components\/schemas\/LabelGenerationResponseMx"
                     },
                     "errors": {
                         "type": "array",
                         "description": "errors",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "info": {
-                                    "type": "string",
-                                    "description": "error info"
-                                },
-                                "code": {
-                                    "type": "string",
-                                    "description": "error code"
-                                },
-                                "field": {
-                                    "type": "string",
-                                    "description": "field"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "error description"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "description": "error severity",
-                                    "enum": [
-                                        "EMERG",
-                                        "ALERT",
-                                        "CRITICAL",
-                                        "ERROR",
-                                        "WARN"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "description": "error category",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SERVICE",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "httpStatus": {
-                                    "type": "integer",
-                                    "description": "error http status",
-                                    "format": "int32"
-                                }
-                            },
-                            "description": "errors"
+                            "$ref": "#\/components\/schemas\/ErrorResponse"
                         }
                     }
                 }
@@ -1547,23 +689,7 @@
                         "type": "array",
                         "description": "Box Items",
                         "items": {
-                            "required": [
-                                "quantity",
-                                "sku"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "sku": {
-                                    "type": "string",
-                                    "description": "sku of an item"
-                                },
-                                "quantity": {
-                                    "type": "integer",
-                                    "description": "Quantity of Item",
-                                    "format": "int32"
-                                }
-                            },
-                            "description": "Box Items"
+                            "$ref": "#\/components\/schemas\/MXBoxItemResponse"
                         }
                     },
                     "carrierName": {
@@ -1583,19 +709,7 @@
                         "description": "Tracking URL"
                     },
                     "shippingDocuments": {
-                        "type": "object",
-                        "properties": {
-                            "documentFormat": {
-                                "type": "string"
-                            },
-                            "documentType": {
-                                "type": "string"
-                            },
-                            "base64EncodedDocument": {
-                                "type": "string"
-                            }
-                        },
-                        "description": "Shipping Documents"
+                        "$ref": "#\/components\/schemas\/ShippingDocument"
                     }
                 },
                 "description": "data"
@@ -1641,124 +755,14 @@
                         "type": "array",
                         "description": "data",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "purchaseOrderId": {
-                                    "type": "string",
-                                    "description": "Purchase Order Id "
-                                },
-                                "trackingNo": {
-                                    "type": "string",
-                                    "description": "Tracking Number"
-                                },
-                                "boxItems": {
-                                    "type": "array",
-                                    "description": "Box Items",
-                                    "items": {
-                                        "required": [
-                                            "quantity",
-                                            "sku"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "sku": {
-                                                "type": "string",
-                                                "description": "sku of an item"
-                                            },
-                                            "quantity": {
-                                                "type": "integer",
-                                                "description": "Quantity of Item",
-                                                "format": "int32"
-                                            }
-                                        },
-                                        "description": "Box Items"
-                                    }
-                                },
-                                "carrierName": {
-                                    "type": "string",
-                                    "description": "Carrier Short Name"
-                                },
-                                "carrierFullName": {
-                                    "type": "string",
-                                    "description": "Carrier Full Name"
-                                },
-                                "carrierServiceType": {
-                                    "type": "string",
-                                    "description": "Carrier Service Type"
-                                },
-                                "trackingUrl": {
-                                    "type": "string",
-                                    "description": "Tracking URL"
-                                },
-                                "shippingDocuments": {
-                                    "type": "object",
-                                    "properties": {
-                                        "documentFormat": {
-                                            "type": "string"
-                                        },
-                                        "documentType": {
-                                            "type": "string"
-                                        },
-                                        "base64EncodedDocument": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "description": "Shipping Documents"
-                                }
-                            },
-                            "description": "data"
+                            "$ref": "#\/components\/schemas\/LabelGenerationResponseMx"
                         }
                     },
                     "errors": {
                         "type": "array",
                         "description": "errors",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "info": {
-                                    "type": "string",
-                                    "description": "error info"
-                                },
-                                "code": {
-                                    "type": "string",
-                                    "description": "error code"
-                                },
-                                "field": {
-                                    "type": "string",
-                                    "description": "field"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "error description"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "description": "error severity",
-                                    "enum": [
-                                        "EMERG",
-                                        "ALERT",
-                                        "CRITICAL",
-                                        "ERROR",
-                                        "WARN"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "description": "error category",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SERVICE",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "httpStatus": {
-                                    "type": "integer",
-                                    "description": "error http status",
-                                    "format": "int32"
-                                }
-                            },
-                            "description": "errors"
+                            "$ref": "#\/components\/schemas\/ErrorResponse"
                         }
                     }
                 }
@@ -1770,74 +774,14 @@
                         "type": "array",
                         "description": "carriers",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "carrierId": {
-                                    "type": "string",
-                                    "description": "The carried Id"
-                                },
-                                "shortName": {
-                                    "type": "string",
-                                    "description": "The carried short name"
-                                },
-                                "carrierName": {
-                                    "type": "string",
-                                    "description": "The carried name"
-                                }
-                            },
-                            "description": "carriers"
+                            "$ref": "#\/components\/schemas\/CarrierResponse"
                         }
                     },
                     "errors": {
                         "type": "array",
                         "description": "errors",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "info": {
-                                    "type": "string",
-                                    "description": "error info"
-                                },
-                                "code": {
-                                    "type": "string",
-                                    "description": "error code"
-                                },
-                                "field": {
-                                    "type": "string",
-                                    "description": "field"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "error description"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "description": "error severity",
-                                    "enum": [
-                                        "EMERG",
-                                        "ALERT",
-                                        "CRITICAL",
-                                        "ERROR",
-                                        "WARN"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "description": "error category",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SERVICE",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "httpStatus": {
-                                    "type": "integer",
-                                    "description": "error http status",
-                                    "format": "int32"
-                                }
-                            },
-                            "description": "errors"
+                            "$ref": "#\/components\/schemas\/ErrorResponse"
                         }
                     }
                 }
@@ -1904,93 +848,14 @@
                         "type": "array",
                         "description": "data",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "description": "The carrier package Id"
-                                },
-                                "packageTypeShortName": {
-                                    "type": "string",
-                                    "description": "The carrier package short name"
-                                },
-                                "packageTypeDisplayName": {
-                                    "type": "string",
-                                    "description": "The carrier package display name"
-                                },
-                                "length": {
-                                    "type": "integer",
-                                    "description": "The package length",
-                                    "format": "int32"
-                                },
-                                "width": {
-                                    "type": "integer",
-                                    "description": "The package width",
-                                    "format": "int32"
-                                },
-                                "height": {
-                                    "type": "integer",
-                                    "description": "The package height",
-                                    "format": "int32"
-                                },
-                                "dimensionUnit": {
-                                    "type": "string",
-                                    "description": "The package dimension unit"
-                                }
-                            },
-                            "description": "data"
+                            "$ref": "#\/components\/schemas\/CarrierPackageResponse"
                         }
                     },
                     "errors": {
                         "type": "array",
                         "description": "errors",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "info": {
-                                    "type": "string",
-                                    "description": "error info"
-                                },
-                                "code": {
-                                    "type": "string",
-                                    "description": "error code"
-                                },
-                                "field": {
-                                    "type": "string",
-                                    "description": "field"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "error description"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "description": "error severity",
-                                    "enum": [
-                                        "EMERG",
-                                        "ALERT",
-                                        "CRITICAL",
-                                        "ERROR",
-                                        "WARN"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "description": "error category",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SERVICE",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "httpStatus": {
-                                    "type": "integer",
-                                    "description": "error http status",
-                                    "format": "int32"
-                                }
-                            },
-                            "description": "errors"
+                            "$ref": "#\/components\/schemas\/ErrorResponse"
                         }
                     }
                 }
@@ -2006,52 +871,7 @@
                         "type": "array",
                         "description": "errors",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "info": {
-                                    "type": "string",
-                                    "description": "error info"
-                                },
-                                "code": {
-                                    "type": "string",
-                                    "description": "error code"
-                                },
-                                "field": {
-                                    "type": "string",
-                                    "description": "field"
-                                },
-                                "description": {
-                                    "type": "string",
-                                    "description": "error description"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "description": "error severity",
-                                    "enum": [
-                                        "EMERG",
-                                        "ALERT",
-                                        "CRITICAL",
-                                        "ERROR",
-                                        "WARN"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "description": "error category",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SERVICE",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "httpStatus": {
-                                    "type": "integer",
-                                    "description": "error http status",
-                                    "format": "int32"
-                                }
-                            },
-                            "description": "errors"
+                            "$ref": "#\/components\/schemas\/ErrorResponse"
                         }
                     }
                 }

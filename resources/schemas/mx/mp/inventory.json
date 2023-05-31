@@ -46,39 +46,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID"
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "The number available in the inventory"
-                                                }
-                                            },
-                                            "description": "Information about the quantity in inventory"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/Inventory"
                                 },
                                 "example": {
                                     "sku": "sku-e2e-0723x",
@@ -121,38 +89,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "quantity",
-                                    "sku"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "sku": {
-                                        "type": "string",
-                                        "description": "A seller-provided Product ID"
-                                    },
-                                    "quantity": {
-                                        "required": [
-                                            "amount",
-                                            "unit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "unit": {
-                                                "type": "string",
-                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                "enum": [
-                                                    "EACH"
-                                                ]
-                                            },
-                                            "amount": {
-                                                "type": "number",
-                                                "description": "The number available in the inventory"
-                                            }
-                                        },
-                                        "description": "Information about the quantity in inventory"
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/Inventory"
                             },
                             "example": {
                                 "sku": "sku-e2e-0723x",
@@ -208,39 +145,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID"
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "The number available in the inventory"
-                                                }
-                                            },
-                                            "description": "Information about the quantity in inventory"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/Inventory"
                                 },
                                 "example": {
                                     "sku": "sku-e2e-0723x",
@@ -341,22 +246,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedId"
                                 },
                                 "example": {
                                     "feedId": "3B6F0372F68949A0AB2DD89CE0726FCB@AQkBAQA"
@@ -388,25 +278,7 @@
                         "description": "A seller-provided Product ID"
                     },
                     "quantity": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "The number available in the inventory"
-                            }
-                        },
-                        "description": "Information about the quantity in inventory"
+                        "$ref": "#\/components\/schemas\/Quantity"
                     }
                 }
             },

@@ -67,43 +67,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "string"
-                                        },
-                                        "payload": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "category": {
-                                                        "type": "string",
-                                                        "description": "Type of item"
-                                                    },
-                                                    "subcategory": {
-                                                        "type": "array",
-                                                        "description": "Specific kind of category",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "subCategoryName": {
-                                                                    "type": "string",
-                                                                    "description": "Name of specific kind of category"
-                                                                },
-                                                                "subCategoryId": {
-                                                                    "type": "string",
-                                                                    "description": "ID of specific kind of category"
-                                                                }
-                                                            },
-                                                            "description": "Specific kind of category"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -166,45 +130,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "string"
-                                        },
-                                        "payload": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "superDepartment": {
-                                                        "type": "string",
-                                                        "description": "The super-department name for which the department have to be fetched"
-                                                    },
-                                                    "superDepartmentId": {
-                                                        "type": "string",
-                                                        "description": "The super-department id for which the department have to be fetched"
-                                                    },
-                                                    "departments": {
-                                                        "type": "array",
-                                                        "items": {
-                                                            "type": "object",
-                                                            "properties": {
-                                                                "departmentName": {
-                                                                    "type": "string",
-                                                                    "description": "The department name for which the categories have to be fetched"
-                                                                },
-                                                                "departmentId": {
-                                                                    "type": "string",
-                                                                    "description": "The department id for which the categories have to be fetched"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -341,42 +267,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "status": {
-                                            "type": "string"
-                                        },
-                                        "response": {
-                                            "type": "object",
-                                            "properties": {
-                                                "departmentName": {
-                                                    "type": "string",
-                                                    "description": "The department name for which the categories have to be fetched"
-                                                },
-                                                "departmentId": {
-                                                    "type": "string",
-                                                    "description": "The department id for which the categories have to be fetched"
-                                                },
-                                                "category": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "categoryName": {
-                                                                "type": "string",
-                                                                "description": "The category name for which the top trending items have to be fetched"
-                                                            },
-                                                            "categoryId": {
-                                                                "type": "string",
-                                                                "description": "The category id for which the top trending items have to be fetched"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/GetCategories"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -433,51 +324,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "apiStatuses": {
-                                            "type": "array",
-                                            "description": "A-List of all API statuses",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "apiGroup": {
-                                                        "type": "string",
-                                                        "description": "The marketplace api group",
-                                                        "enum": [
-                                                            "Returns",
-                                                            "Items",
-                                                            "Sandbox",
-                                                            "Lagtime",
-                                                            "Promos",
-                                                            "Orders",
-                                                            "Authentication",
-                                                            "Price",
-                                                            "Refunds",
-                                                            "Authorization",
-                                                            "Inventory"
-                                                        ]
-                                                    },
-                                                    "status": {
-                                                        "type": "string",
-                                                        "description": "The current status of marketplace api group",
-                                                        "enum": [
-                                                            "OPERATIONAL",
-                                                            "SERVICE_DEGRADATION",
-                                                            "SERVICE_OUTAGE",
-                                                            "UNKNOWN"
-                                                        ]
-                                                    },
-                                                    "lastUpdatedTime": {
-                                                        "type": "string",
-                                                        "description": "The time at which the status of api group collected. This datetime field is in the ISO 8601 format."
-                                                    }
-                                                },
-                                                "description": "A-List of all API statuses"
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/StatusAPIResponse"
                                 },
                                 "example": {
                                     "apiStatuses": [
@@ -563,18 +410,7 @@
                         "type": "array",
                         "description": "Specific kind of category",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "subCategoryName": {
-                                    "type": "string",
-                                    "description": "Name of specific kind of category"
-                                },
-                                "subCategoryId": {
-                                    "type": "string",
-                                    "description": "ID of specific kind of category"
-                                }
-                            },
-                            "description": "Specific kind of category"
+                            "$ref": "#\/components\/schemas\/SubCategory"
                         }
                     }
                 }
@@ -602,31 +438,7 @@
                     "payload": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "category": {
-                                    "type": "string",
-                                    "description": "Type of item"
-                                },
-                                "subcategory": {
-                                    "type": "array",
-                                    "description": "Specific kind of category",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "subCategoryName": {
-                                                "type": "string",
-                                                "description": "Name of specific kind of category"
-                                            },
-                                            "subCategoryId": {
-                                                "type": "string",
-                                                "description": "ID of specific kind of category"
-                                            }
-                                        },
-                                        "description": "Specific kind of category"
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/CategoryPayload"
                         }
                     }
                 }
@@ -653,33 +465,7 @@
                     "payload": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "superDepartment": {
-                                    "type": "string",
-                                    "description": "The super-department name for which the department have to be fetched"
-                                },
-                                "superDepartmentId": {
-                                    "type": "string",
-                                    "description": "The super-department id for which the department have to be fetched"
-                                },
-                                "departments": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "departmentName": {
-                                                "type": "string",
-                                                "description": "The department name for which the categories have to be fetched"
-                                            },
-                                            "departmentId": {
-                                                "type": "string",
-                                                "description": "The department id for which the categories have to be fetched"
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/Payload"
                         }
                     }
                 }
@@ -698,17 +484,7 @@
                     "departments": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "departmentName": {
-                                    "type": "string",
-                                    "description": "The department name for which the categories have to be fetched"
-                                },
-                                "departmentId": {
-                                    "type": "string",
-                                    "description": "The department id for which the categories have to be fetched"
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/Department"
                         }
                     }
                 }
@@ -733,33 +509,7 @@
                         "type": "string"
                     },
                     "response": {
-                        "type": "object",
-                        "properties": {
-                            "departmentName": {
-                                "type": "string",
-                                "description": "The department name for which the categories have to be fetched"
-                            },
-                            "departmentId": {
-                                "type": "string",
-                                "description": "The department id for which the categories have to be fetched"
-                            },
-                            "category": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "categoryName": {
-                                            "type": "string",
-                                            "description": "The category name for which the top trending items have to be fetched"
-                                        },
-                                        "categoryId": {
-                                            "type": "string",
-                                            "description": "The category id for which the top trending items have to be fetched"
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/Response"
                     }
                 }
             },
@@ -777,17 +527,7 @@
                     "category": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "categoryName": {
-                                    "type": "string",
-                                    "description": "The category name for which the top trending items have to be fetched"
-                                },
-                                "categoryId": {
-                                    "type": "string",
-                                    "description": "The category id for which the top trending items have to be fetched"
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/Category"
                         }
                     }
                 }
@@ -799,41 +539,7 @@
                         "type": "array",
                         "description": "A-List of all API statuses",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "apiGroup": {
-                                    "type": "string",
-                                    "description": "The marketplace api group",
-                                    "enum": [
-                                        "Returns",
-                                        "Items",
-                                        "Sandbox",
-                                        "Lagtime",
-                                        "Promos",
-                                        "Orders",
-                                        "Authentication",
-                                        "Price",
-                                        "Refunds",
-                                        "Authorization",
-                                        "Inventory"
-                                    ]
-                                },
-                                "status": {
-                                    "type": "string",
-                                    "description": "The current status of marketplace api group",
-                                    "enum": [
-                                        "OPERATIONAL",
-                                        "SERVICE_DEGRADATION",
-                                        "SERVICE_OUTAGE",
-                                        "UNKNOWN"
-                                    ]
-                                },
-                                "lastUpdatedTime": {
-                                    "type": "string",
-                                    "description": "The time at which the status of api group collected. This datetime field is in the ISO 8601 format."
-                                }
-                            },
-                            "description": "A-List of all API statuses"
+                            "$ref": "#\/components\/schemas\/StatusAPIResponseDTO"
                         }
                     }
                 }

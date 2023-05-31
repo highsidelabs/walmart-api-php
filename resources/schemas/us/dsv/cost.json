@@ -37,46 +37,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "header": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "Cost": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "sku": {
-                                                    "type": "string",
-                                                    "description": "An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item."
-                                                },
-                                                "shipNode": {
-                                                    "type": "string",
-                                                    "description": "This parameter specifies the Distributor ID for which the data should be updated"
-                                                },
-                                                "unitCost": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "amount": {
-                                                            "type": "number",
-                                                            "description": "The currency of the cost. Example: USD for US Dollars"
-                                                        },
-                                                        "currency": {
-                                                            "type": "string",
-                                                            "description": "The numerical value of the cost. Example: 9.99"
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
+                                "$ref": "#\/components\/schemas\/DsvCostUpdateRequest"
                             }
                         }
                     },
@@ -88,20 +49,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the Feed File."
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "string"
-                                        },
-                                        "error": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/DsvCostUpdateResponse"
                                 }
                             }
                         }
@@ -137,40 +85,12 @@
                 "type": "object",
                 "properties": {
                     "header": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/Header"
                     },
                     "Cost": {
                         "type": "array",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "sku": {
-                                    "type": "string",
-                                    "description": "An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item."
-                                },
-                                "shipNode": {
-                                    "type": "string",
-                                    "description": "This parameter specifies the Distributor ID for which the data should be updated"
-                                },
-                                "unitCost": {
-                                    "type": "object",
-                                    "properties": {
-                                        "amount": {
-                                            "type": "number",
-                                            "description": "The currency of the cost. Example: USD for US Dollars"
-                                        },
-                                        "currency": {
-                                            "type": "string",
-                                            "description": "The numerical value of the cost. Example: 9.99"
-                                        }
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/ItemCost"
                         }
                     }
                 }
@@ -195,17 +115,7 @@
                         "description": "This parameter specifies the Distributor ID for which the data should be updated"
                     },
                     "unitCost": {
-                        "type": "object",
-                        "properties": {
-                            "amount": {
-                                "type": "number",
-                                "description": "The currency of the cost. Example: USD for US Dollars"
-                            },
-                            "currency": {
-                                "type": "string",
-                                "description": "The numerical value of the cost. Example: 9.99"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/UnitCost"
                     }
                 }
             },
