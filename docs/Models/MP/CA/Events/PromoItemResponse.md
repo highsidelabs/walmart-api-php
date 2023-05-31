@@ -1,4 +1,4 @@
-# #CA\MP\PromoItemResponse
+# Walmart\Models\MP\CA\Events\PromoItemResponse
 
 ## Properties
 
@@ -25,4 +25,4 @@ Name | Type | Description | Notes
 **feedback** | **string** | The Feedback | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

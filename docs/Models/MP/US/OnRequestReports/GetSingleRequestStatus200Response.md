@@ -1,4 +1,4 @@
-# #US\MP\GetSingleRequestStatus200Response
+# Walmart\Models\MP\US\OnRequestReports\GetSingleRequestStatus200Response
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **reportGenerationDate** | **string** | Date and time on which the report is generated. Attribute is available only if report is generated. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

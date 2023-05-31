@@ -1,4 +1,4 @@
-# #CA\MP\GetAllOrders200ResponseMeta
+# Walmart\Models\MP\CA\Orders\GetAllOrders200ResponseMeta
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **nextCursor** | **string** | The nextCursor element contains the string that should be send as a query parameter to the subsequent GET call to get the next page of results. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner
+# Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInner
 
 ## Properties
 
@@ -21,4 +21,4 @@ Name | Type | Description | Notes
 **shipmentDates** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner.md) | Shipment dates | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

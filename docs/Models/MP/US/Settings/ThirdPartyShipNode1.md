@@ -1,4 +1,4 @@
-# #US\MP\ThirdPartyShipNode1
+# Walmart\Models\MP\US\Settings\ThirdPartyShipNode1
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **status** | **string** | Status of fulfillment center. Allowed values: ACTIVE, INACTIVE. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

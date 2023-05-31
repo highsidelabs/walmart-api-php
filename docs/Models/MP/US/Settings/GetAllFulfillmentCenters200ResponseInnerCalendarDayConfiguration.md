@@ -1,4 +1,4 @@
-# #US\MP\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration
+# Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfiguration
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **carrierWeekendCalendar** | [**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar**](GetAllFulfillmentCenters200ResponseInnerCalendarDayConfigurationCarrierWeekendCalendar.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

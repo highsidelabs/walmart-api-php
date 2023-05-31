@@ -1,12 +1,12 @@
-# Walmart\Api\US\MPUtilitiesApi  
+# Walmart\Apis\MP\US\UtilitiesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getApiPlatformStatus()**](UtilitiesApi.md#getApiPlatformStatus) | **GET** /v3/utilities/apiStatus | API Platform Status |
-| [**getCategories()**](UtilitiesApi.md#getCategories) | **GET** /v3/utilities/taxonomy/departments/{departmentId} | All Categories |
-| [**getDepartmentList()**](UtilitiesApi.md#getDepartmentList) | **GET** /v3/utilities/taxonomy/departments | All Departments |
-| [**getTaxonomyResponse()**](UtilitiesApi.md#getTaxonomyResponse) | **GET** /v3/utilities/taxonomy | Taxonomy by spec |
+| [**getApiPlatformStatus()**](#getApiPlatformStatus) | **GET** /v3/utilities/apiStatus | API Platform Status |
+| [**getCategories()**](#getCategories) | **GET** /v3/utilities/taxonomy/departments/{departmentId} | All Categories |
+| [**getDepartmentList()**](#getDepartmentList) | **GET** /v3/utilities/taxonomy/departments | All Departments |
+| [**getTaxonomyResponse()**](#getTaxonomyResponse) | **GET** /v3/utilities/taxonomy | Taxonomy by spec |
 
 
 ## `getApiPlatformStatus()`
@@ -22,29 +22,28 @@ Get all marketplace Apis status
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->utilities();
 
 
 try {
-    $result = $apiInstance->getApiPlatformStatus();
+    $result = $api->getApiPlatformStatus();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling UtilitiesApi->getApiPlatformStatus: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -60,9 +59,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getCategories()`
 
@@ -77,30 +76,29 @@ Get list of categories for a specific department
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->utilities();
 
 $departmentId = 'departmentId_example'; // string | departmentId
 
 try {
-    $result = $apiInstance->getCategories($departmentId);
+    $result = $api->getCategories($departmentId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling UtilitiesApi->getCategories: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **departmentId** | **string**| departmentId | |
 
@@ -118,9 +116,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getDepartmentList()`
 
@@ -135,29 +133,28 @@ Get list of departments
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->utilities();
 
 
 try {
-    $result = $apiInstance->getDepartmentList();
+    $result = $api->getDepartmentList();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling UtilitiesApi->getDepartmentList: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -173,9 +170,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getTaxonomyResponse()`
 
@@ -190,31 +187,30 @@ The Taxonomy by Item spec API exposes the category taxonomy that Walmart.com use
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\UtilitiesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->utilities();
 
 $feedType = 'feedType_example'; // string | Specifies the Feed Type
 $version = 'version_example'; // string | Specifies the version for the Feed Type
 
 try {
-    $result = $apiInstance->getTaxonomyResponse($feedType, $version);
+    $result = $api->getTaxonomyResponse($feedType, $version);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling UtilitiesApi->getTaxonomyResponse: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Specifies the Feed Type | [optional] |
 | **version** | **string**| Specifies the version for the Feed Type | [optional] |
@@ -233,6 +229,6 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

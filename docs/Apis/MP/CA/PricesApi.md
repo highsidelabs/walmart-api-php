@@ -1,10 +1,10 @@
-# Walmart\Api\CA\MPPricesApi  
+# Walmart\Apis\MP\CA\PricesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**priceBulkUploads()**](PricesApi.md#priceBulkUploads) | **POST** /v3/ca/feeds | Update bulk prices |
-| [**updatePriceCA()**](PricesApi.md#updatePriceCA) | **PUT** /v3/ca/price | Update a price |
+| [**priceBulkUploads()**](#priceBulkUploads) | **POST** /v3/ca/feeds | Update bulk prices |
+| [**updatePriceCA()**](#updatePriceCA) | **PUT** /v3/ca/price | Update a price |
 
 
 ## `priceBulkUploads()`
@@ -20,32 +20,37 @@ Updates prices in bulk.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $feedType = 'feedType_example'; // string | The feed Type
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->priceBulkUploads($feedType, $file);
+    $result = $api->priceBulkUploads($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->priceBulkUploads: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The feed Type | |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -64,9 +69,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `updatePriceCA()`
 
@@ -81,19 +86,23 @@ Updates the regular price for a given item.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $body = <Price xmlns="http://walmart.com/">
     <itemIdentifier>
@@ -109,14 +118,15 @@ $body = <Price xmlns="http://walmart.com/">
 </Price>; // string
 
 try {
-    $result = $apiInstance->updatePriceCA($body);
+    $result = $api->updatePriceCA($body);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->updatePriceCA: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **body** | **string**|  | |
 
@@ -134,6 +144,6 @@ try {
 - **Content-Type**: `application/xml`
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)

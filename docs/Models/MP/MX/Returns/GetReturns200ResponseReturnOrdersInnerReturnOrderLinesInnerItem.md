@@ -1,4 +1,4 @@
-# #MX\MP\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem
+# Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItem
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **sku** | **string** | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters hyphen (-), space ( ), and period (.) are not allowed. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

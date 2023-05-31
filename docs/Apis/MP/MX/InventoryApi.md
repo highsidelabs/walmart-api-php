@@ -1,11 +1,11 @@
-# Walmart\Api\MX\MPInventoryApi  
+# Walmart\Apis\MP\MX\InventoryApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getInventory()**](InventoryApi.md#getInventory) | **GET** /v3/inventory | Get Inventory |
-| [**updateBulkInventory()**](InventoryApi.md#updateBulkInventory) | **POST** /v3/feeds | Update bulk inventory |
-| [**updateInventoryForAnItem()**](InventoryApi.md#updateInventoryForAnItem) | **PUT** /v3/inventory | Update inventory |
+| [**getInventory()**](#getInventory) | **GET** /v3/inventory | Get Inventory |
+| [**updateBulkInventory()**](#updateBulkInventory) | **POST** /v3/feeds | Update bulk inventory |
+| [**updateInventoryForAnItem()**](#updateInventoryForAnItem) | **PUT** /v3/inventory | Update inventory |
 
 
 ## `getInventory()`
@@ -21,32 +21,32 @@ You can use this API to get the inventory for a given item.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | A seller-provided Product ID
 
 try {
-    $result = $apiInstance->getInventory($sku);
+    $result = $api->getInventory($sku);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->getInventory: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| A seller-provided Product ID | |
 
@@ -64,9 +64,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `updateBulkInventory()`
 
@@ -81,33 +81,33 @@ Updates inventory for items in bulk. Refer to the throttling limits before uploa
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $feedType = 'inventory'; // string | Includes details of each entity in the feed. Do not set this parameter to true.
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->updateBulkInventory($feedType, $file);
+    $result = $api->updateBulkInventory($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateBulkInventory: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'inventory'] |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -126,9 +126,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `updateInventoryForAnItem()`
 
@@ -143,33 +143,33 @@ Updates the inventory for a given item.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, identifying each item.
 $updateInventoryForAnItemRequest = {"sku":"sku-e2e-0723x","quantity":{"unit":"EACH","amount":8596}}; // \Walmart\Models\MP\MX\Inventory\UpdateInventoryForAnItemRequest | File fields
 
 try {
-    $result = $apiInstance->updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest);
+    $result = $api->updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateInventoryForAnItem: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
 | **updateInventoryForAnItemRequest** | [**\Walmart\Models\MP\MX\Inventory\UpdateInventoryForAnItemRequest**](../Model/UpdateInventoryForAnItemRequest.md)| File fields | |
@@ -188,6 +188,6 @@ try {
 - **Content-Type**: `application/json`, `application/xml`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)

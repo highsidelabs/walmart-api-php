@@ -1,4 +1,4 @@
-# #US\MP\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner
+# Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerShippingDetailsInnerTwoDayShippingInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **carrierMethodType** | **string** | Shipping method. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

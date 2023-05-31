@@ -1,4 +1,4 @@
-# #US\MP\CreateShipment200ResponsePayloadInner
+# Walmart\Models\MP\US\Fulfillment\CreateShipment200ResponsePayloadInner
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **expectedDeliveryDate** | **\DateTime** | expected delivery date for inbounding shipment. Can be different from provided in the rquest based on network capacity | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

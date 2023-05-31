@@ -1,4 +1,4 @@
-# #US\MP\CreateCustomerOrderRequestWrapper
+# Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **payload** | [**\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayload**](CreateFulfillmentRequestPayload.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

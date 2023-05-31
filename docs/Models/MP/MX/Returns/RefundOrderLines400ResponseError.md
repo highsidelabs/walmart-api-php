@@ -1,4 +1,4 @@
-# #MX\MP\RefundOrderLines400ResponseError
+# Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseError
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **errorIdentifiers** | [**\Walmart\Models\MP\MX\Returns\RefundOrderLines400ResponseErrorErrorIdentifiers**](RefundOrderLines400ResponseErrorErrorIdentifiers.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

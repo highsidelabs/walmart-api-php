@@ -1,11 +1,11 @@
-# Walmart\Api\US\MPReturnsApi  
+# Walmart\Apis\MP\US\ReturnsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**bulkItemOverrideFeed()**](ReturnsApi.md#bulkItemOverrideFeed) | **POST** /v3/feeds | Return Item Overrides |
-| [**getReturns()**](ReturnsApi.md#getReturns) | **GET** /v3/returns | Returns |
-| [**issueRefund()**](ReturnsApi.md#issueRefund) | **POST** /v3/returns/{returnOrderId}/refund | Issue refund |
+| [**bulkItemOverrideFeed()**](#bulkItemOverrideFeed) | **POST** /v3/feeds | Return Item Overrides |
+| [**getReturns()**](#getReturns) | **GET** /v3/returns | Returns |
+| [**issueRefund()**](#issueRefund) | **POST** /v3/returns/{returnOrderId}/refund | Issue refund |
 
 
 ## `bulkItemOverrideFeed()`
@@ -21,31 +21,30 @@ Sellers can specify global settings for returns in Seller Center, and they can o
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->returns();
 
 $feedType = 'RETURNS_OVERRIDES'; // string | Feed Type
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->bulkItemOverrideFeed($feedType, $file);
+    $result = $api->bulkItemOverrideFeed($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->bulkItemOverrideFeed: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Feed Type | [default to 'RETURNS_OVERRIDES'] |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -64,9 +63,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getReturns()`
 
@@ -81,18 +80,16 @@ Retrieves the details of return orders for the specified filter criteria.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->returns();
 
 $returnOrderId = 'returnOrderId_example'; // string | Return order identifier of the return order object as part of array. This is the same as RMA number.
 $customerOrderId = 'customerOrderId_example'; // string | A unique ID associated with the sales order for specified customer
@@ -106,14 +103,15 @@ $returnLastModifiedEndDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \Dat
 $limit = '10'; // string | The number of orders to be returned. Cannot be larger than 200
 
 try {
-    $result = $apiInstance->getReturns($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit);
+    $result = $api->getReturns($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->getReturns: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| Return order identifier of the return order object as part of array. This is the same as RMA number. | [optional] |
 | **customerOrderId** | **string**| A unique ID associated with the sales order for specified customer | [optional] |
@@ -140,9 +138,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `issueRefund()`
 
@@ -157,31 +155,30 @@ This API allows sellers to issue refund against a return order. Multiple return 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->returns();
 
 $returnOrderId = 'returnOrderId_example'; // string | The return order ID
 $issueRefundRequest = {"customerOrderId":"1535274411287","refundLines":[{"returnOrderLineNumber":1}]}; // \Walmart\Models\MP\US\Returns\IssueRefundRequest | File fields
 
 try {
-    $result = $apiInstance->issueRefund($returnOrderId, $issueRefundRequest);
+    $result = $api->issueRefund($returnOrderId, $issueRefundRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->issueRefund: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| The return order ID | |
 | **issueRefundRequest** | [**\Walmart\Models\MP\US\Returns\IssueRefundRequest**](../Model/IssueRefundRequest.md)| File fields | |
@@ -200,6 +197,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

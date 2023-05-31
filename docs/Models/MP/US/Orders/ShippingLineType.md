@@ -1,4 +1,4 @@
-# #US\MP\ShippingLineType
+# Walmart\Models\MP\US\Orders\ShippingLineType
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **sellerOrderNo** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

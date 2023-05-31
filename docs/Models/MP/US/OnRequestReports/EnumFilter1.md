@@ -1,4 +1,4 @@
-# #US\MP\EnumFilter1
+# Walmart\Models\MP\US\OnRequestReports\EnumFilter1
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **type** | **string** | Type of the filter |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

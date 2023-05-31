@@ -1,4 +1,4 @@
-# #US\MP\CreateSubscriptionRequestRecord
+# Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **status** | **string** | Status of the subscription. Allowed values are ACTIVE or INACTIVE. To create subscription, use status = ACTIVE. Notification will be triggered only if subscription is in ACTIVE status |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

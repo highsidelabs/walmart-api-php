@@ -1,11 +1,11 @@
-# Walmart\Api\US\WSItemsApi  
+# Walmart\Apis\WS\US\ItemsApi  
 All URIs are relative to https://api-gateway.walmart.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getAllItems()**](ItemsApi.md#getAllItems) | **GET** /v3/items | All items |
-| [**getAnItem()**](ItemsApi.md#getAnItem) | **GET** /v3/items/{sku} | An item |
-| [**itemBulkUploads()**](ItemsApi.md#itemBulkUploads) | **POST** /v3/feeds | Bulk Item Setup |
+| [**getAllItems()**](#getAllItems) | **GET** /v3/items | All items |
+| [**getAnItem()**](#getAnItem) | **GET** /v3/items/{sku} | An item |
+| [**itemBulkUploads()**](#itemBulkUploads) | **POST** /v3/feeds | Bulk Item Setup |
 
 
 ## `getAllItems()`
@@ -21,32 +21,37 @@ Displays a list of all items. If no SKU is included in this request, all items a
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ItemsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::warehouseSupplier($config)->items();
 
 $nextCursor = '*'; // string | Used for paginated results - use the nextCursor response element from the prior API call
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the warehouse, which identifies each item. This will be used by the warehouse in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded.
 
 try {
-    $result = $apiInstance->getAllItems($nextCursor, $sku);
+    $result = $api->getAllItems($nextCursor, $sku);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getAllItems: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **nextCursor** | **string**| Used for paginated results - use the nextCursor response element from the prior API call | [optional] [default to '*'] |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the warehouse, which identifies each item. This will be used by the warehouse in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. | [optional] |
@@ -65,9 +70,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/WS/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAnItem()`
 
@@ -82,31 +87,36 @@ Retrieves an item and displays the item details.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ItemsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::warehouseSupplier($config)->items();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the warehouse, which identifies each item. This will be used by the warehouse in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded.
 
 try {
-    $result = $apiInstance->getAnItem($sku);
+    $result = $api->getAnItem($sku);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getAnItem: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the warehouse, which identifies each item. This will be used by the warehouse in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. | |
 
@@ -124,9 +134,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/WS/US)
+[[Back to README]](../../../../README.md)
 
 ## `itemBulkUploads()`
 
@@ -141,32 +151,37 @@ Updates items in bulk.  You can update 10,000 items at once; updates with more t
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ItemsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::warehouseSupplier($config)->items();
 
 $feedType = 'SUPPLIER_FULL_ITEM'; // string | The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->itemBulkUploads($feedType, $file);
+    $result = $api->itemBulkUploads($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->itemBulkUploads: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM | [default to 'SUPPLIER_FULL_ITEM'] |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -185,6 +200,6 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/WS/US)
+[[Back to README]](../../../../README.md)

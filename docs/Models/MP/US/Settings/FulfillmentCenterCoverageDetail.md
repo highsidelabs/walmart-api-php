@@ -1,4 +1,4 @@
-# #US\MP\FulfillmentCenterCoverageDetail
+# Walmart\Models\MP\US\Settings\FulfillmentCenterCoverageDetail
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **coverageArea** | **string[]** | Two day shipping regions defined by Walmart for sellers. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

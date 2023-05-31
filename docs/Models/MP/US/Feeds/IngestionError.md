@@ -1,4 +1,4 @@
-# #US\MP\IngestionError
+# Walmart\Models\MP\US\Feeds\IngestionError
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **description** | **string** | Error description | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

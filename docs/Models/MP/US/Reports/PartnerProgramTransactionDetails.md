@@ -1,4 +1,4 @@
-# #US\MP\PartnerProgramTransactionDetails
+# Walmart\Models\MP\US\Reports\PartnerProgramTransactionDetails
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **partnerTxns** | [**\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns**](GetPartnerStatement200ResponsePayloadTransactionDetailsPartnerTxns.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

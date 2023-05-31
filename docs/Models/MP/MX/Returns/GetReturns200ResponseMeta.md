@@ -1,4 +1,4 @@
-# #MX\MP\GetReturns200ResponseMeta
+# Walmart\Models\MP\MX\Returns\GetReturns200ResponseMeta
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **limit** | **int** |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

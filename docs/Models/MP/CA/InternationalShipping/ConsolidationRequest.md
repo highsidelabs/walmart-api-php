@@ -1,4 +1,4 @@
-# #CA\MP\ConsolidationRequest
+# Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **shipmentIds** | **string[]** | List of Shipment Ids (id from Get labels by PO call) |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

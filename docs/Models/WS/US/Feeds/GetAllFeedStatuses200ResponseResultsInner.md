@@ -1,4 +1,4 @@
-# #US\WS\GetAllFeedStatuses200ResponseResultsInner
+# Walmart\Models\WS\US\Feeds\GetAllFeedStatuses200ResponseResultsInner
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **modifiedDtm** | **\DateTime** | The most recent time the feed was modified. Format: yyyymmddThh:mm:ss.xxxz | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/WS) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

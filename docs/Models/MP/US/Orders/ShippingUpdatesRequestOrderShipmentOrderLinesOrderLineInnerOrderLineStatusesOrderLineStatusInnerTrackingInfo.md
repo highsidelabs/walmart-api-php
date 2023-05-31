@@ -1,4 +1,4 @@
-# #US\MP\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo
+# Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerTrackingInfo
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **trackingURL** | **string** | The URL for tracking the shipment. This parameter is mandatory if the otherCarrier parameter is used | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

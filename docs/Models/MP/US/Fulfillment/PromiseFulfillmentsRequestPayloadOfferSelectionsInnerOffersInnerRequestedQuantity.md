@@ -1,4 +1,4 @@
-# #US\MP\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity
+# Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **unitOfMeasure** | **string** | Unit of quantity. Currently supported type : 'EA' |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

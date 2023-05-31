@@ -1,10 +1,10 @@
-# Walmart\Api\MX\MPAuthenticationApi  
+# Walmart\Apis\MP\MX\AuthenticationApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getTokenDetail()**](AuthenticationApi.md#getTokenDetail) | **GET** /v3/token/detail | Get Token Detail |
-| [**tokenAPI()**](AuthenticationApi.md#tokenAPI) | **POST** /v3/token | Get Access token |
+| [**getTokenDetail()**](#getTokenDetail) | **GET** /v3/token/detail | Get Token Detail |
+| [**tokenAPI()**](#tokenAPI) | **POST** /v3/token | Get Access token |
 
 
 ## `getTokenDetail()`
@@ -20,28 +20,28 @@ Retrieves information on the access levels delegated by Sellers for their Soluti
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\AuthenticationApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->authentication();
 
 
 try {
-    $result = $apiInstance->getTokenDetail();
+    $result = $api->getTokenDetail();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling AuthenticationApi->getTokenDetail: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -57,9 +57,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `tokenAPI()`
 
@@ -74,29 +74,29 @@ Get access token by providing Client ID and Client Secret.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\AuthenticationApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->authentication();
 
 $grantType = 'grantType_example'; // string
 
 try {
-    $result = $apiInstance->tokenAPI($grantType);
+    $result = $api->tokenAPI($grantType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling AuthenticationApi->tokenAPI: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **grantType** | **string**|  | [optional] |
 
@@ -114,6 +114,6 @@ try {
 - **Content-Type**: `application/x-www-form-urlencoded`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)

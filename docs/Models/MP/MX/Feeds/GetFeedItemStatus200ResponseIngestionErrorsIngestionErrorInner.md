@@ -1,4 +1,4 @@
-# #MX\MP\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner
+# Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **description** | **string** | Error description | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

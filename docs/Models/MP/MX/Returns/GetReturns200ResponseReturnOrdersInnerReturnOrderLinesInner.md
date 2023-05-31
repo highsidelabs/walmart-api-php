@@ -1,4 +1,4 @@
-# #MX\MP\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner
+# Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInner
 
 ## Properties
 
@@ -22,4 +22,4 @@ Name | Type | Description | Notes
 **isWFSEnabled** | **string** | Determines Walmart Fulfilled vs Seller Fulfilled returns. Valid values are: Y, N | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

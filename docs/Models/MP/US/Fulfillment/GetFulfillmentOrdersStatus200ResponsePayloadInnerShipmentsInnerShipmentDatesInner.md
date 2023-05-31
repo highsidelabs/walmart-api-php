@@ -1,4 +1,4 @@
-# #US\MP\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner
+# Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerShipmentsInnerShipmentDatesInner
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **expectedDate** | **\DateTime** | Expected delivery date of the order | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

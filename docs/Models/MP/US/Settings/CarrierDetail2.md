@@ -1,4 +1,4 @@
-# #US\MP\CarrierDetail2
+# Walmart\Models\MP\US\Settings\CarrierDetail2
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **carrierMethodDescription** | **string** | A description for the method carrier. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,11 +1,11 @@
-# Walmart\Api\US\MPFeedsApi  
+# Walmart\Apis\MP\US\FeedsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getAllFeedStatuses()**](FeedsApi.md#getAllFeedStatuses) | **GET** /v3/feeds | All feed statuses |
-| [**getFeedErrorReport()**](FeedsApi.md#getFeedErrorReport) | **GET** /v3/feeds/{feedId}/errorReport | Get Feed Error Report |
-| [**getFeedItemStatus()**](FeedsApi.md#getFeedItemStatus) | **GET** /v3/feeds/{feedId} | Feed item status |
+| [**getAllFeedStatuses()**](#getAllFeedStatuses) | **GET** /v3/feeds | All feed statuses |
+| [**getFeedErrorReport()**](#getFeedErrorReport) | **GET** /v3/feeds/{feedId}/errorReport | Get Feed Error Report |
+| [**getFeedItemStatus()**](#getFeedItemStatus) | **GET** /v3/feeds/{feedId} | Feed item status |
 
 
 ## `getAllFeedStatuses()`
@@ -21,32 +21,31 @@ Returns the feed statuses for all the specified Feed IDs.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\FeedsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->feeds();
 
 $feedId = 'feedId_example'; // string | A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789).
 $offset = '0'; // string | The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true.
 $limit = '50'; // string | The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.
 
 try {
-    $result = $apiInstance->getAllFeedStatuses($feedId, $offset, $limit);
+    $result = $api->getAllFeedStatuses($feedId, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FeedsApi->getAllFeedStatuses: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedId** | **string**| A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). | [optional] |
 | **offset** | **string**| The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. | [optional] [default to '0'] |
@@ -66,9 +65,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getFeedErrorReport()`
 
@@ -83,31 +82,30 @@ Get Feed Error Report API allows you to download a detailed error report for a s
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\FeedsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->feeds();
 
 $feedId = 'feedId_example'; // string | Feed Id of the feed
 $feedType = 'feedType_example'; // string | Feed type for which Error Report needs to be downloaded
 
 try {
-    $result = $apiInstance->getFeedErrorReport($feedId, $feedType);
+    $result = $api->getFeedErrorReport($feedId, $feedType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FeedsApi->getFeedErrorReport: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedId** | **string**| Feed Id of the feed | |
 | **feedType** | **string**| Feed type for which Error Report needs to be downloaded | |
@@ -126,9 +124,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/octet-stream`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getFeedItemStatus()`
 
@@ -143,18 +141,16 @@ Returns the feed and item status for a specified Feed ID.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\FeedsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->feeds();
 
 $feedId = 'feedId_example'; // string | A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789)
 $includeDetails = 'false'; // string | Includes details of each entity in the feed.
@@ -162,14 +158,15 @@ $offset = '0'; // string | The object response to start with, where 0 is the fir
 $limit = '50'; // string | The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.
 
 try {
-    $result = $apiInstance->getFeedItemStatus($feedId, $includeDetails, $offset, $limit);
+    $result = $api->getFeedItemStatus($feedId, $includeDetails, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FeedsApi->getFeedItemStatus: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedId** | **string**| A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789) | |
 | **includeDetails** | **string**| Includes details of each entity in the feed. | [optional] [default to 'false'] |
@@ -190,6 +187,6 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

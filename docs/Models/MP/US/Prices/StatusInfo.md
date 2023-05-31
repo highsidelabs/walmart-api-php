@@ -1,4 +1,4 @@
-# #US\MP\StatusInfo
+# Walmart\Models\MP\US\Prices\StatusInfo
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **subsidyPreference** | **bool** | A Boolean parameter that determines whether offer level subsidy setting override seller level subsidy setting | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

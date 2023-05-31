@@ -1,4 +1,4 @@
-# #US\MP\RuleRequest
+# Walmart\Models\MP\US\Rules\RuleRequest
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **priority** | **string** | Priority of the rule created for custom rule assortment. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

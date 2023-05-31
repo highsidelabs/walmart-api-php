@@ -1,4 +1,4 @@
-# #US\MP\PromiseDestinationResponse
+# Walmart\Models\MP\US\Fulfillment\PromiseDestinationResponse
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **destinationId** | **string** | Destination id detail. For example : 'fulfillment type for DELIVERY has destinationId 0 | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

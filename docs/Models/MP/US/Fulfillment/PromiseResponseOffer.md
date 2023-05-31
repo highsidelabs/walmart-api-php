@@ -1,4 +1,4 @@
-# #US\MP\PromiseResponseOffer
+# Walmart\Models\MP\US\Fulfillment\PromiseResponseOffer
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **sku** | **string** | The identifier of the item in seller system (vendor sku). | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

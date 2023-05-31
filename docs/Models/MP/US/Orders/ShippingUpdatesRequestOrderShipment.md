@@ -1,4 +1,4 @@
-# #US\MP\ShippingUpdatesRequestOrderShipment
+# Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipment
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **orderLines** | [**\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLines**](ShippingUpdatesRequestOrderShipmentOrderLines.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

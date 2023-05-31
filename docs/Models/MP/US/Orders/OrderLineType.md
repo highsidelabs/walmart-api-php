@@ -1,4 +1,4 @@
-# #US\MP\OrderLineType
+# Walmart\Models\MP\US\Orders\OrderLineType
 
 ## Properties
 
@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **sellerOrderId** | **string** | A unique ID associated with the sales order for specified Seller; gives Sellers the ability to print their own custom order ID on the return label; limit of 30 characters | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

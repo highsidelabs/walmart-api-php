@@ -1,4 +1,4 @@
-# #CA\MP\UpdatePriceCA200Response
+# Walmart\Models\MP\CA\Prices\UpdatePriceCA200Response
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **message** | **string** | A message of acknowledgement for a price update | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\GetTrendingResultPayload
+# Walmart\Models\MP\US\Insights\GetTrendingResultPayload
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **items** | [**\Walmart\Models\MP\US\Insights\GetTrendingResult200ResponsePayloadItemsInner[]**](GetTrendingResult200ResponsePayloadItemsInner.md) | List of Qualified Items | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

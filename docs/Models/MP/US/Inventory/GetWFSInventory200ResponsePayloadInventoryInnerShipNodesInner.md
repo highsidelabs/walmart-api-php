@@ -1,4 +1,4 @@
-# #US\MP\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner
+# Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponsePayloadInventoryInnerShipNodesInner
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **shipNodeType** | **string** | Identifies fulfillment aspect of invetory. Walmart, seller or 3PL fulfilled. Possible value is 'WFSFulfilled'. In later phase we will also add seller fulfilled inventory. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

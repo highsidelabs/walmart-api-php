@@ -1,4 +1,4 @@
-# #US\MP\UpdateMultiNodeInventoryRequestInventoriesNodesInner
+# Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequestInventoriesNodesInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **inputQty** | [**\Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity**](GetInventory200ResponseQuantity.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

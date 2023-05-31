@@ -1,4 +1,4 @@
-# #US\MP\GetAllFulfillmentCenters200ResponseInnerPostalAddress
+# Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInnerPostalAddress
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **postalCode** | **string** | Postal code of the fulfillment center. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

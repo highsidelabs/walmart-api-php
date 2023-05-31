@@ -1,4 +1,4 @@
-# #US\MP\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationCategoriesInner
+# Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInnerAnyOfConfigurationCategoriesInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **fulfillmentLagTime** | **int** | Maximum lag time configured for the item setup category | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

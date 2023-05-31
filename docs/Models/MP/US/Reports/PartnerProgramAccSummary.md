@@ -1,4 +1,4 @@
-# #US\MP\PartnerProgramAccSummary
+# Walmart\Models\MP\US\Reports\PartnerProgramAccSummary
 
 ## Properties
 
@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **holdDates** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

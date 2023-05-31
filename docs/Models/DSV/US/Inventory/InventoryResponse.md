@@ -1,4 +1,4 @@
-# #US\DSV\InventoryResponse
+# Walmart\Models\DSV\US\Inventory\InventoryResponse
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **quantity** | [**\Walmart\Models\DSV\US\Inventory\GetInventoryForAnItem200ResponseQuantity**](GetInventoryForAnItem200ResponseQuantity.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

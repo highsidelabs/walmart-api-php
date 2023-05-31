@@ -1,4 +1,4 @@
-# #US\DSV\MetaType
+# Walmart\Models\DSV\US\Orders\MetaType
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **nextCursor** | **string** | String to be used as query parameter for getting next set of purchase orders, when more than 200 orders are retrieved. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

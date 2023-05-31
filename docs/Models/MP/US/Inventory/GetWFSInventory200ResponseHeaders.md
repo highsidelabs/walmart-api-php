@@ -1,4 +1,4 @@
-# #US\MP\GetWFSInventory200ResponseHeaders
+# Walmart\Models\MP\US\Inventory\GetWFSInventory200ResponseHeaders
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **offset** | **int** | Offset is the number of records you wish to skip before selecting results. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

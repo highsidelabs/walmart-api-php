@@ -1,4 +1,4 @@
-# #MX\MP\GetAllReturnsUsingCursor200Response
+# Walmart\Models\MP\MX\Returns\GetAllReturnsUsingCursor200Response
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **returnOrders** | [**\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInner[]**](GetReturns200ResponseReturnOrdersInner.md) | List of returns for the seller. |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #CA\MP\OrderRefund
+# Walmart\Models\MP\CA\Orders\OrderRefund
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **orderLines** | [**\Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequestOrderLines**](RefundOrderLinesCARequestOrderLines.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

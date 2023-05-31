@@ -1,4 +1,4 @@
-# #US\MP\GetProSellerBadgeInfo200ResponseCriteriaData
+# Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseCriteriaData
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **activeDays** | **int** | Days active on the platform. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

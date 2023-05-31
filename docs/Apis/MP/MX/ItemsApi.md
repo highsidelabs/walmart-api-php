@@ -1,12 +1,12 @@
-# Walmart\Api\MX\MPItemsApi  
+# Walmart\Apis\MP\MX\ItemsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**bulkItemSetup()**](ItemsApi.md#bulkItemSetup) | **POST** /v3/feeds | Bulk Item Setup |
-| [**getAllItems()**](ItemsApi.md#getAllItems) | **GET** /v3/items | Get all items |
-| [**getAnItem()**](ItemsApi.md#getAnItem) | **GET** /v3/items/{sku} | Get an item |
-| [**retireAnItem()**](ItemsApi.md#retireAnItem) | **DELETE** /v3/items/{SKU} | Retire an item |
+| [**bulkItemSetup()**](#bulkItemSetup) | **POST** /v3/feeds | Bulk Item Setup |
+| [**getAllItems()**](#getAllItems) | **GET** /v3/items | Get all items |
+| [**getAnItem()**](#getAnItem) | **GET** /v3/items/{sku} | Get an item |
+| [**retireAnItem()**](#retireAnItem) | **DELETE** /v3/items/{SKU} | Retire an item |
 
 
 ## `bulkItemSetup()`
@@ -22,33 +22,33 @@ You can update 10,000 items at once; updates with more than 10,000 items are not
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ItemsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->items();
 
 $feedType = 'feedType_example'; // string | The feed Type
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->bulkItemSetup($feedType, $file);
+    $result = $api->bulkItemSetup($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->bulkItemSetup: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The feed Type | |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -67,9 +67,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `getAllItems()`
 
@@ -84,20 +84,19 @@ Displays a list of all items by using either nextCursor or offset and limit quer
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ItemsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->items();
 
 $nextCursor = '*'; // string | Used for pagination when more than 200 items are retrieved.
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item.
@@ -105,14 +104,15 @@ $offset = '0'; // string | The object response to start with, where 0 is the fir
 $limit = '20'; // string | The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.
 
 try {
-    $result = $apiInstance->getAllItems($nextCursor, $sku, $offset, $limit);
+    $result = $api->getAllItems($nextCursor, $sku, $offset, $limit);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getAllItems: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **nextCursor** | **string**| Used for pagination when more than 200 items are retrieved. | [optional] [default to '*'] |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. | [optional] |
@@ -133,9 +133,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `getAnItem()`
 
@@ -150,32 +150,32 @@ Retrieves an item and displays the item details.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ItemsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->items();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item.
 
 try {
-    $result = $apiInstance->getAnItem($sku);
+    $result = $api->getAnItem($sku);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getAnItem: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. | |
 
@@ -193,9 +193,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `retireAnItem()`
 
@@ -210,32 +210,32 @@ Completely deactivates and un-publishes an item from the site.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ItemsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->items();
 
 $sKU = 'sKU_example'; // string | SKU
 
 try {
-    $result = $apiInstance->retireAnItem($sKU);
+    $result = $api->retireAnItem($sKU);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->retireAnItem: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sKU** | **string**| SKU | |
 
@@ -253,6 +253,6 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)

@@ -1,16 +1,16 @@
-# Walmart\Api\US\MPPricesApi  
+# Walmart\Apis\MP\US\PricesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createStrategy()**](PricesApi.md#createStrategy) | **POST** /v3/repricer/strategy | Create Repricer Strategy |
-| [**deleteStrategy()**](PricesApi.md#deleteStrategy) | **DELETE** /v3/repricer/strategy/{strategyCollectionId} | Delete Repricer Strategy |
-| [**getRepricerFeed()**](PricesApi.md#getRepricerFeed) | **POST** /v3/repricerFeeds | Assign/Unassign items to/from Repricer Strategy |
-| [**getStrategies()**](PricesApi.md#getStrategies) | **GET** /v3/repricer/strategies | List of Repricer Strategies |
-| [**optCapProgramInPrice()**](PricesApi.md#optCapProgramInPrice) | **POST** /v3/cppreference | Set up CAP SKU All |
-| [**priceBulkUploads()**](PricesApi.md#priceBulkUploads) | **POST** /v3/feeds | Update bulk prices (Multiple) |
-| [**updatePrice()**](PricesApi.md#updatePrice) | **PUT** /v3/price | Update a price |
-| [**updateStrategy()**](PricesApi.md#updateStrategy) | **PUT** /v3/repricer/strategy/{strategyCollectionId} | Update Repricer Strategy |
+| [**createStrategy()**](#createStrategy) | **POST** /v3/repricer/strategy | Create Repricer Strategy |
+| [**deleteStrategy()**](#deleteStrategy) | **DELETE** /v3/repricer/strategy/{strategyCollectionId} | Delete Repricer Strategy |
+| [**getRepricerFeed()**](#getRepricerFeed) | **POST** /v3/repricerFeeds | Assign/Unassign items to/from Repricer Strategy |
+| [**getStrategies()**](#getStrategies) | **GET** /v3/repricer/strategies | List of Repricer Strategies |
+| [**optCapProgramInPrice()**](#optCapProgramInPrice) | **POST** /v3/cppreference | Set up CAP SKU All |
+| [**priceBulkUploads()**](#priceBulkUploads) | **POST** /v3/feeds | Update bulk prices (Multiple) |
+| [**updatePrice()**](#updatePrice) | **PUT** /v3/price | Update a price |
+| [**updateStrategy()**](#updateStrategy) | **PUT** /v3/repricer/strategy/{strategyCollectionId} | Update Repricer Strategy |
 
 
 ## `createStrategy()`
@@ -26,30 +26,29 @@ Creates a new strategy for the seller
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $updateStrategyRequest = new \Walmart\Models\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Models\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
 
 try {
-    $result = $apiInstance->createStrategy($updateStrategyRequest);
+    $result = $api->createStrategy($updateStrategyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->createStrategy: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **updateStrategyRequest** | [**\Walmart\Models\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
 
@@ -67,9 +66,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `deleteStrategy()`
 
@@ -84,30 +83,29 @@ Deletes the strategy
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $strategyCollectionId = 'strategyCollectionId_example'; // string
 
 try {
-    $result = $apiInstance->deleteStrategy($strategyCollectionId);
+    $result = $api->deleteStrategy($strategyCollectionId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->deleteStrategy: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **strategyCollectionId** | **string**|  | |
 
@@ -125,9 +123,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getRepricerFeed()`
 
@@ -142,30 +140,29 @@ Add/Remove one or more items from a strategy
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $getRepricerFeedRequest = new \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest(); // \Walmart\Models\MP\US\Prices\GetRepricerFeedRequest
 
 try {
-    $result = $apiInstance->getRepricerFeed($getRepricerFeedRequest);
+    $result = $api->getRepricerFeed($getRepricerFeedRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->getRepricerFeed: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **getRepricerFeedRequest** | [**\Walmart\Models\MP\US\Prices\GetRepricerFeedRequest**](../Model/GetRepricerFeedRequest.md)|  | |
 
@@ -183,9 +180,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getStrategies()`
 
@@ -200,29 +197,28 @@ Get the list of strategies
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 
 try {
-    $result = $apiInstance->getStrategies();
+    $result = $api->getStrategies();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->getStrategies: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -238,9 +234,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `optCapProgramInPrice()`
 
@@ -255,30 +251,29 @@ This API helps Sellers to completely opt-in or opt-out from CAP program.  If the
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $optCapProgramInPriceRequest = new \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest(); // \Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest | Request fields
 
 try {
-    $result = $apiInstance->optCapProgramInPrice($optCapProgramInPriceRequest);
+    $result = $api->optCapProgramInPrice($optCapProgramInPriceRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->optCapProgramInPrice: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **optCapProgramInPriceRequest** | [**\Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest**](../Model/OptCapProgramInPriceRequest.md)| Request fields | |
 
@@ -296,9 +291,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `priceBulkUploads()`
 
@@ -313,31 +308,30 @@ Updates prices in bulk.  In one Feed you can update up to 10,000 items in bulk. 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $feedType = 'feedType_example'; // string | The feed Type
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->priceBulkUploads($feedType, $file);
+    $result = $api->priceBulkUploads($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->priceBulkUploads: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The feed Type | |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -356,9 +350,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updatePrice()`
 
@@ -373,30 +367,29 @@ Updates the regular price for a given item.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $updatePriceRequest = {"sku":"97964_KFTest","pricing":[{"currentPriceType":"BASE","currentPrice":{"currency":"USD","amount":10}}]}; // \Walmart\Models\MP\US\Prices\UpdatePriceRequest | The request body consists of a Feed file attached to the request.
 
 try {
-    $result = $apiInstance->updatePrice($updatePriceRequest);
+    $result = $api->updatePrice($updatePriceRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->updatePrice: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **updatePriceRequest** | [**\Walmart\Models\MP\US\Prices\UpdatePriceRequest**](../Model/UpdatePriceRequest.md)| The request body consists of a Feed file attached to the request. | |
 
@@ -414,9 +407,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateStrategy()`
 
@@ -431,31 +424,30 @@ Updates the existing strategy
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PricesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
 
 $strategyCollectionId = 'strategyCollectionId_example'; // string
 $updateStrategyRequest = new \Walmart\Models\MP\US\Prices\UpdateStrategyRequest(); // \Walmart\Models\MP\US\Prices\UpdateStrategyRequest | The request body will have the strategy related information
 
 try {
-    $result = $apiInstance->updateStrategy($strategyCollectionId, $updateStrategyRequest);
+    $result = $api->updateStrategy($strategyCollectionId, $updateStrategyRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PricesApi->updateStrategy: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **strategyCollectionId** | **string**|  | |
 | **updateStrategyRequest** | [**\Walmart\Models\MP\US\Prices\UpdateStrategyRequest**](../Model/UpdateStrategyRequest.md)| The request body will have the strategy related information | |
@@ -474,6 +466,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

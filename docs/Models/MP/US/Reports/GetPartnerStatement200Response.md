@@ -1,4 +1,4 @@
-# #US\MP\GetPartnerStatement200Response
+# Walmart\Models\MP\US\Reports\GetPartnerStatement200Response
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **payload** | [**\Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayload**](GetPartnerStatement200ResponsePayload.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

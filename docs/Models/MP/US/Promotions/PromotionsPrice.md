@@ -1,4 +1,4 @@
-# #US\MP\PromotionsPrice
+# Walmart\Models\MP\US\Promotions\PromotionsPrice
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **maxUnitValue** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue**](GetPromotionalPrices200ResponsePayloadPricingListPricingInnerCurrentPriceValue.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

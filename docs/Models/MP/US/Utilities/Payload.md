@@ -1,4 +1,4 @@
-# #US\MP\Payload
+# Walmart\Models\MP\US\Utilities\Payload
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **departments** | [**\Walmart\Models\MP\US\Utilities\GetDepartmentList200ResponsePayloadInnerDepartmentsInner[]**](GetDepartmentList200ResponsePayloadInnerDepartmentsInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

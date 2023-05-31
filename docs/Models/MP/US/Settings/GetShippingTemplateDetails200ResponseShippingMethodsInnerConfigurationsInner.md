@@ -1,4 +1,4 @@
-# #US\MP\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner
+# Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInner
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **tieredShippingCharges** | [**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner[]**](GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerTieredShippingChargesInner.md) | Tiered Shipping Charges | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

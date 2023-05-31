@@ -1,4 +1,4 @@
-# #US\DSV\ShipOrderLines200ResponsePickupPersonsInnerPhone
+# Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponsePickupPersonsInnerPhone
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **countryCode** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

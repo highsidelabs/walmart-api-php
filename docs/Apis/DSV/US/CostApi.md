@@ -1,9 +1,9 @@
-# Walmart\Api\US\DSVCostApi  
+# Walmart\Apis\DSV\US\CostApi  
 All URIs are relative to https://api-gateway.walmart.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**updateBulkCost()**](CostApi.md#updateBulkCost) | **POST** /v3/feeds | This API allows DSV to update cost for items in bulk. |
+| [**updateBulkCost()**](#updateBulkCost) | **POST** /v3/feeds | This API allows DSV to update cost for items in bulk. |
 
 
 ## `updateBulkCost()`
@@ -19,32 +19,37 @@ This API allows DSV to update cost for items in bulk.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\CostApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::dropShipVendor($config)->cost();
 
 $feedType = 'cost'; // string | Includes details of each entity in the feed. Do not set this parameter to true.
 $updateBulkCostRequest = new \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest(); // \Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest | File fields
 
 try {
-    $result = $apiInstance->updateBulkCost($feedType, $updateBulkCostRequest);
+    $result = $api->updateBulkCost($feedType, $updateBulkCostRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling CostApi->updateBulkCost: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'cost'] |
 | **updateBulkCostRequest** | [**\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequest**](../Model/UpdateBulkCostRequest.md)| File fields | |
@@ -63,6 +68,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/DSV/US)
+[[Back to README]](../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\GetAllAreas200ResponsePayloadEntitiesInnerStatesInnerStateSubregionsInner
+# Walmart\Models\MP\US\Rules\GetAllAreas200ResponsePayloadEntitiesInnerStatesInnerStateSubregionsInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **stateSubregionName** | **string** | stateSubregionName | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

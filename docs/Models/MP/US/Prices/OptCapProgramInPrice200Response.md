@@ -1,4 +1,4 @@
-# #US\MP\OptCapProgramInPrice200Response
+# Walmart\Models\MP\US\Prices\OptCapProgramInPrice200Response
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **statusInfo** | [**\Walmart\Models\MP\US\Prices\OptCapProgramInPriceRequest**](OptCapProgramInPriceRequest.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

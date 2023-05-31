@@ -1,4 +1,4 @@
-# #US\DSV\UpdateLagTimeBulkRequestLagTimeInner
+# Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagTimeInner
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **fulfillmentLagTime** | **int** | Specifies fulfillment lag time.    Fulfillment lag time is the maximum number of days it takes suppliers to process an order for shipment.    Assigning lag times helps suppliers manage when orders are expected to ship to the customer. |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

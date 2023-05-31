@@ -1,4 +1,4 @@
-# #MX\MP\Money
+# Walmart\Models\MP\MX\Items\Money
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **amount** | **float** | The numerical amount of the price. Example: 9.99 | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

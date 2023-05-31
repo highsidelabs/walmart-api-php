@@ -1,4 +1,4 @@
-# #US\MP\LagTime
+# Walmart\Models\MP\US\LagTime\LagTime
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **additionalAttributes** | [**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner[]**](UpdateLagTimeBulkRequestLagTimeInnerAdditionalAttributesInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

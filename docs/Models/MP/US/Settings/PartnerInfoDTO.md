@@ -1,4 +1,4 @@
-# #US\MP\PartnerInfoDTO
+# Walmart\Models\MP\US\Settings\PartnerInfoDTO
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **countryOfIncorporation** | **string** | The country from where seller conducts their business | ISO 3166 Country code | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

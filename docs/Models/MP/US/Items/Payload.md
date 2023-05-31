@@ -1,4 +1,4 @@
-# #US\MP\Payload
+# Walmart\Models\MP\US\Items\Payload
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **count** | **string** | count of items having the same variant group id | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

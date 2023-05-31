@@ -1,4 +1,4 @@
-# #US\MP\ContentDiscoverabilityIssue
+# Walmart\Models\MP\US\Insights\ContentDiscoverabilityIssue
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **issues** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner[]**](ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsContentAndDiscoverabilityIssuesInnerIssuesInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

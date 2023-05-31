@@ -1,11 +1,11 @@
-# Walmart\Api\US\MPPromotionsApi  
+# Walmart\Apis\MP\US\PromotionsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getPromotionalPrices()**](PromotionsApi.md#getPromotionalPrices) | **GET** /v3/promo/sku/{sku} | Promotional prices |
-| [**updateBulkPromotionalPrice()**](PromotionsApi.md#updateBulkPromotionalPrice) | **POST** /v3/feeds | Updates bulk promotional prices |
-| [**updatePromotionalPrices()**](PromotionsApi.md#updatePromotionalPrices) | **PUT** /v3/price | Update a promotional price |
+| [**getPromotionalPrices()**](#getPromotionalPrices) | **GET** /v3/promo/sku/{sku} | Promotional prices |
+| [**updateBulkPromotionalPrice()**](#updateBulkPromotionalPrice) | **POST** /v3/feeds | Updates bulk promotional prices |
+| [**updatePromotionalPrices()**](#updatePromotionalPrices) | **PUT** /v3/price | Update a promotional price |
 
 
 ## `getPromotionalPrices()`
@@ -21,30 +21,29 @@ Retrieves a list of promotional prices for a single SKU.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->promotions();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded.
 
 try {
-    $result = $apiInstance->getPromotionalPrices($sku);
+    $result = $api->getPromotionalPrices($sku);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PromotionsApi->getPromotionalPrices: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. | |
 
@@ -62,9 +61,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateBulkPromotionalPrice()`
 
@@ -79,31 +78,30 @@ Updates or creates promotional prices for multiple specified SKUs
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->promotions();
 
 $feedType = 'promo'; // string | Feed Type
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->updateBulkPromotionalPrice($feedType, $file);
+    $result = $api->updateBulkPromotionalPrice($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PromotionsApi->updateBulkPromotionalPrice: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Feed Type | [default to 'promo'] |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -122,9 +120,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updatePromotionalPrices()`
 
@@ -139,31 +137,30 @@ Updates the promotional price.  Sellers can update or delete an existing promoti
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\PromotionsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->promotions();
 
 $promo = true; // bool | The promotional price. Set to 'true' in order to retrieve promotional prices
 $updatePromotionalPricesRequest = {"sku":"97964_KFTest","pricing":[{"currentPrice":{"currency":"USD","amount":4},"currentPriceType":"REDUCED","comparisonPriceType":"BASE","comparisonPrice":{"currency":"USD","amount":4},"priceDisplayCodes":"CART","effectiveDate":"2019-11-03T09:49:57.943Z","expirationDate":"2019-12-03T09:49:57.943Z","processMode":"UPSERT"}]}; // \Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest | The request body consists of a Feed file attached to the request.
 
 try {
-    $result = $apiInstance->updatePromotionalPrices($promo, $updatePromotionalPricesRequest);
+    $result = $api->updatePromotionalPrices($promo, $updatePromotionalPricesRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling PromotionsApi->updatePromotionalPrices: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promo** | **bool**| The promotional price. Set to 'true' in order to retrieve promotional prices | [default to true] |
 | **updatePromotionalPricesRequest** | [**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPricesRequest**](../Model/UpdatePromotionalPricesRequest.md)| The request body consists of a Feed file attached to the request. | |
@@ -182,6 +179,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

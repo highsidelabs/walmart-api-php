@@ -1,4 +1,4 @@
-# #US\MP\CreateCustomerOrderRequestPayload
+# Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestPayload
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **orderItems** | [**\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]**](CreateFulfillmentRequestPayloadOrderItemsInner.md) | Order items details |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

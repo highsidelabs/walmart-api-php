@@ -1,4 +1,4 @@
-# #US\MP\GetCategoriesList200ResponsePayloadInnerProductTypeInner
+# Walmart\Models\MP\US\Insights\GetCategoriesList200ResponsePayloadInnerProductTypeInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **count** | **int** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

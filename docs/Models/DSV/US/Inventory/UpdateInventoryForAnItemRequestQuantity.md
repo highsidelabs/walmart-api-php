@@ -1,4 +1,4 @@
-# #US\DSV\UpdateInventoryForAnItemRequestQuantity
+# Walmart\Models\DSV\US\Inventory\UpdateInventoryForAnItemRequestQuantity
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **amount** | **float** | Indicates the value for the quantity of an item. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

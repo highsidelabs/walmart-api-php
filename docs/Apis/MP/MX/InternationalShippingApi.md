@@ -1,14 +1,14 @@
-# Walmart\Api\MX\MPInternationalShippingApi  
+# Walmart\Apis\MP\MX\InternationalShippingApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createLabel()**](InternationalShippingApi.md#createLabel) | **POST** /v3/shipping/labels | Create label |
-| [**discardLabel()**](InternationalShippingApi.md#discardLabel) | **DELETE** /v3/shipping/labels/carriers/{carrierShortName}/trackings/{trackingNo} | Discard label |
-| [**getCarrierPackageTypes()**](InternationalShippingApi.md#getCarrierPackageTypes) | **GET** /v3/shipping/labels/carriers/{carrierShortName}/package-types | Supported carrier package types |
-| [**getCarriers()**](InternationalShippingApi.md#getCarriers) | **GET** /v3/shipping/labels/carriers | Supported carriers |
-| [**getLabel()**](InternationalShippingApi.md#getLabel) | **GET** /v3/shipping/labels/purchase-orders/{purchaseOrderId} | Labels detail by purchase order id |
-| [**getLabelByTrackingAndCarrier()**](InternationalShippingApi.md#getLabelByTrackingAndCarrier) | **GET** /v3/shipping/labels/carriers/{carrierShortName}/trackings/{trackingNo} | Download label |
+| [**createLabel()**](#createLabel) | **POST** /v3/shipping/labels | Create label |
+| [**discardLabel()**](#discardLabel) | **DELETE** /v3/shipping/labels/carriers/{carrierShortName}/trackings/{trackingNo} | Discard label |
+| [**getCarrierPackageTypes()**](#getCarrierPackageTypes) | **GET** /v3/shipping/labels/carriers/{carrierShortName}/package-types | Supported carrier package types |
+| [**getCarriers()**](#getCarriers) | **GET** /v3/shipping/labels/carriers | Supported carriers |
+| [**getLabel()**](#getLabel) | **GET** /v3/shipping/labels/purchase-orders/{purchaseOrderId} | Labels detail by purchase order id |
+| [**getLabelByTrackingAndCarrier()**](#getLabelByTrackingAndCarrier) | **GET** /v3/shipping/labels/carriers/{carrierShortName}/trackings/{trackingNo} | Download label |
 
 
 ## `createLabel()`
@@ -24,33 +24,33 @@ Create shipping label for items. The response to a successful call are of json,p
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->internationalShipping();
 
 $accept = application/json; // string | Only supported Media Type : application/json
 $createLabelRequest = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1,"countryOfOrigin":"US"}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY"}; // \Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequest | Label fields
 
 try {
-    $result = $apiInstance->createLabel($accept, $createLabelRequest);
+    $result = $api->createLabel($accept, $createLabelRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createLabel: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
 | **createLabelRequest** | [**\Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequest**](../Model/CreateLabelRequest.md)| Label fields | |
@@ -69,9 +69,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `discardLabel()`
 
@@ -86,34 +86,34 @@ Discard label by carrier and trackingNo
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
 $accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $apiInstance->discardLabel($carrierShortName, $trackingNo, $accept);
+    $result = $api->discardLabel($carrierShortName, $trackingNo, $accept);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->discardLabel: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
@@ -133,9 +133,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `getCarrierPackageTypes()`
 
@@ -150,33 +150,33 @@ This API retrieves all supported package types for the selected carrier.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers
 $accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $apiInstance->getCarrierPackageTypes($carrierShortName, $accept);
+    $result = $api->getCarrierPackageTypes($carrierShortName, $accept);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarrierPackageTypes: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers | |
 | **accept** | **string**| Only supported Media Type : application/json | |
@@ -195,9 +195,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `getCarriers()`
 
@@ -212,32 +212,32 @@ This API retrieves all carriers supported by Ship With Walmart. Note that curren
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->internationalShipping();
 
 $accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $apiInstance->getCarriers($accept);
+    $result = $api->getCarriers($accept);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarriers: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
 
@@ -255,9 +255,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `getLabel()`
 
@@ -272,33 +272,33 @@ Retrieves tracking details for a Purchase Order Id
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->internationalShipping();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
 $accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $apiInstance->getLabel($purchaseOrderId, $accept);
+    $result = $api->getLabel($purchaseOrderId, $accept);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabel: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
 | **accept** | **string**| Only supported Media Type : application/json | |
@@ -317,9 +317,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `getLabelByTrackingAndCarrier()`
 
@@ -334,34 +334,34 @@ Download label by carrier and trackingNoThe response to a successful call contai
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InternationalShippingApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
 $accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $apiInstance->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $accept);
+    $result = $api->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $accept);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabelByTrackingAndCarrier: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
@@ -381,6 +381,6 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/pdf`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)

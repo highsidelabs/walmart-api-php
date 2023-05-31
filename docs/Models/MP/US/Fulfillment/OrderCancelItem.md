@@ -1,4 +1,4 @@
-# #US\MP\OrderCancelItem
+# Walmart\Models\MP\US\Fulfillment\OrderCancelItem
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **qty** | [**\Walmart\Models\MP\US\Fulfillment\CancelFulfillmentRequestPayloadOrderItemsInnerQty**](CancelFulfillmentRequestPayloadOrderItemsInnerQty.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

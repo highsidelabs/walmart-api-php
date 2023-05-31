@@ -1,4 +1,4 @@
-# #MX\MP\LabelGenerationRequestMx
+# Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **carrierServiceType** | **string** | Carrier Service Type. For now, supported values are - 'FEDEX_INTERNATIONAL_PRIORITY' for fedExPak/fedExEnvelope package types, 'FEDEX_INTERNATIONAL_ECONOMY' and 'FEDEX_INTERNATIONAL_GROUND' |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\InboundPreviewResponseDTO
+# Walmart\Models\MP\US\Fulfillment\InboundPreviewResponseDTO
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **previews** | [**\Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInner[]**](InboundPreview200ResponsePayloadInnerPreviewsInner.md) | List of preview responses | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

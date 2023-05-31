@@ -1,4 +1,4 @@
-# #US\MP\CancelLineStatusType
+# Walmart\Models\MP\US\Orders\CancelLineStatusType
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **statusQuantity** | [**\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity**](ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInnerStatusQuantity.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

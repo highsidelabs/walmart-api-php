@@ -1,4 +1,4 @@
-# #US\MP\CreateShippingTemplatesRequest
+# Walmart\Models\MP\US\Settings\CreateShippingTemplatesRequest
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **shippingMethods** | [**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInner[]**](GetShippingTemplateDetails200ResponseShippingMethodsInner.md) | Array of different ship methods of a Shipping Template | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

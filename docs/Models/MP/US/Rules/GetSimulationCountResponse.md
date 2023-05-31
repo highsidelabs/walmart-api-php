@@ -1,4 +1,4 @@
-# #US\MP\GetSimulationCountResponse
+# Walmart\Models\MP\US\Rules\GetSimulationCountResponse
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **simulationCount** | **string** | Number of items that would be set for two-day if the rule gets activated. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\DSV\UpdateBulkCostRequestCostInnerUnitCost
+# Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInnerUnitCost
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **currency** | **string** | The numerical value of the cost. Example: 9.99 | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

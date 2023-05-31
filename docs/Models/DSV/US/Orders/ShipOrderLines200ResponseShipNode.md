@@ -1,4 +1,4 @@
-# #US\DSV\ShipOrderLines200ResponseShipNode
+# Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShipNode
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **id** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

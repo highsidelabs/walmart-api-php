@@ -1,4 +1,4 @@
-# #US\MP\TestNotificationRequestAuthDetails
+# Walmart\Models\MP\US\Notifications\TestNotificationRequestAuthDetails
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **clientId** | **string** | ClientId for OAUTH URL | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

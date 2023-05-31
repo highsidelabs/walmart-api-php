@@ -1,4 +1,4 @@
-# #CA\MP\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges
+# Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundCharges
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **refundCharge** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner[]**](ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerRefundRefundChargesRefundChargeInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

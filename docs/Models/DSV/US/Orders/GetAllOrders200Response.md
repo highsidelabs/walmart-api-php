@@ -1,4 +1,4 @@
-# #US\DSV\GetAllOrders200Response
+# Walmart\Models\DSV\US\Orders\GetAllOrders200Response
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **elements** | [**\Walmart\Models\DSV\US\Orders\GetAllOrders200ResponseElements**](GetAllOrders200ResponseElements.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

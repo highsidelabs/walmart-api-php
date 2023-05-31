@@ -1,9 +1,9 @@
-# Walmart\Api\US\CPFeedsApi  
+# Walmart\Apis\CP\US\FeedsApi  
 All URIs are relative to http://localhost, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**contentProductFeed()**](FeedsApi.md#contentProductFeed) | **POST** /v3/feeds | Content feeds |
+| [**contentProductFeed()**](#contentProductFeed) | **POST** /v3/feeds | Content feeds |
 
 
 ## `contentProductFeed()`
@@ -19,32 +19,37 @@ You can update 10,000 items at once; updates with more than 10,000 items are not
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\FeedsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::contentProvider($config)->feeds();
 
 $feedType = 'CONTENT_PRODUCT'; // string | The feed Type
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $apiInstance->contentProductFeed($feedType, $file);
+    $result = $api->contentProductFeed($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FeedsApi->contentProductFeed: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The feed Type | [default to 'CONTENT_PRODUCT'] |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -63,6 +68,6 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/CP/US)
+[[Back to README]](../../../../README.md)

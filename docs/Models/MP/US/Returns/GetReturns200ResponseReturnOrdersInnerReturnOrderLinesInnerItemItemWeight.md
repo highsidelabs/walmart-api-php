@@ -1,4 +1,4 @@
-# #US\MP\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight
+# Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerItemItemWeight
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **measurementValue** | **float** | The quantity of the unit of measure for the item |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

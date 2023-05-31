@@ -1,4 +1,4 @@
-# #US\MP\GetAllShippingTemplates200ResponseShippingTemplatesInner
+# Walmart\Models\MP\US\Settings\GetAllShippingTemplates200ResponseShippingTemplatesInner
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **modifiedDate** | **float** | Template Modified Date | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

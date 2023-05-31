@@ -1,4 +1,4 @@
-# #US\MP\GetPartnerPerformance200Response
+# Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **_90dAY** | [**\Walmart\Models\MP\US\Reports\GetPartnerPerformance200Response7DAY**](GetPartnerPerformance200Response7DAY.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\ReturnOrderLine
+# Walmart\Models\MP\US\Returns\ReturnOrderLine
 
 ## Properties
 
@@ -35,4 +35,4 @@ Name | Type | Description | Notes
 **currentRefundStatus** | **string** | Determines the current refund status of the return. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

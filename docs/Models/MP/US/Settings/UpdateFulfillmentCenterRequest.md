@@ -1,4 +1,4 @@
-# #US\MP\UpdateFulfillmentCenterRequest
+# Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **shipNode** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNode**](UpdateFulfillmentCenterRequestShipNode.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

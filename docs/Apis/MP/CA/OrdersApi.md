@@ -1,16 +1,16 @@
-# Walmart\Api\CA\MPOrdersApi  
+# Walmart\Apis\MP\CA\OrdersApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**acknowledgeOrdersCA()**](OrdersApi.md#acknowledgeOrdersCA) | **POST** /v3/ca/orders/{purchaseOrderId}/acknowledge | Acknowledge Orders |
-| [**cancelOrderLinesCA()**](OrdersApi.md#cancelOrderLinesCA) | **POST** /v3/ca/orders/{purchaseOrderId}/cancel | Cancel Order Lines |
-| [**getAllOrders()**](OrdersApi.md#getAllOrders) | **GET** /v3/ca/orders | Get all orders |
-| [**getAllReleasedOrders()**](OrdersApi.md#getAllReleasedOrders) | **GET** /v3/ca/orders/released | Get all released orders |
-| [**getAllWFSOrders()**](OrdersApi.md#getAllWFSOrders) | **GET** /v3/ca/orders/wfs | Get all WFS orders |
-| [**getAnOrder()**](OrdersApi.md#getAnOrder) | **GET** /v3/ca/orders/{purchaseOrderId} | Get an order |
-| [**refundOrderLinesCA()**](OrdersApi.md#refundOrderLinesCA) | **POST** /v3/ca/orders/{purchaseOrderId}/refund | Refund Order Lines |
-| [**shippingUpdatesCA()**](OrdersApi.md#shippingUpdatesCA) | **POST** /v3/ca/orders/{purchaseOrderId}/shipping | Shipping Updates |
+| [**acknowledgeOrdersCA()**](#acknowledgeOrdersCA) | **POST** /v3/ca/orders/{purchaseOrderId}/acknowledge | Acknowledge Orders |
+| [**cancelOrderLinesCA()**](#cancelOrderLinesCA) | **POST** /v3/ca/orders/{purchaseOrderId}/cancel | Cancel Order Lines |
+| [**getAllOrders()**](#getAllOrders) | **GET** /v3/ca/orders | Get all orders |
+| [**getAllReleasedOrders()**](#getAllReleasedOrders) | **GET** /v3/ca/orders/released | Get all released orders |
+| [**getAllWFSOrders()**](#getAllWFSOrders) | **GET** /v3/ca/orders/wfs | Get all WFS orders |
+| [**getAnOrder()**](#getAnOrder) | **GET** /v3/ca/orders/{purchaseOrderId} | Get an order |
+| [**refundOrderLinesCA()**](#refundOrderLinesCA) | **POST** /v3/ca/orders/{purchaseOrderId}/refund | Refund Order Lines |
+| [**shippingUpdatesCA()**](#shippingUpdatesCA) | **POST** /v3/ca/orders/{purchaseOrderId}/shipping | Shipping Updates |
 
 
 ## `acknowledgeOrdersCA()`
@@ -26,31 +26,36 @@ You can use this API to acknowledge an entire order, including all of its order 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
 
 try {
-    $result = $apiInstance->acknowledgeOrdersCA($purchaseOrderId);
+    $result = $api->acknowledgeOrdersCA($purchaseOrderId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->acknowledgeOrdersCA: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
 
@@ -68,9 +73,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `cancelOrderLinesCA()`
 
@@ -85,19 +90,23 @@ You can cancel one or more order lines. You must include a purchaseOrderId when 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
 $cancelOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
@@ -120,14 +129,15 @@ $cancelOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
 </orderCancellation>; // \Walmart\Models\MP\CA\Orders\CancelOrderLinesCARequest | File fields
 
 try {
-    $result = $apiInstance->cancelOrderLinesCA($purchaseOrderId, $cancelOrderLinesCARequest);
+    $result = $api->cancelOrderLinesCA($purchaseOrderId, $cancelOrderLinesCARequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->cancelOrderLinesCA: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
 | **cancelOrderLinesCARequest** | [**\Walmart\Models\MP\CA\Orders\CancelOrderLinesCARequest**](../Model/CancelOrderLinesCARequest.md)| File fields | |
@@ -146,9 +156,9 @@ try {
 - **Content-Type**: `application/xml`
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getAllOrders()`
 
@@ -163,19 +173,23 @@ Retrieves the details of all the orders for specified search criteria.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $createdStartDate = 'createdStartDate_example'; // string | Start Date for querying all purchase orders after that date. Use one of the following formats, based on UTC, ISO 8601. Date example: '2013-08-16' Timestamp example: '2013-08-16T10:30:15Z'
 $sku = 'sku_example'; // string | A seller-provided Product ID
@@ -189,14 +203,15 @@ $limit = 'limit_example'; // string | The number of orders to be returned.Cannot
 $productInfo = 'productInfo_example'; // string | Provides the image URL and product weight in response, if available. This parameter must be boolean, e.g.: productInfo=true.
 
 try {
-    $result = $apiInstance->getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo);
+    $result = $api->getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->getAllOrders: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **createdStartDate** | **string**| Start Date for querying all purchase orders after that date. Use one of the following formats, based on UTC, ISO 8601. Date example: '2013-08-16' Timestamp example: '2013-08-16T10:30:15Z' | |
 | **sku** | **string**| A seller-provided Product ID | [optional] |
@@ -223,9 +238,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getAllReleasedOrders()`
 
@@ -240,19 +255,23 @@ Retrieves all the orders with line items that are in the \"created\" status, tha
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $createdStartDate = 'createdStartDate_example'; // string | Start Date for querying all purchase orders after this date. Use epoch time format in seconds.
 $createdEndDate = 'createdEndDate_example'; // string | End Date for querying all purchase orders after this date. Use epoch time format in seconds.
@@ -260,14 +279,15 @@ $limit = '10'; // string | The number of orders to be returned. Cannot be larger
 $productInfo = 'productInfo_example'; // string | Provides the image URL and product weight in response, if available. This parameter must be boolean, e.g.: productInfo=true.
 
 try {
-    $result = $apiInstance->getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo);
+    $result = $api->getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->getAllReleasedOrders: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **createdStartDate** | **string**| Start Date for querying all purchase orders after this date. Use epoch time format in seconds. | [optional] |
 | **createdEndDate** | **string**| End Date for querying all purchase orders after this date. Use epoch time format in seconds. | [optional] |
@@ -288,9 +308,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getAllWFSOrders()`
 
@@ -305,19 +325,23 @@ Retrieves the details of all the WFS orders for specified search criteria.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $createdStartDate = 'createdStartDate_example'; // string | Start Date for querying all purchase orders after that date. Use one of the following formats, based on UTC, ISO 8601. Date example: '2013-08-16' Timestamp example: '2013-08-16T10:30:15Z'
 $customerOrderId = 'customerOrderId_example'; // string | The customer order ID
@@ -327,14 +351,15 @@ $limit = 'limit_example'; // string | The number of orders to be returned.Cannot
 $offset = 'offset_example'; // string | Starting order offset for the current page
 
 try {
-    $result = $apiInstance->getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset);
+    $result = $api->getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->getAllWFSOrders: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **createdStartDate** | **string**| Start Date for querying all purchase orders after that date. Use one of the following formats, based on UTC, ISO 8601. Date example: '2013-08-16' Timestamp example: '2013-08-16T10:30:15Z' | |
 | **customerOrderId** | **string**| The customer order ID | [optional] |
@@ -357,9 +382,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getAnOrder()`
 
@@ -374,32 +399,37 @@ Retrieves an order detail for a specific purchaseOrderId
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
 $productInfo = 'productInfo_example'; // string | Provides the image URL and product weight in response, if available. This parameter must be boolean, e.g.: productInfo=true.
 
 try {
-    $result = $apiInstance->getAnOrder($purchaseOrderId, $productInfo);
+    $result = $api->getAnOrder($purchaseOrderId, $productInfo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->getAnOrder: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
 | **productInfo** | **string**| Provides the image URL and product weight in response, if available. This parameter must be boolean, e.g.: productInfo=true. | [optional] |
@@ -418,9 +448,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `refundOrderLinesCA()`
 
@@ -435,19 +465,23 @@ Refunds one or more order lines that have been shipped.  The response to a succe
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
 $refundOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
@@ -506,14 +540,15 @@ $refundOrderLinesCARequest = <?xml version="1.0" encoding="UTF-8"?>
 </orderRefund>; // \Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequest | File fields
 
 try {
-    $result = $apiInstance->refundOrderLinesCA($purchaseOrderId, $refundOrderLinesCARequest);
+    $result = $api->refundOrderLinesCA($purchaseOrderId, $refundOrderLinesCARequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->refundOrderLinesCA: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
 | **refundOrderLinesCARequest** | [**\Walmart\Models\MP\CA\Orders\RefundOrderLinesCARequest**](../Model/RefundOrderLinesCARequest.md)| File fields | |
@@ -532,9 +567,9 @@ try {
 - **Content-Type**: `application/xml`
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `shippingUpdatesCA()`
 
@@ -549,19 +584,23 @@ Updates the status of order lines to **Shipped** and trigger the charge to the
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\OrdersApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
 $shippingUpdatesCARequest = <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -595,14 +634,15 @@ $shippingUpdatesCARequest = <?xml version="1.0" encoding="UTF-8" standalone="yes
 </orderShipment>; // \Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequest | File fields
 
 try {
-    $result = $apiInstance->shippingUpdatesCA($purchaseOrderId, $shippingUpdatesCARequest);
+    $result = $api->shippingUpdatesCA($purchaseOrderId, $shippingUpdatesCARequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->shippingUpdatesCA: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
 | **shippingUpdatesCARequest** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCARequest**](../Model/ShippingUpdatesCARequest.md)| File fields | |
@@ -621,6 +661,6 @@ try {
 - **Content-Type**: `application/xml`
 - **Accept**: `application/xml`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)

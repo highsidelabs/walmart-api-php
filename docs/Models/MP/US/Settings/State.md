@@ -1,4 +1,4 @@
-# #US\MP\State
+# Walmart\Models\MP\US\Settings\State
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **stateSubregions** | [**\Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInnerStatesInnerStateSubregionsInner[]**](GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerRegionsInnerSubRegionsInnerStatesInnerStateSubregionsInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

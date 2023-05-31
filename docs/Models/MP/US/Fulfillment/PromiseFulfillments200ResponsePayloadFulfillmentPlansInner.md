@@ -1,4 +1,4 @@
-# #US\MP\PromiseFulfillments200ResponsePayloadFulfillmentPlansInner
+# Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInner
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **fulfillmentModules** | [**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner[]**](PromiseFulfillments200ResponsePayloadFulfillmentPlansInnerFulfillmentModulesInner.md) | Fulfillment module details. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

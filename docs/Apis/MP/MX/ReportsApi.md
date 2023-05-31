@@ -1,9 +1,9 @@
-# Walmart\Api\MX\MPReportsApi  
+# Walmart\Apis\MP\MX\ReportsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getItemReport()**](ReportsApi.md#getItemReport) | **GET** /v3/getReport | Get item report |
+| [**getItemReport()**](#getItemReport) | **GET** /v3/getReport | Get item report |
 
 
 ## `getItemReport()`
@@ -19,32 +19,32 @@ Returns all the information associated with Seller's items that are set up on Wa
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReportsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->reports();
 
 $type = 'type_example'; // string | Type of report to be requested
 
 try {
-    $result = $apiInstance->getItemReport($type);
+    $result = $api->getItemReport($type);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReportsApi->getItemReport: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **type** | **string**| Type of report to be requested | |
 
@@ -62,6 +62,6 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/octet-stream`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)

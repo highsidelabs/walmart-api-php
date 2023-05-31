@@ -1,4 +1,4 @@
-# #US\MP\UpdateLagTimeBulk200Response
+# Walmart\Models\MP\US\LagTime\UpdateLagTimeBulk200Response
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **feedId** | **string** | A unique ID, returned from the Bulk Upload API, used for tracking the Feed File. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #MX\MP\GetAllFeedStatuses200ResponseResultsFeedInner
+# Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200ResponseResultsFeedInner
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **modifiedDtm** | **int** | The most recent time the feed was modified. Format: yyyymmddThh:mm:ss.xxxz | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

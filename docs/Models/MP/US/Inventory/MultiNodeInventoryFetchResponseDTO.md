@@ -1,4 +1,4 @@
-# #US\MP\MultiNodeInventoryFetchResponseDTO
+# Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **elements** | [**\Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements**](GetMultiNodeInventoryForAllSkuAndAllShipNodes200ResponseElements.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

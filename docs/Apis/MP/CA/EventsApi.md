@@ -1,16 +1,16 @@
-# Walmart\Api\CA\MPEventsApi  
+# Walmart\Apis\MP\CA\EventsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**autoUploadPromoSpec()**](EventsApi.md#autoUploadPromoSpec) | **POST** /v3/ca/promotion/autoUploadPromoSpec | Auto Upload Promo Spec |
-| [**bulkAddItem()**](EventsApi.md#bulkAddItem) | **POST** /v3/ca/promotion/bulkAddItems | Bulk Add Item |
-| [**downloadTemplate()**](EventsApi.md#downloadTemplate) | **GET** /v3/ca/promotion/template | Download Template |
-| [**getAPromoItem()**](EventsApi.md#getAPromoItem) | **GET** /v3/ca/promotion/getpromoitems | Get Selected Promo Item |
-| [**getAllPromoItems()**](EventsApi.md#getAllPromoItems) | **GET** /v3/ca/promotion/allPromoItems | Get All Promo Items |
-| [**getEvent()**](EventsApi.md#getEvent) | **GET** /v3/ca/promotion/events | Get Event by Partner ID |
-| [**getPromoSpec()**](EventsApi.md#getPromoSpec) | **GET** /v3/ca/promotion/getPromoSpec | Download Promo Spec |
-| [**getTotalItemCount()**](EventsApi.md#getTotalItemCount) | **GET** /v3/ca/promotion/items/count | Get Total Item Count |
+| [**autoUploadPromoSpec()**](#autoUploadPromoSpec) | **POST** /v3/ca/promotion/autoUploadPromoSpec | Auto Upload Promo Spec |
+| [**bulkAddItem()**](#bulkAddItem) | **POST** /v3/ca/promotion/bulkAddItems | Bulk Add Item |
+| [**downloadTemplate()**](#downloadTemplate) | **GET** /v3/ca/promotion/template | Download Template |
+| [**getAPromoItem()**](#getAPromoItem) | **GET** /v3/ca/promotion/getpromoitems | Get Selected Promo Item |
+| [**getAllPromoItems()**](#getAllPromoItems) | **GET** /v3/ca/promotion/allPromoItems | Get All Promo Items |
+| [**getEvent()**](#getEvent) | **GET** /v3/ca/promotion/events | Get Event by Partner ID |
+| [**getPromoSpec()**](#getPromoSpec) | **GET** /v3/ca/promotion/getPromoSpec | Download Promo Spec |
+| [**getTotalItemCount()**](#getTotalItemCount) | **GET** /v3/ca/promotion/items/count | Get Total Item Count |
 
 
 ## `autoUploadPromoSpec()`
@@ -26,31 +26,36 @@ This will be an automated procedure, which needs to be triggered from the seller
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 $eventId = 'eventId_example'; // string | The Event Id
 
 try {
-    $result = $apiInstance->autoUploadPromoSpec($eventId);
+    $result = $api->autoUploadPromoSpec($eventId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->autoUploadPromoSpec: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eventId** | **string**| The Event Id | |
 
@@ -68,9 +73,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `bulkAddItem()`
 
@@ -85,33 +90,38 @@ Once the seller has filled the template file downloaded with Download Template A
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 $eventId = 'eventId_example'; // string
 $eventName = 'eventName_example'; // string
 
 try {
-    $result = $apiInstance->bulkAddItem($file, $eventId, $eventName);
+    $result = $api->bulkAddItem($file, $eventId, $eventName);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->bulkAddItem: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
 | **eventId** | **string**|  | |
@@ -131,9 +141,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `downloadTemplate()`
 
@@ -148,29 +158,34 @@ Once the seller has visibility into the upcoming events, they can submit their i
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 
 try {
-    $apiInstance->downloadTemplate();
+    $api->downloadTemplate();
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->downloadTemplate: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -186,9 +201,9 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getAPromoItem()`
 
@@ -203,31 +218,36 @@ Once the Item upload is complete, the sellers can view only selective uploaded i
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 $eventID = 'eventID_example'; // string | The Event Id
 
 try {
-    $result = $apiInstance->getAPromoItem($eventID);
+    $result = $api->getAPromoItem($eventID);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->getAPromoItem: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eventID** | **string**| The Event Id | |
 
@@ -245,9 +265,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getAllPromoItems()`
 
@@ -262,32 +282,37 @@ Once the Item upload is complete, the sellers can view their uploaded items usin
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 $eventID = 'eventID_example'; // string | The Event Id
 $type = 'json'; // string | The API returns json response.
 
 try {
-    $result = $apiInstance->getAllPromoItems($eventID, $type);
+    $result = $api->getAllPromoItems($eventID, $type);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->getAllPromoItems: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eventID** | **string**| The Event Id | |
 | **type** | **string**| The API returns json response. | [optional] [default to 'json'] |
@@ -306,9 +331,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getEvent()`
 
@@ -323,30 +348,35 @@ This API is the primary source of information for all the current active events 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 
 try {
-    $result = $apiInstance->getEvent();
+    $result = $api->getEvent();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->getEvent: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -362,9 +392,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getPromoSpec()`
 
@@ -379,31 +409,36 @@ This API lets sellers download a file constituting all the items they upload for
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 $eventId = 'eventId_example'; // string | The Event Id
 $type = 'file'; // string | The API returns file response.
 
 try {
-    $apiInstance->getPromoSpec($eventId, $type);
+    $api->getPromoSpec($eventId, $type);
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->getPromoSpec: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eventId** | **string**| The Event Id | |
 | **type** | **string**| The API returns file response. | [optional] [default to 'file'] |
@@ -422,9 +457,9 @@ void (empty response body)
 - **Content-Type**: Not defined
 - **Accept**: Not defined
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)
 
 ## `getTotalItemCount()`
 
@@ -439,31 +474,36 @@ A summary of the total item count under various subcategories can be viewed usin
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure key-based authorization: signatureScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_SEC.AUTH_SIGNATURE', 'YOUR_KEY');
-// Configure key-based authorization: consumerIdScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET')->setApiKey('WM_CONSUMER.ID', 'YOUR_KEY');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\EventsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'CA',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::marketplace($config)->events();
 
 $eventId = 'eventId_example'; // string | The Event Id
 
 try {
-    $result = $apiInstance->getTotalItemCount($eventId);
+    $result = $api->getTotalItemCount($eventId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling EventsApi->getTotalItemCount: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **eventId** | **string**| The Event Id | |
 
@@ -481,6 +521,6 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/CA)
+[[Back to README]](../../../../README.md)

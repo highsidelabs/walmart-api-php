@@ -1,4 +1,4 @@
-# #US\DSV\TaxType
+# Walmart\Models\DSV\US\Orders\TaxType
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **taxAmount** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount**](ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

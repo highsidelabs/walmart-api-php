@@ -1,4 +1,4 @@
-# #US\MP\MoneyType
+# Walmart\Models\MP\US\Orders\MoneyType
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **currencyUnit** | **string** |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

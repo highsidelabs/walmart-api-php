@@ -1,4 +1,4 @@
-# #US\MP\CategoryPayload
+# Walmart\Models\MP\US\Utilities\CategoryPayload
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **subcategory** | [**\Walmart\Models\MP\US\Utilities\GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner[]**](GetTaxonomyResponse200ResponsePayloadInnerSubcategoryInner.md) | Specific kind of category | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

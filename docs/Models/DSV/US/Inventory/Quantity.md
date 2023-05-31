@@ -1,4 +1,4 @@
-# #US\DSV\Quantity
+# Walmart\Models\DSV\US\Inventory\Quantity
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **amount** | **float** | Indicates the quantity of the product available in inventory. |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

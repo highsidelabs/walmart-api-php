@@ -1,4 +1,4 @@
-# #US\MP\GetCatalogSearchRequest
+# Walmart\Models\MP\US\Items\GetCatalogSearchRequest
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **sort** | [**\Walmart\Models\MP\US\Items\GetCatalogSearchRequestSort**](GetCatalogSearchRequestSort.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

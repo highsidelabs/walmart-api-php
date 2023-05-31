@@ -1,14 +1,14 @@
-# Walmart\Api\US\MPReportsApi  
+# Walmart\Apis\MP\US\ReportsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getAvailableReconReportDates()**](ReportsApi.md#getAvailableReconReportDates) | **GET** /v3/report/reconreport/availableReconFiles | Available recon report dates(Legacy) |
-| [**getAvailableV1ReconReportDates()**](ReportsApi.md#getAvailableV1ReconReportDates) | **GET** /v3/report/reconreport/availableReconFiles?reportVersion&#x3D;v1 | Available recon report dates |
-| [**getPartnerPerformance()**](ReportsApi.md#getPartnerPerformance) | **GET** /v3/report/payment/performance | Performance Report |
-| [**getPartnerStatement()**](ReportsApi.md#getPartnerStatement) | **GET** /v3/report/payment/statement | Payment Statement Report |
-| [**getReconReport()**](ReportsApi.md#getReconReport) | **GET** /v3/report/reconreport/reconFile | Recon report(Legacy) |
-| [**getReconReportV1()**](ReportsApi.md#getReconReportV1) | **GET** /v3/report/reconreport/reconFile?reportVersion&#x3D;v1 | Recon report |
+| [**getAvailableReconReportDates()**](#getAvailableReconReportDates) | **GET** /v3/report/reconreport/availableReconFiles | Available recon report dates(Legacy) |
+| [**getAvailableV1ReconReportDates()**](#getAvailableV1ReconReportDates) | **GET** /v3/report/reconreport/availableReconFiles?reportVersion&#x3D;v1 | Available recon report dates |
+| [**getPartnerPerformance()**](#getPartnerPerformance) | **GET** /v3/report/payment/performance | Performance Report |
+| [**getPartnerStatement()**](#getPartnerStatement) | **GET** /v3/report/payment/statement | Payment Statement Report |
+| [**getReconReport()**](#getReconReport) | **GET** /v3/report/reconreport/reconFile | Recon report(Legacy) |
+| [**getReconReportV1()**](#getReconReportV1) | **GET** /v3/report/reconreport/reconFile?reportVersion&#x3D;v1 | Recon report |
 
 
 ## `getAvailableReconReportDates()`
@@ -24,29 +24,28 @@ This API will list all the available Marketplace reconciliation report dates for
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReportsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->reports();
 
 
 try {
-    $result = $apiInstance->getAvailableReconReportDates();
+    $result = $api->getAvailableReconReportDates();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReportsApi->getAvailableReconReportDates: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -62,9 +61,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAvailableV1ReconReportDates()`
 
@@ -79,29 +78,28 @@ This API will list all the available Marketplace reconciliation report dates for
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReportsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->reports();
 
 
 try {
-    $result = $apiInstance->getAvailableV1ReconReportDates();
+    $result = $api->getAvailableV1ReconReportDates();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReportsApi->getAvailableV1ReconReportDates: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -117,9 +115,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getPartnerPerformance()`
 
@@ -134,29 +132,28 @@ This API will get a partner's current cycle performance
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReportsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->reports();
 
 
 try {
-    $result = $apiInstance->getPartnerPerformance();
+    $result = $api->getPartnerPerformance();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReportsApi->getPartnerPerformance: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -172,9 +169,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getPartnerStatement()`
 
@@ -189,29 +186,28 @@ This API will get a partner's current cycle statement
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReportsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->reports();
 
 
 try {
-    $result = $apiInstance->getPartnerStatement();
+    $result = $api->getPartnerStatement();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReportsApi->getPartnerStatement: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -227,9 +223,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getReconReport()`
 
@@ -244,30 +240,29 @@ Seller can download the reconciliation report for a specific date using this API
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReportsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->reports();
 
 $reportDate = 'reportDate_example'; // string | The date for which the reconcilation file is available
 
 try {
-    $result = $apiInstance->getReconReport($reportDate);
+    $result = $api->getReconReport($reportDate);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReportsApi->getReconReport: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **reportDate** | **string**| The date for which the reconcilation file is available | |
 
@@ -285,9 +280,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getReconReportV1()`
 
@@ -302,31 +297,30 @@ Seller can download the reconciliation report for a specific date using this API
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReportsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->reports();
 
 $reportDate = 'reportDate_example'; // string | The date for which the reconcilation file is available
 $reportVersion = 'reportVersion_example'; // string | Report Version
 
 try {
-    $result = $apiInstance->getReconReportV1($reportDate, $reportVersion);
+    $result = $api->getReconReportV1($reportDate, $reportVersion);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReportsApi->getReconReportV1: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **reportDate** | **string**| The date for which the reconcilation file is available | |
 | **reportVersion** | **string**| Report Version | |
@@ -345,6 +339,6 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

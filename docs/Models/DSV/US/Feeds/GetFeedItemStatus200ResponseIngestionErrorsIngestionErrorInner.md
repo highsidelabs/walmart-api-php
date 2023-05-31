@@ -1,4 +1,4 @@
-# #US\DSV\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner
+# Walmart\Models\DSV\US\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **description** | **string** | Error description | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

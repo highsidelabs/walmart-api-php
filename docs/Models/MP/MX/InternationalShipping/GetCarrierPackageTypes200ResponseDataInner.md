@@ -1,4 +1,4 @@
-# #MX\MP\GetCarrierPackageTypes200ResponseDataInner
+# Walmart\Models\MP\MX\InternationalShipping\GetCarrierPackageTypes200ResponseDataInner
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **dimensionUnit** | **string** | The package dimension unit | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

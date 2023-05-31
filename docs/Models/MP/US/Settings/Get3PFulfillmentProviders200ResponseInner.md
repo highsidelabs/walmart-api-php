@@ -1,4 +1,4 @@
-# #US\MP\Get3PFulfillmentProviders200ResponseInner
+# Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **shipNodeName** | **string** | Name of the fulfillment center. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

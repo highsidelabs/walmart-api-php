@@ -1,4 +1,4 @@
-# #US\MP\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling
+# Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeShippingAndHandling
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **currency** | **string** | The type of currency for the charge. Example: USD for US Dollars |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\GetRepricerFeedRequest
+# Walmart\Models\MP\US\Prices\GetRepricerFeedRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **item** | [**\Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInner[]**](GetRepricerFeedRequestItemInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

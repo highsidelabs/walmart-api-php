@@ -1,4 +1,4 @@
-# #US\MP\AreaEntity
+# Walmart\Models\MP\US\Rules\AreaEntity
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **regionName** | **string** | regionName | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

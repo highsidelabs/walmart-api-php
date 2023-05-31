@@ -1,4 +1,4 @@
-# #US\MP\GetReturns200ResponseReturnOrdersInnerCustomerName
+# Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerCustomerName
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **lastName** | **string** | Customer last name | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

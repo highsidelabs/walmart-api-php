@@ -1,4 +1,4 @@
-# #CA\MP\ItemType
+# Walmart\Models\MP\CA\Orders\ItemType
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **sku** | **string** | An arbitrary alphanumeric unique ID, assigned to each item in the XSD file. |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

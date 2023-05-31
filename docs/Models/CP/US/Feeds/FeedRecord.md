@@ -1,4 +1,4 @@
-# #US\CP\FeedRecord
+# Walmart\Models\CP\US\Feeds\FeedRecord
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **modifiedDtm** | **\DateTime** | The most recent time the feed was modified. Format: yyyymmddThh:mm:ss.xxxz | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/CP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #MX\MP\Measurement
+# Walmart\Models\MP\MX\Returns\Measurement
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **amount** | **string** | The amount with witch the orderLine is measured along with unitofMeasurement | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

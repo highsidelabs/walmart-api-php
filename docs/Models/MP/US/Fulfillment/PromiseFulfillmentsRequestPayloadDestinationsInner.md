@@ -1,4 +1,4 @@
-# #US\MP\PromiseFulfillmentsRequestPayloadDestinationsInner
+# Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadDestinationsInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **fulfillmentType** | **string** | Fulfillment Type of an order. Currently supported type : 'DELIVERY' |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

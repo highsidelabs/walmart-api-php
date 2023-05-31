@@ -1,4 +1,4 @@
-# #US\MP\MultiNodeInventoryUpdateResponseDTO
+# Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **nodes** | [**\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventory200ResponseNodesInner[]**](UpdateMultiNodeInventory200ResponseNodesInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

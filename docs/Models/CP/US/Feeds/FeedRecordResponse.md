@@ -1,4 +1,4 @@
-# #US\CP\FeedRecordResponse
+# Walmart\Models\CP\US\Feeds\FeedRecordResponse
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **results** | [**\Walmart\Models\CP\US\Feeds\FeedRecordResponseResultsInner[]**](FeedRecordResponseResultsInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/CP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

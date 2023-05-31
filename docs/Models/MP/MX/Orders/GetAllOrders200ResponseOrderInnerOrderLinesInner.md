@@ -1,4 +1,4 @@
-# #MX\MP\GetAllOrders200ResponseOrderInnerOrderLinesInner
+# Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInner
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **seller** | [**\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller**](GetAllOrders200ResponseOrderInnerOrderLinesInnerSeller.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\GetListingQualityScore200ResponsePayload
+# Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayload
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **postPurchaseQuality** | [**\Walmart\Models\MP\US\Insights\GetListingQualityScore200ResponsePayloadPostPurchaseQuality**](GetListingQualityScore200ResponsePayloadPostPurchaseQuality.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

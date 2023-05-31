@@ -1,4 +1,4 @@
-# #US\MP\Carrier
+# Walmart\Models\MP\US\Fulfillment\Carrier
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **carrierName** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

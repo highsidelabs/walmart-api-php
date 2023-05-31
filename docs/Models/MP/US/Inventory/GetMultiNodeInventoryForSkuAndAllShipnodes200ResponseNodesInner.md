@@ -1,4 +1,4 @@
-# #US\MP\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner
+# Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **reservedQty** | [**\Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity**](GetInventory200ResponseQuantity.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

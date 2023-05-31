@@ -1,4 +1,4 @@
-# #US\MP\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
+# Walmart\Models\MP\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInnerErrorsInner
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **errorIdentifiers** | **array<string,object>** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

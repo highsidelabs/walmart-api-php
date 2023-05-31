@@ -1,23 +1,23 @@
-# Walmart\Api\US\MPSettingsApi  
+# Walmart\Apis\MP\US\SettingsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**associate3PFulfillmentCenter()**](SettingsApi.md#associate3PFulfillmentCenter) | **POST** /v3/settings/shipping/3plshipnodes | Third party fulfillment center association |
-| [**createFulfillmentCenter()**](SettingsApi.md#createFulfillmentCenter) | **POST** /v3/settings/shipping/shipnodes | Create fulfillment center |
-| [**createShippingTemplates()**](SettingsApi.md#createShippingTemplates) | **POST** /v3/settings/shipping/templates | Create Shipping Templates |
-| [**deleteShippingTemplateDetails()**](SettingsApi.md#deleteShippingTemplateDetails) | **DELETE** /v3/settings/shipping/templates/{templateId} | Delete Shipping Template |
-| [**get3PFulfillmentProviders()**](SettingsApi.md#get3PFulfillmentProviders) | **GET** /v3/settings/shipping/3plproviders | Get all third party fulfillment providers |
-| [**getAllFulfillmentCenters()**](SettingsApi.md#getAllFulfillmentCenters) | **GET** /v3/settings/shipping/shipnodes | Get all fulfillment centers |
-| [**getAllShippingTemplates()**](SettingsApi.md#getAllShippingTemplates) | **GET** /v3/settings/shipping/templates | Get All Shipping Templates |
-| [**getCarrierMethods()**](SettingsApi.md#getCarrierMethods) | **GET** /v3/settings/shipping/carriers | Get carrier methods |
-| [**getCoverageForFulfillmentCenters()**](SettingsApi.md#getCoverageForFulfillmentCenters) | **GET** /v3/settings/shipping/shipnodes/coverage | Get coverage for fulfillment centers |
-| [**getPartnerConfigurations()**](SettingsApi.md#getPartnerConfigurations) | **GET** /v3/settings/partnerprofile | Get Partner Configurations |
-| [**getShippingConfigurations()**](SettingsApi.md#getShippingConfigurations) | **GET** /v3/settings/shippingprofile | Get Shipping Configurations |
-| [**getShippingTemplateActivationStatus()**](SettingsApi.md#getShippingTemplateActivationStatus) | **GET** /v3/settings/shipping/templates/activationStatus | Get Shipping Template Activation Status |
-| [**getShippingTemplateDetails()**](SettingsApi.md#getShippingTemplateDetails) | **GET** /v3/settings/shipping/templates/{templateId} | Get Shipping Template Details |
-| [**updateFulfillmentCenter()**](SettingsApi.md#updateFulfillmentCenter) | **PUT** /v3/settings/shipping/shipnodes | Update fulfillment center |
-| [**updateShippingTemplates()**](SettingsApi.md#updateShippingTemplates) | **PUT** /v3/settings/shipping/templates/{templateId} | Update Shipping Templates |
+| [**associate3PFulfillmentCenter()**](#associate3PFulfillmentCenter) | **POST** /v3/settings/shipping/3plshipnodes | Third party fulfillment center association |
+| [**createFulfillmentCenter()**](#createFulfillmentCenter) | **POST** /v3/settings/shipping/shipnodes | Create fulfillment center |
+| [**createShippingTemplates()**](#createShippingTemplates) | **POST** /v3/settings/shipping/templates | Create Shipping Templates |
+| [**deleteShippingTemplateDetails()**](#deleteShippingTemplateDetails) | **DELETE** /v3/settings/shipping/templates/{templateId} | Delete Shipping Template |
+| [**get3PFulfillmentProviders()**](#get3PFulfillmentProviders) | **GET** /v3/settings/shipping/3plproviders | Get all third party fulfillment providers |
+| [**getAllFulfillmentCenters()**](#getAllFulfillmentCenters) | **GET** /v3/settings/shipping/shipnodes | Get all fulfillment centers |
+| [**getAllShippingTemplates()**](#getAllShippingTemplates) | **GET** /v3/settings/shipping/templates | Get All Shipping Templates |
+| [**getCarrierMethods()**](#getCarrierMethods) | **GET** /v3/settings/shipping/carriers | Get carrier methods |
+| [**getCoverageForFulfillmentCenters()**](#getCoverageForFulfillmentCenters) | **GET** /v3/settings/shipping/shipnodes/coverage | Get coverage for fulfillment centers |
+| [**getPartnerConfigurations()**](#getPartnerConfigurations) | **GET** /v3/settings/partnerprofile | Get Partner Configurations |
+| [**getShippingConfigurations()**](#getShippingConfigurations) | **GET** /v3/settings/shippingprofile | Get Shipping Configurations |
+| [**getShippingTemplateActivationStatus()**](#getShippingTemplateActivationStatus) | **GET** /v3/settings/shipping/templates/activationStatus | Get Shipping Template Activation Status |
+| [**getShippingTemplateDetails()**](#getShippingTemplateDetails) | **GET** /v3/settings/shipping/templates/{templateId} | Get Shipping Template Details |
+| [**updateFulfillmentCenter()**](#updateFulfillmentCenter) | **PUT** /v3/settings/shipping/shipnodes | Update fulfillment center |
+| [**updateShippingTemplates()**](#updateShippingTemplates) | **PUT** /v3/settings/shipping/templates/{templateId} | Update Shipping Templates |
 
 
 ## `associate3PFulfillmentCenter()`
@@ -33,30 +33,29 @@ This API associate a third party fulfillment center with Seller.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $associate3PFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNode":"99351656957153281","status":"ACTIVE"}]}; // \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequest | Request fields
 
 try {
-    $result = $apiInstance->associate3PFulfillmentCenter($associate3PFulfillmentCenterRequest);
+    $result = $api->associate3PFulfillmentCenter($associate3PFulfillmentCenterRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->associate3PFulfillmentCenter: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **associate3PFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequest**](../Model/Associate3PFulfillmentCenterRequest.md)| Request fields | |
 
@@ -74,9 +73,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `createFulfillmentCenter()`
 
@@ -91,30 +90,29 @@ This API creates a fulfillment center.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $createFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":[{"shipNodeName":"my distrubutor786","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"92hb1234","postalAddress":{"addressLine1":"36 CALIFORNIA SAA233","city":"SC GABRIEL22","state":"CA","country":"USA","postalCode":"90100"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}]}; // \Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequest | Request fields
 
 try {
-    $result = $apiInstance->createFulfillmentCenter($createFulfillmentCenterRequest);
+    $result = $api->createFulfillmentCenter($createFulfillmentCenterRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->createFulfillmentCenter: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **createFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequest**](../Model/CreateFulfillmentCenterRequest.md)| Request fields | |
 
@@ -132,9 +130,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `createShippingTemplates()`
 
@@ -149,30 +147,29 @@ Create a new shipping template
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $createShippingTemplatesRequest = {"name":"Next Day servc","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\CreateShippingTemplatesRequest | Request fields
 
 try {
-    $result = $apiInstance->createShippingTemplates($createShippingTemplatesRequest);
+    $result = $api->createShippingTemplates($createShippingTemplatesRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->createShippingTemplates: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **createShippingTemplatesRequest** | [**\Walmart\Models\MP\US\Settings\CreateShippingTemplatesRequest**](../Model/CreateShippingTemplatesRequest.md)| Request fields | |
 
@@ -190,9 +187,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `deleteShippingTemplateDetails()`
 
@@ -207,30 +204,29 @@ Delete Existing Shipping Template. DEFAULT templates cannot be deleted. 3PL part
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $templateId = 'templateId_example'; // string | Shipping Template ID of the template to be deleted
 
 try {
-    $result = $apiInstance->deleteShippingTemplateDetails($templateId);
+    $result = $api->deleteShippingTemplateDetails($templateId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->deleteShippingTemplateDetails: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **templateId** | **string**| Shipping Template ID of the template to be deleted | |
 
@@ -248,9 +244,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `get3PFulfillmentProviders()`
 
@@ -265,29 +261,28 @@ Get a list of all third party fulfillment providers.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 
 try {
-    $result = $apiInstance->get3PFulfillmentProviders();
+    $result = $api->get3PFulfillmentProviders();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->get3PFulfillmentProviders: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -303,9 +298,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAllFulfillmentCenters()`
 
@@ -320,30 +315,29 @@ This API provides a list of all the fulfillment centers
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $includeCalendarDayConfiguration = false; // bool | Flag to specify if calendarDayConfiguration block will be included in the response. Allowed values are true or false.
 
 try {
-    $result = $apiInstance->getAllFulfillmentCenters($includeCalendarDayConfiguration);
+    $result = $api->getAllFulfillmentCenters($includeCalendarDayConfiguration);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getAllFulfillmentCenters: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **includeCalendarDayConfiguration** | **bool**| Flag to specify if calendarDayConfiguration block will be included in the response. Allowed values are true or false. | [optional] [default to false] |
 
@@ -361,9 +355,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAllShippingTemplates()`
 
@@ -378,29 +372,28 @@ Get all the shipping templates for a Seller. All template types viz. CUSTOM, DEF
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 
 try {
-    $result = $apiInstance->getAllShippingTemplates();
+    $result = $api->getAllShippingTemplates();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getAllShippingTemplates: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -416,9 +409,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getCarrierMethods()`
 
@@ -433,29 +426,28 @@ Gets the available carrier methods
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 
 try {
-    $result = $apiInstance->getCarrierMethods();
+    $result = $api->getCarrierMethods();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getCarrierMethods: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -471,9 +463,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getCoverageForFulfillmentCenters()`
 
@@ -488,29 +480,28 @@ This API provides the list of all fullfillment centers for the seller and their 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 
 try {
-    $result = $apiInstance->getCoverageForFulfillmentCenters();
+    $result = $api->getCoverageForFulfillmentCenters();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getCoverageForFulfillmentCenters: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -526,9 +517,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getPartnerConfigurations()`
 
@@ -543,29 +534,28 @@ Get Partner Configurations
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 
 try {
-    $result = $apiInstance->getPartnerConfigurations();
+    $result = $api->getPartnerConfigurations();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getPartnerConfigurations: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -581,9 +571,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getShippingConfigurations()`
 
@@ -598,29 +588,28 @@ Get Shipping Configurations
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 
 try {
-    $result = $apiInstance->getShippingConfigurations();
+    $result = $api->getShippingConfigurations();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getShippingConfigurations: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -636,9 +625,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getShippingTemplateActivationStatus()`
 
@@ -653,29 +642,28 @@ This api can be used to get the Activation Status of the Shipping Templates, whi
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 
 try {
-    $result = $apiInstance->getShippingTemplateActivationStatus();
+    $result = $api->getShippingTemplateActivationStatus();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getShippingTemplateActivationStatus: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -691,9 +679,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getShippingTemplateDetails()`
 
@@ -708,30 +696,29 @@ Get Shipping Template Details. Details of CUSTOM, DEFAULT and 3PL-specific (eg. 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $templateId = 'templateId_example'; // string | templateId
 
 try {
-    $result = $apiInstance->getShippingTemplateDetails($templateId);
+    $result = $api->getShippingTemplateDetails($templateId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->getShippingTemplateDetails: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **templateId** | **string**| templateId | |
 
@@ -749,9 +736,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateFulfillmentCenter()`
 
@@ -766,30 +753,29 @@ This API enables or disables a fulfillment center.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $updateFulfillmentCenterRequest = {"shipNodeHeader":{"version":"1.2"},"shipNode":{"shipNode":"84955660770217985","shipNodeName":"Seller test-distributor","status":"ACTIVE","timeZone":"PST","distributorSupportedServices":["TWO_DAY_DELIVERY"],"customNodeId":"91ab1234","postalAddress":{"addressLine1":"111 CALIFORNIA SA","city":"SC GABRIEL","state":"CA","country":"USA","postalCode":"90706"},"shippingDetails":[{"twoDayShipping":[{"carrierMethodName":"FEDEX","carrierMethodType":"GROUND"}]}]}}; // \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest | Request fields
 
 try {
-    $result = $apiInstance->updateFulfillmentCenter($updateFulfillmentCenterRequest);
+    $result = $api->updateFulfillmentCenter($updateFulfillmentCenterRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->updateFulfillmentCenter: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../Model/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
@@ -807,9 +793,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateShippingTemplates()`
 
@@ -824,31 +810,30 @@ Update existing Shipping Template.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\SettingsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->settings();
 
 $templateId = 'templateId_example'; // string | templateId
 $updateShippingTemplatesRequest = {"name":"Next Day servc test","type":"CUSTOM","rateModelType":"TIERED_PRICING","status":"ACTIVE","shippingMethods":[{"shipMethod":"VALUE","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State"}],"addressTypes":["STREET"],"transitTime":6,"tieredShippingCharges":[{"minLimit":0,"maxLimit":-1,"shipCharge":{"amount":0,"currency":"USD"}}]}]},{"shipMethod":"STANDARD","status":"ACTIVE","configurations":[{"regions":[{"regionCode":"C","regionName":"48 State","subRegions":[{"subRegionCode":"MW","subRegionName":"MW","states":[{"stateCode":"SD","stateName":"South Dakota","stateSubregions":[{"stateSubregionCode":"SD2","stateSubregionName":"SD_WEST"},{"stateSubregionCode":"SD1","stateSubregionName":"SD_EAST"}]}]}]}],"addressTypes":["STREET"],"transitTime":3,"tieredShippingCharges":[{"minLimit":10.06,"maxLimit":-1,"shipCharge":{"amount":2,"currency":"USD"}},{"minLimit":0,"maxLimit":10.05,"shipCharge":{"amount":1,"currency":"USD"}}]}]}]}; // \Walmart\Models\MP\US\Settings\UpdateShippingTemplatesRequest | Request fields
 
 try {
-    $result = $apiInstance->updateShippingTemplates($templateId, $updateShippingTemplatesRequest);
+    $result = $api->updateShippingTemplates($templateId, $updateShippingTemplatesRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling SettingsApi->updateShippingTemplates: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **templateId** | **string**| templateId | |
 | **updateShippingTemplatesRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplatesRequest**](../Model/UpdateShippingTemplatesRequest.md)| Request fields | |
@@ -867,6 +852,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

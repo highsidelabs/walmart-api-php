@@ -1,25 +1,25 @@
-# Walmart\Api\US\MPRulesApi  
+# Walmart\Apis\MP\US\RulesApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**activateRule()**](RulesApi.md#activateRule) | **PUT** /v3/rules/activate | Activate rule |
-| [**changeAssortmentType()**](RulesApi.md#changeAssortmentType) | **PUT** /v3/rules/assortment | Change assortment type |
-| [**createItemRule()**](RulesApi.md#createItemRule) | **POST** /v3/rules/create | Create a new Rule |
-| [**createOverrideExceptions()**](RulesApi.md#createOverrideExceptions) | **POST** /v3/rules/exceptions | Create override exceptions |
-| [**deleteExceptions()**](RulesApi.md#deleteExceptions) | **PUT** /v3/rules/exceptions | Delete exceptions |
-| [**deleteRule()**](RulesApi.md#deleteRule) | **DELETE** /v3/rules/{ruleId}/status/{ruleStatus}/ | Delete rule |
-| [**downloadExceptions()**](RulesApi.md#downloadExceptions) | **GET** /v3/rules/downloadexceptions | Download exceptions |
-| [**downloadSimulationResult()**](RulesApi.md#downloadSimulationResult) | **GET** /v3/rules/{ruleId}/status/{ruleStatus}/simulation | Download simulation result |
-| [**getARule()**](RulesApi.md#getARule) | **GET** /v3/rules/{ruleId}/status/{ruleStatus} | Get a rule |
-| [**getAllAreas()**](RulesApi.md#getAllAreas) | **GET** /v3/rules/areas | Get all areas |
-| [**getAllExceptions()**](RulesApi.md#getAllExceptions) | **GET** /v3/rules/exceptions | Gets all exceptions |
-| [**getAllRules()**](RulesApi.md#getAllRules) | **GET** /v3/rules/ | Get all rules |
-| [**getAllSubCategories()**](RulesApi.md#getAllSubCategories) | **GET** /v3/rules/subcategories | Get all sub-categories |
-| [**getSimulationResult()**](RulesApi.md#getSimulationResult) | **GET** /v3/rules/{ruleId}/status/{ruleStatus}/simulationcount | Get simulation result |
-| [**inactivateRule()**](RulesApi.md#inactivateRule) | **PUT** /v3/rules/inactivate | Inactivate rule |
-| [**updateRule()**](RulesApi.md#updateRule) | **PUT** /v3/rules/ | Update rule |
-| [**updateShippingAreaToRule()**](RulesApi.md#updateShippingAreaToRule) | **PUT** /v3/rules/actions | Update shipping area to rules |
+| [**activateRule()**](#activateRule) | **PUT** /v3/rules/activate | Activate rule |
+| [**changeAssortmentType()**](#changeAssortmentType) | **PUT** /v3/rules/assortment | Change assortment type |
+| [**createItemRule()**](#createItemRule) | **POST** /v3/rules/create | Create a new Rule |
+| [**createOverrideExceptions()**](#createOverrideExceptions) | **POST** /v3/rules/exceptions | Create override exceptions |
+| [**deleteExceptions()**](#deleteExceptions) | **PUT** /v3/rules/exceptions | Delete exceptions |
+| [**deleteRule()**](#deleteRule) | **DELETE** /v3/rules/{ruleId}/status/{ruleStatus}/ | Delete rule |
+| [**downloadExceptions()**](#downloadExceptions) | **GET** /v3/rules/downloadexceptions | Download exceptions |
+| [**downloadSimulationResult()**](#downloadSimulationResult) | **GET** /v3/rules/{ruleId}/status/{ruleStatus}/simulation | Download simulation result |
+| [**getARule()**](#getARule) | **GET** /v3/rules/{ruleId}/status/{ruleStatus} | Get a rule |
+| [**getAllAreas()**](#getAllAreas) | **GET** /v3/rules/areas | Get all areas |
+| [**getAllExceptions()**](#getAllExceptions) | **GET** /v3/rules/exceptions | Gets all exceptions |
+| [**getAllRules()**](#getAllRules) | **GET** /v3/rules/ | Get all rules |
+| [**getAllSubCategories()**](#getAllSubCategories) | **GET** /v3/rules/subcategories | Get all sub-categories |
+| [**getSimulationResult()**](#getSimulationResult) | **GET** /v3/rules/{ruleId}/status/{ruleStatus}/simulationcount | Get simulation result |
+| [**inactivateRule()**](#inactivateRule) | **PUT** /v3/rules/inactivate | Inactivate rule |
+| [**updateRule()**](#updateRule) | **PUT** /v3/rules/ | Update rule |
+| [**updateShippingAreaToRule()**](#updateShippingAreaToRule) | **PUT** /v3/rules/actions | Update shipping area to rules |
 
 
 ## `activateRule()`
@@ -35,30 +35,29 @@ This API is used to activate a rule for a specific ruleId and ruleStatus. Only R
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"39","ruleStatus":"Submitted"},{"ruleId":"44","ruleStatus":"Inactive"}]}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
-    $result = $apiInstance->activateRule($inactivateRuleRequest);
+    $result = $api->activateRule($inactivateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->activateRule: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
@@ -76,9 +75,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `changeAssortmentType()`
 
@@ -93,31 +92,30 @@ This API helps you enable or disable the two-day assortment type.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $enable = true; // bool
 $body = array('key' => new \stdClass); // object
 
 try {
-    $result = $apiInstance->changeAssortmentType($enable, $body);
+    $result = $api->changeAssortmentType($enable, $body);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->changeAssortmentType: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **enable** | **bool**|  | |
 | **body** | **object**|  | |
@@ -136,9 +134,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `createItemRule()`
 
@@ -153,30 +151,29 @@ This API is used to create a rule by selecting any combination of conditions for
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $createItemRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"price","operator":"EQUALS","value":"20"},{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}}; // \Walmart\Models\MP\US\Rules\CreateItemRuleRequest | Request fields
 
 try {
-    $result = $apiInstance->createItemRule($createItemRuleRequest);
+    $result = $api->createItemRule($createItemRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->createItemRule: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **createItemRuleRequest** | [**\Walmart\Models\MP\US\Rules\CreateItemRuleRequest**](../Model/CreateItemRuleRequest.md)| Request fields | |
 
@@ -194,9 +191,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `createOverrideExceptions()`
 
@@ -211,30 +208,29 @@ This API is used if any SKU is required to be removed from Two-day delivery sett
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest | Request fields
 
 try {
-    $result = $apiInstance->createOverrideExceptions($deleteExceptionsRequest);
+    $result = $api->createOverrideExceptions($deleteExceptionsRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->createOverrideExceptions: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deleteExceptionsRequest** | [**\Walmart\Models\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
 
@@ -252,9 +248,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `deleteExceptions()`
 
@@ -269,30 +265,29 @@ This API is used to bring back any SKU to Two-day Delivery settings.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $deleteExceptionsRequest = {"ruleHeader":{"version":"1.2"},"rules":{"skus":[{"sku":"sku-1234"},{"sku":"sku-2323"}]}}; // \Walmart\Models\MP\US\Rules\DeleteExceptionsRequest | Request fields
 
 try {
-    $result = $apiInstance->deleteExceptions($deleteExceptionsRequest);
+    $result = $api->deleteExceptions($deleteExceptionsRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->deleteExceptions: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **deleteExceptionsRequest** | [**\Walmart\Models\MP\US\Rules\DeleteExceptionsRequest**](../Model/DeleteExceptionsRequest.md)| Request fields | |
 
@@ -310,9 +305,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `deleteRule()`
 
@@ -327,31 +322,30 @@ This API is used to delete a rule for a specific ruleId and ruleStatus
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $ruleId = 'ruleId_example'; // string | Unique identifier of the rule created for custom rule assortment.
 $ruleStatus = 'ruleStatus_example'; // string | Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted.
 
 try {
-    $result = $apiInstance->deleteRule($ruleId, $ruleStatus);
+    $result = $api->deleteRule($ruleId, $ruleStatus);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->deleteRule: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **string**| Unique identifier of the rule created for custom rule assortment. | |
 | **ruleStatus** | **string**| Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted. | |
@@ -370,9 +364,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `downloadExceptions()`
 
@@ -387,29 +381,28 @@ You can use this API to get list of the items defined using \"Create Override Ex
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 
 try {
-    $result = $apiInstance->downloadExceptions();
+    $result = $api->downloadExceptions();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->downloadExceptions: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -425,9 +418,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/octet-stream`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `downloadSimulationResult()`
 
@@ -442,31 +435,30 @@ You can use this API to download the count of items shortlisted for two-day ship
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $ruleId = 'ruleId_example'; // string | Unique identifier of the rule created for custom rule assortment.
 $ruleStatus = 'ruleStatus_example'; // string | Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted.
 
 try {
-    $result = $apiInstance->downloadSimulationResult($ruleId, $ruleStatus);
+    $result = $api->downloadSimulationResult($ruleId, $ruleStatus);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->downloadSimulationResult: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **string**| Unique identifier of the rule created for custom rule assortment. | |
 | **ruleStatus** | **string**| Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted. | |
@@ -485,9 +477,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/octet-stream`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getARule()`
 
@@ -502,31 +494,30 @@ Retrieves a rule detail for a specific ruleId and ruleStatus.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $ruleId = 'ruleId_example'; // string | Unique identifier of the rule created for custom rule assortment.
 $ruleStatus = 'ruleStatus_example'; // string | Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted.
 
 try {
-    $result = $apiInstance->getARule($ruleId, $ruleStatus);
+    $result = $api->getARule($ruleId, $ruleStatus);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->getARule: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **string**| Unique identifier of the rule created for custom rule assortment. | |
 | **ruleStatus** | **string**| Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted. | |
@@ -545,9 +536,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAllAreas()`
 
@@ -562,29 +553,28 @@ This API provides you the list of states on which you can provide two-day shippi
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 
 try {
-    $result = $apiInstance->getAllAreas();
+    $result = $api->getAllAreas();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->getAllAreas: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -600,9 +590,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAllExceptions()`
 
@@ -617,29 +607,28 @@ This API retrieves all the items which has been defined as exceptions using \"Cr
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 
 try {
-    $result = $apiInstance->getAllExceptions();
+    $result = $api->getAllExceptions();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->getAllExceptions: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -655,9 +644,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAllRules()`
 
@@ -672,29 +661,28 @@ This API retrieves the details of all the rules defined using \"create an Item r
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 
 try {
-    $result = $apiInstance->getAllRules();
+    $result = $api->getAllRules();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->getAllRules: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -710,9 +698,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAllSubCategories()`
 
@@ -727,29 +715,28 @@ This API provides the complete list of sub-categories which can be used while de
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 
 try {
-    $result = $apiInstance->getAllSubCategories();
+    $result = $api->getAllSubCategories();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->getAllSubCategories: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -765,9 +752,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getSimulationResult()`
 
@@ -782,31 +769,30 @@ You can use this API to get the count of items shortlisted for two-day shipping 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $ruleId = 'ruleId_example'; // string | Unique identifier of the rule created for custom rule assortment.
 $ruleStatus = 'ruleStatus_example'; // string | Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted.
 
 try {
-    $result = $apiInstance->getSimulationResult($ruleId, $ruleStatus);
+    $result = $api->getSimulationResult($ruleId, $ruleStatus);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->getSimulationResult: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **ruleId** | **string**| Unique identifier of the rule created for custom rule assortment. | |
 | **ruleStatus** | **string**| Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted. | |
@@ -825,9 +811,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `inactivateRule()`
 
@@ -842,30 +828,29 @@ You can use this API to inactivate one or more rules for a specific ruleId and r
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $inactivateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"39","ruleStatus":"Submitted"},{"ruleId":"44","ruleStatus":"Active"}]}; // \Walmart\Models\MP\US\Rules\InactivateRuleRequest | Request fields
 
 try {
-    $result = $apiInstance->inactivateRule($inactivateRuleRequest);
+    $result = $api->inactivateRule($inactivateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->inactivateRule: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../Model/InactivateRuleRequest.md)| Request fields | |
 
@@ -883,9 +868,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateRule()`
 
@@ -900,30 +885,29 @@ This API updates a rule defined using \"create an Item rule\". You can update pr
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $updateRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":[{"ruleId":"511","ruleStatus":"Submitted","name":"testing-new-501","description":"testing-new-501","priority":"832","conditions":[{"name":"subCategories","operator":"IN","value":"571fdff7208f9a0cdb760a7f,56f2eb65208f9a0612c3adbd"}]}]}; // \Walmart\Models\MP\US\Rules\UpdateRuleRequest | Request fields
 
 try {
-    $result = $apiInstance->updateRule($updateRuleRequest);
+    $result = $api->updateRule($updateRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->updateRule: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **updateRuleRequest** | [**\Walmart\Models\MP\US\Rules\UpdateRuleRequest**](../Model/UpdateRuleRequest.md)| Request fields | |
 
@@ -941,9 +925,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateShippingAreaToRule()`
 
@@ -958,30 +942,29 @@ This API helps you define coverage areas for your items that are held outside of
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\RulesApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->rules();
 
 $updateShippingAreaToRuleRequest = {"ruleHeader":{"version":"1.2"},"rules":{"ruleId":"612","ruleStatus":"Submitted","actions":[{"twoDayShippingRegions":[{"regionCode":"NE","subRegions":[{"subRegionCode":"NY1"},{"subRegionCode":"NY2"}]}]}]}}; // \Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest | Request fields
 
 try {
-    $result = $apiInstance->updateShippingAreaToRule($updateShippingAreaToRuleRequest);
+    $result = $api->updateShippingAreaToRule($updateShippingAreaToRuleRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling RulesApi->updateShippingAreaToRule: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **updateShippingAreaToRuleRequest** | [**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest**](../Model/UpdateShippingAreaToRuleRequest.md)| Request fields | |
 
@@ -999,6 +982,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

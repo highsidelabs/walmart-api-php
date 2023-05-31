@@ -1,4 +1,4 @@
-# #US\MP\UpdateShipmentQuantity200ResponseHeader
+# Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseHeader
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **headerAttributes** | **array<string,object>** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\CreateShipmentRequest
+# Walmart\Models\MP\US\Fulfillment\CreateShipmentRequest
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **orderItems** | [**\Walmart\Models\MP\US\Fulfillment\CreateFulfillmentRequestPayloadOrderItemsInner[]**](CreateFulfillmentRequestPayloadOrderItemsInner.md) | inbound shipment request line items | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

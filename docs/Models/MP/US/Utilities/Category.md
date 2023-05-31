@@ -1,4 +1,4 @@
-# #US\MP\Category
+# Walmart\Models\MP\US\Utilities\Category
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **categoryId** | **string** | The category id for which the top trending items have to be fetched | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

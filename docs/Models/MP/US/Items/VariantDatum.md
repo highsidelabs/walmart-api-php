@@ -1,4 +1,4 @@
-# #US\MP\VariantDatum
+# Walmart\Models\MP\US\Items\VariantDatum
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **variantValues** | [**\Walmart\Models\MP\US\Items\GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner[]**](GetSearchResult200ResponseItemsInnerPropertiesVariantsVariantDataInnerVariantValuesInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

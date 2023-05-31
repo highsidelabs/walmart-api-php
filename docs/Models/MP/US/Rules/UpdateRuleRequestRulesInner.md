@@ -1,4 +1,4 @@
-# #US\MP\UpdateRuleRequestRulesInner
+# Walmart\Models\MP\US\Rules\UpdateRuleRequestRulesInner
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **conditions** | [**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner[]**](UpdateShippingAreaToRule200ResponseRulesInnerConditionsInner.md) | Seller creates conditions while defining the custom rule assortment.There are three condition which a seller can use : subCategories, price, weight. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

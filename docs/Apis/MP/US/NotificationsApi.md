@@ -1,14 +1,14 @@
-# Walmart\Api\US\MPNotificationsApi  
+# Walmart\Apis\MP\US\NotificationsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createSubscription()**](NotificationsApi.md#createSubscription) | **POST** /v3/webhooks/subscriptions | Create subscription |
-| [**deleteSubscription()**](NotificationsApi.md#deleteSubscription) | **DELETE** /v3/webhooks/subscriptions/{subscriptionId} | Delete Subscription |
-| [**getAllSubscriptions()**](NotificationsApi.md#getAllSubscriptions) | **GET** /v3/webhooks/subscriptions | All subscriptions |
-| [**getEventTypes()**](NotificationsApi.md#getEventTypes) | **GET** /v3/webhooks/eventTypes | Event Types |
-| [**testNotification()**](NotificationsApi.md#testNotification) | **POST** /v3/webhooks/test | Test Notification |
-| [**updateSubscription()**](NotificationsApi.md#updateSubscription) | **PATCH** /v3/webhooks/subscriptions/{subscriptionId} | Update Subscription |
+| [**createSubscription()**](#createSubscription) | **POST** /v3/webhooks/subscriptions | Create subscription |
+| [**deleteSubscription()**](#deleteSubscription) | **DELETE** /v3/webhooks/subscriptions/{subscriptionId} | Delete Subscription |
+| [**getAllSubscriptions()**](#getAllSubscriptions) | **GET** /v3/webhooks/subscriptions | All subscriptions |
+| [**getEventTypes()**](#getEventTypes) | **GET** /v3/webhooks/eventTypes | Event Types |
+| [**testNotification()**](#testNotification) | **POST** /v3/webhooks/test | Test Notification |
+| [**updateSubscription()**](#updateSubscription) | **PATCH** /v3/webhooks/subscriptions/{subscriptionId} | Update Subscription |
 
 
 ## `createSubscription()`
@@ -24,30 +24,29 @@ This API is used to create subscription for notification of an event by selectin
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->notifications();
 
 $createSubscriptionRequest = {"events":[{"eventType":"OFFER_UNPUBLISHED","eventVersion":"V1","resourceName":"ITEM","eventUrl":"https://example.com/events","status":"ACTIVE"},{"eventType":"PO_CREATED","eventVersion":"V1","resourceName":"ORDER","eventUrl":"https://example.com/orders","status":"ACTIVE"}]}; // \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest | Request fields
 
 try {
-    $result = $apiInstance->createSubscription($createSubscriptionRequest);
+    $result = $api->createSubscription($createSubscriptionRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->createSubscription: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **createSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../Model/CreateSubscriptionRequest.md)| Request fields | |
 
@@ -65,9 +64,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `deleteSubscription()`
 
@@ -82,30 +81,29 @@ This API is used to delete the subscription. Once deleted, the subscription cann
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->notifications();
 
 $subscriptionId = 'subscriptionId_example'; // string | Unique ID for the subscription
 
 try {
-    $result = $apiInstance->deleteSubscription($subscriptionId);
+    $result = $api->deleteSubscription($subscriptionId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->deleteSubscription: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Unique ID for the subscription | |
 
@@ -123,9 +121,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getAllSubscriptions()`
 
@@ -140,18 +138,16 @@ This API is used to retrieve the details of all subscriptions created using \"cr
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->notifications();
 
 $subscriptionId = 'subscriptionId_example'; // string | Use this to get details of a specific subscription
 $eventType = 'eventType_example'; // string | Use this to get list of all subscriptions for a specific event type. Refer to Events section for list of available eventType.
@@ -159,14 +155,15 @@ $resourceName = 'resourceName_example'; // string | Use this to get list of all 
 $status = 'status_example'; // string | Use this to get list of all subscriptions in ACTIVE or INACTIVE status
 
 try {
-    $result = $apiInstance->getAllSubscriptions($subscriptionId, $eventType, $resourceName, $status);
+    $result = $api->getAllSubscriptions($subscriptionId, $eventType, $resourceName, $status);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->getAllSubscriptions: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Use this to get details of a specific subscription | [optional] |
 | **eventType** | **string**| Use this to get list of all subscriptions for a specific event type. Refer to Events section for list of available eventType. | [optional] |
@@ -187,9 +184,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getEventTypes()`
 
@@ -204,29 +201,28 @@ This API provides the list of event types and resource names that you can subscr
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->notifications();
 
 
 try {
-    $result = $apiInstance->getEventTypes();
+    $result = $api->getEventTypes();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->getEventTypes: {$e->getMessage()}\n";
 }
 ```
 
-### ParametersThis endpoint does not need any parameter.
+### Parameters
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -242,9 +238,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `testNotification()`
 
@@ -259,30 +255,29 @@ This API can be used to send a test notification to the destination URL with the
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->notifications();
 
 $testNotificationRequest = {"eventType":"OFFER_UNPUBLISHED","eventVersion":"V1","resourceName":"ITEM","eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"headers":{"content-type":"application/json"}}; // \Walmart\Models\MP\US\Notifications\TestNotificationRequest | Request fields
 
 try {
-    $result = $apiInstance->testNotification($testNotificationRequest);
+    $result = $api->testNotification($testNotificationRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->testNotification: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **testNotificationRequest** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequest**](../Model/TestNotificationRequest.md)| Request fields | |
 
@@ -300,9 +295,9 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateSubscription()`
 
@@ -317,31 +312,30 @@ This API is used to update the details of subscriptions. You can update event ve
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\NotificationsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->notifications();
 
 $subscriptionId = 'subscriptionId_example'; // string | Unique ID for the subscription
 $updateSubscriptionRequest = {"eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"status":"ACTIVE"}; // \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest | Request fields
 
 try {
-    $result = $apiInstance->updateSubscription($subscriptionId, $updateSubscriptionRequest);
+    $result = $api->updateSubscription($subscriptionId, $updateSubscriptionRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->updateSubscription: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Unique ID for the subscription | |
 | **updateSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest**](../Model/UpdateSubscriptionRequest.md)| Request fields | |
@@ -360,6 +354,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

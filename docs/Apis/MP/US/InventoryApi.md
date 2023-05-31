@@ -1,15 +1,15 @@
-# Walmart\Api\US\MPInventoryApi  
+# Walmart\Apis\MP\US\InventoryApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getInventory()**](InventoryApi.md#getInventory) | **GET** /v3/inventory | Inventory |
-| [**getMultiNodeInventoryForAllSkuAndAllShipNodes()**](InventoryApi.md#getMultiNodeInventoryForAllSkuAndAllShipNodes) | **GET** /v3/inventories | Multiple Item Inventory for All Ship Nodes |
-| [**getMultiNodeInventoryForSkuAndAllShipnodes()**](InventoryApi.md#getMultiNodeInventoryForSkuAndAllShipnodes) | **GET** /v3/inventories/{sku} | Single Item Inventory by Ship Node |
-| [**getWFSInventory()**](InventoryApi.md#getWFSInventory) | **GET** /v3/fulfillment/inventory | WFS Inventory |
-| [**updateBulkInventory()**](InventoryApi.md#updateBulkInventory) | **POST** /v3/feeds | Bulk Item Inventory Update |
-| [**updateInventoryForAnItem()**](InventoryApi.md#updateInventoryForAnItem) | **PUT** /v3/inventory | Update inventory |
-| [**updateMultiNodeInventory()**](InventoryApi.md#updateMultiNodeInventory) | **PUT** /v3/inventories/{sku} | Update Item Inventory per Ship Node |
+| [**getInventory()**](#getInventory) | **GET** /v3/inventory | Inventory |
+| [**getMultiNodeInventoryForAllSkuAndAllShipNodes()**](#getMultiNodeInventoryForAllSkuAndAllShipNodes) | **GET** /v3/inventories | Multiple Item Inventory for All Ship Nodes |
+| [**getMultiNodeInventoryForSkuAndAllShipnodes()**](#getMultiNodeInventoryForSkuAndAllShipnodes) | **GET** /v3/inventories/{sku} | Single Item Inventory by Ship Node |
+| [**getWFSInventory()**](#getWFSInventory) | **GET** /v3/fulfillment/inventory | WFS Inventory |
+| [**updateBulkInventory()**](#updateBulkInventory) | **POST** /v3/feeds | Bulk Item Inventory Update |
+| [**updateInventoryForAnItem()**](#updateInventoryForAnItem) | **PUT** /v3/inventory | Update inventory |
+| [**updateMultiNodeInventory()**](#updateMultiNodeInventory) | **PUT** /v3/inventories/{sku} | Update Item Inventory per Ship Node |
 
 
 ## `getInventory()`
@@ -25,31 +25,30 @@ You can use this API to get the inventory for a given item.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded.
 $shipNode = 'shipNode_example'; // string | The shipNode for which the inventory is requested
 
 try {
-    $result = $apiInstance->getInventory($sku, $shipNode);
+    $result = $api->getInventory($sku, $shipNode);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->getInventory: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
 | **shipNode** | **string**| The shipNode for which the inventory is requested | [optional] |
@@ -68,9 +67,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getMultiNodeInventoryForAllSkuAndAllShipNodes()`
 
@@ -85,31 +84,30 @@ This API will retrieve the inventory count for all of a seller's items across al
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $limit = '10'; // string | The number of items returned. Cannot be more than 50.
 $nextCursor = 'nextCursor_example'; // string | String returned from initial API call to indicate pagination. Specify nextCursor value to retrieve the next 50 items.
 
 try {
-    $result = $apiInstance->getMultiNodeInventoryForAllSkuAndAllShipNodes($limit, $nextCursor);
+    $result = $api->getMultiNodeInventoryForAllSkuAndAllShipNodes($limit, $nextCursor);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->getMultiNodeInventoryForAllSkuAndAllShipNodes: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **limit** | **string**| The number of items returned. Cannot be more than 50. | [optional] [default to '10'] |
 | **nextCursor** | **string**| String returned from initial API call to indicate pagination. Specify nextCursor value to retrieve the next 50 items. | [optional] |
@@ -128,9 +126,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getMultiNodeInventoryForSkuAndAllShipnodes()`
 
@@ -145,31 +143,30 @@ This API will retrieve the inventory count for an item across all ship nodes or 
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded.
 $shipNode = 'shipNode_example'; // string | ShipNode Id of the ship node for which the inventory is requested
 
 try {
-    $result = $apiInstance->getMultiNodeInventoryForSkuAndAllShipnodes($sku, $shipNode);
+    $result = $api->getMultiNodeInventoryForSkuAndAllShipnodes($sku, $shipNode);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->getMultiNodeInventoryForSkuAndAllShipnodes: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
 | **shipNode** | **string**| ShipNode Id of the ship node for which the inventory is requested | [optional] |
@@ -188,9 +185,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `getWFSInventory()`
 
@@ -205,18 +202,16 @@ You can use this API to get the current Available to Sell inventory quantities f
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded.
 $fromModifiedDate = 'fromModifiedDate_example'; // string | last inventory modified date - starting range.
@@ -225,14 +220,15 @@ $limit = '10'; // string | Number of Sku to be returned. Cannot be larger than 3
 $offset = '0'; // string | Offset is the number of records you wish to skip before selecting records.
 
 try {
-    $result = $apiInstance->getWFSInventory($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset);
+    $result = $api->getWFSInventory($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->getWFSInventory: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | [optional] |
 | **fromModifiedDate** | **string**| last inventory modified date - starting range. | [optional] |
@@ -254,9 +250,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateBulkInventory()`
 
@@ -271,32 +267,31 @@ Updates inventory for items in bulk.  Seller Can either use feed type \"inventor
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $feedType = 'feedType_example'; // string | The feed Type
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 $shipNode = 'shipNode_example'; // string | The shipNode for which the inventory is to be updated. Not required in case of Multi Node Inventory Update Feed (feedType=MP_INVENTORY)
 
 try {
-    $result = $apiInstance->updateBulkInventory($feedType, $file, $shipNode);
+    $result = $api->updateBulkInventory($feedType, $file, $shipNode);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateBulkInventory: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The feed Type | |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
@@ -316,9 +311,9 @@ try {
 - **Content-Type**: `multipart/form-data`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateInventoryForAnItem()`
 
@@ -333,32 +328,31 @@ Updates the inventory for a given item.
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded.
 $updateInventoryForAnItemRequest = {"sku":"97964_KFTest","quantity":{"unit":"EACH","amount":10}}; // \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest | File fields
 $shipNode = 'shipNode_example'; // string | The shipNode for which the inventory is to be updated.
 
 try {
-    $result = $apiInstance->updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest, $shipNode);
+    $result = $api->updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest, $shipNode);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateInventoryForAnItem: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
 | **updateInventoryForAnItemRequest** | [**\Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest**](../Model/UpdateInventoryForAnItemRequest.md)| File fields | |
@@ -378,9 +372,9 @@ try {
 - **Content-Type**: `application/json`, `application/xml`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
 
 ## `updateMultiNodeInventory()`
 
@@ -395,31 +389,30 @@ This API will update the inventory for an item across one or more fulfillment ce
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\InventoryApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded.
 $updateMultiNodeInventoryRequest = {"inventories":{"nodes":[{"shipNode":"1000005050","inputQty":{"unit":"EACH","amount":88}},{"shipNode":"79897837271126017","inputQty":{"unit":"EACH","amount":55}}]}}; // \Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest | Request fields
 
 try {
-    $result = $apiInstance->updateMultiNodeInventory($sku, $updateMultiNodeInventoryRequest);
+    $result = $api->updateMultiNodeInventory($sku, $updateMultiNodeInventoryRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateMultiNodeInventory: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
 | **updateMultiNodeInventoryRequest** | [**\Walmart\Models\MP\US\Inventory\UpdateMultiNodeInventoryRequest**](../Model/UpdateMultiNodeInventoryRequest.md)| Request fields | |
@@ -438,6 +431,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)

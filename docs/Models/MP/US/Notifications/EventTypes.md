@@ -1,4 +1,4 @@
-# #US\MP\EventTypes
+# Walmart\Models\MP\US\Notifications\EventTypes
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **eventTypes** | [**\Walmart\Models\MP\US\Notifications\GetEventTypes200ResponseEventTypesInner[]**](GetEventTypes200ResponseEventTypesInner.md) | List of event types | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

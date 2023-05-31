@@ -1,4 +1,4 @@
-# #US\MP\GetFulfillmentOrdersStatus200ResponsePayloadInner
+# Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInner
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **orderLines** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner[]**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInner.md) | order lines details | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

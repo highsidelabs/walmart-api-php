@@ -1,4 +1,4 @@
-# #US\MP\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase
+# Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchase
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **otd** | [**\Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations**](ItemsDetailsForListing200ResponsePayloadInnerScoreDetailsPostPurchaseCancellations.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

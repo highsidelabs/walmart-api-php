@@ -1,4 +1,4 @@
-# #US\MP\PromiseFulfillmentsRequestPayload
+# Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayload
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **offerSelections** | [**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInner[]**](PromiseFulfillmentsRequestPayloadOfferSelectionsInner.md) | Offer Selection details. List of offers - number of offer inside offer selection should be less than or equal to 30. |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

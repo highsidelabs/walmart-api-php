@@ -1,4 +1,4 @@
-# #MX\MP\CreateLabelRequestBoxItemsInner
+# Walmart\Models\MP\MX\InternationalShipping\CreateLabelRequestBoxItemsInner
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **countryOfOrigin** | **int** | Country Of Origin |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

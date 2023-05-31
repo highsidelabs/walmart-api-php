@@ -1,4 +1,4 @@
-# #US\MP\CustomerOrderLinesDetails
+# Walmart\Models\MP\US\Fulfillment\CustomerOrderLinesDetails
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **customerShipToAddress** | [**\Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress**](GetFulfillmentOrdersStatus200ResponsePayloadInnerOrderLinesInnerCustomerShipToAddress.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

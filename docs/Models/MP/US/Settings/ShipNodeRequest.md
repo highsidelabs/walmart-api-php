@@ -1,4 +1,4 @@
-# #US\MP\ShipNodeRequest
+# Walmart\Models\MP\US\Settings\ShipNodeRequest
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **calendarDayConfiguration** | [**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequestShipNodeInnerCalendarDayConfiguration**](CreateFulfillmentCenterRequestShipNodeInnerCalendarDayConfiguration.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

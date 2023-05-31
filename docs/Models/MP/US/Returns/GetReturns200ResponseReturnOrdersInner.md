@@ -1,4 +1,4 @@
-# #US\MP\GetReturns200ResponseReturnOrdersInner
+# Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInner
 
 ## Properties
 
@@ -19,4 +19,4 @@ Name | Type | Description | Notes
 **returnChannel** | [**\Walmart\Models\MP\US\Returns\GetReturns200ResponseReturnOrdersInnerReturnChannel**](GetReturns200ResponseReturnOrdersInnerReturnChannel.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\DSV\InventoryV2
+# Walmart\Models\DSV\US\Inventory\InventoryV2
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **quantity** | **int** | Specifies the item quantity available in the inventory. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\UpdateShippingAreaToRuleRequest
+# Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **rules** | [**\Walmart\Models\MP\US\Rules\UpdateShippingAreaToRuleRequestRules**](UpdateShippingAreaToRuleRequestRules.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

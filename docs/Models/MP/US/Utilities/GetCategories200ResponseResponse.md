@@ -1,4 +1,4 @@
-# #US\MP\GetCategories200ResponseResponse
+# Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponse
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **category** | [**\Walmart\Models\MP\US\Utilities\GetCategories200ResponseResponseCategoryInner[]**](GetCategories200ResponseResponseCategoryInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

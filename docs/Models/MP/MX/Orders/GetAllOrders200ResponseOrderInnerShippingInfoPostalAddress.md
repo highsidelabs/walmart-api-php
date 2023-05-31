@@ -1,4 +1,4 @@
-# #MX\MP\GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress
+# Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShippingInfoPostalAddress
 
 ## Properties
 
@@ -17,4 +17,4 @@ Name | Type | Description | Notes
 **country** | **string** | The country of the shipping address | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

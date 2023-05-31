@@ -1,4 +1,4 @@
-# #US\MP\PartnerConfigsResponseDTO
+# Walmart\Models\MP\US\Settings\PartnerConfigsResponseDTO
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **configurations** | [**\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInner[]**](GetPartnerConfigurations200ResponseConfigurationsInner.md) | List of seller configurations like Seller Account & feed throttling values | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

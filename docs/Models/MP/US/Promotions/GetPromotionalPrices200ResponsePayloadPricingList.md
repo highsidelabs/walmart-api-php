@@ -1,4 +1,4 @@
-# #US\MP\GetPromotionalPrices200ResponsePayloadPricingList
+# Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingList
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **pricing** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadPricingListPricingInner[]**](GetPromotionalPrices200ResponsePayloadPricingListPricingInner.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

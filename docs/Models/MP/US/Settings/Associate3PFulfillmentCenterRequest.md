@@ -1,4 +1,4 @@
-# #US\MP\Associate3PFulfillmentCenterRequest
+# Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **shipNode** | [**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenterRequestShipNodeInner[]**](Associate3PFulfillmentCenterRequestShipNodeInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

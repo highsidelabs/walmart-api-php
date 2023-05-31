@@ -1,4 +1,4 @@
-# #US\MP\RangeFilter1
+# Walmart\Models\MP\US\OnRequestReports\RangeFilter1
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **columnName** | **string** | Column on which filter has to be applied |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

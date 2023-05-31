@@ -1,4 +1,4 @@
-# #CA\MP\LabelGenerationRequestCa
+# Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **labelSize** | **string** | Label Size e.g. A6, LETTER_SIZE or A4 for PDF response | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

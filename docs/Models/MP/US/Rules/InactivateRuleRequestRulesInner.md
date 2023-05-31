@@ -1,4 +1,4 @@
-# #US\MP\InactivateRuleRequestRulesInner
+# Walmart\Models\MP\US\Rules\InactivateRuleRequestRulesInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **ruleStatus** | **string** | Status of the rule post the rule creation. Allowed values are Active, Inactive, Submitted. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

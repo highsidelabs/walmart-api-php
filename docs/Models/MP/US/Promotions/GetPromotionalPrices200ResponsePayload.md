@@ -1,4 +1,4 @@
-# #US\MP\GetPromotionalPrices200ResponsePayload
+# Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayload
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **additionalAttributes** | [**\Walmart\Models\MP\US\Promotions\GetPromotionalPrices200ResponsePayloadAdditionalAttributes**](GetPromotionalPrices200ResponsePayloadAdditionalAttributes.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

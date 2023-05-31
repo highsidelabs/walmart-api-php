@@ -1,4 +1,4 @@
-# #US\MP\FeedConfig
+# Walmart\Models\MP\US\Settings\FeedConfig
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **configuration** | [**\Walmart\Models\MP\US\Settings\GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration**](GetPartnerConfigurations200ResponseConfigurationsInnerAnyOf1Configuration.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

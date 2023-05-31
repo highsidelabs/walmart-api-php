@@ -1,4 +1,4 @@
-# #US\MP\GetAnOrder200Response
+# Walmart\Models\MP\US\Orders\GetAnOrder200Response
 
 ## Properties
 
@@ -19,4 +19,4 @@ Name | Type | Description | Notes
 **shipNode** | [**\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderShipNode**](ShippingUpdates200ResponseOrderShipNode.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\UpdateSubscriptionRequest
+# Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **status** | **string** | Status of the subscription. Allowed values are ACTIVE or INACTIVE | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

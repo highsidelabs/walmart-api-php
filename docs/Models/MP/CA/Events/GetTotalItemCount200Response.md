@@ -1,4 +1,4 @@
-# #CA\MP\GetTotalItemCount200Response
+# Walmart\Models\MP\CA\Events\GetTotalItemCount200Response
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **lastUpdatedTime** | **int** | The last time of update for items | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

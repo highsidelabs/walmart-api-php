@@ -1,4 +1,4 @@
-# #US\MP\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner
+# Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInnerQualityScoreValuesInner
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **impact** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

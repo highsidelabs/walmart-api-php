@@ -1,4 +1,4 @@
-# #US\MP\Rebate
+# Walmart\Models\MP\US\Promotions\Rebate
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **endDate** | **\DateTime** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #MX\MP\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner
+# Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInner
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **tax** | [**\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner[]**](GetReturns200ResponseReturnOrdersInnerReturnOrderLinesInnerChargesInnerTaxInner.md) | Taxes for each charge | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

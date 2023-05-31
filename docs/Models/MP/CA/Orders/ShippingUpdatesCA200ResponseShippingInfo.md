@@ -1,4 +1,4 @@
-# #CA\MP\ShippingUpdatesCA200ResponseShippingInfo
+# Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfo
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **postalAddress** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseShippingInfoPostalAddress**](ShippingUpdatesCA200ResponseShippingInfoPostalAddress.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

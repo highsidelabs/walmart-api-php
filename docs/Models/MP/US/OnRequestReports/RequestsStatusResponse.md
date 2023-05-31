@@ -1,4 +1,4 @@
-# #US\MP\RequestsStatusResponse
+# Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **requests** | [**\Walmart\Models\MP\US\OnRequestReports\GetRequestsStatus200ResponseRequestsInner[]**](GetRequestsStatus200ResponseRequestsInner.md) | List of requests | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

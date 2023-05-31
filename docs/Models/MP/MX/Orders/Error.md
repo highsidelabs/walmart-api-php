@@ -1,4 +1,4 @@
-# #MX\MP\Error
+# Walmart\Models\MP\MX\Orders\Error
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **errorIdentifiers** | [**\Walmart\Models\MP\MX\Orders\ShippingUpdates400ResponseErrorErrorIdentifiers**](ShippingUpdates400ResponseErrorErrorIdentifiers.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

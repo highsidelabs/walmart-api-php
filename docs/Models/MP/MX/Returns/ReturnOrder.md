@@ -1,4 +1,4 @@
-# #MX\MP\ReturnOrder
+# Walmart\Models\MP\MX\Returns\ReturnOrder
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **returnOrderShipments** | [**\Walmart\Models\MP\MX\Returns\GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner[]**](GetReturns200ResponseReturnOrdersInnerReturnOrderShipmentsInner.md) | The shipments for return orders | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

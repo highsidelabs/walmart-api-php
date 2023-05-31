@@ -1,4 +1,4 @@
-# #US\MP\GetLagTime200Response
+# Walmart\Models\MP\US\LagTime\GetLagTime200Response
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **fulfillmentLagTime** | **int** | The number of days between when the item is ordered and when it is shipped |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

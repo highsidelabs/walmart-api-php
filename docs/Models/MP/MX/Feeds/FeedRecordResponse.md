@@ -1,4 +1,4 @@
-# #MX\MP\FeedRecordResponse
+# Walmart\Models\MP\MX\Feeds\FeedRecordResponse
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **results** | [**\Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200ResponseResults**](GetAllFeedStatuses200ResponseResults.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

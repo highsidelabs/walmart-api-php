@@ -1,4 +1,4 @@
-# #US\MP\GetAllSubscriptions200ResponseEventsInnerEventInner
+# Walmart\Models\MP\US\Notifications\GetAllSubscriptions200ResponseEventsInnerEventInner
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **headers** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequestHeaders**](TestNotificationRequestHeaders.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

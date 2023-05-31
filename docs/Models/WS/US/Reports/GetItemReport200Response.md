@@ -1,4 +1,4 @@
-# #US\WS\GetItemReport200Response
+# Walmart\Models\WS\US\Reports\GetItemReport200Response
 
 ## Properties
 
@@ -40,4 +40,4 @@ Name | Type | Description | Notes
 **availableInventoryUnits** | **string** | The number of items in stock | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/WS) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

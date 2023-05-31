@@ -1,4 +1,4 @@
-# #US\MP\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName
+# Walmart\Models\MP\US\Fulfillment\GetFulfillmentOrdersStatus200ResponsePayloadInnerBuyerInfoPrimaryContactName
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **lastName** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

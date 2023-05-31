@@ -1,4 +1,4 @@
-# #US\MP\UpdatePriceRequestPricingInner
+# Walmart\Models\MP\US\Prices\UpdatePriceRequestPricingInner
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **priceDisplayCodes** | **string** | Represent promo placement. This is applicable only for promotions | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner
+# Walmart\Models\MP\US\Fulfillment\InboundPreview200ResponsePayloadInnerPreviewsInnerPreviewInnerShipmentItemsInner
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **currencyUnit** | **string** | Currency in which transfer charge is estimated | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

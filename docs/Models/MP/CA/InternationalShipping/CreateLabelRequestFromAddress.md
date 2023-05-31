@@ -1,4 +1,4 @@
-# #CA\MP\CreateLabelRequestFromAddress
+# Walmart\Models\MP\CA\InternationalShipping\CreateLabelRequestFromAddress
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **email** | **string** | email | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

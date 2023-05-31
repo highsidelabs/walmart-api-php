@@ -1,4 +1,4 @@
-# #US\MP\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem
+# Walmart\Models\MP\US\Settings\GetShippingTemplateDetails200ResponseShippingMethodsInnerConfigurationsInnerPerShippingChargeChargePerItem
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **currency** | **string** | Currency, eg. USD |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

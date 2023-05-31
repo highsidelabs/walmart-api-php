@@ -1,4 +1,4 @@
-# #US\MP\Error
+# Walmart\Models\MP\US\Fulfillment\Error
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **causes** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInnerCausesInner[]**](UpdateShipmentQuantity200ResponseErrorsInnerCausesInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

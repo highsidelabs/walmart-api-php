@@ -1,4 +1,4 @@
-# #US\DSV\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
+# Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200Response
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **nodes** | [**\Walmart\Models\DSV\US\Inventory\GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner[]**](GetMultiNodeInventoryForSkuAndAllShipnodes200ResponseNodesInner.md) | Indicates an array for nodes, to include ship node and allocated quantity. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

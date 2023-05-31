@@ -1,4 +1,4 @@
-# #US\MP\UpdateShipmentQuantity200Response
+# Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **payload** | **object** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\RefundLineType
+# Walmart\Models\MP\US\Orders\RefundLineType
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **refunds** | [**\Walmart\Models\MP\US\Orders\RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerRefunds**](RefundOrderLinesRequestOrderRefundOrderLinesOrderLineInnerRefunds.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

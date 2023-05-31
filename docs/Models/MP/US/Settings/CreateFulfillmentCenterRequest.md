@@ -1,4 +1,4 @@
-# #US\MP\CreateFulfillmentCenterRequest
+# Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **shipNode** | [**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenterRequestShipNodeInner[]**](CreateFulfillmentCenterRequestShipNodeInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\RuleResponse
+# Walmart\Models\MP\US\Rules\RuleResponse
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **skuProcessingStatus** | **string** | When the rule gets activated, skuProcessingStatus represents the state of all items being processed for two-day. The two values for skuProcessingStatus are Processing and Completed. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

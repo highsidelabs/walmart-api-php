@@ -1,4 +1,4 @@
-# #US\MP\SaleRefundAggr
+# Walmart\Models\MP\US\Reports\SaleRefundAggr
 
 ## Properties
 
@@ -23,4 +23,4 @@ Name | Type | Description | Notes
 **commissionSavings** | **float** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

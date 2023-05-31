@@ -1,4 +1,4 @@
-# #MX\MP\GetAllOrders200ResponseOrderInnerShipmentsInner
+# Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInner
 
 ## Properties
 
@@ -18,4 +18,4 @@ Name | Type | Description | Notes
 **shipmentAdditionalDate** | [**\Walmart\Models\MP\MX\Orders\GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate**](GetAllOrders200ResponseOrderInnerShipmentsInnerShipmentAdditionalDate.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

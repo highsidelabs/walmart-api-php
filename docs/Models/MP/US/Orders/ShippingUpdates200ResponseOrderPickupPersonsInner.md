@@ -1,4 +1,4 @@
-# #US\MP\ShippingUpdates200ResponseOrderPickupPersonsInner
+# Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInner
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **phone** | [**\Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderPickupPersonsInnerPhone**](ShippingUpdates200ResponseOrderPickupPersonsInnerPhone.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

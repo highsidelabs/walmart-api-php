@@ -1,4 +1,4 @@
-# #US\MP\GetProSellerBadgeInfo200ResponseMeetsCriteria
+# Walmart\Models\MP\US\Insights\GetProSellerBadgeInfo200ResponseMeetsCriteria
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **isActiveDaysCriteriaMet** | **bool** | Indicates whether the seller has met the minimum number of active days required. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

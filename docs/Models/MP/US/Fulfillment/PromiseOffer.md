@@ -1,4 +1,4 @@
-# #US\MP\PromiseOffer
+# Walmart\Models\MP\US\Fulfillment\PromiseOffer
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **requestedQuantity** | [**\Walmart\Models\MP\US\Fulfillment\PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity**](PromiseFulfillmentsRequestPayloadOfferSelectionsInnerOffersInnerRequestedQuantity.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

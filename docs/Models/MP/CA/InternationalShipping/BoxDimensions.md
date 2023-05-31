@@ -1,4 +1,4 @@
-# #CA\MP\BoxDimensions
+# Walmart\Models\MP\CA\InternationalShipping\BoxDimensions
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **boxHeight** | **float** | Box Height. Mandatory for CUSTOM_PACKAGE type, otherwise not required | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

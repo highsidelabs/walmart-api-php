@@ -1,4 +1,4 @@
-# #US\MP\ItemsDetailsForListing200ResponsePayloadInner
+# Walmart\Models\MP\US\Insights\ItemsDetailsForListing200ResponsePayloadInner
 
 ## Properties
 
@@ -22,4 +22,4 @@ Name | Type | Description | Notes
 **productType** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

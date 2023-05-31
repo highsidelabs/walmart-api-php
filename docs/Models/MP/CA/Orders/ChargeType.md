@@ -1,4 +1,4 @@
-# #CA\MP\ChargeType
+# Walmart\Models\MP\CA\Orders\ChargeType
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **tax** | [**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax**](ShippingUpdatesCA200ResponseOrderLinesOrderLineInnerChargesChargeInnerTax.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

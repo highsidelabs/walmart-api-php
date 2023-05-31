@@ -1,4 +1,4 @@
-# #US\DSV\GetAllItems200ResponseErrorsInnerCausesInner
+# Walmart\Models\DSV\US\Items\GetAllItems200ResponseErrorsInnerCausesInner
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **description** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

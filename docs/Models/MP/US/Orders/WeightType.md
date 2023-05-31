@@ -1,4 +1,4 @@
-# #US\MP\WeightType
+# Walmart\Models\MP\US\Orders\WeightType
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **unit** | **string** | Standard value of measurement of the item. Example: 'Pounds' |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

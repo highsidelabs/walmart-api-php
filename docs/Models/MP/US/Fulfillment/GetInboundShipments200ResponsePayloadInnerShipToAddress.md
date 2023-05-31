@@ -1,4 +1,4 @@
-# #US\MP\GetInboundShipments200ResponsePayloadInnerShipToAddress
+# Walmart\Models\MP\US\Fulfillment\GetInboundShipments200ResponsePayloadInnerShipToAddress
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **postalCode** | **string** | Zip code | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

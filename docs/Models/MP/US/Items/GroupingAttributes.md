@@ -1,4 +1,4 @@
-# #US\MP\GroupingAttributes
+# Walmart\Models\MP\US\Items\GroupingAttributes
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **value** | **string** | The list of variant attributes used to create the variant item | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

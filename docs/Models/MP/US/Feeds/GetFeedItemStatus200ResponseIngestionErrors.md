@@ -1,4 +1,4 @@
-# #US\MP\GetFeedItemStatus200ResponseIngestionErrors
+# Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseIngestionErrors
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **ingestionError** | [**\Walmart\Models\MP\US\Feeds\GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner[]**](GetFeedItemStatus200ResponseIngestionErrorsIngestionErrorInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner
+# Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInner
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **value** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner[]**](GetAllItems200ResponseItemResponseInnerAdditionalAttributesNameValueAttributeInnerValueInner.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\MP\FileSize
+# Walmart\Models\MP\US\Settings\FileSize
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **unitOfMeasurement** | **string** | The unit of measurement. Example: 'BYTES' | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

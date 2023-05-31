@@ -1,11 +1,11 @@
-# Walmart\Api\MX\MPReturnsApi  
+# Walmart\Apis\MP\MX\ReturnsApi  
 All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**getAllReturnsUsingCursor()**](ReturnsApi.md#getAllReturnsUsingCursor) | **GET** /v3/returns/cursor | Get all returns with cursor mark |
-| [**getReturns()**](ReturnsApi.md#getReturns) | **GET** /v3/returns | Get Returns |
-| [**refundOrderLines()**](ReturnsApi.md#refundOrderLines) | **POST** /v3/returns/{returnOrderId}/refund | Refund Order Lines |
+| [**getAllReturnsUsingCursor()**](#getAllReturnsUsingCursor) | **GET** /v3/returns/cursor | Get all returns with cursor mark |
+| [**getReturns()**](#getReturns) | **GET** /v3/returns | Get Returns |
+| [**refundOrderLines()**](#refundOrderLines) | **POST** /v3/returns/{returnOrderId}/refund | Refund Order Lines |
 
 
 ## `getAllReturnsUsingCursor()`
@@ -21,20 +21,19 @@ Retrieves the details of all return orders for the specified filter criteria. Wi
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->returns();
 
 $returnCreationStartDate = 'NOW-180DAYS'; // string | Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. If passed must be in the format - 'yyyy-MM-dd'T'HH:mm:ss.SSSXXX' (Ex. 2022-01-29T10:53:12.355-09:30 ). Use URI encoded time format.
 $returnCreationEndDate = 'NOW'; // string | End Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. If passed must be in the format - 'yyyy-MM-dd'T'HH:mm:ss.SSSXXX' (Ex. 2022-01-29T10:53:12.355-09:30 ). Use URI encoded time format.
@@ -46,14 +45,15 @@ $statusCodeFilter = 'statusCodeFilter_example'; // string | The status code filt
 $isWFSEnabled = 'isWFSEnabled_example'; // string | Flag to get WFS returns. Valid value is Y
 
 try {
-    $result = $apiInstance->getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
+    $result = $api->getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->getAllReturnsUsingCursor: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnCreationStartDate** | **string**| Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. If passed must be in the format - 'yyyy-MM-dd'T'HH:mm:ss.SSSXXX' (Ex. 2022-01-29T10:53:12.355-09:30 ). Use URI encoded time format. | [optional] [default to 'NOW-180DAYS'] |
 | **returnCreationEndDate** | **string**| End Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. If passed must be in the format - 'yyyy-MM-dd'T'HH:mm:ss.SSSXXX' (Ex. 2022-01-29T10:53:12.355-09:30 ). Use URI encoded time format. | [optional] [default to 'NOW'] |
@@ -78,9 +78,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `getReturns()`
 
@@ -95,20 +95,19 @@ Retrieves the details of all return orders for the specified filter criteria. Th
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->returns();
 
 $returnCreationStartDate = 'NOW-180DAYS'; // string | Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. Use URI encoded time format.
 $returnCreationEndDate = 'NOW'; // string | End Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. Use URI encoded time format.
@@ -120,14 +119,15 @@ $statusCodeFilter = 'statusCodeFilter_example'; // string | The status code filt
 $isWFSEnabled = 'isWFSEnabled_example'; // string | Flag to get WFS returns. Valid value is Y
 
 try {
-    $result = $apiInstance->getReturns($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
+    $result = $api->getReturns($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->getReturns: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnCreationStartDate** | **string**| Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. Use URI encoded time format. | [optional] [default to 'NOW-180DAYS'] |
 | **returnCreationEndDate** | **string**| End Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. Use URI encoded time format. | [optional] [default to 'NOW'] |
@@ -152,9 +152,9 @@ try {
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)
 
 ## `refundOrderLines()`
 
@@ -169,33 +169,33 @@ Refunds one or more order lines that have been shipped. The response to a succes
 
 ```php
 <?php
-require_once(__DIR__ . '/vendor/autoload.php');
+use Walmart\Configuration;
+use Walmart\Walmart;
 
-// Configure HTTP basic authorization: basicScheme
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET');
-// Configure access token authorization: accessTokenScheme
-$accessToken = new Walmart\AccessToken('ACCESS_TOKEN', new DateTime('+900 seconds'));
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', ['accessToken' => $accessToken]);
+require_once __DIR__ . '/vendor/autoload.php';
 
-$apiInstance = new Walmart\Api\ReturnsApi(  
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'MX',  // Default US if not set
+]);
+
+$api = Walmart::marketplace($config)->returns();
 
 $returnOrderId = 'returnOrderId_example'; // string | returnOrderId
 $refundOrderLinesRequest = {"orderRefund":{"orderLines":{"orderLine":[{"lineNumber":"1","orderLineStatuses":{"orderLineStatus":[{"status":"Received","statusQuantity":{"unitOfMeasurement":"EACH","amount":"2"}}]}}]}}}; // \Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest | OrderRefund request body
 
 try {
-    $result = $apiInstance->refundOrderLines($returnOrderId, $refundOrderLinesRequest);
+    $result = $api->refundOrderLines($returnOrderId, $refundOrderLinesRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ReturnsApi->refundOrderLines: {$e->getMessage()}\n";
 }
 ```
 
-### Parameters| Name | Type | Description  | Notes |
+### Parameters
+| Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| returnOrderId | |
 | **refundOrderLinesRequest** | [**\Walmart\Models\MP\MX\Returns\RefundOrderLinesRequest**](../Model/RefundOrderLinesRequest.md)| OrderRefund request body | |
@@ -214,6 +214,6 @@ try {
 - **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/MX)
+[[Back to README]](../../../../README.md)

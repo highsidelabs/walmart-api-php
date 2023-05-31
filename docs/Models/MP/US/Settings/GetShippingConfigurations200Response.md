@@ -1,4 +1,4 @@
-# #US\MP\GetShippingConfigurations200Response
+# Walmart\Models\MP\US\Settings\GetShippingConfigurations200Response
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **configurations** | [**\Walmart\Models\MP\US\Settings\GetShippingConfigurations200ResponseConfigurationsInner[]**](GetShippingConfigurations200ResponseConfigurationsInner.md) | List of seller configurations like Lag Time | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

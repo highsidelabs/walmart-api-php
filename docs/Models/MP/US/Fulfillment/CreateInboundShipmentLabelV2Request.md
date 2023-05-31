@@ -1,4 +1,4 @@
-# #US\MP\CreateInboundShipmentLabelV2Request
+# Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2Request
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **loadTypes** | [**\Walmart\Models\MP\US\Fulfillment\CreateInboundShipmentLabelV2RequestLoadTypesInner[]**](CreateInboundShipmentLabelV2RequestLoadTypesInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

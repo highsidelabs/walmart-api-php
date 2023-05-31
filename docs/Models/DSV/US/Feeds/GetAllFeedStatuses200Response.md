@@ -1,4 +1,4 @@
-# #US\DSV\GetAllFeedStatuses200Response
+# Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200Response
 
 ## Properties
 
@@ -11,4 +11,4 @@ Name | Type | Description | Notes
 **results** | [**\Walmart\Models\DSV\US\Feeds\GetAllFeedStatuses200ResponseResultsInner[]**](GetAllFeedStatuses200ResponseResultsInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

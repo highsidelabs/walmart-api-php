@@ -1,4 +1,4 @@
-# #US\MP\GetCarrierRateQuote200ResponseOriginLocationAddress
+# Walmart\Models\MP\US\Fulfillment\GetCarrierRateQuote200ResponseOriginLocationAddress
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **phone** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

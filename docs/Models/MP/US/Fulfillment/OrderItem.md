@@ -1,4 +1,4 @@
-# #US\MP\OrderItem
+# Walmart\Models\MP\US\Fulfillment\OrderItem
 
 ## Properties
 
@@ -20,4 +20,4 @@ Name | Type | Description | Notes
 **shipNode** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

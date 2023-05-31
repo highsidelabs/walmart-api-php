@@ -1,4 +1,4 @@
-# #US\MP\InactivateRuleRequest
+# Walmart\Models\MP\US\Rules\InactivateRuleRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **rules** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequestRulesInner[]**](InactivateRuleRequestRulesInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

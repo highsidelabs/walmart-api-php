@@ -1,4 +1,4 @@
-# #US\MP\GetUnpublishedItems200ResponsePayloadInner
+# Walmart\Models\MP\US\Insights\GetUnpublishedItems200ResponsePayloadInner
 
 ## Properties
 
@@ -25,4 +25,4 @@ Name | Type | Description | Notes
 **publishStatus** | **string** | The status of an item when the item is in the submission process | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

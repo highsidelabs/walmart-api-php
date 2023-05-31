@@ -1,4 +1,4 @@
-# #US\MP\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment
+# Walmart\Models\MP\US\Orders\ShippingUpdates200ResponseOrderOrderLinesOrderLineInnerFulfillment
 
 ## Properties
 
@@ -12,4 +12,4 @@ Name | Type | Description | Notes
 **shippingProgramType** | **string** | Gives shipping program information. Examples TWO_DAY, THREE_DAY | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

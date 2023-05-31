@@ -1,4 +1,4 @@
-# #US\MP\GetPartnerStatement200ResponsePayloadTransactionDetailsWfs
+# Walmart\Models\MP\US\Reports\GetPartnerStatement200ResponsePayloadTransactionDetailsWfs
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **wfsPrepServiceFee** | **float** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

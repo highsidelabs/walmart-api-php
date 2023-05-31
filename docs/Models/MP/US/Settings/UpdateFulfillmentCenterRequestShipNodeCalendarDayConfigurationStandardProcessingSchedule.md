@@ -1,4 +1,4 @@
-# #US\MP\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule
+# Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingSchedule
 
 ## Properties
 
@@ -13,4 +13,4 @@ Name | Type | Description | Notes
 **saturday** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday**](UpdateFulfillmentCenterRequestShipNodeCalendarDayConfigurationStandardProcessingScheduleSunday.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

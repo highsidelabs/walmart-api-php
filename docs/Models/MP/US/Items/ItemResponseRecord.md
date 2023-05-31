@@ -1,4 +1,4 @@
-# #US\MP\ItemResponseRecord
+# Walmart\Models\MP\US\Items\ItemResponseRecord
 
 ## Properties
 
@@ -19,4 +19,4 @@ Name | Type | Description | Notes
 **lifecycleStatus** | **string** | The lifecycle status of an item describes where the item listing is in the overall lifecycle. Examples of allowed values are ACTIVE , ARCHIVED, RETIRED. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

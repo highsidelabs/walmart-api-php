@@ -1,4 +1,4 @@
-# #US\MP\TimeWindow
+# Walmart\Models\MP\US\Settings\TimeWindow
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **unitOfMeasurement** | **string** | The unit of measurement. Example: 'SECOND' | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

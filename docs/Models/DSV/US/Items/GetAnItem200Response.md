@@ -1,4 +1,4 @@
-# #US\DSV\GetAnItem200Response
+# Walmart\Models\DSV\US\Items\GetAnItem200Response
 
 ## Properties
 
@@ -16,4 +16,4 @@ Name | Type | Description | Notes
 **publishedStatus** | **string** | The published status of an item describes where the item is in the submission process. Examples of allowed values are PUBLISHED, UNPUBLISHED. | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

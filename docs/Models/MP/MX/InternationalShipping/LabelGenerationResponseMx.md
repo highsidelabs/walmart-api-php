@@ -1,4 +1,4 @@
-# #MX\MP\LabelGenerationResponseMx
+# Walmart\Models\MP\MX\InternationalShipping\LabelGenerationResponseMx
 
 ## Properties
 
@@ -14,4 +14,4 @@ Name | Type | Description | Notes
 **shippingDocuments** | [**\Walmart\Models\MP\MX\InternationalShipping\CreateLabel200ResponseDataShippingDocuments**](CreateLabel200ResponseDataShippingDocuments.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/MX/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #US\DSV\DsvCostUpdateRequest
+# Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **cost** | [**\Walmart\Models\DSV\US\Cost\UpdateBulkCostRequestCostInner[]**](UpdateBulkCostRequestCostInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/DSV) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

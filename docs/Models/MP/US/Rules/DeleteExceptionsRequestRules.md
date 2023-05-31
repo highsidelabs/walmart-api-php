@@ -1,4 +1,4 @@
-# #US\MP\DeleteExceptionsRequestRules
+# Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRules
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **skus** | [**\Walmart\Models\MP\US\Rules\DeleteExceptionsRequestRulesSkusInner[]**](DeleteExceptionsRequestRulesSkusInner.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

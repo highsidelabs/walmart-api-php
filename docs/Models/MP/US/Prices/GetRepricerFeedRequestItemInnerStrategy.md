@@ -1,4 +1,4 @@
-# #US\MP\GetRepricerFeedRequestItemInnerStrategy
+# Walmart\Models\MP\US\Prices\GetRepricerFeedRequestItemInnerStrategy
 
 ## Properties
 
@@ -10,4 +10,4 @@ Name | Type | Description | Notes
 **maximumSellerAllowedPrice** | **float** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

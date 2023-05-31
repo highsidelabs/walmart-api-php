@@ -1,4 +1,4 @@
-# #US\MP\ChangeAssortmentType200Response
+# Walmart\Models\MP\US\Rules\ChangeAssortmentType200Response
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **payload** | [**\Walmart\Models\MP\US\Rules\ChangeAssortmentType200ResponsePayload**](ChangeAssortmentType200ResponsePayload.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

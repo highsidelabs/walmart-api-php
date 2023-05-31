@@ -1,4 +1,4 @@
-# #CA\MP\CreateLabel200ResponseData
+# Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseData
 
 ## Properties
 
@@ -15,4 +15,4 @@ Name | Type | Description | Notes
 **shippingDocuments** | [**\Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments**](CreateLabel200ResponseDataShippingDocuments.md) |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -1,4 +1,4 @@
-# #CA\MP\CreateLabel200ResponseDataShippingDocuments
+# Walmart\Models\MP\CA\InternationalShipping\CreateLabel200ResponseDataShippingDocuments
 
 ## Properties
 
@@ -9,4 +9,4 @@ Name | Type | Description | Notes
 **base64EncodedDocument** | **string** |  | [optional]
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/CA/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

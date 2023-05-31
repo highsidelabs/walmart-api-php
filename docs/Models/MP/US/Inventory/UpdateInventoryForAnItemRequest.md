@@ -1,4 +1,4 @@
-# #US\MP\UpdateInventoryForAnItemRequest
+# Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **quantity** | [**\Walmart\Models\MP\US\Inventory\GetInventory200ResponseQuantity**](GetInventory200ResponseQuantity.md) |  |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

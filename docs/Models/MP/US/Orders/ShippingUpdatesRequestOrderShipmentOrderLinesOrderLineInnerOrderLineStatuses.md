@@ -1,4 +1,4 @@
-# #US\MP\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses
+# Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatuses
 
 ## Properties
 
@@ -7,4 +7,4 @@ Name | Type | Description | Notes
 **orderLineStatus** | [**\Walmart\Models\MP\US\Orders\ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner[]**](ShippingUpdatesRequestOrderShipmentOrderLinesOrderLineInnerOrderLineStatusesOrderLineStatusInner.md) | Details about the Order Line status |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

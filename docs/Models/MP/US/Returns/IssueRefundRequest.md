@@ -1,4 +1,4 @@
-# #US\MP\IssueRefundRequest
+# Walmart\Models\MP\US\Returns\IssueRefundRequest
 
 ## Properties
 
@@ -8,4 +8,4 @@ Name | Type | Description | Notes
 **refundLines** | [**\Walmart\Models\MP\US\Returns\IssueRefundRequestRefundLinesInner[]**](IssueRefundRequestRefundLinesInner.md) | Array of refund lines. |
 
 
-[[Back to Model list]](../) [[Back to API list]](../../Api/US/MP) [[Back to README]](../../README.md)
+[[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)
