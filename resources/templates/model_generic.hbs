@@ -3,7 +3,7 @@ class {{classname}} extends BaseModel
     {{~#if vendorExtensions.x-expose-headers}}
     use HasResponseHeaders;
     
-    {{/if~}}
+    {{/if}}
     public const DISCRIMINATOR = {{#if discriminator}}'{{discriminatorName}}'{{else}}null{{/if}};
 
     /**
@@ -110,15 +110,12 @@ class {{classname}} extends BaseModel
      *                      initializing the model
      */
     public function __construct(array $data = null)
-    {
-        {{#vars~}}
-        $this->setIfExists('{{name}}', $data ?? [], {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}});
-        {{/vars~}}
+    { {{~#vars}}
+        $this->setIfExists('{{name}}', $data ?? [], {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}});{{/vars}}
         {{~#if discriminator}}
 
         // Initialize discriminator property with the model name.
-        $this->container['{{discriminatorName}}'] = static::$openAPIModelName;
-        {{~/if~}}
+        $this->container['{{discriminatorName}}'] = static::$openAPIModelName;{{/if}}
     }
 
     /**
@@ -196,7 +193,7 @@ class {{classname}} extends BaseModel
         {{/vars}}
         return $invalidProperties;
     }
-    {{#vars}}
+{{#vars}}
     /**
      * Gets {{name}}
      *
@@ -298,6 +295,6 @@ class {{classname}} extends BaseModel
         {{/if}}
         $this->container['{{name}}'] = ${{name}};
         return $this;
-    }
-    {{/vars~}}
+    }{{#unless @last}}
+{{/unless}}{{/vars}}
 }

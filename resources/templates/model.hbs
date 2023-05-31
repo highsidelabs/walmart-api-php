@@ -22,7 +22,7 @@ namespace {{modelPackage}};
 use {{invokerPackage}}\Models\BaseModel;
 {{~#if vendorExtensions.x-expose-headers}}
 use Walmart\Traits\HasResponseHeaders;
-{{/if~}}
+{{/if}}
 {{/unless}}
 /**
  * {{classname}} Class Doc Comment
@@ -36,5 +36,4 @@ use Walmart\Traits\HasResponseHeaders;
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
  */
-{{#if isEnum}}{{>model_enum}}{{else}}{{>model_generic}}{{/if}}
-{{/model}}{{/models}}
+{{#if isEnum}}{{>model_enum}}{{else}}{{>model_generic}}{{/if}}{{/model}}{{/models}}
