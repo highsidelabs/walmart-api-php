@@ -70,13 +70,13 @@ Note: the input parameter is an associative array with the keys listed as the pa
 {{#if returnType}}{{#if returnTypeIsPrimitive}}**{{{returnType}}}**{{else}}[**{{{returnType}}}**](../../../Models/{{x-walmart-api-category}}/{{x-walmart-country}}/{{x-walmart-api-name}}/{{returnBaseType}}.md){{/if}}{{else}}void (empty response body){{/if}}
 
 ### Authorization
+{{{authMethodsinDescription}}}
+{{#if authMethods}}This endpoint requires the following authorization methods:{{else}}No authorization required{{/if}}
+{{#each authMethods}}
+* `{{{name}}}`: {{{description}}}{{/each}}{{#if authMethods}}
 
-{{#unless authMethods}}No authorization required{{/unless}}{{#each authMethods}}[{{{name}}}](../../../README.md#{{{name}}}){{#unless @last}}, {{/unless}}{{/each}}
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.{{/if}}
 
-### HTTP request headers
-
-- **Content-Type**: {{#each consumes}}`{{{mediaType}}}`{{#unless @last}}, {{/unless}}{{/each}}{{#unless consumes}}Not defined{{/unless}}
-- **Accept**: {{#each produces}}`{{{mediaType}}}`{{#unless @last}}, {{/unless}}{{/each}}{{#unless produces}}Not defined{{/unless}}
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/{{x-walmart-api-category}}/{{x-walmart-country}})

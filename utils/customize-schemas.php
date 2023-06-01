@@ -40,20 +40,24 @@ function customizeSchema(string $path, string $category, string $name): void
         SecurityScheme::BASIC => [
             'type' => 'http',
             'scheme' => 'basic',
+            'description' => 'Basic authentication with a Walmart Client ID and Client Secret',
         ],
         SecurityScheme::ACCESS_TOKEN => [
             'type' => 'http',
             'scheme' => 'bearer',
+            'description' => 'Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the ' . ACCESS_TOKEN_HEADER . ' header',
         ],
         SecurityScheme::CONSUMER_ID => [
             'type' => 'apiKey',
             'in' => 'header',
             'name' => CONSUMER_ID_HEADER,
+            'description' => 'Header authentication with your Walmart consumer ID, which is passed in the ' . CONSUMER_ID_HEADER . ' header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.',
         ],
         SecurityScheme::SIGNATURE => [
             'type' => 'apiKey',
             'in' => 'header',
             'name' => AUTH_SIG_HEADER,
+            'description' => 'Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the ' . AUTH_SIG_HEADER . ' header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.',
         ],
     ];
     $usedSecuritySchemes = [];

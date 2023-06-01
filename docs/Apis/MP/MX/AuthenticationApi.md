@@ -50,12 +50,14 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -107,12 +109,14 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/x-www-form-urlencoded`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)

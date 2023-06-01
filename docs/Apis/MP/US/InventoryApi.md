@@ -60,12 +60,14 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/US)
@@ -119,12 +121,14 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/US)
@@ -178,12 +182,14 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/US)
@@ -243,12 +249,14 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/US)
@@ -304,12 +312,14 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `multipart/form-data`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/US)
@@ -365,12 +375,14 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/json`, `application/xml`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/US)
@@ -424,12 +436,14 @@ try {
 
 ### Authorization
 
-[accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/US)

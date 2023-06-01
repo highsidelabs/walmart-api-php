@@ -1,9 +1,8 @@
 {{#if hasAuthMethods ~}}
-{{#authMethods ~}}
 $config = new {{invokerPackage}}\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => '{{x-walmart-country}}',  // Default US if not set{{#if isApiKey}}
+    'country' => '{{x-walmart-country}}',  // Default US if not set{{#each authMethods ~}}{{#if isApiKey}}{{#if @first}}
     'privateKey' => 'PRIVATE_KEY',
-    'consumerId' => 'CONSUMER_ID',{{/if}}
+    'consumerId' => 'CONSUMER_ID',{{/if}}{{/if}}{{/each}}
 ]);
-{{/authMethods ~}}
+
 {{/if}}

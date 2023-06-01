@@ -30,11 +30,6 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
-    'privateKey' => 'PRIVATE_KEY',
-    'consumerId' => 'CONSUMER_ID',
-]);
 
 $api = Walmart::marketplace($config)->prices();
 
@@ -62,12 +57,15 @@ try {
 
 ### Authorization
 
-[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `multipart/form-data`
-- **Accept**: `application/xml`
+This endpoint requires the following authorization methods:
+
+* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/CA)
@@ -91,11 +89,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
-    'privateKey' => 'PRIVATE_KEY',
-    'consumerId' => 'CONSUMER_ID',
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'CA',  // Default US if not set
     'privateKey' => 'PRIVATE_KEY',
@@ -137,12 +130,15 @@ try {
 
 ### Authorization
 
-[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/xml`
-- **Accept**: `application/xml`
+This endpoint requires the following authorization methods:
+
+* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/CA)

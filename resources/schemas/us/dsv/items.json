@@ -871,12 +871,14 @@
             "consumerIdScheme": {
                 "type": "apiKey",
                 "in": "header",
-                "name": "WM_CONSUMER.ID"
+                "name": "WM_CONSUMER.ID",
+                "description": "Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor."
             },
             "signatureScheme": {
                 "type": "apiKey",
                 "in": "header",
-                "name": "WM_SEC.AUTH_SIGNATURE"
+                "name": "WM_SEC.AUTH_SIGNATURE",
+                "description": "Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor."
             }
         }
     }

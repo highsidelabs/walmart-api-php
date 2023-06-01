@@ -35,9 +35,6 @@ require_once __DIR__ . '/vendor/autoload.php';
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 
 $api = Walmart::marketplace($config)->orders();
 
@@ -65,12 +62,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -94,9 +94,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -127,12 +124,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -156,9 +156,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -189,12 +186,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -218,9 +218,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -261,12 +258,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -290,9 +290,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -333,12 +330,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -362,9 +362,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -403,12 +400,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -432,9 +432,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -463,12 +460,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/octet-stream`, `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -492,9 +492,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -525,12 +522,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/octet-stream`, `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
@@ -554,9 +554,6 @@ use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'MX',  // Default US if not set
-]);
 $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
     'country' => 'MX',  // Default US if not set
 ]);
@@ -587,12 +584,15 @@ try {
 
 ### Authorization
 
-[basicScheme](../../../README.md#basicScheme), [accessTokenScheme](../../../README.md#accessTokenScheme)
 
-### HTTP request headers
 
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
+This endpoint requires the following authorization methods:
+
+* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
 [[Back to Model list]](../../../Models/MP/MX)
