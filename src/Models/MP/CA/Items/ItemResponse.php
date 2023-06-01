@@ -58,7 +58,7 @@ class ItemResponse extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Models\MP\CA\Items\ItemResponsePrice',
+        'price' => '\Walmart\Models\MP\CA\Items\Money',
         'publishedStatus' => 'string'
     ];
 
@@ -466,7 +466,7 @@ class ItemResponse extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\CA\Items\ItemResponsePrice|null
+     * @return \Walmart\Models\MP\CA\Items\Money|null
     
      */
     public function getPrice()
@@ -477,7 +477,7 @@ class ItemResponse extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\CA\Items\ItemResponsePrice|null $price price
+     * @param \Walmart\Models\MP\CA\Items\Money|null $price price
      *
      * @return self
     

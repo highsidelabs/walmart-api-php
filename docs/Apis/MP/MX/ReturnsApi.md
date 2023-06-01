@@ -64,11 +64,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse**](../../../Models/MP/MX/returns/GetReturnOrdersResponse.md)
+[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse**](../../../Models/MP/MX/Returns/GetReturnOrdersResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -138,11 +136,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse**](../../../Models/MP/MX/returns/GetReturnOrdersResponse.md)
+[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse**](../../../Models/MP/MX/Returns/GetReturnOrdersResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -195,7 +191,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| returnOrderId | |
-| **orderRefundRequest** | [**\Walmart\Models\MP\MX\Returns\OrderRefundRequest**](../../../Models/MP/MX/returns/OrderRefundRequest.md)| OrderRefund request body | |
+| **orderRefundRequest** | [**\Walmart\Models\MP\MX\Returns\OrderRefundRequest**](../../../Models/MP/MX/Returns/OrderRefundRequest.md)| OrderRefund request body | |
 
 
 ### Return type
@@ -203,8 +199,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

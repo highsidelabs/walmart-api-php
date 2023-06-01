@@ -12,13 +12,13 @@ Name | Type | Description | Notes
 **productName** | **string** | A seller-specified, alphanumeric string uniquely identifying the product name. Example: 'Sterling Silver Blue Diamond Heart Pendant with 18in Chain' | [optional]
 **shelf** | **string** | Walmart assigned an item shelf name | [optional]
 **productType** | **string** | A seller-specified, alphanumeric string uniquely identifying the Product Type. Example: 'Diamond' | [optional]
-**price** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice**](GetAllItems200ResponseItemResponseInnerPrice.md) |  | [optional]
+**price** | [**\Walmart\Models\MP\US\Items\ItemSearchPrice**](ItemSearchPrice.md) |  | [optional]
 **publishedStatus** | **string** | The status of an item when the item is in the submission process. The status can be one of the following: PUBLISHED, READY_TO_PUBLISH, IN_PROGRESS, UNPUBLISHED, STAGE, or SYSTEM_PROBLEM. | [optional]
-**additionalAttributes** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes**](GetAllItems200ResponseItemResponseInnerAdditionalAttributes.md) |  | [optional]
-**unpublishedReasons** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons**](GetAllItems200ResponseItemResponseInnerUnpublishedReasons.md) |  | [optional]
+**additionalAttributes** | [**\Walmart\Models\MP\US\Items\NameValueAttributes**](NameValueAttributes.md) |  | [optional]
+**unpublishedReasons** | [**\Walmart\Models\MP\US\Items\UnpublishedReasonList**](UnpublishedReasonList.md) |  | [optional]
 **lifecycleStatus** | **string** | The lifecycle status of an item describes where the item listing is in the overall lifecycle. Examples of allowed values are ACTIVE , ARCHIVED, RETIRED. | [optional]
 **variantGroupId** | **string** | Variant Id  if the item is of type Variant | [optional]
-**variantGroupInfo** | [**\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerVariantGroupInfo**](GetAllItems200ResponseItemResponseInnerVariantGroupInfo.md) |  | [optional]
+**variantGroupInfo** | [**\Walmart\Models\MP\US\Items\VariantGroupInfo**](VariantGroupInfo.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

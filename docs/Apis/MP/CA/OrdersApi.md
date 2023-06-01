@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `acknowledgeOrdersCA()`
 
 ```php
-acknowledgeOrdersCA($purchaseOrderId): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
+acknowledgeOrdersCA($purchaseOrderId): \Walmart\Models\MP\CA\Orders\Order
 ```
 Acknowledge Orders
 
@@ -57,11 +57,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\Order**](../../../Models/MP/CA/Orders/Order.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -133,16 +131,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/orders/OrderShipment.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/Orders/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/orders/OrderShipment.md)
+[**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/Orders/OrderShipment.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -159,7 +155,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllOrders()`
 
 ```php
-getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\GetAllOrders200Response
+getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\WFSOrdersListType
 ```
 Get all orders
 
@@ -218,11 +214,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../../../Models/MP/CA/orders/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\WFSOrdersListType**](../../../Models/MP/CA/Orders/WFSOrdersListType.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -239,7 +233,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllReleasedOrders()`
 
 ```php
-getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\GetAllOrders200Response
+getAllReleasedOrders($createdStartDate, $createdEndDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\WFSOrdersListType
 ```
 Get all released orders
 
@@ -286,11 +280,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\GetAllOrders200Response**](../../../Models/MP/CA/orders/GetAllOrders200Response.md)
+[**\Walmart\Models\MP\CA\Orders\WFSOrdersListType**](../../../Models/MP/CA/Orders/WFSOrdersListType.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -358,11 +350,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\OrdersListType**](../../../Models/MP/CA/orders/OrdersListType.md)
+[**\Walmart\Models\MP\CA\Orders\OrdersListType**](../../../Models/MP/CA/Orders/OrdersListType.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -379,7 +369,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAnOrder()`
 
 ```php
-getAnOrder($purchaseOrderId, $productInfo): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
+getAnOrder($purchaseOrderId, $productInfo): \Walmart\Models\MP\CA\Orders\Order
 ```
 Get an order
 
@@ -422,11 +412,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\Order**](../../../Models/MP/CA/Orders/Order.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -443,7 +431,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `refundOrderLinesCA()`
 
 ```php
-refundOrderLinesCA($purchaseOrderId, $orderRefund): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
+refundOrderLinesCA($purchaseOrderId, $orderRefund): \Walmart\Models\MP\CA\Orders\Order
 ```
 Refund Order Lines
 
@@ -534,16 +522,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **orderRefund** | [**\Walmart\Models\MP\CA\Orders\OrderRefund**](../../../Models/MP/CA/orders/OrderRefund.md)| File fields | |
+| **orderRefund** | [**\Walmart\Models\MP\CA\Orders\OrderRefund**](../../../Models/MP/CA/Orders/OrderRefund.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\Order**](../../../Models/MP/CA/Orders/Order.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -560,7 +546,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `shippingUpdatesCA()`
 
 ```php
-shippingUpdatesCA($purchaseOrderId, $orderShipment): \Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response
+shippingUpdatesCA($purchaseOrderId, $orderShipment): \Walmart\Models\MP\CA\Orders\Order
 ```
 Shipping Updates
 
@@ -626,16 +612,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/orders/OrderShipment.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/Orders/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\ShippingUpdatesCA200Response**](../../../Models/MP/CA/orders/ShippingUpdatesCA200Response.md)
+[**\Walmart\Models\MP\CA\Orders\Order**](../../../Models/MP/CA/Orders/Order.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

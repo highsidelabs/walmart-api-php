@@ -64,11 +64,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/insights/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/Insights/GetUnpublishedItemsCount.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -125,11 +123,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/insights/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/Insights/GetUnpublishedItemsCount.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -181,11 +177,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\ProSellerResponse**](../../../Models/MP/US/insights/ProSellerResponse.md)
+[**\Walmart\Models\MP\US\Insights\ProSellerResponse**](../../../Models/MP/US/Insights/ProSellerResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -248,11 +242,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetTrendingResult**](../../../Models/MP/US/insights/GetTrendingResult.md)
+[**\Walmart\Models\MP\US\Insights\GetTrendingResult**](../../../Models/MP/US/Insights/GetTrendingResult.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -307,11 +299,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/insights/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/Insights/GetUnpublishedItemsCount.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -376,11 +366,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItem**](../../../Models/MP/US/insights/GetUnpublishedItem.md)
+[**\Walmart\Models\MP\US\Insights\GetUnpublishedItem**](../../../Models/MP/US/Insights/GetUnpublishedItem.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -432,18 +420,16 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemDetailsLQRequestPayload** | [**\Walmart\Models\MP\US\Insights\ItemDetailsLQRequestPayload**](../../../Models/MP/US/insights/ItemDetailsLQRequestPayload.md)| Request payload | |
+| **itemDetailsLQRequestPayload** | [**\Walmart\Models\MP\US\Insights\ItemDetailsLQRequestPayload**](../../../Models/MP/US/Insights/ItemDetailsLQRequestPayload.md)| Request payload | |
 | **limit** | **string**| Specify number of items to return. If no limit is specified, API returns 200 items by default. | [optional] [default to '200'] |
 | **nextCursor** | **string**| Specify pagination for long list of items. | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload**](../../../Models/MP/US/insights/ItemDetailsLQResponsePayload.md)
+[**\Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload**](../../../Models/MP/US/Insights/ItemDetailsLQResponsePayload.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

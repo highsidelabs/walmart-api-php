@@ -53,11 +53,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse**](../../../Models/MP/US/onRequestReports/DownloadReportResponse.md)
+[**\Walmart\Models\MP\US\OnRequestReports\DownloadReportResponse**](../../../Models/MP/US/OnRequestReports/DownloadReportResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -115,16 +113,14 @@ try {
 | **reportVersion** | **string**| Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. | |
 | **accept** | **string**| Only supported Media Type : application/json | |
 | **contentType** | **string**| Only supported Media Type : application/json | |
-| **generateReportPayload** | [**\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload**](../../../Models/MP/US/onRequestReports/GenerateReportPayload.md)| Request body | [optional] |
+| **generateReportPayload** | [**\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload**](../../../Models/MP/US/OnRequestReports/GenerateReportPayload.md)| Request body | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse**](../../../Models/MP/US/onRequestReports/GenerateReportResponse.md)
+[**\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse**](../../../Models/MP/US/OnRequestReports/GenerateReportResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -189,11 +185,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse**](../../../Models/MP/US/onRequestReports/RequestsStatusResponse.md)
+[**\Walmart\Models\MP\US\OnRequestReports\RequestsStatusResponse**](../../../Models/MP/US/OnRequestReports/RequestsStatusResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -250,11 +244,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse**](../../../Models/MP/US/onRequestReports/RequestStatusResponse.md)
+[**\Walmart\Models\MP\US\OnRequestReports\RequestStatusResponse**](../../../Models/MP/US/OnRequestReports/RequestStatusResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

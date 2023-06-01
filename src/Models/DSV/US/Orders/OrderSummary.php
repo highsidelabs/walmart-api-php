@@ -52,7 +52,7 @@ class OrderSummary extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'totalAmount' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount',
+        'totalAmount' => '\Walmart\Models\DSV\US\Orders\MoneyType',
         'orderSubTotals' => '\Walmart\Models\DSV\US\Orders\OrderSubTotal[]'
     ];
 
@@ -137,7 +137,7 @@ class OrderSummary extends BaseModel
     /**
      * Gets totalAmount
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null
+     * @return \Walmart\Models\DSV\US\Orders\MoneyType|null
     
      */
     public function getTotalAmount()
@@ -148,7 +148,7 @@ class OrderSummary extends BaseModel
     /**
      * Sets totalAmount
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount|null $totalAmount totalAmount
+     * @param \Walmart\Models\DSV\US\Orders\MoneyType|null $totalAmount totalAmount
      *
      * @return self
     

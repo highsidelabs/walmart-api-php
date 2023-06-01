@@ -45,85 +45,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "lagTimeHeader"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "lagTimeHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            },
-                                            "feedDate": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "lagTime": {
-                                        "type": "array",
-                                        "xml": {
-                                            "namespace": "http:\/\/walmart.com\/"
-                                        },
-                                        "items": {
-                                            "required": [
-                                                "sku"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "sku": {
-                                                    "type": "string",
-                                                    "description": "A seller-provided Product ID. Response will have decoded value.",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "fulfillmentLagTime": {
-                                                    "type": "integer",
-                                                    "description": "The number of days between when the item is ordered and when it is shipped",
-                                                    "format": "int32",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "additionalAttributes": {
-                                                    "type": "array",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    },
-                                                    "items": {
-                                                        "required": [
-                                                            "name",
-                                                            "value"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "name": {
-                                                                "type": "string",
-                                                                "xml": {
-                                                                    "namespace": "http:\/\/walmart.com\/"
-                                                                }
-                                                            },
-                                                            "value": {
-                                                                "type": "string",
-                                                                "xml": {
-                                                                    "namespace": "http:\/\/walmart.com\/"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "xml": {
-                                                "name": "lagTime"
-                                            }
-                                        }
-                                    }
-                                },
-                                "xml": {
-                                    "name": "lagTimeFeed"
-                                }
+                                "$ref": "#\/components\/schemas\/LagTimeFeed"
                             },
                             "examples": {
                                 "json1": {
@@ -138,94 +60,6 @@
                                             }
                                         ]
                                     }
-                                }
-                            }
-                        },
-                        "application\/xml": {
-                            "schema": {
-                                "required": [
-                                    "lagTimeHeader"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "lagTimeHeader": {
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string"
-                                            },
-                                            "feedDate": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "lagTime": {
-                                        "type": "array",
-                                        "xml": {
-                                            "namespace": "http:\/\/walmart.com\/"
-                                        },
-                                        "items": {
-                                            "required": [
-                                                "sku"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "sku": {
-                                                    "type": "string",
-                                                    "description": "A seller-provided Product ID. Response will have decoded value.",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "fulfillmentLagTime": {
-                                                    "type": "integer",
-                                                    "description": "The number of days between when the item is ordered and when it is shipped",
-                                                    "format": "int32",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "additionalAttributes": {
-                                                    "type": "array",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    },
-                                                    "items": {
-                                                        "required": [
-                                                            "name",
-                                                            "value"
-                                                        ],
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "name": {
-                                                                "type": "string",
-                                                                "xml": {
-                                                                    "namespace": "http:\/\/walmart.com\/"
-                                                                }
-                                                            },
-                                                            "value": {
-                                                                "type": "string",
-                                                                "xml": {
-                                                                    "namespace": "http:\/\/walmart.com\/"
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            },
-                                            "xml": {
-                                                "name": "lagTime"
-                                            }
-                                        }
-                                    }
-                                },
-                                "xml": {
-                                    "name": "lagTimeFeed"
-                                }
-                            },
-                            "examples": {
-                                "xml1": {
-                                    "value": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<LagTimeFeed xmlns=\"http:\/\/walmart.com\/\">\n    <LagTimeHeader>\n        <version>1.0<\/version>\n    <\/LagTimeHeader>\n    <lagTime>\n        <sku>30348_KFTest<\/sku>\n        <fulfillmentLagTime>0<\/fulfillmentLagTime>\n    <\/lagTime>\n    <lagTime>\n        <sku>10210321<\/sku>\n        <fulfillmentLagTime>0<\/fulfillmentLagTime>\n    <\/lagTime>\n<\/LagTimeFeed>\n"
                                 }
                             }
                         }
@@ -279,32 +113,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "fulfillmentLagTime",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID. Response will have decoded value.",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        },
-                                        "fulfillmentLagTime": {
-                                            "type": "integer",
-                                            "description": "The number of days between when the item is ordered and when it is shipped",
-                                            "format": "int32",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "lagTime"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/LagTimeResponse"
                                 },
                                 "example": {
                                     "sku": "183688",
@@ -381,25 +190,7 @@
                             "namespace": "http:\/\/walmart.com\/"
                         },
                         "items": {
-                            "required": [
-                                "name",
-                                "value"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                },
-                                "value": {
-                                    "type": "string",
-                                    "xml": {
-                                        "namespace": "http:\/\/walmart.com\/"
-                                    }
-                                }
-                            }
+                            "$ref": "#\/components\/schemas\/AdditionalAttributes"
                         }
                     }
                 },
@@ -414,15 +205,7 @@
                 "type": "object",
                 "properties": {
                     "lagTimeHeader": {
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string"
-                            },
-                            "feedDate": {
-                                "type": "string"
-                            }
-                        }
+                        "$ref": "#\/components\/schemas\/LagTimeHeader"
                     },
                     "lagTime": {
                         "type": "array",

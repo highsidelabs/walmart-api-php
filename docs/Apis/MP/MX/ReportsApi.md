@@ -52,8 +52,6 @@ try {
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret

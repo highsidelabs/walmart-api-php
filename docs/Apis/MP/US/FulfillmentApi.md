@@ -65,16 +65,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/Fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -90,7 +88,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `cancelShipment()`
 
 ```php
-cancelShipment($inboundOrderId): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+cancelShipment($inboundOrderId): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Cancel Inbound Shipment
 
@@ -129,11 +127,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ServiceResponse**](../../../Models/MP/US/Fulfillment/ServiceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -149,7 +145,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `confirmCarrierRateQuote()`
 
 ```php
-confirmCarrierRateQuote($carrierQuoteConfirmRequestWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+confirmCarrierRateQuote($carrierQuoteConfirmRequestWrapper): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Confirm Carrier Rate Quote
 
@@ -183,16 +179,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **carrierQuoteConfirmRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper**](../../../Models/MP/US/fulfillment/CarrierQuoteConfirmRequestWrapper.md)| Request fields | |
+| **carrierQuoteConfirmRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteConfirmRequestWrapper**](../../../Models/MP/US/Fulfillment/CarrierQuoteConfirmRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ServiceResponse**](../../../Models/MP/US/Fulfillment/ServiceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -208,7 +202,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `convertItemForWfs()`
 
 ```php
-convertItemForWfs($feedType, $convertItemForWfsRequest): \Walmart\Models\MP\US\Fulfillment\FeedId
+convertItemForWfs($feedType, $file): \Walmart\Models\MP\US\Fulfillment\FeedId
 ```
 Convert items for WFS
 
@@ -230,10 +224,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->fulfillment();
 
 $feedType = 'OMNI_WFS'; // string | Includes details of each entity in the feed. Do not set this parameter to true.
-$convertItemForWfsRequest = {"SupplierItemFeedHeader":{"subCategory":"baby_clothing","sellingChannel":"fbw","processMode":"REPLACE","locale":"en","version":"1.4","subset":"EXTERNAL"},"SupplierItem":[{"Visible":{"Baby Clothing":{"clothingSize":"S","color":["Pink"],"countryOfOriginTextiles":"USA","smallPartsWarnings":["0 - No warning applicable"],"mainImageUrl":"https://i5-qa.walmartimages.com/asr/549ecbe9-c874-475b-87d8-5e4cb19934ec.8f5d70e62bd0bb8abc6772c9ef1694e0.jpeg","prop65WarningText":"Warning","seasonYear":2020,"manufacturer":"Generic"}},"Orderable":{"productIdentifiers":{"productId":"05923239836453","productIdType":"GTIN"},"batteryTechnologyType":"Does Not Contain a Battery","electronicsIndicator":"No","endDate":"2040-01-01T00:00:00.000Z","price":10,"chemicalAerosolPesticide":"No","sku":"05923239836453","stateRestrictions":[{"stateRestrictionsText":"None"}],"brand":"Goodlife","productName":"Goodlife Corona_merge_split_19","startDate":"2020-06-15T00:00:00.000Z"},"TradeItem":{"countryOfOriginAssembly":["US - United States"],"innerPack":{"innerPackWidth":2,"innerPackHeight":3,"qtySellableItemsInnerPack":1,"innerPackGTIN":"05923239836453","innerPackWeight":2,"innerPackDepth":1},"sku":"05923239836453","orderableGTIN":"05923239836453"}}]}; // \Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest
+$file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $api->convertItemForWfs($feedType, $convertItemForWfsRequest);
+    $result = $api->convertItemForWfs($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->convertItemForWfs: {$e->getMessage()}\n";
@@ -244,16 +238,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Includes details of each entity in the feed. Do not set this parameter to true. | [default to 'OMNI_WFS'] |
-| **convertItemForWfsRequest** | [**\Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest**](../../../Models/MP/US/fulfillment/ConvertItemForWfsRequest.md)|  | [optional] |
+| **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\FeedId**](../../../Models/MP/US/fulfillment/FeedId.md)
+[**\Walmart\Models\MP\US\Fulfillment\FeedId**](../../../Models/MP/US/Fulfillment/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -303,16 +295,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **carrierQuoteRequestV2Wrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper**](../../../Models/MP/US/fulfillment/CarrierQuoteRequestV2Wrapper.md)| Request fields | |
+| **carrierQuoteRequestV2Wrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierQuoteRequestV2Wrapper**](../../../Models/MP/US/Fulfillment/CarrierQuoteRequestV2Wrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper**](../../../Models/MP/US/fulfillment/QuoteResponseV2Wrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\QuoteResponseV2Wrapper**](../../../Models/MP/US/Fulfillment/QuoteResponseV2Wrapper.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -362,16 +352,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/Fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -430,8 +418,6 @@ try {
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
@@ -480,7 +466,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **labelV2RequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper**](../../../Models/MP/US/fulfillment/LabelV2RequestWrapper.md)| Request fields | |
+| **labelV2RequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\LabelV2RequestWrapper**](../../../Models/MP/US/Fulfillment/LabelV2RequestWrapper.md)| Request fields | |
 
 
 ### Return type
@@ -488,8 +474,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -539,16 +523,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inboundShipmentRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper**](../../../Models/MP/US/fulfillment/InboundShipmentRequestWrapper.md)| Request fields | |
+| **inboundShipmentRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentRequestWrapper**](../../../Models/MP/US/Fulfillment/InboundShipmentRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../../../Models/MP/US/fulfillment/InboundShipmentCreateResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/InboundShipmentCreateResponseWrapperDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -605,11 +587,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper**](../../../Models/MP/US/fulfillment/GetRateQuoteInfoResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\GetRateQuoteInfoResponseWrapper**](../../../Models/MP/US/Fulfillment/GetRateQuoteInfoResponseWrapper.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -682,11 +662,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -745,11 +723,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/Fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -808,11 +784,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/Fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -879,11 +853,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/Fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -938,8 +910,6 @@ This endpoint does not need any parameter.
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1012,11 +982,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/fulfillment/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/Fulfillment/InventoryLogResponseWrapper.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1066,16 +1034,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/Fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../../../Models/MP/US/fulfillment/InboundShipmentCreateResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/InboundShipmentCreateResponseWrapperDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1091,7 +1057,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `printCarrierLabel()`
 
 ```php
-printCarrierLabel($shipmentId, $carrierLabelRequestWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+printCarrierLabel($shipmentId, $carrierLabelRequestWrapper): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Print Carrier Label
 
@@ -1127,16 +1093,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **shipmentId** | **string**| Unique ID identifying each shipment. | |
-| **carrierLabelRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper**](../../../Models/MP/US/fulfillment/CarrierLabelRequestWrapper.md)|  | |
+| **carrierLabelRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CarrierLabelRequestWrapper**](../../../Models/MP/US/Fulfillment/CarrierLabelRequestWrapper.md)|  | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ServiceResponse**](../../../Models/MP/US/Fulfillment/ServiceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1186,16 +1150,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/Fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/fulfillment/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderResponseWrapperDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1211,7 +1173,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateShipmentQuantity()`
 
 ```php
-updateShipmentQuantity($inboundShipmentUpdateQtyWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+updateShipmentQuantity($inboundShipmentUpdateQtyWrapper): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Update Shipment Quantities
 
@@ -1245,16 +1207,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inboundShipmentUpdateQtyWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper**](../../../Models/MP/US/fulfillment/InboundShipmentUpdateQtyWrapper.md)| Request fields | |
+| **inboundShipmentUpdateQtyWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundShipmentUpdateQtyWrapper**](../../../Models/MP/US/Fulfillment/InboundShipmentUpdateQtyWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ServiceResponse**](../../../Models/MP/US/Fulfillment/ServiceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1270,7 +1230,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateShipmentTrackingDetails()`
 
 ```php
-updateShipmentTrackingDetails($trackingInfoWrapper): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+updateShipmentTrackingDetails($trackingInfoWrapper): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Update Shipment Tracking
 
@@ -1304,16 +1264,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **trackingInfoWrapper** | [**\Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper**](../../../Models/MP/US/fulfillment/TrackingInfoWrapper.md)| Request fields | |
+| **trackingInfoWrapper** | [**\Walmart\Models\MP\US\Fulfillment\TrackingInfoWrapper**](../../../Models/MP/US/Fulfillment/TrackingInfoWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ServiceResponse**](../../../Models/MP/US/Fulfillment/ServiceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1329,7 +1287,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `voidCarrierRateQuote()`
 
 ```php
-voidCarrierRateQuote($shipmentId): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+voidCarrierRateQuote($shipmentId): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Cancel Carrier Rate Quote
 
@@ -1368,11 +1326,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ServiceResponse**](../../../Models/MP/US/Fulfillment/ServiceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -1388,7 +1344,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `wercsFeedback()`
 
 ```php
-wercsFeedback($accept, $wercsFeedbackRequest): \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response
+wercsFeedback($accept, $wercsFeedbackRequest): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Hazmat Items On hold
 
@@ -1424,16 +1380,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
-| **wercsFeedbackRequest** | [**\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest**](../../../Models/MP/US/fulfillment/WercsFeedbackRequest.md)| Request fields | |
+| **wercsFeedbackRequest** | [**\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest**](../../../Models/MP/US/Fulfillment/WercsFeedbackRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200Response**](../../../Models/MP/US/fulfillment/UpdateShipmentQuantity200Response.md)
+[**\Walmart\Models\MP\US\Fulfillment\ServiceResponse**](../../../Models/MP/US/Fulfillment/ServiceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

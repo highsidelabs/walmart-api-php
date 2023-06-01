@@ -51,11 +51,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Prices\FeedId**](../../../Models/MP/MX/prices/FeedId.md)
+[**\Walmart\Models\MP\MX\Prices\FeedId**](../../../Models/MP/MX/Prices/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -72,7 +70,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updatePrice()`
 
 ```php
-updatePrice($body): \Walmart\Models\MP\MX\Prices\UpdatePrice200Response
+updatePrice($body): \Walmart\Models\MP\MX\Prices\PartnerPriceResponse
 ```
 Update a price
 
@@ -123,11 +121,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Prices\UpdatePrice200Response**](../../../Models/MP/MX/prices/UpdatePrice200Response.md)
+[**\Walmart\Models\MP\MX\Prices\PartnerPriceResponse**](../../../Models/MP/MX/Prices/PartnerPriceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

@@ -53,14 +53,14 @@ class PartnerFeedResponse extends BaseModel
         'errors' => '\Walmart\Models\WS\US\Feeds\GatewayError[]',
         'feedId' => 'string',
         'feedStatus' => 'string',
-        'ingestionErrors' => '\Walmart\Models\WS\US\Feeds\PartnerFeedResponseIngestionErrors',
+        'ingestionErrors' => '\Walmart\Models\WS\US\Feeds\IngestionErrors',
         'itemsReceived' => 'int',
         'itemsSucceeded' => 'int',
         'itemsFailed' => 'int',
         'itemsProcessing' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'itemDetails' => '\Walmart\Models\WS\US\Feeds\PartnerFeedResponseItemDetails'
+        'itemDetails' => '\Walmart\Models\WS\US\Feeds\ItemDetails'
     ];
 
     /**
@@ -328,7 +328,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets ingestionErrors
      *
-     * @return \Walmart\Models\WS\US\Feeds\PartnerFeedResponseIngestionErrors|null
+     * @return \Walmart\Models\WS\US\Feeds\IngestionErrors|null
     
      */
     public function getIngestionErrors()
@@ -339,7 +339,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets ingestionErrors
      *
-     * @param \Walmart\Models\WS\US\Feeds\PartnerFeedResponseIngestionErrors|null $ingestionErrors ingestionErrors
+     * @param \Walmart\Models\WS\US\Feeds\IngestionErrors|null $ingestionErrors ingestionErrors
      *
      * @return self
     
@@ -531,7 +531,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets itemDetails
      *
-     * @return \Walmart\Models\WS\US\Feeds\PartnerFeedResponseItemDetails|null
+     * @return \Walmart\Models\WS\US\Feeds\ItemDetails|null
     
      */
     public function getItemDetails()
@@ -542,7 +542,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets itemDetails
      *
-     * @param \Walmart\Models\WS\US\Feeds\PartnerFeedResponseItemDetails|null $itemDetails itemDetails
+     * @param \Walmart\Models\WS\US\Feeds\ItemDetails|null $itemDetails itemDetails
      *
      * @return self
     

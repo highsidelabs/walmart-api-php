@@ -52,7 +52,7 @@ class ResponseItem extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'associations' => '\Walmart\Models\MP\US\Items\Association[]',
-        'errors' => '\Walmart\Models\MP\US\Items\ResponseItemErrorsInner[]'
+        'errors' => '\Walmart\Models\MP\US\Items\Error[]'
     ];
 
     /**
@@ -203,7 +203,7 @@ class ResponseItem extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Items\ResponseItemErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Items\Error[]|null
     
      */
     public function getErrors()
@@ -214,7 +214,7 @@ class ResponseItem extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Items\ResponseItemErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Items\Error[]|null $errors errors
      *
      * @return self
     

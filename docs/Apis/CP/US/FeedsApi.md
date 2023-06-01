@@ -12,7 +12,7 @@ All URIs are relative to http://localhost, except if the operation defines anoth
 ## `contentProductFeed()`
 
 ```php
-contentProductFeed($feedType, $file): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+contentProductFeed($feedType, $file): \Walmart\Models\CP\US\Feeds\FeedId
 ```
 Content feeds
 
@@ -55,11 +55,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response**](../../../Models/CP/US/feeds/ContentProductFeed200Response.md)
+[**\Walmart\Models\CP\US\Feeds\FeedId**](../../../Models/CP/US/Feeds/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -121,11 +119,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\CP\US\Feeds\FeedRecordResponse**](../../../Models/CP/US/feeds/FeedRecordResponse.md)
+[**\Walmart\Models\CP\US\Feeds\FeedRecordResponse**](../../../Models/CP/US/Feeds/FeedRecordResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -189,11 +185,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\CP\US\Feeds\PartnerFeedResponse**](../../../Models/CP/US/feeds/PartnerFeedResponse.md)
+[**\Walmart\Models\CP\US\Feeds\PartnerFeedResponse**](../../../Models/CP/US/Feeds/PartnerFeedResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -210,7 +204,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateRichMedia()`
 
 ```php
-updateRichMedia($feedType, $body): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+updateRichMedia($feedType, $body): \Walmart\Models\CP\US\Feeds\FeedId
 ```
 Rich Media
 
@@ -476,11 +470,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response**](../../../Models/CP/US/feeds/ContentProductFeed200Response.md)
+[**\Walmart\Models\CP\US\Feeds\FeedId**](../../../Models/CP/US/Feeds/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

@@ -55,42 +55,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID. Response will have decoded value."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "Inventory Count"
-                                                }
-                                            },
-                                            "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "inventory"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/Inventory"
                                 },
                                 "example": {
                                     "sku": "97964_KFTest",
@@ -141,41 +106,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "quantity",
-                                    "sku"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "sku": {
-                                        "type": "string",
-                                        "description": "A seller-provided Product ID. Response will have decoded value."
-                                    },
-                                    "quantity": {
-                                        "required": [
-                                            "amount",
-                                            "unit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "unit": {
-                                                "type": "string",
-                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                "enum": [
-                                                    "EACH"
-                                                ]
-                                            },
-                                            "amount": {
-                                                "type": "number",
-                                                "description": "Inventory Count"
-                                            }
-                                        },
-                                        "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                    }
-                                },
-                                "xml": {
-                                    "name": "inventory"
-                                }
+                                "$ref": "#\/components\/schemas\/Inventory"
                             },
                             "example": {
                                 "sku": "97964_KFTest",
@@ -184,46 +115,6 @@
                                     "amount": 10
                                 }
                             }
-                        },
-                        "application\/xml": {
-                            "schema": {
-                                "required": [
-                                    "quantity",
-                                    "sku"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "sku": {
-                                        "type": "string",
-                                        "description": "A seller-provided Product ID. Response will have decoded value."
-                                    },
-                                    "quantity": {
-                                        "required": [
-                                            "amount",
-                                            "unit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "unit": {
-                                                "type": "string",
-                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                "enum": [
-                                                    "EACH"
-                                                ]
-                                            },
-                                            "amount": {
-                                                "type": "number",
-                                                "description": "Inventory Count"
-                                            }
-                                        },
-                                        "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                    }
-                                },
-                                "xml": {
-                                    "name": "inventory"
-                                }
-                            },
-                            "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns=\"http:\/\/walmart.com\/\">\n    <sku>97964_KFTest<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>3<\/amount>\n    <\/quantity>\n<\/inventory>"
                         }
                     },
                     "required": true
@@ -234,42 +125,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "A seller-provided Product ID. Response will have decoded value."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "The unit of measurement. Example: 'EACH'",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "Inventory Count"
-                                                }
-                                            },
-                                            "description": "Quantity that has been ordered by the customers but not yet shipped"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "inventory"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/Inventory"
                                 },
                                 "example": {
                                     "sku": "97964_KFTest",
@@ -793,25 +649,7 @@
                         "description": "A seller-provided Product ID. Response will have decoded value."
                     },
                     "quantity": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Inventory Count"
-                            }
-                        },
-                        "description": "Quantity that has been ordered by the customers but not yet shipped"
+                        "$ref": "#\/components\/schemas\/ReservedQty"
                     }
                 },
                 "xml": {
@@ -944,76 +782,7 @@
                         "type": "array",
                         "description": "Node Update Error description.",
                         "items": {
-                            "required": [
-                                "code"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "field": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "info": {
-                                    "type": "string"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "enum": [
-                                        "INFO",
-                                        "WARN",
-                                        "ERROR"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SYSTEM",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "causes": {
-                                    "type": "array",
-                                    "xml": {
-                                        "wrapped": true
-                                    },
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "field": {
-                                                "type": "string"
-                                            },
-                                            "type": {
-                                                "type": "string"
-                                            },
-                                            "description": {
-                                                "type": "string"
-                                            }
-                                        },
-                                        "xml": {
-                                            "name": "Cause"
-                                        }
-                                    }
-                                },
-                                "errorIdentifiers": {
-                                    "type": "object",
-                                    "additionalProperties": {
-                                        "type": "object"
-                                    }
-                                }
-                            },
-                            "xml": {
-                                "name": "Error"
-                            }
+                            "$ref": "#\/components\/schemas\/Error"
                         }
                     }
                 }
@@ -1140,20 +909,7 @@
                 "type": "object",
                 "properties": {
                     "meta": {
-                        "type": "object",
-                        "properties": {
-                            "totalCount": {
-                                "type": "number",
-                                "description": "Total number of Skus of the Seller. Example: '235'"
-                            },
-                            "nextCursor": {
-                                "type": "string",
-                                "description": "Used for pagination to fetch the next set of items."
-                            }
-                        },
-                        "xml": {
-                            "name": "meta"
-                        }
+                        "$ref": "#\/components\/schemas\/Meta"
                     },
                     "elements": {
                         "$ref": "#\/components\/schemas\/MultiNodeInventoryUpdateRequestDTO"
@@ -1191,76 +947,7 @@
                     "errors": {
                         "type": "array",
                         "items": {
-                            "required": [
-                                "code"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "code": {
-                                    "type": "string"
-                                },
-                                "field": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string"
-                                },
-                                "info": {
-                                    "type": "string"
-                                },
-                                "severity": {
-                                    "type": "string",
-                                    "enum": [
-                                        "INFO",
-                                        "WARN",
-                                        "ERROR"
-                                    ]
-                                },
-                                "category": {
-                                    "type": "string",
-                                    "enum": [
-                                        "APPLICATION",
-                                        "SYSTEM",
-                                        "REQUEST",
-                                        "DATA"
-                                    ]
-                                },
-                                "causes": {
-                                    "type": "array",
-                                    "xml": {
-                                        "wrapped": true
-                                    },
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "code": {
-                                                "type": "string"
-                                            },
-                                            "field": {
-                                                "type": "string"
-                                            },
-                                            "type": {
-                                                "type": "string"
-                                            },
-                                            "description": {
-                                                "type": "string"
-                                            }
-                                        },
-                                        "xml": {
-                                            "name": "Cause"
-                                        }
-                                    }
-                                },
-                                "errorIdentifiers": {
-                                    "type": "object",
-                                    "additionalProperties": {
-                                        "type": "object"
-                                    }
-                                }
-                            },
-                            "xml": {
-                                "name": "Error"
-                            }
+                            "$ref": "#\/components\/schemas\/Error"
                         }
                     },
                     "reservedQty": {

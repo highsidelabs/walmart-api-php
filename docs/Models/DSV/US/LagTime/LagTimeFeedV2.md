@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lagtimeFeedHeader** | [**\Walmart\Models\DSV\US\LagTime\UpdateLagTimeBulkRequestLagtimeFeedHeader**](UpdateLagTimeBulkRequestLagtimeFeedHeader.md) |  |
+**lagtimeFeedHeader** | [**\Walmart\Models\DSV\US\LagTime\LagTimeFeedHeader**](LagTimeFeedHeader.md) |  |
 **lagTime** | [**\Walmart\Models\DSV\US\LagTime\LagTimeV2[]**](LagTimeV2.md) | Specifies an array of objects for lag time. |
 
 

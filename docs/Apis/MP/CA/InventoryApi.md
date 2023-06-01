@@ -52,11 +52,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/inventory/InventoryV2.md)
+[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/Inventory/InventoryV2.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -73,7 +71,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateBulkInventory()`
 
 ```php
-updateBulkInventory($feedType, $file): \Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response
+updateBulkInventory($feedType, $file): \Walmart\Models\MP\CA\Inventory\FeedId
 ```
 Bulk update
 
@@ -116,11 +114,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response**](../../../Models/MP/CA/inventory/UpdateBulkInventory200Response.md)
+[**\Walmart\Models\MP\CA\Inventory\FeedId**](../../../Models/MP/CA/Inventory/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -183,16 +179,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
-| **inventoryV2** | [**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/inventory/InventoryV2.md)| File fields | |
+| **inventoryV2** | [**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/Inventory/InventoryV2.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/inventory/InventoryV2.md)
+[**\Walmart\Models\MP\CA\Inventory\InventoryV2**](../../../Models/MP/CA/Inventory/InventoryV2.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

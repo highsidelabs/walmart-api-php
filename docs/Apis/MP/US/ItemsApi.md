@@ -18,7 +18,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAllItems()`
 
 ```php
-getAllItems($nextCursor, $sku, $offset, $limit, $lifecycleStatus, $publishedStatus, $variantGroupId): \Walmart\Models\MP\US\Items\GetAllItems200Response
+getAllItems($nextCursor, $sku, $offset, $limit, $lifecycleStatus, $publishedStatus, $variantGroupId): \Walmart\Models\MP\US\Items\ItemResponses
 ```
 All items
 
@@ -69,11 +69,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\GetAllItems200Response**](../../../Models/MP/US/items/GetAllItems200Response.md)
+[**\Walmart\Models\MP\US\Items\ItemResponses**](../../../Models/MP/US/Items/ItemResponses.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -130,11 +128,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemResponseJson**](../../../Models/MP/US/items/ItemResponseJson.md)
+[**\Walmart\Models\MP\US\Items\ItemResponseJson**](../../../Models/MP/US/Items/ItemResponseJson.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -187,7 +183,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemCatalogSearchPayload** | [**\Walmart\Models\MP\US\Items\ItemCatalogSearchPayload**](../../../Models/MP/US/items/ItemCatalogSearchPayload.md)| Request fields | |
+| **itemCatalogSearchPayload** | [**\Walmart\Models\MP\US\Items\ItemCatalogSearchPayload**](../../../Models/MP/US/Items/ItemCatalogSearchPayload.md)| Request fields | |
 | **page** | **int**| number of page | [optional] [default to 0] |
 | **limit** | **int**| number of items | [optional] [default to 100] |
 | **nextCursor** | **string**| nextCursor | [optional] |
@@ -195,11 +191,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemCatalogResponses**](../../../Models/MP/US/items/ItemCatalogResponses.md)
+[**\Walmart\Models\MP\US\Items\ItemCatalogResponses**](../../../Models/MP/US/Items/ItemCatalogResponses.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -258,8 +252,6 @@ try {
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
@@ -308,16 +300,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **itemsAssociationsResponseDTO** | [**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/items/ItemsAssociationsResponseDTO.md)| Request fields | |
+| **itemsAssociationsResponseDTO** | [**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/Items/ItemsAssociationsResponseDTO.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/items/ItemsAssociationsResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/Items/ItemsAssociationsResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -376,11 +366,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/items/ItemsAssociationsResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/Items/ItemsAssociationsResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -432,11 +420,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../../../Models/MP/US/items/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../../../Models/MP/US/Items/TaxonomyResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -491,11 +477,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../../../Models/MP/US/items/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../../../Models/MP/US/Items/TaxonomyResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -552,11 +536,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\FeedId**](../../../Models/MP/US/items/FeedId.md)
+[**\Walmart\Models\MP\US\Items\FeedId**](../../../Models/MP/US/Items/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -572,7 +554,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `retireAnItem()`
 
 ```php
-retireAnItem($sKU): \Walmart\Models\MP\US\Items\RetireAnItem200Response
+retireAnItem($sKU): \Walmart\Models\MP\US\Items\ItemRetireResponse
 ```
 Retire an item
 
@@ -611,11 +593,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\RetireAnItem200Response**](../../../Models/MP/US/items/RetireAnItem200Response.md)
+[**\Walmart\Models\MP\US\Items\ItemRetireResponse**](../../../Models/MP/US/Items/ItemRetireResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

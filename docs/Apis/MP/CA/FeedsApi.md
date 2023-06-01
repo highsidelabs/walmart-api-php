@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `bulkContentSetup()`
 
 ```php
-bulkContentSetup($feedType, $file): \Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response
+bulkContentSetup($feedType, $file): \Walmart\Models\MP\CA\Feeds\FeedId
 ```
 Content feeds
 
@@ -54,11 +54,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Feeds\BulkContentSetup200Response**](../../../Models/MP/CA/feeds/BulkContentSetup200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\FeedId**](../../../Models/MP/CA/Feeds/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -75,7 +73,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllFeedStatuses()`
 
 ```php
-getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response
+getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Models\MP\CA\Feeds\FeedRecordResponseJson
 ```
 All feed statuses
 
@@ -120,11 +118,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Feeds\GetAllFeedStatuses200Response**](../../../Models/MP/CA/feeds/GetAllFeedStatuses200Response.md)
+[**\Walmart\Models\MP\CA\Feeds\FeedRecordResponseJson**](../../../Models/MP/CA/Feeds/FeedRecordResponseJson.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -188,11 +184,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Feeds\PartnerFeedResponse**](../../../Models/MP/CA/feeds/PartnerFeedResponse.md)
+[**\Walmart\Models\MP\CA\Feeds\PartnerFeedResponse**](../../../Models/MP/CA/Feeds/PartnerFeedResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

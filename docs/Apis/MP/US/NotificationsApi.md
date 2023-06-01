@@ -48,16 +48,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../../../Models/MP/US/notifications/CreateSubscriptionRequest.md)| Request fields | |
+| **createSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../../../Models/MP/US/Notifications/CreateSubscriptionRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../../../Models/MP/US/notifications/SubscriptionResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../../../Models/MP/US/Notifications/SubscriptionResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -112,11 +110,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO**](../../../Models/MP/US/notifications/SubscriptionDeleteResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO**](../../../Models/MP/US/Notifications/SubscriptionDeleteResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -177,11 +173,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../../../Models/MP/US/notifications/CreateSubscriptionRequest.md)
+[**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest**](../../../Models/MP/US/Notifications/CreateSubscriptionRequest.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -233,11 +227,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\EventTypes**](../../../Models/MP/US/notifications/EventTypes.md)
+[**\Walmart\Models\MP\US\Notifications\EventTypes**](../../../Models/MP/US/Notifications/EventTypes.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -287,16 +279,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **testNotificationRequest** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequest**](../../../Models/MP/US/notifications/TestNotificationRequest.md)| Request fields | |
+| **testNotificationRequest** | [**\Walmart\Models\MP\US\Notifications\TestNotificationRequest**](../../../Models/MP/US/Notifications/TestNotificationRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO**](../../../Models/MP/US/notifications/TestNotificationResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO**](../../../Models/MP/US/Notifications/TestNotificationResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -348,16 +338,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Unique ID for the subscription | |
-| **createSubscriptionRequestRecord** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord**](../../../Models/MP/US/notifications/CreateSubscriptionRequestRecord.md)| Request fields | |
+| **createSubscriptionRequestRecord** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord**](../../../Models/MP/US/Notifications/CreateSubscriptionRequestRecord.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../../../Models/MP/US/notifications/SubscriptionResponseDTO.md)
+[**\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO**](../../../Models/MP/US/Notifications/SubscriptionResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

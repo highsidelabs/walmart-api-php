@@ -12,7 +12,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `bulkItemSetupCA()`
 
 ```php
-bulkItemSetupCA($feedType, $file): \Walmart\Models\MP\CA\Items\BulkItemSetupCA200Response
+bulkItemSetupCA($feedType, $file): \Walmart\Models\MP\CA\Items\FeedId
 ```
 Bulk upload
 
@@ -55,11 +55,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\BulkItemSetupCA200Response**](../../../Models/MP/CA/items/BulkItemSetupCA200Response.md)
+[**\Walmart\Models\MP\CA\Items\FeedId**](../../../Models/MP/CA/Items/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -123,11 +121,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\ItemResponses**](../../../Models/MP/CA/items/ItemResponses.md)
+[**\Walmart\Models\MP\CA\Items\ItemResponses**](../../../Models/MP/CA/Items/ItemResponses.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -185,11 +181,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\ItemResponse**](../../../Models/MP/CA/items/ItemResponse.md)
+[**\Walmart\Models\MP\CA\Items\ItemResponse**](../../../Models/MP/CA/Items/ItemResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -247,11 +241,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Items\ItemRetireResponseV2**](../../../Models/MP/CA/items/ItemRetireResponseV2.md)
+[**\Walmart\Models\MP\CA\Items\ItemRetireResponseV2**](../../../Models/MP/CA/Items/ItemRetireResponseV2.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

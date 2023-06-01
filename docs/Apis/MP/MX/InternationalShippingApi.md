@@ -50,16 +50,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **accept** | **string**| Only supported Media Type : application/json | |
-| **labelGenerationRequestMx** | [**\Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx**](../../../Models/MP/MX/internationalShipping/LabelGenerationRequestMx.md)| Label fields | |
+| **labelGenerationRequestMx** | [**\Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx**](../../../Models/MP/MX/InternationalShipping/LabelGenerationRequestMx.md)| Label fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/InternationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -119,11 +117,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/InternationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -181,11 +177,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/InternationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -241,11 +235,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../../../Models/MP/MX/internationalShipping/CarrierCommonResponseListCarrierResponse.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse**](../../../Models/MP/MX/InternationalShipping/CarrierCommonResponseListCarrierResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -303,11 +295,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/internationalShipping/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/InternationalShipping/CommonResponseLabelGenerationResponseMx.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -370,8 +360,6 @@ try {
 **\SplFileObject**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

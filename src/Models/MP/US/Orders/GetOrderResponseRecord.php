@@ -61,12 +61,12 @@ class GetOrderResponseRecord extends BaseModel
         'buyerId' => 'string',
         'mart' => 'string',
         'isGuest' => 'bool',
-        'shippingInfo' => '\Walmart\Models\MP\US\Orders\GetAnOrder200ResponseShippingInfo',
-        'orderLines' => '\Walmart\Models\MP\US\Orders\GetAnOrder200ResponseOrderLines',
+        'shippingInfo' => '\Walmart\Models\MP\US\Orders\ShippingInfoType',
+        'orderLines' => '\Walmart\Models\MP\US\Orders\CancelLinesType',
         'paymentTypes' => 'string[]',
         'orderSummary' => '\Walmart\Models\MP\US\Orders\OrderSummary',
         'pickupPersons' => '\Walmart\Models\MP\US\Orders\PickupPerson[]',
-        'shipNode' => '\Walmart\Models\MP\US\Orders\GetAnOrder200ResponseShipNode'
+        'shipNode' => '\Walmart\Models\MP\US\Orders\ShipNodesType'
     ];
 
     /**
@@ -507,7 +507,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseShippingInfo
+     * @return \Walmart\Models\MP\US\Orders\ShippingInfoType
     
      */
     public function getShippingInfo()
@@ -518,7 +518,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseShippingInfo $shippingInfo shippingInfo
+     * @param \Walmart\Models\MP\US\Orders\ShippingInfoType $shippingInfo shippingInfo
      *
      * @return self
     
@@ -536,7 +536,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseOrderLines
+     * @return \Walmart\Models\MP\US\Orders\CancelLinesType
     
      */
     public function getOrderLines()
@@ -547,7 +547,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseOrderLines $orderLines orderLines
+     * @param \Walmart\Models\MP\US\Orders\CancelLinesType $orderLines orderLines
      *
      * @return self
     
@@ -652,7 +652,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets shipNode
      *
-     * @return \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseShipNode|null
+     * @return \Walmart\Models\MP\US\Orders\ShipNodesType|null
     
      */
     public function getShipNode()
@@ -663,7 +663,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets shipNode
      *
-     * @param \Walmart\Models\MP\US\Orders\GetAnOrder200ResponseShipNode|null $shipNode shipNode
+     * @param \Walmart\Models\MP\US\Orders\ShipNodesType|null $shipNode shipNode
      *
      * @return self
     

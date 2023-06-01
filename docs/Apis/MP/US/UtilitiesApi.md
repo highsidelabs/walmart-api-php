@@ -48,11 +48,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\StatusAPIResponse**](../../../Models/MP/US/utilities/StatusAPIResponse.md)
+[**\Walmart\Models\MP\US\Utilities\StatusAPIResponse**](../../../Models/MP/US/Utilities/StatusAPIResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -107,11 +105,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\GetCategories**](../../../Models/MP/US/utilities/GetCategories.md)
+[**\Walmart\Models\MP\US\Utilities\GetCategories**](../../../Models/MP/US/Utilities/GetCategories.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -163,11 +159,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../../../Models/MP/US/utilities/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../../../Models/MP/US/Utilities/TaxonomyResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -224,11 +218,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../../../Models/MP/US/utilities/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../../../Models/MP/US/Utilities/TaxonomyResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

@@ -50,7 +50,7 @@ class LagTimeFeed extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'lagTimeHeader' => '\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader',
+        'lagTimeHeader' => '\Walmart\Models\MP\US\LagTime\LagTimeHeader',
         'lagTime' => '\Walmart\Models\MP\US\LagTime\LagTime[]'
     ];
 
@@ -138,7 +138,7 @@ class LagTimeFeed extends BaseModel
     /**
      * Gets lagTimeHeader
      *
-     * @return \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader
+     * @return \Walmart\Models\MP\US\LagTime\LagTimeHeader
     
      */
     public function getLagTimeHeader()
@@ -149,7 +149,7 @@ class LagTimeFeed extends BaseModel
     /**
      * Sets lagTimeHeader
      *
-     * @param \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader $lagTimeHeader lagTimeHeader
+     * @param \Walmart\Models\MP\US\LagTime\LagTimeHeader $lagTimeHeader lagTimeHeader
      *
      * @return self
     

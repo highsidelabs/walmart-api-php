@@ -58,10 +58,10 @@ class ItemResponseRecord extends BaseModel
         'productName' => 'string',
         'shelf' => 'string',
         'productType' => 'string',
-        'price' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice',
+        'price' => '\Walmart\Models\MP\US\Items\ItemSearchPrice',
         'publishedStatus' => 'string',
-        'additionalAttributes' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes',
-        'unpublishedReasons' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons',
+        'additionalAttributes' => '\Walmart\Models\MP\US\Items\NameValueAttributes',
+        'unpublishedReasons' => '\Walmart\Models\MP\US\Items\UnpublishedReasonList',
         'lifecycleStatus' => 'string'
     ];
 
@@ -490,7 +490,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null
+     * @return \Walmart\Models\MP\US\Items\ItemSearchPrice|null
     
      */
     public function getPrice()
@@ -501,7 +501,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerPrice|null $price price
+     * @param \Walmart\Models\MP\US\Items\ItemSearchPrice|null $price price
      *
      * @return self
     
@@ -548,7 +548,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Gets additionalAttributes
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null
+     * @return \Walmart\Models\MP\US\Items\NameValueAttributes|null
     
      */
     public function getAdditionalAttributes()
@@ -559,7 +559,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Sets additionalAttributes
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null $additionalAttributes additionalAttributes
+     * @param \Walmart\Models\MP\US\Items\NameValueAttributes|null $additionalAttributes additionalAttributes
      *
      * @return self
     
@@ -577,7 +577,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Gets unpublishedReasons
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null
+     * @return \Walmart\Models\MP\US\Items\UnpublishedReasonList|null
     
      */
     public function getUnpublishedReasons()
@@ -588,7 +588,7 @@ class ItemResponseRecord extends BaseModel
     /**
      * Sets unpublishedReasons
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerUnpublishedReasons|null $unpublishedReasons unpublishedReasons
+     * @param \Walmart\Models\MP\US\Items\UnpublishedReasonList|null $unpublishedReasons unpublishedReasons
      *
      * @return self
     

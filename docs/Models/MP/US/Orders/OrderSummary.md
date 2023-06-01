@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalAmount** | [**\Walmart\Models\MP\US\Orders\GetAnOrder200ResponseOrderSummaryTotalAmount**](GetAnOrder200ResponseOrderSummaryTotalAmount.md) |  | [optional]
+**totalAmount** | [**\Walmart\Models\MP\US\Orders\MoneyType**](MoneyType.md) |  | [optional]
 **orderSubTotals** | [**\Walmart\Models\MP\US\Orders\OrderSubTotal[]**](OrderSubTotal.md) |  | [optional]
 
 

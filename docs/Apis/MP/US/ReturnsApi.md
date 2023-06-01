@@ -52,11 +52,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\FeedId**](../../../Models/MP/US/returns/FeedId.md)
+[**\Walmart\Models\MP\US\Returns\FeedId**](../../../Models/MP/US/Returns/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -129,11 +127,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse**](../../../Models/MP/US/returns/GetReturnOrdersResponse.md)
+[**\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse**](../../../Models/MP/US/Returns/GetReturnOrdersResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -185,16 +181,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **returnOrderId** | **string**| The return order ID | |
-| **refundRequest** | [**\Walmart\Models\MP\US\Returns\RefundRequest**](../../../Models/MP/US/returns/RefundRequest.md)| File fields | |
+| **refundRequest** | [**\Walmart\Models\MP\US\Returns\RefundRequest**](../../../Models/MP/US/Returns/RefundRequest.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Returns\RefundResponse**](../../../Models/MP/US/returns/RefundResponse.md)
+[**\Walmart\Models\MP\US\Returns\RefundResponse**](../../../Models/MP/US/Returns/RefundResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

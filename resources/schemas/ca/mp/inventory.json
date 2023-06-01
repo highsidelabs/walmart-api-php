@@ -152,22 +152,7 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "feedId": {
-                                            "type": "string",
-                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
-                                        },
-                                        "additionalAttributes": {
-                                            "type": "object",
-                                            "nullable": true
-                                        },
-                                        "errors": {
-                                            "type": "object",
-                                            "nullable": true
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/FeedId"
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>"
                             }
@@ -198,25 +183,7 @@
                         "description": "An arbitrary alphanumeric unique ID, seller-specified, identifying each item."
                     },
                     "quantity": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "The unit of measurement. Example: 'EACH'",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "The number available in the inventory"
-                            }
-                        },
-                        "description": "Information about the quantity in inventory"
+                        "$ref": "#\/components\/schemas\/QuantityV2"
                     },
                     "fulfillmentLagTime": {
                         "type": "integer",

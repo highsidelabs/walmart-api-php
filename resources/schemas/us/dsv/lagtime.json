@@ -46,107 +46,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "lagTime",
-                                    "lagtimeFeedHeader"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "lagtimeFeedHeader": {
-                                        "required": [
-                                            "businessUnit",
-                                            "feedDate",
-                                            "feedType",
-                                            "locale",
-                                            "version"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string",
-                                                "description": "Specifies the version of the lag time feed header.\n\nExample(s):\n\n1.0 \n\n2.0.20221010-13_56_27-api",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "feedType": {
-                                                "type": "string",
-                                                "description": "Specifies the type of the feed content. \n\nUse 'lagtime' for this API.",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "feedDate": {
-                                                "type": "string",
-                                                "description": "Specifies the feed date of the lag time feed header, in ISO 8601 format. \n\nExample(s):\n\n2023-03-13T13:03:33.000Z",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "locale": {
-                                                "type": "string",
-                                                "description": "Specifies the locale of the lag time feed header. \n\nValid value is: \n\nen",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "businessUnit": {
-                                                "type": "string",
-                                                "description": "Specifies the business unit of the lag time feed header.\n\nValid value is:\n\nWALMART_US",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            }
-                                        },
-                                        "description": "Specifies an object for the lag time feed header."
-                                    },
-                                    "lagTime": {
-                                        "type": "array",
-                                        "description": "Specifies an array of objects for lag time.",
-                                        "xml": {
-                                            "namespace": "http:\/\/walmart.com\/"
-                                        },
-                                        "items": {
-                                            "required": [
-                                                "fulfillmentLagTime",
-                                                "productId",
-                                                "shipNode"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "productId": {
-                                                    "type": "string",
-                                                    "description": "Specifies the product identifier for the item. \n\nThis parameter can only be a global trade item number (GTIN). \n\nThe global trade item number (GTIN) is a 14-digit number, including the check digit, that is used worldwide and identifies the Each. If the user\u2019s number is less than 14 digits, add zeros at the beginning.",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "shipNode": {
-                                                    "type": "string",
-                                                    "description": "Specifies the distribution facility distributor identifier. \n\n This parameter identifies each facility from which the inventory is requested. \n\nThe identifier is autogenerated during drop ship vendor (DSV) account creation. Every time users add or update a facility in Supplier Center, a new identifier is generated.",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "fulfillmentLagTime": {
-                                                    "type": "integer",
-                                                    "description": "Specifies fulfillment lag time. \n\n Fulfillment lag time is the maximum number of days it takes suppliers to process an order for shipment. \n\n Assigning lag times helps suppliers manage when orders are expected to ship to the customer.",
-                                                    "format": "int32",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                }
-                                            },
-                                            "description": "Specifies an array of objects for lag time.",
-                                            "xml": {
-                                                "name": "lagTime"
-                                            }
-                                        }
-                                    }
-                                },
-                                "xml": {
-                                    "name": "lagTimeFeedV2"
-                                }
+                                "$ref": "#\/components\/schemas\/LagTimeFeedV2"
                             },
                             "examples": {
                                 "1.X": {
@@ -256,40 +156,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "fulfillmentLagTime",
-                                        "gtin",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "Indicates the stock keeping unit (SKU) item identifier. \n\n This is a product identifier provided by the drop ship vendor (DSV) to identify each item.",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        },
-                                        "gtin": {
-                                            "type": "string",
-                                            "description": "Indicates the global trade item number (GTIN) item identifier.",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        },
-                                        "fulfillmentLagTime": {
-                                            "type": "integer",
-                                            "description": "Indicates the number of days between when the item is ordered and when it is shipped.",
-                                            "format": "int32",
-                                            "xml": {
-                                                "namespace": "http:\/\/walmart.com\/"
-                                            }
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "lagTime"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/LagTimeResponse"
                                 },
                                 "example": {
                                     "sku": "06194456252572",
@@ -376,52 +243,7 @@
                 "type": "object",
                 "properties": {
                     "lagtimeFeedHeader": {
-                        "required": [
-                            "businessUnit",
-                            "feedDate",
-                            "feedType",
-                            "locale",
-                            "version"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "version": {
-                                "type": "string",
-                                "description": "Specifies the version of the lag time feed header.\n\nExample(s):\n\n1.0 \n\n2.0.20221010-13_56_27-api",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "feedType": {
-                                "type": "string",
-                                "description": "Specifies the type of the feed content. \n\nUse 'lagtime' for this API.",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "feedDate": {
-                                "type": "string",
-                                "description": "Specifies the feed date of the lag time feed header, in ISO 8601 format. \n\nExample(s):\n\n2023-03-13T13:03:33.000Z",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "locale": {
-                                "type": "string",
-                                "description": "Specifies the locale of the lag time feed header. \n\nValid value is: \n\nen",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            },
-                            "businessUnit": {
-                                "type": "string",
-                                "description": "Specifies the business unit of the lag time feed header.\n\nValid value is:\n\nWALMART_US",
-                                "xml": {
-                                    "namespace": "http:\/\/walmart.com\/"
-                                }
-                            }
-                        },
-                        "description": "Specifies an object for the lag time feed header."
+                        "$ref": "#\/components\/schemas\/LagTimeFeedHeader"
                     },
                     "lagTime": {
                         "type": "array",

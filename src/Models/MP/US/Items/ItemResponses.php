@@ -52,7 +52,7 @@ class ItemResponses extends BaseModel
     protected static array $openAPITypes = [
         'errors' => '\Walmart\Models\MP\US\Items\GatewayError[]',
         'itemResponse' => '\Walmart\Models\MP\US\Items\ItemResponse[]',
-        'additionalAttributes' => '\Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes',
+        'additionalAttributes' => '\Walmart\Models\MP\US\Items\NameValueAttributes',
         'totalItems' => 'int',
         'nextCursor' => 'string'
     ];
@@ -217,7 +217,7 @@ class ItemResponses extends BaseModel
     /**
      * Gets additionalAttributes
      *
-     * @return \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null
+     * @return \Walmart\Models\MP\US\Items\NameValueAttributes|null
     
      */
     public function getAdditionalAttributes()
@@ -228,7 +228,7 @@ class ItemResponses extends BaseModel
     /**
      * Sets additionalAttributes
      *
-     * @param \Walmart\Models\MP\US\Items\GetAllItems200ResponseItemResponseInnerAdditionalAttributes|null $additionalAttributes additionalAttributes
+     * @param \Walmart\Models\MP\US\Items\NameValueAttributes|null $additionalAttributes additionalAttributes
      *
      * @return self
     

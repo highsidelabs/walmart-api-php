@@ -50,7 +50,7 @@ class ItemResponseJson extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'responseRecord' => '\Walmart\Models\MP\US\Items\ItemResponseJsonResponseRecord'
+        'responseRecord' => '\Walmart\Models\MP\US\Items\ItemResponseRecord'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ItemResponseJson extends BaseModel
     /**
      * Gets responseRecord
      *
-     * @return \Walmart\Models\MP\US\Items\ItemResponseJsonResponseRecord|null
+     * @return \Walmart\Models\MP\US\Items\ItemResponseRecord|null
     
      */
     public function getResponseRecord()
@@ -139,7 +139,7 @@ class ItemResponseJson extends BaseModel
     /**
      * Sets responseRecord
      *
-     * @param \Walmart\Models\MP\US\Items\ItemResponseJsonResponseRecord|null $responseRecord responseRecord
+     * @param \Walmart\Models\MP\US\Items\ItemResponseRecord|null $responseRecord responseRecord
      *
      * @return self
     

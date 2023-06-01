@@ -61,12 +61,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+     * @return \Walmart\Models\CP\US\Feeds\FeedId
      */
     public function contentProductFeed(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
+    ): \Walmart\Models\CP\US\Feeds\FeedId {
         return $this->contentProductFeedWithHttpInfo($feedType, $file);
     }
 
@@ -80,12 +80,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+     * @return \Walmart\Models\CP\US\Feeds\FeedId
      */
     protected function contentProductFeedWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
+    ): \Walmart\Models\CP\US\Feeds\FeedId {
         $request = $this->contentProductFeedRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -135,19 +135,19 @@ class FeedsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\CP\US\Feeds\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' !== 'string') {
+                        if ('\Walmart\Models\CP\US\Feeds\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
+            $returnType = '\Walmart\Models\CP\US\Feeds\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -163,7 +163,7 @@ class FeedsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response',
+                        '\Walmart\Models\CP\US\Feeds\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -214,7 +214,7 @@ class FeedsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
+        $returnType = '\Walmart\Models\CP\US\Feeds\FeedId';
         $request = $this->contentProductFeedRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1096,12 +1096,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+     * @return \Walmart\Models\CP\US\Feeds\FeedId
      */
     public function updateRichMedia(
         string $feedType,
         string $body
-    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
+    ): \Walmart\Models\CP\US\Feeds\FeedId {
         return $this->updateRichMediaWithHttpInfo($feedType, $body);
     }
 
@@ -1115,12 +1115,12 @@ class FeedsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+     * @return \Walmart\Models\CP\US\Feeds\FeedId
      */
     protected function updateRichMediaWithHttpInfo(
         string $feedType,
         string $body,
-    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
+    ): \Walmart\Models\CP\US\Feeds\FeedId {
         $request = $this->updateRichMediaRequest($feedType, $body, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1170,19 +1170,19 @@ class FeedsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\CP\US\Feeds\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' !== 'string') {
+                        if ('\Walmart\Models\CP\US\Feeds\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
+            $returnType = '\Walmart\Models\CP\US\Feeds\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1198,7 +1198,7 @@ class FeedsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response',
+                        '\Walmart\Models\CP\US\Feeds\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1249,7 +1249,7 @@ class FeedsApi extends BaseApi
         string $feedType,
         string $body,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
+        $returnType = '\Walmart\Models\CP\US\Feeds\FeedId';
         $request = $this->updateRichMediaRequest($feedType, $body, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

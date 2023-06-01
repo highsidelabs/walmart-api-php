@@ -50,7 +50,7 @@ class PromotionalPriceResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'payload' => '\Walmart\Models\MP\US\Promotions\PromotionalPriceResponsePayload',
+        'payload' => '\Walmart\Models\MP\US\Promotions\ItemPriceType',
         'header' => '\Walmart\Models\MP\US\Promotions\Header',
         'status' => 'string'
     ];
@@ -142,7 +142,7 @@ class PromotionalPriceResponse extends BaseModel
     /**
      * Gets payload
      *
-     * @return \Walmart\Models\MP\US\Promotions\PromotionalPriceResponsePayload|null
+     * @return \Walmart\Models\MP\US\Promotions\ItemPriceType|null
     
      */
     public function getPayload()
@@ -153,7 +153,7 @@ class PromotionalPriceResponse extends BaseModel
     /**
      * Sets payload
      *
-     * @param \Walmart\Models\MP\US\Promotions\PromotionalPriceResponsePayload|null $payload payload
+     * @param \Walmart\Models\MP\US\Promotions\ItemPriceType|null $payload payload
      *
      * @return self
     

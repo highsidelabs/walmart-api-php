@@ -59,16 +59,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/Rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/rules/InactivateRuleResponse.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/Rules/InactivateRuleResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -125,11 +123,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/rules/ChangeAssortmentResponse.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/Rules/ChangeAssortmentResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -179,16 +175,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/Rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/Rules/GetAllRulesResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -238,16 +232,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/Rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../../../Models/MP/US/rules/DeleteExceptionResponse.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../../../Models/MP/US/Rules/DeleteExceptionResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -297,16 +289,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/Rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../../../Models/MP/US/rules/DeleteExceptionResponse.md)
+[**\Walmart\Models\MP\US\Rules\DeleteExceptionResponse**](../../../Models/MP/US/Rules/DeleteExceptionResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -363,11 +353,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/rules/InactivateRuleResponse.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/Rules/InactivateRuleResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -422,8 +410,6 @@ This endpoint does not need any parameter.
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -484,8 +470,6 @@ try {
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
@@ -541,11 +525,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/Rules/GetAllRulesResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -597,11 +579,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/rules/ChangeAssortmentResponse.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/Rules/ChangeAssortmentResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -653,11 +633,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllExceptionsResponse**](../../../Models/MP/US/rules/GetAllExceptionsResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllExceptionsResponse**](../../../Models/MP/US/Rules/GetAllExceptionsResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -709,11 +687,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/Rules/GetAllRulesResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -765,11 +741,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/rules/ChangeAssortmentResponse.md)
+[**\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse**](../../../Models/MP/US/Rules/ChangeAssortmentResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -826,11 +800,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetSimulationCountResponse**](../../../Models/MP/US/rules/GetSimulationCountResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetSimulationCountResponse**](../../../Models/MP/US/Rules/GetSimulationCountResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -880,16 +852,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/Rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/rules/InactivateRuleResponse.md)
+[**\Walmart\Models\MP\US\Rules\InactivateRuleResponse**](../../../Models/MP/US/Rules/InactivateRuleResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -939,16 +909,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/Rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/Rules/GetAllRulesResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -998,16 +966,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/rules/InactivateRuleRequest.md)| Request fields | |
+| **inactivateRuleRequest** | [**\Walmart\Models\MP\US\Rules\InactivateRuleRequest**](../../../Models/MP/US/Rules/InactivateRuleRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/rules/GetAllRulesResponse.md)
+[**\Walmart\Models\MP\US\Rules\GetAllRulesResponse**](../../../Models/MP/US/Rules/GetAllRulesResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

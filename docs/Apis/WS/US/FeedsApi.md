@@ -55,11 +55,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Feeds\FeedRecordResponse**](../../../Models/WS/US/feeds/FeedRecordResponse.md)
+[**\Walmart\Models\WS\US\Feeds\FeedRecordResponse**](../../../Models/WS/US/Feeds/FeedRecordResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -123,11 +121,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Feeds\PartnerFeedResponse**](../../../Models/WS/US/feeds/PartnerFeedResponse.md)
+[**\Walmart\Models\WS\US\Feeds\PartnerFeedResponse**](../../../Models/WS/US/Feeds/PartnerFeedResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

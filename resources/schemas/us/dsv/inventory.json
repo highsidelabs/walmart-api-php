@@ -55,47 +55,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "gtin",
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "Indicates the stock keeping unit (SKU) item identifier. \n\nThis is a product identifier provided by the drop ship vendor (DSV) to identify each item."
-                                        },
-                                        "gtin": {
-                                            "type": "string",
-                                            "description": "Indicates the global trade item number (GTIN) item identifier."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "Indicates the quantity unit of measurement.",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "Indicates the quantity of the product available in inventory."
-                                                }
-                                            },
-                                            "description": "Indicates an object for information about the quantity in inventory."
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "Inventory"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InventoryResponse"
                                 },
                                 "example": {
                                     "sku": "1487132332472",
@@ -163,58 +123,6 @@
                                     }
                                 }
                             }
-                        },
-                        "application\/xml": {
-                            "schema": {
-                                "required": [
-                                    "availabilityCode",
-                                    "gtin",
-                                    "quantity"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "gtin": {
-                                        "type": "string",
-                                        "description": "Specifies the global trade item number (GTIN) item identifier. \n\nThe global trade item number is a 14-digit number, including the check digit, that is used worldwide and identifies the Each. If the user\u2019s number is less than 14 digits, add zeros at the beginning."
-                                    },
-                                    "availabilityCode": {
-                                        "type": "string",
-                                        "description": "Specifies how to manage the inventory update. \n\nAC: The code used for standard inventory updates. Assign this code to an item with normal inventory. \n\nAA: An item with infinite inventory. If users set AA as the availability code, they do not need to provide inventory for the item.",
-                                        "enum": [
-                                            "AA",
-                                            "AC"
-                                        ]
-                                    },
-                                    "quantity": {
-                                        "required": [
-                                            "unit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "unit": {
-                                                "type": "string",
-                                                "description": "Indicates the unit of measurement the quantity of an item.",
-                                                "enum": [
-                                                    "EACH"
-                                                ]
-                                            },
-                                            "amount": {
-                                                "type": "number",
-                                                "description": "Indicates the value for the quantity of an item."
-                                            }
-                                        },
-                                        "description": "Indicates an object for the quantity that has been ordered by the customers, but not yet shipped."
-                                    }
-                                }
-                            },
-                            "examples": {
-                                "SKU": {
-                                    "value": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns=\"http:\/\/walmart.com\/\">\n    <sku>1487132332472<\/sku>\n    <availabilityCode>AC<\/availabilityCode>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n<\/inventory>"
-                                },
-                                "GTIN": {
-                                    "value": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<inventory xmlns=\"http:\/\/walmart.com\/\">\n    <gtin>00012947218283<\/gtin>\n    <availabilityCode>AC<\/availabilityCode>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>23<\/amount>\n    <\/quantity>\n<\/inventory>"
-                                }
-                            }
                         }
                     },
                     "required": true
@@ -225,47 +133,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "required": [
-                                        "gtin",
-                                        "quantity",
-                                        "sku"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "sku": {
-                                            "type": "string",
-                                            "description": "Indicates the stock keeping unit (SKU) item identifier. \n\nThis is a product identifier provided by the drop ship vendor (DSV) to identify each item."
-                                        },
-                                        "gtin": {
-                                            "type": "string",
-                                            "description": "Indicates the global trade item number (GTIN) item identifier."
-                                        },
-                                        "quantity": {
-                                            "required": [
-                                                "amount",
-                                                "unit"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "unit": {
-                                                    "type": "string",
-                                                    "description": "Indicates the quantity unit of measurement.",
-                                                    "enum": [
-                                                        "EACH"
-                                                    ]
-                                                },
-                                                "amount": {
-                                                    "type": "number",
-                                                    "description": "Indicates the quantity of the product available in inventory."
-                                                }
-                                            },
-                                            "description": "Indicates an object for information about the quantity in inventory."
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "Inventory"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/InventoryResponse"
                                 },
                                 "example": {
                                     "sku": "1487132332472",
@@ -324,121 +192,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "required": [
-                                    "inventory",
-                                    "inventoryFeedHeader"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "inventoryFeedHeader": {
-                                        "required": [
-                                            "businessUnit",
-                                            "feedDate",
-                                            "feedType",
-                                            "locale",
-                                            "version"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "version": {
-                                                "type": "string",
-                                                "description": "Specifies the inventory feed header version.",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "feedType": {
-                                                "type": "string",
-                                                "description": "Specifies the feed type for inventory feed header information. \n\nFeed types include: \n`DSV_INVENTORY`",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "feedDate": {
-                                                "type": "string",
-                                                "description": "Specifies the inventory feed header feed date.",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "locale": {
-                                                "type": "string",
-                                                "description": "Specifies the inventory feed header locale.",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            },
-                                            "businessUnit": {
-                                                "type": "string",
-                                                "description": "Specifies the inventory feed header business unit.",
-                                                "xml": {
-                                                    "namespace": "http:\/\/walmart.com\/"
-                                                }
-                                            }
-                                        },
-                                        "description": "Specifies an object for inventory feed header information.",
-                                        "xml": {
-                                            "name": "InventoryFeedHeader"
-                                        }
-                                    },
-                                    "inventory": {
-                                        "type": "array",
-                                        "description": "Specifies an object for inventory information.",
-                                        "xml": {
-                                            "namespace": "http:\/\/walmart.com\/"
-                                        },
-                                        "items": {
-                                            "required": [
-                                                "availabilityCode",
-                                                "productId",
-                                                "shipNode"
-                                            ],
-                                            "type": "object",
-                                            "properties": {
-                                                "productId": {
-                                                    "type": "string",
-                                                    "description": "Specifies the product identifier for the item. \n\n This parameter can only be a global trade item number (GTIN). \n\nThe global trade item number (GTIN) is a 14-digit number, including the check digit, that is used worldwide and identifies the Each. If the user\u2019s number is less than 14 digits, add zeros at the beginning.",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "shipNode": {
-                                                    "type": "string",
-                                                    "description": "Specifies the distributor identifier for the distribution facility, used to identify each facility.",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                },
-                                                "availabilityCode": {
-                                                    "type": "string",
-                                                    "description": "Specifies the code that identifies how to manage the inventory update. \n\nCodes include: \n\nAC: The code used for standard inventory updates. Assign this code to an item with normal inventory. \n\nAA: An item with infinite inventory. If users set AA as the `availabilityCode`, they do not need to provide inventory for the item.",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    },
-                                                    "enum": [
-                                                        "AA",
-                                                        "AC"
-                                                    ]
-                                                },
-                                                "quantity": {
-                                                    "type": "integer",
-                                                    "description": "Specifies the item quantity available in the inventory.",
-                                                    "format": "int32",
-                                                    "xml": {
-                                                        "namespace": "http:\/\/walmart.com\/"
-                                                    }
-                                                }
-                                            },
-                                            "description": "Specifies an object for inventory information.",
-                                            "xml": {
-                                                "name": "Inventory"
-                                            }
-                                        }
-                                    }
-                                },
-                                "xml": {
-                                    "name": "InventoryFeedV2"
-                                }
+                                "$ref": "#\/components\/schemas\/InventoryFeedV2"
                             },
                             "examples": {
                                 "1.4": {
@@ -733,25 +487,7 @@
                         "description": "Indicates the global trade item number (GTIN) item identifier."
                     },
                     "quantity": {
-                        "required": [
-                            "amount",
-                            "unit"
-                        ],
-                        "type": "object",
-                        "properties": {
-                            "unit": {
-                                "type": "string",
-                                "description": "Indicates the quantity unit of measurement.",
-                                "enum": [
-                                    "EACH"
-                                ]
-                            },
-                            "amount": {
-                                "type": "number",
-                                "description": "Indicates the quantity of the product available in inventory."
-                            }
-                        },
-                        "description": "Indicates an object for information about the quantity in inventory."
+                        "$ref": "#\/components\/schemas\/ReservedQty"
                     }
                 },
                 "xml": {

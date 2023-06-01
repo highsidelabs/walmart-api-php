@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**meta** | [**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTOMeta**](MultiNodeInventoryFetchResponseDTOMeta.md) |  | [optional]
+**meta** | [**\Walmart\Models\MP\US\Inventory\Meta**](Meta.md) |  | [optional]
 **elements** | [**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO**](MultiNodeInventoryUpdateRequestDTO.md) |  | [optional]
 
 

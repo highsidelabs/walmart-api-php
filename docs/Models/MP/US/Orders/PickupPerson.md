@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | [**\Walmart\Models\MP\US\Orders\GetAnOrder200ResponsePickupPersonsInnerName**](GetAnOrder200ResponsePickupPersonsInnerName.md) |  | [optional]
+**name** | [**\Walmart\Models\MP\US\Orders\PersonName**](PersonName.md) |  | [optional]
 **phone** | [**\Walmart\Models\MP\US\Orders\Phone**](Phone.md) |  | [optional]
 
 

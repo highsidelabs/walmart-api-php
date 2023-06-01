@@ -58,11 +58,11 @@ class LagTimeApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\LagTime\GetLagTime200Response
+     * @return \Walmart\Models\MP\US\LagTime\LagTimeResponse
      */
     public function getLagTime(
         string $sku
-    ): \Walmart\Models\MP\US\LagTime\GetLagTime200Response {
+    ): \Walmart\Models\MP\US\LagTime\LagTimeResponse {
         return $this->getLagTimeWithHttpInfo($sku);
     }
 
@@ -75,11 +75,11 @@ class LagTimeApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\LagTime\GetLagTime200Response
+     * @return \Walmart\Models\MP\US\LagTime\LagTimeResponse
      */
     protected function getLagTimeWithHttpInfo(
         string $sku,
-    ): \Walmart\Models\MP\US\LagTime\GetLagTime200Response {
+    ): \Walmart\Models\MP\US\LagTime\LagTimeResponse {
         $request = $this->getLagTimeRequest($sku, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -129,19 +129,19 @@ class LagTimeApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\LagTime\GetLagTime200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\LagTime\LagTimeResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\LagTime\GetLagTime200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\US\LagTime\LagTimeResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\LagTime\GetLagTime200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\LagTime\LagTimeResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\LagTime\GetLagTime200Response';
+            $returnType = '\Walmart\Models\MP\US\LagTime\LagTimeResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -157,7 +157,7 @@ class LagTimeApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\LagTime\GetLagTime200Response',
+                        '\Walmart\Models\MP\US\LagTime\LagTimeResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -204,7 +204,7 @@ class LagTimeApi extends BaseApi
     protected function getLagTimeAsyncWithHttpInfo(
         string $sku,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\LagTime\GetLagTime200Response';
+        $returnType = '\Walmart\Models\MP\US\LagTime\LagTimeResponse';
         $request = $this->getLagTimeRequest($sku, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -348,7 +348,7 @@ class LagTimeApi extends BaseApi
      * Update lag time
      *
      * @param  string $feedType Use 'lagtime' (required)
-     * @param  \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -356,9 +356,9 @@ class LagTimeApi extends BaseApi
      */
     public function updateLagTimeBulk(
         string $feedType,
-        \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest
+        \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed
     ): \Walmart\Models\MP\US\LagTime\FeedId {
-        return $this->updateLagTimeBulkWithHttpInfo($feedType, $updateLagTimeBulkRequest);
+        return $this->updateLagTimeBulkWithHttpInfo($feedType, $lagTimeFeed);
     }
 
     /**
@@ -367,7 +367,7 @@ class LagTimeApi extends BaseApi
      * Update lag time
      *
      * @param  string $feedType Use 'lagtime' (required)
-     * @param  \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -375,9 +375,9 @@ class LagTimeApi extends BaseApi
      */
     protected function updateLagTimeBulkWithHttpInfo(
         string $feedType,
-        \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest,
+        \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed,
     ): \Walmart\Models\MP\US\LagTime\FeedId {
-        $request = $this->updateLagTimeBulkRequest($feedType, $updateLagTimeBulkRequest, );
+        $request = $this->updateLagTimeBulkRequest($feedType, $lagTimeFeed, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -472,16 +472,16 @@ class LagTimeApi extends BaseApi
      * Update lag time
      *
      * @param  string $feedType Use 'lagtime' (required)
-     * @param  \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateLagTimeBulkAsync(
         string $feedType,
-        \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest
+        \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed
     ): PromiseInterface {
-        return $this->updateLagTimeBulkAsyncWithHttpInfo($feedType, $updateLagTimeBulkRequest)
+        return $this->updateLagTimeBulkAsyncWithHttpInfo($feedType, $lagTimeFeed)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -496,17 +496,17 @@ class LagTimeApi extends BaseApi
      * Update lag time
      *
      * @param  string $feedType Use 'lagtime' (required)
-     * @param  \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateLagTimeBulkAsyncWithHttpInfo(
         string $feedType,
-        \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest,
+        \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\LagTime\FeedId';
-        $request = $this->updateLagTimeBulkRequest($feedType, $updateLagTimeBulkRequest, );
+        $request = $this->updateLagTimeBulkRequest($feedType, $lagTimeFeed, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -552,14 +552,14 @@ class LagTimeApi extends BaseApi
      * Create request for operation 'updateLagTimeBulk'
      *
      * @param  string $feedType Use 'lagtime' (required)
-     * @param  \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest File fields (required)
+     * @param  \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateLagTimeBulkRequest(
         string $feedType,
-        \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest $updateLagTimeBulkRequest,
+        \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed,
     ): Request {
         $contentType = self::contentTypes['updateLagTimeBulk'];
 
@@ -569,10 +569,10 @@ class LagTimeApi extends BaseApi
                 'Missing the required parameter $feedType when calling updateLagTimeBulk'
             );
         }
-        // verify the required parameter 'updateLagTimeBulkRequest' is set
-        if ($updateLagTimeBulkRequest === null || (is_array($updateLagTimeBulkRequest) && count($updateLagTimeBulkRequest) === 0)) {
+        // verify the required parameter 'lagTimeFeed' is set
+        if ($lagTimeFeed === null || (is_array($lagTimeFeed) && count($lagTimeFeed) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $updateLagTimeBulkRequest when calling updateLagTimeBulk'
+                'Missing the required parameter $lagTimeFeed when calling updateLagTimeBulk'
             );
         }
         $resourcePath = '/v3/feeds';
@@ -612,12 +612,12 @@ class LagTimeApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($updateLagTimeBulkRequest)) {
+        if (isset($lagTimeFeed)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateLagTimeBulkRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($lagTimeFeed));
             } else {
-                $httpBody = $updateLagTimeBulkRequest;
+                $httpBody = $lagTimeFeed;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

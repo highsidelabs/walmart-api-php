@@ -50,11 +50,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse**](../../../Models/MP/US/promotions/PromotionalPriceResponse.md)
+[**\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse**](../../../Models/MP/US/Promotions/PromotionalPriceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -111,11 +109,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\FeedId**](../../../Models/MP/US/promotions/FeedId.md)
+[**\Walmart\Models\MP\US\Promotions\FeedId**](../../../Models/MP/US/Promotions/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -131,7 +127,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updatePromotionalPrices()`
 
 ```php
-updatePromotionalPrices($promo, $price): \Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response
+updatePromotionalPrices($promo, $price): \Walmart\Models\MP\US\Promotions\ItemPriceResponse
 ```
 Update a promotional price
 
@@ -167,16 +163,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **promo** | **bool**| The promotional price. Set to 'true' in order to retrieve promotional prices | [default to true] |
-| **price** | [**\Walmart\Models\MP\US\Promotions\Price**](../../../Models/MP/US/promotions/Price.md)| The request body consists of a Feed file attached to the request. | |
+| **price** | [**\Walmart\Models\MP\US\Promotions\Price**](../../../Models/MP/US/Promotions/Price.md)| The request body consists of a Feed file attached to the request. | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Promotions\UpdatePromotionalPrices200Response**](../../../Models/MP/US/promotions/UpdatePromotionalPrices200Response.md)
+[**\Walmart\Models\MP\US\Promotions\ItemPriceResponse**](../../../Models/MP/US/Promotions/ItemPriceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

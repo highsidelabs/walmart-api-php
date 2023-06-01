@@ -3073,7 +3073,7 @@ class OrdersApi extends BaseApi
      * Shipping Updates
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3081,9 +3081,9 @@ class OrdersApi extends BaseApi
      */
     public function shippingUpdates(
         string $purchaseOrderId,
-        \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest
+        \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx
     ): string {
-        return $this->shippingUpdatesWithHttpInfo($purchaseOrderId, $shippingUpdatesRequest);
+        return $this->shippingUpdatesWithHttpInfo($purchaseOrderId, $shipmentMx);
     }
 
     /**
@@ -3092,7 +3092,7 @@ class OrdersApi extends BaseApi
      * Shipping Updates
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -3100,9 +3100,9 @@ class OrdersApi extends BaseApi
      */
     protected function shippingUpdatesWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest,
+        \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx,
     ): string {
-        $request = $this->shippingUpdatesRequest($purchaseOrderId, $shippingUpdatesRequest, );
+        $request = $this->shippingUpdatesRequest($purchaseOrderId, $shipmentMx, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3235,16 +3235,16 @@ class OrdersApi extends BaseApi
      * Shipping Updates
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function shippingUpdatesAsync(
         string $purchaseOrderId,
-        \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest
+        \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx
     ): PromiseInterface {
-        return $this->shippingUpdatesAsyncWithHttpInfo($purchaseOrderId, $shippingUpdatesRequest)
+        return $this->shippingUpdatesAsyncWithHttpInfo($purchaseOrderId, $shipmentMx)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3259,17 +3259,17 @@ class OrdersApi extends BaseApi
      * Shipping Updates
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function shippingUpdatesAsyncWithHttpInfo(
         string $purchaseOrderId,
-        \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest,
+        \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->shippingUpdatesRequest($purchaseOrderId, $shippingUpdatesRequest, );
+        $request = $this->shippingUpdatesRequest($purchaseOrderId, $shipmentMx, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3315,14 +3315,14 @@ class OrdersApi extends BaseApi
      * Create request for operation 'shippingUpdates'
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest File fields (required)
+     * @param  \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx File fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function shippingUpdatesRequest(
         string $purchaseOrderId,
-        \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest $shippingUpdatesRequest,
+        \Walmart\Models\MP\MX\Orders\ShipmentMx $shipmentMx,
     ): Request {
         $contentType = self::contentTypes['shippingUpdates'];
 
@@ -3332,10 +3332,10 @@ class OrdersApi extends BaseApi
                 'Missing the required parameter $purchaseOrderId when calling shippingUpdates'
             );
         }
-        // verify the required parameter 'shippingUpdatesRequest' is set
-        if ($shippingUpdatesRequest === null || (is_array($shippingUpdatesRequest) && count($shippingUpdatesRequest) === 0)) {
+        // verify the required parameter 'shipmentMx' is set
+        if ($shipmentMx === null || (is_array($shipmentMx) && count($shipmentMx) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $shippingUpdatesRequest when calling shippingUpdates'
+                'Missing the required parameter $shipmentMx when calling shippingUpdates'
             );
         }
         $resourcePath = '/v3/orders/{purchaseOrderId}/ship';
@@ -3372,12 +3372,12 @@ class OrdersApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($shippingUpdatesRequest)) {
+        if (isset($shipmentMx)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($shippingUpdatesRequest));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($shipmentMx));
             } else {
-                $httpBody = $shippingUpdatesRequest;
+                $httpBody = $shipmentMx;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

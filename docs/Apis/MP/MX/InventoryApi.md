@@ -50,11 +50,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/inventory/Inventory.md)
+[**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/Inventory/Inventory.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -112,11 +110,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\FeedId**](../../../Models/MP/MX/inventory/FeedId.md)
+[**\Walmart\Models\MP\MX\Inventory\FeedId**](../../../Models/MP/MX/Inventory/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -169,16 +165,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. | |
-| **inventory** | [**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/inventory/Inventory.md)| File fields | |
+| **inventory** | [**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/Inventory/Inventory.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/inventory/Inventory.md)
+[**\Walmart\Models\MP\MX\Inventory\Inventory**](../../../Models/MP/MX/Inventory/Inventory.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

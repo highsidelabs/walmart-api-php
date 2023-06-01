@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**totalAmount** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount**](ShipOrderLines200ResponseOrderLinesOrderLineInnerChargesChargeInnerChargeAmount.md) |  | [optional]
+**totalAmount** | [**\Walmart\Models\DSV\US\Orders\MoneyType**](MoneyType.md) |  | [optional]
 **orderSubTotals** | [**\Walmart\Models\DSV\US\Orders\OrderSubTotal[]**](OrderSubTotal.md) |  | [optional]
 
 

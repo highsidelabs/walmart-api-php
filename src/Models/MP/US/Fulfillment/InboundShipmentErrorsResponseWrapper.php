@@ -56,7 +56,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
         'createdDate' => '\DateTime',
         'returnAddress' => '\Walmart\Models\MP\US\Fulfillment\ReturnAddress',
         'orderItems' => '\Walmart\Models\MP\US\Fulfillment\OrderItem[]',
-        'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
+        'errors' => '\Walmart\Models\MP\US\Fulfillment\Error[]'
     ];
 
     /**
@@ -274,7 +274,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Error[]|null
     
      */
     public function getErrors()
@@ -285,7 +285,7 @@ class InboundShipmentErrorsResponseWrapper extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors Error in inbound shipment creation
+     * @param \Walmart\Models\MP\US\Fulfillment\Error[]|null $errors Error in inbound shipment creation
      *
      * @return self
     

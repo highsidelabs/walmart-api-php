@@ -57,16 +57,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/Settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[]**](../../../Models/MP/US/settings/Associate3PFulfillmentCenter200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[]**](../../../Models/MP/US/Settings/Associate3PFulfillmentCenter200ResponseInner.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -116,16 +114,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/Settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]**](../../../Models/MP/US/settings/CreateFulfillmentCenter200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]**](../../../Models/MP/US/Settings/CreateFulfillmentCenter200ResponseInner.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -175,16 +171,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../../../Models/MP/US/settings/UpdateShippingTemplateRequest.md)| Request fields | |
+| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../../../Models/MP/US/Settings/UpdateShippingTemplateRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/settings/ShippingTemplate.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/Settings/ShippingTemplate.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -239,11 +233,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplateId**](../../../Models/MP/US/settings/ShippingTemplateId.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplateId**](../../../Models/MP/US/Settings/ShippingTemplateId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -295,11 +287,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]**](../../../Models/MP/US/settings/Get3PFulfillmentProviders200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]**](../../../Models/MP/US/Settings/Get3PFulfillmentProviders200ResponseInner.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -354,11 +344,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]**](../../../Models/MP/US/settings/GetAllFulfillmentCenters200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]**](../../../Models/MP/US/Settings/GetAllFulfillmentCenters200ResponseInner.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -410,11 +398,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplatesSummary**](../../../Models/MP/US/settings/ShippingTemplatesSummary.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplatesSummary**](../../../Models/MP/US/Settings/ShippingTemplatesSummary.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -466,11 +452,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]**](../../../Models/MP/US/settings/GetCarrierMethods200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]**](../../../Models/MP/US/Settings/GetCarrierMethods200ResponseInner.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -522,11 +506,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]**](../../../Models/MP/US/settings/GetCoverageForFulfillmentCenters200ResponseInner.md)
+[**\Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]**](../../../Models/MP/US/Settings/GetCoverageForFulfillmentCenters200ResponseInner.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -578,11 +560,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../../../Models/MP/US/settings/ShippingConfigsResponseDTO.md)
+[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../../../Models/MP/US/Settings/ShippingConfigsResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -634,11 +614,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../../../Models/MP/US/settings/ShippingConfigsResponseDTO.md)
+[**\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO**](../../../Models/MP/US/Settings/ShippingConfigsResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -690,11 +668,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus**](../../../Models/MP/US/settings/ShippingTemplateActivationStatus.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus**](../../../Models/MP/US/Settings/ShippingTemplateActivationStatus.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -749,11 +725,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/settings/ShippingTemplate.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/Settings/ShippingTemplate.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -803,16 +777,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
+| **updateFulfillmentCenterRequest** | [**\Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest**](../../../Models/MP/US/Settings/UpdateFulfillmentCenterRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate**](../../../Models/MP/US/settings/ShipNodeResponseUpdate.md)
+[**\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate**](../../../Models/MP/US/Settings/ShipNodeResponseUpdate.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -864,16 +836,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **templateId** | **string**| templateId | |
-| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../../../Models/MP/US/settings/UpdateShippingTemplateRequest.md)| Request fields | |
+| **updateShippingTemplateRequest** | [**\Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest**](../../../Models/MP/US/Settings/UpdateShippingTemplateRequest.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/settings/ShippingTemplate.md)
+[**\Walmart\Models\MP\US\Settings\ShippingTemplate**](../../../Models/MP/US/Settings/ShippingTemplate.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

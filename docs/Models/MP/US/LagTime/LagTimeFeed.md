@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lagTimeHeader** | [**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequestLagTimeHeader**](UpdateLagTimeBulkRequestLagTimeHeader.md) |  |
+**lagTimeHeader** | [**\Walmart\Models\MP\US\LagTime\LagTimeHeader**](LagTimeHeader.md) |  |
 **lagTime** | [**\Walmart\Models\MP\US\LagTime\LagTime[]**](LagTime.md) |  | [optional]
 
 

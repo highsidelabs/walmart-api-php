@@ -53,14 +53,14 @@ class PartnerFeedResponse extends BaseModel
         'errors' => '\Walmart\Models\MP\MX\Feeds\GatewayError[]',
         'feedId' => 'string',
         'feedStatus' => 'string',
-        'ingestionErrors' => '\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors',
+        'ingestionErrors' => '\Walmart\Models\MP\MX\Feeds\IngestionErrors',
         'itemsReceived' => 'int',
         'itemsSucceeded' => 'int',
         'itemsFailed' => 'int',
         'itemsProcessing' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'itemDetails' => '\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseItemDetails'
+        'itemDetails' => '\Walmart\Models\MP\MX\Feeds\ItemDetails'
     ];
 
     /**
@@ -328,7 +328,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets ingestionErrors
      *
-     * @return \Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null
+     * @return \Walmart\Models\MP\MX\Feeds\IngestionErrors|null
     
      */
     public function getIngestionErrors()
@@ -339,7 +339,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets ingestionErrors
      *
-     * @param \Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseIngestionErrors|null $ingestionErrors ingestionErrors
+     * @param \Walmart\Models\MP\MX\Feeds\IngestionErrors|null $ingestionErrors ingestionErrors
      *
      * @return self
     
@@ -531,7 +531,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Gets itemDetails
      *
-     * @return \Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseItemDetails|null
+     * @return \Walmart\Models\MP\MX\Feeds\ItemDetails|null
     
      */
     public function getItemDetails()
@@ -542,7 +542,7 @@ class PartnerFeedResponse extends BaseModel
     /**
      * Sets itemDetails
      *
-     * @param \Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200ResponseItemDetails|null $itemDetails itemDetails
+     * @param \Walmart\Models\MP\MX\Feeds\ItemDetails|null $itemDetails itemDetails
      *
      * @return self
     

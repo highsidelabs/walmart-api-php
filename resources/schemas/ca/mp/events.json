@@ -54,16 +54,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "response": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "UploadResponse"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/UploadResponse"
                                 },
                                 "example": {
                                     "response": "Promo Items Uploaded Successfully"
@@ -105,16 +96,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "response": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "UploadResponse"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/UploadResponse"
                                 },
                                 "example": {
                                     "response": "Feed Uploaded Successfully, feed ID: 6D4B0EDB4A3B4DD2B422B098F8ACFC4E@AREBAwA"
@@ -178,56 +160,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "eventId": {
-                                            "type": "string",
-                                            "description": "The Event ID"
-                                        },
-                                        "partnerId": {
-                                            "type": "string",
-                                            "description": "The Partner ID"
-                                        },
-                                        "submitted": {
-                                            "type": "integer",
-                                            "description": "The submitted number of items",
-                                            "format": "int32"
-                                        },
-                                        "processed": {
-                                            "type": "integer",
-                                            "description": "The processed number of items",
-                                            "format": "int32"
-                                        },
-                                        "failed": {
-                                            "type": "integer",
-                                            "description": "The failed number of items",
-                                            "format": "int32"
-                                        },
-                                        "rejected": {
-                                            "type": "integer",
-                                            "description": "Rejected count of items",
-                                            "format": "int32"
-                                        },
-                                        "selected": {
-                                            "type": "integer",
-                                            "description": "The selected count of items",
-                                            "format": "int32"
-                                        },
-                                        "all": {
-                                            "type": "integer",
-                                            "description": "Full count",
-                                            "format": "int32"
-                                        },
-                                        "lastUpdatedTime": {
-                                            "type": "integer",
-                                            "description": "The last time of update for items",
-                                            "format": "int32"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "ItemCountResponse"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ItemCountResponse"
                                 },
                                 "example": {
                                     "eventId": "a7f561e2-5f5f-450f-8c58-5b022f680ec0",
@@ -277,107 +210,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "eventId": {
-                                            "type": "string",
-                                            "description": "The Event ID"
-                                        },
-                                        "id": {
-                                            "type": "string",
-                                            "description": "The response ID"
-                                        },
-                                        "partnerId": {
-                                            "type": "string",
-                                            "description": "Partner ID with seller"
-                                        },
-                                        "sellerSkuId": {
-                                            "type": "string",
-                                            "description": "Unique ID for seller"
-                                        },
-                                        "eventName": {
-                                            "type": "string",
-                                            "description": "The Event Name is unique and setup by the business"
-                                        },
-                                        "eventType": {
-                                            "type": "string",
-                                            "description": "The type of event",
-                                            "enum": [
-                                                "Flash",
-                                                "Daily",
-                                                "Weekly",
-                                                "Seasonal"
-                                            ]
-                                        },
-                                        "createdDate": {
-                                            "type": "string",
-                                            "description": "The date and time for the created Event",
-                                            "format": "date-time"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "The status of the Event",
-                                            "enum": [
-                                                "Submitted",
-                                                "Failed",
-                                                "Selected",
-                                                "Rejected"
-                                            ]
-                                        },
-                                        "currentRetailPrice": {
-                                            "type": "number",
-                                            "description": "The Current retails price for the item"
-                                        },
-                                        "price": {
-                                            "type": "number",
-                                            "description": "The price for item"
-                                        },
-                                        "eligibleStartDate": {
-                                            "type": "string",
-                                            "description": "The eligible start date for event",
-                                            "format": "date-time"
-                                        },
-                                        "eligibleEndDate": {
-                                            "type": "string",
-                                            "description": "The end date for Event",
-                                            "format": "date-time"
-                                        },
-                                        "walmartSkuId": {
-                                            "type": "string",
-                                            "description": "SKU Id assigned to a product by walmart"
-                                        },
-                                        "inventory": {
-                                            "type": "string",
-                                            "description": "The count of items in inventory"
-                                        },
-                                        "wmtExclusive": {
-                                            "type": "string",
-                                            "description": "If the Item is Walmart exclusive"
-                                        },
-                                        "lastUpdatedDate": {
-                                            "type": "string",
-                                            "description": "The [last updated date for Event]",
-                                            "format": "date-time"
-                                        },
-                                        "confirmedEventStartDate": {
-                                            "type": "string",
-                                            "description": "The start date of Event",
-                                            "format": "date-time"
-                                        },
-                                        "confirmedEventEndDate": {
-                                            "type": "string",
-                                            "description": "The end date for Event",
-                                            "format": "date-time"
-                                        },
-                                        "feedback": {
-                                            "type": "string",
-                                            "description": "The Feedback"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "PromoItemResponse"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/PromoItemResponse"
                                 },
                                 "example": {
                                     "eventId": "718012a5-a4a6-40d8-a8be-4b8e6b3ac08b",
@@ -469,63 +302,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "id": {
-                                            "type": "string",
-                                            "description": "The Event ID"
-                                        },
-                                        "title": {
-                                            "type": "string",
-                                            "description": "The Event Name"
-                                        },
-                                        "type": {
-                                            "type": "string",
-                                            "description": "The Event Type",
-                                            "enum": [
-                                                "Flash",
-                                                "Daily",
-                                                "Weekly",
-                                                "Seasonal"
-                                            ]
-                                        },
-                                        "submissionStartDate": {
-                                            "type": "string",
-                                            "description": "Start date from when a seller can submit their item details for participating in the event",
-                                            "format": "date-time",
-                                            "xml": {
-                                                "name": "dateTime"
-                                            }
-                                        },
-                                        "submissionEndDate": {
-                                            "type": "string",
-                                            "description": "Last date for sellers to submit their items",
-                                            "format": "date-time"
-                                        },
-                                        "eventStartDate": {
-                                            "type": "string",
-                                            "description": "The day when the event will go live on the ecommerce website",
-                                            "format": "date-time"
-                                        },
-                                        "eventEndDate": {
-                                            "type": "string",
-                                            "description": "Last day of the live event.",
-                                            "format": "date-time"
-                                        },
-                                        "description": {
-                                            "type": "string",
-                                            "description": "The overall description of the event"
-                                        },
-                                        "lastUpdatedDate": {
-                                            "type": "string",
-                                            "description": "Last Updated date",
-                                            "format": "date-time"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "EventResponse"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/EventResponse"
                                 },
                                 "example": {
                                     "lastupdateddate": "",
@@ -585,107 +362,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "eventId": {
-                                            "type": "string",
-                                            "description": "The Event ID"
-                                        },
-                                        "id": {
-                                            "type": "string",
-                                            "description": "The response ID"
-                                        },
-                                        "partnerId": {
-                                            "type": "string",
-                                            "description": "Partner ID with seller"
-                                        },
-                                        "sellerSkuId": {
-                                            "type": "string",
-                                            "description": "Unique ID for seller"
-                                        },
-                                        "eventName": {
-                                            "type": "string",
-                                            "description": "The Event Name is unique and setup by the business"
-                                        },
-                                        "eventType": {
-                                            "type": "string",
-                                            "description": "The type of event",
-                                            "enum": [
-                                                "Flash",
-                                                "Daily",
-                                                "Weekly",
-                                                "Seasonal"
-                                            ]
-                                        },
-                                        "createdDate": {
-                                            "type": "string",
-                                            "description": "The date and time for the created Event",
-                                            "format": "date-time"
-                                        },
-                                        "status": {
-                                            "type": "string",
-                                            "description": "The status of the Event",
-                                            "enum": [
-                                                "Submitted",
-                                                "Failed",
-                                                "Selected",
-                                                "Rejected"
-                                            ]
-                                        },
-                                        "currentRetailPrice": {
-                                            "type": "number",
-                                            "description": "The Current retails price for the item"
-                                        },
-                                        "price": {
-                                            "type": "number",
-                                            "description": "The price for item"
-                                        },
-                                        "eligibleStartDate": {
-                                            "type": "string",
-                                            "description": "The eligible start date for event",
-                                            "format": "date-time"
-                                        },
-                                        "eligibleEndDate": {
-                                            "type": "string",
-                                            "description": "The end date for Event",
-                                            "format": "date-time"
-                                        },
-                                        "walmartSkuId": {
-                                            "type": "string",
-                                            "description": "SKU Id assigned to a product by walmart"
-                                        },
-                                        "inventory": {
-                                            "type": "string",
-                                            "description": "The count of items in inventory"
-                                        },
-                                        "wmtExclusive": {
-                                            "type": "string",
-                                            "description": "If the Item is Walmart exclusive"
-                                        },
-                                        "lastUpdatedDate": {
-                                            "type": "string",
-                                            "description": "The [last updated date for Event]",
-                                            "format": "date-time"
-                                        },
-                                        "confirmedEventStartDate": {
-                                            "type": "string",
-                                            "description": "The start date of Event",
-                                            "format": "date-time"
-                                        },
-                                        "confirmedEventEndDate": {
-                                            "type": "string",
-                                            "description": "The end date for Event",
-                                            "format": "date-time"
-                                        },
-                                        "feedback": {
-                                            "type": "string",
-                                            "description": "The Feedback"
-                                        }
-                                    },
-                                    "xml": {
-                                        "name": "PromoItemResponse"
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/PromoItemResponse"
                                 },
                                 "example": {
                                     "eventId": "e44631ea-ccc5-44b6-99c0-d0364607be2d",

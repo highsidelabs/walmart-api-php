@@ -50,7 +50,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'meta' => '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTOMeta',
+        'meta' => '\Walmart\Models\MP\US\Inventory\Meta',
         'elements' => '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO'
     ];
 
@@ -135,7 +135,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Gets meta
      *
-     * @return \Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTOMeta|null
+     * @return \Walmart\Models\MP\US\Inventory\Meta|null
     
      */
     public function getMeta()
@@ -146,7 +146,7 @@ class MultiNodeInventoryFetchResponseDTO extends BaseModel
     /**
      * Sets meta
      *
-     * @param \Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTOMeta|null $meta meta
+     * @param \Walmart\Models\MP\US\Inventory\Meta|null $meta meta
      *
      * @return self
     

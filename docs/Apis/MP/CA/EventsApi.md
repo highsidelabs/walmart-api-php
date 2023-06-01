@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `autoUploadPromoSpec()`
 
 ```php
-autoUploadPromoSpec($eventId): \Walmart\Models\MP\CA\Events\BulkAddItem200Response
+autoUploadPromoSpec($eventId): \Walmart\Models\MP\CA\Events\UploadResponse
 ```
 Auto Upload Promo Spec
 
@@ -57,11 +57,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../../../Models/MP/CA/events/BulkAddItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\UploadResponse**](../../../Models/MP/CA/Events/UploadResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -78,7 +76,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `bulkAddItem()`
 
 ```php
-bulkAddItem($file, $eventId, $eventName): \Walmart\Models\MP\CA\Events\BulkAddItem200Response
+bulkAddItem($file, $eventId, $eventName): \Walmart\Models\MP\CA\Events\UploadResponse
 ```
 Bulk Add Item
 
@@ -123,11 +121,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\BulkAddItem200Response**](../../../Models/MP/CA/events/BulkAddItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\UploadResponse**](../../../Models/MP/CA/Events/UploadResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -185,8 +181,6 @@ void (empty response body)
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
@@ -202,7 +196,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAPromoItem()`
 
 ```php
-getAPromoItem($eventID): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
+getAPromoItem($eventID): \Walmart\Models\MP\CA\Events\PromoItemResponse
 ```
 Get Selected Promo Item
 
@@ -243,11 +237,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../../../Models/MP/CA/events/GetAPromoItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\PromoItemResponse**](../../../Models/MP/CA/Events/PromoItemResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -264,7 +256,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllPromoItems()`
 
 ```php
-getAllPromoItems($eventID, $type): \Walmart\Models\MP\CA\Events\GetAPromoItem200Response
+getAllPromoItems($eventID, $type): \Walmart\Models\MP\CA\Events\PromoItemResponse
 ```
 Get All Promo Items
 
@@ -307,11 +299,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetAPromoItem200Response**](../../../Models/MP/CA/events/GetAPromoItem200Response.md)
+[**\Walmart\Models\MP\CA\Events\PromoItemResponse**](../../../Models/MP/CA/Events/PromoItemResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -328,7 +318,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getEvent()`
 
 ```php
-getEvent(): \Walmart\Models\MP\CA\Events\GetEvent200Response
+getEvent(): \Walmart\Models\MP\CA\Events\EventResponse
 ```
 Get Event by Partner ID
 
@@ -366,11 +356,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetEvent200Response**](../../../Models/MP/CA/events/GetEvent200Response.md)
+[**\Walmart\Models\MP\CA\Events\EventResponse**](../../../Models/MP/CA/Events/EventResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -433,8 +421,6 @@ void (empty response body)
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
@@ -450,7 +436,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getTotalItemCount()`
 
 ```php
-getTotalItemCount($eventId): \Walmart\Models\MP\CA\Events\GetTotalItemCount200Response
+getTotalItemCount($eventId): \Walmart\Models\MP\CA\Events\ItemCountResponse
 ```
 Get Total Item Count
 
@@ -491,11 +477,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Events\GetTotalItemCount200Response**](../../../Models/MP/CA/events/GetTotalItemCount200Response.md)
+[**\Walmart\Models\MP\CA\Events\ItemCountResponse**](../../../Models/MP/CA/Events/ItemCountResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

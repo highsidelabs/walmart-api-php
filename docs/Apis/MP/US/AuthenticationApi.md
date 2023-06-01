@@ -46,11 +46,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Authentication\TokenDetailResponse**](../../../Models/MP/US/authentication/TokenDetailResponse.md)
+[**\Walmart\Models\MP\US\Authentication\TokenDetailResponse**](../../../Models/MP/US/Authentication/TokenDetailResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -105,11 +103,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Authentication\OAuthToken**](../../../Models/MP/US/authentication/OAuthToken.md)
+[**\Walmart\Models\MP\US\Authentication\OAuthToken**](../../../Models/MP/US/Authentication/OAuthToken.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

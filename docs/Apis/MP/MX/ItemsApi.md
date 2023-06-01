@@ -53,11 +53,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\FeedId**](../../../Models/MP/MX/items/FeedId.md)
+[**\Walmart\Models\MP\MX\Items\FeedId**](../../../Models/MP/MX/Items/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -119,11 +117,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\ItemResponses**](../../../Models/MP/MX/items/ItemResponses.md)
+[**\Walmart\Models\MP\MX\Items\ItemResponses**](../../../Models/MP/MX/Items/ItemResponses.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -179,11 +175,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\ItemResponse**](../../../Models/MP/MX/items/ItemResponse.md)
+[**\Walmart\Models\MP\MX\Items\ItemResponse**](../../../Models/MP/MX/Items/ItemResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -239,11 +233,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Items\ItemRetireResponseV2**](../../../Models/MP/MX/items/ItemRetireResponseV2.md)
+[**\Walmart\Models\MP\MX\Items\ItemRetireResponseV2**](../../../Models/MP/MX/Items/ItemRetireResponseV2.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

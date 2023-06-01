@@ -50,11 +50,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../../../Models/MP/US/reports/ReconReportDateResponse.md)
+[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../../../Models/MP/US/Reports/ReconReportDateResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -106,11 +104,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../../../Models/MP/US/reports/ReconReportDateResponse.md)
+[**\Walmart\Models\MP\US\Reports\ReconReportDateResponse**](../../../Models/MP/US/Reports/ReconReportDateResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -162,11 +158,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes**](../../../Models/MP/US/reports/PartnerProgramPerformanceRes.md)
+[**\Walmart\Models\MP\US\Reports\PartnerProgramPerformanceRes**](../../../Models/MP/US/Reports/PartnerProgramPerformanceRes.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -218,11 +212,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes**](../../../Models/MP/US/reports/PartnerProgramStatementRes.md)
+[**\Walmart\Models\MP\US\Reports\PartnerProgramStatementRes**](../../../Models/MP/US/Reports/PartnerProgramStatementRes.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -280,8 +272,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -341,8 +331,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

@@ -54,7 +54,7 @@ class FeedRecordResponse extends BaseModel
         'totalResults' => 'int',
         'offset' => 'int',
         'limit' => 'int',
-        'results' => '\Walmart\Models\MP\US\Feeds\GetAllFeedStatuses200ResponseResults'
+        'results' => '\Walmart\Models\MP\US\Feeds\ResultRecord'
     ];
 
     /**
@@ -272,7 +272,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Gets results
      *
-     * @return \Walmart\Models\MP\US\Feeds\GetAllFeedStatuses200ResponseResults|null
+     * @return \Walmart\Models\MP\US\Feeds\ResultRecord|null
     
      */
     public function getResults()
@@ -283,7 +283,7 @@ class FeedRecordResponse extends BaseModel
     /**
      * Sets results
      *
-     * @param \Walmart\Models\MP\US\Feeds\GetAllFeedStatuses200ResponseResults|null $results results
+     * @param \Walmart\Models\MP\US\Feeds\ResultRecord|null $results results
      *
      * @return self
     

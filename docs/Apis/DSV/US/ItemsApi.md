@@ -55,11 +55,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\ItemResponses**](../../../Models/DSV/US/items/ItemResponses.md)
+[**\Walmart\Models\DSV\US\Items\ItemResponses**](../../../Models/DSV/US/Items/ItemResponses.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -117,11 +115,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\ItemResponse**](../../../Models/DSV/US/items/ItemResponse.md)
+[**\Walmart\Models\DSV\US\Items\ItemResponse**](../../../Models/DSV/US/Items/ItemResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -138,7 +134,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `itemBulkUploads()`
 
 ```php
-itemBulkUploads($feedType, $file): \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response
+itemBulkUploads($feedType, $file): \Walmart\Models\DSV\US\Items\FeedId
 ```
 Bulk Item Setup
 
@@ -181,11 +177,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response**](../../../Models/DSV/US/items/ItemBulkUploads200Response.md)
+[**\Walmart\Models\DSV\US\Items\FeedId**](../../../Models/DSV/US/Items/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -202,7 +196,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateRichMediaOfItem()`
 
 ```php
-updateRichMediaOfItem($feedType, $body): \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response
+updateRichMediaOfItem($feedType, $body): \Walmart\Models\DSV\US\Items\FeedId
 ```
 Rich Media
 
@@ -468,11 +462,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response**](../../../Models/DSV/US/items/ItemBulkUploads200Response.md)
+[**\Walmart\Models\DSV\US\Items\FeedId**](../../../Models/DSV/US/Items/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

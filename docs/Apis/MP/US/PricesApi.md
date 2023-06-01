@@ -50,16 +50,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **repricerEntityRequest** | [**\Walmart\Models\MP\US\Prices\RepricerEntityRequest**](../../../Models/MP/US/prices/RepricerEntityRequest.md)| The request body will have the strategy related information | |
+| **repricerEntityRequest** | [**\Walmart\Models\MP\US\Prices\RepricerEntityRequest**](../../../Models/MP/US/Prices/RepricerEntityRequest.md)| The request body will have the strategy related information | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\RepricerEntityResponse**](../../../Models/MP/US/prices/RepricerEntityResponse.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityResponse**](../../../Models/MP/US/Prices/RepricerEntityResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -114,11 +112,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse**](../../../Models/MP/US/prices/RepricerEntityDeleteResponse.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse**](../../../Models/MP/US/Prices/RepricerEntityDeleteResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -168,16 +164,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **feedUploadRequestDTO** | [**\Walmart\Models\MP\US\Prices\FeedUploadRequestDTO**](../../../Models/MP/US/prices/FeedUploadRequestDTO.md)|  | |
+| **feedUploadRequestDTO** | [**\Walmart\Models\MP\US\Prices\FeedUploadRequestDTO**](../../../Models/MP/US/Prices/FeedUploadRequestDTO.md)|  | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO**](../../../Models/MP/US/prices/FeedUploadResponseDTO.md)
+[**\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO**](../../../Models/MP/US/Prices/FeedUploadResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -229,11 +223,9 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse**](../../../Models/MP/US/prices/RepricerEntityCollectionResponse.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityCollectionResponse**](../../../Models/MP/US/Prices/RepricerEntityCollectionResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -283,16 +275,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **statusInfo** | [**\Walmart\Models\MP\US\Prices\StatusInfo**](../../../Models/MP/US/prices/StatusInfo.md)| Request fields | |
+| **statusInfo** | [**\Walmart\Models\MP\US\Prices\StatusInfo**](../../../Models/MP/US/Prices/StatusInfo.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\CapProgramResponse**](../../../Models/MP/US/prices/CapProgramResponse.md)
+[**\Walmart\Models\MP\US\Prices\CapProgramResponse**](../../../Models/MP/US/Prices/CapProgramResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -349,11 +339,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\FeedId**](../../../Models/MP/US/prices/FeedId.md)
+[**\Walmart\Models\MP\US\Prices\FeedId**](../../../Models/MP/US/Prices/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -369,7 +357,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updatePrice()`
 
 ```php
-updatePrice($price): \Walmart\Models\MP\US\Prices\UpdatePrice200Response
+updatePrice($price): \Walmart\Models\MP\US\Prices\ItemPriceResponse
 ```
 Update a price
 
@@ -403,16 +391,14 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **price** | [**\Walmart\Models\MP\US\Prices\Price**](../../../Models/MP/US/prices/Price.md)| The request body consists of a Feed file attached to the request. | |
+| **price** | [**\Walmart\Models\MP\US\Prices\Price**](../../../Models/MP/US/Prices/Price.md)| The request body consists of a Feed file attached to the request. | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\UpdatePrice200Response**](../../../Models/MP/US/prices/UpdatePrice200Response.md)
+[**\Walmart\Models\MP\US\Prices\ItemPriceResponse**](../../../Models/MP/US/Prices/ItemPriceResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -464,16 +450,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **strategyCollectionId** | **string**|  | |
-| **repricerEntityRequest** | [**\Walmart\Models\MP\US\Prices\RepricerEntityRequest**](../../../Models/MP/US/prices/RepricerEntityRequest.md)| The request body will have the strategy related information | |
+| **repricerEntityRequest** | [**\Walmart\Models\MP\US\Prices\RepricerEntityRequest**](../../../Models/MP/US/Prices/RepricerEntityRequest.md)| The request body will have the strategy related information | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Prices\RepricerEntityResponse**](../../../Models/MP/US/prices/RepricerEntityResponse.md)
+[**\Walmart\Models\MP\US\Prices\RepricerEntityResponse**](../../../Models/MP/US/Prices/RepricerEntityResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

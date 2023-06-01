@@ -50,8 +50,6 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
@@ -66,7 +64,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `tokenAPI()`
 
 ```php
-tokenAPI($grantType): \Walmart\Models\MP\MX\Authentication\TokenAPI200Response
+tokenAPI($grantType): \Walmart\Models\MP\MX\Authentication\OAuthTokenDTO
 ```
 Get Access token
 
@@ -105,11 +103,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Authentication\TokenAPI200Response**](../../../Models/MP/MX/authentication/TokenAPI200Response.md)
+[**\Walmart\Models\MP\MX\Authentication\OAuthTokenDTO**](../../../Models/MP/MX/Authentication/OAuthTokenDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

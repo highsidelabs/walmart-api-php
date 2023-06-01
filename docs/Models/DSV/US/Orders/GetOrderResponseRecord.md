@@ -13,12 +13,12 @@ Name | Type | Description | Notes
 **buyerId** | **string** | Unique ID associated with the specified buyer | [optional]
 **mart** | **string** | Mart information | [optional]
 **isGuest** | **bool** | Indicates a guest customer | [optional]
-**shippingInfo** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo**](ShipOrderLines200ResponseShippingInfo.md) |  |
-**orderLines** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines**](ShipOrderLines200ResponseOrderLines.md) |  |
+**shippingInfo** | [**\Walmart\Models\DSV\US\Orders\ShippingInfoType**](ShippingInfoType.md) |  |
+**orderLines** | [**\Walmart\Models\DSV\US\Orders\CancelLinesType**](CancelLinesType.md) |  |
 **paymentTypes** | **string[]** | Payment Types | [optional]
 **orderSummary** | [**\Walmart\Models\DSV\US\Orders\OrderSummary**](OrderSummary.md) |  | [optional]
 **pickupPersons** | [**\Walmart\Models\DSV\US\Orders\PickupPerson[]**](PickupPerson.md) | List of pickup persons | [optional]
-**shipNode** | [**\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShipNode**](ShipOrderLines200ResponseShipNode.md) |  | [optional]
+**shipNode** | [**\Walmart\Models\DSV\US\Orders\ShipNodesType**](ShipNodesType.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

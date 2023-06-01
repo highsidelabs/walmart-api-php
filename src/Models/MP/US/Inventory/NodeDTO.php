@@ -53,7 +53,7 @@ class NodeDTO extends BaseModel
         'shipNode' => 'string',
         'inputQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity',
         'availToSellQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity',
-        'errors' => '\Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]',
+        'errors' => '\Walmart\Models\MP\US\Inventory\Error[]',
         'reservedQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity'
     ];
 
@@ -243,7 +243,7 @@ class NodeDTO extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\Error[]|null
     
      */
     public function getErrors()
@@ -254,7 +254,7 @@ class NodeDTO extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]|null $errors errors
+     * @param \Walmart\Models\MP\US\Inventory\Error[]|null $errors errors
      *
      * @return self
     

@@ -58,7 +58,7 @@ class Fulfillment extends BaseModel
         'nodeType' => 'string',
         'accessMode' => '\Walmart\Models\MP\US\Fulfillment\AccessMode',
         'fulfillmentTime' => '\Walmart\Models\MP\US\Fulfillment\FulfillmentTime',
-        'errors' => '\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]'
+        'errors' => '\Walmart\Models\MP\US\Fulfillment\Error[]'
     ];
 
     /**
@@ -346,7 +346,7 @@ class Fulfillment extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\Error[]|null
     
      */
     public function getErrors()
@@ -357,7 +357,7 @@ class Fulfillment extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]|null $errors Error list details.
+     * @param \Walmart\Models\MP\US\Fulfillment\Error[]|null $errors Error list details.
      *
      * @return self
     

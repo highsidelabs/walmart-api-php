@@ -35,7 +35,7 @@ use {{invokerPackage}}\Walmart;
 require_once __DIR__ . '/vendor/autoload.php';
 
 {{> php_doc_auth_partial ~}}
-$api = Walmart::{{x-walmart-category-code}}($config)->{{x-walmart-api-name}}();
+$api = Walmart::{{x-walmart-category-code}}($config)->{{x-walmart-api-accessor}}();
 {{#if vendorExtensions.x-group-parameters}}
 $associative_array = [
 {{#allParams}}    '{{paramName}}' => {{{example}}}, // {{{dataType}}}{{#if description}} | {{{description}}}{{/if}}

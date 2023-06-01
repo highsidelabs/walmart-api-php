@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `priceBulkUploads()`
 
 ```php
-priceBulkUploads($feedType, $file): \Walmart\Models\MP\CA\Prices\PriceBulkUploads200Response
+priceBulkUploads($feedType, $file): \Walmart\Models\MP\CA\Prices\FeedId
 ```
 Update bulk prices
 
@@ -53,11 +53,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Prices\PriceBulkUploads200Response**](../../../Models/MP/CA/prices/PriceBulkUploads200Response.md)
+[**\Walmart\Models\MP\CA\Prices\FeedId**](../../../Models/MP/CA/Prices/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -126,11 +124,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2**](../../../Models/MP/CA/prices/MPItemPriceResponseV2.md)
+[**\Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2**](../../../Models/MP/CA/Prices/MPItemPriceResponseV2.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

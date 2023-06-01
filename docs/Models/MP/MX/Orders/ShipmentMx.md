@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**shipments** | [**\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]**](ShippingUpdatesRequestShipmentsInner.md) | List of shipments associated with the order | [optional]
+**shipments** | [**\Walmart\Models\MP\MX\Orders\ShipmentDto[]**](ShipmentDto.md) | List of shipments associated with the order | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

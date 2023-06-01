@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payload** | [**\Walmart\Models\MP\US\Promotions\PromotionalPriceResponsePayload**](PromotionalPriceResponsePayload.md) |  | [optional]
+**payload** | [**\Walmart\Models\MP\US\Promotions\ItemPriceType**](ItemPriceType.md) |  | [optional]
 **header** | [**\Walmart\Models\MP\US\Promotions\Header**](Header.md) |  | [optional]
 **status** | **string** |  | [optional]
 

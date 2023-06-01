@@ -680,12 +680,12 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response
+     * @return \Walmart\Models\DSV\US\Items\FeedId
      */
     public function itemBulkUploads(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response {
+    ): \Walmart\Models\DSV\US\Items\FeedId {
         return $this->itemBulkUploadsWithHttpInfo($feedType, $file);
     }
 
@@ -699,12 +699,12 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response
+     * @return \Walmart\Models\DSV\US\Items\FeedId
      */
     protected function itemBulkUploadsWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response {
+    ): \Walmart\Models\DSV\US\Items\FeedId {
         $request = $this->itemBulkUploadsRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -754,19 +754,19 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\DSV\US\Items\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response' !== 'string') {
+                        if ('\Walmart\Models\DSV\US\Items\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Items\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response';
+            $returnType = '\Walmart\Models\DSV\US\Items\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -782,7 +782,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response',
+                        '\Walmart\Models\DSV\US\Items\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -833,7 +833,7 @@ class ItemsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response';
+        $returnType = '\Walmart\Models\DSV\US\Items\FeedId';
         $request = $this->itemBulkUploadsRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1014,12 +1014,12 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response
+     * @return \Walmart\Models\DSV\US\Items\FeedId
      */
     public function updateRichMediaOfItem(
         string $feedType,
         string $body
-    ): \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response {
+    ): \Walmart\Models\DSV\US\Items\FeedId {
         return $this->updateRichMediaOfItemWithHttpInfo($feedType, $body);
     }
 
@@ -1033,12 +1033,12 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response
+     * @return \Walmart\Models\DSV\US\Items\FeedId
      */
     protected function updateRichMediaOfItemWithHttpInfo(
         string $feedType,
         string $body,
-    ): \Walmart\Models\DSV\US\Items\ItemBulkUploads200Response {
+    ): \Walmart\Models\DSV\US\Items\FeedId {
         $request = $this->updateRichMediaOfItemRequest($feedType, $body, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1088,19 +1088,19 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\DSV\US\Items\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response' !== 'string') {
+                        if ('\Walmart\Models\DSV\US\Items\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\DSV\US\Items\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response';
+            $returnType = '\Walmart\Models\DSV\US\Items\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1116,7 +1116,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response',
+                        '\Walmart\Models\DSV\US\Items\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1167,7 +1167,7 @@ class ItemsApi extends BaseApi
         string $feedType,
         string $body,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\DSV\US\Items\ItemBulkUploads200Response';
+        $returnType = '\Walmart\Models\DSV\US\Items\FeedId';
         $request = $this->updateRichMediaOfItemRequest($feedType, $body, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

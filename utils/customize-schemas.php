@@ -139,19 +139,8 @@ function customizeSchema(string $path, string $category, string $name): void
             // Update endpoint responses
             foreach ($verb['responses'] as $code => $response) {
                 if (isset($response['content'])) {
-                    /*
-                     * Some endpoints have multiple response content types, but we only care about the JSON response if it exists,
-                     * and we only want to have one content type per response because OpenAPI doesn't support multiple content types
-                     * in PHP
-                     */
-                    $contentType = 'application/json';
-                    if (!array_key_exists('application/json', $response['content'])) {
-                        $contentType = array_key_first($response['content']);
-                    }
-                    if (count($response['content']) > 1) {
-                        // If there is a JSON response, use it and remove the other content types. Otherwise, use the first content type
-                        $response['content'] = [$contentType => $response['content'][$contentType]];
-                    }
+                    $contentType = chooseContentType($response['content']);
+                    $response['content'] = [$contentType => $response['content'][$contentType]];
 
                     // All responses need to have their headers accessible, but the JSON models don't typically include headers
                     // as one of the properties of the response model, so we mark the responses with a custom attribute that tells
@@ -160,6 +149,11 @@ function customizeSchema(string $path, string $category, string $name): void
                 }
 
                 $verb['responses'][$code] = $response;
+            }
+
+            if (isset($verb['requestBody']['content'])) {
+                $contentType = chooseContentType($verb['requestBody']['content']);
+                $verb['requestBody']['content'] = [$contentType => $verb['requestBody']['content'][$contentType]];
             }
 
             // Replace inline schemas with component refs
@@ -301,13 +295,9 @@ function findMatchingComponent(array $properties, array $componentSchemas, bool 
     $sortedProperties = $properties;
     sort($sortedProperties);
 
+    $match = null;
     foreach ($componentSchemas as $componentName => $component) {
         if (!isset($component['properties'])) {
-            continue;
-        }
-
-        $componentIsXml = isset($component['xml']);
-        if ($isXml !== $componentIsXml) {
             continue;
         }
 
@@ -315,13 +305,44 @@ function findMatchingComponent(array $properties, array $componentSchemas, bool 
         sort($sortedComponentProperties);
 
         if ($sortedComponentProperties === $sortedProperties) {
-            return [
-                '$ref' => "#/components/schemas/$componentName",
-            ];
+            $componentIsXml = isset($component['xml']);
+            if ($isXml !== $componentIsXml) {
+                // Sometimes for XML inline schemas, there is a matching component that is not marked as
+                // XML-specific, but is the only matching schema. If we don't find a full match, we'll
+                // use the component that is not marked as XML-specific
+                $match = $componentName;
+            } else {
+                // If we find a match that is typed correctly, stop looking immediately
+                $match = $componentName;
+                break;    
+            }
         }
     }
 
+    if ($match) {
+        return [
+            '$ref' => "#/components/schemas/$match",
+        ];
+    }
     return null;
+}
+
+/*
+ * Some endpoints have multiple request/response content types, but we only care about the JSON response if it exists,
+ * and we only want to have one content type per response because OpenAPI doesn't support multiple content types
+ * in PHP. So we select the JSON content type if it exists, and if not, we just pick the first one.
+ *
+ * @param array $content The OpenAPI spec's content type objects for a given request/response
+ */
+function chooseContentType(array $content): string
+{
+    $preferredContentTypes = ['multipart/form-data', 'application/json', 'application/xml'];
+    foreach($preferredContentTypes as $contentType) {
+        if (array_key_exists($contentType, $content)) {
+            return $contentType;
+        }
+    }
+    return array_key_first($content);
 }
 
 /**

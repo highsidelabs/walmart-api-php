@@ -45,71 +45,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "shipments": {
-                                        "type": "array",
-                                        "description": "List of shipments associated with the order",
-                                        "items": {
-                                            "type": "object",
-                                            "properties": {
-                                                "shipmentLines": {
-                                                    "type": "array",
-                                                    "items": {
-                                                        "type": "object",
-                                                        "properties": {
-                                                            "primeLineNo": {
-                                                                "type": "string",
-                                                                "description": "The number to identify the associated order line for the shipment line. Example: 'primeLineNo=1 means the shipment line is associated with orderLine having primeLineNumber=1'"
-                                                            },
-                                                            "shipmentLineNo": {
-                                                                "type": "string",
-                                                                "description": "The unique number for the shipment line in a given shipment"
-                                                            },
-                                                            "quantity": {
-                                                                "type": "object",
-                                                                "properties": {
-                                                                    "unitOfMeasurement": {
-                                                                        "type": "string",
-                                                                        "description": "The associated quantity unit of measure"
-                                                                    },
-                                                                    "amount": {
-                                                                        "type": "string",
-                                                                        "description": "The associated quantity"
-                                                                    }
-                                                                },
-                                                                "description": "The quantity associated with the shipment line"
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                "carrier": {
-                                                    "type": "string",
-                                                    "description": "The package shipment carrier. Valid entries are: MX-FEDX, MX-DHL, Estafeta, SFC, Other.<br \/>if carrier is (MX-FEDX or MX-DHL or Estafeta or SFC)<br \/>&nbsp;&nbsp;&nbsp;&nbsp;then trackingNumber is Mandatory<br \/>if carrier is Other<br \/>&nbsp;&nbsp;&nbsp;&nbsp;then both trackingNumber & trackingURL is Mandatory<br \/>",
-                                                    "enum": [
-                                                        "MX-FEDX",
-                                                        "MX-DHL",
-                                                        "Estafeta",
-                                                        "SFC",
-                                                        "Other"
-                                                    ]
-                                                },
-                                                "trackingNumber": {
-                                                    "type": "string",
-                                                    "description": "Tracking number of the order"
-                                                },
-                                                "trackingURL": {
-                                                    "type": "string",
-                                                    "description": "Tracking Url of the order"
-                                                }
-                                            },
-                                            "description": "List of shipments associated with the order"
-                                        }
-                                    }
-                                },
-                                "xml": {
-                                    "name": "root"
-                                }
+                                "$ref": "#\/components\/schemas\/ShipmentMx"
                             },
                             "example": {
                                 "shipments": [
@@ -5121,59 +5057,7 @@
                         "type": "array",
                         "description": "List of shipments associated with the order",
                         "items": {
-                            "type": "object",
-                            "properties": {
-                                "shipmentLines": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "primeLineNo": {
-                                                "type": "string",
-                                                "description": "The number to identify the associated order line for the shipment line. Example: 'primeLineNo=1 means the shipment line is associated with orderLine having primeLineNumber=1'"
-                                            },
-                                            "shipmentLineNo": {
-                                                "type": "string",
-                                                "description": "The unique number for the shipment line in a given shipment"
-                                            },
-                                            "quantity": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "unitOfMeasurement": {
-                                                        "type": "string",
-                                                        "description": "The associated quantity unit of measure"
-                                                    },
-                                                    "amount": {
-                                                        "type": "string",
-                                                        "description": "The associated quantity"
-                                                    }
-                                                },
-                                                "description": "The quantity associated with the shipment line"
-                                            }
-                                        }
-                                    }
-                                },
-                                "carrier": {
-                                    "type": "string",
-                                    "description": "The package shipment carrier. Valid entries are: MX-FEDX, MX-DHL, Estafeta, SFC, Other.<br \/>if carrier is (MX-FEDX or MX-DHL or Estafeta or SFC)<br \/>&nbsp;&nbsp;&nbsp;&nbsp;then trackingNumber is Mandatory<br \/>if carrier is Other<br \/>&nbsp;&nbsp;&nbsp;&nbsp;then both trackingNumber & trackingURL is Mandatory<br \/>",
-                                    "enum": [
-                                        "MX-FEDX",
-                                        "MX-DHL",
-                                        "Estafeta",
-                                        "SFC",
-                                        "Other"
-                                    ]
-                                },
-                                "trackingNumber": {
-                                    "type": "string",
-                                    "description": "Tracking number of the order"
-                                },
-                                "trackingURL": {
-                                    "type": "string",
-                                    "description": "Tracking Url of the order"
-                                }
-                            },
-                            "description": "List of shipments associated with the order"
+                            "$ref": "#\/components\/schemas\/ShipmentDto"
                         }
                     }
                 },

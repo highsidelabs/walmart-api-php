@@ -9,7 +9,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 ## `getItemReport()`
 
 ```php
-getItemReport($type, $version): \Walmart\Models\WS\US\Reports\GetItemReport200Response
+getItemReport($type, $version): \Walmart\Models\WS\US\Reports\ReportDTO
 ```
 Item Report
 
@@ -52,11 +52,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Reports\GetItemReport200Response**](../../../Models/WS/US/reports/GetItemReport200Response.md)
+[**\Walmart\Models\WS\US\Reports\ReportDTO**](../../../Models/WS/US/Reports/ReportDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

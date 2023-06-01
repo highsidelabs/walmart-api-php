@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **nodeType** | **string** | Fulfillment node type details. For example : 'FC' | [optional]
 **accessMode** | [**\Walmart\Models\MP\US\Fulfillment\AccessMode**](AccessMode.md) |  | [optional]
 **fulfillmentTime** | [**\Walmart\Models\MP\US\Fulfillment\FulfillmentTime**](FulfillmentTime.md) |  | [optional]
-**errors** | [**\Walmart\Models\MP\US\Fulfillment\UpdateShipmentQuantity200ResponseErrorsInner[]**](UpdateShipmentQuantity200ResponseErrorsInner.md) | Error list details. | [optional]
+**errors** | [**\Walmart\Models\MP\US\Fulfillment\Error[]**](Error.md) | Error list details. | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

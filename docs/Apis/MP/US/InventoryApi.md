@@ -15,7 +15,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getInventory()`
 
 ```php
-getInventory($sku, $shipNode): \Walmart\Models\MP\US\Inventory\GetInventory200Response
+getInventory($sku, $shipNode): \Walmart\Models\MP\US\Inventory\Inventory
 ```
 Inventory
 
@@ -56,11 +56,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\GetInventory200Response**](../../../Models/MP/US/inventory/GetInventory200Response.md)
+[**\Walmart\Models\MP\US\Inventory\Inventory**](../../../Models/MP/US/Inventory/Inventory.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -117,11 +115,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryFetchResponseDTO.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO**](../../../Models/MP/US/Inventory/MultiNodeInventoryFetchResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -178,11 +174,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryUpdateResponseDTO.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../../../Models/MP/US/Inventory/MultiNodeInventoryUpdateResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -245,11 +239,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\WfsInventoryDTO**](../../../Models/MP/US/inventory/WfsInventoryDTO.md)
+[**\Walmart\Models\MP\US\Inventory\WfsInventoryDTO**](../../../Models/MP/US/Inventory/WfsInventoryDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -308,11 +300,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\FeedId**](../../../Models/MP/US/inventory/FeedId.md)
+[**\Walmart\Models\MP\US\Inventory\FeedId**](../../../Models/MP/US/Inventory/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -328,7 +318,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateInventoryForAnItem()`
 
 ```php
-updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest, $shipNode): \Walmart\Models\MP\US\Inventory\GetInventory200Response
+updateInventoryForAnItem($sku, $inventory, $shipNode): \Walmart\Models\MP\US\Inventory\Inventory
 ```
 Update inventory
 
@@ -350,11 +340,11 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->inventory();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded.
-$updateInventoryForAnItemRequest = {"sku":"97964_KFTest","quantity":{"unit":"EACH","amount":10}}; // \Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest | File fields
+$inventory = {"sku":"97964_KFTest","quantity":{"unit":"EACH","amount":10}}; // \Walmart\Models\MP\US\Inventory\Inventory | File fields
 $shipNode = 'shipNode_example'; // string | The shipNode for which the inventory is to be updated.
 
 try {
-    $result = $api->updateInventoryForAnItem($sku, $updateInventoryForAnItemRequest, $shipNode);
+    $result = $api->updateInventoryForAnItem($sku, $inventory, $shipNode);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InventoryApi->updateInventoryForAnItem: {$e->getMessage()}\n";
@@ -365,17 +355,15 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
-| **updateInventoryForAnItemRequest** | [**\Walmart\Models\MP\US\Inventory\UpdateInventoryForAnItemRequest**](../../../Models/MP/US/inventory/UpdateInventoryForAnItemRequest.md)| File fields | |
+| **inventory** | [**\Walmart\Models\MP\US\Inventory\Inventory**](../../../Models/MP/US/Inventory/Inventory.md)| File fields | |
 | **shipNode** | **string**| The shipNode for which the inventory is to be updated. | [optional] |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\GetInventory200Response**](../../../Models/MP/US/inventory/GetInventory200Response.md)
+[**\Walmart\Models\MP\US\Inventory\Inventory**](../../../Models/MP/US/Inventory/Inventory.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -427,16 +415,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. | |
-| **multiNodeInventoryUpdateRequestDTO** | [**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryUpdateRequestDTO.md)| Request fields | |
+| **multiNodeInventoryUpdateRequestDTO** | [**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO**](../../../Models/MP/US/Inventory/MultiNodeInventoryUpdateRequestDTO.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../../../Models/MP/US/inventory/MultiNodeInventoryUpdateResponseDTO.md)
+[**\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO**](../../../Models/MP/US/Inventory/MultiNodeInventoryUpdateResponseDTO.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

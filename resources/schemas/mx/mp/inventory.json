@@ -98,43 +98,6 @@
                                     "amount": 8596
                                 }
                             }
-                        },
-                        "application\/xml": {
-                            "schema": {
-                                "required": [
-                                    "quantity",
-                                    "sku"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "sku": {
-                                        "type": "string",
-                                        "description": "A seller-provided Product ID"
-                                    },
-                                    "quantity": {
-                                        "required": [
-                                            "amount",
-                                            "unit"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "unit": {
-                                                "type": "string",
-                                                "description": "The unit of measurement. Example: 'EACH'",
-                                                "enum": [
-                                                    "EACH"
-                                                ]
-                                            },
-                                            "amount": {
-                                                "type": "number",
-                                                "description": "The number available in the inventory"
-                                            }
-                                        },
-                                        "description": "Information about the quantity in inventory"
-                                    }
-                                }
-                            },
-                            "example": "<inventory xmlns=\"http:\/\/walmart.com\/\">\n    <sku>sku-e2e-0723x<\/sku>\n    <quantity>\n        <unit>EACH<\/unit>\n        <amount>8596<\/amount>\n    <\/quantity>\n<\/inventory>"
                         }
                     },
                     "required": true

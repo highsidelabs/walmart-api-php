@@ -365,12 +365,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response
+     * @return \Walmart\Models\MP\CA\Inventory\FeedId
      */
     public function updateBulkInventory(
         string $feedType,
         \SplFileObject $file
-    ): \Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response {
+    ): \Walmart\Models\MP\CA\Inventory\FeedId {
         return $this->updateBulkInventoryWithHttpInfo($feedType, $file);
     }
 
@@ -384,12 +384,12 @@ class InventoryApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response
+     * @return \Walmart\Models\MP\CA\Inventory\FeedId
      */
     protected function updateBulkInventoryWithHttpInfo(
         string $feedType,
         \SplFileObject $file,
-    ): \Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response {
+    ): \Walmart\Models\MP\CA\Inventory\FeedId {
         $request = $this->updateBulkInventoryRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -439,19 +439,19 @@ class InventoryApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\Inventory\FeedId' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\Inventory\FeedId' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\Inventory\FeedId', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response';
+            $returnType = '\Walmart\Models\MP\CA\Inventory\FeedId';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -467,7 +467,7 @@ class InventoryApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response',
+                        '\Walmart\Models\MP\CA\Inventory\FeedId',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -518,7 +518,7 @@ class InventoryApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\Inventory\UpdateBulkInventory200Response';
+        $returnType = '\Walmart\Models\MP\CA\Inventory\FeedId';
         $request = $this->updateBulkInventoryRequest($feedType, $file, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

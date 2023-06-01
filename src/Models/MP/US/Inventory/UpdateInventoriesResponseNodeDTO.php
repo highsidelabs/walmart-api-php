@@ -52,7 +52,7 @@ class UpdateInventoriesResponseNodeDTO extends BaseModel
     protected static array $openAPITypes = [
         'shipNode' => 'string',
         'status' => 'string',
-        'errors' => '\Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]'
+        'errors' => '\Walmart\Models\MP\US\Inventory\Error[]'
     ];
 
     /**
@@ -200,7 +200,7 @@ class UpdateInventoriesResponseNodeDTO extends BaseModel
     /**
      * Gets errors
      *
-     * @return \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]|null
+     * @return \Walmart\Models\MP\US\Inventory\Error[]|null
     
      */
     public function getErrors()
@@ -211,7 +211,7 @@ class UpdateInventoriesResponseNodeDTO extends BaseModel
     /**
      * Sets errors
      *
-     * @param \Walmart\Models\MP\US\Inventory\UpdateInventoriesResponseNodeDTOErrorsInner[]|null $errors Node Update Error description.
+     * @param \Walmart\Models\MP\US\Inventory\Error[]|null $errors Node Update Error description.
      *
      * @return self
     

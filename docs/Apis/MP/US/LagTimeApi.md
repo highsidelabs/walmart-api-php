@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getLagTime()`
 
 ```php
-getLagTime($sku): \Walmart\Models\MP\US\LagTime\GetLagTime200Response
+getLagTime($sku): \Walmart\Models\MP\US\LagTime\LagTimeResponse
 ```
 Lag Time
 
@@ -49,11 +49,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\LagTime\GetLagTime200Response**](../../../Models/MP/US/lagTime/GetLagTime200Response.md)
+[**\Walmart\Models\MP\US\LagTime\LagTimeResponse**](../../../Models/MP/US/LagTime/LagTimeResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -69,7 +67,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateLagTimeBulk()`
 
 ```php
-updateLagTimeBulk($feedType, $updateLagTimeBulkRequest): \Walmart\Models\MP\US\LagTime\FeedId
+updateLagTimeBulk($feedType, $lagTimeFeed): \Walmart\Models\MP\US\LagTime\FeedId
 ```
 Update lag time
 
@@ -91,10 +89,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->lagTime();
 
 $feedType = 'feedType_example'; // string | Use 'lagtime'
-$updateLagTimeBulkRequest = {"LagTimeHeader":{"version":"1.0"},"lagTime":[{"sku":"30348_KFTest","fulfillmentLagTime":"1"}]}; // \Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest | File fields
+$lagTimeFeed = {"LagTimeHeader":{"version":"1.0"},"lagTime":[{"sku":"30348_KFTest","fulfillmentLagTime":"1"}]}; // \Walmart\Models\MP\US\LagTime\LagTimeFeed | File fields
 
 try {
-    $result = $api->updateLagTimeBulk($feedType, $updateLagTimeBulkRequest);
+    $result = $api->updateLagTimeBulk($feedType, $lagTimeFeed);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling LagTimeApi->updateLagTimeBulk: {$e->getMessage()}\n";
@@ -105,16 +103,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| Use 'lagtime' | |
-| **updateLagTimeBulkRequest** | [**\Walmart\Models\MP\US\LagTime\UpdateLagTimeBulkRequest**](../../../Models/MP/US/lagTime/UpdateLagTimeBulkRequest.md)| File fields | |
+| **lagTimeFeed** | [**\Walmart\Models\MP\US\LagTime\LagTimeFeed**](../../../Models/MP/US/LagTime/LagTimeFeed.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\LagTime\FeedId**](../../../Models/MP/US/lagTime/FeedId.md)
+[**\Walmart\Models\MP\US\LagTime\FeedId**](../../../Models/MP/US/LagTime/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

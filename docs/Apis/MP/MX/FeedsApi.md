@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAllFeedStatuses()`
 
 ```php
-getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200Response
+getAllFeedStatuses($feedId, $offset, $limit): \Walmart\Models\MP\MX\Feeds\FeedRecordResponse
 ```
 All feed statuses
 
@@ -53,11 +53,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Feeds\GetAllFeedStatuses200Response**](../../../Models/MP/MX/feeds/GetAllFeedStatuses200Response.md)
+[**\Walmart\Models\MP\MX\Feeds\FeedRecordResponse**](../../../Models/MP/MX/Feeds/FeedRecordResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -74,7 +72,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getFeedItemStatus()`
 
 ```php
-getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200Response
+getFeedItemStatus($feedId, $includeDetails, $offset, $limit): \Walmart\Models\MP\MX\Feeds\PartnerFeedResponse
 ```
 Feed item status
 
@@ -119,11 +117,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Feeds\GetFeedItemStatus200Response**](../../../Models/MP/MX/feeds/GetFeedItemStatus200Response.md)
+[**\Walmart\Models\MP\MX\Feeds\PartnerFeedResponse**](../../../Models/MP/MX/Feeds/PartnerFeedResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

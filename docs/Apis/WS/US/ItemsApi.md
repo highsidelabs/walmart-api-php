@@ -55,11 +55,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Items\ItemResponse**](../../../Models/WS/US/items/ItemResponse.md)
+[**\Walmart\Models\WS\US\Items\ItemResponse**](../../../Models/WS/US/Items/ItemResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -117,11 +115,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Items\ItemResponse**](../../../Models/WS/US/items/ItemResponse.md)
+[**\Walmart\Models\WS\US\Items\ItemResponse**](../../../Models/WS/US/Items/ItemResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -138,7 +134,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `itemBulkUploads()`
 
 ```php
-itemBulkUploads($feedType, $file): \Walmart\Models\WS\US\Items\ItemBulkUploads200Response
+itemBulkUploads($feedType, $file): \Walmart\Models\WS\US\Items\FeedId
 ```
 Bulk Item Setup
 
@@ -181,11 +177,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\WS\US\Items\ItemBulkUploads200Response**](../../../Models/WS/US/items/ItemBulkUploads200Response.md)
+[**\Walmart\Models\WS\US\Items\FeedId**](../../../Models/WS/US/Items/FeedId.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -471,8 +465,6 @@ try {
 **mixed**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

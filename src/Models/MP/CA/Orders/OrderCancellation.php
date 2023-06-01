@@ -50,7 +50,7 @@ class OrderCancellation extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLines' => '\Walmart\Models\MP\CA\Orders\OrderCancellationOrderLines'
+        'orderLines' => '\Walmart\Models\MP\CA\Orders\CancelLinesType'
     ];
 
     /**
@@ -131,7 +131,7 @@ class OrderCancellation extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\CA\Orders\OrderCancellationOrderLines
+     * @return \Walmart\Models\MP\CA\Orders\CancelLinesType
     
      */
     public function getOrderLines()
@@ -142,7 +142,7 @@ class OrderCancellation extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\CA\Orders\OrderCancellationOrderLines $orderLines orderLines
+     * @param \Walmart\Models\MP\CA\Orders\CancelLinesType $orderLines orderLines
      *
      * @return self
     

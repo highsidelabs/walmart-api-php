@@ -44,7 +44,8 @@ function openApiGenerator(string $code, string $name, string $category, string $
     $categoryCaps = strtoupper($category);
     $categoryCode = ApiCategory::asCategoryName($category);
     $countryCaps = strtoupper($country);
-    $nameStr = lcfirst(str_replace(' ', '', $name));
+    $nameStr = str_replace(' ', '', $name);
+    $nameAccessor = lcfirst($nameStr);
 
     setPrettifyEnv();
 
@@ -60,7 +61,7 @@ function openApiGenerator(string $code, string $name, string $category, string $
         --http-user-agent highsidelabs/walmart-api-php/$version \
         --api-package \"Apis\\$categoryCaps\\$countryCaps\" \
         --model-package \"Models\\$categoryCaps\\$countryCaps\\$compressedSchemaName\" \
-        --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps,x-walmart-category-code=$categoryCode,x-walmart-api-name=$nameStr\" \
+        --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps,x-walmart-category-code=$categoryCode,x-walmart-api-accessor=$nameAccessor,x-walmart-api-name=$nameStr\" \
         2>&1";
 
     execAndLog($generateCmd);

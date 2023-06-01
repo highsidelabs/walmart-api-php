@@ -54,11 +54,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/Orders/GetOrderResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -110,16 +108,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderCancellationResponse** | [**\Walmart\Models\MP\US\Orders\OrderCancellationResponse**](../../../Models/MP/US/orders/OrderCancellationResponse.md)| File fields | |
+| **orderCancellationResponse** | [**\Walmart\Models\MP\US\Orders\OrderCancellationResponse**](../../../Models/MP/US/Orders/OrderCancellationResponse.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/Orders/GetOrderResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -204,11 +200,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../../../Models/MP/US/orders/PurchaseOrderTypeV3.md)
+[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../../../Models/MP/US/Orders/PurchaseOrderTypeV3.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -287,11 +281,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../../../Models/MP/US/orders/PurchaseOrderTypeV3.md)
+[**\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3**](../../../Models/MP/US/Orders/PurchaseOrderTypeV3.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -307,7 +299,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAnOrder()`
 
 ```php
-getAnOrder($purchaseOrderId, $productInfo, $replacementInfo): \Walmart\Models\MP\US\Orders\GetAnOrder200Response
+getAnOrder($purchaseOrderId, $productInfo, $replacementInfo): \Walmart\Models\MP\US\Orders\Order
 ```
 An order
 
@@ -350,11 +342,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetAnOrder200Response**](../../../Models/MP/US/orders/GetAnOrder200Response.md)
+[**\Walmart\Models\MP\US\Orders\Order**](../../../Models/MP/US/Orders/Order.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -406,16 +396,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderRefundJson** | [**\Walmart\Models\MP\US\Orders\OrderRefundJson**](../../../Models/MP/US/orders/OrderRefundJson.md)| File fields | |
+| **orderRefundJson** | [**\Walmart\Models\MP\US\Orders\OrderRefundJson**](../../../Models/MP/US/Orders/OrderRefundJson.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/Orders/GetOrderResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -467,16 +455,14 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderShipment** | [**\Walmart\Models\MP\US\Orders\OrderShipment**](../../../Models/MP/US/orders/OrderShipment.md)| File fields | |
+| **orderShipment** | [**\Walmart\Models\MP\US\Orders\OrderShipment**](../../../Models/MP/US/Orders/OrderShipment.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/orders/GetOrderResponse.md)
+[**\Walmart\Models\MP\US\Orders\GetOrderResponse**](../../../Models/MP/US/Orders/GetOrderResponse.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

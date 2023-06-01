@@ -53,7 +53,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderAckRequest** | [**\Walmart\Models\MP\MX\Orders\OrderAckRequest**](../../../Models/MP/MX/orders/OrderAckRequest.md)|  | |
+| **orderAckRequest** | [**\Walmart\Models\MP\MX\Orders\OrderAckRequest**](../../../Models/MP/MX/Orders/OrderAckRequest.md)|  | |
 
 
 ### Return type
@@ -61,8 +61,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -115,7 +113,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **orderCancellationRequest** | [**\Walmart\Models\MP\MX\Orders\OrderCancellationRequest**](../../../Models/MP/MX/orders/OrderCancellationRequest.md)| File fields | |
+| **orderCancellationRequest** | [**\Walmart\Models\MP\MX\Orders\OrderCancellationRequest**](../../../Models/MP/MX/Orders/OrderCancellationRequest.md)| File fields | |
 
 
 ### Return type
@@ -123,8 +121,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -177,7 +173,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **deliver** | [**\Walmart\Models\MP\MX\Orders\Deliver**](../../../Models/MP/MX/orders/Deliver.md)| File fields | |
+| **deliver** | [**\Walmart\Models\MP\MX\Orders\Deliver**](../../../Models/MP/MX/Orders/Deliver.md)| File fields | |
 
 
 ### Return type
@@ -185,8 +181,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -254,11 +248,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/orders/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/Orders/MxOrder.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -326,11 +318,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/orders/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/Orders/MxOrder.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -396,11 +386,9 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/orders/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/Orders/MxOrder.md)
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -460,8 +448,6 @@ try {
 
 ### Authorization
 
-
-
 This endpoint requires the following authorization methods:
 
 * `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
@@ -512,7 +498,7 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **shippingLabelRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingLabelRequest**](../../../Models/MP/MX/orders/ShippingLabelRequest.md)| Request body with list of tracking numbers | |
+| **shippingLabelRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingLabelRequest**](../../../Models/MP/MX/Orders/ShippingLabelRequest.md)| Request body with list of tracking numbers | |
 | **fORMAT** | **string**| format in which you want to download bulk labels, expected values are ZIP/ PDF only | [optional] [default to 'ZIP'] |
 
 
@@ -521,8 +507,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 
@@ -539,7 +523,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `shippingUpdates()`
 
 ```php
-shippingUpdates($purchaseOrderId, $shippingUpdatesRequest): string
+shippingUpdates($purchaseOrderId, $shipmentMx): string
 ```
 Shipping Updates
 
@@ -561,10 +545,10 @@ $config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$shippingUpdatesRequest = {"shipments":[{"shipmentLines":[{"primeLineNo":"2","shipmentLineNo":"2","quantity":{"unitOfMeasurement":"EACH","amount":"2"}}],"trackingNumber":"12345","trackingURL":"http://www.otherCarrier.com","carrier":"Other"}]}; // \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest | File fields
+$shipmentMx = {"shipments":[{"shipmentLines":[{"primeLineNo":"2","shipmentLineNo":"2","quantity":{"unitOfMeasurement":"EACH","amount":"2"}}],"trackingNumber":"12345","trackingURL":"http://www.otherCarrier.com","carrier":"Other"}]}; // \Walmart\Models\MP\MX\Orders\ShipmentMx | File fields
 
 try {
-    $result = $api->shippingUpdates($purchaseOrderId, $shippingUpdatesRequest);
+    $result = $api->shippingUpdates($purchaseOrderId, $shipmentMx);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->shippingUpdates: {$e->getMessage()}\n";
@@ -575,7 +559,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **shippingUpdatesRequest** | [**\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequest**](../../../Models/MP/MX/orders/ShippingUpdatesRequest.md)| File fields | |
+| **shipmentMx** | [**\Walmart\Models\MP\MX\Orders\ShipmentMx**](../../../Models/MP/MX/Orders/ShipmentMx.md)| File fields | |
 
 
 ### Return type
@@ -583,8 +567,6 @@ try {
 **string**
 
 ### Authorization
-
-
 
 This endpoint requires the following authorization methods:
 

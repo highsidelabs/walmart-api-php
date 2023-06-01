@@ -61,12 +61,12 @@ class GetOrderResponseRecord extends BaseModel
         'buyerId' => 'string',
         'mart' => 'string',
         'isGuest' => 'bool',
-        'shippingInfo' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo',
-        'orderLines' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines',
+        'shippingInfo' => '\Walmart\Models\DSV\US\Orders\ShippingInfoType',
+        'orderLines' => '\Walmart\Models\DSV\US\Orders\CancelLinesType',
         'paymentTypes' => 'string[]',
         'orderSummary' => '\Walmart\Models\DSV\US\Orders\OrderSummary',
         'pickupPersons' => '\Walmart\Models\DSV\US\Orders\PickupPerson[]',
-        'shipNode' => '\Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShipNode'
+        'shipNode' => '\Walmart\Models\DSV\US\Orders\ShipNodesType'
     ];
 
     /**
@@ -507,7 +507,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets shippingInfo
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo
+     * @return \Walmart\Models\DSV\US\Orders\ShippingInfoType
     
      */
     public function getShippingInfo()
@@ -518,7 +518,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets shippingInfo
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShippingInfo $shippingInfo shippingInfo
+     * @param \Walmart\Models\DSV\US\Orders\ShippingInfoType $shippingInfo shippingInfo
      *
      * @return self
     
@@ -536,7 +536,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines
+     * @return \Walmart\Models\DSV\US\Orders\CancelLinesType
     
      */
     public function getOrderLines()
@@ -547,7 +547,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseOrderLines $orderLines orderLines
+     * @param \Walmart\Models\DSV\US\Orders\CancelLinesType $orderLines orderLines
      *
      * @return self
     
@@ -652,7 +652,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets shipNode
      *
-     * @return \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShipNode|null
+     * @return \Walmart\Models\DSV\US\Orders\ShipNodesType|null
     
      */
     public function getShipNode()
@@ -663,7 +663,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets shipNode
      *
-     * @param \Walmart\Models\DSV\US\Orders\ShipOrderLines200ResponseShipNode|null $shipNode shipNode
+     * @param \Walmart\Models\DSV\US\Orders\ShipNodesType|null $shipNode shipNode
      *
      * @return self
     

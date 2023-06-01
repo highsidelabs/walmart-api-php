@@ -58,12 +58,12 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\WS\US\Reports\GetItemReport200Response
+     * @return \Walmart\Models\WS\US\Reports\ReportDTO
      */
     public function getItemReport(
         string $type,
         string $version
-    ): \Walmart\Models\WS\US\Reports\GetItemReport200Response {
+    ): \Walmart\Models\WS\US\Reports\ReportDTO {
         return $this->getItemReportWithHttpInfo($type, $version);
     }
 
@@ -77,12 +77,12 @@ class ReportsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\WS\US\Reports\GetItemReport200Response
+     * @return \Walmart\Models\WS\US\Reports\ReportDTO
      */
     protected function getItemReportWithHttpInfo(
         string $type,
         string $version,
-    ): \Walmart\Models\WS\US\Reports\GetItemReport200Response {
+    ): \Walmart\Models\WS\US\Reports\ReportDTO {
         $request = $this->getItemReportRequest($type, $version, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -132,19 +132,19 @@ class ReportsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\WS\US\Reports\GetItemReport200Response' === '\SplFileObject') {
+                    if ('\Walmart\Models\WS\US\Reports\ReportDTO' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\WS\US\Reports\GetItemReport200Response' !== 'string') {
+                        if ('\Walmart\Models\WS\US\Reports\ReportDTO' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\WS\US\Reports\GetItemReport200Response', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\WS\US\Reports\ReportDTO', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\WS\US\Reports\GetItemReport200Response';
+            $returnType = '\Walmart\Models\WS\US\Reports\ReportDTO';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -160,7 +160,7 @@ class ReportsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\WS\US\Reports\GetItemReport200Response',
+                        '\Walmart\Models\WS\US\Reports\ReportDTO',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -211,7 +211,7 @@ class ReportsApi extends BaseApi
         string $type,
         string $version,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\WS\US\Reports\GetItemReport200Response';
+        $returnType = '\Walmart\Models\WS\US\Reports\ReportDTO';
         $request = $this->getItemReportRequest($type, $version, );
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

@@ -50,7 +50,7 @@ class ShipmentMx extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'shipments' => '\Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]'
+        'shipments' => '\Walmart\Models\MP\MX\Orders\ShipmentDto[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class ShipmentMx extends BaseModel
     /**
      * Gets shipments
      *
-     * @return \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]|null
+     * @return \Walmart\Models\MP\MX\Orders\ShipmentDto[]|null
     
      */
     public function getShipments()
@@ -139,7 +139,7 @@ class ShipmentMx extends BaseModel
     /**
      * Sets shipments
      *
-     * @param \Walmart\Models\MP\MX\Orders\ShippingUpdatesRequestShipmentsInner[]|null $shipments List of shipments associated with the order
+     * @param \Walmart\Models\MP\MX\Orders\ShipmentDto[]|null $shipments List of shipments associated with the order
      *
      * @return self
     
