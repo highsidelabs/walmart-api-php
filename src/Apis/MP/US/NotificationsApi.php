@@ -276,6 +276,7 @@ class NotificationsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -333,7 +334,7 @@ class NotificationsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -563,6 +564,7 @@ class NotificationsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'DELETE';
 
         // path params
         if ($subscriptionId !== null) {
@@ -622,7 +624,7 @@ class NotificationsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'DELETE',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -876,6 +878,7 @@ class NotificationsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // query params
         $queryParams = [
@@ -962,7 +965,7 @@ class NotificationsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1171,6 +1174,7 @@ class NotificationsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1221,7 +1225,7 @@ class NotificationsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1451,6 +1455,7 @@ class NotificationsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1508,7 +1513,7 @@ class NotificationsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1754,6 +1759,7 @@ class NotificationsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'PATCH';
 
         // path params
         if ($subscriptionId !== null) {
@@ -1820,7 +1826,7 @@ class NotificationsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PATCH',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

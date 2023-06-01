@@ -253,6 +253,7 @@ class UtilitiesApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -303,7 +304,7 @@ class UtilitiesApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -533,6 +534,7 @@ class UtilitiesApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // path params
         if ($departmentId !== null) {
@@ -592,7 +594,7 @@ class UtilitiesApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -801,6 +803,7 @@ class UtilitiesApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -851,7 +854,7 @@ class UtilitiesApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1085,6 +1088,7 @@ class UtilitiesApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // query params
         $queryParams = [
@@ -1155,7 +1159,7 @@ class UtilitiesApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

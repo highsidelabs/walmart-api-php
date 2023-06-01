@@ -414,6 +414,7 @@ class {{classname}} extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = '{{httpMethod}}';
         {{~#if queryParams}}
 
         // query params
@@ -570,7 +571,7 @@ class {{classname}} extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            '{{httpMethod}}',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

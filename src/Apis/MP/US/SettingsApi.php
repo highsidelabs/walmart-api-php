@@ -284,6 +284,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -340,7 +341,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -569,6 +570,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -625,7 +627,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -854,6 +856,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -910,7 +913,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1139,6 +1142,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'DELETE';
 
         // path params
         if ($templateId !== null) {
@@ -1197,7 +1201,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'DELETE',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1400,6 +1404,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1449,7 +1454,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1672,6 +1677,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // query params
         $queryParams = [
@@ -1733,7 +1739,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1936,6 +1942,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1985,7 +1992,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2188,6 +2195,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -2237,7 +2245,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2440,6 +2448,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -2489,7 +2498,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2692,6 +2701,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -2741,7 +2751,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2944,6 +2954,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -2993,7 +3004,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -3196,6 +3207,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -3245,7 +3257,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -3474,6 +3486,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // path params
         if ($templateId !== null) {
@@ -3532,7 +3545,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -3761,6 +3774,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'PUT';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -3817,7 +3831,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -4067,6 +4081,7 @@ class SettingsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'PUT';
 
         // path params
         if ($templateId !== null) {
@@ -4132,7 +4147,7 @@ class SettingsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'PUT',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

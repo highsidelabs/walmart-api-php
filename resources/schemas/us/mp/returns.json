@@ -3,7 +3,7 @@
     "info": {
         "title": "Returns Management",
         "description": "Buyers can now Initiate Returns from Walmart.com for Marketplace seller items (Except for HAZMAT, OTHER or FREIGHT items). For item in the exception categories: HAZMAT or OTHER, sellers need to generate the return shipping label, and upload the label. For detailed instructions, and to download the Returns API JSON schema, see Returns guide.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

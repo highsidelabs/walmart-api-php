@@ -3,7 +3,7 @@
     "info": {
         "title": "International Shipping",
         "description": "The International Shipping API enables sellers to use the Ship with Walmart (SWW) International shipping programs to ship their goods from the US to Canada. These APIs provide support for two SWW Programs : SWW Express & SWW Ground",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

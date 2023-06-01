@@ -333,6 +333,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -404,7 +405,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -688,6 +689,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -759,7 +761,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1043,6 +1045,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -1114,7 +1117,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1436,6 +1439,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // query params
         $queryParams = [
@@ -1551,7 +1555,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -1879,6 +1883,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // query params
         $queryParams = [
@@ -1994,7 +1999,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2268,6 +2273,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // query params
         $queryParams = [
@@ -2375,7 +2381,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2643,6 +2649,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         // path params
         if ($trackingNumber !== null) {
@@ -2707,7 +2714,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -2985,6 +2992,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         // header params
         if ($fORMAT !== null) {
@@ -3052,7 +3060,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -3336,6 +3344,7 @@ class OrdersApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -3407,7 +3416,7 @@ class OrdersApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

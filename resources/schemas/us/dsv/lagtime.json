@@ -3,7 +3,7 @@
     "info": {
         "title": "Lag Time",
         "description": "This API manages lag time for items. Lag time is the number of days between when an item is ordered and when it is shipped.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

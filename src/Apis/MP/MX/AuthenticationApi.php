@@ -251,6 +251,7 @@ class AuthenticationApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -300,7 +301,7 @@ class AuthenticationApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'GET',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -524,6 +525,7 @@ class AuthenticationApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         // form params
         if ($grantType !== null) {
@@ -578,7 +580,7 @@ class AuthenticationApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

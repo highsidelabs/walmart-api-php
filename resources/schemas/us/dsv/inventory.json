@@ -3,7 +3,7 @@
     "info": {
         "title": "Inventory Management",
         "description": "Maintaining up-to-date inventory for items on Walmart.com ensures a great customer experience as well as greater sales opportunities. The Inventory Management APIs allow management of current or recently changed inventory supply.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

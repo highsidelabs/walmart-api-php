@@ -3,7 +3,7 @@
     "info": {
         "title": "Insights Management",
         "description": "The Insights Management API provides sellers with actionable information to optimize their listings:\n*   Sellers can locate best-selling items with Trending Items API so they can add those to their catalog of item offerings. \n*   Sellers can find out reasons why items go unpublished, fix the issue and republish those items.\n*   Sellers can use Listing Quality APIs to gather listing quality metrics about their items and find out any post-production issues that they can fix.\n*   Sellers can obtain their overall Listing Quality score, and locate any categories that show items with listing quality issues.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

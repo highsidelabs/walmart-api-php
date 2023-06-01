@@ -3,7 +3,7 @@
     "info": {
         "title": "Returns Management",
         "description": "Returns can be initiated from Walmart.com, even for items purchased from marketplace sellers (Except for HAZMAT or FREIGHT items).",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

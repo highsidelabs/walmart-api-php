@@ -3,7 +3,7 @@
     "info": {
         "title": "Cost Management",
         "description": "This API allows DSV to update cost for items in bulk.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

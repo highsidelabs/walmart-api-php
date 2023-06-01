@@ -3,7 +3,7 @@
     "info": {
         "title": "Fulfillment Management",
         "description": "With Walmart Fulfillment Services, you can focus on sales while we expertly take care of fast shipping, seamless returns, and customer service. Simply send your inventory to Walmart fulfillment centers, where we will store your products securely and prepare them swiftly for shipping when an order is placed.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

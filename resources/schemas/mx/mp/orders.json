@@ -3,7 +3,7 @@
     "info": {
         "title": "Order Management",
         "description": "The Walmart Order Management APIs help Sellers to manage customer\u2019s Sales Orders and to stay up-to-date on orders fulfillment, which orders to fulfill, and when to fulfill them.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

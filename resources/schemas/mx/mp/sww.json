@@ -3,7 +3,7 @@
     "info": {
         "title": "International Shipping",
         "description": "The International Shipment APIs which allows US sellers to ship items to Mexico internationally, via Ship With Walmart service.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

@@ -3,7 +3,7 @@
     "info": {
         "title": "Item Management",
         "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {
@@ -72,6 +72,64 @@
                                     "x-expose-headers": true
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<FeedAcknowledgement xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <feedId>E9C04D1FFD99479FBC1341D56DD5F930@AQMB_wA<\/feedId>\n<\/FeedAcknowledgement>\n"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/v2\/feeds": {
+            "post": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Rich Media",
+                "description": "Rich Media includes material such as videos, comparison tables, and view360 media which is item-specific. Extract the XSDs for the Rich Media API below:\nRich Media API XSDs\n\nRich media can be uploaded only as an update for an item which has already been ingested. New item uploads which contain rich media will cause that item ingestion to fail. To upload rich media, you must wait for the item ingestion process to complete successfully, then make a POST call with the rich media content for ingested items.",
+                "operationId": "updateRichMediaOfItem",
+                "parameters": [
+                    {
+                        "name": "feedType",
+                        "in": "query",
+                        "description": "The feed Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "item"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/xml": {
+                            "schema": {
+                                "type": "string"
+                            },
+                            "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<RichMediaFeed xmlns=\"http:\/\/walmart.com\/\" xmlns:xsi=\"http:\/\/www.w3.org\/2001\/XMLSchema-instance\" xsi:schemaLocation=\"http:\/\/walmart.com\/ RichMediaFeed.xsd \">\n    <RichMediaFeedHeader>\n        <version>2.1.2<\/version>\n        <requestId>requestId<\/requestId>\n        <requestBatchId>requestBatchId<\/requestBatchId>\n        <feedDate>2001-12-31T12:00:00<\/feedDate>\n        <mart>WALMART_US<\/mart>\n    <\/RichMediaFeedHeader>\n    <RichMedia>\n        <productIdentifiers>\n            <productIdentifier>\n                <productIdType>UPC<\/productIdType>\n                <productId>815812013182<\/productId>\n            <\/productIdentifier>\n        <\/productIdentifiers>\n        <Modules processMode=\"MERGE\">\n            <view360 provider=\"\">\n                <html-content>html-content<\/html-content>\n            <\/view360>\n            <marketing-content provider=\"\">\n                <html-content>html-content<\/html-content>\n            <\/marketing-content>\n            <product-tour provider=\"\">\n                <html-content>html-content<\/html-content>\n            <\/product-tour>\n            <videos provider=\"\">\n                <video provider=\"\">\n                    <title>title<\/title>\n                    <description>description<\/description>\n                    <language>en-US<\/language>\n                    <closed-caption>\n                        <url>url<\/url>\n                        <format>webvtt<\/format>\n                        <language>en-US<\/language>\n                    <\/closed-caption>\n                    <age-gate>0<\/age-gate>\n                    <source-mobile>\n                        <url>url<\/url>\n                        <width>720<\/width>\n                        <height>480<\/height>\n                        <format>mp4<\/format>\n                        <thumbnail>\n                            <url>url<\/url>\n                            <format>png<\/format>\n                            <width>120<\/width>\n                            <height>100<\/height>\n                        <\/thumbnail>\n                        <poster>\n                            <url>url<\/url>\n                            <format>jpg<\/format>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                        <\/poster>\n                    <\/source-mobile>\n                    <sources>\n                        <source>\n                            <url>url<\/url>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                            <format>mp4<\/format>\n                            <screen>mobile<\/screen>\n                            <thumbnail>\n                                <url>url<\/url>\n                                <format>png<\/format>\n                                <width>120<\/width>\n                                <height>100<\/height>\n                            <\/thumbnail>\n                            <poster>\n                                <url>url<\/url>\n                                <format>jpg<\/format>\n                                <width>720<\/width>\n                                <height>480<\/height>\n                            <\/poster>\n                        <\/source>\n                    <\/sources>\n                    <duration>0<\/duration>\n                    <likes>0<\/likes>\n                    <views>0<\/views>\n                    <tags>tags<\/tags>\n                <\/video>\n            <\/videos>\n            <documents provider=\"\">\n                <document>\n                    <title>title<\/title>\n                    <url>url<\/url>\n                    <format>pdf<\/format>\n                    <pages>0<\/pages>\n                    <thumbnail>\n                        <url>url<\/url>\n                        <format>png<\/format>\n                        <width>120<\/width>\n                        <height>100<\/height>\n                    <\/thumbnail>\n                    <size>0<\/size>\n                <\/document>\n            <\/documents>\n            <customer-review-videos provider=\"\">\n                <customer-review-video provider=\"\">\n                    <title>title<\/title>\n                    <description>description<\/description>\n                    <language>en-US<\/language>\n                    <closed-caption>\n                        <url>url<\/url>\n                        <format>webvtt<\/format>\n                        <language>en-US<\/language>\n                    <\/closed-caption>\n                    <age-gate>0<\/age-gate>\n                    <source-computer>\n                        <url>url<\/url>\n                        <width>720<\/width>\n                        <height>480<\/height>\n                        <format>mp4<\/format>\n                        <thumbnail>\n                            <url>url<\/url>\n                            <format>png<\/format>\n                            <width>120<\/width>\n                            <height>100<\/height>\n                        <\/thumbnail>\n                        <poster>\n                            <url>url<\/url>\n                            <format>jpg<\/format>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                        <\/poster>\n                    <\/source-computer>\n                    <sources>\n                        <source>\n                            <url>url<\/url>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                            <format>mp4<\/format>\n                            <screen>mobile<\/screen>\n                            <thumbnail>\n                                <url>url<\/url>\n                                <format>png<\/format>\n                                <width>120<\/width>\n                                <height>100<\/height>\n                            <\/thumbnail>\n                            <poster>\n                                <url>url<\/url>\n                                <format>jpg<\/format>\n                                <width>720<\/width>\n                                <height>480<\/height>\n                            <\/poster>\n                        <\/source>\n                    <\/sources>\n                    <duration>0<\/duration>\n                    <likes>0<\/likes>\n                    <views>0<\/views>\n                    <tags>tags<\/tags>\n                <\/customer-review-video>\n            <\/customer-review-videos>\n            <comparison-table provider=\"\">\n                <headline>\n                    <image>\n                        <title>title<\/title>\n                        <url>url<\/url>\n                        <height>0<\/height>\n                        <width>0<\/width>\n                        <format>png<\/format>\n                    <\/image>\n                <\/headline>\n                <feature-column>\n                    <sections>\n                        <section>\n                            <header>\n                                <caption>caption<\/caption>\n                            <\/header>\n                            <feature>\n                                <caption>caption<\/caption>\n                            <\/feature>\n                        <\/section>\n                    <\/sections>\n                <\/feature-column>\n                <product-columns>\n                    <product-column>\n                        <products-info>\n                            <product-info>\n                                <title>title<\/title>\n                                <thumbnail>\n                                    <url>url<\/url>\n                                    <format>png<\/format>\n                                    <width>120<\/width>\n                                    <height>120<\/height>\n                                <\/thumbnail>\n                                <productIdentifiers>\n                                    <productIdentifier>\n                                        <productIdType>UPC<\/productIdType>\n                                        <productId>productId<\/productId>\n                                    <\/productIdentifier>\n                                <\/productIdentifiers>\n                            <\/product-info>\n                        <\/products-info>\n                        <value>value<\/value>\n                    <\/product-column>\n                <\/product-columns>\n            <\/comparison-table>\n            <expert-reviews provider=\"\">\n                <expert-review provider=\"\">\n                    <html-content>html-content<\/html-content>\n                <\/expert-review>\n            <\/expert-reviews>\n            <misc-modules provider=\"\">\n                <misc-module>\n                    <attributeName>attributeName<\/attributeName>\n                    <attributeValue>attributeValue<\/attributeValue>\n                <\/misc-module>\n            <\/misc-modules>\n        <\/Modules>\n        <additionalProductAttributes>\n            <NameValueAttribute>\n                <name>name<\/name>\n                <type>LOCALIZABLE_TEXT<\/type>\n                <value>\n                    <value>value<\/value>\n                    <group>group<\/group>\n                    <rank>0<\/rank>\n                <\/value>\n            <\/NameValueAttribute>\n        <\/additionalProductAttributes>\n    <\/RichMedia>\n<\/RichMediaFeed>\n"
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "feedId": {
+                                            "type": "string",
+                                            "description": "Indicates an identifier, returned from the Bulk Upload API, used for tracking the feed file."
+                                        }
+                                    },
+                                    "x-expose-headers": true
+                                }
                             }
                         }
                     }

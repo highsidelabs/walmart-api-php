@@ -3,7 +3,7 @@
     "info": {
         "title": "Utilities Management",
         "description": "Utilities Management API",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

@@ -3,7 +3,7 @@
     "info": {
         "title": "MX Reports",
         "description": "Returns all the information associated with Sellers that are set up on Walmart\u2019s platform.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

@@ -3,7 +3,7 @@
     "info": {
         "title": "Warehouse Report Management",
         "description": "This API is used to generate the Item Report for Warehouse Suppliers. It returns all the information associated with supplier items that are set up on Walmart\u2019s platform.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

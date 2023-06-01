@@ -46,6 +46,9 @@ class FeedsApi extends BaseApi
      */
     public const contentTypes = [
         'contentProductFeed' => 'multipart/form-data',
+        'getAllFeedStatuses' => 'application/json',
+        'getFeedItemStatus' => 'application/json',
+        'updateRichMedia' => 'application/xml',
     ];
 
     /**
@@ -287,6 +290,7 @@ class FeedsApi extends BaseApi
         $headerParams = [];
         $httpBody = '';
         $multipart = false;
+        $method = 'POST';
 
         // query params
         $queryParams = [
@@ -374,7 +378,1036 @@ class FeedsApi extends BaseApi
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
-            'POST',
+            $method,
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAllFeedStatuses
+     *
+     * Feed status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \Walmart\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Walmart\Models\CP\US\Feeds\FeedRecordResponse
+     */
+    public function getAllFeedStatuses(
+        string $feedId,
+        ?string $offset = '0',
+        ?string $limit = '20'
+    ): \Walmart\Models\CP\US\Feeds\FeedRecordResponse {
+        return $this->getAllFeedStatusesWithHttpInfo($feedId, $offset, $limit);
+    }
+
+    /**
+     * Operation getAllFeedStatusesWithHttpInfo
+     *
+     * Feed status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \Walmart\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Walmart\Models\CP\US\Feeds\FeedRecordResponse
+     */
+    protected function getAllFeedStatusesWithHttpInfo(
+        string $feedId,
+        ?string $offset = '0',
+        ?string $limit = '20',
+    ): \Walmart\Models\CP\US\Feeds\FeedRecordResponse {
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    (int) $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : null,
+                    $body
+                );
+            } catch (ConnectException $e) {
+                $this->writeDebug($e->getMessage());
+
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+            switch ($statusCode) {
+                case 200:
+                    if ('\Walmart\Models\CP\US\Feeds\FeedRecordResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Walmart\Models\CP\US\Feeds\FeedRecordResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\FeedRecordResponse', $response->getHeaders());
+            }
+
+            $returnType = '\Walmart\Models\CP\US\Feeds\FeedRecordResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Walmart\Models\CP\US\Feeds\FeedRecordResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAllFeedStatusesAsync
+     *
+     * Feed status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAllFeedStatusesAsync(
+        string $feedId,
+        ?string $offset = '0',
+        ?string $limit = '20'
+    ): PromiseInterface {
+        return $this->getAllFeedStatusesAsyncWithHttpInfo($feedId, $offset, $limit)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAllFeedStatusesAsyncWithHttpInfo
+     *
+     *
+     * Feed status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    protected function getAllFeedStatusesAsyncWithHttpInfo(
+        string $feedId,
+        ?string $offset = '0',
+        ?string $limit = '20',
+    ): PromiseInterface {
+        $returnType = '\Walmart\Models\CP\US\Feeds\FeedRecordResponse';
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $body,
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAllFeedStatuses'
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getAllFeedStatusesRequest(
+        string $feedId,
+        ?string $offset = '0',
+        ?string $limit = '20',
+    ): Request {
+        $contentType = self::contentTypes['getAllFeedStatuses'];
+
+        // verify the required parameter 'feedId' is set
+        if ($feedId === null || (is_array($feedId) && count($feedId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $feedId when calling getAllFeedStatuses'
+            );
+        }
+        $resourcePath = '/feeds';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+        $method = 'GET';
+
+        // query params
+        $queryParams = [
+            ObjectSerializer::toQueryValue(
+                $feedId,
+                'feedId', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                true // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $offset,
+                'offset', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $limit,
+                'limit', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+        ];
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/xml'],
+            $contentType,
+            $multipart
+        );
+
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($signatureSchemeApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+        }
+
+        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($consumerIdSchemeApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        }
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            $method,
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getFeedItemStatus
+     *
+     * Feed item status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \Walmart\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Walmart\Models\CP\US\Feeds\PartnerFeedResponse
+     */
+    public function getFeedItemStatus(
+        string $feedId,
+        ?string $includeDetails = 'false',
+        ?string $offset = '0',
+        ?string $limit = '20'
+    ): \Walmart\Models\CP\US\Feeds\PartnerFeedResponse {
+        return $this->getFeedItemStatusWithHttpInfo($feedId, $includeDetails, $offset, $limit);
+    }
+
+    /**
+     * Operation getFeedItemStatusWithHttpInfo
+     *
+     * Feed item status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \Walmart\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Walmart\Models\CP\US\Feeds\PartnerFeedResponse
+     */
+    protected function getFeedItemStatusWithHttpInfo(
+        string $feedId,
+        ?string $includeDetails = 'false',
+        ?string $offset = '0',
+        ?string $limit = '20',
+    ): \Walmart\Models\CP\US\Feeds\PartnerFeedResponse {
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    (int) $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : null,
+                    $body
+                );
+            } catch (ConnectException $e) {
+                $this->writeDebug($e->getMessage());
+
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+            switch ($statusCode) {
+                case 200:
+                    if ('\Walmart\Models\CP\US\Feeds\PartnerFeedResponse' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Walmart\Models\CP\US\Feeds\PartnerFeedResponse' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\PartnerFeedResponse', $response->getHeaders());
+            }
+
+            $returnType = '\Walmart\Models\CP\US\Feeds\PartnerFeedResponse';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Walmart\Models\CP\US\Feeds\PartnerFeedResponse',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getFeedItemStatusAsync
+     *
+     * Feed item status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getFeedItemStatusAsync(
+        string $feedId,
+        ?string $includeDetails = 'false',
+        ?string $offset = '0',
+        ?string $limit = '20'
+    ): PromiseInterface {
+        return $this->getFeedItemStatusAsyncWithHttpInfo($feedId, $includeDetails, $offset, $limit)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getFeedItemStatusAsyncWithHttpInfo
+     *
+     *
+     * Feed item status
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    protected function getFeedItemStatusAsyncWithHttpInfo(
+        string $feedId,
+        ?string $includeDetails = 'false',
+        ?string $offset = '0',
+        ?string $limit = '20',
+    ): PromiseInterface {
+        $returnType = '\Walmart\Models\CP\US\Feeds\PartnerFeedResponse';
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $body,
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getFeedItemStatus'
+     *
+     * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
+     * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
+     * @param  string $offset The object response to the starting number, where 0 is the first entity that can be requested. (optional, default to '0')
+     * @param  string $limit The number of entities to be returned. Maximum 20 entities. (optional, default to '20')
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function getFeedItemStatusRequest(
+        string $feedId,
+        ?string $includeDetails = 'false',
+        ?string $offset = '0',
+        ?string $limit = '20',
+    ): Request {
+        $contentType = self::contentTypes['getFeedItemStatus'];
+
+        // verify the required parameter 'feedId' is set
+        if ($feedId === null || (is_array($feedId) && count($feedId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $feedId when calling getFeedItemStatus'
+            );
+        }
+        $resourcePath = '/feeds/{feedId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+        $method = 'GET';
+
+        // query params
+        $queryParams = [
+            ObjectSerializer::toQueryValue(
+                $includeDetails,
+                'includeDetails', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $offset,
+                'offset', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $limit,
+                'limit', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+        ];
+
+        // path params
+        if ($feedId !== null) {
+            $resourcePath = str_replace(
+                '{' . 'feedId' . '}',
+                ObjectSerializer::toPathValue($feedId),
+                $resourcePath
+            );
+        }
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/xml'],
+            $contentType,
+            $multipart
+        );
+
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($signatureSchemeApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+        }
+
+        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($consumerIdSchemeApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        }
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            $method,
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation updateRichMedia
+     *
+     * Rich Media
+     *
+     * @param  string $feedType The feed Type (required)
+     * @param  string $body (required)
+     *
+     * @throws \Walmart\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+     */
+    public function updateRichMedia(
+        string $feedType,
+        string $body
+    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
+        return $this->updateRichMediaWithHttpInfo($feedType, $body);
+    }
+
+    /**
+     * Operation updateRichMediaWithHttpInfo
+     *
+     * Rich Media
+     *
+     * @param  string $feedType The feed Type (required)
+     * @param  string $body (required)
+     *
+     * @throws \Walmart\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response
+     */
+    protected function updateRichMediaWithHttpInfo(
+        string $feedType,
+        string $body,
+    ): \Walmart\Models\CP\US\Feeds\ContentProductFeed200Response {
+        $request = $this->updateRichMediaRequest($feedType, $body, );
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+                $this->writeDebug($response);
+                $this->writeDebug((string) $response->getBody());
+            } catch (RequestException $e) {
+                $hasResponse = !empty($e->hasResponse());
+                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
+                $this->writeDebug($e->getResponse());
+                $this->writeDebug($body);
+
+                throw new ApiException(
+                    "[{$e->getCode()}] {$body}",
+                    (int) $e->getCode(),
+                    $hasResponse ? $e->getResponse()->getHeaders() : null,
+                    $body
+                );
+            } catch (ConnectException $e) {
+                $this->writeDebug($e->getMessage());
+
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+            switch ($statusCode) {
+                case 200:
+                    if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response' !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response', $response->getHeaders());
+            }
+
+            $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            $this->writeDebug($e);
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation updateRichMediaAsync
+     *
+     * Rich Media
+     *
+     * @param  string $feedType The feed Type (required)
+     * @param  string $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function updateRichMediaAsync(
+        string $feedType,
+        string $body
+    ): PromiseInterface {
+        return $this->updateRichMediaAsyncWithHttpInfo($feedType, $body)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation updateRichMediaAsyncWithHttpInfo
+     *
+     *
+     * Rich Media
+     *
+     * @param  string $feedType The feed Type (required)
+     * @param  string $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    protected function updateRichMediaAsyncWithHttpInfo(
+        string $feedType,
+        string $body,
+    ): PromiseInterface {
+        $returnType = '\Walmart\Models\CP\US\Feeds\ContentProductFeed200Response';
+        $request = $this->updateRichMediaRequest($feedType, $body, );
+        $this->writeDebug($request);
+        $this->writeDebug((string) $request->getBody());
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $this->writeDebug($response);
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $hasResponse = !empty($response);
+                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
+                    $this->writeDebug($response);
+                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
+
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $body,
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'updateRichMedia'
+     *
+     * @param  string $feedType The feed Type (required)
+     * @param  string $body (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function updateRichMediaRequest(
+        string $feedType,
+        string $body,
+    ): Request {
+        $contentType = self::contentTypes['updateRichMedia'];
+
+        // verify the required parameter 'feedType' is set
+        if ($feedType === null || (is_array($feedType) && count($feedType) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $feedType when calling updateRichMedia'
+            );
+        }
+        // verify the required parameter 'body' is set
+        if ($body === null || (is_array($body) && count($body) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $body when calling updateRichMedia'
+            );
+        }
+        $resourcePath = '/v2/feeds';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+        $method = 'POST';
+
+        // query params
+        $queryParams = [
+            ObjectSerializer::toQueryValue(
+                $feedType,
+                'feedType', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                true // required
+            ) ?? [],
+        ];
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/xml'],
+            $contentType,
+            $multipart
+        );
+
+        $defaultHeaders = parent::getDefaultHeaders();
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($body));
+            } else {
+                $httpBody = $body;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($signatureSchemeApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+        }
+
+        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($consumerIdSchemeApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        }
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

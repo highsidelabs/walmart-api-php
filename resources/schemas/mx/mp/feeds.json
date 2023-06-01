@@ -3,7 +3,7 @@
     "info": {
         "title": "Feed Management",
         "description": "Feeds are constructed to handle bulk functions. A feed consists of an HTTP request with an attached file. The attached file contains the XML representing the objects that need to be created or updated.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

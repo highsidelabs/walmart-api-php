@@ -3,7 +3,7 @@
     "info": {
         "title": "Content Management",
         "description": "The content management feed allows you to process content for items in bulk. You can take in content via the content feeds. Use the XSDs to manage content.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "paths": {
         "\/v3\/feeds": {

@@ -3,7 +3,7 @@
     "info": {
         "title": "Item report",
         "description": "This API is used to generate the Item Report for DSVs. It returns all the information associated with vendor items that are set up on Walmart\u2019s platform.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

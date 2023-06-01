@@ -3,7 +3,7 @@
     "info": {
         "title": "Event Management",
         "description": "The Event Management APIs are built to enable sellers to participate in the Promotional Events hosted on Seller Center Canada Ecommerce Website. These events are set up by our Business Teams and sellers can participate voluntarily to promote their SKUs at a promotional price for certain time period.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

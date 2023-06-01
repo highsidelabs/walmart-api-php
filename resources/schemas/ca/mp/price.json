@@ -3,7 +3,7 @@
     "info": {
         "title": "Price Management",
         "description": "The price is a fundamental building block for your listing on Walmart.com. You can use the price management APIs to set up and manage the price for a given item",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

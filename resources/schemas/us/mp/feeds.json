@@ -3,7 +3,7 @@
     "info": {
         "title": "Feed Management",
         "description": "Feeds are constructed to handle bulk functions. A feed consists of an HTTP request with an attached file. Once you upload the Feeds, you can use the Feed ID to track the status of the feeds and the status of the item within those Feeds.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

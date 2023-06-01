@@ -3,7 +3,7 @@
     "info": {
         "title": "Inventory Management",
         "description": "Maintaining up-to-date inventory for your items on Walmart.com ensures a great experience for your customers and greater sales opportunities for you.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

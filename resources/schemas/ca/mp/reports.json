@@ -3,7 +3,7 @@
     "info": {
         "title": "Item report",
         "description": "Returns all the information associated with Seller's items that are set up on Walmart\u2019s platform.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

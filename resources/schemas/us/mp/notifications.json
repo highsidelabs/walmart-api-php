@@ -3,7 +3,7 @@
     "info": {
         "title": "Notifications Management",
         "description": "Notifications Management API",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

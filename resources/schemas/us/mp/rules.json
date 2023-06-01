@@ -3,7 +3,7 @@
     "info": {
         "title": "Rules Management",
         "description": "Rules Management",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

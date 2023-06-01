@@ -3,7 +3,7 @@
     "info": {
         "title": "Lag Time",
         "description": "This API allows the retrieval of Lag Time for an item with a given SKU.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {

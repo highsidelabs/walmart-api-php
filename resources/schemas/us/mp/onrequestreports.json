@@ -3,7 +3,7 @@
     "info": {
         "title": "On-request Report Management",
         "description": "The On-request Reports API allows you to request reports immediately about your items for faster retrieval. You can request the report, check status on the report availability, and then download the report URL when report is ready. You can also get a list of all reports requested.",
-        "version": "v3"
+        "version": "0.3.0"
     },
     "servers": [
         {
