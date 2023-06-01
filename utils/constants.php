@@ -1,7 +1,5 @@
 <?php
 
-const API_VERSION = 'v3';
-
 const VALID_OPTS = ['category::', 'country::', 'api-code::', 'help'];
 
 const RESOURCE_DIR = __DIR__ . '/../resources';

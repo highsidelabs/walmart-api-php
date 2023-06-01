@@ -77,6 +77,198 @@
                     }
                 ]
             }
+        },
+        "\/v2\/feeds": {
+            "post": {
+                "tags": [
+                    "Feeds"
+                ],
+                "summary": "Rich Media",
+                "description": "Rich Media includes material such as videos, comparison tables, and view360 media which is item-specific.",
+                "operationId": "updateRichMedia",
+                "parameters": [
+                    {
+                        "name": "feedType",
+                        "in": "query",
+                        "description": "The feed Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "item"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/xml": {
+                            "schema": {
+                                "type": "string"
+                            },
+                            "examples": {
+                                "xml1": {
+                                    "value": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<RichMediaFeed xmlns=\"http:\/\/walmart.com\/\" xmlns:xsi=\"http:\/\/www.w3.org\/2001\/XMLSchema-instance\" xsi:schemaLocation=\"http:\/\/walmart.com\/ RichMediaFeed.xsd \">\n    <RichMediaFeedHeader>\n        <version>2.1.2<\/version>\n        <requestId>requestId<\/requestId>\n        <requestBatchId>requestBatchId<\/requestBatchId>\n        <feedDate>2001-12-31T12:00:00<\/feedDate>\n        <mart>WALMART_US<\/mart>\n    <\/RichMediaFeedHeader>\n    <RichMedia>\n        <productIdentifiers>\n            <productIdentifier>\n                <productIdType>UPC<\/productIdType>\n                <productId>815812013182<\/productId>\n            <\/productIdentifier>\n        <\/productIdentifiers>\n        <Modules processMode=\"MERGE\">\n            <view360 provider=\"\">\n                <html-content>html-content<\/html-content>\n            <\/view360>\n            <marketing-content provider=\"\">\n                <html-content>html-content<\/html-content>\n            <\/marketing-content>\n            <product-tour provider=\"\">\n                <html-content>html-content<\/html-content>\n            <\/product-tour>\n            <videos provider=\"\">\n                <video provider=\"\">\n                    <title>title<\/title>\n                    <description>description<\/description>\n                    <language>en-US<\/language>\n                    <closed-caption>\n                        <url>url<\/url>\n                        <format>webvtt<\/format>\n                        <language>en-US<\/language>\n                    <\/closed-caption>\n                    <age-gate>0<\/age-gate>\n                    <source-mobile>\n                        <url>url<\/url>\n                        <width>720<\/width>\n                        <height>480<\/height>\n                        <format>mp4<\/format>\n                        <thumbnail>\n                            <url>url<\/url>\n                            <format>png<\/format>\n                            <width>120<\/width>\n                            <height>100<\/height>\n                        <\/thumbnail>\n                        <poster>\n                            <url>url<\/url>\n                            <format>jpg<\/format>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                        <\/poster>\n                    <\/source-mobile>\n                    <sources>\n                        <source>\n                            <url>url<\/url>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                            <format>mp4<\/format>\n                            <screen>mobile<\/screen>\n                            <thumbnail>\n                                <url>url<\/url>\n                                <format>png<\/format>\n                                <width>120<\/width>\n                                <height>100<\/height>\n                            <\/thumbnail>\n                            <poster>\n                                <url>url<\/url>\n                                <format>jpg<\/format>\n                                <width>720<\/width>\n                                <height>480<\/height>\n                            <\/poster>\n                        <\/source>\n                    <\/sources>\n                    <duration>0<\/duration>\n                    <likes>0<\/likes>\n                    <views>0<\/views>\n                    <tags>tags<\/tags>\n                <\/video>\n            <\/videos>\n            <documents provider=\"\">\n                <document>\n                    <title>title<\/title>\n                    <url>url<\/url>\n                    <format>pdf<\/format>\n                    <pages>0<\/pages>\n                    <thumbnail>\n                        <url>url<\/url>\n                        <format>png<\/format>\n                        <width>120<\/width>\n                        <height>100<\/height>\n                    <\/thumbnail>\n                    <size>0<\/size>\n                <\/document>\n            <\/documents>\n            <customer-review-videos provider=\"\">\n                <customer-review-video provider=\"\">\n                    <title>title<\/title>\n                    <description>description<\/description>\n                    <language>en-US<\/language>\n                    <closed-caption>\n                        <url>url<\/url>\n                        <format>webvtt<\/format>\n                        <language>en-US<\/language>\n                    <\/closed-caption>\n                    <age-gate>0<\/age-gate>\n                    <source-computer>\n                        <url>url<\/url>\n                        <width>720<\/width>\n                        <height>480<\/height>\n                        <format>mp4<\/format>\n                        <thumbnail>\n                            <url>url<\/url>\n                            <format>png<\/format>\n                            <width>120<\/width>\n                            <height>100<\/height>\n                        <\/thumbnail>\n                        <poster>\n                            <url>url<\/url>\n                            <format>jpg<\/format>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                        <\/poster>\n                    <\/source-computer>\n                    <sources>\n                        <source>\n                            <url>url<\/url>\n                            <width>720<\/width>\n                            <height>480<\/height>\n                            <format>mp4<\/format>\n                            <screen>mobile<\/screen>\n                            <thumbnail>\n                                <url>url<\/url>\n                                <format>png<\/format>\n                                <width>120<\/width>\n                                <height>100<\/height>\n                            <\/thumbnail>\n                            <poster>\n                                <url>url<\/url>\n                                <format>jpg<\/format>\n                                <width>720<\/width>\n                                <height>480<\/height>\n                            <\/poster>\n                        <\/source>\n                    <\/sources>\n                    <duration>0<\/duration>\n                    <likes>0<\/likes>\n                    <views>0<\/views>\n                    <tags>tags<\/tags>\n                <\/customer-review-video>\n            <\/customer-review-videos>\n            <comparison-table provider=\"\">\n                <headline>\n                    <image>\n                        <title>title<\/title>\n                        <url>url<\/url>\n                        <height>0<\/height>\n                        <width>0<\/width>\n                        <format>png<\/format>\n                    <\/image>\n                <\/headline>\n                <feature-column>\n                    <sections>\n                        <section>\n                            <header>\n                                <caption>caption<\/caption>\n                            <\/header>\n                            <feature>\n                                <caption>caption<\/caption>\n                            <\/feature>\n                        <\/section>\n                    <\/sections>\n                <\/feature-column>\n                <product-columns>\n                    <product-column>\n                        <products-info>\n                            <product-info>\n                                <title>title<\/title>\n                                <thumbnail>\n                                    <url>url<\/url>\n                                    <format>png<\/format>\n                                    <width>120<\/width>\n                                    <height>120<\/height>\n                                <\/thumbnail>\n                                <productIdentifiers>\n                                    <productIdentifier>\n                                        <productIdType>UPC<\/productIdType>\n                                        <productId>productId<\/productId>\n                                    <\/productIdentifier>\n                                <\/productIdentifiers>\n                            <\/product-info>\n                        <\/products-info>\n                        <value>value<\/value>\n                    <\/product-column>\n                <\/product-columns>\n            <\/comparison-table>\n            <expert-reviews provider=\"\">\n                <expert-review provider=\"\">\n                    <html-content>html-content<\/html-content>\n                <\/expert-review>\n            <\/expert-reviews>\n            <misc-modules provider=\"\">\n                <misc-module>\n                    <attributeName>attributeName<\/attributeName>\n                    <attributeValue>attributeValue<\/attributeValue>\n                <\/misc-module>\n            <\/misc-modules>\n        <\/Modules>\n        <additionalProductAttributes>\n            <NameValueAttribute>\n                <name>name<\/name>\n                <type>LOCALIZABLE_TEXT<\/type>\n                <value>\n                    <value>value<\/value>\n                    <group>group<\/group>\n                    <rank>0<\/rank>\n                <\/value>\n            <\/NameValueAttribute>\n        <\/additionalProductAttributes>\n    <\/RichMedia>\n<\/RichMediaFeed>\n"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "feedId": {
+                                            "type": "string",
+                                            "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file."
+                                        }
+                                    },
+                                    "x-expose-headers": true
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/feeds": {
+            "get": {
+                "tags": [
+                    "Feeds"
+                ],
+                "summary": "Feed status",
+                "description": "You can display an item status for a specific feed ID. Use the feed ID returned from the upload an item feed API.",
+                "operationId": "getAllFeedStatuses",
+                "parameters": [
+                    {
+                        "name": "feedId",
+                        "in": "query",
+                        "description": "A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The object response to the starting number, where 0 is the first entity that can be requested.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of entities to be returned. Maximum 20 entities.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "20"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/FeedRecordResponse"
+                                },
+                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<ns2:list xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:totalresults>1<\/ns2:totalresults>\n    <ns2:offset>0<\/ns2:offset>\n    <ns2:limit>50<\/ns2:limit>\n    <ns2:results>\n        <ns2:feed>\n            <ns2:feedid>039F4AEA0B3A4E1FBEF0A6403507B18C@AQQBAQA<\/ns2:feedid>\n            <ns2:feedtype>CONTENT_PRODUCT<\/ns2:feedtype>\n            <ns2:partnerid>721407<\/ns2:partnerid>\n            <ns2:itemsreceived>1<\/ns2:itemsreceived>\n            <ns2:itemssucceeded>1<\/ns2:itemssucceeded>\n            <ns2:itemsfailed>0<\/ns2:itemsfailed>\n            <ns2:itemsprocessing>0<\/ns2:itemsprocessing>\n            <ns2:feedstatus>PROCESSED<\/ns2:feedstatus>\n            <ns2:feeddate>2016-08-29T21:00:47.546Z<\/ns2:feeddate>\n            <ns2:batchid>b1234<\/ns2:batchid>\n            <ns2:modifieddtm>2016-08-29T21:01:17.099Z<\/ns2:modifieddtm>\n            <ns2:filename>V3_101_Electronics.xlsm<\/ns2:filename>\n            <ns2:itemdataerrorcount>0<\/ns2:itemdataerrorcount>\n            <ns2:itemsystemerrorcount>0<\/ns2:itemsystemerrorcount>\n            <ns2:itemtimeouterrorcount>0<\/ns2:itemtimeouterrorcount>\n        <\/ns2:feed>\n    <\/ns2:results>\n<\/ns2:list>"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
+        },
+        "\/feeds\/{feedId}": {
+            "get": {
+                "tags": [
+                    "Feeds"
+                ],
+                "summary": "Feed item status",
+                "description": "You can display the status of all items for a specific feed ID. Use the feed ID returned from the upload an item feed API.",
+                "operationId": "getFeedItemStatus",
+                "parameters": [
+                    {
+                        "name": "feedId",
+                        "in": "path",
+                        "description": "A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "includeDetails",
+                        "in": "query",
+                        "description": "Includes details of each entity in the feed. Do not set this parameter to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "false"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The object response to the starting number, where 0 is the first entity that can be requested.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of entities to be returned. Maximum 20 entities.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "20"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/PartnerFeedResponse"
+                                },
+                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:PartnerFeedResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>4BD182294ECD4398AEBF3A4FAEB1AE30@AQMBAAA<\/ns2:feedId>\n    <ns2:feedStatus>PROCESSED<\/ns2:feedStatus>\n    <ns2:ingestionErrors\/>\n    <ns2:itemsReceived>3<\/ns2:itemsReceived>\n    <ns2:itemsSucceeded>3<\/ns2:itemsSucceeded>\n    <ns2:itemsFailed>0<\/ns2:itemsFailed>\n    <ns2:itemsProcessing>0<\/ns2:itemsProcessing>\n    <ns2:offset>0<\/ns2:offset>\n    <ns2:limit>50<\/ns2:limit>\n    <ns2:itemDetails>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>Ikk3EoRhOVsL9kmWgM6y<\/ns2:sku>\n            <ns2:wpid>2SID2R8VLS5F<\/ns2:wpid>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>pfszvVuJ8TWgz4nKLHst<\/ns2:sku>\n            <ns2:wpid>4NZ5M2JBIK2O<\/ns2:wpid>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>JWEWrfXxN9WSEPuJ1usA<\/ns2:sku>\n            <ns2:wpid>5C1J547KN0UT<\/ns2:wpid>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n    <\/ns2:itemDetails>\n<\/ns2:PartnerFeedResponse>"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": []
+                    }
+                ]
+            }
         }
     },
     "components": {

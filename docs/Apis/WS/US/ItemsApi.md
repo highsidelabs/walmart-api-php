@@ -6,6 +6,7 @@ All URIs are relative to https://api-gateway.walmart.com, except if the operatio
 | [**getAllItems()**](#getAllItems) | **GET** /v3/items | All items |
 | [**getAnItem()**](#getAnItem) | **GET** /v3/items/{sku} | An item |
 | [**itemBulkUploads()**](#itemBulkUploads) | **POST** /v3/feeds | Bulk Item Setup |
+| [**updateRichMediaOfItem()**](#updateRichMediaOfItem) | **POST** /v2/feeds | Rich Media |
 
 
 ## `getAllItems()`
@@ -198,6 +199,295 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `multipart/form-data`
+- **Accept**: `application/xml`
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/WS/US)
+[[Back to README]](../../../../README.md)
+
+## `updateRichMediaOfItem()`
+
+```php
+updateRichMediaOfItem($feedType, $body): mixed
+```
+Rich Media
+
+Rich Media includes material such as videos, comparison tables, and view360 media which is item-specific.
+
+### Example
+
+```php
+<?php
+use Walmart\Configuration;
+use Walmart\Walmart;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
+    'country' => 'US',  // Default US if not set
+    'privateKey' => 'PRIVATE_KEY',
+    'consumerId' => 'CONSUMER_ID',
+]);
+
+$api = Walmart::warehouseSupplier($config)->items();
+
+$feedType = 'item'; // string | The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM
+$body = <?xml version="1.0" encoding="UTF-8"?>
+<RichMediaFeed xmlns="http://walmart.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://walmart.com/ RichMediaFeed.xsd ">
+    <RichMediaFeedHeader>
+        <version>2.1.2</version>
+        <requestId>requestId</requestId>
+        <requestBatchId>requestBatchId</requestBatchId>
+        <feedDate>2001-12-31T12:00:00</feedDate>
+        <mart>WALMART_US</mart>
+    </RichMediaFeedHeader>
+    <RichMedia>
+        <productIdentifiers>
+            <productIdentifier>
+                <productIdType>UPC</productIdType>
+                <productId>815812013182</productId>
+            </productIdentifier>
+        </productIdentifiers>
+        <Modules processMode="MERGE">
+            <view360 provider="">
+                <html-content>html-content</html-content>
+            </view360>
+            <marketing-content provider="">
+                <html-content>html-content</html-content>
+            </marketing-content>
+            <product-tour provider="">
+                <html-content>html-content</html-content>
+            </product-tour>
+            <videos provider="">
+                <video provider="">
+                    <title>title</title>
+                    <description>description</description>
+                    <language>en-US</language>
+                    <closed-caption>
+                        <url>url</url>
+                        <format>webvtt</format>
+                        <language>en-US</language>
+                    </closed-caption>
+                    <age-gate>0</age-gate>
+                    <source-mobile>
+                        <url>url</url>
+                        <width>720</width>
+                        <height>480</height>
+                        <format>mp4</format>
+                        <thumbnail>
+                            <url>url</url>
+                            <format>png</format>
+                            <width>120</width>
+                            <height>100</height>
+                        </thumbnail>
+                        <poster>
+                            <url>url</url>
+                            <format>jpg</format>
+                            <width>720</width>
+                            <height>480</height>
+                        </poster>
+                    </source-mobile>
+                    <sources>
+                        <source>
+                            <url>url</url>
+                            <width>720</width>
+                            <height>480</height>
+                            <format>mp4</format>
+                            <screen>mobile</screen>
+                            <thumbnail>
+                                <url>url</url>
+                                <format>png</format>
+                                <width>120</width>
+                                <height>100</height>
+                            </thumbnail>
+                            <poster>
+                                <url>url</url>
+                                <format>jpg</format>
+                                <width>720</width>
+                                <height>480</height>
+                            </poster>
+                        </source>
+                    </sources>
+                    <duration>0</duration>
+                    <likes>0</likes>
+                    <views>0</views>
+                    <tags>tags</tags>
+                </video>
+            </videos>
+            <documents provider="">
+                <document>
+                    <title>title</title>
+                    <url>url</url>
+                    <format>pdf</format>
+                    <pages>0</pages>
+                    <thumbnail>
+                        <url>url</url>
+                        <format>png</format>
+                        <width>120</width>
+                        <height>100</height>
+                    </thumbnail>
+                    <size>0</size>
+                </document>
+            </documents>
+            <customer-review-videos provider="">
+                <customer-review-video provider="">
+                    <title>title</title>
+                    <description>description</description>
+                    <language>en-US</language>
+                    <closed-caption>
+                        <url>url</url>
+                        <format>webvtt</format>
+                        <language>en-US</language>
+                    </closed-caption>
+                    <age-gate>0</age-gate>
+                    <source-computer>
+                        <url>url</url>
+                        <width>720</width>
+                        <height>480</height>
+                        <format>mp4</format>
+                        <thumbnail>
+                            <url>url</url>
+                            <format>png</format>
+                            <width>120</width>
+                            <height>100</height>
+                        </thumbnail>
+                        <poster>
+                            <url>url</url>
+                            <format>jpg</format>
+                            <width>720</width>
+                            <height>480</height>
+                        </poster>
+                    </source-computer>
+                    <sources>
+                        <source>
+                            <url>url</url>
+                            <width>720</width>
+                            <height>480</height>
+                            <format>mp4</format>
+                            <screen>mobile</screen>
+                            <thumbnail>
+                                <url>url</url>
+                                <format>png</format>
+                                <width>120</width>
+                                <height>100</height>
+                            </thumbnail>
+                            <poster>
+                                <url>url</url>
+                                <format>jpg</format>
+                                <width>720</width>
+                                <height>480</height>
+                            </poster>
+                        </source>
+                    </sources>
+                    <duration>0</duration>
+                    <likes>0</likes>
+                    <views>0</views>
+                    <tags>tags</tags>
+                </customer-review-video>
+            </customer-review-videos>
+            <comparison-table provider="">
+                <headline>
+                    <image>
+                        <title>title</title>
+                        <url>url</url>
+                        <height>0</height>
+                        <width>0</width>
+                        <format>png</format>
+                    </image>
+                </headline>
+                <feature-column>
+                    <sections>
+                        <section>
+                            <header>
+                                <caption>caption</caption>
+                            </header>
+                            <feature>
+                                <caption>caption</caption>
+                            </feature>
+                        </section>
+                    </sections>
+                </feature-column>
+                <product-columns>
+                    <product-column>
+                        <products-info>
+                            <product-info>
+                                <title>title</title>
+                                <thumbnail>
+                                    <url>url</url>
+                                    <format>png</format>
+                                    <width>120</width>
+                                    <height>120</height>
+                                </thumbnail>
+                                <productIdentifiers>
+                                    <productIdentifier>
+                                        <productIdType>UPC</productIdType>
+                                        <productId>productId</productId>
+                                    </productIdentifier>
+                                </productIdentifiers>
+                            </product-info>
+                        </products-info>
+                        <value>value</value>
+                    </product-column>
+                </product-columns>
+            </comparison-table>
+            <expert-reviews provider="">
+                <expert-review provider="">
+                    <html-content>html-content</html-content>
+                </expert-review>
+            </expert-reviews>
+            <misc-modules provider="">
+                <misc-module>
+                    <attributeName>attributeName</attributeName>
+                    <attributeValue>attributeValue</attributeValue>
+                </misc-module>
+            </misc-modules>
+        </Modules>
+        <additionalProductAttributes>
+            <NameValueAttribute>
+                <name>name</name>
+                <type>LOCALIZABLE_TEXT</type>
+                <value>
+                    <value>value</value>
+                    <group>group</group>
+                    <rank>0</rank>
+                </value>
+            </NameValueAttribute>
+        </additionalProductAttributes>
+    </RichMedia>
+</RichMediaFeed>
+; // string
+
+try {
+    $result = $api->updateRichMediaOfItem($feedType, $body);
+    print_r($result);
+} catch (Exception $e) {
+    echo "Exception when calling ItemsApi->updateRichMediaOfItem: {$e->getMessage()}\n";
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **feedType** | **string**| The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM | [default to 'item'] |
+| **body** | **string**|  | |
+
+
+### Return type
+
+**mixed**
+
+### Authorization
+
+[signatureScheme](../../../README.md#signatureScheme), [consumerIdScheme](../../../README.md#consumerIdScheme)
+
+### HTTP request headers
+
+- **Content-Type**: `application/xml`
 - **Accept**: `application/xml`
 
 [[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)

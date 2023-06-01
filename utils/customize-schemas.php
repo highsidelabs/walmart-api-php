@@ -34,9 +34,7 @@ function customizeSchema(string $path, string $category, string $name): void
 
     $schema = json_decode(file_get_contents($path), true);
 
-    if (!isset($schema['info']['version'])) {
-        $schema['info']['version'] = API_VERSION;
-    }
+    $schema['info']['version'] = libVersion();
 
     $allSecuritySchemes = [
         SecurityScheme::BASIC => [
@@ -63,12 +61,6 @@ function customizeSchema(string $path, string $category, string $name): void
     $componentSchemas = $schema['components']['schemas'] ?? null;
 
     foreach ($schema['paths'] as $p => $apiPath) {
-        if (strpos($p, '/' . API_VERSION . '/') === false) {
-            unset($schema['paths'][$p]);
-            echo "Removed path $p from $name schema in $category category, only /" . API_VERSION . "/ API paths are supported\n";
-            continue;
-        }
-
         $rawPathParams = array_filter(
             explode('/', $p),
             fn ($segment) => preg_match('/^\{.*\}$/', $segment) > 0
