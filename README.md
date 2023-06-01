@@ -39,7 +39,7 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
 
 ## Why make this library?
 
-The existing Walmart client libraries for PHP are either incomplete, outdated, or both. This library aims to provide a complete, up-to-date, and easy-to-use interface for all of Walmart's APIs. We built it to scratch our own itch.
+The existing Walmart client libraries for PHP are either incomplete, outdated, or both. This library aims to provide a complete, up-to-date, and easy-to-use interface for all of Walmart's seller- and supplier-side APIs – not just the Marketplace API (which is the only one that other packages cover). We built it to scratch our own itch.
 
 
 ## Table of Contents 

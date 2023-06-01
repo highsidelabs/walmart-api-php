@@ -46,6 +46,15 @@
             "Composer\\Config::disableProcessTimeout",
             "php utils/generate-apis.php"
         ],
+        "refresh-schemas": [
+            "@download-schemas",
+            "@customize-schemas"
+        ],
+        "make": [
+            "@download-schemas",
+            "@customize-schemas",
+            "@generate"
+        ],
         "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
     },
     "autoload": {

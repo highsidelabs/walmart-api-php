@@ -1,6 +1,6 @@
 {
     "name": "highsidelabs/walmart-api",
-    "version": "0.1.0",
+    "version": "0.3.0",
     "description": "A PHP client for Walmart's Marketplace, Content Provider, Drop Ship Vendor, and Warehouse Supplier APIs.",
     "keywords": [
         "walmart",
@@ -43,6 +43,15 @@
         "generate": [
             "Composer\\Config::disableProcessTimeout",
             "php utils/generate-apis.php"
+        ],
+        "refresh-schemas": [
+            "@download-schemas",
+            "@customize-schemas"
+        ],
+        "make": [
+            "@download-schemas",
+            "@customize-schemas",
+            "@generate"
         ],
         "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
     },
