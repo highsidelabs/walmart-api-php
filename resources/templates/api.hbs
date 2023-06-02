@@ -109,7 +109,7 @@ class {{classname}} extends BaseApi
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
     {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
-        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
+        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/allParams}}{{/if}});
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -258,7 +258,6 @@ class {{classname}} extends BaseApi
 
     /**
      * Operation {{{operationId}}}AsyncWithHttpInfo
-     *
      *{{#if summary}}
      * {{summary}}
      *{{~/if}}
@@ -286,7 +285,7 @@ class {{classname}} extends BaseApi
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
     {{/each}}{{/if}}): PromiseInterface {
         $returnType = '{{{returnType}}}';
-        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}, {{/allParams}}{{/if}});
+        $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/allParams}}{{/if}});
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

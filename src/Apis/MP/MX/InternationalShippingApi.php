@@ -88,7 +88,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        $request = $this->createLabelRequest($accept, $labelGenerationRequestMx, );
+        $request = $this->createLabelRequest($accept, $labelGenerationRequestMx);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -203,7 +203,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation createLabelAsyncWithHttpInfo
      *
-     *
      * Create label
      *
      * @param  string $accept Only supported Media Type : application/json (required)
@@ -217,7 +216,7 @@ class InternationalShippingApi extends BaseApi
         \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx';
-        $request = $this->createLabelRequest($accept, $labelGenerationRequestMx, );
+        $request = $this->createLabelRequest($accept, $labelGenerationRequestMx);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -406,7 +405,7 @@ class InternationalShippingApi extends BaseApi
         string $trackingNo,
         string $accept,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept, );
+        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -523,7 +522,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation discardLabelAsyncWithHttpInfo
      *
-     *
      * Discard label
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
@@ -539,7 +537,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx';
-        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept, );
+        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -741,7 +739,7 @@ class InternationalShippingApi extends BaseApi
         string $carrierShortName,
         string $accept,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, );
+        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -856,7 +854,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getCarrierPackageTypesAsyncWithHttpInfo
      *
-     *
      * Supported carrier package types
      *
      * @param  string $carrierShortName carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers (required)
@@ -870,7 +867,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx';
-        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, );
+        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1053,7 +1050,7 @@ class InternationalShippingApi extends BaseApi
     protected function getCarriersWithHttpInfo(
         string $accept,
     ): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse {
-        $request = $this->getCarriersRequest($accept, );
+        $request = $this->getCarriersRequest($accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1166,7 +1163,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getCarriersAsyncWithHttpInfo
      *
-     *
      * Supported carriers
      *
      * @param  string $accept Only supported Media Type : application/json (required)
@@ -1178,7 +1174,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse';
-        $request = $this->getCarriersRequest($accept, );
+        $request = $this->getCarriersRequest($accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1348,7 +1344,7 @@ class InternationalShippingApi extends BaseApi
         string $purchaseOrderId,
         string $accept,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        $request = $this->getLabelRequest($purchaseOrderId, $accept, );
+        $request = $this->getLabelRequest($purchaseOrderId, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1463,7 +1459,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getLabelAsyncWithHttpInfo
      *
-     *
      * Labels detail by purchase order id
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
@@ -1477,7 +1472,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx';
-        $request = $this->getLabelRequest($purchaseOrderId, $accept, );
+        $request = $this->getLabelRequest($purchaseOrderId, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1668,7 +1663,7 @@ class InternationalShippingApi extends BaseApi
         string $trackingNo,
         string $accept,
     ): \SplFileObject {
-        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept, );
+        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1785,7 +1780,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getLabelByTrackingAndCarrierAsyncWithHttpInfo
      *
-     *
      * Download label
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
@@ -1801,7 +1795,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
     ): PromiseInterface {
         $returnType = '\SplFileObject';
-        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept, );
+        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

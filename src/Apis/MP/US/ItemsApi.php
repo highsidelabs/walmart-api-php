@@ -112,7 +112,7 @@ class ItemsApi extends BaseApi
         ?string $publishedStatus = null,
         ?string $variantGroupId = null,
     ): \Walmart\Models\MP\US\Items\ItemResponses {
-        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, $lifecycleStatus, $publishedStatus, $variantGroupId, );
+        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, $lifecycleStatus, $publishedStatus, $variantGroupId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -237,7 +237,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getAllItemsAsyncWithHttpInfo
      *
-     *
      * All items
      *
      * @param  string $nextCursor Used for pagination when more than 200 items are retrieved.nextCursor value received in response will be same for all subsequent page requests. (optional, default to '*')
@@ -261,7 +260,7 @@ class ItemsApi extends BaseApi
         ?string $variantGroupId = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\ItemResponses';
-        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, $lifecycleStatus, $publishedStatus, $variantGroupId, );
+        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, $lifecycleStatus, $publishedStatus, $variantGroupId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -487,7 +486,7 @@ class ItemsApi extends BaseApi
         string $id,
         string $productIdType,
     ): \Walmart\Models\MP\US\Items\ItemResponseJson {
-        $request = $this->getAnItemRequest($id, $productIdType, );
+        $request = $this->getAnItemRequest($id, $productIdType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -602,7 +601,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getAnItemAsyncWithHttpInfo
      *
-     *
      * An item
      *
      * @param  string $id Represents the seller-specified unique ID for each item. Takes SKU code by default. If you require more specific item codes, such as GTIN, UPC, ISBN, EAN, or ITEM_ID, you need to use the productIdType query parameter and specify the desired code e.g. productIdType=GTIN. (required)
@@ -616,7 +614,7 @@ class ItemsApi extends BaseApi
         string $productIdType,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\ItemResponseJson';
-        $request = $this->getAnItemRequest($id, $productIdType, );
+        $request = $this->getAnItemRequest($id, $productIdType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -813,7 +811,7 @@ class ItemsApi extends BaseApi
         ?int $limit = 100,
         ?string $nextCursor = null,
     ): \Walmart\Models\MP\US\Items\ItemCatalogResponses {
-        $request = $this->getCatalogSearchRequest($itemCatalogSearchPayload, $page, $limit, $nextCursor, );
+        $request = $this->getCatalogSearchRequest($itemCatalogSearchPayload, $page, $limit, $nextCursor);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -932,7 +930,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getCatalogSearchAsyncWithHttpInfo
      *
-     *
      * Catalog Search
      *
      * @param  \Walmart\Models\MP\US\Items\ItemCatalogSearchPayload $itemCatalogSearchPayload Request fields (required)
@@ -950,7 +947,7 @@ class ItemsApi extends BaseApi
         ?string $nextCursor = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\ItemCatalogResponses';
-        $request = $this->getCatalogSearchRequest($itemCatalogSearchPayload, $page, $limit, $nextCursor, );
+        $request = $this->getCatalogSearchRequest($itemCatalogSearchPayload, $page, $limit, $nextCursor);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1147,7 +1144,7 @@ class ItemsApi extends BaseApi
     protected function getCountByStatusWithHttpInfo(
         ?string $status = null,
     ): string {
-        $request = $this->getCountByStatusRequest($status, );
+        $request = $this->getCountByStatusRequest($status);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1260,7 +1257,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getCountByStatusAsyncWithHttpInfo
      *
-     *
      * Get items count by status
      *
      * @param  string $status Status of Item (optional)
@@ -1272,7 +1268,7 @@ class ItemsApi extends BaseApi
         ?string $status = null,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->getCountByStatusRequest($status, );
+        $request = $this->getCountByStatusRequest($status);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1434,7 +1430,7 @@ class ItemsApi extends BaseApi
     protected function getItemAssociationsWithHttpInfo(
         \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO $itemsAssociationsResponseDTO,
     ): \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO {
-        $request = $this->getItemAssociationsRequest($itemsAssociationsResponseDTO, );
+        $request = $this->getItemAssociationsRequest($itemsAssociationsResponseDTO);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1547,7 +1543,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getItemAssociationsAsyncWithHttpInfo
      *
-     *
      * Get Item Associations
      *
      * @param  \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO $itemsAssociationsResponseDTO Request fields (required)
@@ -1559,7 +1554,7 @@ class ItemsApi extends BaseApi
         \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO $itemsAssociationsResponseDTO,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO';
-        $request = $this->getItemAssociationsRequest($itemsAssociationsResponseDTO, );
+        $request = $this->getItemAssociationsRequest($itemsAssociationsResponseDTO);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1730,7 +1725,7 @@ class ItemsApi extends BaseApi
         ?string $upc = '',
         ?string $gtin = '',
     ): \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO {
-        $request = $this->getSearchResultRequest($query, $upc, $gtin, );
+        $request = $this->getSearchResultRequest($query, $upc, $gtin);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1847,7 +1842,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getSearchResultAsyncWithHttpInfo
      *
-     *
      * Item Search
      *
      * @param  string $query Specifies a keyword search as a String. (optional, default to '')
@@ -1863,7 +1857,7 @@ class ItemsApi extends BaseApi
         ?string $gtin = '',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO';
-        $request = $this->getSearchResultRequest($query, $upc, $gtin, );
+        $request = $this->getSearchResultRequest($query, $upc, $gtin);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2149,7 +2143,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getTaxonomyResponseAsyncWithHttpInfo
      *
-     *
      * Taxonomy
      *
      * @throws \InvalidArgumentException
@@ -2305,7 +2298,7 @@ class ItemsApi extends BaseApi
     protected function getVariantCountWithHttpInfo(
         ?string $variantGroupId = null,
     ): \Walmart\Models\MP\US\Items\TaxonomyResponseDTO {
-        $request = $this->getVariantCountRequest($variantGroupId, );
+        $request = $this->getVariantCountRequest($variantGroupId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2418,7 +2411,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getVariantCountAsyncWithHttpInfo
      *
-     *
      * Get item count by groups
      *
      * @param  string $variantGroupId Variant Id to retrieve (optional)
@@ -2430,7 +2422,7 @@ class ItemsApi extends BaseApi
         ?string $variantGroupId = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\TaxonomyResponseDTO';
-        $request = $this->getVariantCountRequest($variantGroupId, );
+        $request = $this->getVariantCountRequest($variantGroupId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2596,7 +2588,7 @@ class ItemsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\US\Items\FeedId {
-        $request = $this->itemBulkUploadsRequest($feedType, $file, );
+        $request = $this->itemBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2711,7 +2703,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation itemBulkUploadsAsyncWithHttpInfo
      *
-     *
      * Bulk Item Setup (Multiple)
      *
      * @param  string $feedType The feed Type (required)
@@ -2725,7 +2716,7 @@ class ItemsApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\FeedId';
-        $request = $this->itemBulkUploadsRequest($feedType, $file, );
+        $request = $this->itemBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2914,7 +2905,7 @@ class ItemsApi extends BaseApi
     protected function retireAnItemWithHttpInfo(
         string $sKU,
     ): \Walmart\Models\MP\US\Items\ItemRetireResponse {
-        $request = $this->retireAnItemRequest($sKU, );
+        $request = $this->retireAnItemRequest($sKU);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3027,7 +3018,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation retireAnItemAsyncWithHttpInfo
      *
-     *
      * Retire an item
      *
      * @param  string $sKU An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
@@ -3039,7 +3029,7 @@ class ItemsApi extends BaseApi
         string $sKU,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Items\ItemRetireResponse';
-        $request = $this->retireAnItemRequest($sKU, );
+        $request = $this->retireAnItemRequest($sKU);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

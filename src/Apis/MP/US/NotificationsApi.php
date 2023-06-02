@@ -84,7 +84,7 @@ class NotificationsApi extends BaseApi
     protected function createSubscriptionWithHttpInfo(
         \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
     ): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO {
-        $request = $this->createSubscriptionRequest($createSubscriptionRequest, );
+        $request = $this->createSubscriptionRequest($createSubscriptionRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -197,7 +197,6 @@ class NotificationsApi extends BaseApi
     /**
      * Operation createSubscriptionAsyncWithHttpInfo
      *
-     *
      * Create subscription
      *
      * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest Request fields (required)
@@ -209,7 +208,7 @@ class NotificationsApi extends BaseApi
         \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest $createSubscriptionRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO';
-        $request = $this->createSubscriptionRequest($createSubscriptionRequest, );
+        $request = $this->createSubscriptionRequest($createSubscriptionRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -372,7 +371,7 @@ class NotificationsApi extends BaseApi
     protected function deleteSubscriptionWithHttpInfo(
         string $subscriptionId,
     ): \Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO {
-        $request = $this->deleteSubscriptionRequest($subscriptionId, );
+        $request = $this->deleteSubscriptionRequest($subscriptionId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -485,7 +484,6 @@ class NotificationsApi extends BaseApi
     /**
      * Operation deleteSubscriptionAsyncWithHttpInfo
      *
-     *
      * Delete Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
@@ -497,7 +495,7 @@ class NotificationsApi extends BaseApi
         string $subscriptionId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Notifications\SubscriptionDeleteResponseDTO';
-        $request = $this->deleteSubscriptionRequest($subscriptionId, );
+        $request = $this->deleteSubscriptionRequest($subscriptionId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -674,7 +672,7 @@ class NotificationsApi extends BaseApi
         ?string $resourceName = null,
         ?string $status = null,
     ): \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest {
-        $request = $this->getAllSubscriptionsRequest($subscriptionId, $eventType, $resourceName, $status, );
+        $request = $this->getAllSubscriptionsRequest($subscriptionId, $eventType, $resourceName, $status);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -793,7 +791,6 @@ class NotificationsApi extends BaseApi
     /**
      * Operation getAllSubscriptionsAsyncWithHttpInfo
      *
-     *
      * All subscriptions
      *
      * @param  string $subscriptionId Use this to get details of a specific subscription (optional)
@@ -811,7 +808,7 @@ class NotificationsApi extends BaseApi
         ?string $status = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequest';
-        $request = $this->getAllSubscriptionsRequest($subscriptionId, $eventType, $resourceName, $status, );
+        $request = $this->getAllSubscriptionsRequest($subscriptionId, $eventType, $resourceName, $status);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1107,7 +1104,6 @@ class NotificationsApi extends BaseApi
     /**
      * Operation getEventTypesAsyncWithHttpInfo
      *
-     *
      * Event Types
      *
      * @throws \InvalidArgumentException
@@ -1263,7 +1259,7 @@ class NotificationsApi extends BaseApi
     protected function testNotificationWithHttpInfo(
         \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
     ): \Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO {
-        $request = $this->testNotificationRequest($testNotificationRequest, );
+        $request = $this->testNotificationRequest($testNotificationRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1376,7 +1372,6 @@ class NotificationsApi extends BaseApi
     /**
      * Operation testNotificationAsyncWithHttpInfo
      *
-     *
      * Test Notification
      *
      * @param  \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest Request fields (required)
@@ -1388,7 +1383,7 @@ class NotificationsApi extends BaseApi
         \Walmart\Models\MP\US\Notifications\TestNotificationRequest $testNotificationRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Notifications\TestNotificationResponseDTO';
-        $request = $this->testNotificationRequest($testNotificationRequest, );
+        $request = $this->testNotificationRequest($testNotificationRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1555,7 +1550,7 @@ class NotificationsApi extends BaseApi
         string $subscriptionId,
         \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord,
     ): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO {
-        $request = $this->updateSubscriptionRequest($subscriptionId, $createSubscriptionRequestRecord, );
+        $request = $this->updateSubscriptionRequest($subscriptionId, $createSubscriptionRequestRecord);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1670,7 +1665,6 @@ class NotificationsApi extends BaseApi
     /**
      * Operation updateSubscriptionAsyncWithHttpInfo
      *
-     *
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
@@ -1684,7 +1678,7 @@ class NotificationsApi extends BaseApi
         \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO';
-        $request = $this->updateSubscriptionRequest($subscriptionId, $createSubscriptionRequestRecord, );
+        $request = $this->updateSubscriptionRequest($subscriptionId, $createSubscriptionRequestRecord);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

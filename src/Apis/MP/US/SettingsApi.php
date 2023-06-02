@@ -93,7 +93,7 @@ class SettingsApi extends BaseApi
     protected function associate3PFulfillmentCenterWithHttpInfo(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[] {
-        $request = $this->associate3PFulfillmentCenterRequest($updateFulfillmentCenterRequest, );
+        $request = $this->associate3PFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -207,7 +207,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation associate3PFulfillmentCenterAsyncWithHttpInfo
      *
-     *
      * Third party fulfillment center association
      *
      * @param  \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest Request fields (required)
@@ -219,7 +218,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[]';
-        $request = $this->associate3PFulfillmentCenterRequest($updateFulfillmentCenterRequest, );
+        $request = $this->associate3PFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -379,7 +378,7 @@ class SettingsApi extends BaseApi
     protected function createFulfillmentCenterWithHttpInfo(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): \Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[] {
-        $request = $this->createFulfillmentCenterRequest($updateFulfillmentCenterRequest, );
+        $request = $this->createFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -493,7 +492,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation createFulfillmentCenterAsyncWithHttpInfo
      *
-     *
      * Create fulfillment center
      *
      * @param  \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest Request fields (required)
@@ -505,7 +503,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[]';
-        $request = $this->createFulfillmentCenterRequest($updateFulfillmentCenterRequest, );
+        $request = $this->createFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -665,7 +663,7 @@ class SettingsApi extends BaseApi
     protected function createShippingTemplatesWithHttpInfo(
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
-        $request = $this->createShippingTemplatesRequest($updateShippingTemplateRequest, );
+        $request = $this->createShippingTemplatesRequest($updateShippingTemplateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -779,7 +777,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation createShippingTemplatesAsyncWithHttpInfo
      *
-     *
      * Create Shipping Templates
      *
      * @param  \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest Request fields (required)
@@ -791,7 +788,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingTemplate';
-        $request = $this->createShippingTemplatesRequest($updateShippingTemplateRequest, );
+        $request = $this->createShippingTemplatesRequest($updateShippingTemplateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -951,7 +948,7 @@ class SettingsApi extends BaseApi
     protected function deleteShippingTemplateDetailsWithHttpInfo(
         string $templateId,
     ): \Walmart\Models\MP\US\Settings\ShippingTemplateId {
-        $request = $this->deleteShippingTemplateDetailsRequest($templateId, );
+        $request = $this->deleteShippingTemplateDetailsRequest($templateId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1065,7 +1062,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation deleteShippingTemplateDetailsAsyncWithHttpInfo
      *
-     *
      * Delete Shipping Template
      *
      * @param  string $templateId Shipping Template ID of the template to be deleted (required)
@@ -1077,7 +1073,7 @@ class SettingsApi extends BaseApi
         string $templateId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingTemplateId';
-        $request = $this->deleteShippingTemplateDetailsRequest($templateId, );
+        $request = $this->deleteShippingTemplateDetailsRequest($templateId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1341,7 +1337,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation get3PFulfillmentProvidersAsyncWithHttpInfo
      *
-     *
      * Get all third party fulfillment providers
      *
      * @throws \InvalidArgumentException
@@ -1492,7 +1487,7 @@ class SettingsApi extends BaseApi
     protected function getAllFulfillmentCentersWithHttpInfo(
         ?bool $includeCalendarDayConfiguration = false,
     ): \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[] {
-        $request = $this->getAllFulfillmentCentersRequest($includeCalendarDayConfiguration, );
+        $request = $this->getAllFulfillmentCentersRequest($includeCalendarDayConfiguration);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1606,7 +1601,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation getAllFulfillmentCentersAsyncWithHttpInfo
      *
-     *
      * Get all fulfillment centers
      *
      * @param  bool $includeCalendarDayConfiguration Flag to specify if calendarDayConfiguration block will be included in the response. Allowed values are true or false. (optional, default to false)
@@ -1618,7 +1612,7 @@ class SettingsApi extends BaseApi
         ?bool $includeCalendarDayConfiguration = false,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[]';
-        $request = $this->getAllFulfillmentCentersRequest($includeCalendarDayConfiguration, );
+        $request = $this->getAllFulfillmentCentersRequest($includeCalendarDayConfiguration);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1879,7 +1873,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation getAllShippingTemplatesAsyncWithHttpInfo
      *
-     *
      * Get All Shipping Templates
      *
      * @throws \InvalidArgumentException
@@ -2131,7 +2124,6 @@ class SettingsApi extends BaseApi
 
     /**
      * Operation getCarrierMethodsAsyncWithHttpInfo
-     *
      *
      * Get carrier methods
      *
@@ -2385,7 +2377,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation getCoverageForFulfillmentCentersAsyncWithHttpInfo
      *
-     *
      * Get coverage for fulfillment centers
      *
      * @throws \InvalidArgumentException
@@ -2637,7 +2628,6 @@ class SettingsApi extends BaseApi
 
     /**
      * Operation getPartnerConfigurationsAsyncWithHttpInfo
-     *
      *
      * Get Partner Configurations
      *
@@ -2891,7 +2881,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation getShippingConfigurationsAsyncWithHttpInfo
      *
-     *
      * Get Shipping Configurations
      *
      * @throws \InvalidArgumentException
@@ -3144,7 +3133,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation getShippingTemplateActivationStatusAsyncWithHttpInfo
      *
-     *
      * Get Shipping Template Activation Status
      *
      * @throws \InvalidArgumentException
@@ -3295,7 +3283,7 @@ class SettingsApi extends BaseApi
     protected function getShippingTemplateDetailsWithHttpInfo(
         string $templateId,
     ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
-        $request = $this->getShippingTemplateDetailsRequest($templateId, );
+        $request = $this->getShippingTemplateDetailsRequest($templateId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3409,7 +3397,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation getShippingTemplateDetailsAsyncWithHttpInfo
      *
-     *
      * Get Shipping Template Details
      *
      * @param  string $templateId templateId (required)
@@ -3421,7 +3408,7 @@ class SettingsApi extends BaseApi
         string $templateId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingTemplate';
-        $request = $this->getShippingTemplateDetailsRequest($templateId, );
+        $request = $this->getShippingTemplateDetailsRequest($templateId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3583,7 +3570,7 @@ class SettingsApi extends BaseApi
     protected function updateFulfillmentCenterWithHttpInfo(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): \Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate {
-        $request = $this->updateFulfillmentCenterRequest($updateFulfillmentCenterRequest, );
+        $request = $this->updateFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3697,7 +3684,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation updateFulfillmentCenterAsyncWithHttpInfo
      *
-     *
      * Update fulfillment center
      *
      * @param  \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest Request fields (required)
@@ -3709,7 +3695,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate';
-        $request = $this->updateFulfillmentCenterRequest($updateFulfillmentCenterRequest, );
+        $request = $this->updateFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3875,7 +3861,7 @@ class SettingsApi extends BaseApi
     
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
-        $request = $this->updateShippingTemplatesRequest($templateId, $updateShippingTemplateRequest, );
+        $request = $this->updateShippingTemplatesRequest($templateId, $updateShippingTemplateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3992,7 +3978,6 @@ class SettingsApi extends BaseApi
     /**
      * Operation updateShippingTemplatesAsyncWithHttpInfo
      *
-     *
      * Update Shipping Templates
      *
      * @param  string $templateId templateId (required)
@@ -4007,7 +3992,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingTemplate';
-        $request = $this->updateShippingTemplatesRequest($templateId, $updateShippingTemplateRequest, );
+        $request = $this->updateShippingTemplatesRequest($templateId, $updateShippingTemplateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

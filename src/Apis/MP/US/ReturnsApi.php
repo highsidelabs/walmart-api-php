@@ -85,7 +85,7 @@ class ReturnsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\US\Returns\FeedId {
-        $request = $this->bulkItemOverrideFeedRequest($feedType, $file, );
+        $request = $this->bulkItemOverrideFeedRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -200,7 +200,6 @@ class ReturnsApi extends BaseApi
     /**
      * Operation bulkItemOverrideFeedAsyncWithHttpInfo
      *
-     *
      * Return Item Overrides
      *
      * @param  string $feedType Feed Type (required)
@@ -214,7 +213,7 @@ class ReturnsApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Returns\FeedId';
-        $request = $this->bulkItemOverrideFeedRequest($feedType, $file, );
+        $request = $this->bulkItemOverrideFeedRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -439,7 +438,7 @@ class ReturnsApi extends BaseApi
         ?\DateTime $returnLastModifiedEndDate = null,
         ?string $limit = '10',
     ): \Walmart\Models\MP\US\Returns\GetReturnOrdersResponse {
-        $request = $this->getReturnsRequest($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit, );
+        $request = $this->getReturnsRequest($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -570,7 +569,6 @@ class ReturnsApi extends BaseApi
     /**
      * Operation getReturnsAsyncWithHttpInfo
      *
-     *
      * Returns
      *
      * @param  string $returnOrderId Return order identifier of the return order object as part of array. This is the same as RMA number. (optional)
@@ -600,7 +598,7 @@ class ReturnsApi extends BaseApi
         ?string $limit = '10',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Returns\GetReturnOrdersResponse';
-        $request = $this->getReturnsRequest($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit, );
+        $request = $this->getReturnsRequest($returnOrderId, $customerOrderId, $status, $replacementInfo, $returnType, $returnCreationStartDate, $returnCreationEndDate, $returnLastModifiedStartDate, $returnLastModifiedEndDate, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -856,7 +854,7 @@ class ReturnsApi extends BaseApi
         string $returnOrderId,
         \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest,
     ): \Walmart\Models\MP\US\Returns\RefundResponse {
-        $request = $this->issueRefundRequest($returnOrderId, $refundRequest, );
+        $request = $this->issueRefundRequest($returnOrderId, $refundRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -971,7 +969,6 @@ class ReturnsApi extends BaseApi
     /**
      * Operation issueRefundAsyncWithHttpInfo
      *
-     *
      * Issue refund
      *
      * @param  string $returnOrderId The return order ID (required)
@@ -985,7 +982,7 @@ class ReturnsApi extends BaseApi
         \Walmart\Models\MP\US\Returns\RefundRequest $refundRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Returns\RefundResponse';
-        $request = $this->issueRefundRequest($returnOrderId, $refundRequest, );
+        $request = $this->issueRefundRequest($returnOrderId, $refundRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

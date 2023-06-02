@@ -86,7 +86,7 @@ class FeedsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\CP\US\Feeds\FeedId {
-        $request = $this->contentProductFeedRequest($feedType, $file, );
+        $request = $this->contentProductFeedRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -201,7 +201,6 @@ class FeedsApi extends BaseApi
     /**
      * Operation contentProductFeedAsyncWithHttpInfo
      *
-     *
      * Content feeds
      *
      * @param  string $feedType The feed Type (required)
@@ -215,7 +214,7 @@ class FeedsApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\CP\US\Feeds\FeedId';
-        $request = $this->contentProductFeedRequest($feedType, $file, );
+        $request = $this->contentProductFeedRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -424,7 +423,7 @@ class FeedsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '20',
     ): \Walmart\Models\CP\US\Feeds\FeedRecordResponse {
-        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -541,7 +540,6 @@ class FeedsApi extends BaseApi
     /**
      * Operation getAllFeedStatusesAsyncWithHttpInfo
      *
-     *
      * Feed status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
@@ -557,7 +555,7 @@ class FeedsApi extends BaseApi
         ?string $limit = '20',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\CP\US\Feeds\FeedRecordResponse';
-        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -769,7 +767,7 @@ class FeedsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '20',
     ): \Walmart\Models\CP\US\Feeds\PartnerFeedResponse {
-        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -888,7 +886,6 @@ class FeedsApi extends BaseApi
     /**
      * Operation getFeedItemStatusAsyncWithHttpInfo
      *
-     *
      * Feed item status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
@@ -906,7 +903,7 @@ class FeedsApi extends BaseApi
         ?string $limit = '20',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\CP\US\Feeds\PartnerFeedResponse';
-        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1121,7 +1118,7 @@ class FeedsApi extends BaseApi
         string $feedType,
         string $body,
     ): \Walmart\Models\CP\US\Feeds\FeedId {
-        $request = $this->updateRichMediaRequest($feedType, $body, );
+        $request = $this->updateRichMediaRequest($feedType, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1236,7 +1233,6 @@ class FeedsApi extends BaseApi
     /**
      * Operation updateRichMediaAsyncWithHttpInfo
      *
-     *
      * Rich Media
      *
      * @param  string $feedType The feed Type (required)
@@ -1250,7 +1246,7 @@ class FeedsApi extends BaseApi
         string $body,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\CP\US\Feeds\FeedId';
-        $request = $this->updateRichMediaRequest($feedType, $body, );
+        $request = $this->updateRichMediaRequest($feedType, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

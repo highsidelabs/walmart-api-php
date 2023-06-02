@@ -80,7 +80,7 @@ class LagTimeApi extends BaseApi
     protected function getLagTimeWithHttpInfo(
         string $sku,
     ): \Walmart\Models\MP\US\LagTime\LagTimeResponse {
-        $request = $this->getLagTimeRequest($sku, );
+        $request = $this->getLagTimeRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -193,7 +193,6 @@ class LagTimeApi extends BaseApi
     /**
      * Operation getLagTimeAsyncWithHttpInfo
      *
-     *
      * Lag Time
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
@@ -205,7 +204,7 @@ class LagTimeApi extends BaseApi
         string $sku,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\LagTime\LagTimeResponse';
-        $request = $this->getLagTimeRequest($sku, );
+        $request = $this->getLagTimeRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -377,7 +376,7 @@ class LagTimeApi extends BaseApi
         string $feedType,
         \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed,
     ): \Walmart\Models\MP\US\LagTime\FeedId {
-        $request = $this->updateLagTimeBulkRequest($feedType, $lagTimeFeed, );
+        $request = $this->updateLagTimeBulkRequest($feedType, $lagTimeFeed);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -492,7 +491,6 @@ class LagTimeApi extends BaseApi
     /**
      * Operation updateLagTimeBulkAsyncWithHttpInfo
      *
-     *
      * Update lag time
      *
      * @param  string $feedType Use 'lagtime' (required)
@@ -506,7 +504,7 @@ class LagTimeApi extends BaseApi
         \Walmart\Models\MP\US\LagTime\LagTimeFeed $lagTimeFeed,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\LagTime\FeedId';
-        $request = $this->updateLagTimeBulkRequest($feedType, $lagTimeFeed, );
+        $request = $this->updateLagTimeBulkRequest($feedType, $lagTimeFeed);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

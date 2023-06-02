@@ -89,7 +89,7 @@ class InventoryApi extends BaseApi
         string $sku,
         ?string $shipNode = null,
     ): \Walmart\Models\MP\US\Inventory\Inventory {
-        $request = $this->getInventoryRequest($sku, $shipNode, );
+        $request = $this->getInventoryRequest($sku, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -204,7 +204,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation getInventoryAsyncWithHttpInfo
      *
-     *
      * Inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
@@ -218,7 +217,7 @@ class InventoryApi extends BaseApi
         ?string $shipNode = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Inventory\Inventory';
-        $request = $this->getInventoryRequest($sku, $shipNode, );
+        $request = $this->getInventoryRequest($sku, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -400,7 +399,7 @@ class InventoryApi extends BaseApi
         ?string $limit = '10',
         ?string $nextCursor = null,
     ): \Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO {
-        $request = $this->getMultiNodeInventoryForAllSkuAndAllShipNodesRequest($limit, $nextCursor, );
+        $request = $this->getMultiNodeInventoryForAllSkuAndAllShipNodesRequest($limit, $nextCursor);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -515,7 +514,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation getMultiNodeInventoryForAllSkuAndAllShipNodesAsyncWithHttpInfo
      *
-     *
      * Multiple Item Inventory for All Ship Nodes
      *
      * @param  string $limit The number of items returned. Cannot be more than 50. (optional, default to '10')
@@ -529,7 +527,7 @@ class InventoryApi extends BaseApi
         ?string $nextCursor = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryFetchResponseDTO';
-        $request = $this->getMultiNodeInventoryForAllSkuAndAllShipNodesRequest($limit, $nextCursor, );
+        $request = $this->getMultiNodeInventoryForAllSkuAndAllShipNodesRequest($limit, $nextCursor);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -705,7 +703,7 @@ class InventoryApi extends BaseApi
         string $sku,
         ?string $shipNode = null,
     ): \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO {
-        $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($sku, $shipNode, );
+        $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($sku, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -820,7 +818,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation getMultiNodeInventoryForSkuAndAllShipnodesAsyncWithHttpInfo
      *
-     *
      * Single Item Inventory by Ship Node
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
@@ -834,7 +831,7 @@ class InventoryApi extends BaseApi
         ?string $shipNode = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO';
-        $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($sku, $shipNode, );
+        $request = $this->getMultiNodeInventoryForSkuAndAllShipnodesRequest($sku, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1029,7 +1026,7 @@ class InventoryApi extends BaseApi
         ?string $limit = '10',
         ?string $offset = '0',
     ): \Walmart\Models\MP\US\Inventory\WfsInventoryDTO {
-        $request = $this->getWFSInventoryRequest($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset, );
+        $request = $this->getWFSInventoryRequest($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1150,7 +1147,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation getWFSInventoryAsyncWithHttpInfo
      *
-     *
      * WFS Inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (optional)
@@ -1170,7 +1166,7 @@ class InventoryApi extends BaseApi
         ?string $offset = '0',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Inventory\WfsInventoryDTO';
-        $request = $this->getWFSInventoryRequest($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset, );
+        $request = $this->getWFSInventoryRequest($sku, $fromModifiedDate, $toModifiedDate, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1380,7 +1376,7 @@ class InventoryApi extends BaseApi
         \SplFileObject $file,
         ?string $shipNode = null,
     ): \Walmart\Models\MP\US\Inventory\FeedId {
-        $request = $this->updateBulkInventoryRequest($feedType, $file, $shipNode, );
+        $request = $this->updateBulkInventoryRequest($feedType, $file, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1497,7 +1493,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation updateBulkInventoryAsyncWithHttpInfo
      *
-     *
      * Bulk Item Inventory Update
      *
      * @param  string $feedType The feed Type (required)
@@ -1513,7 +1508,7 @@ class InventoryApi extends BaseApi
         ?string $shipNode = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Inventory\FeedId';
-        $request = $this->updateBulkInventoryRequest($feedType, $file, $shipNode, );
+        $request = $this->updateBulkInventoryRequest($feedType, $file, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1720,7 +1715,7 @@ class InventoryApi extends BaseApi
         \Walmart\Models\MP\US\Inventory\Inventory $inventory,
         ?string $shipNode = null,
     ): \Walmart\Models\MP\US\Inventory\Inventory {
-        $request = $this->updateInventoryForAnItemRequest($sku, $inventory, $shipNode, );
+        $request = $this->updateInventoryForAnItemRequest($sku, $inventory, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1837,7 +1832,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation updateInventoryForAnItemAsyncWithHttpInfo
      *
-     *
      * Update inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’, '{', '}' as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
@@ -1853,7 +1847,7 @@ class InventoryApi extends BaseApi
         ?string $shipNode = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Inventory\Inventory';
-        $request = $this->updateInventoryForAnItemRequest($sku, $inventory, $shipNode, );
+        $request = $this->updateInventoryForAnItemRequest($sku, $inventory, $shipNode);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2050,7 +2044,7 @@ class InventoryApi extends BaseApi
         string $sku,
         \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO $multiNodeInventoryUpdateRequestDTO,
     ): \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO {
-        $request = $this->updateMultiNodeInventoryRequest($sku, $multiNodeInventoryUpdateRequestDTO, );
+        $request = $this->updateMultiNodeInventoryRequest($sku, $multiNodeInventoryUpdateRequestDTO);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2165,7 +2159,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation updateMultiNodeInventoryAsyncWithHttpInfo
      *
-     *
      * Update Item Inventory per Ship Node
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', ‘ ’ as well as '%' itself if it's a part of sku. Make sure to encode space with %20. Other characters don't need to be encoded. (required)
@@ -2179,7 +2172,7 @@ class InventoryApi extends BaseApi
         \Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateRequestDTO $multiNodeInventoryUpdateRequestDTO,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Inventory\MultiNodeInventoryUpdateResponseDTO';
-        $request = $this->updateMultiNodeInventoryRequest($sku, $multiNodeInventoryUpdateRequestDTO, );
+        $request = $this->updateMultiNodeInventoryRequest($sku, $multiNodeInventoryUpdateRequestDTO);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

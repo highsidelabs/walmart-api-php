@@ -86,7 +86,7 @@ class ItemsApi extends BaseApi
         ?string $nextCursor = '*',
         ?string $sku = null,
     ): \Walmart\Models\DSV\US\Items\ItemResponses {
-        $request = $this->getAllItemsRequest($nextCursor, $sku, );
+        $request = $this->getAllItemsRequest($nextCursor, $sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -201,7 +201,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getAllItemsAsyncWithHttpInfo
      *
-     *
      * All items
      *
      * @param  string $nextCursor Used for paginated results - use the nextCursor response element from the prior API call. (optional, default to '*')
@@ -215,7 +214,7 @@ class ItemsApi extends BaseApi
         ?string $sku = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Items\ItemResponses';
-        $request = $this->getAllItemsRequest($nextCursor, $sku, );
+        $request = $this->getAllItemsRequest($nextCursor, $sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -399,7 +398,7 @@ class ItemsApi extends BaseApi
     protected function getAnItemWithHttpInfo(
         string $sku,
     ): \Walmart\Models\DSV\US\Items\ItemResponse {
-        $request = $this->getAnItemRequest($sku, );
+        $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -512,7 +511,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getAnItemAsyncWithHttpInfo
      *
-     *
      * An item
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
@@ -524,7 +522,7 @@ class ItemsApi extends BaseApi
         string $sku,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Items\ItemResponse';
-        $request = $this->getAnItemRequest($sku, );
+        $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -705,7 +703,7 @@ class ItemsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\DSV\US\Items\FeedId {
-        $request = $this->itemBulkUploadsRequest($feedType, $file, );
+        $request = $this->itemBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -820,7 +818,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation itemBulkUploadsAsyncWithHttpInfo
      *
-     *
      * Bulk Item Setup
      *
      * @param  string $feedType The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM. (required)
@@ -834,7 +831,7 @@ class ItemsApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Items\FeedId';
-        $request = $this->itemBulkUploadsRequest($feedType, $file, );
+        $request = $this->itemBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1039,7 +1036,7 @@ class ItemsApi extends BaseApi
         string $feedType,
         string $body,
     ): \Walmart\Models\DSV\US\Items\FeedId {
-        $request = $this->updateRichMediaOfItemRequest($feedType, $body, );
+        $request = $this->updateRichMediaOfItemRequest($feedType, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1154,7 +1151,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation updateRichMediaOfItemAsyncWithHttpInfo
      *
-     *
      * Rich Media
      *
      * @param  string $feedType The feed Type (required)
@@ -1168,7 +1164,7 @@ class ItemsApi extends BaseApi
         string $body,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Items\FeedId';
-        $request = $this->updateRichMediaOfItemRequest($feedType, $body, );
+        $request = $this->updateRichMediaOfItemRequest($feedType, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

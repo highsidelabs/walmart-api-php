@@ -84,7 +84,7 @@ class PricesApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\CA\Prices\FeedId {
-        $request = $this->priceBulkUploadsRequest($feedType, $file, );
+        $request = $this->priceBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -199,7 +199,6 @@ class PricesApi extends BaseApi
     /**
      * Operation priceBulkUploadsAsyncWithHttpInfo
      *
-     *
      * Update bulk prices
      *
      * @param  string $feedType The feed Type (required)
@@ -213,7 +212,7 @@ class PricesApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Prices\FeedId';
-        $request = $this->priceBulkUploadsRequest($feedType, $file, );
+        $request = $this->priceBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -414,7 +413,7 @@ class PricesApi extends BaseApi
     protected function updatePriceCAWithHttpInfo(
         string $body,
     ): \Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2 {
-        $request = $this->updatePriceCARequest($body, );
+        $request = $this->updatePriceCARequest($body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -527,7 +526,6 @@ class PricesApi extends BaseApi
     /**
      * Operation updatePriceCAAsyncWithHttpInfo
      *
-     *
      * Update a price
      *
      * @param  string $body (required)
@@ -539,7 +537,7 @@ class PricesApi extends BaseApi
         string $body,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Prices\MPItemPriceResponseV2';
-        $request = $this->updatePriceCARequest($body, );
+        $request = $this->updatePriceCARequest($body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

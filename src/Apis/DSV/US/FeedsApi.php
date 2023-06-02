@@ -88,7 +88,7 @@ class FeedsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '50',
     ): \Walmart\Models\DSV\US\Feeds\FeedRecordResponse {
-        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -205,7 +205,6 @@ class FeedsApi extends BaseApi
     /**
      * Operation getAllFeedStatusesAsyncWithHttpInfo
      *
-     *
      * Feed status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (optional)
@@ -221,7 +220,7 @@ class FeedsApi extends BaseApi
         ?string $limit = '50',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Feeds\FeedRecordResponse';
-        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit, );
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -427,7 +426,7 @@ class FeedsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '50',
     ): \Walmart\Models\DSV\US\Feeds\PartnerFeedResponse {
-        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -546,7 +545,6 @@ class FeedsApi extends BaseApi
     /**
      * Operation getFeedItemStatusAsyncWithHttpInfo
      *
-     *
      * Feed item status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
@@ -564,7 +562,7 @@ class FeedsApi extends BaseApi
         ?string $limit = '50',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Feeds\PartnerFeedResponse';
-        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit, );
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

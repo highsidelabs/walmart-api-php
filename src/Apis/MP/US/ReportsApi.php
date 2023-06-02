@@ -188,7 +188,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getAvailableReconReportDatesAsyncWithHttpInfo
      *
-     *
      * Available recon report dates(Legacy)
      *
      * @throws \InvalidArgumentException
@@ -447,7 +446,6 @@ class ReportsApi extends BaseApi
 
     /**
      * Operation getAvailableV1ReconReportDatesAsyncWithHttpInfo
-     *
      *
      * Available recon report dates
      *
@@ -708,7 +706,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getPartnerPerformanceAsyncWithHttpInfo
      *
-     *
      * Performance Report
      *
      * @throws \InvalidArgumentException
@@ -968,7 +965,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getPartnerStatementAsyncWithHttpInfo
      *
-     *
      * Payment Statement Report
      *
      * @throws \InvalidArgumentException
@@ -1124,7 +1120,7 @@ class ReportsApi extends BaseApi
     protected function getReconReportWithHttpInfo(
         string $reportDate,
     ): string {
-        $request = $this->getReconReportRequest($reportDate, );
+        $request = $this->getReconReportRequest($reportDate);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1237,7 +1233,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getReconReportAsyncWithHttpInfo
      *
-     *
      * Recon report(Legacy)
      *
      * @param  string $reportDate The date for which the reconcilation file is available (required)
@@ -1249,7 +1244,7 @@ class ReportsApi extends BaseApi
         string $reportDate,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->getReconReportRequest($reportDate, );
+        $request = $this->getReconReportRequest($reportDate);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1421,7 +1416,7 @@ class ReportsApi extends BaseApi
         string $reportDate,
         string $reportVersion,
     ): string {
-        $request = $this->getReconReportV1Request($reportDate, $reportVersion, );
+        $request = $this->getReconReportV1Request($reportDate, $reportVersion);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1536,7 +1531,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getReconReportV1AsyncWithHttpInfo
      *
-     *
      * Recon report
      *
      * @param  string $reportDate The date for which the reconcilation file is available (required)
@@ -1550,7 +1544,7 @@ class ReportsApi extends BaseApi
         string $reportVersion,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->getReconReportV1Request($reportDate, $reportVersion, );
+        $request = $this->getReconReportV1Request($reportDate, $reportVersion);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

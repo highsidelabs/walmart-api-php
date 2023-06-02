@@ -83,7 +83,7 @@ class ReportsApi extends BaseApi
         string $type,
         string $version,
     ): \Walmart\Models\DSV\US\Reports\ReportDTO {
-        $request = $this->getItemReportRequest($type, $version, );
+        $request = $this->getItemReportRequest($type, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -198,7 +198,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getItemReportAsyncWithHttpInfo
      *
-     *
      * Item Report
      *
      * @param  string $type Use this to mention the type of report. Use type=vendor_item for fetching Item Report for DSVs (required)
@@ -212,7 +211,7 @@ class ReportsApi extends BaseApi
         string $version,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Reports\ReportDTO';
-        $request = $this->getItemReportRequest($type, $version, );
+        $request = $this->getItemReportRequest($type, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

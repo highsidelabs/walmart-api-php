@@ -81,7 +81,7 @@ class InventoryApi extends BaseApi
     protected function getInventoryWithHttpInfo(
         string $sku,
     ): \Walmart\Models\MP\CA\Inventory\InventoryV2 {
-        $request = $this->getInventoryRequest($sku, );
+        $request = $this->getInventoryRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -194,7 +194,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation getInventoryAsyncWithHttpInfo
      *
-     *
      * Inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. (required)
@@ -206,7 +205,7 @@ class InventoryApi extends BaseApi
         string $sku,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Inventory\InventoryV2';
-        $request = $this->getInventoryRequest($sku, );
+        $request = $this->getInventoryRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -390,7 +389,7 @@ class InventoryApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\CA\Inventory\FeedId {
-        $request = $this->updateBulkInventoryRequest($feedType, $file, );
+        $request = $this->updateBulkInventoryRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -505,7 +504,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation updateBulkInventoryAsyncWithHttpInfo
      *
-     *
      * Bulk update
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
@@ -519,7 +517,7 @@ class InventoryApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Inventory\FeedId';
-        $request = $this->updateBulkInventoryRequest($feedType, $file, );
+        $request = $this->updateBulkInventoryRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -724,7 +722,7 @@ class InventoryApi extends BaseApi
         string $sku,
         \Walmart\Models\MP\CA\Inventory\InventoryV2 $inventoryV2,
     ): \Walmart\Models\MP\CA\Inventory\InventoryV2 {
-        $request = $this->updateInventoryForAnItemCARequest($sku, $inventoryV2, );
+        $request = $this->updateInventoryForAnItemCARequest($sku, $inventoryV2);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -839,7 +837,6 @@ class InventoryApi extends BaseApi
     /**
      * Operation updateInventoryForAnItemCAAsyncWithHttpInfo
      *
-     *
      * Update inventory
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, identifying each item. (required)
@@ -853,7 +850,7 @@ class InventoryApi extends BaseApi
         \Walmart\Models\MP\CA\Inventory\InventoryV2 $inventoryV2,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Inventory\InventoryV2';
-        $request = $this->updateInventoryForAnItemCARequest($sku, $inventoryV2, );
+        $request = $this->updateInventoryForAnItemCARequest($sku, $inventoryV2);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

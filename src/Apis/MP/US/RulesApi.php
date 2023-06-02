@@ -95,7 +95,7 @@ class RulesApi extends BaseApi
     protected function activateRuleWithHttpInfo(
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): \Walmart\Models\MP\US\Rules\InactivateRuleResponse {
-        $request = $this->activateRuleRequest($inactivateRuleRequest, );
+        $request = $this->activateRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -208,7 +208,6 @@ class RulesApi extends BaseApi
     /**
      * Operation activateRuleAsyncWithHttpInfo
      *
-     *
      * Activate rule
      *
      * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
@@ -220,7 +219,7 @@ class RulesApi extends BaseApi
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\InactivateRuleResponse';
-        $request = $this->activateRuleRequest($inactivateRuleRequest, );
+        $request = $this->activateRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -387,7 +386,7 @@ class RulesApi extends BaseApi
         bool $enable,
         object $body,
     ): \Walmart\Models\MP\US\Rules\ChangeAssortmentResponse {
-        $request = $this->changeAssortmentTypeRequest($enable, $body, );
+        $request = $this->changeAssortmentTypeRequest($enable, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -502,7 +501,6 @@ class RulesApi extends BaseApi
     /**
      * Operation changeAssortmentTypeAsyncWithHttpInfo
      *
-     *
      * Change assortment type
      *
      * @param  bool $enable (required)
@@ -516,7 +514,7 @@ class RulesApi extends BaseApi
         object $body,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\ChangeAssortmentResponse';
-        $request = $this->changeAssortmentTypeRequest($enable, $body, );
+        $request = $this->changeAssortmentTypeRequest($enable, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -699,7 +697,7 @@ class RulesApi extends BaseApi
     protected function createItemRuleWithHttpInfo(
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): \Walmart\Models\MP\US\Rules\GetAllRulesResponse {
-        $request = $this->createItemRuleRequest($inactivateRuleRequest, );
+        $request = $this->createItemRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -812,7 +810,6 @@ class RulesApi extends BaseApi
     /**
      * Operation createItemRuleAsyncWithHttpInfo
      *
-     *
      * Create a new Rule
      *
      * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
@@ -824,7 +821,7 @@ class RulesApi extends BaseApi
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\GetAllRulesResponse';
-        $request = $this->createItemRuleRequest($inactivateRuleRequest, );
+        $request = $this->createItemRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -987,7 +984,7 @@ class RulesApi extends BaseApi
     protected function createOverrideExceptionsWithHttpInfo(
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): \Walmart\Models\MP\US\Rules\DeleteExceptionResponse {
-        $request = $this->createOverrideExceptionsRequest($inactivateRuleRequest, );
+        $request = $this->createOverrideExceptionsRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1100,7 +1097,6 @@ class RulesApi extends BaseApi
     /**
      * Operation createOverrideExceptionsAsyncWithHttpInfo
      *
-     *
      * Create override exceptions
      *
      * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
@@ -1112,7 +1108,7 @@ class RulesApi extends BaseApi
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\DeleteExceptionResponse';
-        $request = $this->createOverrideExceptionsRequest($inactivateRuleRequest, );
+        $request = $this->createOverrideExceptionsRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1275,7 +1271,7 @@ class RulesApi extends BaseApi
     protected function deleteExceptionsWithHttpInfo(
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): \Walmart\Models\MP\US\Rules\DeleteExceptionResponse {
-        $request = $this->deleteExceptionsRequest($inactivateRuleRequest, );
+        $request = $this->deleteExceptionsRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1388,7 +1384,6 @@ class RulesApi extends BaseApi
     /**
      * Operation deleteExceptionsAsyncWithHttpInfo
      *
-     *
      * Delete exceptions
      *
      * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
@@ -1400,7 +1395,7 @@ class RulesApi extends BaseApi
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\DeleteExceptionResponse';
-        $request = $this->deleteExceptionsRequest($inactivateRuleRequest, );
+        $request = $this->deleteExceptionsRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1567,7 +1562,7 @@ class RulesApi extends BaseApi
         string $ruleId,
         string $ruleStatus,
     ): \Walmart\Models\MP\US\Rules\InactivateRuleResponse {
-        $request = $this->deleteRuleRequest($ruleId, $ruleStatus, );
+        $request = $this->deleteRuleRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1682,7 +1677,6 @@ class RulesApi extends BaseApi
     /**
      * Operation deleteRuleAsyncWithHttpInfo
      *
-     *
      * Delete rule
      *
      * @param  string $ruleId Unique identifier of the rule created for custom rule assortment. (required)
@@ -1696,7 +1690,7 @@ class RulesApi extends BaseApi
         string $ruleStatus,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\InactivateRuleResponse';
-        $request = $this->deleteRuleRequest($ruleId, $ruleStatus, );
+        $request = $this->deleteRuleRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1980,7 +1974,6 @@ class RulesApi extends BaseApi
     /**
      * Operation downloadExceptionsAsyncWithHttpInfo
      *
-     *
      * Download exceptions
      *
      * @throws \InvalidArgumentException
@@ -2140,7 +2133,7 @@ class RulesApi extends BaseApi
         string $ruleId,
         string $ruleStatus,
     ): mixed {
-        $request = $this->downloadSimulationResultRequest($ruleId, $ruleStatus, );
+        $request = $this->downloadSimulationResultRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2255,7 +2248,6 @@ class RulesApi extends BaseApi
     /**
      * Operation downloadSimulationResultAsyncWithHttpInfo
      *
-     *
      * Download simulation result
      *
      * @param  string $ruleId Unique identifier of the rule created for custom rule assortment. (required)
@@ -2269,7 +2261,7 @@ class RulesApi extends BaseApi
         string $ruleStatus,
     ): PromiseInterface {
         $returnType = 'mixed';
-        $request = $this->downloadSimulationResultRequest($ruleId, $ruleStatus, );
+        $request = $this->downloadSimulationResultRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2453,7 +2445,7 @@ class RulesApi extends BaseApi
         string $ruleId,
         string $ruleStatus,
     ): \Walmart\Models\MP\US\Rules\GetAllRulesResponse {
-        $request = $this->getARuleRequest($ruleId, $ruleStatus, );
+        $request = $this->getARuleRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2568,7 +2560,6 @@ class RulesApi extends BaseApi
     /**
      * Operation getARuleAsyncWithHttpInfo
      *
-     *
      * Get a rule
      *
      * @param  string $ruleId Unique identifier of the rule created for custom rule assortment. (required)
@@ -2582,7 +2573,7 @@ class RulesApi extends BaseApi
         string $ruleStatus,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\GetAllRulesResponse';
-        $request = $this->getARuleRequest($ruleId, $ruleStatus, );
+        $request = $this->getARuleRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2866,7 +2857,6 @@ class RulesApi extends BaseApi
     /**
      * Operation getAllAreasAsyncWithHttpInfo
      *
-     *
      * Get all areas
      *
      * @throws \InvalidArgumentException
@@ -3125,7 +3115,6 @@ class RulesApi extends BaseApi
 
     /**
      * Operation getAllExceptionsAsyncWithHttpInfo
-     *
      *
      * Gets all exceptions
      *
@@ -3386,7 +3375,6 @@ class RulesApi extends BaseApi
     /**
      * Operation getAllRulesAsyncWithHttpInfo
      *
-     *
      * Get all rules
      *
      * @throws \InvalidArgumentException
@@ -3646,7 +3634,6 @@ class RulesApi extends BaseApi
     /**
      * Operation getAllSubCategoriesAsyncWithHttpInfo
      *
-     *
      * Get all sub-categories
      *
      * @throws \InvalidArgumentException
@@ -3806,7 +3793,7 @@ class RulesApi extends BaseApi
         string $ruleId,
         string $ruleStatus,
     ): \Walmart\Models\MP\US\Rules\GetSimulationCountResponse {
-        $request = $this->getSimulationResultRequest($ruleId, $ruleStatus, );
+        $request = $this->getSimulationResultRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -3921,7 +3908,6 @@ class RulesApi extends BaseApi
     /**
      * Operation getSimulationResultAsyncWithHttpInfo
      *
-     *
      * Get simulation result
      *
      * @param  string $ruleId Unique identifier of the rule created for custom rule assortment. (required)
@@ -3935,7 +3921,7 @@ class RulesApi extends BaseApi
         string $ruleStatus,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\GetSimulationCountResponse';
-        $request = $this->getSimulationResultRequest($ruleId, $ruleStatus, );
+        $request = $this->getSimulationResultRequest($ruleId, $ruleStatus);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -4115,7 +4101,7 @@ class RulesApi extends BaseApi
     protected function inactivateRuleWithHttpInfo(
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): \Walmart\Models\MP\US\Rules\InactivateRuleResponse {
-        $request = $this->inactivateRuleRequest($inactivateRuleRequest, );
+        $request = $this->inactivateRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -4228,7 +4214,6 @@ class RulesApi extends BaseApi
     /**
      * Operation inactivateRuleAsyncWithHttpInfo
      *
-     *
      * Inactivate rule
      *
      * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
@@ -4240,7 +4225,7 @@ class RulesApi extends BaseApi
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\InactivateRuleResponse';
-        $request = $this->inactivateRuleRequest($inactivateRuleRequest, );
+        $request = $this->inactivateRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -4403,7 +4388,7 @@ class RulesApi extends BaseApi
     protected function updateRuleWithHttpInfo(
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): \Walmart\Models\MP\US\Rules\GetAllRulesResponse {
-        $request = $this->updateRuleRequest($inactivateRuleRequest, );
+        $request = $this->updateRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -4516,7 +4501,6 @@ class RulesApi extends BaseApi
     /**
      * Operation updateRuleAsyncWithHttpInfo
      *
-     *
      * Update rule
      *
      * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
@@ -4528,7 +4512,7 @@ class RulesApi extends BaseApi
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\GetAllRulesResponse';
-        $request = $this->updateRuleRequest($inactivateRuleRequest, );
+        $request = $this->updateRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -4691,7 +4675,7 @@ class RulesApi extends BaseApi
     protected function updateShippingAreaToRuleWithHttpInfo(
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): \Walmart\Models\MP\US\Rules\GetAllRulesResponse {
-        $request = $this->updateShippingAreaToRuleRequest($inactivateRuleRequest, );
+        $request = $this->updateShippingAreaToRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -4804,7 +4788,6 @@ class RulesApi extends BaseApi
     /**
      * Operation updateShippingAreaToRuleAsyncWithHttpInfo
      *
-     *
      * Update shipping area to rules
      *
      * @param  \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest Request fields (required)
@@ -4816,7 +4799,7 @@ class RulesApi extends BaseApi
         \Walmart\Models\MP\US\Rules\InactivateRuleRequest $inactivateRuleRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Rules\GetAllRulesResponse';
-        $request = $this->updateShippingAreaToRuleRequest($inactivateRuleRequest, );
+        $request = $this->updateShippingAreaToRuleRequest($inactivateRuleRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

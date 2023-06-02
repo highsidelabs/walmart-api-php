@@ -86,7 +86,7 @@ class EventsApi extends BaseApi
     protected function autoUploadPromoSpecWithHttpInfo(
         string $eventId,
     ): \Walmart\Models\MP\CA\Events\UploadResponse {
-        $request = $this->autoUploadPromoSpecRequest($eventId, );
+        $request = $this->autoUploadPromoSpecRequest($eventId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -199,7 +199,6 @@ class EventsApi extends BaseApi
     /**
      * Operation autoUploadPromoSpecAsyncWithHttpInfo
      *
-     *
      * Auto Upload Promo Spec
      *
      * @param  string $eventId The Event Id (required)
@@ -211,7 +210,7 @@ class EventsApi extends BaseApi
         string $eventId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Events\UploadResponse';
-        $request = $this->autoUploadPromoSpecRequest($eventId, );
+        $request = $this->autoUploadPromoSpecRequest($eventId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -399,7 +398,7 @@ class EventsApi extends BaseApi
         string $eventId,
         string $eventName,
     ): \Walmart\Models\MP\CA\Events\UploadResponse {
-        $request = $this->bulkAddItemRequest($file, $eventId, $eventName, );
+        $request = $this->bulkAddItemRequest($file, $eventId, $eventName);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -516,7 +515,6 @@ class EventsApi extends BaseApi
     /**
      * Operation bulkAddItemAsyncWithHttpInfo
      *
-     *
      * Bulk Add Item
      *
      * @param  \SplFileObject $file Feed file to upload (required)
@@ -532,7 +530,7 @@ class EventsApi extends BaseApi
         string $eventName,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Events\UploadResponse';
-        $request = $this->bulkAddItemRequest($file, $eventId, $eventName, );
+        $request = $this->bulkAddItemRequest($file, $eventId, $eventName);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -807,7 +805,6 @@ class EventsApi extends BaseApi
     /**
      * Operation downloadTemplateAsyncWithHttpInfo
      *
-     *
      * Download Template
      *
      * @throws \InvalidArgumentException
@@ -966,7 +963,7 @@ class EventsApi extends BaseApi
     protected function getAPromoItemWithHttpInfo(
         string $eventID,
     ): \Walmart\Models\MP\CA\Events\PromoItemResponse {
-        $request = $this->getAPromoItemRequest($eventID, );
+        $request = $this->getAPromoItemRequest($eventID);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1079,7 +1076,6 @@ class EventsApi extends BaseApi
     /**
      * Operation getAPromoItemAsyncWithHttpInfo
      *
-     *
      * Get Selected Promo Item
      *
      * @param  string $eventID The Event Id (required)
@@ -1091,7 +1087,7 @@ class EventsApi extends BaseApi
         string $eventID,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Events\PromoItemResponse';
-        $request = $this->getAPromoItemRequest($eventID, );
+        $request = $this->getAPromoItemRequest($eventID);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1275,7 +1271,7 @@ class EventsApi extends BaseApi
         string $eventID,
         ?string $type = 'json',
     ): \Walmart\Models\MP\CA\Events\PromoItemResponse {
-        $request = $this->getAllPromoItemsRequest($eventID, $type, );
+        $request = $this->getAllPromoItemsRequest($eventID, $type);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1390,7 +1386,6 @@ class EventsApi extends BaseApi
     /**
      * Operation getAllPromoItemsAsyncWithHttpInfo
      *
-     *
      * Get All Promo Items
      *
      * @param  string $eventID The Event Id (required)
@@ -1404,7 +1399,7 @@ class EventsApi extends BaseApi
         ?string $type = 'json',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Events\PromoItemResponse';
-        $request = $this->getAllPromoItemsRequest($eventID, $type, );
+        $request = $this->getAllPromoItemsRequest($eventID, $type);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1698,7 +1693,6 @@ class EventsApi extends BaseApi
     /**
      * Operation getEventAsyncWithHttpInfo
      *
-     *
      * Get Event by Partner ID
      *
      * @throws \InvalidArgumentException
@@ -1870,7 +1864,7 @@ class EventsApi extends BaseApi
         string $eventId,
         ?string $type = 'file',
     ): void {
-        $request = $this->getPromoSpecRequest($eventId, $type, );
+        $request = $this->getPromoSpecRequest($eventId, $type);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1953,7 +1947,6 @@ class EventsApi extends BaseApi
     /**
      * Operation getPromoSpecAsyncWithHttpInfo
      *
-     *
      * Download Promo Spec
      *
      * @param  string $eventId The Event Id (required)
@@ -1967,7 +1960,7 @@ class EventsApi extends BaseApi
         ?string $type = 'file',
     ): PromiseInterface {
         $returnType = '';
-        $request = $this->getPromoSpecRequest($eventId, $type, );
+        $request = $this->getPromoSpecRequest($eventId, $type);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2148,7 +2141,7 @@ class EventsApi extends BaseApi
     protected function getTotalItemCountWithHttpInfo(
         string $eventId,
     ): \Walmart\Models\MP\CA\Events\ItemCountResponse {
-        $request = $this->getTotalItemCountRequest($eventId, );
+        $request = $this->getTotalItemCountRequest($eventId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2261,7 +2254,6 @@ class EventsApi extends BaseApi
     /**
      * Operation getTotalItemCountAsyncWithHttpInfo
      *
-     *
      * Get Total Item Count
      *
      * @param  string $eventId The Event Id (required)
@@ -2273,7 +2265,7 @@ class EventsApi extends BaseApi
         string $eventId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Events\ItemCountResponse';
-        $request = $this->getTotalItemCountRequest($eventId, );
+        $request = $this->getTotalItemCountRequest($eventId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

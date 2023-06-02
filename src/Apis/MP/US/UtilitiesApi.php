@@ -186,7 +186,6 @@ class UtilitiesApi extends BaseApi
     /**
      * Operation getApiPlatformStatusAsyncWithHttpInfo
      *
-     *
      * API Platform Status
      *
      * @throws \InvalidArgumentException
@@ -342,7 +341,7 @@ class UtilitiesApi extends BaseApi
     protected function getCategoriesWithHttpInfo(
         string $departmentId,
     ): \Walmart\Models\MP\US\Utilities\GetCategories {
-        $request = $this->getCategoriesRequest($departmentId, );
+        $request = $this->getCategoriesRequest($departmentId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -455,7 +454,6 @@ class UtilitiesApi extends BaseApi
     /**
      * Operation getCategoriesAsyncWithHttpInfo
      *
-     *
      * All Categories
      *
      * @param  string $departmentId departmentId (required)
@@ -467,7 +465,7 @@ class UtilitiesApi extends BaseApi
         string $departmentId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Utilities\GetCategories';
-        $request = $this->getCategoriesRequest($departmentId, );
+        $request = $this->getCategoriesRequest($departmentId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -736,7 +734,6 @@ class UtilitiesApi extends BaseApi
     /**
      * Operation getDepartmentListAsyncWithHttpInfo
      *
-     *
      * All Departments
      *
      * @throws \InvalidArgumentException
@@ -896,7 +893,7 @@ class UtilitiesApi extends BaseApi
         ?string $feedType = null,
         ?string $version = null,
     ): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO {
-        $request = $this->getTaxonomyResponseRequest($feedType, $version, );
+        $request = $this->getTaxonomyResponseRequest($feedType, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1011,7 +1008,6 @@ class UtilitiesApi extends BaseApi
     /**
      * Operation getTaxonomyResponseAsyncWithHttpInfo
      *
-     *
      * Taxonomy by spec
      *
      * @param  string $feedType Specifies the Feed Type (optional)
@@ -1025,7 +1021,7 @@ class UtilitiesApi extends BaseApi
         ?string $version = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO';
-        $request = $this->getTaxonomyResponseRequest($feedType, $version, );
+        $request = $this->getTaxonomyResponseRequest($feedType, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

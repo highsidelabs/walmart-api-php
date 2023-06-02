@@ -81,7 +81,7 @@ class PromotionsApi extends BaseApi
     protected function getPromotionalPricesWithHttpInfo(
         string $sku,
     ): \Walmart\Models\MP\US\Promotions\PromotionalPriceResponse {
-        $request = $this->getPromotionalPricesRequest($sku, );
+        $request = $this->getPromotionalPricesRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -194,7 +194,6 @@ class PromotionsApi extends BaseApi
     /**
      * Operation getPromotionalPricesAsyncWithHttpInfo
      *
-     *
      * Promotional prices
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
@@ -206,7 +205,7 @@ class PromotionsApi extends BaseApi
         string $sku,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Promotions\PromotionalPriceResponse';
-        $request = $this->getPromotionalPricesRequest($sku, );
+        $request = $this->getPromotionalPricesRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -375,7 +374,7 @@ class PromotionsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\US\Promotions\FeedId {
-        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file, );
+        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -490,7 +489,6 @@ class PromotionsApi extends BaseApi
     /**
      * Operation updateBulkPromotionalPriceAsyncWithHttpInfo
      *
-     *
      * Updates bulk promotional prices
      *
      * @param  string $feedType Feed Type (required)
@@ -504,7 +502,7 @@ class PromotionsApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Promotions\FeedId';
-        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file, );
+        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -697,7 +695,7 @@ class PromotionsApi extends BaseApi
         bool $promo,
         \Walmart\Models\MP\US\Promotions\Price $price,
     ): \Walmart\Models\MP\US\Promotions\ItemPriceResponse {
-        $request = $this->updatePromotionalPricesRequest($promo, $price, );
+        $request = $this->updatePromotionalPricesRequest($promo, $price);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -812,7 +810,6 @@ class PromotionsApi extends BaseApi
     /**
      * Operation updatePromotionalPricesAsyncWithHttpInfo
      *
-     *
      * Update a promotional price
      *
      * @param  bool $promo The promotional price. Set to 'true' in order to retrieve promotional prices (required)
@@ -826,7 +823,7 @@ class PromotionsApi extends BaseApi
         \Walmart\Models\MP\US\Promotions\Price $price,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Promotions\ItemPriceResponse';
-        $request = $this->updatePromotionalPricesRequest($promo, $price, );
+        $request = $this->updatePromotionalPricesRequest($promo, $price);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

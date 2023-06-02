@@ -105,7 +105,7 @@ class InsightsApi extends BaseApi
         ?int $limit = null,
         ?int $offset = 0,
     ): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount {
-        $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset, );
+        $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -228,7 +228,6 @@ class InsightsApi extends BaseApi
     /**
      * Operation getCategoriesListAsyncWithHttpInfo
      *
-     *
      * Item count with listing quality issues
      *
      * @param  bool $viewTrendingItems Specify whether or not to include seller's items that are trending in the Listing Quality Score. (optional, default to true)
@@ -250,7 +249,7 @@ class InsightsApi extends BaseApi
         ?int $offset = 0,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount';
-        $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset, );
+        $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -466,7 +465,7 @@ class InsightsApi extends BaseApi
         ?bool $viewTrendingItems = null,
         ?string $wfsFlag = null,
     ): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount {
-        $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag, );
+        $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -581,7 +580,6 @@ class InsightsApi extends BaseApi
     /**
      * Operation getListingQualityScoreAsyncWithHttpInfo
      *
-     *
      * Seller Listing Quality Score
      *
      * @param  bool $viewTrendingItems Specify whether or not to include seller's items that are trending in the Listing Quality Score. (optional)
@@ -595,7 +593,7 @@ class InsightsApi extends BaseApi
         ?string $wfsFlag = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount';
-        $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag, );
+        $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -871,7 +869,6 @@ class InsightsApi extends BaseApi
     /**
      * Operation getProSellerBadgeInfoAsyncWithHttpInfo
      *
-     *
      * Pro Seller Badge Status
      *
      * @throws \InvalidArgumentException
@@ -1043,7 +1040,7 @@ class InsightsApi extends BaseApi
         ?string $offset = '0',
         ?string $timeFrame = '7',
     ): \Walmart\Models\MP\US\Insights\GetTrendingResult {
-        $request = $this->getTrendingResultRequest($departmentId, $categoryId, $limit, $offset, $timeFrame, );
+        $request = $this->getTrendingResultRequest($departmentId, $categoryId, $limit, $offset, $timeFrame);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1164,7 +1161,6 @@ class InsightsApi extends BaseApi
     /**
      * Operation getTrendingResultAsyncWithHttpInfo
      *
-     *
      * Top Trending Items
      *
      * @param  string $departmentId departmentId (required)
@@ -1184,7 +1180,7 @@ class InsightsApi extends BaseApi
         ?string $timeFrame = '7',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Insights\GetTrendingResult';
-        $request = $this->getTrendingResultRequest($departmentId, $categoryId, $limit, $offset, $timeFrame, );
+        $request = $this->getTrendingResultRequest($departmentId, $categoryId, $limit, $offset, $timeFrame);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1392,7 +1388,7 @@ class InsightsApi extends BaseApi
     protected function getUnpublishedItemCountWithHttpInfo(
         string $fromDate,
     ): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount {
-        $request = $this->getUnpublishedItemCountRequest($fromDate, );
+        $request = $this->getUnpublishedItemCountRequest($fromDate);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1505,7 +1501,6 @@ class InsightsApi extends BaseApi
     /**
      * Operation getUnpublishedItemCountAsyncWithHttpInfo
      *
-     *
      * Unpublished Item Counts
      *
      * @param  string $fromDate Returns all unpublished items count with reason codes since the given date (required)
@@ -1517,7 +1512,7 @@ class InsightsApi extends BaseApi
         string $fromDate,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount';
-        $request = $this->getUnpublishedItemCountRequest($fromDate, );
+        $request = $this->getUnpublishedItemCountRequest($fromDate);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1705,7 +1700,7 @@ class InsightsApi extends BaseApi
         ?string $marketTrending = 'true',
         ?string $itemsWithInventory = 'true',
     ): \Walmart\Models\MP\US\Insights\GetUnpublishedItem {
-        $request = $this->getUnpublishedItemsRequest($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory, );
+        $request = $this->getUnpublishedItemsRequest($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1828,7 +1823,6 @@ class InsightsApi extends BaseApi
     /**
      * Operation getUnpublishedItemsAsyncWithHttpInfo
      *
-     *
      * Unpublished Items
      *
      * @param  string $fromDate Returns all unpublished items since the given date (required)
@@ -1850,7 +1844,7 @@ class InsightsApi extends BaseApi
         ?string $itemsWithInventory = 'true',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItem';
-        $request = $this->getUnpublishedItemsRequest($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory, );
+        $request = $this->getUnpublishedItemsRequest($fromDate, $unpublishedReasonCode, $limit, $offerLifecycleStatus, $marketTrending, $itemsWithInventory);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2076,7 +2070,7 @@ class InsightsApi extends BaseApi
         ?string $limit = '200',
         ?string $nextCursor = null,
     ): \Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload {
-        $request = $this->itemsDetailsForListingRequest($itemDetailsLQRequestPayload, $limit, $nextCursor, );
+        $request = $this->itemsDetailsForListingRequest($itemDetailsLQRequestPayload, $limit, $nextCursor);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2193,7 +2187,6 @@ class InsightsApi extends BaseApi
     /**
      * Operation itemsDetailsForListingAsyncWithHttpInfo
      *
-     *
      * Item Listing Quality Details
      *
      * @param  \Walmart\Models\MP\US\Insights\ItemDetailsLQRequestPayload $itemDetailsLQRequestPayload Request payload (required)
@@ -2209,7 +2202,7 @@ class InsightsApi extends BaseApi
         ?string $nextCursor = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Insights\ItemDetailsLQResponsePayload';
-        $request = $this->itemsDetailsForListingRequest($itemDetailsLQRequestPayload, $limit, $nextCursor, );
+        $request = $this->itemsDetailsForListingRequest($itemDetailsLQRequestPayload, $limit, $nextCursor);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

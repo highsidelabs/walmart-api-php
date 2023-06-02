@@ -81,7 +81,7 @@ class PromotionsApi extends BaseApi
     protected function getPromotionalPricesWithHttpInfo(
         string $sku,
     ): string {
-        $request = $this->getPromotionalPricesRequest($sku, );
+        $request = $this->getPromotionalPricesRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -194,7 +194,6 @@ class PromotionsApi extends BaseApi
     /**
      * Operation getPromotionalPricesAsyncWithHttpInfo
      *
-     *
      * Get list of promotional prices for a SKU
      *
      * @param  string $sku sku (required)
@@ -206,7 +205,7 @@ class PromotionsApi extends BaseApi
         string $sku,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->getPromotionalPricesRequest($sku, );
+        $request = $this->getPromotionalPricesRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -387,7 +386,7 @@ class PromotionsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\CA\Promotions\FeedId {
-        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file, );
+        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -502,7 +501,6 @@ class PromotionsApi extends BaseApi
     /**
      * Operation updateBulkPromotionalPriceAsyncWithHttpInfo
      *
-     *
      * Updates promotional prices in bulk
      *
      * @param  string $feedType Feed Type (required)
@@ -516,7 +514,7 @@ class PromotionsApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Promotions\FeedId';
-        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file, );
+        $request = $this->updateBulkPromotionalPriceRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -721,7 +719,7 @@ class PromotionsApi extends BaseApi
         bool $promo,
         string $body,
     ): string {
-        $request = $this->updatePromotionalPricesCARequest($promo, $body, );
+        $request = $this->updatePromotionalPricesCARequest($promo, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -836,7 +834,6 @@ class PromotionsApi extends BaseApi
     /**
      * Operation updatePromotionalPricesCAAsyncWithHttpInfo
      *
-     *
      * Updates the promotional price
      *
      * @param  bool $promo The promotional price. Set to 'true' in order to retrieve promotional prices (required)
@@ -850,7 +847,7 @@ class PromotionsApi extends BaseApi
         string $body,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->updatePromotionalPricesCARequest($promo, $body, );
+        $request = $this->updatePromotionalPricesCARequest($promo, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

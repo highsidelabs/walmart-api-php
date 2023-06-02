@@ -83,7 +83,7 @@ class ReportsApi extends BaseApi
         string $type,
         ?string $version = null,
     ): mixed {
-        $request = $this->getItemReportRequest($type, $version, );
+        $request = $this->getItemReportRequest($type, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -198,7 +198,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getItemReportAsyncWithHttpInfo
      *
-     *
      * Get item report
      *
      * @param  string $type report type (required)
@@ -212,7 +211,7 @@ class ReportsApi extends BaseApi
         ?string $version = null,
     ): PromiseInterface {
         $returnType = 'mixed';
-        $request = $this->getItemReportRequest($type, $version, );
+        $request = $this->getItemReportRequest($type, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

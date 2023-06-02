@@ -184,7 +184,6 @@ class AuthenticationApi extends BaseApi
     /**
      * Operation getTokenDetailAsyncWithHttpInfo
      *
-     *
      * Token Detail
      *
      * @throws \InvalidArgumentException
@@ -340,7 +339,7 @@ class AuthenticationApi extends BaseApi
     protected function tokenAPIWithHttpInfo(
         string $grantType,
     ): \Walmart\Models\MP\US\Authentication\OAuthToken {
-        $request = $this->tokenAPIRequest($grantType, );
+        $request = $this->tokenAPIRequest($grantType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -453,7 +452,6 @@ class AuthenticationApi extends BaseApi
     /**
      * Operation tokenAPIAsyncWithHttpInfo
      *
-     *
      * Token API
      *
      * @param  string $grantType The type of access token to be issued (required)
@@ -465,7 +463,7 @@ class AuthenticationApi extends BaseApi
         string $grantType,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Authentication\OAuthToken';
-        $request = $this->tokenAPIRequest($grantType, );
+        $request = $this->tokenAPIRequest($grantType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

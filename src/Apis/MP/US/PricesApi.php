@@ -86,7 +86,7 @@ class PricesApi extends BaseApi
     protected function createStrategyWithHttpInfo(
         \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): \Walmart\Models\MP\US\Prices\RepricerEntityResponse {
-        $request = $this->createStrategyRequest($repricerEntityRequest, );
+        $request = $this->createStrategyRequest($repricerEntityRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -199,7 +199,6 @@ class PricesApi extends BaseApi
     /**
      * Operation createStrategyAsyncWithHttpInfo
      *
-     *
      * Create Repricer Strategy
      *
      * @param  \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest The request body will have the strategy related information (required)
@@ -211,7 +210,7 @@ class PricesApi extends BaseApi
         \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityResponse';
-        $request = $this->createStrategyRequest($repricerEntityRequest, );
+        $request = $this->createStrategyRequest($repricerEntityRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -374,7 +373,7 @@ class PricesApi extends BaseApi
     protected function deleteStrategyWithHttpInfo(
         string $strategyCollectionId,
     ): \Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse {
-        $request = $this->deleteStrategyRequest($strategyCollectionId, );
+        $request = $this->deleteStrategyRequest($strategyCollectionId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -487,7 +486,6 @@ class PricesApi extends BaseApi
     /**
      * Operation deleteStrategyAsyncWithHttpInfo
      *
-     *
      * Delete Repricer Strategy
      *
      * @param  string $strategyCollectionId (required)
@@ -499,7 +497,7 @@ class PricesApi extends BaseApi
         string $strategyCollectionId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityDeleteResponse';
-        $request = $this->deleteStrategyRequest($strategyCollectionId, );
+        $request = $this->deleteStrategyRequest($strategyCollectionId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -664,7 +662,7 @@ class PricesApi extends BaseApi
     protected function getRepricerFeedWithHttpInfo(
         \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO,
     ): \Walmart\Models\MP\US\Prices\FeedUploadResponseDTO {
-        $request = $this->getRepricerFeedRequest($feedUploadRequestDTO, );
+        $request = $this->getRepricerFeedRequest($feedUploadRequestDTO);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -777,7 +775,6 @@ class PricesApi extends BaseApi
     /**
      * Operation getRepricerFeedAsyncWithHttpInfo
      *
-     *
      * Assign/Unassign items to/from Repricer Strategy
      *
      * @param  \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO (required)
@@ -789,7 +786,7 @@ class PricesApi extends BaseApi
         \Walmart\Models\MP\US\Prices\FeedUploadRequestDTO $feedUploadRequestDTO,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO';
-        $request = $this->getRepricerFeedRequest($feedUploadRequestDTO, );
+        $request = $this->getRepricerFeedRequest($feedUploadRequestDTO);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1056,7 +1053,6 @@ class PricesApi extends BaseApi
     /**
      * Operation getStrategiesAsyncWithHttpInfo
      *
-     *
      * List of Repricer Strategies
      *
      * @throws \InvalidArgumentException
@@ -1212,7 +1208,7 @@ class PricesApi extends BaseApi
     protected function optCapProgramInPriceWithHttpInfo(
         \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo,
     ): \Walmart\Models\MP\US\Prices\CapProgramResponse {
-        $request = $this->optCapProgramInPriceRequest($statusInfo, );
+        $request = $this->optCapProgramInPriceRequest($statusInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1325,7 +1321,6 @@ class PricesApi extends BaseApi
     /**
      * Operation optCapProgramInPriceAsyncWithHttpInfo
      *
-     *
      * Set up CAP SKU All
      *
      * @param  \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo Request fields (required)
@@ -1337,7 +1332,7 @@ class PricesApi extends BaseApi
         \Walmart\Models\MP\US\Prices\StatusInfo $statusInfo,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\CapProgramResponse';
-        $request = $this->optCapProgramInPriceRequest($statusInfo, );
+        $request = $this->optCapProgramInPriceRequest($statusInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1504,7 +1499,7 @@ class PricesApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\US\Prices\FeedId {
-        $request = $this->priceBulkUploadsRequest($feedType, $file, );
+        $request = $this->priceBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1619,7 +1614,6 @@ class PricesApi extends BaseApi
     /**
      * Operation priceBulkUploadsAsyncWithHttpInfo
      *
-     *
      * Update bulk prices (Multiple)
      *
      * @param  string $feedType The feed Type (required)
@@ -1633,7 +1627,7 @@ class PricesApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\FeedId';
-        $request = $this->priceBulkUploadsRequest($feedType, $file, );
+        $request = $this->priceBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1822,7 +1816,7 @@ class PricesApi extends BaseApi
     protected function updatePriceWithHttpInfo(
         \Walmart\Models\MP\US\Prices\Price $price,
     ): \Walmart\Models\MP\US\Prices\ItemPriceResponse {
-        $request = $this->updatePriceRequest($price, );
+        $request = $this->updatePriceRequest($price);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1935,7 +1929,6 @@ class PricesApi extends BaseApi
     /**
      * Operation updatePriceAsyncWithHttpInfo
      *
-     *
      * Update a price
      *
      * @param  \Walmart\Models\MP\US\Prices\Price $price The request body consists of a Feed file attached to the request. (required)
@@ -1947,7 +1940,7 @@ class PricesApi extends BaseApi
         \Walmart\Models\MP\US\Prices\Price $price,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\ItemPriceResponse';
-        $request = $this->updatePriceRequest($price, );
+        $request = $this->updatePriceRequest($price);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2114,7 +2107,7 @@ class PricesApi extends BaseApi
         string $strategyCollectionId,
         \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): \Walmart\Models\MP\US\Prices\RepricerEntityResponse {
-        $request = $this->updateStrategyRequest($strategyCollectionId, $repricerEntityRequest, );
+        $request = $this->updateStrategyRequest($strategyCollectionId, $repricerEntityRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2229,7 +2222,6 @@ class PricesApi extends BaseApi
     /**
      * Operation updateStrategyAsyncWithHttpInfo
      *
-     *
      * Update Repricer Strategy
      *
      * @param  string $strategyCollectionId (required)
@@ -2243,7 +2235,7 @@ class PricesApi extends BaseApi
         \Walmart\Models\MP\US\Prices\RepricerEntityRequest $repricerEntityRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Prices\RepricerEntityResponse';
-        $request = $this->updateStrategyRequest($strategyCollectionId, $repricerEntityRequest, );
+        $request = $this->updateStrategyRequest($strategyCollectionId, $repricerEntityRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

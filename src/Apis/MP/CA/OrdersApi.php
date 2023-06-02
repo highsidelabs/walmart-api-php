@@ -86,7 +86,7 @@ class OrdersApi extends BaseApi
     protected function acknowledgeOrdersCAWithHttpInfo(
         string $purchaseOrderId,
     ): \Walmart\Models\MP\CA\Orders\Order {
-        $request = $this->acknowledgeOrdersCARequest($purchaseOrderId, );
+        $request = $this->acknowledgeOrdersCARequest($purchaseOrderId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -199,7 +199,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation acknowledgeOrdersCAAsyncWithHttpInfo
      *
-     *
      * Acknowledge Orders
      *
      * @param  string $purchaseOrderId The purchase order ID (required)
@@ -211,7 +210,7 @@ class OrdersApi extends BaseApi
         string $purchaseOrderId,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\Order';
-        $request = $this->acknowledgeOrdersCARequest($purchaseOrderId, );
+        $request = $this->acknowledgeOrdersCARequest($purchaseOrderId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -392,7 +391,7 @@ class OrdersApi extends BaseApi
         string $purchaseOrderId,
         \Walmart\Models\MP\CA\Orders\OrderShipment $orderShipment,
     ): \Walmart\Models\MP\CA\Orders\OrderShipment {
-        $request = $this->cancelOrderLinesCARequest($purchaseOrderId, $orderShipment, );
+        $request = $this->cancelOrderLinesCARequest($purchaseOrderId, $orderShipment);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -507,7 +506,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation cancelOrderLinesCAAsyncWithHttpInfo
      *
-     *
      * Cancel Order Lines
      *
      * @param  string $purchaseOrderId The purchase order ID (required)
@@ -521,7 +519,7 @@ class OrdersApi extends BaseApi
         \Walmart\Models\MP\CA\Orders\OrderShipment $orderShipment,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\OrderShipment';
-        $request = $this->cancelOrderLinesCARequest($purchaseOrderId, $orderShipment, );
+        $request = $this->cancelOrderLinesCARequest($purchaseOrderId, $orderShipment);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -749,7 +747,7 @@ class OrdersApi extends BaseApi
         ?string $limit = null,
         ?string $productInfo = null,
     ): \Walmart\Models\MP\CA\Orders\WFSOrdersListType {
-        $request = $this->getAllOrdersRequest($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo, );
+        $request = $this->getAllOrdersRequest($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -880,7 +878,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation getAllOrdersAsyncWithHttpInfo
      *
-     *
      * Get all orders
      *
      * @param  string $createdStartDate Start Date for querying all purchase orders after that date. Use one of the following formats, based on UTC, ISO 8601. Date example: '2013-08-16' Timestamp example: '2013-08-16T10:30:15Z' (required)
@@ -910,7 +907,7 @@ class OrdersApi extends BaseApi
         ?string $productInfo = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\WFSOrdersListType';
-        $request = $this->getAllOrdersRequest($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo, );
+        $request = $this->getAllOrdersRequest($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1192,7 +1189,7 @@ class OrdersApi extends BaseApi
         ?string $limit = '10',
         ?string $productInfo = null,
     ): \Walmart\Models\MP\CA\Orders\WFSOrdersListType {
-        $request = $this->getAllReleasedOrdersRequest($createdStartDate, $createdEndDate, $limit, $productInfo, );
+        $request = $this->getAllReleasedOrdersRequest($createdStartDate, $createdEndDate, $limit, $productInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1311,7 +1308,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation getAllReleasedOrdersAsyncWithHttpInfo
      *
-     *
      * Get all released orders
      *
      * @param  string $createdStartDate Start Date for querying all purchase orders after this date. Use epoch time format in seconds. (optional)
@@ -1329,7 +1325,7 @@ class OrdersApi extends BaseApi
         ?string $productInfo = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\WFSOrdersListType';
-        $request = $this->getAllReleasedOrdersRequest($createdStartDate, $createdEndDate, $limit, $productInfo, );
+        $request = $this->getAllReleasedOrdersRequest($createdStartDate, $createdEndDate, $limit, $productInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1553,7 +1549,7 @@ class OrdersApi extends BaseApi
         ?string $limit = null,
         ?string $offset = null,
     ): \Walmart\Models\MP\CA\Orders\OrdersListType {
-        $request = $this->getAllWFSOrdersRequest($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset, );
+        $request = $this->getAllWFSOrdersRequest($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1676,7 +1672,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation getAllWFSOrdersAsyncWithHttpInfo
      *
-     *
      * Get all WFS orders
      *
      * @param  string $createdStartDate Start Date for querying all purchase orders after that date. Use one of the following formats, based on UTC, ISO 8601. Date example: '2013-08-16' Timestamp example: '2013-08-16T10:30:15Z' (required)
@@ -1698,7 +1693,7 @@ class OrdersApi extends BaseApi
         ?string $offset = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\OrdersListType';
-        $request = $this->getAllWFSOrdersRequest($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset, );
+        $request = $this->getAllWFSOrdersRequest($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1932,7 +1927,7 @@ class OrdersApi extends BaseApi
         string $purchaseOrderId,
         ?string $productInfo = null,
     ): \Walmart\Models\MP\CA\Orders\Order {
-        $request = $this->getAnOrderRequest($purchaseOrderId, $productInfo, );
+        $request = $this->getAnOrderRequest($purchaseOrderId, $productInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2047,7 +2042,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation getAnOrderAsyncWithHttpInfo
      *
-     *
      * Get an order
      *
      * @param  string $purchaseOrderId The purchase order ID (required)
@@ -2061,7 +2055,7 @@ class OrdersApi extends BaseApi
         ?string $productInfo = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\Order';
-        $request = $this->getAnOrderRequest($purchaseOrderId, $productInfo, );
+        $request = $this->getAnOrderRequest($purchaseOrderId, $productInfo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2256,7 +2250,7 @@ class OrdersApi extends BaseApi
         string $purchaseOrderId,
         \Walmart\Models\MP\CA\Orders\OrderRefund $orderRefund,
     ): \Walmart\Models\MP\CA\Orders\Order {
-        $request = $this->refundOrderLinesCARequest($purchaseOrderId, $orderRefund, );
+        $request = $this->refundOrderLinesCARequest($purchaseOrderId, $orderRefund);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2371,7 +2365,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation refundOrderLinesCAAsyncWithHttpInfo
      *
-     *
      * Refund Order Lines
      *
      * @param  string $purchaseOrderId The purchase order ID (required)
@@ -2385,7 +2378,7 @@ class OrdersApi extends BaseApi
         \Walmart\Models\MP\CA\Orders\OrderRefund $orderRefund,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\Order';
-        $request = $this->refundOrderLinesCARequest($purchaseOrderId, $orderRefund, );
+        $request = $this->refundOrderLinesCARequest($purchaseOrderId, $orderRefund);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2581,7 +2574,7 @@ class OrdersApi extends BaseApi
         string $purchaseOrderId,
         \Walmart\Models\MP\CA\Orders\OrderShipment $orderShipment,
     ): \Walmart\Models\MP\CA\Orders\Order {
-        $request = $this->shippingUpdatesCARequest($purchaseOrderId, $orderShipment, );
+        $request = $this->shippingUpdatesCARequest($purchaseOrderId, $orderShipment);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2696,7 +2689,6 @@ class OrdersApi extends BaseApi
     /**
      * Operation shippingUpdatesCAAsyncWithHttpInfo
      *
-     *
      * Shipping Updates
      *
      * @param  string $purchaseOrderId The purchase order ID (required)
@@ -2710,7 +2702,7 @@ class OrdersApi extends BaseApi
         \Walmart\Models\MP\CA\Orders\OrderShipment $orderShipment,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\Orders\Order';
-        $request = $this->shippingUpdatesCARequest($purchaseOrderId, $orderShipment, );
+        $request = $this->shippingUpdatesCARequest($purchaseOrderId, $orderShipment);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

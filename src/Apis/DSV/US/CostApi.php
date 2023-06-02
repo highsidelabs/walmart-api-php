@@ -83,7 +83,7 @@ class CostApi extends BaseApi
         string $feedType,
         \Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest $dsvCostUpdateRequest,
     ): \Walmart\Models\DSV\US\Cost\DsvCostUpdateResponse {
-        $request = $this->updateBulkCostRequest($feedType, $dsvCostUpdateRequest, );
+        $request = $this->updateBulkCostRequest($feedType, $dsvCostUpdateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -198,7 +198,6 @@ class CostApi extends BaseApi
     /**
      * Operation updateBulkCostAsyncWithHttpInfo
      *
-     *
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
@@ -212,7 +211,7 @@ class CostApi extends BaseApi
         \Walmart\Models\DSV\US\Cost\DsvCostUpdateRequest $dsvCostUpdateRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\DSV\US\Cost\DsvCostUpdateResponse';
-        $request = $this->updateBulkCostRequest($feedType, $dsvCostUpdateRequest, );
+        $request = $this->updateBulkCostRequest($feedType, $dsvCostUpdateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

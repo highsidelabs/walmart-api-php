@@ -94,7 +94,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
         \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest $consolidationRequest,
     ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
-        $request = $this->createConsolidationRequest($accept, $contentType, $consolidationRequest, );
+        $request = $this->createConsolidationRequest($accept, $contentType, $consolidationRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -211,7 +211,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation createConsolidationAsyncWithHttpInfo
      *
-     *
      * Create consolidation
      *
      * @param  string $accept Accept Header (required)
@@ -227,7 +226,7 @@ class InternationalShippingApi extends BaseApi
         \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest $consolidationRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
-        $request = $this->createConsolidationRequest($accept, $contentType, $consolidationRequest, );
+        $request = $this->createConsolidationRequest($accept, $contentType, $consolidationRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -438,7 +437,7 @@ class InternationalShippingApi extends BaseApi
         \Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa $labelGenerationRequestCa,
         ?bool $wMTESTMODE = false,
     ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
-        $request = $this->createLabelRequest($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE, );
+        $request = $this->createLabelRequest($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -557,7 +556,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation createLabelAsyncWithHttpInfo
      *
-     *
      * Create label
      *
      * @param  string $accept Accept Header (required)
@@ -575,7 +573,7 @@ class InternationalShippingApi extends BaseApi
         ?bool $wMTESTMODE = false,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
-        $request = $this->createLabelRequest($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE, );
+        $request = $this->createLabelRequest($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -791,7 +789,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
-        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept, $contentType, );
+        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -910,7 +908,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation discardLabelAsyncWithHttpInfo
      *
-     *
      * Discard label
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
@@ -928,7 +925,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
-        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept, $contentType, );
+        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1152,7 +1149,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
-        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, $contentType, );
+        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1269,7 +1266,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getCarrierPackageTypesAsyncWithHttpInfo
      *
-     *
      * Supported carrier package types
      *
      * @param  string $carrierShortName carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers (required)
@@ -1285,7 +1281,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
-        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, $contentType, );
+        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1490,7 +1486,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): \Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse {
-        $request = $this->getCarriersRequest($accept, $contentType, );
+        $request = $this->getCarriersRequest($accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1605,7 +1601,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getCarriersAsyncWithHttpInfo
      *
-     *
      * Supported carriers
      *
      * @param  string $accept Accept Header (required)
@@ -1619,7 +1614,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse';
-        $request = $this->getCarriersRequest($accept, $contentType, );
+        $request = $this->getCarriersRequest($accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1815,7 +1810,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
-        $request = $this->getConsolidationRequest($domesticTrackingNo, $domesticCarrierId, $accept, $contentType, );
+        $request = $this->getConsolidationRequest($domesticTrackingNo, $domesticCarrierId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1934,7 +1929,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getConsolidationAsyncWithHttpInfo
      *
-     *
      * Get consolidation details
      *
      * @param  string $domesticTrackingNo Domestic TrackingNo. (required)
@@ -1952,7 +1946,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
-        $request = $this->getConsolidationRequest($domesticTrackingNo, $domesticCarrierId, $accept, $contentType, );
+        $request = $this->getConsolidationRequest($domesticTrackingNo, $domesticCarrierId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2180,7 +2174,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
-        $request = $this->getLabelRequest($purchaseOrderId, $accept, $contentType, );
+        $request = $this->getLabelRequest($purchaseOrderId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2297,7 +2291,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getLabelAsyncWithHttpInfo
      *
-     *
      * Labels by purchase order id
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
@@ -2313,7 +2306,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
-        $request = $this->getLabelRequest($purchaseOrderId, $accept, $contentType, );
+        $request = $this->getLabelRequest($purchaseOrderId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2526,7 +2519,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): \SplFileObject {
-        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept, $contentType, );
+        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -2645,7 +2638,6 @@ class InternationalShippingApi extends BaseApi
     /**
      * Operation getLabelByTrackingAndCarrierAsyncWithHttpInfo
      *
-     *
      * Download label
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
@@ -2663,7 +2655,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
     ): PromiseInterface {
         $returnType = '\SplFileObject';
-        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept, $contentType, );
+        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

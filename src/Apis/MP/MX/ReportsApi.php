@@ -79,7 +79,7 @@ class ReportsApi extends BaseApi
     protected function getItemReportWithHttpInfo(
         string $type,
     ): string {
-        $request = $this->getItemReportRequest($type, );
+        $request = $this->getItemReportRequest($type);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -192,7 +192,6 @@ class ReportsApi extends BaseApi
     /**
      * Operation getItemReportAsyncWithHttpInfo
      *
-     *
      * Get item report
      *
      * @param  string $type Type of report to be requested (required)
@@ -204,7 +203,7 @@ class ReportsApi extends BaseApi
         string $type,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->getItemReportRequest($type, );
+        $request = $this->getItemReportRequest($type);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

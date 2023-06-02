@@ -86,7 +86,7 @@ class ItemsApi extends BaseApi
         string $feedType,
         \SplFileObject $file,
     ): \Walmart\Models\MP\MX\Items\FeedId {
-        $request = $this->bulkItemSetupRequest($feedType, $file, );
+        $request = $this->bulkItemSetupRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -201,7 +201,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation bulkItemSetupAsyncWithHttpInfo
      *
-     *
      * Bulk Item Setup
      *
      * @param  string $feedType The feed Type (required)
@@ -215,7 +214,7 @@ class ItemsApi extends BaseApi
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\Items\FeedId';
-        $request = $this->bulkItemSetupRequest($feedType, $file, );
+        $request = $this->bulkItemSetupRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -421,7 +420,7 @@ class ItemsApi extends BaseApi
         ?string $offset = '0',
         ?string $limit = '20',
     ): \Walmart\Models\MP\MX\Items\ItemResponses {
-        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, );
+        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -540,7 +539,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getAllItemsAsyncWithHttpInfo
      *
-     *
      * Get all items
      *
      * @param  string $nextCursor Used for pagination when more than 200 items are retrieved. (optional, default to '*')
@@ -558,7 +556,7 @@ class ItemsApi extends BaseApi
         ?string $limit = '20',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\Items\ItemResponses';
-        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit, );
+        $request = $this->getAllItemsRequest($nextCursor, $sku, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -755,7 +753,7 @@ class ItemsApi extends BaseApi
     protected function getAnItemWithHttpInfo(
         string $sku,
     ): \Walmart\Models\MP\MX\Items\ItemResponse {
-        $request = $this->getAnItemRequest($sku, );
+        $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -868,7 +866,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation getAnItemAsyncWithHttpInfo
      *
-     *
      * Get an item
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. (required)
@@ -880,7 +877,7 @@ class ItemsApi extends BaseApi
         string $sku,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\Items\ItemResponse';
-        $request = $this->getAnItemRequest($sku, );
+        $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1050,7 +1047,7 @@ class ItemsApi extends BaseApi
     protected function retireAnItemWithHttpInfo(
         string $sKU,
     ): \Walmart\Models\MP\MX\Items\ItemRetireResponseV2 {
-        $request = $this->retireAnItemRequest($sKU, );
+        $request = $this->retireAnItemRequest($sKU);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1163,7 +1160,6 @@ class ItemsApi extends BaseApi
     /**
      * Operation retireAnItemAsyncWithHttpInfo
      *
-     *
      * Retire an item
      *
      * @param  string $sKU SKU (required)
@@ -1175,7 +1171,7 @@ class ItemsApi extends BaseApi
         string $sKU,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\Items\ItemRetireResponseV2';
-        $request = $this->retireAnItemRequest($sKU, );
+        $request = $this->retireAnItemRequest($sKU);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 

@@ -109,7 +109,7 @@ class ReturnsApi extends BaseApi
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null,
     ): \Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse {
-        $request = $this->getAllReturnsUsingCursorRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
+        $request = $this->getAllReturnsUsingCursorRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -274,7 +274,6 @@ class ReturnsApi extends BaseApi
     /**
      * Operation getAllReturnsUsingCursorAsyncWithHttpInfo
      *
-     *
      * Get all returns with cursor mark
      *
      * @param  string $returnCreationStartDate Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. If passed must be in the format - 'yyyy-MM-dd'T'HH:mm:ss.SSSXXX' (Ex. 2022-01-29T10:53:12.355-09:30 ). Use URI encoded time format. (optional, default to 'NOW-180DAYS')
@@ -300,7 +299,7 @@ class ReturnsApi extends BaseApi
         ?string $isWFSEnabled = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse';
-        $request = $this->getAllReturnsUsingCursorRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
+        $request = $this->getAllReturnsUsingCursorRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -565,7 +564,7 @@ class ReturnsApi extends BaseApi
         ?string $statusCodeFilter = null,
         ?string $isWFSEnabled = null,
     ): \Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse {
-        $request = $this->getReturnsRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
+        $request = $this->getReturnsRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -730,7 +729,6 @@ class ReturnsApi extends BaseApi
     /**
      * Operation getReturnsAsyncWithHttpInfo
      *
-     *
      * Get Returns
      *
      * @param  string $returnCreationStartDate Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. Use URI encoded time format. (optional, default to 'NOW-180DAYS')
@@ -756,7 +754,7 @@ class ReturnsApi extends BaseApi
         ?string $isWFSEnabled = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse';
-        $request = $this->getReturnsRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled, );
+        $request = $this->getReturnsRequest($returnCreationStartDate, $returnCreationEndDate, $limit, $offset, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -997,7 +995,7 @@ class ReturnsApi extends BaseApi
         string $returnOrderId,
         \Walmart\Models\MP\MX\Returns\OrderRefundRequest $orderRefundRequest,
     ): string {
-        $request = $this->refundOrderLinesRequest($returnOrderId, $orderRefundRequest, );
+        $request = $this->refundOrderLinesRequest($returnOrderId, $orderRefundRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1150,7 +1148,6 @@ class ReturnsApi extends BaseApi
     /**
      * Operation refundOrderLinesAsyncWithHttpInfo
      *
-     *
      * Refund Order Lines
      *
      * @param  string $returnOrderId returnOrderId (required)
@@ -1164,7 +1161,7 @@ class ReturnsApi extends BaseApi
         \Walmart\Models\MP\MX\Returns\OrderRefundRequest $orderRefundRequest,
     ): PromiseInterface {
         $returnType = 'string';
-        $request = $this->refundOrderLinesRequest($returnOrderId, $orderRefundRequest, );
+        $request = $this->refundOrderLinesRequest($returnOrderId, $orderRefundRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
