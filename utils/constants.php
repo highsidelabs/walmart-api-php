@@ -13,6 +13,7 @@ const DEFAULT_API_DIR = 'Api';
 const DEFAULT_MODEL_DIR = 'Model';
 
 const LOGFILE = __DIR__ . '/../generate.log';
+const SCHEMA_FIXES_FILE = RESOURCE_DIR . '/schema-corrections.json';
 
 const BASIC_SCHEME_HEADER = 'Authorization';
 const ACCESS_TOKEN_HEADER = 'WM_SEC.ACCESS_TOKEN';

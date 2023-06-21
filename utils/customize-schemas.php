@@ -12,11 +12,18 @@ require_once __DIR__ . '/constants.php';
  *
  * @param string $path The path to the schema file
  * @param string $category The category code for the schema
- * @param string $name The human-readable API name for the schema
+ * @param string $country The country code for the schema
+ * @param string $apiCode The internal API code for the schema
+ * @param string $apiName The human-readable API name for the schema
  * @return void
  */
-function customizeSchema(string $path, string $category, string $name): void
-{
+function customizeSchema(
+    string $path,
+    string $category,
+    string $country,
+    string $apiCode,
+    string $apiName
+): void {
     // There are auth headers that are the same on (nearly) every request, but which Walmart includes in every
     // single request schema. We remove them so that the SDK is easier to use, and will pass them in during the
     // request signing process when an endpoint is called.
@@ -78,7 +85,7 @@ function customizeSchema(string $path, string $category, string $name): void
             $security = [];
 
             // Standardize tags based on our internal naming convention (derived from resources/apis.json)
-            $verb['tags'] = [$name];
+            $verb['tags'] = [$apiName];
 
             // Update each operation's parameters and auth information
             foreach ($verb['parameters'] as $i => $parameter) {    
@@ -175,6 +182,8 @@ function customizeSchema(string $path, string $category, string $name): void
     if (!is_null($componentSchemas)) {
         $schema['components']['schemas'] = replaceComponentInlineSchemas($componentSchemas);
     }
+
+    $schema = fixSchema($schema, $country, $category, $apiCode);
 
     file_put_contents($path, json_encode($schema, JSON_PRETTY_PRINT));
 }
@@ -346,13 +355,42 @@ function chooseContentType(array $content): string
 }
 
 /**
+ * Applies specific model fixes from the resources/schema-corrections.json file to the current schema.
+ *
+ * @param array $schema The schema to apply the fixes to
+ * @param string $country The country code for the schema
+ * @param string $category The category code for the schema
+ * @param string $code The internal API code for the schema
+ */
+function fixSchema(array $schema, string $country, string $category, string $code): array
+{
+    $allFixes = json_decode(file_get_contents(SCHEMA_FIXES_FILE), true);
+    $fixes = $allFixes[$country][$category][$code] ?? [];
+
+    if (isset($fixes['paths'])) {
+        $schema['paths'] = array_merge_recursive_distinct(
+            $schema['paths'],
+            $fixes['paths']
+        );
+    }
+
+    return $schema;
+}
+
+/**
  * Prepares schemas for api/model generation using janephp.
  */
 function customizeSchemas(array $categories, array $countries, array $apiCodes): void
 {
     $schemas = schemas($categories, $countries, $apiCodes);
     foreach ($schemas as $schemaInfo) {
-        customizeSchema($schemaInfo['path'], $schemaInfo['category'], $schemaInfo['api']['name']);
+        customizeSchema(
+            $schemaInfo['path'],
+            $schemaInfo['category'],
+            $schemaInfo['country'],
+            $schemaInfo['api']['code'],
+            $schemaInfo['api']['name'],
+        );
     }
 }
 
