@@ -87,7 +87,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAnItem()`
 
 ```php
-getAnItem($id, $productIdType): \Walmart\Models\MP\US\Items\ItemResponseJson
+getAnItem($id, $productIdType): \Walmart\Models\MP\US\Items\ItemResponses
 ```
 An item
 
@@ -128,7 +128,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemResponseJson**](../../../Models/MP/US/Items/ItemResponseJson.md)
+[**\Walmart\Models\MP\US\Items\ItemResponses**](../../../Models/MP/US/Items/ItemResponses.md)
 
 ### Authorization
 

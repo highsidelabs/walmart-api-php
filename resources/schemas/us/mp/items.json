@@ -1660,7 +1660,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemResponse_json"
+                                    "$ref": "#\/components\/schemas\/ItemResponses"
                                 },
                                 "example": {
                                     "ItemResponse": [

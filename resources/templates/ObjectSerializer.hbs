@@ -389,7 +389,7 @@ class ObjectSerializer
      * @param string   $class         class name is passed as a string
      * @param string[] $httpHeaders   HTTP headers
      *
-     * @return object|array|null a single or an array of $class instances
+     * @return mixed an instance of $class (which may actually be a scalar)
      */
     public static function deserialize($data, $class, $httpHeaders = null)
     {
