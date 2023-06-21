@@ -74,7 +74,7 @@ class {{classname}} extends BaseApi
     public function {{operationId}}({{#if vendorExtensions.x-group-parameters}}array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}}{{#unless @last}},{{/unless}}
         {{/each}}
-    {{~/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
+    {{~/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{#if responses.0.isArray}}array{{else}}{{responses.0.dataType}}{{/if}}{{else}}void{{/if}}{{else}}void{{/if}} {
         {{#if returnType}}return {{/if}}$this->{{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/allParams}}{{/if}});
     }
 
@@ -108,7 +108,7 @@ class {{classname}} extends BaseApi
     protected function {{operationId}}WithHttpInfo({{#if vendorExtensions.x-group-parameters}}
         array $associative_array{{else}}{{#each allParams}}
         {{#unless required}}?{{/unless}}{{dataType}} ${{paramName}}{{#unless required}} = {{#if defaultValue}}{{{defaultValue}}}{{else}}null{{/if}}{{/unless}},
-    {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{responses.0.dataType}}{{else}}void{{/if}}{{else}}void{{/if}} {
+    {{/each}}{{/if}}): {{#if returnType}}{{#if responses.0.dataType}}{{#if responses.0.isArray}}array{{else}}{{responses.0.dataType}}{{/if}}{{else}}void{{/if}}{{else}}void{{/if}} {
         $request = $this->{{operationId}}Request({{#if vendorExtensions.x-group-parameters}}$associative_array{{else}}{{#allParams}}${{paramName}}{{#unless @last}}, {{/unless}}{{/allParams}}{{/if}});
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

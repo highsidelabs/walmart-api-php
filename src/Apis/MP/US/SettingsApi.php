@@ -75,7 +75,7 @@ class SettingsApi extends BaseApi
      */
     public function associate3PFulfillmentCenter(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest
-        ): \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[] {
+    ): array {
         return $this->associate3PFulfillmentCenterWithHttpInfo($updateFulfillmentCenterRequest);
     }
 
@@ -92,7 +92,7 @@ class SettingsApi extends BaseApi
      */
     protected function associate3PFulfillmentCenterWithHttpInfo(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
-    ): \Walmart\Models\MP\US\Settings\Associate3PFulfillmentCenter200ResponseInner[] {
+    ): array {
         $request = $this->associate3PFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -194,7 +194,6 @@ class SettingsApi extends BaseApi
      */
     public function associate3PFulfillmentCenterAsync(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest
-        
     ): PromiseInterface {
         return $this->associate3PFulfillmentCenterAsyncWithHttpInfo($updateFulfillmentCenterRequest)
             ->then(
@@ -227,7 +226,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -236,7 +236,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -270,7 +271,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): Request {
         $contentType = self::contentTypes['associate3PFulfillmentCenter'];
-        
+
         // verify the required parameter 'updateFulfillmentCenterRequest' is set
         if ($updateFulfillmentCenterRequest === null || (is_array($updateFulfillmentCenterRequest) && count($updateFulfillmentCenterRequest) === 0)) {
             throw new \InvalidArgumentException(
@@ -308,8 +309,9 @@ class SettingsApi extends BaseApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateFulfillmentCenterRequest));
             } else {
                 $httpBody = $updateFulfillmentCenterRequest;
-        }
-        } else if (count($formParams) > 0) {if ($multipart) {
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -330,13 +332,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -346,7 +348,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation createFulfillmentCenter
      *
@@ -360,7 +362,7 @@ class SettingsApi extends BaseApi
      */
     public function createFulfillmentCenter(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest
-        ): \Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[] {
+    ): array {
         return $this->createFulfillmentCenterWithHttpInfo($updateFulfillmentCenterRequest);
     }
 
@@ -377,7 +379,7 @@ class SettingsApi extends BaseApi
      */
     protected function createFulfillmentCenterWithHttpInfo(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
-    ): \Walmart\Models\MP\US\Settings\CreateFulfillmentCenter200ResponseInner[] {
+    ): array {
         $request = $this->createFulfillmentCenterRequest($updateFulfillmentCenterRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -479,7 +481,6 @@ class SettingsApi extends BaseApi
      */
     public function createFulfillmentCenterAsync(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest
-        
     ): PromiseInterface {
         return $this->createFulfillmentCenterAsyncWithHttpInfo($updateFulfillmentCenterRequest)
             ->then(
@@ -512,7 +513,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -521,7 +523,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -555,7 +558,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): Request {
         $contentType = self::contentTypes['createFulfillmentCenter'];
-        
+
         // verify the required parameter 'updateFulfillmentCenterRequest' is set
         if ($updateFulfillmentCenterRequest === null || (is_array($updateFulfillmentCenterRequest) && count($updateFulfillmentCenterRequest) === 0)) {
             throw new \InvalidArgumentException(
@@ -593,8 +596,9 @@ class SettingsApi extends BaseApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateFulfillmentCenterRequest));
             } else {
                 $httpBody = $updateFulfillmentCenterRequest;
-        }
-        } else if (count($formParams) > 0) {if ($multipart) {
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -615,13 +619,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -631,7 +635,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation createShippingTemplates
      *
@@ -645,7 +649,7 @@ class SettingsApi extends BaseApi
      */
     public function createShippingTemplates(
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest
-        ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
+    ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
         return $this->createShippingTemplatesWithHttpInfo($updateShippingTemplateRequest);
     }
 
@@ -764,7 +768,6 @@ class SettingsApi extends BaseApi
      */
     public function createShippingTemplatesAsync(
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest
-        
     ): PromiseInterface {
         return $this->createShippingTemplatesAsyncWithHttpInfo($updateShippingTemplateRequest)
             ->then(
@@ -797,7 +800,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -806,7 +810,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -840,7 +845,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): Request {
         $contentType = self::contentTypes['createShippingTemplates'];
-        
+
         // verify the required parameter 'updateShippingTemplateRequest' is set
         if ($updateShippingTemplateRequest === null || (is_array($updateShippingTemplateRequest) && count($updateShippingTemplateRequest) === 0)) {
             throw new \InvalidArgumentException(
@@ -878,8 +883,9 @@ class SettingsApi extends BaseApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateShippingTemplateRequest));
             } else {
                 $httpBody = $updateShippingTemplateRequest;
-        }
-        } else if (count($formParams) > 0) {if ($multipart) {
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -900,13 +906,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -916,7 +922,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation deleteShippingTemplateDetails
      *
@@ -930,7 +936,7 @@ class SettingsApi extends BaseApi
      */
     public function deleteShippingTemplateDetails(
         string $templateId
-        ): \Walmart\Models\MP\US\Settings\ShippingTemplateId {
+    ): \Walmart\Models\MP\US\Settings\ShippingTemplateId {
         return $this->deleteShippingTemplateDetailsWithHttpInfo($templateId);
     }
 
@@ -1049,7 +1055,6 @@ class SettingsApi extends BaseApi
      */
     public function deleteShippingTemplateDetailsAsync(
         string $templateId
-        
     ): PromiseInterface {
         return $this->deleteShippingTemplateDetailsAsyncWithHttpInfo($templateId)
             ->then(
@@ -1082,7 +1087,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1091,7 +1097,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -1125,7 +1132,7 @@ class SettingsApi extends BaseApi
         string $templateId,
     ): Request {
         $contentType = self::contentTypes['deleteShippingTemplateDetails'];
-        
+
         // verify the required parameter 'templateId' is set
         if ($templateId === null || (is_array($templateId) && count($templateId) === 0)) {
             throw new \InvalidArgumentException(
@@ -1166,7 +1173,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -1187,13 +1195,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -1203,7 +1211,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation get3PFulfillmentProviders
      *
@@ -1213,7 +1221,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]
      */
-    public function get3PFulfillmentProviders(): \Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[] {
+    public function get3PFulfillmentProviders(): array
+    {
         return $this->get3PFulfillmentProvidersWithHttpInfo();
     }
 
@@ -1226,7 +1235,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]
      */
-    protected function get3PFulfillmentProvidersWithHttpInfo(): \Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[] {
+    protected function get3PFulfillmentProvidersWithHttpInfo(): array
+    {
         $request = $this->get3PFulfillmentProvidersRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1342,7 +1352,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function get3PFulfillmentProvidersAsyncWithHttpInfo(): PromiseInterface {
+    protected function get3PFulfillmentProvidersAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Settings\Get3PFulfillmentProviders200ResponseInner[]';
         $request = $this->get3PFulfillmentProvidersRequest();
         $this->writeDebug($request);
@@ -1353,7 +1364,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1362,7 +1374,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -1390,9 +1403,10 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function get3PFulfillmentProvidersRequest(): Request {
+    protected function get3PFulfillmentProvidersRequest(): Request
+    {
         $contentType = self::contentTypes['get3PFulfillmentProviders'];
-        
+
         $resourcePath = '/v3/settings/shipping/3plproviders';
         $formParams = [];
         $queryParams = [];
@@ -1418,7 +1432,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -1439,13 +1454,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -1455,7 +1470,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getAllFulfillmentCenters
      *
@@ -1469,7 +1484,7 @@ class SettingsApi extends BaseApi
      */
     public function getAllFulfillmentCenters(
         ?bool $includeCalendarDayConfiguration = false
-        ): \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[] {
+    ): array {
         return $this->getAllFulfillmentCentersWithHttpInfo($includeCalendarDayConfiguration);
     }
 
@@ -1486,7 +1501,7 @@ class SettingsApi extends BaseApi
      */
     protected function getAllFulfillmentCentersWithHttpInfo(
         ?bool $includeCalendarDayConfiguration = false,
-    ): \Walmart\Models\MP\US\Settings\GetAllFulfillmentCenters200ResponseInner[] {
+    ): array {
         $request = $this->getAllFulfillmentCentersRequest($includeCalendarDayConfiguration);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1588,7 +1603,6 @@ class SettingsApi extends BaseApi
      */
     public function getAllFulfillmentCentersAsync(
         ?bool $includeCalendarDayConfiguration = false
-        
     ): PromiseInterface {
         return $this->getAllFulfillmentCentersAsyncWithHttpInfo($includeCalendarDayConfiguration)
             ->then(
@@ -1621,7 +1635,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1630,7 +1645,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -1664,7 +1680,7 @@ class SettingsApi extends BaseApi
         ?bool $includeCalendarDayConfiguration = false,
     ): Request {
         $contentType = self::contentTypes['getAllFulfillmentCenters'];
-        
+
         $resourcePath = '/v3/settings/shipping/shipnodes';
         $formParams = [];
         $queryParams = [];
@@ -1702,7 +1718,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -1723,13 +1740,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -1739,7 +1756,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getAllShippingTemplates
      *
@@ -1749,7 +1766,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingTemplatesSummary
      */
-    public function getAllShippingTemplates(): \Walmart\Models\MP\US\Settings\ShippingTemplatesSummary {
+    public function getAllShippingTemplates(): \Walmart\Models\MP\US\Settings\ShippingTemplatesSummary
+    {
         return $this->getAllShippingTemplatesWithHttpInfo();
     }
 
@@ -1762,7 +1780,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingTemplatesSummary
      */
-    protected function getAllShippingTemplatesWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingTemplatesSummary {
+    protected function getAllShippingTemplatesWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingTemplatesSummary
+    {
         $request = $this->getAllShippingTemplatesRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1878,7 +1897,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getAllShippingTemplatesAsyncWithHttpInfo(): PromiseInterface {
+    protected function getAllShippingTemplatesAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingTemplatesSummary';
         $request = $this->getAllShippingTemplatesRequest();
         $this->writeDebug($request);
@@ -1889,7 +1909,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -1898,7 +1919,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -1926,9 +1948,10 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getAllShippingTemplatesRequest(): Request {
+    protected function getAllShippingTemplatesRequest(): Request
+    {
         $contentType = self::contentTypes['getAllShippingTemplates'];
-        
+
         $resourcePath = '/v3/settings/shipping/templates';
         $formParams = [];
         $queryParams = [];
@@ -1954,7 +1977,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -1975,13 +1999,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -1991,7 +2015,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getCarrierMethods
      *
@@ -2001,7 +2025,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]
      */
-    public function getCarrierMethods(): \Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[] {
+    public function getCarrierMethods(): array
+    {
         return $this->getCarrierMethodsWithHttpInfo();
     }
 
@@ -2014,7 +2039,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]
      */
-    protected function getCarrierMethodsWithHttpInfo(): \Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[] {
+    protected function getCarrierMethodsWithHttpInfo(): array
+    {
         $request = $this->getCarrierMethodsRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2130,7 +2156,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getCarrierMethodsAsyncWithHttpInfo(): PromiseInterface {
+    protected function getCarrierMethodsAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Settings\GetCarrierMethods200ResponseInner[]';
         $request = $this->getCarrierMethodsRequest();
         $this->writeDebug($request);
@@ -2141,7 +2168,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -2150,7 +2178,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -2178,9 +2207,10 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCarrierMethodsRequest(): Request {
+    protected function getCarrierMethodsRequest(): Request
+    {
         $contentType = self::contentTypes['getCarrierMethods'];
-        
+
         $resourcePath = '/v3/settings/shipping/carriers';
         $formParams = [];
         $queryParams = [];
@@ -2206,7 +2236,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -2227,13 +2258,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -2243,7 +2274,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getCoverageForFulfillmentCenters
      *
@@ -2253,7 +2284,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]
      */
-    public function getCoverageForFulfillmentCenters(): \Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[] {
+    public function getCoverageForFulfillmentCenters(): array
+    {
         return $this->getCoverageForFulfillmentCentersWithHttpInfo();
     }
 
@@ -2266,7 +2298,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]
      */
-    protected function getCoverageForFulfillmentCentersWithHttpInfo(): \Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[] {
+    protected function getCoverageForFulfillmentCentersWithHttpInfo(): array
+    {
         $request = $this->getCoverageForFulfillmentCentersRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2382,7 +2415,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getCoverageForFulfillmentCentersAsyncWithHttpInfo(): PromiseInterface {
+    protected function getCoverageForFulfillmentCentersAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Settings\GetCoverageForFulfillmentCenters200ResponseInner[]';
         $request = $this->getCoverageForFulfillmentCentersRequest();
         $this->writeDebug($request);
@@ -2393,7 +2427,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -2402,7 +2437,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -2430,9 +2466,10 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCoverageForFulfillmentCentersRequest(): Request {
+    protected function getCoverageForFulfillmentCentersRequest(): Request
+    {
         $contentType = self::contentTypes['getCoverageForFulfillmentCenters'];
-        
+
         $resourcePath = '/v3/settings/shipping/shipnodes/coverage';
         $formParams = [];
         $queryParams = [];
@@ -2458,7 +2495,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -2479,13 +2517,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -2495,7 +2533,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getPartnerConfigurations
      *
@@ -2505,7 +2543,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
      */
-    public function getPartnerConfigurations(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO {
+    public function getPartnerConfigurations(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
+    {
         return $this->getPartnerConfigurationsWithHttpInfo();
     }
 
@@ -2518,7 +2557,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
      */
-    protected function getPartnerConfigurationsWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO {
+    protected function getPartnerConfigurationsWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
+    {
         $request = $this->getPartnerConfigurationsRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2634,7 +2674,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getPartnerConfigurationsAsyncWithHttpInfo(): PromiseInterface {
+    protected function getPartnerConfigurationsAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO';
         $request = $this->getPartnerConfigurationsRequest();
         $this->writeDebug($request);
@@ -2645,7 +2686,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -2654,7 +2696,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -2682,9 +2725,10 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getPartnerConfigurationsRequest(): Request {
+    protected function getPartnerConfigurationsRequest(): Request
+    {
         $contentType = self::contentTypes['getPartnerConfigurations'];
-        
+
         $resourcePath = '/v3/settings/partnerprofile';
         $formParams = [];
         $queryParams = [];
@@ -2710,7 +2754,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -2731,13 +2776,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -2747,7 +2792,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getShippingConfigurations
      *
@@ -2757,7 +2802,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
      */
-    public function getShippingConfigurations(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO {
+    public function getShippingConfigurations(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
+    {
         return $this->getShippingConfigurationsWithHttpInfo();
     }
 
@@ -2770,7 +2816,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
      */
-    protected function getShippingConfigurationsWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO {
+    protected function getShippingConfigurationsWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO
+    {
         $request = $this->getShippingConfigurationsRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2886,7 +2933,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getShippingConfigurationsAsyncWithHttpInfo(): PromiseInterface {
+    protected function getShippingConfigurationsAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingConfigsResponseDTO';
         $request = $this->getShippingConfigurationsRequest();
         $this->writeDebug($request);
@@ -2897,7 +2945,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -2906,7 +2955,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -2934,9 +2984,10 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getShippingConfigurationsRequest(): Request {
+    protected function getShippingConfigurationsRequest(): Request
+    {
         $contentType = self::contentTypes['getShippingConfigurations'];
-        
+
         $resourcePath = '/v3/settings/shippingprofile';
         $formParams = [];
         $queryParams = [];
@@ -2962,7 +3013,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -2983,13 +3035,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -2999,7 +3051,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getShippingTemplateActivationStatus
      *
@@ -3009,7 +3061,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus
      */
-    public function getShippingTemplateActivationStatus(): \Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus {
+    public function getShippingTemplateActivationStatus(): \Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus
+    {
         return $this->getShippingTemplateActivationStatusWithHttpInfo();
     }
 
@@ -3022,7 +3075,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus
      */
-    protected function getShippingTemplateActivationStatusWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus {
+    protected function getShippingTemplateActivationStatusWithHttpInfo(): \Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus
+    {
         $request = $this->getShippingTemplateActivationStatusRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -3138,7 +3192,8 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getShippingTemplateActivationStatusAsyncWithHttpInfo(): PromiseInterface {
+    protected function getShippingTemplateActivationStatusAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingTemplateActivationStatus';
         $request = $this->getShippingTemplateActivationStatusRequest();
         $this->writeDebug($request);
@@ -3149,7 +3204,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -3158,7 +3214,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -3186,9 +3243,10 @@ class SettingsApi extends BaseApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getShippingTemplateActivationStatusRequest(): Request {
+    protected function getShippingTemplateActivationStatusRequest(): Request
+    {
         $contentType = self::contentTypes['getShippingTemplateActivationStatus'];
-        
+
         $resourcePath = '/v3/settings/shipping/templates/activationStatus';
         $formParams = [];
         $queryParams = [];
@@ -3214,7 +3272,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -3235,13 +3294,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -3251,7 +3310,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation getShippingTemplateDetails
      *
@@ -3265,7 +3324,7 @@ class SettingsApi extends BaseApi
      */
     public function getShippingTemplateDetails(
         string $templateId
-        ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
+    ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
         return $this->getShippingTemplateDetailsWithHttpInfo($templateId);
     }
 
@@ -3384,7 +3443,6 @@ class SettingsApi extends BaseApi
      */
     public function getShippingTemplateDetailsAsync(
         string $templateId
-        
     ): PromiseInterface {
         return $this->getShippingTemplateDetailsAsyncWithHttpInfo($templateId)
             ->then(
@@ -3417,7 +3475,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -3426,7 +3485,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -3460,7 +3520,7 @@ class SettingsApi extends BaseApi
         string $templateId,
     ): Request {
         $contentType = self::contentTypes['getShippingTemplateDetails'];
-        
+
         // verify the required parameter 'templateId' is set
         if ($templateId === null || (is_array($templateId) && count($templateId) === 0)) {
             throw new \InvalidArgumentException(
@@ -3501,7 +3561,8 @@ class SettingsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (count($formParams) > 0) {if ($multipart) {
+        if (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -3522,13 +3583,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -3538,7 +3599,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation updateFulfillmentCenter
      *
@@ -3552,7 +3613,7 @@ class SettingsApi extends BaseApi
      */
     public function updateFulfillmentCenter(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest
-        ): \Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate {
+    ): \Walmart\Models\MP\US\Settings\ShipNodeResponseUpdate {
         return $this->updateFulfillmentCenterWithHttpInfo($updateFulfillmentCenterRequest);
     }
 
@@ -3671,7 +3732,6 @@ class SettingsApi extends BaseApi
      */
     public function updateFulfillmentCenterAsync(
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest
-        
     ): PromiseInterface {
         return $this->updateFulfillmentCenterAsyncWithHttpInfo($updateFulfillmentCenterRequest)
             ->then(
@@ -3704,7 +3764,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -3713,7 +3774,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -3747,7 +3809,7 @@ class SettingsApi extends BaseApi
         \Walmart\Models\MP\US\Settings\UpdateFulfillmentCenterRequest $updateFulfillmentCenterRequest,
     ): Request {
         $contentType = self::contentTypes['updateFulfillmentCenter'];
-        
+
         // verify the required parameter 'updateFulfillmentCenterRequest' is set
         if ($updateFulfillmentCenterRequest === null || (is_array($updateFulfillmentCenterRequest) && count($updateFulfillmentCenterRequest) === 0)) {
             throw new \InvalidArgumentException(
@@ -3785,8 +3847,9 @@ class SettingsApi extends BaseApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateFulfillmentCenterRequest));
             } else {
                 $httpBody = $updateFulfillmentCenterRequest;
-        }
-        } else if (count($formParams) > 0) {if ($multipart) {
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -3807,13 +3870,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -3823,7 +3886,7 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    
+
     /**
      * Operation updateShippingTemplates
      *
@@ -3838,9 +3901,8 @@ class SettingsApi extends BaseApi
      */
     public function updateShippingTemplates(
         string $templateId,
-        
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest
-        ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
+    ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
         return $this->updateShippingTemplatesWithHttpInfo($templateId, $updateShippingTemplateRequest);
     }
 
@@ -3858,7 +3920,6 @@ class SettingsApi extends BaseApi
      */
     protected function updateShippingTemplatesWithHttpInfo(
         string $templateId,
-    
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): \Walmart\Models\MP\US\Settings\ShippingTemplate {
         $request = $this->updateShippingTemplatesRequest($templateId, $updateShippingTemplateRequest);
@@ -3963,9 +4024,7 @@ class SettingsApi extends BaseApi
      */
     public function updateShippingTemplatesAsync(
         string $templateId,
-        
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest
-        
     ): PromiseInterface {
         return $this->updateShippingTemplatesAsyncWithHttpInfo($templateId, $updateShippingTemplateRequest)
             ->then(
@@ -3988,7 +4047,6 @@ class SettingsApi extends BaseApi
      */
     protected function updateShippingTemplatesAsyncWithHttpInfo(
         string $templateId,
-    
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Settings\ShippingTemplate';
@@ -4001,7 +4059,8 @@ class SettingsApi extends BaseApi
             ->then(
                 function ($response) use ($returnType) {
                     $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());if ($returnType === '\SplFileObject') {
+                    $this->writeDebug((string) $response->getBody());
+                    if ($returnType === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -4010,7 +4069,8 @@ class SettingsApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());},
+                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
+                },
                 function ($exception) {
                     $response = $exception->getResponse();
                     $hasResponse = !empty($response);
@@ -4043,11 +4103,10 @@ class SettingsApi extends BaseApi
      */
     protected function updateShippingTemplatesRequest(
         string $templateId,
-    
         \Walmart\Models\MP\US\Settings\UpdateShippingTemplateRequest $updateShippingTemplateRequest,
     ): Request {
         $contentType = self::contentTypes['updateShippingTemplates'];
-        
+
         // verify the required parameter 'templateId' is set
         if ($templateId === null || (is_array($templateId) && count($templateId) === 0)) {
             throw new \InvalidArgumentException(
@@ -4100,8 +4159,9 @@ class SettingsApi extends BaseApi
                 $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateShippingTemplateRequest));
             } else {
                 $httpBody = $updateShippingTemplateRequest;
-        }
-        } else if (count($formParams) > 0) {if ($multipart) {
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
                     $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
@@ -4122,13 +4182,13 @@ class SettingsApi extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
             $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
         }
-        
+
         $operationHost = $this->config->getHost();
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
@@ -4138,5 +4198,5 @@ class SettingsApi extends BaseApi
             $httpBody
         );
     }
-    }
+}
 
