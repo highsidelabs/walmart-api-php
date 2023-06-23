@@ -88,7 +88,7 @@ class BaseApi
     protected function getDefaultHeaders(): array
     {
         return [
-            'WM_SVC.NAME' => 'highsidelabs/walmart-api/0.3.1',
+            'WM_SVC.NAME' => 'highsidelabs/walmart-api/0.3.2',
             'WM_QOS.CORRELATION_ID' => Uuid::uuid4()->toString(),
             // These aren't required by every endpoint, but many use them and passing the when they're
             // not needed doesn't adversely affect the request

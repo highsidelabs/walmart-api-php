@@ -98,7 +98,7 @@ class Configuration
      *
      * @var string
      */
-    protected string $userAgent = 'highsidelabs/walmart-api-php/0.3.1';
+    protected string $userAgent = 'highsidelabs/walmart-api-php/0.3.2';
 
     /**
      * Debug switch (default set to false)

@@ -1,5 +1,5 @@
 {
-  "artifactVersion": "0.3.1",
+  "artifactVersion": "0.3.2",
 
   "disallowAdditionalPropertiesIfNotPresent": false,
   "variableNamingConvention": "camelCase",
