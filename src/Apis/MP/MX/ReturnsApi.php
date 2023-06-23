@@ -377,7 +377,7 @@ class ReturnsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $returnCreationStartDate,
                 'returnCreationStartDate', // param base name
@@ -442,7 +442,7 @@ class ReturnsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -832,7 +832,7 @@ class ReturnsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $returnCreationStartDate,
                 'returnCreationStartDate', // param base name
@@ -897,7 +897,7 @@ class ReturnsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

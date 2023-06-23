@@ -323,7 +323,7 @@ class InsightsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $viewTrendingItems,
                 'viewTrendingItems', // param base name
@@ -372,7 +372,7 @@ class InsightsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -659,7 +659,7 @@ class InsightsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $viewTrendingItems,
                 'viewTrendingItems', // param base name
@@ -676,7 +676,7 @@ class InsightsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1258,7 +1258,7 @@ class InsightsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $departmentId,
                 'departmentId', // param base name
@@ -1299,7 +1299,7 @@ class InsightsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1582,7 +1582,7 @@ class InsightsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $fromDate,
                 'fromDate', // param base name
@@ -1591,7 +1591,7 @@ class InsightsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1924,7 +1924,7 @@ class InsightsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $unpublishedReasonCode,
                 'unpublishedReasonCode', // param base name
@@ -1973,7 +1973,7 @@ class InsightsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -2276,7 +2276,7 @@ class InsightsApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $limit,
                 'limit', // param base name
@@ -2293,7 +2293,7 @@ class InsightsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

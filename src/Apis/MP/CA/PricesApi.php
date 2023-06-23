@@ -290,7 +290,7 @@ class PricesApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $feedType,
                 'feedType', // param base name
@@ -299,7 +299,7 @@ class PricesApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // form params
         if ($file !== null) {

@@ -280,7 +280,7 @@ class EventsApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $eventId,
                 'eventId', // param base name
@@ -289,7 +289,7 @@ class EventsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1157,7 +1157,7 @@ class EventsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $eventID,
                 'eventID', // param base name
@@ -1166,7 +1166,7 @@ class EventsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1471,7 +1471,7 @@ class EventsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $type,
                 'type', // param base name
@@ -1488,7 +1488,7 @@ class EventsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -2023,7 +2023,7 @@ class EventsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $type,
                 'type', // param base name
@@ -2040,7 +2040,7 @@ class EventsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             [],
@@ -2335,7 +2335,7 @@ class EventsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $eventId,
                 'eventId', // param base name
@@ -2344,7 +2344,7 @@ class EventsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

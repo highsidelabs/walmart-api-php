@@ -417,7 +417,7 @@ class {{classname}} extends BaseApi
         {{~#if queryParams}}
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
         {{~#queryParams}}
             ObjectSerializer::toQueryValue(
                 ${{paramName}},
@@ -428,7 +428,7 @@ class {{classname}} extends BaseApi
                 {{required}} // required
             ) ?? [],
         {{~/queryParams}}
-        ];
+        );
         {{~/if}}
         {{~#if headerParams}}
 

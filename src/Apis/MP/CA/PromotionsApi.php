@@ -592,7 +592,7 @@ class PromotionsApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $feedType,
                 'feedType', // param base name
@@ -601,7 +601,7 @@ class PromotionsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // form params
         if ($file !== null) {
@@ -925,7 +925,7 @@ class PromotionsApi extends BaseApi
         $method = 'PUT';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $promo,
                 'promo', // param base name
@@ -934,7 +934,7 @@ class PromotionsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/xml'],

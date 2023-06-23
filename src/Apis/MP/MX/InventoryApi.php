@@ -275,7 +275,7 @@ class InventoryApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $sku,
                 'sku', // param base name
@@ -284,7 +284,7 @@ class InventoryApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -588,7 +588,7 @@ class InventoryApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $feedType,
                 'feedType', // param base name
@@ -597,7 +597,7 @@ class InventoryApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // form params
         if ($file !== null) {
@@ -914,7 +914,7 @@ class InventoryApi extends BaseApi
         $method = 'PUT';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $sku,
                 'sku', // param base name
@@ -923,7 +923,7 @@ class InventoryApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

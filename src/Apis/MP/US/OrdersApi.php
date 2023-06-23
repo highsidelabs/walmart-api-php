@@ -1024,7 +1024,7 @@ class OrdersApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $sku,
                 'sku', // param base name
@@ -1153,7 +1153,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1550,7 +1550,7 @@ class OrdersApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $createdStartDate,
                 'createdStartDate', // param base name
@@ -1655,7 +1655,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1958,7 +1958,7 @@ class OrdersApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $productInfo,
                 'productInfo', // param base name
@@ -1975,7 +1975,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         // path params
         if ($purchaseOrderId !== null) {

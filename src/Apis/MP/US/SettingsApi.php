@@ -1690,7 +1690,7 @@ class SettingsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $includeCalendarDayConfiguration,
                 'includeCalendarDayConfiguration', // param base name
@@ -1699,7 +1699,7 @@ class SettingsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

@@ -1174,7 +1174,7 @@ class FulfillmentApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $feedType,
                 'feedType', // param base name
@@ -1183,7 +1183,7 @@ class FulfillmentApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // form params
         if ($file !== null) {
@@ -3330,7 +3330,7 @@ class FulfillmentApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $orgId,
                 'orgId', // param base name
@@ -3411,7 +3411,7 @@ class FulfillmentApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -3708,7 +3708,7 @@ class FulfillmentApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $offset,
                 'offset', // param base name
@@ -3733,7 +3733,7 @@ class FulfillmentApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -4030,7 +4030,7 @@ class FulfillmentApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $offset,
                 'offset', // param base name
@@ -4055,7 +4055,7 @@ class FulfillmentApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -4392,7 +4392,7 @@ class FulfillmentApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $offset,
                 'offset', // param base name
@@ -4449,7 +4449,7 @@ class FulfillmentApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -5081,7 +5081,7 @@ class FulfillmentApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $gtin,
                 'gtin', // param base name
@@ -5162,7 +5162,7 @@ class FulfillmentApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

@@ -291,7 +291,7 @@ class ReturnsApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $feedType,
                 'feedType', // param base name
@@ -300,7 +300,7 @@ class ReturnsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // form params
         if ($file !== null) {
@@ -680,7 +680,7 @@ class ReturnsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $returnOrderId,
                 'returnOrderId', // param base name
@@ -761,7 +761,7 @@ class ReturnsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

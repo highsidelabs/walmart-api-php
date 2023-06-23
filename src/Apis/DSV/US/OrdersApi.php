@@ -294,7 +294,7 @@ class OrdersApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $shipNode,
                 'shipNode', // param base name
@@ -303,7 +303,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -639,7 +639,7 @@ class OrdersApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $shipNode,
                 'shipNode', // param base name
@@ -648,7 +648,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -1059,7 +1059,7 @@ class OrdersApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $shipNode,
                 'shipNode', // param base name
@@ -1148,7 +1148,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1533,7 +1533,7 @@ class OrdersApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $sku,
                 'sku', // param base name
@@ -1614,7 +1614,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1935,7 +1935,7 @@ class OrdersApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $shipNode,
                 'shipNode', // param base name
@@ -1952,7 +1952,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -2288,7 +2288,7 @@ class OrdersApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $shipNode,
                 'shipNode', // param base name
@@ -2297,7 +2297,7 @@ class OrdersApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // path params
         if ($purchaseOrderId !== null) {

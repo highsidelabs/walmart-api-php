@@ -878,7 +878,7 @@ class NotificationsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $subscriptionId,
                 'subscriptionId', // param base name
@@ -911,7 +911,7 @@ class NotificationsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

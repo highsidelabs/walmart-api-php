@@ -292,7 +292,7 @@ class OnRequestReportsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $requestId,
                 'requestId', // param base name
@@ -301,7 +301,7 @@ class OnRequestReportsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // header params
         if ($accept !== null) {
@@ -647,7 +647,7 @@ class OnRequestReportsApi extends BaseApi
         $method = 'POST';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $reportType,
                 'reportType', // param base name
@@ -664,7 +664,7 @@ class OnRequestReportsApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // header params
         if ($accept !== null) {
@@ -1018,7 +1018,7 @@ class OnRequestReportsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $reportType,
                 'reportType', // param base name
@@ -1059,7 +1059,7 @@ class OnRequestReportsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         // header params
         if ($accept !== null) {

@@ -2040,7 +2040,7 @@ class InternationalShippingApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $domesticTrackingNo,
                 'domesticTrackingNo', // param base name
@@ -2057,7 +2057,7 @@ class InternationalShippingApi extends BaseApi
                 true, // explode
                 true // required
             ) ?? [],
-        ];
+        );
 
         // header params
         if ($accept !== null) {

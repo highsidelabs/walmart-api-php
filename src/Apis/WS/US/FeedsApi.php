@@ -288,7 +288,7 @@ class FeedsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $feedId,
                 'feedId', // param base name
@@ -313,7 +313,7 @@ class FeedsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/xml'],
@@ -638,7 +638,7 @@ class FeedsApi extends BaseApi
         $method = 'GET';
 
         // query params
-        $queryParams = [
+        $queryParams = array_merge(
             ObjectSerializer::toQueryValue(
                 $includeDetails,
                 'includeDetails', // param base name
@@ -663,7 +663,7 @@ class FeedsApi extends BaseApi
                 true, // explode
                 false // required
             ) ?? [],
-        ];
+        );
 
         // path params
         if ($feedId !== null) {
