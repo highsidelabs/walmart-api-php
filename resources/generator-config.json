@@ -1,5 +1,5 @@
 {
-  "artifactVersion": "0.3.2",
+  "artifactVersion": "0.4.0",
 
   "disallowAdditionalPropertiesIfNotPresent": false,
   "variableNamingConvention": "camelCase",
@@ -13,6 +13,11 @@
   "invokerPackage": "Walmart",
 
   "files": {
+    "Walmart.hbs": {
+      "folder": "src",
+      "destinationFilename": "Walmart.php",
+      "templateType": "SupportingFiles"
+    },
     "BaseApi.hbs": {
       "folder": "src/Apis",
       "destinationFilename": "BaseApi.php",

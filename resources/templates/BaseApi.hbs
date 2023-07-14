@@ -20,6 +20,7 @@ use GuzzleHttp\RequestOptions;
 use Ramsey\Uuid\Uuid;
 use {{invokerPackage}}\Configuration;
 use {{invokerPackage}}\HeaderSelector;
+use {{invokerPackage}}\Walmart;
 
 /**
  * BaseApi Class Doc Comment
@@ -83,7 +84,7 @@ class BaseApi
     protected function getDefaultHeaders(): array
     {
         return [
-            'WM_SVC.NAME' => 'highsidelabs/walmart-api/{{artifactVersion}}',
+            'WM_SVC.NAME' => 'highsidelabs/walmart-api/' . Walmart::VERSION,
             'WM_QOS.CORRELATION_ID' => Uuid::uuid4()->toString(),
             // These aren't required by every endpoint, but many use them and passing the when they're
             // not needed doesn't adversely affect the request
