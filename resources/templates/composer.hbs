@@ -55,7 +55,7 @@
             "@customize-schemas",
             "@generate"
         ],
-        "version-update": "@generate --category=mp --country=us --api-code=auth",
+        "version-update": "@generate --supporting-files-only",
         "clean": "rm -rf docs src/Models/*/* src/Apis/*/*/*",
         "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
     },

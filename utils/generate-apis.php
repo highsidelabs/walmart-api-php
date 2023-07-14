@@ -162,5 +162,11 @@ function setPrettifyEnv(): void
     putenv('PHP_POST_PROCESS_FILE=' . __DIR__ . '/../vendor/bin/php-cs-fixer fix --allow-risky=yes --config ' . __DIR__ . '/../.php-cs-fixer.dist.php');
 }
 
-$opts = handleSchemaOpts();
-generateApis(...$opts);
+// Only regenerate supporting files if the --supporting-files-only flag is passed, regardless of any other flags
+$opts = getopt('', ['supporting-files-only']);
+if (array_key_exists('supporting-files-only', $opts)) {
+    generateSupportingFiles();
+} else {
+    $opts = handleSchemaOpts();
+    generateApis(...$opts);
+}
