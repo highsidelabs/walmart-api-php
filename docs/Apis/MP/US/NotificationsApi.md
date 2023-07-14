@@ -25,12 +25,15 @@ This API is used to create subscription for notification of an event by selectin
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->notifications();
@@ -82,12 +85,15 @@ This API is used to delete the subscription. Once deleted, the subscription cann
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->notifications();
@@ -139,12 +145,15 @@ This API is used to retrieve the details of all subscriptions created using \"cr
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->notifications();
@@ -202,12 +211,15 @@ This API provides the list of event types and resource names that you can subscr
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->notifications();
@@ -256,12 +268,15 @@ This API can be used to send a test notification to the destination URL with the
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->notifications();
@@ -313,12 +328,15 @@ This API is used to update the details of subscriptions. You can update event ve
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->notifications();

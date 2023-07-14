@@ -21,12 +21,15 @@ Updates prices in bulk.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -83,12 +86,15 @@ Updates the regular price for a given item.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);

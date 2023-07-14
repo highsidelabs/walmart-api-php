@@ -26,12 +26,15 @@ You can use this API to acknowledge an entire order, including all of its order 
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->orders();
@@ -83,12 +86,15 @@ You can cancel one or more order lines. You must include a purchaseOrderId when 
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->orders();
@@ -142,12 +148,15 @@ Retrieves the details of all the orders for specified search criteria.  Only ord
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->orders();
@@ -229,12 +238,15 @@ Retrieves all the orders with line items that are in the \"created\" status, tha
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->orders();
@@ -310,12 +322,15 @@ Retrieves an order detail for a specific purchaseOrderId
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->orders();
@@ -371,12 +386,15 @@ Refunds one or more order lines that have been shipped. The response to a succes
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->orders();
@@ -430,12 +448,15 @@ Updates the status of order lines to Shipped and trigger the charge to the custo
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->orders();

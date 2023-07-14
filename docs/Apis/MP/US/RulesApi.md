@@ -36,12 +36,15 @@ This API is used to activate a rule for a specific ruleId and ruleStatus. Only R
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -93,12 +96,15 @@ This API helps you enable or disable the two-day assortment type.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -152,12 +158,15 @@ This API is used to create a rule by selecting any combination of conditions for
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -209,12 +218,15 @@ This API is used if any SKU is required to be removed from Two-day delivery sett
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -266,12 +278,15 @@ This API is used to bring back any SKU to Two-day Delivery settings.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -323,12 +338,15 @@ This API is used to delete a rule for a specific ruleId and ruleStatus
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -382,12 +400,15 @@ You can use this API to get list of the items defined using \"Create Override Ex
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -436,12 +457,15 @@ You can use this API to download the count of items shortlisted for two-day ship
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -495,12 +519,15 @@ Retrieves a rule detail for a specific ruleId and ruleStatus.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -554,12 +581,15 @@ This API provides you the list of states on which you can provide two-day shippi
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -608,12 +638,15 @@ This API retrieves all the items which has been defined as exceptions using \"Cr
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -662,12 +695,15 @@ This API retrieves the details of all the rules defined using \"create an Item r
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -716,12 +752,15 @@ This API provides the complete list of sub-categories which can be used while de
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -770,12 +809,15 @@ You can use this API to get the count of items shortlisted for two-day shipping 
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -829,12 +871,15 @@ You can use this API to inactivate one or more rules for a specific ruleId and r
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -886,12 +931,15 @@ This API updates a rule defined using \"create an Item rule\". You can update pr
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();
@@ -943,12 +991,15 @@ This API helps you define coverage areas for your items that are held outside of
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'US',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
 ]);
 
 $api = Walmart::marketplace($config)->rules();

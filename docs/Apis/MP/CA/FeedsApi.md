@@ -22,12 +22,15 @@ Once the XML request is built using the Content Feeds XSDs, you can pass the pay
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -84,12 +87,15 @@ Returns the feed statuses for all the specified Feed IDs.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -148,12 +154,15 @@ You can display the status of an item within a feed. Use the feed ID returned fr
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);

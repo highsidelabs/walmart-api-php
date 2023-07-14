@@ -119,12 +119,9 @@ class Configuration
     /**
      * Constructor
      */
-    public function __construct(string $clientId, string $clientSecret, array $options = [])
+    public function __construct(array $options = [])
     {
         $this->validateOptions($options);
-
-        $this->clientId = $clientId;
-        $this->clientSecret = $clientSecret;
     }
 
     /**
@@ -291,7 +288,7 @@ class Configuration
      *
      * @return $this
      */
-    public function privateKey(string $privateKey): static
+    public function setPrivateKey(string $privateKey): static
     {
         $this->privateKey = $privateKey;
         return $this;
@@ -464,24 +461,18 @@ class Configuration
      */
     protected function validateOptions(array $options): void
     {
-        $validKeys = ['country', 'accessToken', 'privateKey', 'consumerId'];
+        $validKeys = [
+            'clientId', 'clientSecret', 'country', 'accessToken', 'privateKey', 'consumerId'
+        ];
         $invalid = array_diff(array_keys($options), $validKeys);
 
         if (count($invalid) > 0) {
             throw new InvalidArgumentException('Invalid configuration option(s) passed: ' . implode(', ', $invalid));
         }
 
-        if (isset($options['country'])) {
-            $this->setCountry($options['country']); 
-        }
-        if (isset($options['accessToken'])) {
-            $this->setAccessToken($options['accessToken']);
-        }
-        if (isset($options['privateKey'])) {
-            $this->privateKey($options['privateKey']);
-        }
-        if (isset($options['consumerId'])) {
-            $this->setConsumerId($options['consumerId']);
+        foreach ($validKeys as $key) {
+            if (!isset($options[$key]) || $options[$key] === null) continue;
+            $this->{'set' . ucfirst($key)}($options[$key]);
         }
     }
 

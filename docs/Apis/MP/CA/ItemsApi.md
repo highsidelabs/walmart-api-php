@@ -23,12 +23,15 @@ You can upload items in bulk. If the items are successfully uploaded, it returns
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -85,12 +88,15 @@ Displays a list of all items by using either nextCursor or offset and limit quer
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -151,12 +157,15 @@ Retrieves an item and displays the item details shown in the response sample.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -211,12 +220,15 @@ Completely deactivates and unpublishes an item from the site.  Retired items are
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);

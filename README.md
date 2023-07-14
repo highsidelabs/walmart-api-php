@@ -84,7 +84,10 @@ use Walmart\Configuration;
 
 $clientId = '<YOUR CLIENT ID>';
 $clientSecret = '<YOUR CLIENT SECRET>';
-$config = new Walmart\Configuration($clientId, $clientSecret);
+$config = new Configuration([
+    'clientId' => $clientId,
+    'clientSecret' => $clientSecret,
+]);
 ```
 
 If you are a Marketplace Seller selling in the US (which is likely true of most people using this API), that's all the configuration you need to do to start making calls to the Marketplace API. If you want to call the Drop Ship Vendor, Content Provider, or Warehouse Supplier APIs, or if you sell goods outside the US and need to make calls to the Marketplace API for, you'll need to provide additional configuration parameters, which are detailed in the [Configuration](#configuration) section below.
@@ -97,7 +100,10 @@ Once you've created an instance of the `Configuration` class, you can start maki
 use Walmart\Configuration;
 use Walmart\Walmart;
 
-$config = new Walmart\Configuration($clientId, $clientSecret);
+$config = new Configuration([
+    'clientId' => $clientId,
+    'clientSecret' => $clientSecret,
+]);
 $authApi = Walmart::marketplace($config)->auth();
 
 // $authApi is an instance of Walmart\Apis\MP\US\AuthenticationApi
@@ -113,14 +119,13 @@ Similarly, the other API categories can be accessed via the `Walmart::dropShipVe
 
 ### Configuration
 
-The `Configuration` class is used to configure the client library. It takes three arguments:
-- `$clientId`: Your Walmart Client ID
-- `$clientSecret`: Your Walmart Client Secret
-- `$options`: An optional associative array of additional configuration parameters. Valid options are:
-    - `country`: The country you are selling in. One of `Country::US`, `Country::CA`, or `Country::MX`. Defaults to `US`.
-    - `consumerId`: Your Walmart Consumer ID. Required if you are making requests to endpoints that use signature-based auth (see the [Authorization](#authorization) section)
-    - `privateKey`: Your Walmart private key. Ditto the requirements for the `consumerId` option.
-    - `accessToken`: An instance of `Walmart\AccessToken`, containing an access token and its expiration time. If provided, this will be used instead of the client ID and secret to authenticate API calls, until the token expires. This is useful if you want to reuse an access token that you've already retrieved from Walmart. More details on access token auth [below](#access-token-auth).
+The `Configuration` class is used to configure the client library. It takes a single options array as its only argument, which can contain the following keys:
+- `clientId`: Your Walmart Client ID
+- `clientSecret`: Your Walmart Client Secret
+- `country`: The country you are selling in. One of `Country::US`, `Country::CA`, or `Country::MX`. Defaults to `Country::US`.
+- `consumerId`: Your Walmart Consumer ID. Required if you are making requests to endpoints that use signature-based auth (see the [Authorization](#authorization) section)
+- `privateKey`: Your Walmart private key. Ditto the requirements for the `consumerId` option.
+- `accessToken`: An instance of `Walmart\AccessToken`, containing an access token and its expiration time. If provided, this will be used instead of the client ID and secret to authenticate API calls, until the token expires. This is useful if you want to reuse an access token that you've already retrieved from Walmart. More details on access token auth [below](#access-token-auth).
 
 If you try to instantiate an instance of an API class that is not supported in the country you've specified, an exception will be thrown.
 
@@ -139,7 +144,10 @@ Some endpoints have a LOT of parameters. If you're using PHP 8 or later, you can
 use Walmart\Configuration;
 use Walmart\Walmart;
 
-$config = new Configuration($clientId, $clientSecret);
+$config = new Configuration([
+    'clientId' => $clientId,
+    'clientSecret' => $clientSecret,
+]);
 $itemsApi = Walmart::marketplace($config)->items();
 
 $response = $itemsApi->getAllItems(
@@ -155,7 +163,10 @@ Instead of this:
 use Walmart\Configuration;
 use Walmart\Walmart;
 
-$config = new Configuration($clientId, $clientSecret);
+$config = new Configuration([
+    'clientId' => $clientId,
+    'clientSecret' => $clientSecret,
+]);
 $itemsApi = Walmart::marketplace($config)->items();
 
 $response = $itemsApi->getAllItems(
@@ -200,7 +211,10 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use Walmart\Configuration;
 
-$config = new Configuration($clientId, $clientSecret);
+$config = new Configuration([
+    'clientId' => $clientId,
+    'clientSecret' => $clientSecret,
+]);
 $config->setDebug(true);
 // To redirect debug info to a file:
 $config->setDebugFile('debug.log');

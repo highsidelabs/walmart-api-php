@@ -27,12 +27,15 @@ Use this API to consolidate shipments. Provide the list of packages that form pa
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -91,12 +94,15 @@ Create shipping label for items. The response to a successful call are of json o
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -157,12 +163,15 @@ Discard label by carrier and trackingNo
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -223,12 +232,15 @@ This API retrieves all supported package types for the selected carrier.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -287,12 +299,15 @@ This API retrieves all carriers supported by Ship With Walmart.
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -349,12 +364,15 @@ Use this API to get consolidation details for the shipment. Provide the domestic
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -415,12 +433,15 @@ Retrieves tracking details for a Purchase Order Id
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
@@ -479,12 +500,15 @@ Download label by carrier and trackingNoThe response to a successful call contai
 ```php
 <?php
 use Walmart\Configuration;
+use Walmart\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$config = new Walmart\Configuration('CLIENT_ID', 'CLIENT_SECRET', [
-    'country' => 'CA',  // Default US if not set
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::CA,           // Default Country::US if not set
     'privateKey' => 'PRIVATE_KEY',
     'consumerId' => 'CONSUMER_ID',
 ]);
