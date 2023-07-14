@@ -28,8 +28,6 @@ use Walmart\Apis\BaseApi;
 use Walmart\ApiException;
 use Walmart\ObjectSerializer;
 
-require_once __DIR__ . '/../../../../vendor/autoload.php';
-
 /**
  * AuthenticationApi Class Doc Comment
  *

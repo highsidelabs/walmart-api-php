@@ -125,7 +125,7 @@ class Configuration
      * Constructor
      */
     public function __construct(string $clientId, string $clientSecret, array $options = [])
-    {        
+    {
         $this->validateOptions($options);
 
         $this->clientId = $clientId;
