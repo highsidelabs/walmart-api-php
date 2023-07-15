@@ -22,7 +22,7 @@ Retrieves the details of all return orders for the specified filter criteria. Wi
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -97,7 +97,7 @@ Retrieves the details of all return orders for the specified filter criteria. Th
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -172,7 +172,7 @@ Refunds one or more order lines that have been shipped. The response to a succes
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';

@@ -21,7 +21,7 @@ Retrieves information on the access levels delegated by Sellers for their Soluti
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -78,7 +78,7 @@ Get access token by providing Client ID and Client Secret.
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';

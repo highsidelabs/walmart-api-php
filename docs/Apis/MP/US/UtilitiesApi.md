@@ -23,7 +23,7 @@ Get all marketplace Apis status
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -80,7 +80,7 @@ Get list of categories for a specific department
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -140,7 +140,7 @@ Get list of departments
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -197,7 +197,7 @@ The Taxonomy by Item spec API exposes the category taxonomy that Walmart.com use
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';

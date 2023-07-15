@@ -20,7 +20,7 @@ Returns all the information associated with Seller's items that are set up on Wa
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';

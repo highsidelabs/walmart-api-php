@@ -27,7 +27,7 @@ This will be an automated procedure, which needs to be triggered from the seller
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -90,7 +90,7 @@ Once the seller has filled the template file downloaded with Download Template A
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -157,7 +157,7 @@ Once the seller has visibility into the upcoming events, they can submit their i
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -216,7 +216,7 @@ Once the Item upload is complete, the sellers can view only selective uploaded i
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -279,7 +279,7 @@ Once the Item upload is complete, the sellers can view their uploaded items usin
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -344,7 +344,7 @@ This API is the primary source of information for all the current active events 
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -404,7 +404,7 @@ This API lets sellers download a file constituting all the items they upload for
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -468,7 +468,7 @@ A summary of the total item count under various subcategories can be viewed usin
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';

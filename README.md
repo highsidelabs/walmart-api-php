@@ -122,7 +122,7 @@ Similarly, the other API categories can be accessed via the `Walmart::dropShipVe
 The `Configuration` class is used to configure the client library. It takes a single options array as its only argument, which can contain the following keys:
 - `clientId`: Your Walmart Client ID
 - `clientSecret`: Your Walmart Client Secret
-- `country`: The country you are selling in. One of `Country::US`, `Country::CA`, or `Country::MX`. Defaults to `Country::US`.
+- `country`: The country you are selling in. Must be one of the values in `Walmart\Enums\Country`: `Country::US`, `Country::CA`, or `Country::MX`. Defaults to `Country::US`.
 - `consumerId`: Your Walmart Consumer ID. Required if you are making requests to endpoints that use signature-based auth (see the [Authorization](#authorization) section)
 - `privateKey`: Your Walmart private key. Ditto the requirements for the `consumerId` option.
 - `accessToken`: An instance of `Walmart\AccessToken`, containing an access token and its expiration time. If provided, this will be used instead of the client ID and secret to authenticate API calls, until the token expires. This is useful if you want to reuse an access token that you've already retrieved from Walmart. More details on access token auth [below](#access-token-auth).

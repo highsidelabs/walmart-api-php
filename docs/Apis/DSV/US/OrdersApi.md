@@ -25,7 +25,7 @@ Allows a DSV to acknowledge an order, including all order lines, preferably with
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -90,7 +90,7 @@ Cancels one or more order lines before an order has been fulfilled. A purchaseOr
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -157,7 +157,7 @@ Retrieves the details of all the orders for specified search criteria.  Only ord
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -240,7 +240,7 @@ Retrieves all the orders with line items that are in the \"created\" status, tha
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -321,7 +321,7 @@ Retrieves an order detail for a specific purchaseOrderId and shipNode.  Only ord
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -388,7 +388,7 @@ Allows consumers to ship one or more Purchase Order lines. For Site to Store (S2
 ```php
 <?php
 use Walmart\Configuration;
-use Walmart\Country;
+use Walmart\Enums\Country;
 use Walmart\Walmart;
 
 require_once __DIR__ . '/vendor/autoload.php';
