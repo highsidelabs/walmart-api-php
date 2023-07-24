@@ -19,7 +19,9 @@ function generateApis(array $categories, array $countries, array $apiCodes): voi
     $schemas = schemas($categories, $countries, $apiCodes);
 
     foreach ($schemas as $schema) {
+        echo "Generating SDK for {$schema['api']['name']} in category {$schema['category']}/country {$schema['country']}...";
         openApiGenerator($schema['api']['code'], $schema['api']['name'], $schema['category'], $schema['country']);
+        echo "done\n";
     }
 
     generateSupportingFiles();

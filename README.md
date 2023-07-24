@@ -125,6 +125,7 @@ The `Configuration` class is used to configure the client library. It takes a si
 - `country`: The country you are selling in. Must be one of the values in `Walmart\Enums\Country`: `Country::US`, `Country::CA`, or `Country::MX`. Defaults to `Country::US`.
 - `consumerId`: Your Walmart Consumer ID. Required if you are making requests to endpoints that use signature-based auth (see the [Authorization](#authorization) section)
 - `privateKey`: Your Walmart private key. Ditto the requirements for the `consumerId` option.
+- `channelType`: The channel type value you received during onboarding. Required in CA.
 - `accessToken`: An instance of `Walmart\AccessToken`, containing an access token and its expiration time. If provided, this will be used instead of the client ID and secret to authenticate API calls, until the token expires. This is useful if you want to reuse an access token that you've already retrieved from Walmart. More details on access token auth [below](#access-token-auth).
 
 If you try to instantiate an instance of an API class that is not supported in the country you've specified, an exception will be thrown.

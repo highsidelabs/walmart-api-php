@@ -15,8 +15,9 @@ const DEFAULT_MODEL_DIR = 'Model';
 const LOGFILE = __DIR__ . '/../generate.log';
 const SCHEMA_FIXES_FILE = RESOURCE_DIR . '/schema-corrections.json';
 
-const BASIC_SCHEME_HEADER = 'Authorization';
 const ACCESS_TOKEN_HEADER = 'WM_SEC.ACCESS_TOKEN';
 const AUTH_SIG_HEADER = 'WM_SEC.AUTH_SIGNATURE';
+const BASIC_SCHEME_HEADER = 'Authorization';
+const CHANNEL_TYPE_HEADER = 'WM_CONSUMER.CHANNEL.TYPE';
 const CONSUMER_ID_HEADER = 'WM_CONSUMER.ID';
 const MARKET_HEADER = 'WM_MARKET';

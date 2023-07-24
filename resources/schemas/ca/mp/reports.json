@@ -3,7 +3,7 @@
     "info": {
         "title": "Item report",
         "description": "Returns all the information associated with Seller's items that are set up on Walmart\u2019s platform.",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -55,6 +55,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -135,6 +136,12 @@
             }
         },
         "securitySchemes": {
+            "channelTypeScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "description": "Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor."
+            },
             "consumerIdScheme": {
                 "type": "apiKey",
                 "in": "header",

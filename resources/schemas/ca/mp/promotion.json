@@ -3,7 +3,7 @@
     "info": {
         "title": "Promotion Management",
         "description": "Sellers can set regular or promotional prices for their items. Setting the Promotional prices is an option to create unique pricing for events such as clearance sales or to call out a comparison price",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -66,6 +66,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -134,6 +135,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -175,6 +177,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -274,6 +277,12 @@
             }
         },
         "securitySchemes": {
+            "channelTypeScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "description": "Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor."
+            },
             "consumerIdScheme": {
                 "type": "apiKey",
                 "in": "header",

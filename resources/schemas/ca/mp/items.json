@@ -3,7 +3,7 @@
     "info": {
         "title": "Item Management",
         "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -128,6 +128,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -198,6 +199,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -238,6 +240,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -278,6 +281,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -774,6 +778,12 @@
             }
         },
         "securitySchemes": {
+            "channelTypeScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "description": "Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor."
+            },
             "consumerIdScheme": {
                 "type": "apiKey",
                 "in": "header",

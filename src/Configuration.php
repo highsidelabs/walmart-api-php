@@ -94,6 +94,13 @@ class Configuration
     protected string $consumerId;
 
     /**
+     * The channel type to use in request headers
+     *
+     * @var string
+     */
+    protected string $channelType;
+
+    /**
      * User agent of the HTTP request
      *
      * @var string
@@ -333,6 +340,29 @@ class Configuration
     }
 
     /**
+     * Sets the channel type to use in request headers
+     *
+     * @param string $channelType The consumer ID
+     *
+     * @return $this
+     */
+    public function setChannelType(string $channelType): static
+    {
+        $this->channelType = $channelType;
+        return $this;
+    }
+
+    /**
+     * Gets the channel type to use in request headers
+     *
+     * @return string The channel type
+     */
+    public function getChannelType(): string
+    {
+        return $this->channelType;
+    }
+
+    /**
      * Sets the host
      *
      * @param string $host Host
@@ -467,7 +497,7 @@ class Configuration
     protected function validateOptions(array $options): void
     {
         $validKeys = [
-            'clientId', 'clientSecret', 'country', 'accessToken', 'privateKey', 'consumerId'
+            'clientId', 'clientSecret', 'country', 'accessToken', 'privateKey', 'consumerId', 'channelType'
         ];
         $invalid = array_diff(array_keys($options), $validKeys);
 

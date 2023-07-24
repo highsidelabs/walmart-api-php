@@ -44,15 +44,21 @@ function customizeSchema(
     $schema['info']['version'] = libVersion();
 
     $allSecuritySchemes = [
+        SecurityScheme::ACCESS_TOKEN => [
+            'type' => 'http',
+            'scheme' => 'bearer',
+            'description' => 'Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the ' . ACCESS_TOKEN_HEADER . ' header',
+        ],
         SecurityScheme::BASIC => [
             'type' => 'http',
             'scheme' => 'basic',
             'description' => 'Basic authentication with a Walmart Client ID and Client Secret',
         ],
-        SecurityScheme::ACCESS_TOKEN => [
-            'type' => 'http',
-            'scheme' => 'bearer',
-            'description' => 'Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the ' . ACCESS_TOKEN_HEADER . ' header',
+        SecurityScheme::CHANNEL_TYPE => [
+            'type' => 'apiKey',
+            'in' => 'header',
+            'name' => CHANNEL_TYPE_HEADER,
+            'description' => 'Header authentication with your Walmart channel type, which is passed in the ' . CHANNEL_TYPE_HEADER . ' header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.',
         ],
         SecurityScheme::CONSUMER_ID => [
             'type' => 'apiKey',
@@ -90,26 +96,29 @@ function customizeSchema(
             // Update each operation's parameters and auth information
             foreach ($verb['parameters'] as $i => $parameter) {    
                 if ($parameter['in'] === 'header' && in_array($parameter['name'], $ignoreHeaders, true)) {
+                    if (isset($parameter['required']) && $parameter['required']) {
+                        // Apply all relevant security schemes to the endpoint
+                        $schemeName = match ($parameter['name']) {
+                            ACCESS_TOKEN_HEADER => SecurityScheme::ACCESS_TOKEN,
+                            AUTH_SIG_HEADER => SecurityScheme::SIGNATURE,
+                            BASIC_SCHEME_HEADER => SecurityScheme::BASIC,
+                            CHANNEL_TYPE_HEADER => SecurityScheme::CHANNEL_TYPE,
+                            CONSUMER_ID_HEADER => SecurityScheme::CONSUMER_ID,
+                            default => false,
+                        };
 
-                    // Apply all relevant security schemes to the endpoint
-                    $schemeName = match ($parameter['name']) {
-                        BASIC_SCHEME_HEADER => SecurityScheme::BASIC,
-                        ACCESS_TOKEN_HEADER => SecurityScheme::ACCESS_TOKEN,
-                        CONSUMER_ID_HEADER => SecurityScheme::CONSUMER_ID,
-                        AUTH_SIG_HEADER => SecurityScheme::SIGNATURE,
-                        default => false,
-                    };
-                    if ($schemeName !== false) {
-                        // The JSON structure we're using for the security objects implies that if there are
-                        // multiple security schemes, they are ALL required. This AND relationship, rather than
-                        // an OR relationship, is indicated by a small syntactical difference in the security key's
-                        // JSON structure. See here for more info: https://swagger.io/docs/specification/authentication
-                        $security[$schemeName] = [];
+                        if ($schemeName !== false) {
+                            // The JSON structure we're using for the security objects implies that if there are
+                            // multiple security schemes, they are ALL required. This AND relationship, rather than
+                            // an OR relationship, is indicated by a small syntactical difference in the security key's
+                            // JSON structure. See here for more info: https://swagger.io/docs/specification/authentication
+                            $security[$schemeName] = [];
 
-                        // Track which security schemes have been used so we can add them to the overall schema
-                        if (!in_array($schemeName, $usedSecuritySchemes, true)) {
-                            $usedSecuritySchemes[] = $schemeName;
-                        }
+                            // Track which security schemes have been used so we can add them to the overall schema
+                            if (!in_array($schemeName, $usedSecuritySchemes, true)) {
+                                $usedSecuritySchemes[] = $schemeName;
+                            }
+                        }    
                     }
 
                     unset($verb['parameters'][$i]);

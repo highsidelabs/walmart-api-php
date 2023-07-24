@@ -3,7 +3,7 @@
     "info": {
         "title": "Order Management",
         "description": "The Walmart Order Management APIs help Sellers to manage customer\u2019s Sales Orders and to stay up-to-date on orders fulfillment, which orders to fulfill, and when to fulfill them.",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -58,6 +58,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -110,6 +111,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -162,6 +164,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -202,6 +205,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -323,6 +327,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -372,6 +377,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -456,6 +462,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -524,6 +531,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -2133,6 +2141,12 @@
             }
         },
         "securitySchemes": {
+            "channelTypeScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "description": "Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor."
+            },
             "consumerIdScheme": {
                 "type": "apiKey",
                 "in": "header",

@@ -3,7 +3,7 @@
     "info": {
         "title": "Price Management",
         "description": "The price is a fundamental building block for your listing on Walmart.com. You can use the price management APIs to set up and manage the price for a given item",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -47,6 +47,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -111,6 +112,7 @@
                 },
                 "security": [
                     {
+                        "channelTypeScheme": [],
                         "signatureScheme": [],
                         "consumerIdScheme": []
                     }
@@ -339,6 +341,12 @@
             }
         },
         "securitySchemes": {
+            "channelTypeScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "description": "Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor."
+            },
             "consumerIdScheme": {
                 "type": "apiKey",
                 "in": "header",

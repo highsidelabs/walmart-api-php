@@ -352,6 +352,15 @@ class PricesApi extends BaseApi
             }
         }
 
+        $channelTypeSchemeApiKey = $this->config->getApiKey('channelTypeScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($channelTypeSchemeApiKey !== null) {
+            $headers['WM_CONSUMER.CHANNEL.TYPE'] = $channelTypeSchemeApiKey;
+        }
+
         $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
             'path' => $resourcePath,
             'method' => $method,
@@ -649,6 +658,15 @@ class PricesApi extends BaseApi
                 // for HTTP post (form)
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
+        }
+
+        $channelTypeSchemeApiKey = $this->config->getApiKey('channelTypeScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($channelTypeSchemeApiKey !== null) {
+            $headers['WM_CONSUMER.CHANNEL.TYPE'] = $channelTypeSchemeApiKey;
         }
 
         $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
