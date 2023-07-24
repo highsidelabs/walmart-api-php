@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unitOfMeasurement** | **string** | Unit of quantity |
-**amount** | **string** | Always use '1' |
+**amount** | **string** | The quantity of the unit of measurement for the item. |
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

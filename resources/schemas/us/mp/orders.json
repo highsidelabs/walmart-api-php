@@ -3,7 +3,7 @@
     "info": {
         "title": "Order Management",
         "description": "The Walmart Order Management APIs help Sellers to manage customer\u2019s Sales Orders and to stay up-to-date on orders fulfillment, which orders to fulfill, and when to fulfill them.",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -2910,7 +2910,7 @@
                     },
                     "carrier": {
                         "type": "string",
-                        "description": "The package shipment carrier. Valid entries are: UPS, USPS, FedEx, Airborne, OnTrac, DHL Ecommerce - US, LS (LaserShip), UDS (United Delivery Service), UPSMI (UPS Mail Innovations), FDX, PILOT, ESTES, SAIA, FDS Express, Seko Worldwide, HIT Delivery, FEDEXSP (FedEx SmartPost), RL Carriers, Metropolitan Warehouse & Delivery, China Post, YunExpress,Yellow Freight Sys, AIT Worldwide Logistics, Chukou1, Sendle, Landmark Global, Sunyou, Yanwen, 4PX, GLS, OSM Worldwide, FIRST MILE, AM Trucking, CEVA, India Post, SF Express, CNE, TForce Freight, AxleHire, LSO, Royal Mail, ABF Freight System, WanB, Roadrunner Freight, Meyer Distribution, AAA Cooper, Canada Post, Southeastern Freight Lines, Japan Post, Correos de Mexico, XPO Logistics.",
+                        "description": "The package shipment carrier. Valid entries are: UPS, USPS, FedEx, Airborne, OnTrac, DHL Ecommerce - US, LS (LaserShip), UDS (United Delivery Service), UPSMI (UPS Mail Innovations), FDX, PILOT, ESTES, SAIA, FDS Express, Seko Worldwide, HIT Delivery, FEDEXSP (FedEx SmartPost), RL Carriers, Metropolitan Warehouse & Delivery, China Post, YunExpress,Yellow Freight Sys, AIT Worldwide Logistics, Chukou1, Sendle, Landmark Global, Sunyou, Yanwen, 4PX, GLS, OSM Worldwide, FIRST MILE, AM Trucking, CEVA, India Post, SF Express, CNE, TForce Freight, AxleHire, LSO, Royal Mail, ABF Freight System, WanB, Roadrunner Freight, Meyer Distribution, AAA Cooper, Canada Post, Southeastern Freight Lines, Japan Post, Correos de Mexico, XPO Logistics, JD Logistics, YDH, JCEX, Flyt, Deutsche Post.",
                         "enum": [
                             "UPS",
                             "USPS",
@@ -2962,7 +2962,12 @@
                             "Southeastern Freight Lines",
                             "Japan Post",
                             "Correos de Mexico",
-                            "XPO Logistics"
+                            "XPO Logistics",
+                            "JD Logistics",
+                            "YDH",
+                            "JCEX",
+                            "Flyt",
+                            "Deutsche Post"
                         ]
                     }
                 },
@@ -3754,11 +3759,57 @@
                     },
                     "countryCode": {
                         "type": "string"
+                    },
+                    "phoneValidity": {
+                        "$ref": "#\/components\/schemas\/PhoneValidity"
                     }
                 },
                 "xml": {
                     "name": "phone",
                     "namespace": "com.walmart.services.common.model.address"
+                }
+            },
+            "PhoneValidity": {
+                "type": "object",
+                "properties": {
+                    "validationType": {
+                        "type": "string",
+                        "xml": {
+                            "name": "type"
+                        },
+                        "enum": [
+                            "SMS",
+                            "IVR",
+                            "CALL",
+                            "UNKNOWN"
+                        ]
+                    },
+                    "validationStatus": {
+                        "type": "string",
+                        "xml": {
+                            "name": "status"
+                        },
+                        "enum": [
+                            "SUCCESS",
+                            "FAILURE",
+                            "SKIPPED",
+                            "UNKNOWN"
+                        ]
+                    },
+                    "validatedDate": {
+                        "type": "string",
+                        "format": "date-time",
+                        "xml": {
+                            "name": "validatedOn"
+                        }
+                    },
+                    "validatedBy": {
+                        "type": "string"
+                    }
+                },
+                "xml": {
+                    "name": "phoneValidity",
+                    "namespace": "com.walmart.services.common.model.address.validation"
                 }
             },
             "PickupPerson": {
@@ -3839,7 +3890,7 @@
                     },
                     "amount": {
                         "type": "string",
-                        "description": "Always use '1'"
+                        "description": "The quantity of the unit of measurement for the item."
                     }
                 },
                 "description": "Details about the status update"
@@ -4108,6 +4159,16 @@
                     }
                 }
             },
+            "CurrentTrackingInfoType": {
+                "type": "object",
+                "properties": {
+                    "trackingNumber": {
+                        "type": "string",
+                        "description": "The shipment tracking number"
+                    }
+                },
+                "description": "Once the shipment is done, to update tracking details in the PO, you must pass the tracking number to be updated under the new currentTrackingInfo field."
+            },
             "OrderShipment": {
                 "type": "object",
                 "properties": {
@@ -4166,6 +4227,9 @@
                     },
                     "returnCenterAddress": {
                         "$ref": "#\/components\/schemas\/ReturnCenterAddressType"
+                    },
+                    "currentTrackingInfo": {
+                        "$ref": "#\/components\/schemas\/CurrentTrackingInfoType"
                     }
                 },
                 "description": "Details about the Order Line status"

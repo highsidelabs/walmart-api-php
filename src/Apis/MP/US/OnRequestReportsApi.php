@@ -368,7 +368,7 @@ class OnRequestReportsApi extends BaseApi
      * Create Report Request
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
-     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
+     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
@@ -393,7 +393,7 @@ class OnRequestReportsApi extends BaseApi
      * Create Report Request
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
-     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
+     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
@@ -504,7 +504,7 @@ class OnRequestReportsApi extends BaseApi
      * Create Report Request
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
-     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
+     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
@@ -533,7 +533,7 @@ class OnRequestReportsApi extends BaseApi
      * Create Report Request
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
-     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
+     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
@@ -595,7 +595,7 @@ class OnRequestReportsApi extends BaseApi
      * Create request for operation 'generateReport'
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
-     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
+     * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
      * @param  string $accept Only supported Media Type : application/json (required)
      * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)

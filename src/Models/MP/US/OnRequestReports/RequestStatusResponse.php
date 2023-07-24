@@ -166,6 +166,8 @@ class RequestStatusResponse extends BaseModel
 
     public const REPORT_TYPE_SHIPPING_PROGRAM = 'SHIPPING_PROGRAM';
 
+    public const REPORT_TYPE_BUYBOX = 'BUYBOX';
+
     /**
      * Gets allowable values of the enum
      *
@@ -200,6 +202,7 @@ class RequestStatusResponse extends BaseModel
             self::REPORT_TYPE_CPA,
             self::REPORT_TYPE_SHIPPING_CONFIGURATION,
             self::REPORT_TYPE_SHIPPING_PROGRAM,
+            self::REPORT_TYPE_BUYBOX,
         ];
     }
 

@@ -80,7 +80,9 @@ class ReturnOrderLine extends BaseModel
         'status' => 'string',
         'statusTime' => '\DateTime',
         'currentDeliveryStatus' => 'string',
-        'currentRefundStatus' => 'string'
+        'currentRefundStatus' => 'string',
+        'currentTrackingStatuses' => '\Walmart\Models\MP\US\Returns\CurrentTrackingStatus[]',
+        'refundChannels' => '\Walmart\Models\MP\US\Returns\RefundChannelInfo[]'
     ];
 
     /**
@@ -119,7 +121,9 @@ class ReturnOrderLine extends BaseModel
         'status' => null,
         'statusTime' => 'date-time',
         'currentDeliveryStatus' => null,
-        'currentRefundStatus' => null
+        'currentRefundStatus' => null,
+        'currentTrackingStatuses' => null,
+        'refundChannels' => null
     ];
 
     /**
@@ -156,7 +160,9 @@ class ReturnOrderLine extends BaseModel
         'status' => false,
         'statusTime' => false,
         'currentDeliveryStatus' => false,
-        'currentRefundStatus' => false
+        'currentRefundStatus' => false,
+        'currentTrackingStatuses' => false,
+        'refundChannels' => false
     ];
 
     /**
@@ -194,7 +200,9 @@ class ReturnOrderLine extends BaseModel
         'status' => 'status',
         'statusTime' => 'statusTime',
         'currentDeliveryStatus' => 'currentDeliveryStatus',
-        'currentRefundStatus' => 'currentRefundStatus'
+        'currentRefundStatus' => 'currentRefundStatus',
+        'currentTrackingStatuses' => 'currentTrackingStatuses',
+        'refundChannels' => 'refundChannels'
     ];
 
     /**
@@ -231,7 +239,9 @@ class ReturnOrderLine extends BaseModel
         'status' => 'setStatus',
         'statusTime' => 'setStatusTime',
         'currentDeliveryStatus' => 'setCurrentDeliveryStatus',
-        'currentRefundStatus' => 'setCurrentRefundStatus'
+        'currentRefundStatus' => 'setCurrentRefundStatus',
+        'currentTrackingStatuses' => 'setCurrentTrackingStatuses',
+        'refundChannels' => 'setRefundChannels'
     ];
 
     /**
@@ -268,7 +278,9 @@ class ReturnOrderLine extends BaseModel
         'status' => 'getStatus',
         'statusTime' => 'getStatusTime',
         'currentDeliveryStatus' => 'getCurrentDeliveryStatus',
-        'currentRefundStatus' => 'getCurrentRefundStatus'
+        'currentRefundStatus' => 'getCurrentRefundStatus',
+        'currentTrackingStatuses' => 'getCurrentTrackingStatuses',
+        'refundChannels' => 'getRefundChannels'
     ];
 
     /**
@@ -308,6 +320,8 @@ class ReturnOrderLine extends BaseModel
         $this->setIfExists('statusTime', $data ?? [], null);
         $this->setIfExists('currentDeliveryStatus', $data ?? [], null);
         $this->setIfExists('currentRefundStatus', $data ?? [], null);
+        $this->setIfExists('currentTrackingStatuses', $data ?? [], null);
+        $this->setIfExists('refundChannels', $data ?? [], null);
     }
 
     /**
@@ -1161,6 +1175,64 @@ class ReturnOrderLine extends BaseModel
         }
 
         $this->container['currentRefundStatus'] = $currentRefundStatus;
+        return $this;
+    }
+
+    /**
+     * Gets currentTrackingStatuses
+     *
+     * @return \Walmart\Models\MP\US\Returns\CurrentTrackingStatus[]|null
+    
+     */
+    public function getCurrentTrackingStatuses()
+    {
+        return $this->container['currentTrackingStatuses'];
+    }
+
+    /**
+     * Sets currentTrackingStatuses
+     *
+     * @param \Walmart\Models\MP\US\Returns\CurrentTrackingStatus[]|null $currentTrackingStatuses Array of current tracking status of each quantity
+     *
+     * @return self
+    
+     */
+    public function setCurrentTrackingStatuses($currentTrackingStatuses)
+    {
+        if (is_null($currentTrackingStatuses)) {
+            throw new \InvalidArgumentException('non-nullable currentTrackingStatuses cannot be null');
+        }
+
+        $this->container['currentTrackingStatuses'] = $currentTrackingStatuses;
+        return $this;
+    }
+
+    /**
+     * Gets refundChannels
+     *
+     * @return \Walmart\Models\MP\US\Returns\RefundChannelInfo[]|null
+    
+     */
+    public function getRefundChannels()
+    {
+        return $this->container['refundChannels'];
+    }
+
+    /**
+     * Sets refundChannels
+     *
+     * @param \Walmart\Models\MP\US\Returns\RefundChannelInfo[]|null $refundChannels Array of refund channel of each quantity
+     *
+     * @return self
+    
+     */
+    public function setRefundChannels($refundChannels)
+    {
+        if (is_null($refundChannels)) {
+            throw new \InvalidArgumentException('non-nullable refundChannels cannot be null');
+        }
+
+        $this->container['refundChannels'] = $refundChannels;
         return $this;
     }
 }

@@ -577,7 +577,7 @@ getCarrierRateQuote($shipmentId, $mode): \Walmart\Models\MP\US\Fulfillment\GetRa
 ```
 Get Carrier Rate Quote
 
-The purpose of this service is for seller to void the carrier shipping charges, within 24 hours after the estimated carrier charges have been accepted by the seller.
+The purpose of this service is to get the carrier rate quotes for WFS Preferred Carrier Program - FedEx parcel solution, when inbounding seller items from seller pickup point to Walmart fulfillment centers.
 
 ### Example
 

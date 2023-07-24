@@ -162,6 +162,8 @@ class ServiceResponse extends BaseModel
 
     public const STATUS_UNPROCESSABLE_ENTITY = 'UNPROCESSABLE_ENTITY';
 
+    public const STATUS_TOO_MANY_REQUESTS = 'TOO_MANY_REQUESTS';
+
     public const STATUS_FAIL = 'FAIL';
 
     public const STATUS_BAD_GATEWAY = 'BAD_GATEWAY';
@@ -199,6 +201,7 @@ class ServiceResponse extends BaseModel
             self::STATUS_REQUEST_ENTITY_TOO_LARGE,
             self::STATUS_UNSUPPORTED_MEDIA_TYPE,
             self::STATUS_UNPROCESSABLE_ENTITY,
+            self::STATUS_TOO_MANY_REQUESTS,
             self::STATUS_FAIL,
             self::STATUS_BAD_GATEWAY,
             self::STATUS_SERVICE_UNAVAILABLE,

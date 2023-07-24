@@ -3,7 +3,7 @@
     "info": {
         "title": "On-request Report Management",
         "description": "The On-request Reports API allows you to request reports immediately about your items for faster retrieval. You can request the report, check status on the report availability, and then download the report URL when report is ready. You can also get a list of all reports requested.",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -49,7 +49,8 @@
                                 "SHIPPING_CONFIGURATION",
                                 "SHIPPING_PROGRAM",
                                 "FITMENT_MISSING_ATTR",
-                                "FITMENT_ACES_COVERAGE"
+                                "FITMENT_ACES_COVERAGE",
+                                "BUYBOX"
                             ]
                         }
                     },
@@ -209,14 +210,15 @@
                                 "SHIPPING_CONFIGURATION",
                                 "SHIPPING_PROGRAM",
                                 "FITMENT_MISSING_ATTR",
-                                "FITMENT_ACES_COVERAGE"
+                                "FITMENT_ACES_COVERAGE",
+                                "BUYBOX"
                             ]
                         }
                     },
                     {
                         "name": "reportVersion",
                         "in": "query",
-                        "description": "Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM.",
+                        "description": "Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM.",
                         "required": true,
                         "schema": {
                             "type": "string"
@@ -608,7 +610,8 @@
                             "RETURN_OVERRIDES",
                             "CPA",
                             "SHIPPING_CONFIGURATION",
-                            "SHIPPING_PROGRAM"
+                            "SHIPPING_PROGRAM",
+                            "BUYBOX"
                         ]
                     },
                     "reportVersion": {
@@ -751,7 +754,8 @@
                             "RETURN_OVERRIDES",
                             "CPA",
                             "SHIPPING_CONFIGURATION",
-                            "SHIPPING_PROGRAM"
+                            "SHIPPING_PROGRAM",
+                            "BUYBOX"
                         ]
                     },
                     "reportVersion": {
@@ -841,7 +845,8 @@
                             "RETURN_OVERRIDES",
                             "CPA",
                             "SHIPPING_CONFIGURATION",
-                            "SHIPPING_PROGRAM"
+                            "SHIPPING_PROGRAM",
+                            "BUYBOX"
                         ]
                     },
                     "reportVersion": {

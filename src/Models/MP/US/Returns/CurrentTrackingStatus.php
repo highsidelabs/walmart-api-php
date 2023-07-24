@@ -1,7 +1,7 @@
 <?php
 
 /**
- * RefundLine
+ * CurrentTrackingStatus
  *
  * PHP version 7.4
  *
@@ -24,18 +24,18 @@ namespace Walmart\Models\MP\US\Returns;
 use Walmart\Models\BaseModel;
 
 /**
- * RefundLine Class Doc Comment
+ * CurrentTrackingStatus Class Doc Comment
  *
  * @category Class
 
- * @description Array of refund lines.
+ * @description Array of current tracking status of each quantity
 
  * @package  Walmart
  * @author   Jesse Evers
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
  */
-class RefundLine extends BaseModel
+class CurrentTrackingStatus extends BaseModel
 {
     public const DISCRIMINATOR = null;
 
@@ -44,7 +44,7 @@ class RefundLine extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'RefundLine';
+    protected static string $openAPIModelName = 'CurrentTrackingStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -52,7 +52,9 @@ class RefundLine extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'returnOrderLineNumber' => 'int',
+        'status' => 'string',
+        'statusTime' => '\DateTime',
+        'currentRefundStatus' => 'string',
         'quantity' => '\Walmart\Models\MP\US\Returns\Quantity'
     ];
 
@@ -64,7 +66,9 @@ class RefundLine extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'returnOrderLineNumber' => 'int64',
+        'status' => null,
+        'statusTime' => 'date-time',
+        'currentRefundStatus' => null,
         'quantity' => null
     ];
 
@@ -74,7 +78,9 @@ class RefundLine extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'returnOrderLineNumber' => false,
+        'status' => false,
+        'statusTime' => false,
+        'currentRefundStatus' => false,
         'quantity' => false
     ];
 
@@ -85,7 +91,9 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'returnOrderLineNumber' => 'returnOrderLineNumber',
+        'status' => 'status',
+        'statusTime' => 'statusTime',
+        'currentRefundStatus' => 'currentRefundStatus',
         'quantity' => 'quantity'
     ];
 
@@ -95,7 +103,9 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'returnOrderLineNumber' => 'setReturnOrderLineNumber',
+        'status' => 'setStatus',
+        'statusTime' => 'setStatusTime',
+        'currentRefundStatus' => 'setCurrentRefundStatus',
         'quantity' => 'setQuantity'
     ];
 
@@ -105,7 +115,9 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'returnOrderLineNumber' => 'getReturnOrderLineNumber',
+        'status' => 'getStatus',
+        'statusTime' => 'getStatusTime',
+        'currentRefundStatus' => 'getCurrentRefundStatus',
         'quantity' => 'getQuantity'
     ];
 
@@ -117,7 +129,9 @@ class RefundLine extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('returnOrderLineNumber', $data ?? [], null);
+        $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('statusTime', $data ?? [], null);
+        $this->setIfExists('currentRefundStatus', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
     }
 
@@ -130,39 +144,94 @@ class RefundLine extends BaseModel
     {
         $invalidProperties = [];
 
-        if ($this->container['returnOrderLineNumber'] === null) {
-            $invalidProperties[] = "'returnOrderLineNumber' can't be null";
-        }
 
         return $invalidProperties;
     }
 
     /**
-     * Gets returnOrderLineNumber
+     * Gets status
      *
-     * @return int
+     * @return string|null
     
      */
-    public function getReturnOrderLineNumber()
+    public function getStatus()
     {
-        return $this->container['returnOrderLineNumber'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets returnOrderLineNumber
+     * Sets status
      *
-     * @param int $returnOrderLineNumber A line number associated with each individual line in the return order. If return order has only one return order line and it is not provided in the request, the only available return order line is auto-selected. If return order has multiple return order lines, the required return order line must be provided in the request. If not provided in the request, it will result in data-error.
+     * @param string|null $status Current status of return. (e.g., 'INITIATED')
      *
      * @return self
     
      */
-    public function setReturnOrderLineNumber($returnOrderLineNumber)
+    public function setStatus($status)
     {
-        if (is_null($returnOrderLineNumber)) {
-            throw new \InvalidArgumentException('non-nullable returnOrderLineNumber cannot be null');
+        if (is_null($status)) {
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
 
-        $this->container['returnOrderLineNumber'] = $returnOrderLineNumber;
+        $this->container['status'] = $status;
+        return $this;
+    }
+
+    /**
+     * Gets statusTime
+     *
+     * @return \DateTime|null
+    
+     */
+    public function getStatusTime()
+    {
+        return $this->container['statusTime'];
+    }
+
+    /**
+     * Sets statusTime
+     *
+     * @param \DateTime|null $statusTime Timestamp of listed status change
+     *
+     * @return self
+    
+     */
+    public function setStatusTime($statusTime)
+    {
+        if (is_null($statusTime)) {
+            throw new \InvalidArgumentException('non-nullable statusTime cannot be null');
+        }
+
+        $this->container['statusTime'] = $statusTime;
+        return $this;
+    }
+
+    /**
+     * Gets currentRefundStatus
+     *
+     * @return string|null
+    
+     */
+    public function getCurrentRefundStatus()
+    {
+        return $this->container['currentRefundStatus'];
+    }
+
+    /**
+     * Sets currentRefundStatus
+     *
+     * @param string|null $currentRefundStatus Determines the current refund status of the return.
+     *
+     * @return self
+    
+     */
+    public function setCurrentRefundStatus($currentRefundStatus)
+    {
+        if (is_null($currentRefundStatus)) {
+            throw new \InvalidArgumentException('non-nullable currentRefundStatus cannot be null');
+        }
+
+        $this->container['currentRefundStatus'] = $currentRefundStatus;
         return $this;
     }
 

@@ -3,7 +3,7 @@
     "info": {
         "title": "Price Management",
         "description": "The price is a fundamental building block for your listing on Walmart.com. You can use the price management APIs to set up and manage the price for a given item",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -92,6 +92,113 @@
                             "application\/json": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/RepricerEntityDeleteResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/repricer\/incentive": {
+            "get": {
+                "tags": [
+                    "Prices"
+                ],
+                "summary": "List of Incentive Items",
+                "description": "Get the list of incentive items",
+                "operationId": "getRepricerIncentive",
+                "parameters": [
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Specify number of items to return.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 25
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "Specify the offset of item list to be returned.",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "sortBy",
+                        "in": "query",
+                        "description": "Specify the sort criteria for items. Examples of the allowed values are INCENTIVE_END_DATE or INCENTIVE_LIMIT",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "INCENTIVE_LIMIT"
+                        }
+                    },
+                    {
+                        "name": "sortOrder",
+                        "in": "query",
+                        "description": "Specify the sort order for given sort criteria. Examples of the allowed values are ASC or DESC",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "DESC"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/RepricerIncentiveCollectionResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessTokenScheme": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Prices"
+                ],
+                "summary": "Assign Incentive items to Repricer",
+                "description": "Assigns incentive items to the default price incentives strategy, \u2018Match Competitive Price\u2019",
+                "operationId": "updateRepricerIncentive",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/UpdateRepricerIncentiveRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/UpdateRepricerIncentiveResponse"
                                 }
                             }
                         }
@@ -502,6 +609,46 @@
                         "description": "Strategies",
                         "items": {
                             "$ref": "#\/components\/schemas\/RepricerStrategyType"
+                        }
+                    }
+                }
+            },
+            "ErrorResponseDto": {
+                "type": "object",
+                "properties": {
+                    "errorMessage": {
+                        "type": "string",
+                        "example": "SKU XX is not eligible for price incentives and will not be price adjusted"
+                    }
+                }
+            },
+            "UpdateRepricerIncentiveResponse": {
+                "type": "object",
+                "properties": {
+                    "feedId": {
+                        "type": "string",
+                        "example": "AFEE4EEC9C3541B6A7B58E694416EC82@AUoBAwA"
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ErrorResponseDto"
+                        }
+                    }
+                }
+            },
+            "UpdateRepricerIncentiveRequest": {
+                "required": [
+                    "skus"
+                ],
+                "type": "object",
+                "properties": {
+                    "skus": {
+                        "type": "array",
+                        "description": "selected skus",
+                        "items": {
+                            "type": "string",
+                            "description": "selected skus"
                         }
                     }
                 }
@@ -938,6 +1085,77 @@
                         "items": {
                             "$ref": "#\/components\/schemas\/RepricerStrategyType"
                         }
+                    }
+                }
+            },
+            "RepricerIncentiveCollectionResponse": {
+                "type": "object",
+                "properties": {
+                    "totalItems": {
+                        "type": "integer",
+                        "format": "int32",
+                        "example": 1
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/RepricerIncentiveItems"
+                        }
+                    }
+                }
+            },
+            "RepricerIncentiveItems": {
+                "type": "object",
+                "properties": {
+                    "productName": {
+                        "type": "string",
+                        "example": "Ring Defense"
+                    },
+                    "skuId": {
+                        "type": "string",
+                        "example": "sku123"
+                    },
+                    "sellerPrice": {
+                        "type": "number",
+                        "format": "double",
+                        "example": 22
+                    },
+                    "floorPrice": {
+                        "type": "number",
+                        "format": "double",
+                        "example": 14
+                    },
+                    "incentiveLimit": {
+                        "type": "number",
+                        "format": "double",
+                        "example": 3
+                    },
+                    "incentiveStartDate": {
+                        "type": "string",
+                        "example": "2023-06-22"
+                    },
+                    "incentiveEndDate": {
+                        "type": "string",
+                        "example": "2023-07-22"
+                    },
+                    "shippingPrice": {
+                        "type": "number",
+                        "format": "double",
+                        "example": 0
+                    },
+                    "competitivePrice": {
+                        "type": "number",
+                        "format": "double",
+                        "example": 21
+                    },
+                    "competitorShippingPrice": {
+                        "type": "number",
+                        "format": "double",
+                        "example": 1
+                    },
+                    "competitorUrl": {
+                        "type": "string",
+                        "example": "amazon.com\/dp\/123"
                     }
                 }
             },

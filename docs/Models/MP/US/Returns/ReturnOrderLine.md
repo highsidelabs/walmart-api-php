@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **statusTime** | **\DateTime** | Timestamp of listed status change | [optional]
 **currentDeliveryStatus** | **string** | Determines the current carrier tracking status of the return. | [optional]
 **currentRefundStatus** | **string** | Determines the current refund status of the return. | [optional]
+**currentTrackingStatuses** | [**\Walmart\Models\MP\US\Returns\CurrentTrackingStatus[]**](CurrentTrackingStatus.md) | Array of current tracking status of each quantity | [optional]
+**refundChannels** | [**\Walmart\Models\MP\US\Returns\RefundChannelInfo[]**](RefundChannelInfo.md) | Array of refund channel of each quantity | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

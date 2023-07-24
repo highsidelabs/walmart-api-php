@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **type** | **string** |  | [optional]
 **subscriberNumber** | **string** |  | [optional]
 **countryCode** | **string** |  | [optional]
+**phoneValidity** | [**\Walmart\Models\MP\US\Orders\PhoneValidity**](PhoneValidity.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

@@ -3,7 +3,7 @@
     "info": {
         "title": "Returns Management",
         "description": "Buyers can now Initiate Returns from Walmart.com for Marketplace seller items (Except for HAZMAT, OTHER or FREIGHT items). For item in the exception categories: HAZMAT or OTHER, sellers need to generate the return shipping label, and upload the label. For detailed instructions, and to download the Returns API JSON schema, see Returns guide.",
-        "version": "0.3.0"
+        "version": "0.4.0"
     },
     "servers": [
         {
@@ -55,7 +55,11 @@
                                 "customerOrderId": "1535274411287",
                                 "refundLines": [
                                     {
-                                        "returnOrderLineNumber": 1
+                                        "returnOrderLineNumber": 1,
+                                        "quantity": {
+                                            "unitOfMeasure": "EA",
+                                            "measurementValue": 2
+                                        }
                                     }
                                 ]
                             }
@@ -76,7 +80,11 @@
                                     "customerOrderId": "1535274411287",
                                     "refundLines": [
                                         {
-                                            "returnOrderLineNumber": 1
+                                            "returnOrderLineNumber": 1,
+                                            "quantity": {
+                                                "unitOfMeasure": "EA",
+                                                "measurementValue": 2
+                                            }
                                         }
                                     ]
                                 }
@@ -476,11 +484,45 @@
                                                         }
                                                     ],
                                                     "currentDeliveryStatus": "NOT_SHIPPED",
-                                                    "currentRefundStatus": "NOT_REFUNDED",
+                                                    "currentRefundStatus": "REFUND_INITIATED",
+                                                    "currentTrackingStatuses": [
+                                                        {
+                                                            "status": "COMPLETED",
+                                                            "statusTime": "2023-06-22T02:20:51.000Z",
+                                                            "currentRefundStatus": "REFUND_INITIATED",
+                                                            "quantity": {
+                                                                "unitOfMeasure": "EACH",
+                                                                "measurementValue": 2
+                                                            }
+                                                        },
+                                                        {
+                                                            "status": "COMPLETED",
+                                                            "statusTime": "2023-06-22T02:20:51.000Z",
+                                                            "currentRefundStatus": "REFUND_COMPLETED",
+                                                            "quantity": {
+                                                                "unitOfMeasure": "EACH",
+                                                                "measurementValue": 1
+                                                            }
+                                                        }
+                                                    ],
+                                                    "refundChannels": [
+                                                        {
+                                                            "refundChannelName": "SELLER_MANUAL_REFUND",
+                                                            "quantity": {
+                                                                "measurementValue": 2
+                                                            }
+                                                        },
+                                                        {
+                                                            "refundChannelName": "InstantRefund",
+                                                            "quantity": {
+                                                                "measurementValue": 1
+                                                            }
+                                                        }
+                                                    ],
                                                     "cancellableQty": 0,
                                                     "quantity": {
                                                         "unitOfMeasure": "EACH",
-                                                        "measurementValue": 1
+                                                        "measurementValue": 3
                                                     },
                                                     "returnExpectedFlag": true,
                                                     "isFastReplacement": false,
@@ -547,6 +589,25 @@
     },
     "components": {
         "schemas": {
+            "Quantity": {
+                "required": [
+                    "measurementValue",
+                    "unitOfMeasure"
+                ],
+                "type": "object",
+                "properties": {
+                    "unitOfMeasure": {
+                        "type": "string",
+                        "description": "The unit of measure in the item's weight (e.g., 'EACH' or 'EA')"
+                    },
+                    "measurementValue": {
+                        "type": "number",
+                        "description": "The quantity of the unit of measure for the item",
+                        "format": "double"
+                    }
+                },
+                "description": "Total quantity returned in this return line"
+            },
             "RefundLine": {
                 "required": [
                     "returnOrderLineNumber"
@@ -557,6 +618,9 @@
                         "type": "integer",
                         "description": "A line number associated with each individual line in the return order. If return order has only one return order line and it is not provided in the request, the only available return order line is auto-selected. If return order has multiple return order lines, the required return order line must be provided in the request. If not provided in the request, it will result in data-error.",
                         "format": "int64"
+                    },
+                    "quantity": {
+                        "$ref": "#\/components\/schemas\/Quantity"
                     }
                 },
                 "description": "Array of refund lines."
@@ -691,6 +755,28 @@
                 },
                 "description": "Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges)."
             },
+            "CurrentTrackingStatus": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "description": "Current status of return. (e.g., 'INITIATED')"
+                    },
+                    "statusTime": {
+                        "type": "string",
+                        "description": "Timestamp of listed status change",
+                        "format": "date-time"
+                    },
+                    "currentRefundStatus": {
+                        "type": "string",
+                        "description": "Determines the current refund status of the return."
+                    },
+                    "quantity": {
+                        "$ref": "#\/components\/schemas\/Quantity"
+                    }
+                },
+                "description": "Array of current tracking status of each quantity"
+            },
             "CustomerName": {
                 "type": "object",
                 "properties": {
@@ -814,24 +900,18 @@
                 },
                 "description": "Used only for 1P"
             },
-            "Quantity": {
-                "required": [
-                    "measurementValue",
-                    "unitOfMeasure"
-                ],
+            "RefundChannelInfo": {
                 "type": "object",
                 "properties": {
-                    "unitOfMeasure": {
+                    "refundChannelName": {
                         "type": "string",
-                        "description": "The unit of measure in the item's weight (e.g., 'POUND' or 'OUNCE')"
+                        "description": "Valid values are: ONLINE, IN_STORE, and CUSTOMER_CARE"
                     },
-                    "measurementValue": {
-                        "type": "number",
-                        "description": "The quantity of the unit of measure for the item",
-                        "format": "double"
+                    "quantity": {
+                        "$ref": "#\/components\/schemas\/Quantity"
                     }
                 },
-                "description": "Total quantity returned in this return line"
+                "description": "Array of refund channel of each quantity"
             },
             "ReturnChannel": {
                 "type": "object",
@@ -866,7 +946,7 @@
                         "type": "array",
                         "description": "Array of return lines",
                         "items": {
-                            "$ref": "#\/components\/schemas\/RefundLine"
+                            "$ref": "#\/components\/schemas\/ReturnLine"
                         }
                     },
                     "labels": {
@@ -1078,6 +1158,20 @@
                     "currentRefundStatus": {
                         "type": "string",
                         "description": "Determines the current refund status of the return."
+                    },
+                    "currentTrackingStatuses": {
+                        "type": "array",
+                        "description": "Array of current tracking status of each quantity",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/CurrentTrackingStatus"
+                        }
+                    },
+                    "refundChannels": {
+                        "type": "array",
+                        "description": "Array of refund channel of each quantity",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/RefundChannelInfo"
+                        }
                     }
                 },
                 "description": "A list of order lines in the return order"

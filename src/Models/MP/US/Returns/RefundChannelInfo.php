@@ -1,7 +1,7 @@
 <?php
 
 /**
- * RefundLine
+ * RefundChannelInfo
  *
  * PHP version 7.4
  *
@@ -24,18 +24,18 @@ namespace Walmart\Models\MP\US\Returns;
 use Walmart\Models\BaseModel;
 
 /**
- * RefundLine Class Doc Comment
+ * RefundChannelInfo Class Doc Comment
  *
  * @category Class
 
- * @description Array of refund lines.
+ * @description Array of refund channel of each quantity
 
  * @package  Walmart
  * @author   Jesse Evers
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
  */
-class RefundLine extends BaseModel
+class RefundChannelInfo extends BaseModel
 {
     public const DISCRIMINATOR = null;
 
@@ -44,7 +44,7 @@ class RefundLine extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'RefundLine';
+    protected static string $openAPIModelName = 'RefundChannelInfo';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -52,7 +52,7 @@ class RefundLine extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'returnOrderLineNumber' => 'int',
+        'refundChannelName' => 'string',
         'quantity' => '\Walmart\Models\MP\US\Returns\Quantity'
     ];
 
@@ -64,7 +64,7 @@ class RefundLine extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'returnOrderLineNumber' => 'int64',
+        'refundChannelName' => null,
         'quantity' => null
     ];
 
@@ -74,7 +74,7 @@ class RefundLine extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'returnOrderLineNumber' => false,
+        'refundChannelName' => false,
         'quantity' => false
     ];
 
@@ -85,7 +85,7 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'returnOrderLineNumber' => 'returnOrderLineNumber',
+        'refundChannelName' => 'refundChannelName',
         'quantity' => 'quantity'
     ];
 
@@ -95,7 +95,7 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'returnOrderLineNumber' => 'setReturnOrderLineNumber',
+        'refundChannelName' => 'setRefundChannelName',
         'quantity' => 'setQuantity'
     ];
 
@@ -105,7 +105,7 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'returnOrderLineNumber' => 'getReturnOrderLineNumber',
+        'refundChannelName' => 'getRefundChannelName',
         'quantity' => 'getQuantity'
     ];
 
@@ -117,7 +117,7 @@ class RefundLine extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('returnOrderLineNumber', $data ?? [], null);
+        $this->setIfExists('refundChannelName', $data ?? [], null);
         $this->setIfExists('quantity', $data ?? [], null);
     }
 
@@ -130,39 +130,36 @@ class RefundLine extends BaseModel
     {
         $invalidProperties = [];
 
-        if ($this->container['returnOrderLineNumber'] === null) {
-            $invalidProperties[] = "'returnOrderLineNumber' can't be null";
-        }
 
         return $invalidProperties;
     }
 
     /**
-     * Gets returnOrderLineNumber
+     * Gets refundChannelName
      *
-     * @return int
+     * @return string|null
     
      */
-    public function getReturnOrderLineNumber()
+    public function getRefundChannelName()
     {
-        return $this->container['returnOrderLineNumber'];
+        return $this->container['refundChannelName'];
     }
 
     /**
-     * Sets returnOrderLineNumber
+     * Sets refundChannelName
      *
-     * @param int $returnOrderLineNumber A line number associated with each individual line in the return order. If return order has only one return order line and it is not provided in the request, the only available return order line is auto-selected. If return order has multiple return order lines, the required return order line must be provided in the request. If not provided in the request, it will result in data-error.
+     * @param string|null $refundChannelName Valid values are: ONLINE, IN_STORE, and CUSTOMER_CARE
      *
      * @return self
     
      */
-    public function setReturnOrderLineNumber($returnOrderLineNumber)
+    public function setRefundChannelName($refundChannelName)
     {
-        if (is_null($returnOrderLineNumber)) {
-            throw new \InvalidArgumentException('non-nullable returnOrderLineNumber cannot be null');
+        if (is_null($refundChannelName)) {
+            throw new \InvalidArgumentException('non-nullable refundChannelName cannot be null');
         }
 
-        $this->container['returnOrderLineNumber'] = $returnOrderLineNumber;
+        $this->container['refundChannelName'] = $refundChannelName;
         return $this;
     }
 

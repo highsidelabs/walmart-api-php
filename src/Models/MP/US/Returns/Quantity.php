@@ -154,7 +154,7 @@ class Quantity extends BaseModel
     /**
      * Sets unitOfMeasure
      *
-     * @param string $unitOfMeasure The unit of measure in the item's weight (e.g., 'POUND' or 'OUNCE')
+     * @param string $unitOfMeasure The unit of measure in the item's weight (e.g., 'EACH' or 'EA')
      *
      * @return self
     

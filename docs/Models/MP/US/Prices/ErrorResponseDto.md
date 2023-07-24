@@ -1,10 +1,10 @@
-# Walmart\Models\MP\US\Fulfillment\ConvertItemForWfsRequest
+# Walmart\Models\MP\US\Prices\ErrorResponseDto
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**file** | **\SplFileObject** | Feed file to upload |
+**errorMessage** | **string** |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)
