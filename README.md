@@ -11,7 +11,7 @@
 </p>
 
 ## Walmart API for PHP
-A PHP library for connecting to Walmart's [Marketplace](https://developer.walmart.com/home/us-mp/), [Drop Ship Vendor](https://developer.walmart.com/home/us-dsv/), [Content Provider](https://developer.walmart.com/home/us-cp/), and [Warehouse Supplier](https://developer.walmart.com/home/us-ws/) APIs, for the US, Canada, and Mexico.
+A PHP library for connecting to Walmart's [Marketplace](https://developer.walmart.com/home/us-mp/), [1P Supplier](https://developer.walmart.com/home/us-supplier/), and [Content Provider](https://developer.walmart.com/home/us-cp/) APIs, for the US, Canada, and Mexico.
 
 ### Related packages
 
@@ -29,7 +29,7 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
 
 ## Features
 
-* Supports all Walmart API operations for Marketplace Sellers, Drop Ship Vendors, Content Providers, and Warehouse Suppliers as of 5/26/2023 ([see here](#supported-api-segments) for links to documentation for all calls)
+* Supports all Walmart API operations for Marketplace Sellers, 1P Suppliers, and Content Providers as of 7/24/2023 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports the United States, Canada, and Mexico marketplaces
 * Automatically handles all forms of authentication used by Walmart (basic auth, access tokens, and request signatures) with minimal configuration
 
@@ -59,9 +59,8 @@ The existing Walmart client libraries for PHP are either incomplete, outdated, o
     * [Debug mode](#debug-mode)
     * [Supported API segments](#supported-api-segments)
         * [Marketplace](#marketplace)
-        * [Drop Ship Vendor](#drop-ship-vendor)
+        * [1P Supplier](#1p-supplier)
         * [Content Provider](#content-provider)
-        * [Warehouse Supplier](#warehouse-supplier)
 
 
 ## Getting Started
@@ -90,11 +89,11 @@ $config = new Configuration([
 ]);
 ```
 
-If you are a Marketplace Seller selling in the US (which is likely true of most people using this API), that's all the configuration you need to do to start making calls to the Marketplace API. If you want to call the Drop Ship Vendor, Content Provider, or Warehouse Supplier APIs, or if you sell goods outside the US and need to make calls to the Marketplace API for, you'll need to provide additional configuration parameters, which are detailed in the [Configuration](#configuration) section below.
+If you are a Marketplace Seller selling in the US (which is likely true of most people using this API), that's all the configuration you need to do to start making calls to the Marketplace API. If you want to call the 1P Supplier or Content Provider APIs, or if you sell goods outside the US and need to make calls to the Marketplace API for, you'll need to provide additional configuration parameters, which are detailed in the [Configuration](#configuration) section below.
 
 ### Basic Usage
 
-Once you've created an instance of the `Configuration` class, you can start making calls to the Walmart APIs. The `Walmart` class provides an easy interface for retrieving an instance of any API class, from any of the four major API categories (Marketplace, Drop Ship Vendor, Content Provider, Warehouse Supplier). For example, to retrieve an instance of the Marketplace `Authentication` API and check the status of your authentication token, you can do the following:
+Once you've created an instance of the `Configuration` class, you can start making calls to the Walmart APIs. The `Walmart` class provides an easy interface for retrieving an instance of any API class, from any of the three major API categories (Marketplace, 1P Supplier, Content Provider). For example, to retrieve an instance of the Marketplace `Authentication` API and check the status of your authentication token, you can do the following:
 
 ```php
 use Walmart\Configuration;
@@ -112,7 +111,7 @@ $tokenStatus = $tokenDetail->isValid;
 var_dump($tokenStatus);
 ```
 
-Similarly, the other API categories can be accessed via the `Walmart::dropShipVendor()`, `Walmart::contentProvider()`, and `Walmart::warehouseSupplier()` methods.
+Similarly, the other API categories can be accessed via the `Walmart::supplier()` and `Walmart::contentProvider()` methods.
 
 
 ## Documentation
@@ -133,9 +132,9 @@ If you try to instantiate an instance of an API class that is not supported in t
 
 ### Using API classes
 
-The API classes are divided into four categories: Marketplace, Drop Ship Vendor, Content Provider, and Warehouse Supplier. Each category has its own namespace, and each country has its own sub-namespace. For example, the Marketplace APIs for the US are located in the `Walmart\Apis\MP\US` namespace, and the Drop Ship Vendor APIs for Canada are located in the `Walmart\Apis\DSV\CA` namespace.
+The API classes are divided into three categories: Marketplace, 1P Supplier, and Content Provider. Each category has its own namespace, and each country has its own sub-namespace. For example, the Marketplace APIs for Canada are located in the `Walmart\Apis\MP\CA` namespace, and the 1P Supplier APIs for the US are located in the `Walmart\Apis\Supplier\US` namespace.
 
-To create an instance of an API class, start by using the `Walmart::marketplace()`, `Walmart::dropShipVendor()`, `Walmart::contentProvider()`, and `Walmart::warehouseSupplier()` methods. All four methods take a single argument: an instance of `Walmart\Configuration`. Each of those methods returns a helper class that provides access to all the API classes in that category for the country you've specified in the `Configuration` object (US by default). See the [Supported API segments](#supported-api-segments) section below for a list of all the APIs supported by this library, organized by API category.
+To create an instance of an API class, start by using the `Walmart::marketplace()`, `Walmart::contentProvider()`, and `Walmart::supplier()` methods. All three methods take a single argument: an instance of `Walmart\Configuration`. Each of those methods returns a helper class that provides access to all the API classes in that category for the country you've specified in the `Configuration` object (US by default). See the [Supported API segments](#supported-api-segments) section below for a list of all the APIs supported by this library, organized by API category.
 
 Once you have an instance of an API class, you can call any of the endpoint methods defined in [the documentation](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis). The API class documentation is divided by API category and then country, because the same API may have different endpoints and/or parameters in different countries. Make sure you're looking at the correct documentation for the country you're actually selling in!
 
@@ -250,28 +249,20 @@ This is an exhaustive list of all the APIs supported by this library, organized 
 * [Utilities API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/UtilitiesApi.md): `Walmart::marketplace($config)->utilities()` (US only)
 
 
-#### Drop Ship Vendor
+#### 1P Supplier
 
-_Note_: The Drop Ship Vendor APIs are currently only available in the US.
+_Note_: The 1P Supplier APIs are currently only available in the US.
 
-* [Cost API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/CostApi.md): `Walmart::dropShipVendor($config)->cost()`
-* [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/FeedsApi.md): `Walmart::dropShipVendor($config)->feeds()`
-* [Inventory API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/InventoryApi.md): `Walmart::dropShipVendor($config)->inventory()`
-* [Items API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/ItemsApi.md): `Walmart::dropShipVendor($config)->items()`
-* [Lag Time API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/LagTimeApi.md): `Walmart::dropShipVendor($config)->lagTime()`
-* [Orders API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/OrdersApi.md): `Walmart::dropShipVendor($config)->orders()`
-* [Reports API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/ReportsApi.md): `Walmart::dropShipVendor($config)->reports()`
+* [Cost API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/CostApi.md): `Walmart::supplier($config)->cost()`
+* [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/FeedsApi.md): `Walmart::supplier($config)->feeds()`
+* [Inventory API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/InventoryApi.md): `Walmart::supplier($config)->inventory()`
+* [Items API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/ItemsApi.md): `Walmart::supplier($config)->items()`
+* [Lag Time API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/LagTimeApi.md): `Walmart::supplier($config)->lagTime()`
+* [Orders API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/OrdersApi.md): `Walmart::supplier($config)->orders()`
+* [Reports API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/ReportsApi.md): `Walmart::supplier($config)->reports()`
 
 #### Content Provider
 
 _Note_: The Content Provider APIs are currently only available in the US.
 
 * [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/CP/US/FeedsApi.md): `Walmart::contentProvider($config)->feeds()`
-
-#### Warehouse Supplier
-
-_Note_: The Warehouse Supplier APIs are currently only available in the US.
-
-* [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/WS/US/FeedsApi.md): `Walmart::warehouseSupplier($config)->feeds()`
-* [Items API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/WS/US/ItemsApi.md): `Walmart::warehouseSupplier($config)->items()`
-* [Reports API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/WS/US/ReportsApi.md): `Walmart::warehouseSupplier($config)->reports()`

@@ -10,47 +10,6 @@
       }
     }
   },
-  "dsv": {
-    "name": "Drop Ship Vendors",
-    "code": "dsv",
-    "apis": {
-      "cost": {
-        "name": "Cost",
-        "code": "cost",
-        "countries": ["us"]
-      },
-      "feeds": {
-        "name": "Feeds",
-        "code": "feeds",
-        "countries": ["us"]
-      },
-      "inventory": {
-        "name": "Inventory",
-        "code": "inventory",
-        "countries": ["us"]
-      },
-      "items": {
-        "name": "Items",
-        "code": "items",
-        "countries": ["us"]
-      },
-      "lagtime": {
-        "name": "Lag Time",
-        "code": "lagtime",
-        "countries": ["us"]
-      },
-      "orders": {
-        "name": "Orders",
-        "code": "orders",
-        "countries": ["us"]
-      },
-      "reports": {
-        "name": "Reports",
-        "code": "reports",
-        "countries": ["us"]
-      }
-    }
-  },
   "mp": {
     "name": "Marketplace Partners",
     "code": "mp",
@@ -157,18 +116,38 @@
       }
     }
   },
-  "ws": {
-    "name": "Warehouse Suppliers",
-    "code": "ws",
+  "supplier": {
+    "name": "1P Suppliers",
+    "code": "supplier",
     "apis": {
+      "cost": {
+        "name": "DSV Cost",
+        "code": "cost",
+        "countries": ["us"]
+      },
       "feeds": {
         "name": "Feeds",
         "code": "feeds",
         "countries": ["us"]
       },
+      "inventory": {
+        "name": "DSV Inventory",
+        "code": "inventory",
+        "countries": ["us"]
+      },
       "items": {
         "name": "Items",
         "code": "items",
+        "countries": ["us"]
+      },
+      "lagtime": {
+        "name": "DSV Lag Time",
+        "code": "lagtime",
+        "countries": ["us"]
+      },
+      "orders": {
+        "name": "DSV Orders",
+        "code": "orders",
         "countries": ["us"]
       },
       "reports": {

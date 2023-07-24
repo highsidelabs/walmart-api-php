@@ -222,11 +222,11 @@ function replaceRequestResponseSchemas(array $verbSchema, array $componentSchema
         $matchingRef = findMatchingComponent(
             array_keys($responseSchema['properties']),
             $componentSchemas,
-            $contentType === 'application/xml'
+            $contentType === 'application/xml',
+            $code,
         );
         if (!is_null($matchingRef)) {
             $verbSchema['responses'][$code]['content'][$contentType]['schema'] = $matchingRef;
-            break;
         }
     }
 
@@ -272,11 +272,17 @@ function replaceComponentInlineSchemas(array $components): array
                 continue;
             }
 
+            $httpCode = (int) (substr($componentName, -3) ?? -1);
+            if ($httpCode < 100 || $httpCode > 599) {
+                $httpCode = null;
+            }
+
             if ($property['type'] === 'object') {
                 $matchingRef = findMatchingComponent(
                     array_keys($property['properties']),
                     $components,
                     isset($component['xml']),
+                    $httpCode,
                 );
                 if (!is_null($matchingRef)) {
                     $component['properties'][$propertyName] = $matchingRef;
@@ -286,6 +292,7 @@ function replaceComponentInlineSchemas(array $components): array
                     array_keys($property['items']['properties']),
                     $components,
                     isset($component['xml']),
+                    $httpCode,
                 );
                 if (!is_null($matchingRef)) {
                     $component['properties'][$propertyName]['items'] = $matchingRef;
@@ -306,9 +313,10 @@ function replaceComponentInlineSchemas(array $components): array
  * @param array $properties The properties of the schema to match
  * @param array $componentSchemas The component schemas to search for a match
  * @param bool $isXml Whether or not we're searching for XML-specific component schemas
+ * @param int|null $code The response code for the schema to match, if applicable
  * @return array|null
  */
-function findMatchingComponent(array $properties, array $componentSchemas, bool $isXml): ?array
+function findMatchingComponent(array $properties, array $componentSchemas, bool $isXml, int $code = null): ?array
 {
     $sortedProperties = $properties;
     sort($sortedProperties);
@@ -324,10 +332,17 @@ function findMatchingComponent(array $properties, array $componentSchemas, bool 
 
         if ($sortedComponentProperties === $sortedProperties) {
             $componentIsXml = isset($component['xml']);
-            if ($isXml !== $componentIsXml) {
+            if (
+                // Sometimes there are multiple Walmart-defined schema components that have the same structure
+                // but different names (the names contain the response code). We want to get the component that
+                // matches the response code, if one exists, to help with readability
+                ($code && strpos($componentName, (string) $code) === false)
                 // Sometimes for XML inline schemas, there is a matching component that is not marked as
                 // XML-specific, but is the only matching schema. If we don't find a full match, we'll
-                // use the component that is not marked as XML-specific
+                // use the component that is not marked as XML-specific, but only if we haven't already
+                // found a match that is the correct content type
+                || (is_null($match) && $isXml !== $componentIsXml)
+            ) {
                 $match = $componentName;
             } else {
                 // If we find a match that is typed correctly, stop looking immediately
