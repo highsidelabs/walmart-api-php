@@ -15,6 +15,7 @@ resources/specs
 
 # IDE
 .vscode
+.idea/
 
 # OS X
 **/.DS_Store
