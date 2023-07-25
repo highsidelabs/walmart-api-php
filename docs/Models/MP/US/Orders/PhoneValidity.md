@@ -1,11 +1,13 @@
-# Walmart\Models\MP\US\Orders\QuantityType
+# Walmart\Models\MP\US\Orders\PhoneValidity
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unitOfMeasurement** | **string** | Unit of quantity |
-**amount** | **string** | The quantity of the unit of measurement for the item. |
+**validationType** | **string** |  | [optional]
+**validationStatus** | **string** |  | [optional]
+**validatedDate** | **\DateTime** |  | [optional]
+**validatedBy** | **string** |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

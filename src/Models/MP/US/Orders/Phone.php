@@ -56,7 +56,8 @@ class Phone extends BaseModel
         'completeNumber' => 'string',
         'type' => 'string',
         'subscriberNumber' => 'string',
-        'countryCode' => 'string'
+        'countryCode' => 'string',
+        'phoneValidity' => '\Walmart\Models\MP\US\Orders\PhoneValidity'
     ];
 
     /**
@@ -73,7 +74,8 @@ class Phone extends BaseModel
         'completeNumber' => null,
         'type' => null,
         'subscriberNumber' => null,
-        'countryCode' => null
+        'countryCode' => null,
+        'phoneValidity' => null
     ];
 
     /**
@@ -88,7 +90,8 @@ class Phone extends BaseModel
         'completeNumber' => false,
         'type' => false,
         'subscriberNumber' => false,
-        'countryCode' => false
+        'countryCode' => false,
+        'phoneValidity' => false
     ];
 
     /**
@@ -104,7 +107,8 @@ class Phone extends BaseModel
         'completeNumber' => 'completeNumber',
         'type' => 'type',
         'subscriberNumber' => 'subscriberNumber',
-        'countryCode' => 'countryCode'
+        'countryCode' => 'countryCode',
+        'phoneValidity' => 'phoneValidity'
     ];
 
     /**
@@ -119,7 +123,8 @@ class Phone extends BaseModel
         'completeNumber' => 'setCompleteNumber',
         'type' => 'setType',
         'subscriberNumber' => 'setSubscriberNumber',
-        'countryCode' => 'setCountryCode'
+        'countryCode' => 'setCountryCode',
+        'phoneValidity' => 'setPhoneValidity'
     ];
 
     /**
@@ -134,7 +139,8 @@ class Phone extends BaseModel
         'completeNumber' => 'getCompleteNumber',
         'type' => 'getType',
         'subscriberNumber' => 'getSubscriberNumber',
-        'countryCode' => 'getCountryCode'
+        'countryCode' => 'getCountryCode',
+        'phoneValidity' => 'getPhoneValidity'
     ];
 
 
@@ -173,6 +179,7 @@ class Phone extends BaseModel
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('subscriberNumber', $data ?? [], null);
         $this->setIfExists('countryCode', $data ?? [], null);
+        $this->setIfExists('phoneValidity', $data ?? [], null);
     }
 
     /**
@@ -407,6 +414,35 @@ class Phone extends BaseModel
         }
 
         $this->container['countryCode'] = $countryCode;
+        return $this;
+    }
+
+    /**
+     * Gets phoneValidity
+     *
+     * @return \Walmart\Models\MP\US\Orders\PhoneValidity|null
+    
+     */
+    public function getPhoneValidity()
+    {
+        return $this->container['phoneValidity'];
+    }
+
+    /**
+     * Sets phoneValidity
+     *
+     * @param \Walmart\Models\MP\US\Orders\PhoneValidity|null $phoneValidity phoneValidity
+     *
+     * @return self
+    
+     */
+    public function setPhoneValidity($phoneValidity)
+    {
+        if (is_null($phoneValidity)) {
+            throw new \InvalidArgumentException('non-nullable phoneValidity cannot be null');
+        }
+
+        $this->container['phoneValidity'] = $phoneValidity;
         return $this;
     }
 }

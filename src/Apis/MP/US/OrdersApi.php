@@ -674,6 +674,11 @@ class OrdersApi extends BaseApi
      * @param  string $shippingProgramType Specifies the type of program. Allowed value is TWO_DAY. (optional)
      * @param  string $replacementInfo Provides additional attributes - originalCustomerOrderID, orderType - related to Replacement order, in response, if available. Allowed values are true or false. (optional, default to 'false')
      * @param  string $orderType Specifies if the order is a regular order or replacement order. Possible values are REGULAR or REPLACEMENT. Provided in response only if query parameter replacementInfo=true. (optional)
+     * @param  string $hasMoreElements hasMoreElements (optional)
+     * @param  string $soIndex Sales order index. This should only be populated from a next token (optional)
+     * @param  string $poIndex Purchase order index. This should only be populated from a next token (optional)
+     * @param  string $partnerId partnerId (optional)
+     * @param  string $sellerId sellerId (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -695,9 +700,14 @@ class OrdersApi extends BaseApi
         ?string $shipNodeType = 'SellerFulfilled',
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
-        ?string $orderType = null
+        ?string $orderType = null,
+        ?string $hasMoreElements = null,
+        ?string $soIndex = null,
+        ?string $poIndex = null,
+        ?string $partnerId = null,
+        ?string $sellerId = null
     ): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3 {
-        return $this->getAllOrdersWithHttpInfo($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType);
+        return $this->getAllOrdersWithHttpInfo($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, $hasMoreElements, $soIndex, $poIndex, $partnerId, $sellerId);
     }
 
     /**
@@ -721,6 +731,11 @@ class OrdersApi extends BaseApi
      * @param  string $shippingProgramType Specifies the type of program. Allowed value is TWO_DAY. (optional)
      * @param  string $replacementInfo Provides additional attributes - originalCustomerOrderID, orderType - related to Replacement order, in response, if available. Allowed values are true or false. (optional, default to 'false')
      * @param  string $orderType Specifies if the order is a regular order or replacement order. Possible values are REGULAR or REPLACEMENT. Provided in response only if query parameter replacementInfo=true. (optional)
+     * @param  string $hasMoreElements hasMoreElements (optional)
+     * @param  string $soIndex Sales order index. This should only be populated from a next token (optional)
+     * @param  string $poIndex Purchase order index. This should only be populated from a next token (optional)
+     * @param  string $partnerId partnerId (optional)
+     * @param  string $sellerId sellerId (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -743,8 +758,13 @@ class OrdersApi extends BaseApi
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
         ?string $orderType = null,
+        ?string $hasMoreElements = null,
+        ?string $soIndex = null,
+        ?string $poIndex = null,
+        ?string $partnerId = null,
+        ?string $sellerId = null,
     ): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3 {
-        $request = $this->getAllOrdersRequest($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType);
+        $request = $this->getAllOrdersRequest($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, $hasMoreElements, $soIndex, $poIndex, $partnerId, $sellerId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -854,6 +874,11 @@ class OrdersApi extends BaseApi
      * @param  string $shippingProgramType Specifies the type of program. Allowed value is TWO_DAY. (optional)
      * @param  string $replacementInfo Provides additional attributes - originalCustomerOrderID, orderType - related to Replacement order, in response, if available. Allowed values are true or false. (optional, default to 'false')
      * @param  string $orderType Specifies if the order is a regular order or replacement order. Possible values are REGULAR or REPLACEMENT. Provided in response only if query parameter replacementInfo=true. (optional)
+     * @param  string $hasMoreElements hasMoreElements (optional)
+     * @param  string $soIndex Sales order index. This should only be populated from a next token (optional)
+     * @param  string $poIndex Purchase order index. This should only be populated from a next token (optional)
+     * @param  string $partnerId partnerId (optional)
+     * @param  string $sellerId sellerId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -874,9 +899,14 @@ class OrdersApi extends BaseApi
         ?string $shipNodeType = 'SellerFulfilled',
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
-        ?string $orderType = null
+        ?string $orderType = null,
+        ?string $hasMoreElements = null,
+        ?string $soIndex = null,
+        ?string $poIndex = null,
+        ?string $partnerId = null,
+        ?string $sellerId = null
     ): PromiseInterface {
-        return $this->getAllOrdersAsyncWithHttpInfo($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType)
+        return $this->getAllOrdersAsyncWithHttpInfo($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, $hasMoreElements, $soIndex, $poIndex, $partnerId, $sellerId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -905,6 +935,11 @@ class OrdersApi extends BaseApi
      * @param  string $shippingProgramType Specifies the type of program. Allowed value is TWO_DAY. (optional)
      * @param  string $replacementInfo Provides additional attributes - originalCustomerOrderID, orderType - related to Replacement order, in response, if available. Allowed values are true or false. (optional, default to 'false')
      * @param  string $orderType Specifies if the order is a regular order or replacement order. Possible values are REGULAR or REPLACEMENT. Provided in response only if query parameter replacementInfo=true. (optional)
+     * @param  string $hasMoreElements hasMoreElements (optional)
+     * @param  string $soIndex Sales order index. This should only be populated from a next token (optional)
+     * @param  string $poIndex Purchase order index. This should only be populated from a next token (optional)
+     * @param  string $partnerId partnerId (optional)
+     * @param  string $sellerId sellerId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -926,9 +961,14 @@ class OrdersApi extends BaseApi
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
         ?string $orderType = null,
+        ?string $hasMoreElements = null,
+        ?string $soIndex = null,
+        ?string $poIndex = null,
+        ?string $partnerId = null,
+        ?string $sellerId = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3';
-        $request = $this->getAllOrdersRequest($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType);
+        $request = $this->getAllOrdersRequest($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, $hasMoreElements, $soIndex, $poIndex, $partnerId, $sellerId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -989,6 +1029,11 @@ class OrdersApi extends BaseApi
      * @param  string $shippingProgramType Specifies the type of program. Allowed value is TWO_DAY. (optional)
      * @param  string $replacementInfo Provides additional attributes - originalCustomerOrderID, orderType - related to Replacement order, in response, if available. Allowed values are true or false. (optional, default to 'false')
      * @param  string $orderType Specifies if the order is a regular order or replacement order. Possible values are REGULAR or REPLACEMENT. Provided in response only if query parameter replacementInfo=true. (optional)
+     * @param  string $hasMoreElements hasMoreElements (optional)
+     * @param  string $soIndex Sales order index. This should only be populated from a next token (optional)
+     * @param  string $poIndex Purchase order index. This should only be populated from a next token (optional)
+     * @param  string $partnerId partnerId (optional)
+     * @param  string $sellerId sellerId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1010,6 +1055,11 @@ class OrdersApi extends BaseApi
         ?string $shippingProgramType = null,
         ?string $replacementInfo = 'false',
         ?string $orderType = null,
+        ?string $hasMoreElements = null,
+        ?string $soIndex = null,
+        ?string $poIndex = null,
+        ?string $partnerId = null,
+        ?string $sellerId = null,
     ): Request {
         $contentType = self::contentTypes['getAllOrders'];
 
@@ -1146,6 +1196,46 @@ class OrdersApi extends BaseApi
             ObjectSerializer::toQueryValue(
                 $orderType,
                 'orderType', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $hasMoreElements,
+                'hasMoreElements', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $soIndex,
+                'soIndex', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $poIndex,
+                'poIndex', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $partnerId,
+                'partnerId', // param base name
+                'string', // openApiType
+                'form', // style
+                true, // explode
+                false // required
+            ) ?? [],
+            ObjectSerializer::toQueryValue(
+                $sellerId,
+                'sellerId', // param base name
                 'string', // openApiType
                 'form', // style
                 true, // explode

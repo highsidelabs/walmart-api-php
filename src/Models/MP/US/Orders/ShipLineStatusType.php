@@ -56,7 +56,8 @@ class ShipLineStatusType extends BaseModel
         'asn' => '\Walmart\Models\MP\US\Orders\AsnType',
         'statusQuantity' => '\Walmart\Models\MP\US\Orders\QuantityType',
         'trackingInfo' => '\Walmart\Models\MP\US\Orders\TrackingInfoType',
-        'returnCenterAddress' => '\Walmart\Models\MP\US\Orders\ReturnCenterAddressType'
+        'returnCenterAddress' => '\Walmart\Models\MP\US\Orders\ReturnCenterAddressType',
+        'currentTrackingInfo' => '\Walmart\Models\MP\US\Orders\CurrentTrackingInfoType'
     ];
 
     /**
@@ -71,7 +72,8 @@ class ShipLineStatusType extends BaseModel
         'asn' => null,
         'statusQuantity' => null,
         'trackingInfo' => null,
-        'returnCenterAddress' => null
+        'returnCenterAddress' => null,
+        'currentTrackingInfo' => null
     ];
 
     /**
@@ -84,7 +86,8 @@ class ShipLineStatusType extends BaseModel
         'asn' => false,
         'statusQuantity' => false,
         'trackingInfo' => false,
-        'returnCenterAddress' => false
+        'returnCenterAddress' => false,
+        'currentTrackingInfo' => false
     ];
 
     /**
@@ -98,7 +101,8 @@ class ShipLineStatusType extends BaseModel
         'asn' => 'asn',
         'statusQuantity' => 'statusQuantity',
         'trackingInfo' => 'trackingInfo',
-        'returnCenterAddress' => 'returnCenterAddress'
+        'returnCenterAddress' => 'returnCenterAddress',
+        'currentTrackingInfo' => 'currentTrackingInfo'
     ];
 
     /**
@@ -111,7 +115,8 @@ class ShipLineStatusType extends BaseModel
         'asn' => 'setAsn',
         'statusQuantity' => 'setStatusQuantity',
         'trackingInfo' => 'setTrackingInfo',
-        'returnCenterAddress' => 'setReturnCenterAddress'
+        'returnCenterAddress' => 'setReturnCenterAddress',
+        'currentTrackingInfo' => 'setCurrentTrackingInfo'
     ];
 
     /**
@@ -124,7 +129,8 @@ class ShipLineStatusType extends BaseModel
         'asn' => 'getAsn',
         'statusQuantity' => 'getStatusQuantity',
         'trackingInfo' => 'getTrackingInfo',
-        'returnCenterAddress' => 'getReturnCenterAddress'
+        'returnCenterAddress' => 'getReturnCenterAddress',
+        'currentTrackingInfo' => 'getCurrentTrackingInfo'
     ];
 
 
@@ -170,6 +176,7 @@ class ShipLineStatusType extends BaseModel
         $this->setIfExists('statusQuantity', $data ?? [], null);
         $this->setIfExists('trackingInfo', $data ?? [], null);
         $this->setIfExists('returnCenterAddress', $data ?? [], null);
+        $this->setIfExists('currentTrackingInfo', $data ?? [], null);
     }
 
     /**
@@ -355,6 +362,35 @@ class ShipLineStatusType extends BaseModel
         }
 
         $this->container['returnCenterAddress'] = $returnCenterAddress;
+        return $this;
+    }
+
+    /**
+     * Gets currentTrackingInfo
+     *
+     * @return \Walmart\Models\MP\US\Orders\CurrentTrackingInfoType|null
+    
+     */
+    public function getCurrentTrackingInfo()
+    {
+        return $this->container['currentTrackingInfo'];
+    }
+
+    /**
+     * Sets currentTrackingInfo
+     *
+     * @param \Walmart\Models\MP\US\Orders\CurrentTrackingInfoType|null $currentTrackingInfo currentTrackingInfo
+     *
+     * @return self
+    
+     */
+    public function setCurrentTrackingInfo($currentTrackingInfo)
+    {
+        if (is_null($currentTrackingInfo)) {
+            throw new \InvalidArgumentException('non-nullable currentTrackingInfo cannot be null');
+        }
+
+        $this->container['currentTrackingInfo'] = $currentTrackingInfo;
         return $this;
     }
 }

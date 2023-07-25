@@ -212,6 +212,16 @@ class CarrierNameType extends BaseModel
 
     public const CARRIER_XPO_LOGISTICS = 'XPO Logistics';
 
+    public const CARRIER_JD_LOGISTICS = 'JD Logistics';
+
+    public const CARRIER_YDH = 'YDH';
+
+    public const CARRIER_JCEX = 'JCEX';
+
+    public const CARRIER_FLYT = 'Flyt';
+
+    public const CARRIER_DEUTSCHE_POST = 'Deutsche Post';
+
     /**
      * Gets allowable values of the enum
      *
@@ -271,6 +281,11 @@ class CarrierNameType extends BaseModel
             self::CARRIER_JAPAN_POST,
             self::CARRIER_CORREOS_DE_MEXICO,
             self::CARRIER_XPO_LOGISTICS,
+            self::CARRIER_JD_LOGISTICS,
+            self::CARRIER_YDH,
+            self::CARRIER_JCEX,
+            self::CARRIER_FLYT,
+            self::CARRIER_DEUTSCHE_POST,
         ];
     }
 
@@ -351,7 +366,7 @@ class CarrierNameType extends BaseModel
     /**
      * Sets carrier
      *
-     * @param string|null $carrier The package shipment carrier. Valid entries are: UPS, USPS, FedEx, Airborne, OnTrac, DHL Ecommerce - US, LS (LaserShip), UDS (United Delivery Service), UPSMI (UPS Mail Innovations), FDX, PILOT, ESTES, SAIA, FDS Express, Seko Worldwide, HIT Delivery, FEDEXSP (FedEx SmartPost), RL Carriers, Metropolitan Warehouse & Delivery, China Post, YunExpress,Yellow Freight Sys, AIT Worldwide Logistics, Chukou1, Sendle, Landmark Global, Sunyou, Yanwen, 4PX, GLS, OSM Worldwide, FIRST MILE, AM Trucking, CEVA, India Post, SF Express, CNE, TForce Freight, AxleHire, LSO, Royal Mail, ABF Freight System, WanB, Roadrunner Freight, Meyer Distribution, AAA Cooper, Canada Post, Southeastern Freight Lines, Japan Post, Correos de Mexico, XPO Logistics.
+     * @param string|null $carrier The package shipment carrier. Valid entries are: UPS, USPS, FedEx, Airborne, OnTrac, DHL Ecommerce - US, LS (LaserShip), UDS (United Delivery Service), UPSMI (UPS Mail Innovations), FDX, PILOT, ESTES, SAIA, FDS Express, Seko Worldwide, HIT Delivery, FEDEXSP (FedEx SmartPost), RL Carriers, Metropolitan Warehouse & Delivery, China Post, YunExpress,Yellow Freight Sys, AIT Worldwide Logistics, Chukou1, Sendle, Landmark Global, Sunyou, Yanwen, 4PX, GLS, OSM Worldwide, FIRST MILE, AM Trucking, CEVA, India Post, SF Express, CNE, TForce Freight, AxleHire, LSO, Royal Mail, ABF Freight System, WanB, Roadrunner Freight, Meyer Distribution, AAA Cooper, Canada Post, Southeastern Freight Lines, Japan Post, Correos de Mexico, XPO Logistics, JD Logistics, YDH, JCEX, Flyt, Deutsche Post.
      *
      * @return self
     

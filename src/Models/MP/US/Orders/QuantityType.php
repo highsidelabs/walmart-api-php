@@ -220,7 +220,7 @@ class QuantityType extends BaseModel
     /**
      * Sets amount
      *
-     * @param string $amount Always use '1'
+     * @param string $amount The quantity of the unit of measurement for the item.
      *
      * @return self
     
