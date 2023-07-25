@@ -142,7 +142,7 @@
                     "content": {
                         "application\/xml": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/OrderShipment"
+                                "$ref": "#\/components\/schemas\/OrderCancellation"
                             },
                             "example": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<orderCancellation xmlns=\"http:\/\/walmart.com\/mp\/v3\/orders\">\n    <orderLines>\n        <orderLine>\n            <lineNumber>1<\/lineNumber>\n            <orderLineStatuses>\n                <orderLineStatus>\n                    <status>Cancelled<\/status>\n                    <cancellationReason>CUSTOMER_REQUESTED_SELLER_TO_CANCEL<\/cancellationReason>\n                    <statusQuantity>\n                        <unitOfMeasurement>EACH<\/unitOfMeasurement>\n                        <amount>1<\/amount>\n                    <\/statusQuantity>\n                <\/orderLineStatus>\n            <\/orderLineStatuses>\n        <\/orderLine>\n    <\/orderLines>\n<\/orderCancellation>"
                         }
@@ -1499,7 +1499,7 @@
                 "type": "object",
                 "properties": {
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/ShippingLinesType"
+                        "$ref": "#\/components\/schemas\/RefundLinesType"
                     }
                 },
                 "description": "Information about a shipment",
@@ -1854,7 +1854,7 @@
                         "type": "string"
                     },
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/ShippingLinesType"
+                        "$ref": "#\/components\/schemas\/RefundLinesType"
                     }
                 },
                 "xml": {
@@ -1970,7 +1970,7 @@
                         "description": "OrderLine number"
                     },
                     "orderLineStatuses": {
-                        "$ref": "#\/components\/schemas\/OrderLineStatusesType"
+                        "$ref": "#\/components\/schemas\/CancelLineStatusesType"
                     }
                 },
                 "description": "A list of orderLines to be cancelled"
@@ -1998,7 +1998,7 @@
                 "type": "object",
                 "properties": {
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/ShippingLinesType"
+                        "$ref": "#\/components\/schemas\/CancelLinesType"
                     }
                 },
                 "xml": {

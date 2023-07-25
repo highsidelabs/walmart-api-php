@@ -102,7 +102,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseBoolean"
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
                                 },
                                 "example": {
                                     "data": {
@@ -196,7 +196,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseBoolean"
+                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse"
                                 },
                                 "example": {
                                     "data": {
@@ -273,7 +273,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseBoolean"
+                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse"
                                 },
                                 "example": {
                                     "data": {
@@ -343,7 +343,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseBoolean"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListLabelGenerationResponseCa"
                                 },
                                 "example": {
                                     "data": [
@@ -560,7 +560,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseBoolean"
+                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
                                 },
                                 "example": {
                                     "data": "true"
@@ -623,7 +623,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseBoolean"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListCarrierPackageResponse"
                                 },
                                 "example": {
                                     "data": [
