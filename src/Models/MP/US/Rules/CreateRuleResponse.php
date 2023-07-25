@@ -50,7 +50,7 @@ class CreateRuleResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'rules' => '\Walmart\Models\MP\US\Rules\RuleInfo[]',
+        'rules' => '\Walmart\Models\MP\US\Rules\RuleResponse[]',
         'status' => 'string'
     ];
 
@@ -135,7 +135,7 @@ class CreateRuleResponse extends BaseModel
     /**
      * Gets rules
      *
-     * @return \Walmart\Models\MP\US\Rules\RuleInfo[]|null
+     * @return \Walmart\Models\MP\US\Rules\RuleResponse[]|null
     
      */
     public function getRules()
@@ -146,7 +146,7 @@ class CreateRuleResponse extends BaseModel
     /**
      * Sets rules
      *
-     * @param \Walmart\Models\MP\US\Rules\RuleInfo[]|null $rules rules
+     * @param \Walmart\Models\MP\US\Rules\RuleResponse[]|null $rules rules
      *
      * @return self
     

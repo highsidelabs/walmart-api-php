@@ -3,7 +3,7 @@
     "info": {
         "title": "Order Management",
         "description": "The Walmart Order Management APIs help Sellers to manage customer\u2019s Sales Orders and to stay up-to-date on orders fulfillment, which orders to fulfill, and when to fulfill them.",
-        "version": "0.4.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -155,7 +155,7 @@
                         "content": {
                             "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/OrderShipment"
+                                    "$ref": "#\/components\/schemas\/OrderCancellation"
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns3:order xmlns:ns2=\"http:\/\/walmart.com\/mp\/orders\" xmlns:ns3=\"http:\/\/walmart.com\/mp\/v3\/orders\" xmlns:ns4=\"http:\/\/walmart.com\/\">\n    <ns3:purchaseOrderId>3225224<\/ns3:purchaseOrderId>\n    <ns3:customerOrderId>4324242T5<\/ns3:customerOrderId>\n    <ns3:customerEmailId>2WR4TTETGERGR@relay.walmart.com<\/ns3:customerEmailId>\n    <ns3:orderDate>2018-02-16T18:16:59.000Z<\/ns3:orderDate>\n    <ns3:shippingInfo>\n        <ns3:phone>14325245<\/ns3:phone>\n        <ns3:estimatedDeliveryDate>2018-02-28T04:00:00.000Z<\/ns3:estimatedDeliveryDate>\n        <ns3:estimatedShipDate>2018-02-17T04:00:00.000Z<\/ns3:estimatedShipDate>\n        <ns3:methodCode>Value<\/ns3:methodCode>\n        <ns3:postalAddress>\n            <ns3:name>SID <\/ns3:name>\n            <ns3:address1>300 DUMMY  Ln<\/ns3:address1>\n            <ns3:city>CITY<\/ns3:city>\n            <ns3:state>STATE<\/ns3:state>\n            <ns3:postalCode>234<\/ns3:postalCode>\n            <ns3:country>USA<\/ns3:country>\n            <ns3:addressType>RESIDENTIAL<\/ns3:addressType>\n        <\/ns3:postalAddress>\n    <\/ns3:shippingInfo>\n    <ns3:orderLines>\n        <ns3:orderLine>\n            <ns3:lineNumber>1<\/ns3:lineNumber>\n            <ns3:item>\n                <ns3:productName>Little <\/ns3:productName>\n                <ns3:sku>SKU232435435<\/ns3:sku>\n            <\/ns3:item>\n            <ns3:charges>\n                <ns3:charge>\n                    <ns3:chargeType>PRODUCT<\/ns3:chargeType>\n                    <ns3:chargeName>ItemPrice<\/ns3:chargeName>\n                    <ns3:chargeAmount>\n                        <ns3:currency>USD<\/ns3:currency>\n                        <ns3:amount>0.00<\/ns3:amount>\n                    <\/ns3:chargeAmount>\n                    <ns3:tax>\n                        <ns3:taxName>Tax1<\/ns3:taxName>\n                        <ns3:taxAmount>\n                            <ns3:currency>USD<\/ns3:currency>\n                            <ns3:amount>0.00<\/ns3:amount>\n                        <\/ns3:taxAmount>\n                    <\/ns3:tax>\n                <\/ns3:charge>\n            <\/ns3:charges>\n            <ns3:orderLineQuantity>\n                <ns3:unitOfMeasurement>EACH<\/ns3:unitOfMeasurement>\n                <ns3:amount>1<\/ns3:amount>\n            <\/ns3:orderLineQuantity>\n            <ns3:statusDate>2018-07-25T23:18:12.000Z<\/ns3:statusDate>\n            <ns3:orderLineStatuses>\n                <ns3:orderLineStatus>\n                    <ns3:status>Cancelled<\/ns3:status>\n                    <ns3:statusQuantity>\n                        <ns3:unitOfMeasurement>EACH<\/ns3:unitOfMeasurement>\n                        <ns3:amount>1<\/ns3:amount>\n                    <\/ns3:statusQuantity>\n                <\/ns3:orderLineStatus>\n            <\/ns3:orderLineStatuses>\n            <ns3:refund>\n                <ns3:refundCharges>\n                    <ns3:refundCharge>\n                        <ns3:refundReason>Others<\/ns3:refundReason>\n                        <ns3:charge>\n                            <ns3:chargeType>PRODUCT<\/ns3:chargeType>\n                            <ns3:chargeName>Others<\/ns3:chargeName>\n                            <ns3:chargeAmount>\n                                <ns3:currency>USD<\/ns3:currency>\n                                <ns3:amount>0<\/ns3:amount>\n                            <\/ns3:chargeAmount>\n                        <\/ns3:charge>\n                    <\/ns3:refundCharge>\n                <\/ns3:refundCharges>\n            <\/ns3:refund>\n            <ns3:fulfillment>\n                <ns3:fulfillmentOption>S2H<\/ns3:fulfillmentOption>\n                <ns3:shipMethod>VALUE<\/ns3:shipMethod>\n                <ns3:pickUpDateTime>2018-02-22T04:00:00.000Z<\/ns3:pickUpDateTime>\n            <\/ns3:fulfillment>\n        <\/ns3:orderLine>\n        <ns3:orderLine>\n            <ns3:lineNumber>2<\/ns3:lineNumber>\n            <ns3:item>\n                <ns3:productName>Little n<\/ns3:productName>\n                <ns3:sku>sku14325434<\/ns3:sku>\n            <\/ns3:item>\n            <ns3:charges>\n                <ns3:charge>\n                    <ns3:chargeType>PRODUCT<\/ns3:chargeType>\n                    <ns3:chargeName>ItemPrice<\/ns3:chargeName>\n                    <ns3:chargeAmount>\n                        <ns3:currency>USD<\/ns3:currency>\n                        <ns3:amount>30.00<\/ns3:amount>\n                    <\/ns3:chargeAmount>\n                    <ns3:tax>\n                        <ns3:taxName>Tax1<\/ns3:taxName>\n                        <ns3:taxAmount>\n                            <ns3:currency>USD<\/ns3:currency>\n                            <ns3:amount>2.85<\/ns3:amount>\n                        <\/ns3:taxAmount>\n                    <\/ns3:tax>\n                <\/ns3:charge>\n            <\/ns3:charges>\n            <ns3:orderLineQuantity>\n                <ns3:unitOfMeasurement>EACH<\/ns3:unitOfMeasurement>\n                <ns3:amount>1<\/ns3:amount>\n            <\/ns3:orderLineQuantity>\n            <ns3:statusDate>2018-04-04T23:12:53.000Z<\/ns3:statusDate>\n            <ns3:orderLineStatuses>\n                <ns3:orderLineStatus>\n                    <ns3:status>Acknowledged<\/ns3:status>\n                    <ns3:statusQuantity>\n                        <ns3:unitOfMeasurement>EACH<\/ns3:unitOfMeasurement>\n                        <ns3:amount>1<\/ns3:amount>\n                    <\/ns3:statusQuantity>\n                <\/ns3:orderLineStatus>\n            <\/ns3:orderLineStatuses>\n            <ns3:fulfillment>\n                <ns3:fulfillmentOption>S2H<\/ns3:fulfillmentOption>\n                <ns3:shipMethod>VALUE<\/ns3:shipMethod>\n                <ns3:pickUpDateTime>2018-02-22T04:00:00.000Z<\/ns3:pickUpDateTime>\n            <\/ns3:fulfillment>\n        <\/ns3:orderLine>\n    <\/ns3:orderLines>\n<\/ns3:order>"
                             }
@@ -454,7 +454,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/OrdersListType"
+                                    "$ref": "#\/components\/schemas\/WFSOrdersListType"
                                 }
                             }
                         }
@@ -1499,7 +1499,7 @@
                 "type": "object",
                 "properties": {
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/ShippingLinesType"
                     }
                 },
                 "description": "Information about a shipment",
@@ -1854,7 +1854,7 @@
                         "type": "string"
                     },
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/ShippingLinesType"
                     }
                 },
                 "xml": {
@@ -1998,7 +1998,7 @@
                 "type": "object",
                 "properties": {
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/ShippingLinesType"
                     }
                 },
                 "xml": {

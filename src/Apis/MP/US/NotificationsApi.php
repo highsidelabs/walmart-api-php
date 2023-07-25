@@ -1519,7 +1519,7 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1527,9 +1527,9 @@ class NotificationsApi extends BaseApi
      */
     public function updateSubscription(
         string $subscriptionId,
-        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest
     ): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO {
-        return $this->updateSubscriptionWithHttpInfo($subscriptionId, $createSubscriptionRequestRecord);
+        return $this->updateSubscriptionWithHttpInfo($subscriptionId, $updateSubscriptionRequest);
     }
 
     /**
@@ -1538,7 +1538,7 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1546,9 +1546,9 @@ class NotificationsApi extends BaseApi
      */
     protected function updateSubscriptionWithHttpInfo(
         string $subscriptionId,
-        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord,
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
     ): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO {
-        $request = $this->updateSubscriptionRequest($subscriptionId, $createSubscriptionRequestRecord);
+        $request = $this->updateSubscriptionRequest($subscriptionId, $updateSubscriptionRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1643,16 +1643,16 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function updateSubscriptionAsync(
         string $subscriptionId,
-        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest
     ): PromiseInterface {
-        return $this->updateSubscriptionAsyncWithHttpInfo($subscriptionId, $createSubscriptionRequestRecord)
+        return $this->updateSubscriptionAsyncWithHttpInfo($subscriptionId, $updateSubscriptionRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1666,17 +1666,17 @@ class NotificationsApi extends BaseApi
      * Update Subscription
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function updateSubscriptionAsyncWithHttpInfo(
         string $subscriptionId,
-        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord,
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO';
-        $request = $this->updateSubscriptionRequest($subscriptionId, $createSubscriptionRequestRecord);
+        $request = $this->updateSubscriptionRequest($subscriptionId, $updateSubscriptionRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1722,14 +1722,14 @@ class NotificationsApi extends BaseApi
      * Create request for operation 'updateSubscription'
      *
      * @param  string $subscriptionId Unique ID for the subscription (required)
-     * @param  \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord Request fields (required)
+     * @param  \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function updateSubscriptionRequest(
         string $subscriptionId,
-        \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord $createSubscriptionRequestRecord,
+        \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest $updateSubscriptionRequest,
     ): Request {
         $contentType = self::contentTypes['updateSubscription'];
 
@@ -1739,10 +1739,10 @@ class NotificationsApi extends BaseApi
                 'Missing the required parameter $subscriptionId when calling updateSubscription'
             );
         }
-        // verify the required parameter 'createSubscriptionRequestRecord' is set
-        if ($createSubscriptionRequestRecord === null || (is_array($createSubscriptionRequestRecord) && count($createSubscriptionRequestRecord) === 0)) {
+        // verify the required parameter 'updateSubscriptionRequest' is set
+        if ($updateSubscriptionRequest === null || (is_array($updateSubscriptionRequest) && count($updateSubscriptionRequest) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $createSubscriptionRequestRecord when calling updateSubscription'
+                'Missing the required parameter $updateSubscriptionRequest when calling updateSubscription'
             );
         }
         $resourcePath = '/v3/webhooks/subscriptions/{subscriptionId}';
@@ -1779,12 +1779,12 @@ class NotificationsApi extends BaseApi
         );
 
         // for model (json/xml)
-        if (isset($createSubscriptionRequestRecord)) {
+        if (isset($updateSubscriptionRequest)) {
             if (stripos($headers['Content-Type'], 'application/json') !== false) {
                 # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($createSubscriptionRequestRecord));
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($updateSubscriptionRequest));
             } else {
-                $httpBody = $createSubscriptionRequestRecord;
+                $httpBody = $updateSubscriptionRequest;
             }
         } elseif (count($formParams) > 0) {
             if ($multipart) {

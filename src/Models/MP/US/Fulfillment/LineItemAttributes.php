@@ -52,7 +52,7 @@ class LineItemAttributes extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'availableQuantity' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType',
+        'availableQuantity' => '\Walmart\Models\MP\US\Fulfillment\AvailableQuantity',
         'fulfillmentChannel' => 'string[]',
         'lineId' => 'string'
     ];
@@ -144,7 +144,7 @@ class LineItemAttributes extends BaseModel
     /**
      * Gets availableQuantity
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null
+     * @return \Walmart\Models\MP\US\Fulfillment\AvailableQuantity|null
     
      */
     public function getAvailableQuantity()
@@ -155,7 +155,7 @@ class LineItemAttributes extends BaseModel
     /**
      * Sets availableQuantity
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null $availableQuantity availableQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\AvailableQuantity|null $availableQuantity availableQuantity
      *
      * @return self
     

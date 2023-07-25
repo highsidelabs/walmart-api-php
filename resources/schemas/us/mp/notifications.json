@@ -3,7 +3,7 @@
     "info": {
         "title": "Notifications Management",
         "description": "Notifications Management API",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -489,7 +489,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateSubscriptionRequestRecord"
+                                "$ref": "#\/components\/schemas\/UpdateSubscriptionRequest"
                             },
                             "examples": {
                                 "sample1": {

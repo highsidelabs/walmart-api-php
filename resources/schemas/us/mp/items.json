@@ -3,7 +3,7 @@
     "info": {
         "title": "Item Management",
         "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -1744,7 +1744,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ItemsAssociationsResponseDTO"
+                                    "$ref": "#\/components\/schemas\/ItemSearch"
                                 },
                                 "example": {
                                     "items": [
@@ -1950,7 +1950,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO"
+                                    "$ref": "#\/components\/schemas\/VariantCountResponses"
                                 },
                                 "example": {
                                     "status": 200,
@@ -3333,7 +3333,7 @@
                         "type": "string"
                     },
                     "price": {
-                        "$ref": "#\/components\/schemas\/Money"
+                        "$ref": "#\/components\/schemas\/ItemSearchPrice"
                     },
                     "description": {
                         "type": "string",
@@ -3420,7 +3420,7 @@
                     "variantValues": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/GroupingAttributes"
+                            "$ref": "#\/components\/schemas\/VariantValue"
                         }
                     }
                 }

@@ -60,12 +60,12 @@ class ReturnOrderLine extends BaseModel
         'purchaseOrderLineNumber' => 'string',
         'item' => '\Walmart\Models\MP\MX\Returns\Item',
         'charges' => '\Walmart\Models\MP\MX\Returns\Charge[]',
-        'unitPrice' => '\Walmart\Models\MP\MX\Returns\ChargeAmount',
+        'unitPrice' => '\Walmart\Models\MP\MX\Returns\RefundAmount',
         'chargeTotals' => '\Walmart\Models\MP\MX\Returns\ChargeTotal[]',
         'quantity' => '\Walmart\Models\MP\MX\Returns\QuantityType',
         'status' => 'string',
         'statusTime' => 'string',
-        'refundAmount' => '\Walmart\Models\MP\MX\Returns\ChargeAmount',
+        'refundAmount' => '\Walmart\Models\MP\MX\Returns\RefundAmount',
         'soPrimeLineSubLineNo' => 'string',
         'isWFSEnabled' => 'string'
     ];
@@ -655,7 +655,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets unitPrice
      *
-     * @return \Walmart\Models\MP\MX\Returns\ChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Returns\RefundAmount|null
     
      */
     public function getUnitPrice()
@@ -666,7 +666,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets unitPrice
      *
-     * @param \Walmart\Models\MP\MX\Returns\ChargeAmount|null $unitPrice unitPrice
+     * @param \Walmart\Models\MP\MX\Returns\RefundAmount|null $unitPrice unitPrice
      *
      * @return self
     
@@ -800,7 +800,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Gets refundAmount
      *
-     * @return \Walmart\Models\MP\MX\Returns\ChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Returns\RefundAmount|null
     
      */
     public function getRefundAmount()
@@ -811,7 +811,7 @@ class ReturnOrderLine extends BaseModel
     /**
      * Sets refundAmount
      *
-     * @param \Walmart\Models\MP\MX\Returns\ChargeAmount|null $refundAmount refundAmount
+     * @param \Walmart\Models\MP\MX\Returns\RefundAmount|null $refundAmount refundAmount
      *
      * @return self
     

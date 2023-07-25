@@ -62,7 +62,7 @@ class Order extends BaseModel
         'totalQuantity' => 'string',
         'orderLines' => '\Walmart\Models\MP\MX\Orders\OrderLine[]',
         'shipments' => '\Walmart\Models\MP\MX\Orders\Shipment[]',
-        'orderTotal' => '\Walmart\Models\MP\MX\Orders\ChargeAmount',
+        'orderTotal' => '\Walmart\Models\MP\MX\Orders\OrderTotal',
         'rfc' => 'string',
         'paymentMethod' => 'string',
         'cfdi' => 'string'
@@ -511,7 +511,7 @@ class Order extends BaseModel
     /**
      * Gets orderTotal
      *
-     * @return \Walmart\Models\MP\MX\Orders\ChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Orders\OrderTotal|null
     
      */
     public function getOrderTotal()
@@ -522,7 +522,7 @@ class Order extends BaseModel
     /**
      * Sets orderTotal
      *
-     * @param \Walmart\Models\MP\MX\Orders\ChargeAmount|null $orderTotal orderTotal
+     * @param \Walmart\Models\MP\MX\Orders\OrderTotal|null $orderTotal orderTotal
      *
      * @return self
     

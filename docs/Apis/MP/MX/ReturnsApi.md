@@ -11,7 +11,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAllReturnsUsingCursor()`
 
 ```php
-getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse
+getAllReturnsUsingCursor($returnCreationStartDate, $returnCreationEndDate, $limit, $cursorMark, $customerOrderId, $returnOrderId, $statusCodeFilter, $isWFSEnabled): \Walmart\Models\MP\MX\Returns\GetReturnOrdersResponseWithCursor
 ```
 Get all returns with cursor mark
 
@@ -67,7 +67,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponse**](../../../Models/MP/MX/Returns/GetReturnOrdersResponse.md)
+[**\Walmart\Models\MP\MX\Returns\GetReturnOrdersResponseWithCursor**](../../../Models/MP/MX/Returns/GetReturnOrdersResponseWithCursor.md)
 
 ### Authorization
 

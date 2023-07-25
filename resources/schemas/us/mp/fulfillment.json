@@ -3,7 +3,7 @@
     "info": {
         "title": "Fulfillment Management",
         "description": "With Walmart Fulfillment Services, you can focus on sales while we expertly take care of fast shipping, seamless returns, and customer service. Simply send your inventory to Walmart fulfillment centers, where we will store your products securely and prepare them swiftly for shipping when an order is placed.",
-        "version": "0.4.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -380,7 +380,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CustomerOrderResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/CustomerOrderDetailsResponseWrapperDTO"
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -476,7 +476,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CustomerOrderResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/PromiseOrderResponseWrapper"
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -602,7 +602,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateCustomerOrderRequestWrapper"
+                                "$ref": "#\/components\/schemas\/CancelCustomerOrderRequestWrapper"
                             },
                             "example": {
                                 "header": {
@@ -634,7 +634,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CustomerOrderResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/CustomerOrderDetailsResponseWrapperDTO"
                                 },
                                 "example": {
                                     "status": "ACCEPTED",
@@ -744,7 +744,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryLogResponseWrapper"
+                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO"
                                 },
                                 "example": {
                                     "headers": {
@@ -1137,7 +1137,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/CreateCustomerOrderRequestWrapper"
+                                "$ref": "#\/components\/schemas\/InboundPreviewWrapper"
                             },
                             "example": {
                                 "header": {
@@ -1185,7 +1185,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InboundShipmentCreateResponseWrapperDTO"
+                                    "$ref": "#\/components\/schemas\/InboundPreviewResponseWrapper"
                                 },
                                 "example": {
                                     "status": "OK",
@@ -2076,7 +2076,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryLogResponseWrapper"
+                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO"
                                 },
                                 "example": {
                                     "headers": {
@@ -2207,7 +2207,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InventoryLogResponseWrapper"
+                                    "$ref": "#\/components\/schemas\/InboundShipmentErrorResponseWrapperDTO"
                                 },
                                 "example": {
                                     "headers": {
@@ -2684,7 +2684,7 @@
                             "wrapped": true
                         },
                         "items": {
-                            "$ref": "#\/components\/schemas\/LoadType"
+                            "$ref": "#\/components\/schemas\/LoadTypeDetails"
                         }
                     }
                 }
@@ -2742,7 +2742,7 @@
                         "description": "status"
                     },
                     "header": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderHeader"
+                        "$ref": "#\/components\/schemas\/CustomerOrderDetailsHeader"
                     },
                     "payload": {
                         "$ref": "#\/components\/schemas\/CustomerOrderResponseWrapper"
@@ -2854,7 +2854,7 @@
                 "type": "object",
                 "properties": {
                     "header": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderHeader"
+                        "$ref": "#\/components\/schemas\/CustomerOrderDetailsHeader"
                     },
                     "payload": {
                         "$ref": "#\/components\/schemas\/CreateCustomerOrderRequestPayload"
@@ -3424,7 +3424,7 @@
                 "type": "object",
                 "properties": {
                     "availableQuantity": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderItemQuantityType"
+                        "$ref": "#\/components\/schemas\/AvailableQuantity"
                     },
                     "fulfillmentChannel": {
                         "type": "array",
@@ -3539,7 +3539,7 @@
                         "description": "Response status."
                     },
                     "header": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderHeader"
+                        "$ref": "#\/components\/schemas\/CustomerOrderDetailsHeader"
                     },
                     "payload": {
                         "$ref": "#\/components\/schemas\/PromiseOrderResponsePayload"
@@ -3550,10 +3550,10 @@
                 "type": "object",
                 "properties": {
                     "availableQuantity": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderItemQuantityType"
+                        "$ref": "#\/components\/schemas\/AvailableQuantity"
                     },
                     "requestedQuantity": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderItemQuantityType"
+                        "$ref": "#\/components\/schemas\/RequestedQuantity"
                     },
                     "lineId": {
                         "type": "string",
@@ -3662,7 +3662,7 @@
                         "description": "Sales unit type. Currently supported type : 'EACH'"
                     },
                     "requestedQuantity": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderItemQuantityType"
+                        "$ref": "#\/components\/schemas\/RequestedQuantity"
                     }
                 },
                 "description": "Offer details. List of an items\/vendor sku."
@@ -3709,7 +3709,7 @@
                 "type": "object",
                 "properties": {
                     "header": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderHeader"
+                        "$ref": "#\/components\/schemas\/MultitenantHeaderWrapper"
                     },
                     "payload": {
                         "$ref": "#\/components\/schemas\/PromiseOrderRequestPayload"
@@ -3745,7 +3745,7 @@
                 "type": "object",
                 "properties": {
                     "header": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderHeader"
+                        "$ref": "#\/components\/schemas\/CustomerOrderDetailsHeader"
                     },
                     "payload": {
                         "$ref": "#\/components\/schemas\/CancelCustomerOrderRequestPayload"
@@ -4205,7 +4205,7 @@
                 "type": "object",
                 "properties": {
                     "header": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderHeader"
+                        "$ref": "#\/components\/schemas\/MultitenantHeaderWrapper"
                     },
                     "payload": {
                         "$ref": "#\/components\/schemas\/CreateInboundRequestDTO"
@@ -4461,7 +4461,7 @@
                         "$ref": "#\/components\/schemas\/Customer"
                     },
                     "originLocation": {
-                        "$ref": "#\/components\/schemas\/DestinationLocation"
+                        "$ref": "#\/components\/schemas\/OriginLocation"
                     },
                     "destinationLocation": {
                         "$ref": "#\/components\/schemas\/DestinationLocation"
@@ -4491,7 +4491,7 @@
                     "loadTypes": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/LoadType"
+                            "$ref": "#\/components\/schemas\/LoadTypeDetails"
                         }
                     }
                 }
@@ -4820,7 +4820,7 @@
                         "description": "status"
                     },
                     "header": {
-                        "$ref": "#\/components\/schemas\/CustomerOrderHeader"
+                        "$ref": "#\/components\/schemas\/CustomerOrderDetailsHeader"
                     },
                     "payload": {
                         "type": "array",
@@ -5134,7 +5134,7 @@
                 "type": "object",
                 "properties": {
                     "headers": {
-                        "$ref": "#\/components\/schemas\/PaginationMetadata"
+                        "$ref": "#\/components\/schemas\/Headers"
                     },
                     "payload": {
                         "$ref": "#\/components\/schemas\/GetInventoryLogsResponsePayload"

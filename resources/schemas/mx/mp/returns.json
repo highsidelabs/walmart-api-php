@@ -3,7 +3,7 @@
     "info": {
         "title": "Returns Management",
         "description": "Returns can be initiated from Walmart.com, even for items purchased from marketplace sellers (Except for HAZMAT or FREIGHT items).",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -100,44 +100,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "object",
-                                            "properties": {
-                                                "code": {
-                                                    "type": "string"
-                                                },
-                                                "field": {
-                                                    "type": "string"
-                                                },
-                                                "description": {
-                                                    "type": "string"
-                                                },
-                                                "info": {
-                                                    "type": "string"
-                                                },
-                                                "severity": {
-                                                    "type": "string"
-                                                },
-                                                "category": {
-                                                    "type": "string"
-                                                },
-                                                "errorIdentifiers": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "entry": {
-                                                            "type": "array",
-                                                            "items": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
                                 }
                             }
                         }
@@ -723,44 +686,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "object",
-                                            "properties": {
-                                                "code": {
-                                                    "type": "string"
-                                                },
-                                                "field": {
-                                                    "type": "string"
-                                                },
-                                                "description": {
-                                                    "type": "string"
-                                                },
-                                                "info": {
-                                                    "type": "string"
-                                                },
-                                                "severity": {
-                                                    "type": "string"
-                                                },
-                                                "category": {
-                                                    "type": "string"
-                                                },
-                                                "errorIdentifiers": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "entry": {
-                                                            "type": "array",
-                                                            "items": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
                                 }
                             }
                         }
@@ -770,44 +696,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "object",
-                                            "properties": {
-                                                "code": {
-                                                    "type": "string"
-                                                },
-                                                "field": {
-                                                    "type": "string"
-                                                },
-                                                "description": {
-                                                    "type": "string"
-                                                },
-                                                "info": {
-                                                    "type": "string"
-                                                },
-                                                "severity": {
-                                                    "type": "string"
-                                                },
-                                                "category": {
-                                                    "type": "string"
-                                                },
-                                                "errorIdentifiers": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "entry": {
-                                                            "type": "array",
-                                                            "items": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
                                 }
                             }
                         }
@@ -912,7 +801,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponse"
+                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponseWithCursor"
                                 },
                                 "example": {
                                     "meta": {
@@ -1890,44 +1779,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "object",
-                                            "properties": {
-                                                "code": {
-                                                    "type": "string"
-                                                },
-                                                "field": {
-                                                    "type": "string"
-                                                },
-                                                "description": {
-                                                    "type": "string"
-                                                },
-                                                "info": {
-                                                    "type": "string"
-                                                },
-                                                "severity": {
-                                                    "type": "string"
-                                                },
-                                                "category": {
-                                                    "type": "string"
-                                                },
-                                                "errorIdentifiers": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "entry": {
-                                                            "type": "array",
-                                                            "items": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
                                 }
                             }
                         }
@@ -1937,44 +1789,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "error": {
-                                            "type": "object",
-                                            "properties": {
-                                                "code": {
-                                                    "type": "string"
-                                                },
-                                                "field": {
-                                                    "type": "string"
-                                                },
-                                                "description": {
-                                                    "type": "string"
-                                                },
-                                                "info": {
-                                                    "type": "string"
-                                                },
-                                                "severity": {
-                                                    "type": "string"
-                                                },
-                                                "category": {
-                                                    "type": "string"
-                                                },
-                                                "errorIdentifiers": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "entry": {
-                                                            "type": "array",
-                                                            "items": {
-                                                                "type": "string"
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "x-expose-headers": true
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
                                 }
                             }
                         }
@@ -2478,7 +2293,7 @@
                         }
                     },
                     "unitPrice": {
-                        "$ref": "#\/components\/schemas\/ChargeAmount"
+                        "$ref": "#\/components\/schemas\/RefundAmount"
                     },
                     "chargeTotals": {
                         "type": "array",
@@ -2499,7 +2314,7 @@
                         "description": "Timestamp of listed status change"
                     },
                     "refundAmount": {
-                        "$ref": "#\/components\/schemas\/ChargeAmount"
+                        "$ref": "#\/components\/schemas\/RefundAmount"
                     },
                     "soPrimeLineSubLineNo": {
                         "type": "string"
@@ -2600,7 +2415,7 @@
                         "description": "Name of the tax"
                     },
                     "taxAmount": {
-                        "$ref": "#\/components\/schemas\/ChargeAmount"
+                        "$ref": "#\/components\/schemas\/TaxAmount"
                     }
                 },
                 "description": "Taxes for each charge"
@@ -2732,15 +2547,15 @@
             }
         },
         "securitySchemes": {
-            "basicScheme": {
-                "type": "http",
-                "scheme": "basic",
-                "description": "Basic authentication with a Walmart Client ID and Client Secret"
-            },
             "accessTokenScheme": {
                 "type": "http",
                 "scheme": "bearer",
                 "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "basicScheme": {
+                "type": "http",
+                "scheme": "basic",
+                "description": "Basic authentication with a Walmart Client ID and Client Secret"
             }
         }
     }

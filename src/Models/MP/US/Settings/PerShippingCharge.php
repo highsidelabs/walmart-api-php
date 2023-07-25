@@ -53,8 +53,8 @@ class PerShippingCharge extends BaseModel
       */
     protected static array $openAPITypes = [
         'unitOfMeasure' => 'string',
-        'shippingAndHandling' => '\Walmart\Models\MP\US\Settings\ChargePerItem',
-        'chargePerWeight' => '\Walmart\Models\MP\US\Settings\ChargePerItem',
+        'shippingAndHandling' => '\Walmart\Models\MP\US\Settings\ShippingAndHandling',
+        'chargePerWeight' => '\Walmart\Models\MP\US\Settings\ChargePerWeight',
         'chargePerItem' => '\Walmart\Models\MP\US\Settings\ChargePerItem'
     ];
 
@@ -183,7 +183,7 @@ class PerShippingCharge extends BaseModel
     /**
      * Gets shippingAndHandling
      *
-     * @return \Walmart\Models\MP\US\Settings\ChargePerItem|null
+     * @return \Walmart\Models\MP\US\Settings\ShippingAndHandling|null
     
      */
     public function getShippingAndHandling()
@@ -194,7 +194,7 @@ class PerShippingCharge extends BaseModel
     /**
      * Sets shippingAndHandling
      *
-     * @param \Walmart\Models\MP\US\Settings\ChargePerItem|null $shippingAndHandling shippingAndHandling
+     * @param \Walmart\Models\MP\US\Settings\ShippingAndHandling|null $shippingAndHandling shippingAndHandling
      *
      * @return self
     
@@ -212,7 +212,7 @@ class PerShippingCharge extends BaseModel
     /**
      * Gets chargePerWeight
      *
-     * @return \Walmart\Models\MP\US\Settings\ChargePerItem|null
+     * @return \Walmart\Models\MP\US\Settings\ChargePerWeight|null
     
      */
     public function getChargePerWeight()
@@ -223,7 +223,7 @@ class PerShippingCharge extends BaseModel
     /**
      * Sets chargePerWeight
      *
-     * @param \Walmart\Models\MP\US\Settings\ChargePerItem|null $chargePerWeight chargePerWeight
+     * @param \Walmart\Models\MP\US\Settings\ChargePerWeight|null $chargePerWeight chargePerWeight
      *
      * @return self
     

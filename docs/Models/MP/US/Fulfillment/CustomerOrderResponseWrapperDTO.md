@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **string** | status | [optional]
-**header** | [**\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader**](CustomerOrderHeader.md) |  | [optional]
+**header** | [**\Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsHeader**](CustomerOrderDetailsHeader.md) |  | [optional]
 **payload** | [**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapper**](CustomerOrderResponseWrapper.md) |  | [optional]
 
 

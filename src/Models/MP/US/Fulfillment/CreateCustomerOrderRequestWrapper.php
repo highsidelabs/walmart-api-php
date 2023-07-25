@@ -50,7 +50,7 @@ class CreateCustomerOrderRequestWrapper extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader',
+        'header' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsHeader',
         'payload' => '\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestPayload'
     ];
 
@@ -141,7 +141,7 @@ class CreateCustomerOrderRequestWrapper extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader
+     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsHeader
     
      */
     public function getHeader()
@@ -152,7 +152,7 @@ class CreateCustomerOrderRequestWrapper extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsHeader $header header
      *
      * @return self
     

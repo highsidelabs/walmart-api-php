@@ -317,7 +317,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateSubscription()`
 
 ```php
-updateSubscription($subscriptionId, $createSubscriptionRequestRecord): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO
+updateSubscription($subscriptionId, $updateSubscriptionRequest): \Walmart\Models\MP\US\Notifications\SubscriptionResponseDTO
 ```
 Update Subscription
 
@@ -342,10 +342,10 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->notifications();
 
 $subscriptionId = 'subscriptionId_example'; // string | Unique ID for the subscription
-$createSubscriptionRequestRecord = {"eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"status":"ACTIVE"}; // \Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord | Request fields
+$updateSubscriptionRequest = {"eventUrl":"https://example.com/events","authDetails":{"authMethod":"BASIC_AUTH","userName":"abc","password":"test","authHeaderName":"Authorization"},"status":"ACTIVE"}; // \Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest | Request fields
 
 try {
-    $result = $api->updateSubscription($subscriptionId, $createSubscriptionRequestRecord);
+    $result = $api->updateSubscription($subscriptionId, $updateSubscriptionRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling NotificationsApi->updateSubscription: {$e->getMessage()}\n";
@@ -356,7 +356,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **subscriptionId** | **string**| Unique ID for the subscription | |
-| **createSubscriptionRequestRecord** | [**\Walmart\Models\MP\US\Notifications\CreateSubscriptionRequestRecord**](../../../Models/MP/US/Notifications/CreateSubscriptionRequestRecord.md)| Request fields | |
+| **updateSubscriptionRequest** | [**\Walmart\Models\MP\US\Notifications\UpdateSubscriptionRequest**](../../../Models/MP/US/Notifications/UpdateSubscriptionRequest.md)| Request fields | |
 
 
 ### Return type

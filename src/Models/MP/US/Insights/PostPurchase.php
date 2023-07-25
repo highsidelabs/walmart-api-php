@@ -53,7 +53,7 @@ class PostPurchase extends BaseModel
         'cancellations' => '\Walmart\Models\MP\US\Insights\Cancellations',
         'returns' => 'object',
         'issueCount' => 'string',
-        'otd' => '\Walmart\Models\MP\US\Insights\Cancellations'
+        'otd' => '\Walmart\Models\MP\US\Insights\Otd'
     ];
 
     /**
@@ -236,7 +236,7 @@ class PostPurchase extends BaseModel
     /**
      * Gets otd
      *
-     * @return \Walmart\Models\MP\US\Insights\Cancellations|null
+     * @return \Walmart\Models\MP\US\Insights\Otd|null
     
      */
     public function getOtd()
@@ -247,7 +247,7 @@ class PostPurchase extends BaseModel
     /**
      * Sets otd
      *
-     * @param \Walmart\Models\MP\US\Insights\Cancellations|null $otd otd
+     * @param \Walmart\Models\MP\US\Insights\Otd|null $otd otd
      *
      * @return self
     

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **totalQuantity** | **string** |  | [optional]
 **orderLines** | [**\Walmart\Models\MP\MX\Orders\OrderLine[]**](OrderLine.md) |  | [optional]
 **shipments** | [**\Walmart\Models\MP\MX\Orders\Shipment[]**](Shipment.md) |  | [optional]
-**orderTotal** | [**\Walmart\Models\MP\MX\Orders\ChargeAmount**](ChargeAmount.md) |  | [optional]
+**orderTotal** | [**\Walmart\Models\MP\MX\Orders\OrderTotal**](OrderTotal.md) |  | [optional]
 **rfc** | **string** |  | [optional]
 **paymentMethod** | **string** |  | [optional]
 **cfdi** | **string** |  | [optional]

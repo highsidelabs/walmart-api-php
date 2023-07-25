@@ -51,7 +51,7 @@ class OrderRefund extends BaseModel
       */
     protected static array $openAPITypes = [
         'purchaseOrderId' => 'string',
-        'orderLines' => '\Walmart\Models\MP\CA\Orders\CancelLinesType'
+        'orderLines' => '\Walmart\Models\MP\CA\Orders\RefundLinesType'
     ];
 
     /**
@@ -170,7 +170,7 @@ class OrderRefund extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\CA\Orders\CancelLinesType
+     * @return \Walmart\Models\MP\CA\Orders\RefundLinesType
     
      */
     public function getOrderLines()
@@ -181,7 +181,7 @@ class OrderRefund extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\CA\Orders\CancelLinesType $orderLines orderLines
+     * @param \Walmart\Models\MP\CA\Orders\RefundLinesType $orderLines orderLines
      *
      * @return self
     

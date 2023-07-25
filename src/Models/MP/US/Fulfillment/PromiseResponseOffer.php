@@ -52,8 +52,8 @@ class PromiseResponseOffer extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'availableQuantity' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType',
-        'requestedQuantity' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType',
+        'availableQuantity' => '\Walmart\Models\MP\US\Fulfillment\AvailableQuantity',
+        'requestedQuantity' => '\Walmart\Models\MP\US\Fulfillment\RequestedQuantity',
         'lineId' => 'string',
         'salesUnit' => 'string',
         'sku' => 'string'
@@ -158,7 +158,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Gets availableQuantity
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null
+     * @return \Walmart\Models\MP\US\Fulfillment\AvailableQuantity|null
     
      */
     public function getAvailableQuantity()
@@ -169,7 +169,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Sets availableQuantity
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null $availableQuantity availableQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\AvailableQuantity|null $availableQuantity availableQuantity
      *
      * @return self
     
@@ -187,7 +187,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Gets requestedQuantity
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null
+     * @return \Walmart\Models\MP\US\Fulfillment\RequestedQuantity|null
     
      */
     public function getRequestedQuantity()
@@ -198,7 +198,7 @@ class PromiseResponseOffer extends BaseModel
     /**
      * Sets requestedQuantity
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType|null $requestedQuantity requestedQuantity
+     * @param \Walmart\Models\MP\US\Fulfillment\RequestedQuantity|null $requestedQuantity requestedQuantity
      *
      * @return self
     

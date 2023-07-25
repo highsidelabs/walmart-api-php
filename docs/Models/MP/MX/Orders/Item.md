@@ -9,9 +9,9 @@ Name | Type | Description | Notes
 **sku** | **string** | The sku id the seller maintains at their end | [optional]
 **condition** | **string** |  | [optional]
 **imageUrl** | **string** |  | [optional]
-**unitPrice** | [**\Walmart\Models\MP\MX\Orders\ChargeAmount**](ChargeAmount.md) |  | [optional]
-**commission** | [**\Walmart\Models\MP\MX\Orders\ChargeAmount**](ChargeAmount.md) |  | [optional]
-**unitPriceWithoutTax** | [**\Walmart\Models\MP\MX\Orders\ChargeAmount**](ChargeAmount.md) |  | [optional]
+**unitPrice** | [**\Walmart\Models\MP\MX\Orders\UnitPrice**](UnitPrice.md) |  | [optional]
+**commission** | [**\Walmart\Models\MP\MX\Orders\Commission**](Commission.md) |  | [optional]
+**unitPriceWithoutTax** | [**\Walmart\Models\MP\MX\Orders\UnitPriceWithoutTax**](UnitPriceWithoutTax.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

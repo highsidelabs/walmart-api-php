@@ -53,7 +53,7 @@ class Rate extends BaseModel
       */
     protected static array $openAPITypes = [
         'count' => 'int',
-        'replenishTimeWindow' => '\Walmart\Models\MP\US\Settings\FileSize'
+        'replenishTimeWindow' => '\Walmart\Models\MP\US\Settings\TimeWindow'
     ];
 
     /**
@@ -166,7 +166,7 @@ class Rate extends BaseModel
     /**
      * Gets replenishTimeWindow
      *
-     * @return \Walmart\Models\MP\US\Settings\FileSize|null
+     * @return \Walmart\Models\MP\US\Settings\TimeWindow|null
     
      */
     public function getReplenishTimeWindow()
@@ -177,7 +177,7 @@ class Rate extends BaseModel
     /**
      * Sets replenishTimeWindow
      *
-     * @param \Walmart\Models\MP\US\Settings\FileSize|null $replenishTimeWindow replenishTimeWindow
+     * @param \Walmart\Models\MP\US\Settings\TimeWindow|null $replenishTimeWindow replenishTimeWindow
      *
      * @return self
     

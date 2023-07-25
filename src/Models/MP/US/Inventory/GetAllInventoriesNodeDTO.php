@@ -51,9 +51,9 @@ class GetAllInventoriesNodeDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'shipNode' => 'string',
-        'inputQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity',
-        'availToSellQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity',
-        'reservedQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity'
+        'inputQty' => '\Walmart\Models\MP\US\Inventory\InputQty',
+        'availToSellQty' => '\Walmart\Models\MP\US\Inventory\AvailToSellQty',
+        'reservedQty' => '\Walmart\Models\MP\US\Inventory\ReservedQty'
     ];
 
     /**
@@ -178,7 +178,7 @@ class GetAllInventoriesNodeDTO extends BaseModel
     /**
      * Gets inputQty
      *
-     * @return \Walmart\Models\MP\US\Inventory\SupplyQuantity|null
+     * @return \Walmart\Models\MP\US\Inventory\InputQty|null
     
      */
     public function getInputQty()
@@ -189,7 +189,7 @@ class GetAllInventoriesNodeDTO extends BaseModel
     /**
      * Sets inputQty
      *
-     * @param \Walmart\Models\MP\US\Inventory\SupplyQuantity|null $inputQty inputQty
+     * @param \Walmart\Models\MP\US\Inventory\InputQty|null $inputQty inputQty
      *
      * @return self
     
@@ -207,7 +207,7 @@ class GetAllInventoriesNodeDTO extends BaseModel
     /**
      * Gets availToSellQty
      *
-     * @return \Walmart\Models\MP\US\Inventory\SupplyQuantity|null
+     * @return \Walmart\Models\MP\US\Inventory\AvailToSellQty|null
     
      */
     public function getAvailToSellQty()
@@ -218,7 +218,7 @@ class GetAllInventoriesNodeDTO extends BaseModel
     /**
      * Sets availToSellQty
      *
-     * @param \Walmart\Models\MP\US\Inventory\SupplyQuantity|null $availToSellQty availToSellQty
+     * @param \Walmart\Models\MP\US\Inventory\AvailToSellQty|null $availToSellQty availToSellQty
      *
      * @return self
     
@@ -236,7 +236,7 @@ class GetAllInventoriesNodeDTO extends BaseModel
     /**
      * Gets reservedQty
      *
-     * @return \Walmart\Models\MP\US\Inventory\SupplyQuantity|null
+     * @return \Walmart\Models\MP\US\Inventory\ReservedQty|null
     
      */
     public function getReservedQty()
@@ -247,7 +247,7 @@ class GetAllInventoriesNodeDTO extends BaseModel
     /**
      * Sets reservedQty
      *
-     * @param \Walmart\Models\MP\US\Inventory\SupplyQuantity|null $reservedQty reservedQty
+     * @param \Walmart\Models\MP\US\Inventory\ReservedQty|null $reservedQty reservedQty
      *
      * @return self
     

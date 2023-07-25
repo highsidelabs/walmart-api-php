@@ -50,7 +50,7 @@ class OrderLinesAck extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLine' => '\Walmart\Models\MP\MX\Orders\OrderLineCancel[]'
+        'orderLine' => '\Walmart\Models\MP\MX\Orders\OrderLineAck[]'
     ];
 
     /**
@@ -128,7 +128,7 @@ class OrderLinesAck extends BaseModel
     /**
      * Gets orderLine
      *
-     * @return \Walmart\Models\MP\MX\Orders\OrderLineCancel[]|null
+     * @return \Walmart\Models\MP\MX\Orders\OrderLineAck[]|null
     
      */
     public function getOrderLine()
@@ -139,7 +139,7 @@ class OrderLinesAck extends BaseModel
     /**
      * Sets orderLine
      *
-     * @param \Walmart\Models\MP\MX\Orders\OrderLineCancel[]|null $orderLine orderLine
+     * @param \Walmart\Models\MP\MX\Orders\OrderLineAck[]|null $orderLine orderLine
      *
      * @return self
     

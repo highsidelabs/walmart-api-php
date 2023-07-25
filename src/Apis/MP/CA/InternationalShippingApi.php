@@ -64,13 +64,13 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
      */
     public function createConsolidation(
         string $accept,
         string $contentType,
         \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest $consolidationRequest
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse {
         return $this->createConsolidationWithHttpInfo($accept, $contentType, $consolidationRequest);
     }
 
@@ -85,13 +85,13 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
      */
     protected function createConsolidationWithHttpInfo(
         string $accept,
         string $contentType,
         \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest $consolidationRequest,
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse {
         $request = $this->createConsolidationRequest($accept, $contentType, $consolidationRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -141,19 +141,19 @@ class InternationalShippingApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -169,7 +169,7 @@ class InternationalShippingApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa',
+                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -223,7 +223,7 @@ class InternationalShippingApi extends BaseApi
         string $contentType,
         \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest $consolidationRequest,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse';
         $request = $this->createConsolidationRequest($accept, $contentType, $consolidationRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1146,13 +1146,13 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse
      */
     public function getCarrierPackageTypes(
         string $carrierShortName,
         string $accept,
         string $contentType
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse {
         return $this->getCarrierPackageTypesWithHttpInfo($carrierShortName, $accept, $contentType);
     }
 
@@ -1167,13 +1167,13 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse
      */
     protected function getCarrierPackageTypesWithHttpInfo(
         string $carrierShortName,
         string $accept,
         string $contentType,
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse {
         $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1223,19 +1223,19 @@ class InternationalShippingApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1251,7 +1251,7 @@ class InternationalShippingApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa',
+                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1305,7 +1305,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse';
         $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1822,14 +1822,14 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
      */
     public function getConsolidation(
         string $domesticTrackingNo,
         int $domesticCarrierId,
         string $accept,
         string $contentType
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse {
         return $this->getConsolidationWithHttpInfo($domesticTrackingNo, $domesticCarrierId, $accept, $contentType);
     }
 
@@ -1845,14 +1845,14 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
      */
     protected function getConsolidationWithHttpInfo(
         string $domesticTrackingNo,
         int $domesticCarrierId,
         string $accept,
         string $contentType,
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse {
         $request = $this->getConsolidationRequest($domesticTrackingNo, $domesticCarrierId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1902,19 +1902,19 @@ class InternationalShippingApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1930,7 +1930,7 @@ class InternationalShippingApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa',
+                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1988,7 +1988,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse';
         $request = $this->getConsolidationRequest($domesticTrackingNo, $domesticCarrierId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2198,13 +2198,13 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa
      */
     public function getLabel(
         string $purchaseOrderId,
         string $accept,
         string $contentType
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa {
         return $this->getLabelWithHttpInfo($purchaseOrderId, $accept, $contentType);
     }
 
@@ -2219,13 +2219,13 @@ class InternationalShippingApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+     * @return \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa
      */
     protected function getLabelWithHttpInfo(
         string $purchaseOrderId,
         string $accept,
         string $contentType,
-    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa {
+    ): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa {
         $request = $this->getLabelRequest($purchaseOrderId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2275,19 +2275,19 @@ class InternationalShippingApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa' !== 'string') {
+                        if ('\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+            $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2303,7 +2303,7 @@ class InternationalShippingApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa',
+                        '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2357,7 +2357,7 @@ class InternationalShippingApi extends BaseApi
         string $accept,
         string $contentType,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa';
+        $returnType = '\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa';
         $request = $this->getLabelRequest($purchaseOrderId, $accept, $contentType);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

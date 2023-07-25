@@ -3,7 +3,7 @@
     "info": {
         "title": "Price Management",
         "description": "The price is a fundamental building block for your listing on Walmart.com. You can use the price management APIs to set up and manage the price for a given item",
-        "version": "0.4.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -893,7 +893,7 @@
                         ]
                     },
                     "currentPrice": {
-                        "$ref": "#\/components\/schemas\/ComparisonPrice"
+                        "$ref": "#\/components\/schemas\/CurrentPrice"
                     },
                     "comparisonPriceType": {
                         "type": "string",

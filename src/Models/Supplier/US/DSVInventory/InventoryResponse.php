@@ -52,7 +52,7 @@ class InventoryResponse extends BaseModel
     protected static array $openAPITypes = [
         'sku' => 'string',
         'gtin' => 'string',
-        'quantity' => '\Walmart\Models\Supplier\US\DSVInventory\ReservedQty'
+        'quantity' => '\Walmart\Models\Supplier\US\DSVInventory\SupplyQuantity'
     ];
 
     /**
@@ -209,7 +209,7 @@ class InventoryResponse extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Models\Supplier\US\DSVInventory\ReservedQty
+     * @return \Walmart\Models\Supplier\US\DSVInventory\SupplyQuantity
     
      */
     public function getQuantity()
@@ -220,7 +220,7 @@ class InventoryResponse extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Models\Supplier\US\DSVInventory\ReservedQty $quantity quantity
+     * @param \Walmart\Models\Supplier\US\DSVInventory\SupplyQuantity $quantity quantity
      *
      * @return self
     

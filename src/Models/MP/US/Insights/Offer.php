@@ -51,7 +51,7 @@ class Offer extends BaseModel
       */
     protected static array $openAPITypes = [
         'issueCount' => 'int',
-        'price' => '\Walmart\Models\MP\US\Insights\Gmv',
+        'price' => '\Walmart\Models\MP\US\Insights\MarketPrice',
         'shippingSpeed' => '\Walmart\Models\MP\US\Insights\ShippingSpeed',
         'publishAndTransactable' => '\Walmart\Models\MP\US\Insights\PublishAndTransactable'
     ];
@@ -178,7 +178,7 @@ class Offer extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\US\Insights\Gmv|null
+     * @return \Walmart\Models\MP\US\Insights\MarketPrice|null
     
      */
     public function getPrice()
@@ -189,7 +189,7 @@ class Offer extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\US\Insights\Gmv|null $price price
+     * @param \Walmart\Models\MP\US\Insights\MarketPrice|null $price price
      *
      * @return self
     

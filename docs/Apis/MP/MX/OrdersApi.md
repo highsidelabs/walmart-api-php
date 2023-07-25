@@ -206,7 +206,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllOrders()`
 
 ```php
-getAllOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $purchaseOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\MxOrder
+getAllOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $purchaseOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\WFSOrderResponse
 ```
 Get all orders
 
@@ -260,7 +260,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/Orders/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\WFSOrderResponse**](../../../Models/MP/MX/Orders/WFSOrderResponse.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllOrdersUsingCursor()`
 
 ```php
-getAllOrdersUsingCursor($statusCodeFilter, $createdStartDate, $createdEndDate, $limit, $cursorMark, $customerOrderId, $purchaseOrderId): \Walmart\Models\MP\MX\Orders\MxOrder
+getAllOrdersUsingCursor($statusCodeFilter, $createdStartDate, $createdEndDate, $limit, $cursorMark, $customerOrderId, $purchaseOrderId): \Walmart\Models\MP\MX\Orders\MxOrderWithCursor
 ```
 Get all orders using cursor mark
 
@@ -333,7 +333,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/Orders/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\MxOrderWithCursor**](../../../Models/MP/MX/Orders/MxOrderWithCursor.md)
 
 ### Authorization
 
@@ -352,7 +352,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllWFSOrders()`
 
 ```php
-getAllWFSOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\MxOrder
+getAllWFSOrders($createdStartDate, $createdEndDate, $limit, $offset, $customerOrderId, $statusCodeFilter): \Walmart\Models\MP\MX\Orders\WFSOrderResponse
 ```
 Get all WFS orders
 
@@ -404,7 +404,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\Orders\MxOrder**](../../../Models/MP/MX/Orders/MxOrder.md)
+[**\Walmart\Models\MP\MX\Orders\WFSOrderResponse**](../../../Models/MP/MX/Orders/WFSOrderResponse.md)
 
 ### Authorization
 

@@ -77,6 +77,10 @@ function customizeSchema(
 
     $componentSchemas = $schema['components']['schemas'] ?? null;
 
+    if (!is_null($componentSchemas)) {
+        $schema['components']['schemas'] = replaceComponentInlineSchemas($componentSchemas);
+    }
+
     foreach ($schema['paths'] as $p => $apiPath) {
         $rawPathParams = array_filter(
             explode('/', $p),
@@ -188,10 +192,6 @@ function customizeSchema(
         ARRAY_FILTER_USE_KEY
     );
 
-    if (!is_null($componentSchemas)) {
-        $schema['components']['schemas'] = replaceComponentInlineSchemas($componentSchemas);
-    }
-
     $schema = fixSchema($schema, $country, $category, $apiCode);
 
     file_put_contents($path, json_encode($schema, JSON_PRETTY_PRINT));
@@ -208,6 +208,7 @@ function customizeSchema(
  */
 function replaceRequestResponseSchemas(array $verbSchema, array $componentSchemas): array
 {
+    $summary = $verbSchema['summary'];
     foreach ($verbSchema['responses'] as $code => $response) {
         if (!isset($response['content'])) {
             continue;
@@ -215,18 +216,41 @@ function replaceRequestResponseSchemas(array $verbSchema, array $componentSchema
 
         $contentType = array_key_first($response['content']);
         $responseSchema = $response['content'][$contentType]['schema'];
-        if (isset($responseSchema['$ref']) || !isset($responseSchema['properties'])) {
+
+        if (
+            // We don't want to overwrite existing refs
+            isset($responseSchema['$ref'])
+            // Some of the MX responses don't have any response schemas, so we skip them
+            || !isset($responseSchema['type'])
+        ) {
+            continue;
+        }
+
+        $properties = match ($responseSchema['type']) {
+            'object' => array_keys($responseSchema['properties']),
+            'array' => array_keys($responseSchema['items']['properties']),
+            default => [],
+        };
+
+        if (count($properties) === 0) {
             continue;
         }
 
         $matchingRef = findMatchingComponent(
-            array_keys($responseSchema['properties']),
+            $properties,
+            [$summary . (string) $code, $verbSchema['operationId']],
             $componentSchemas,
             $contentType === 'application/xml',
-            $code,
         );
-        if (!is_null($matchingRef)) {
-            $verbSchema['responses'][$code]['content'][$contentType]['schema'] = $matchingRef;
+
+        if ($matchingRef) {
+            if ($responseSchema['type'] === 'object') {
+                $verbSchema['responses'][$code]['content'][$contentType]['schema'] = $matchingRef;
+            } else if ($responseSchema['type'] === 'array') {
+                $verbSchema['responses'][$code]['content'][$contentType]['schema']['items'] = $matchingRef;
+            } else {
+                throw new Exception("Unknown response type: {$responseSchema['type']}");
+            }
         }
     }
 
@@ -239,6 +263,7 @@ function replaceRequestResponseSchemas(array $verbSchema, array $componentSchema
 
         $matchingRef = findMatchingComponent(
             array_keys($body['schema']['properties']),
+            $summary,
             $componentSchemas,
             $contentType === 'application/xml'
         );
@@ -272,33 +297,34 @@ function replaceComponentInlineSchemas(array $components): array
                 continue;
             }
 
-            $httpCode = (int) (substr($componentName, -3) ?? -1);
-            if ($httpCode < 100 || $httpCode > 599) {
-                $httpCode = null;
+            $properties = match ($property['type']) {
+                'object' => array_keys($property['properties']),
+                'array' => array_keys($property['items']['properties']),
+                default => [],
+            };
+
+            if (count($properties) === 0) {
+                continue;
             }
 
-            if ($property['type'] === 'object') {
-                $matchingRef = findMatchingComponent(
-                    array_keys($property['properties']),
-                    $components,
-                    isset($component['xml']),
-                    $httpCode,
-                );
-                if (!is_null($matchingRef)) {
+            $matchingRef = findMatchingComponent(
+                $properties,
+                [$componentName, $propertyName],
+                $components,
+                isset($component['xml']),
+            );
+
+            if ($matchingRef) {
+                if ($property['type'] === 'object') {
                     $component['properties'][$propertyName] = $matchingRef;
-                }
-            } elseif ($property['type'] === 'array' && $property['items']['type'] === 'object') {
-                $matchingRef = findMatchingComponent(
-                    array_keys($property['items']['properties']),
-                    $components,
-                    isset($component['xml']),
-                    $httpCode,
-                );
-                if (!is_null($matchingRef)) {
+                } else if ($property['type'] === 'array') {
                     $component['properties'][$propertyName]['items'] = $matchingRef;
+                } else {
+                    throw new Exception("Unknown component type on component $componentName: {$property['type']}");
                 }
             }
         }
+
         $components[$componentName] = $component;
     }
 
@@ -311,43 +337,66 @@ function replaceComponentInlineSchemas(array $components): array
  * schema. Otherwise, returns null.
  *
  * @param array $properties The properties of the schema to match
+ * @param string|array $relatedStrings A string or strings to use when searching for a matching component schema (used
+ *                                     to decide between multiple matching schemas)
  * @param array $componentSchemas The component schemas to search for a match
  * @param bool $isXml Whether or not we're searching for XML-specific component schemas
- * @param int|null $code The response code for the schema to match, if applicable
  * @return array|null
  */
-function findMatchingComponent(array $properties, array $componentSchemas, bool $isXml, int $code = null): ?array
+function findMatchingComponent(array $properties, string|array $relatedStrings, array $componentSchemas, bool $isXml): ?array
 {
     $sortedProperties = $properties;
     sort($sortedProperties);
 
+    if (is_string($relatedStrings)) {
+        $relatedStrings = [$relatedStrings];
+    }
+    $relatedStrings = array_map(fn ($s) => strtolower($s), $relatedStrings);
+
     $match = null;
+    $minLevenshtein = 100000;  // An arbitrary large number
     foreach ($componentSchemas as $componentName => $component) {
         if (!isset($component['properties'])) {
             continue;
         }
 
+        $lcComponentName = strtolower($componentName);
         $sortedComponentProperties = array_keys($component['properties']);
         sort($sortedComponentProperties);
 
         if ($sortedComponentProperties === $sortedProperties) {
+            /**
+             * Sometimes there are multiple Walmart-defined schema components that have the same structure
+             * but different names. We want to get the component that is named most similarly to the component,
+             * response type, or operation that it is being used as a ref for. This helps with readability (components
+             * are named what you would expect) and future-proofing (so that if Walmart changes the schema for
+             * a particular component/response/etc, it doesn't affect other components/responses/operations/etc
+             * that have the same structure).
+             *
+             * For instance, imagine a getOrders and an updateOrders endpoint. Both have a response schema that contains a
+             * list of orders. The schema properties of the response are the same for both endpoints, but there is a component
+             * named GetOrdersResponse for getOrders, and a component named UpdateOrdersResponse for updateOrders. If we
+             * didn't check which name was most similar, we would always use the first component we found -- let's say it
+             * would be GetOrdersResponse. But if Walmart changed the schema for getOrders, it would also change the schema
+             * for the response from updateOrders, which would be a breaking change. Also, when you called updateOrders, you
+             * would, confusingly, get a GetOrdersResponse in return. This is why we check for the most similar name.
+             * 
+             * This is NOT a final solution -- we need to automatically construct all the component schemas from scratch to
+             * ensure that we're always using the correct one, rather than trying to make the Walmart-provided schemas work.
+             */
+            $levenshteins = array_map(fn ($s) => levenshtein($lcComponentName, $s, 1, 1, 0), $relatedStrings);
+            $levenshtein = array_sum($levenshteins) / count($levenshteins);
+            
+            // Sometimes for XML inline schemas, there is a matching component that is not marked as
+            // XML-specific, but is the only matching schema. If we don't find a full match, we'll
+            // use the component that is not marked as XML-specific, but only if we haven't already
+            // found a match that is the correct content type
             $componentIsXml = isset($component['xml']);
-            if (
-                // Sometimes there are multiple Walmart-defined schema components that have the same structure
-                // but different names (the names contain the response code). We want to get the component that
-                // matches the response code, if one exists, to help with readability
-                ($code && strpos($componentName, (string) $code) === false)
-                // Sometimes for XML inline schemas, there is a matching component that is not marked as
-                // XML-specific, but is the only matching schema. If we don't find a full match, we'll
-                // use the component that is not marked as XML-specific, but only if we haven't already
-                // found a match that is the correct content type
-                || (is_null($match) && $isXml !== $componentIsXml)
-            ) {
+            if (is_null($match) && $isXml !== $componentIsXml) {
                 $match = $componentName;
-            } else {
-                // If we find a match that is typed correctly, stop looking immediately
+            } else if ($levenshtein < $minLevenshtein) {
+                $minLevenshtein = $levenshtein;
                 $match = $componentName;
-                break;    
             }
         }
     }

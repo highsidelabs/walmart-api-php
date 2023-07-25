@@ -575,7 +575,7 @@
                         "description": "Indicates the global trade item number (GTIN) item identifier."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/ReservedQty"
+                        "$ref": "#\/components\/schemas\/SupplyQuantity"
                     }
                 },
                 "xml": {
@@ -812,13 +812,13 @@
                         "description": " Indicates the distribution facility distributor identifier for which the inventory is requested."
                     },
                     "inputQty": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#\/components\/schemas\/InputQty"
                     },
                     "availToSellQty": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#\/components\/schemas\/AvailToSellQty"
                     },
                     "reservedQty": {
-                        "$ref": "#\/components\/schemas\/Quantity"
+                        "$ref": "#\/components\/schemas\/ReservedQty"
                     }
                 },
                 "description": "Indicates an array for nodes, to include ship node and allocated quantity."

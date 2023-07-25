@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createConsolidation()`
 
 ```php
-createConsolidation($accept, $contentType, $consolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+createConsolidation($accept, $contentType, $consolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
 ```
 Create consolidation
 
@@ -64,7 +64,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/InternationalShipping/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse**](../../../Models/MP/CA/InternationalShipping/CommonResponseConsolidationResponse.md)
 
 ### Authorization
 
@@ -224,7 +224,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+getCarrierPackageTypes($carrierShortName, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse
 ```
 Supported carrier package types
 
@@ -272,7 +272,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/InternationalShipping/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse**](../../../Models/MP/CA/InternationalShipping/CommonResponseListCarrierPackageResponse.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getConsolidation()`
 
 ```php
-getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
 ```
 Get consolidation details
 
@@ -408,7 +408,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/InternationalShipping/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse**](../../../Models/MP/CA/InternationalShipping/CommonResponseConsolidationResponse.md)
 
 ### Authorization
 
@@ -428,7 +428,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+getLabel($purchaseOrderId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa
 ```
 Labels by purchase order id
 
@@ -476,7 +476,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa**](../../../Models/MP/CA/InternationalShipping/CommonResponseLabelGenerationResponseCa.md)
+[**\Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa**](../../../Models/MP/CA/InternationalShipping/CommonResponseListLabelGenerationResponseCa.md)
 
 ### Authorization
 

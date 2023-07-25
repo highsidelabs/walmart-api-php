@@ -52,7 +52,7 @@ class ShipmentLine extends BaseModel
     protected static array $openAPITypes = [
         'primeLineNo' => 'string',
         'shipmentLineNo' => 'string',
-        'quantity' => '\Walmart\Models\MP\MX\Orders\Quantity'
+        'quantity' => '\Walmart\Models\MP\MX\Orders\StatusQuantity'
     ];
 
     /**
@@ -200,7 +200,7 @@ class ShipmentLine extends BaseModel
     /**
      * Gets quantity
      *
-     * @return \Walmart\Models\MP\MX\Orders\Quantity|null
+     * @return \Walmart\Models\MP\MX\Orders\StatusQuantity|null
     
      */
     public function getQuantity()
@@ -211,7 +211,7 @@ class ShipmentLine extends BaseModel
     /**
      * Sets quantity
      *
-     * @param \Walmart\Models\MP\MX\Orders\Quantity|null $quantity quantity
+     * @param \Walmart\Models\MP\MX\Orders\StatusQuantity|null $quantity quantity
      *
      * @return self
     

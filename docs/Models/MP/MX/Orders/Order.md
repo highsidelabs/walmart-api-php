@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **totalQuantity** | **string** | Total number of items in all order lines in the order | [optional]
 **orderLines** | [**\Walmart\Models\MP\MX\Orders\OrderLine[]**](OrderLine.md) | A list of order lines in the order | [optional]
 **shipments** | [**\Walmart\Models\MP\MX\Orders\Shipment[]**](Shipment.md) | List of shipments associated with the order | [optional]
-**orderTotal** | [**\Walmart\Models\MP\MX\Orders\ChargeAmount**](ChargeAmount.md) |  | [optional]
+**orderTotal** | [**\Walmart\Models\MP\MX\Orders\OrderTotal**](OrderTotal.md) |  | [optional]
 **rfc** | **string** | The RFC for the order | [optional]
 **paymentMethod** | **string** | The payment method used to pay for the order | [optional]
 **cfdi** | **string** | Reason code of the invoice.Example: 'P01' | [optional]

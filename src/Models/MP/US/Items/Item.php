@@ -54,7 +54,7 @@ class Item extends BaseModel
         'isMarketPlaceItem' => 'bool',
         'images' => '\Walmart\Models\MP\US\Items\Image[]',
         'customerRating' => 'string',
-        'price' => '\Walmart\Models\MP\US\Items\Money',
+        'price' => '\Walmart\Models\MP\US\Items\ItemSearchPrice',
         'description' => 'string',
         'title' => 'string',
         'brand' => 'string',
@@ -307,7 +307,7 @@ class Item extends BaseModel
     /**
      * Gets price
      *
-     * @return \Walmart\Models\MP\US\Items\Money|null
+     * @return \Walmart\Models\MP\US\Items\ItemSearchPrice|null
     
      */
     public function getPrice()
@@ -318,7 +318,7 @@ class Item extends BaseModel
     /**
      * Sets price
      *
-     * @param \Walmart\Models\MP\US\Items\Money|null $price price
+     * @param \Walmart\Models\MP\US\Items\ItemSearchPrice|null $price price
      *
      * @return self
     

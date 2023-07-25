@@ -51,7 +51,7 @@ class OrderLineStatusAck extends BaseModel
       */
     protected static array $openAPITypes = [
         'status' => 'string',
-        'statusQuantity' => '\Walmart\Models\MP\MX\Orders\Quantity'
+        'statusQuantity' => '\Walmart\Models\MP\MX\Orders\StatusQuantity'
     ];
 
     /**
@@ -164,7 +164,7 @@ class OrderLineStatusAck extends BaseModel
     /**
      * Gets statusQuantity
      *
-     * @return \Walmart\Models\MP\MX\Orders\Quantity|null
+     * @return \Walmart\Models\MP\MX\Orders\StatusQuantity|null
     
      */
     public function getStatusQuantity()
@@ -175,7 +175,7 @@ class OrderLineStatusAck extends BaseModel
     /**
      * Sets statusQuantity
      *
-     * @param \Walmart\Models\MP\MX\Orders\Quantity|null $statusQuantity statusQuantity
+     * @param \Walmart\Models\MP\MX\Orders\StatusQuantity|null $statusQuantity statusQuantity
      *
      * @return self
     

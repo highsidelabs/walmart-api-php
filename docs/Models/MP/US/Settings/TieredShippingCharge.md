@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **minLimit** | **float** | Minimum Limit |
 **maxLimit** | **float** | Maximum Limit |
-**shipCharge** | [**\Walmart\Models\MP\US\Settings\ChargePerItem**](ChargePerItem.md) |  | [optional]
+**shipCharge** | [**\Walmart\Models\MP\US\Settings\ShipCharge**](ShipCharge.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

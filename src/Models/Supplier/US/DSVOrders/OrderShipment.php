@@ -52,7 +52,7 @@ class OrderShipment extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'orderLines' => '\Walmart\Models\Supplier\US\DSVOrders\CancelLinesType'
+        'orderLines' => '\Walmart\Models\Supplier\US\DSVOrders\ShippingLinesType'
     ];
 
     /**
@@ -133,7 +133,7 @@ class OrderShipment extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\Supplier\US\DSVOrders\CancelLinesType
+     * @return \Walmart\Models\Supplier\US\DSVOrders\ShippingLinesType
     
      */
     public function getOrderLines()
@@ -144,7 +144,7 @@ class OrderShipment extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\Supplier\US\DSVOrders\CancelLinesType $orderLines orderLines
+     * @param \Walmart\Models\Supplier\US\DSVOrders\ShippingLinesType $orderLines orderLines
      *
      * @return self
     

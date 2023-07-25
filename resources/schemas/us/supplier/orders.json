@@ -2575,7 +2575,7 @@
                 "type": "object",
                 "properties": {
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/ShippingLinesType"
                     }
                 },
                 "description": "Information about a shipment",
@@ -2729,7 +2729,7 @@
                         "description": "OrderLine number"
                     },
                     "orderLineStatuses": {
-                        "$ref": "#\/components\/schemas\/OrderLineStatusesType"
+                        "$ref": "#\/components\/schemas\/CancelLineStatusesType"
                     }
                 },
                 "description": "A list of orderLines to be cancelled"
@@ -2744,7 +2744,7 @@
                         "type": "array",
                         "description": "A list of orderLines to be cancelled",
                         "items": {
-                            "$ref": "#\/components\/schemas\/ShippingLineType"
+                            "$ref": "#\/components\/schemas\/CancelLineType"
                         }
                     }
                 },

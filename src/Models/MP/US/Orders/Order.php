@@ -60,7 +60,7 @@ class Order extends BaseModel
         'mart' => 'string',
         'isGuest' => 'bool',
         'shippingInfo' => '\Walmart\Models\MP\US\Orders\ShippingInfoType',
-        'orderLines' => '\Walmart\Models\MP\US\Orders\CancelLinesType',
+        'orderLines' => '\Walmart\Models\MP\US\Orders\RefundLinesType',
         'paymentTypes' => 'string[]',
         'orderSummary' => '\Walmart\Models\MP\US\Orders\OrderSummary',
         'pickupPersons' => '\Walmart\Models\MP\US\Orders\PickupPerson[]',
@@ -464,7 +464,7 @@ class Order extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\US\Orders\CancelLinesType
+     * @return \Walmart\Models\MP\US\Orders\RefundLinesType
     
      */
     public function getOrderLines()
@@ -475,7 +475,7 @@ class Order extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\US\Orders\CancelLinesType $orderLines orderLines
+     * @param \Walmart\Models\MP\US\Orders\RefundLinesType $orderLines orderLines
      *
      * @return self
     

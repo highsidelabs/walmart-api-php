@@ -55,9 +55,9 @@ class Item extends BaseModel
         'sku' => 'string',
         'condition' => 'string',
         'imageUrl' => 'string',
-        'unitPrice' => '\Walmart\Models\MP\MX\Orders\ChargeAmount',
-        'commission' => '\Walmart\Models\MP\MX\Orders\ChargeAmount',
-        'unitPriceWithoutTax' => '\Walmart\Models\MP\MX\Orders\ChargeAmount'
+        'unitPrice' => '\Walmart\Models\MP\MX\Orders\UnitPrice',
+        'commission' => '\Walmart\Models\MP\MX\Orders\Commission',
+        'unitPriceWithoutTax' => '\Walmart\Models\MP\MX\Orders\UnitPriceWithoutTax'
     ];
 
     /**
@@ -322,7 +322,7 @@ class Item extends BaseModel
     /**
      * Gets unitPrice
      *
-     * @return \Walmart\Models\MP\MX\Orders\ChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Orders\UnitPrice|null
     
      */
     public function getUnitPrice()
@@ -333,7 +333,7 @@ class Item extends BaseModel
     /**
      * Sets unitPrice
      *
-     * @param \Walmart\Models\MP\MX\Orders\ChargeAmount|null $unitPrice unitPrice
+     * @param \Walmart\Models\MP\MX\Orders\UnitPrice|null $unitPrice unitPrice
      *
      * @return self
     
@@ -351,7 +351,7 @@ class Item extends BaseModel
     /**
      * Gets commission
      *
-     * @return \Walmart\Models\MP\MX\Orders\ChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Orders\Commission|null
     
      */
     public function getCommission()
@@ -362,7 +362,7 @@ class Item extends BaseModel
     /**
      * Sets commission
      *
-     * @param \Walmart\Models\MP\MX\Orders\ChargeAmount|null $commission commission
+     * @param \Walmart\Models\MP\MX\Orders\Commission|null $commission commission
      *
      * @return self
     
@@ -380,7 +380,7 @@ class Item extends BaseModel
     /**
      * Gets unitPriceWithoutTax
      *
-     * @return \Walmart\Models\MP\MX\Orders\ChargeAmount|null
+     * @return \Walmart\Models\MP\MX\Orders\UnitPriceWithoutTax|null
     
      */
     public function getUnitPriceWithoutTax()
@@ -391,7 +391,7 @@ class Item extends BaseModel
     /**
      * Sets unitPriceWithoutTax
      *
-     * @param \Walmart\Models\MP\MX\Orders\ChargeAmount|null $unitPriceWithoutTax unitPriceWithoutTax
+     * @param \Walmart\Models\MP\MX\Orders\UnitPriceWithoutTax|null $unitPriceWithoutTax unitPriceWithoutTax
      *
      * @return self
     

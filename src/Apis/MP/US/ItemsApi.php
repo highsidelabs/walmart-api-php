@@ -1695,13 +1695,13 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO
+     * @return \Walmart\Models\MP\US\Items\ItemSearch
      */
     public function getSearchResult(
         ?string $query = '',
         ?string $upc = '',
         ?string $gtin = ''
-    ): \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO {
+    ): \Walmart\Models\MP\US\Items\ItemSearch {
         return $this->getSearchResultWithHttpInfo($query, $upc, $gtin);
     }
 
@@ -1716,13 +1716,13 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO
+     * @return \Walmart\Models\MP\US\Items\ItemSearch
      */
     protected function getSearchResultWithHttpInfo(
         ?string $query = '',
         ?string $upc = '',
         ?string $gtin = '',
-    ): \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO {
+    ): \Walmart\Models\MP\US\Items\ItemSearch {
         $request = $this->getSearchResultRequest($query, $upc, $gtin);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -1772,19 +1772,19 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Items\ItemSearch' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Items\ItemSearch' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Items\ItemSearch', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO';
+            $returnType = '\Walmart\Models\MP\US\Items\ItemSearch';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1800,7 +1800,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO',
+                        '\Walmart\Models\MP\US\Items\ItemSearch',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1854,7 +1854,7 @@ class ItemsApi extends BaseApi
         ?string $upc = '',
         ?string $gtin = '',
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO';
+        $returnType = '\Walmart\Models\MP\US\Items\ItemSearch';
         $request = $this->getSearchResultRequest($query, $upc, $gtin);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2274,11 +2274,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Items\TaxonomyResponseDTO
+     * @return \Walmart\Models\MP\US\Items\VariantCountResponses
      */
     public function getVariantCount(
         ?string $variantGroupId = null
-    ): \Walmart\Models\MP\US\Items\TaxonomyResponseDTO {
+    ): \Walmart\Models\MP\US\Items\VariantCountResponses {
         return $this->getVariantCountWithHttpInfo($variantGroupId);
     }
 
@@ -2291,11 +2291,11 @@ class ItemsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Items\TaxonomyResponseDTO
+     * @return \Walmart\Models\MP\US\Items\VariantCountResponses
      */
     protected function getVariantCountWithHttpInfo(
         ?string $variantGroupId = null,
-    ): \Walmart\Models\MP\US\Items\TaxonomyResponseDTO {
+    ): \Walmart\Models\MP\US\Items\VariantCountResponses {
         $request = $this->getVariantCountRequest($variantGroupId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -2345,19 +2345,19 @@ class ItemsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Items\TaxonomyResponseDTO' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Items\VariantCountResponses' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Items\TaxonomyResponseDTO' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Items\VariantCountResponses' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Items\TaxonomyResponseDTO', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Items\VariantCountResponses', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Items\TaxonomyResponseDTO';
+            $returnType = '\Walmart\Models\MP\US\Items\VariantCountResponses';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -2373,7 +2373,7 @@ class ItemsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Items\TaxonomyResponseDTO',
+                        '\Walmart\Models\MP\US\Items\VariantCountResponses',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2419,7 +2419,7 @@ class ItemsApi extends BaseApi
     protected function getVariantCountAsyncWithHttpInfo(
         ?string $variantGroupId = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Items\TaxonomyResponseDTO';
+        $returnType = '\Walmart\Models\MP\US\Items\VariantCountResponses';
         $request = $this->getVariantCountRequest($variantGroupId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

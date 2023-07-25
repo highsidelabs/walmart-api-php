@@ -57,7 +57,7 @@ class ShipNodeRequest extends BaseModel
         'customNodeId' => 'string',
         'postalAddress' => '\Walmart\Models\MP\US\Settings\PostalAddress',
         'shippingDetails' => '\Walmart\Models\MP\US\Settings\ShippingDetails[]',
-        'calendarDayConfiguration' => '\Walmart\Models\MP\US\Settings\CalendarDayConfigurationResponseCreate'
+        'calendarDayConfiguration' => '\Walmart\Models\MP\US\Settings\CalendarDayConfigurationRequest'
     ];
 
     /**
@@ -380,7 +380,7 @@ class ShipNodeRequest extends BaseModel
     /**
      * Gets calendarDayConfiguration
      *
-     * @return \Walmart\Models\MP\US\Settings\CalendarDayConfigurationResponseCreate|null
+     * @return \Walmart\Models\MP\US\Settings\CalendarDayConfigurationRequest|null
     
      */
     public function getCalendarDayConfiguration()
@@ -391,7 +391,7 @@ class ShipNodeRequest extends BaseModel
     /**
      * Sets calendarDayConfiguration
      *
-     * @param \Walmart\Models\MP\US\Settings\CalendarDayConfigurationResponseCreate|null $calendarDayConfiguration calendarDayConfiguration
+     * @param \Walmart\Models\MP\US\Settings\CalendarDayConfigurationRequest|null $calendarDayConfiguration calendarDayConfiguration
      *
      * @return self
     

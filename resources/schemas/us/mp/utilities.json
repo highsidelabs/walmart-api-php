@@ -3,7 +3,7 @@
     "info": {
         "title": "Utilities Management",
         "description": "Utilities Management API",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -130,7 +130,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/TaxonomyResponseDTO"
+                                    "$ref": "#\/components\/schemas\/GetDepartmentList"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
