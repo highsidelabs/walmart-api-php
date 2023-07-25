@@ -3,7 +3,7 @@
     "info": {
         "title": "International Shipping",
         "description": "The International Shipping API enables sellers to use the Ship with Walmart (SWW) International shipping programs to ship their goods from the US to Canada. These APIs provide support for two SWW Programs : SWW Express & SWW Ground",
-        "version": "0.4.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -196,7 +196,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
+                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse"
                                 },
                                 "example": {
                                     "data": {
@@ -273,7 +273,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
+                                    "$ref": "#\/components\/schemas\/CommonResponseConsolidationResponse"
                                 },
                                 "example": {
                                     "data": {
@@ -343,7 +343,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListLabelGenerationResponseCa"
                                 },
                                 "example": {
                                     "data": [
@@ -623,7 +623,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseCa"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListCarrierPackageResponse"
                                 },
                                 "example": {
                                     "data": [

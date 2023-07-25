@@ -53,7 +53,7 @@ class ReturnLineGroup extends BaseModel
       */
     protected static array $openAPITypes = [
         'groupNo' => 'int',
-        'returnLines' => '\Walmart\Models\MP\US\Returns\RefundLine[]',
+        'returnLines' => '\Walmart\Models\MP\US\Returns\ReturnLine[]',
         'labels' => '\Walmart\Models\MP\US\Returns\Label[]',
         'returnExpectedFlag' => 'bool'
     ];
@@ -180,7 +180,7 @@ class ReturnLineGroup extends BaseModel
     /**
      * Gets returnLines
      *
-     * @return \Walmart\Models\MP\US\Returns\RefundLine[]|null
+     * @return \Walmart\Models\MP\US\Returns\ReturnLine[]|null
     
      */
     public function getReturnLines()
@@ -191,7 +191,7 @@ class ReturnLineGroup extends BaseModel
     /**
      * Sets returnLines
      *
-     * @param \Walmart\Models\MP\US\Returns\RefundLine[]|null $returnLines Array of return lines
+     * @param \Walmart\Models\MP\US\Returns\ReturnLine[]|null $returnLines Array of return lines
      *
      * @return self
     

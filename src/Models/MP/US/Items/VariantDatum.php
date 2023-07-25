@@ -54,7 +54,7 @@ class VariantDatum extends BaseModel
         'itemId' => 'string',
         'isAvailable' => 'string',
         'title' => 'string',
-        'variantValues' => '\Walmart\Models\MP\US\Items\GroupingAttributes[]'
+        'variantValues' => '\Walmart\Models\MP\US\Items\VariantValue[]'
     ];
 
     /**
@@ -272,7 +272,7 @@ class VariantDatum extends BaseModel
     /**
      * Gets variantValues
      *
-     * @return \Walmart\Models\MP\US\Items\GroupingAttributes[]|null
+     * @return \Walmart\Models\MP\US\Items\VariantValue[]|null
     
      */
     public function getVariantValues()
@@ -283,7 +283,7 @@ class VariantDatum extends BaseModel
     /**
      * Sets variantValues
      *
-     * @param \Walmart\Models\MP\US\Items\GroupingAttributes[]|null $variantValues variantValues
+     * @param \Walmart\Models\MP\US\Items\VariantValue[]|null $variantValues variantValues
      *
      * @return self
     

@@ -52,7 +52,8 @@ class RefundLine extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'returnOrderLineNumber' => 'int'
+        'returnOrderLineNumber' => 'int',
+        'quantity' => '\Walmart\Models\MP\US\Returns\Quantity'
     ];
 
     /**
@@ -63,7 +64,8 @@ class RefundLine extends BaseModel
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'returnOrderLineNumber' => 'int64'
+        'returnOrderLineNumber' => 'int64',
+        'quantity' => null
     ];
 
     /**
@@ -72,7 +74,8 @@ class RefundLine extends BaseModel
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'returnOrderLineNumber' => false
+        'returnOrderLineNumber' => false,
+        'quantity' => false
     ];
 
     /**
@@ -82,7 +85,8 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'returnOrderLineNumber' => 'returnOrderLineNumber'
+        'returnOrderLineNumber' => 'returnOrderLineNumber',
+        'quantity' => 'quantity'
     ];
 
     /**
@@ -91,7 +95,8 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $setters = [
-        'returnOrderLineNumber' => 'setReturnOrderLineNumber'
+        'returnOrderLineNumber' => 'setReturnOrderLineNumber',
+        'quantity' => 'setQuantity'
     ];
 
     /**
@@ -100,7 +105,8 @@ class RefundLine extends BaseModel
      * @var string[]
      */
     protected static array $getters = [
-        'returnOrderLineNumber' => 'getReturnOrderLineNumber'
+        'returnOrderLineNumber' => 'getReturnOrderLineNumber',
+        'quantity' => 'getQuantity'
     ];
 
     /**
@@ -112,6 +118,7 @@ class RefundLine extends BaseModel
     public function __construct(array $data = null)
     {
         $this->setIfExists('returnOrderLineNumber', $data ?? [], null);
+        $this->setIfExists('quantity', $data ?? [], null);
     }
 
     /**
@@ -156,6 +163,35 @@ class RefundLine extends BaseModel
         }
 
         $this->container['returnOrderLineNumber'] = $returnOrderLineNumber;
+        return $this;
+    }
+
+    /**
+     * Gets quantity
+     *
+     * @return \Walmart\Models\MP\US\Returns\Quantity|null
+    
+     */
+    public function getQuantity()
+    {
+        return $this->container['quantity'];
+    }
+
+    /**
+     * Sets quantity
+     *
+     * @param \Walmart\Models\MP\US\Returns\Quantity|null $quantity quantity
+     *
+     * @return self
+    
+     */
+    public function setQuantity($quantity)
+    {
+        if (is_null($quantity)) {
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
+        }
+
+        $this->container['quantity'] = $quantity;
         return $this;
     }
 }

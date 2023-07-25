@@ -57,14 +57,14 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
         'deliveryFromDateTime' => '\DateTime',
         'deliveryToDateTime' => '\DateTime',
         'customer' => '\Walmart\Models\MP\US\Fulfillment\Customer',
-        'originLocation' => '\Walmart\Models\MP\US\Fulfillment\DestinationLocation',
+        'originLocation' => '\Walmart\Models\MP\US\Fulfillment\OriginLocation',
         'destinationLocation' => '\Walmart\Models\MP\US\Fulfillment\DestinationLocation',
         'returnLocation' => '\Walmart\Models\MP\US\Fulfillment\ReturnLocation',
         'shipmentPackages' => '\Walmart\Models\MP\US\Fulfillment\ShipmentPackage[]',
         'mode' => 'string',
         'freightClass' => 'string',
         'declaredValue' => 'int',
-        'loadTypes' => '\Walmart\Models\MP\US\Fulfillment\LoadType[]'
+        'loadTypes' => '\Walmart\Models\MP\US\Fulfillment\LoadTypeDetails[]'
     ];
 
     /**
@@ -465,7 +465,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets originLocation
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\DestinationLocation
+     * @return \Walmart\Models\MP\US\Fulfillment\OriginLocation
     
      */
     public function getOriginLocation()
@@ -476,7 +476,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets originLocation
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\DestinationLocation $originLocation originLocation
+     * @param \Walmart\Models\MP\US\Fulfillment\OriginLocation $originLocation originLocation
      *
      * @return self
     
@@ -679,7 +679,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Gets loadTypes
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\LoadType[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\LoadTypeDetails[]|null
     
      */
     public function getLoadTypes()
@@ -690,7 +690,7 @@ class CarrierQuoteRequestV2Wrapper extends BaseModel
     /**
      * Sets loadTypes
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\LoadType[]|null $loadTypes loadTypes
+     * @param \Walmart\Models\MP\US\Fulfillment\LoadTypeDetails[]|null $loadTypes loadTypes
      *
      * @return self
     

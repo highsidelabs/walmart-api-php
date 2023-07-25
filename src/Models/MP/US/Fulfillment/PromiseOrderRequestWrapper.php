@@ -50,7 +50,7 @@ class PromiseOrderRequestWrapper extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'header' => '\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader',
+        'header' => '\Walmart\Models\MP\US\Fulfillment\MultitenantHeaderWrapper',
         'payload' => '\Walmart\Models\MP\US\Fulfillment\PromiseOrderRequestPayload'
     ];
 
@@ -138,7 +138,7 @@ class PromiseOrderRequestWrapper extends BaseModel
     /**
      * Gets header
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader
+     * @return \Walmart\Models\MP\US\Fulfillment\MultitenantHeaderWrapper
     
      */
     public function getHeader()
@@ -149,7 +149,7 @@ class PromiseOrderRequestWrapper extends BaseModel
     /**
      * Sets header
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader $header header
+     * @param \Walmart\Models\MP\US\Fulfillment\MultitenantHeaderWrapper $header header
      *
      * @return self
     

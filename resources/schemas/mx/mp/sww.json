@@ -3,7 +3,7 @@
     "info": {
         "title": "International Shipping",
         "description": "The International Shipment APIs which allows US sellers to ship items to Mexico internationally, via Ship With Walmart service.",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -163,7 +163,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListLabelGenerationResponseMx"
                                 },
                                 "example": {
                                     "data": [
@@ -398,7 +398,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/CommonResponseLabelGenerationResponseMx"
+                                    "$ref": "#\/components\/schemas\/CommonResponseListCarrierPackageResponse"
                                 },
                                 "example": {
                                     "data": [
@@ -949,15 +949,15 @@
             }
         },
         "securitySchemes": {
-            "basicScheme": {
-                "type": "http",
-                "scheme": "basic",
-                "description": "Basic authentication with a Walmart Client ID and Client Secret"
-            },
             "accessTokenScheme": {
                 "type": "http",
                 "scheme": "bearer",
                 "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "basicScheme": {
+                "type": "http",
+                "scheme": "basic",
+                "description": "Basic authentication with a Walmart Client ID and Client Secret"
             }
         }
     }

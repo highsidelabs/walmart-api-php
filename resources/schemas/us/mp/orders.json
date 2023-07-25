@@ -3148,7 +3148,7 @@
                         "$ref": "#\/components\/schemas\/ShippingInfoType"
                     },
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/RefundLinesType"
                     },
                     "paymentTypes": {
                         "type": "array",
@@ -4233,7 +4233,7 @@
                         "description": "Optional. Use this parameter only to update tracking information after order is shipped. Use 'PARTIAL_UPDATE' as value. Here PARTIAL_UPDATE will indicate that post shipment tracking information needs to be updated"
                     },
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/RefundLinesType"
                     }
                 },
                 "description": "Information about a shipment",
@@ -4353,7 +4353,7 @@
                         "type": "string"
                     },
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/RefundLinesType"
                     }
                 },
                 "xml": {
@@ -4480,7 +4480,7 @@
                         "type": "string"
                     },
                     "orderLineStatuses": {
-                        "$ref": "#\/components\/schemas\/OrderLineStatusesType"
+                        "$ref": "#\/components\/schemas\/CancelLineStatusesType"
                     }
                 },
                 "description": "Information to update the orderLine with cancellation details"
@@ -4730,7 +4730,7 @@
                         "$ref": "#\/components\/schemas\/ShippingInfoType"
                     },
                     "orderLines": {
-                        "$ref": "#\/components\/schemas\/CancelLinesType"
+                        "$ref": "#\/components\/schemas\/RefundLinesType"
                     },
                     "paymentTypes": {
                         "type": "array",

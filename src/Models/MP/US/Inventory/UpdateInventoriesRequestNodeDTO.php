@@ -51,7 +51,7 @@ class UpdateInventoriesRequestNodeDTO extends BaseModel
       */
     protected static array $openAPITypes = [
         'shipNode' => 'string',
-        'inputQty' => '\Walmart\Models\MP\US\Inventory\SupplyQuantity'
+        'inputQty' => '\Walmart\Models\MP\US\Inventory\InputQty'
     ];
 
     /**
@@ -170,7 +170,7 @@ class UpdateInventoriesRequestNodeDTO extends BaseModel
     /**
      * Gets inputQty
      *
-     * @return \Walmart\Models\MP\US\Inventory\SupplyQuantity
+     * @return \Walmart\Models\MP\US\Inventory\InputQty
     
      */
     public function getInputQty()
@@ -181,7 +181,7 @@ class UpdateInventoriesRequestNodeDTO extends BaseModel
     /**
      * Sets inputQty
      *
-     * @param \Walmart\Models\MP\US\Inventory\SupplyQuantity $inputQty inputQty
+     * @param \Walmart\Models\MP\US\Inventory\InputQty $inputQty inputQty
      *
      * @return self
     

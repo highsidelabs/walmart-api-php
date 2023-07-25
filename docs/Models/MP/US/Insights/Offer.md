@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **issueCount** | **int** |  | [optional]
-**price** | [**\Walmart\Models\MP\US\Insights\Gmv**](Gmv.md) |  | [optional]
+**price** | [**\Walmart\Models\MP\US\Insights\MarketPrice**](MarketPrice.md) |  | [optional]
 **shippingSpeed** | [**\Walmart\Models\MP\US\Insights\ShippingSpeed**](ShippingSpeed.md) |  | [optional]
 **publishAndTransactable** | [**\Walmart\Models\MP\US\Insights\PublishAndTransactable**](PublishAndTransactable.md) |  | [optional]
 

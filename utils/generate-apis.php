@@ -44,6 +44,7 @@ function openApiGenerator(string $code, string $name, string $category, string $
     $configPath = RESOURCE_DIR . '/generator-config.json';
 
     $categoryCaps = strtoupper($category);
+    $categoryNamespace = $category === ApiCategory::SUPPLIER ? ucfirst($category) : strtoupper($category);
     $categoryCode = ApiCategory::asCategoryName($category);
     $countryCaps = strtoupper($country);
     $nameStr = str_replace(' ', '', $name);
@@ -61,9 +62,9 @@ function openApiGenerator(string $code, string $name, string $category, string $
         --global-property apis,models \
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-api-php/$version \
-        --api-package \"Apis\\$categoryCaps\\$countryCaps\" \
-        --model-package \"Models\\$categoryCaps\\$countryCaps\\$compressedSchemaName\" \
-        --additional-properties=\"x-walmart-api-category=$categoryCaps,x-walmart-country=$countryCaps,x-walmart-category-code=$categoryCode,x-walmart-api-accessor=$nameAccessor,x-walmart-api-name=$nameStr\" \
+        --api-package \"Apis\\$categoryNamespace\\$countryCaps\" \
+        --model-package \"Models\\$categoryNamespace\\$countryCaps\\$compressedSchemaName\" \
+        --additional-properties=\"x-walmart-api-category=$categoryNamespace,x-walmart-country=$countryCaps,x-walmart-category-code=$categoryCode,x-walmart-api-accessor=$nameAccessor,x-walmart-api-name=$nameStr\" \
         2>&1";
 
     execAndLog($generateCmd);
@@ -74,8 +75,8 @@ function openApiGenerator(string $code, string $name, string $category, string $
     $apiDocSrcPath = "$defaultApiDocsPath/{$compressedSchemaName}Api.md";
     $modelDocSrcPath = "$defaultModelDocsPath/*.md";
 
-    $apiDocDestPath = DOCS_DIR . '/' . CUSTOM_API_DIR . "/$categoryCaps/$countryCaps/";
-    $modelDocDestPath = DOCS_DIR . '/' . CUSTOM_MODEL_DIR . "/$categoryCaps/$countryCaps/$compressedSchemaName/";
+    $apiDocDestPath = DOCS_DIR . '/' . CUSTOM_API_DIR . "/$categoryNamespace/$countryCaps/";
+    $modelDocDestPath = DOCS_DIR . '/' . CUSTOM_MODEL_DIR . "/$categoryNamespace/$countryCaps/$compressedSchemaName/";
 
     // Create the documentation directories if they don't exist
     if (!file_exists($apiDocDestPath)) {

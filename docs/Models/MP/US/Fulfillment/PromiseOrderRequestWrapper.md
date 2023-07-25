@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**header** | [**\Walmart\Models\MP\US\Fulfillment\CustomerOrderHeader**](CustomerOrderHeader.md) |  |
+**header** | [**\Walmart\Models\MP\US\Fulfillment\MultitenantHeaderWrapper**](MultitenantHeaderWrapper.md) |  |
 **payload** | [**\Walmart\Models\MP\US\Fulfillment\PromiseOrderRequestPayload**](PromiseOrderRequestPayload.md) |  | [optional]
 
 

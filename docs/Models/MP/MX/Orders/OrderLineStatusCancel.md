@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **string** |  | [optional]
-**statusQuantity** | [**\Walmart\Models\MP\MX\Orders\Quantity**](Quantity.md) |  | [optional]
+**statusQuantity** | [**\Walmart\Models\MP\MX\Orders\StatusQuantity**](StatusQuantity.md) |  | [optional]
 **cancellationReason** | **string** |  | [optional]
 
 

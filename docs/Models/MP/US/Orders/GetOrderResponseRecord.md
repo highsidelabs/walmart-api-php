@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **mart** | **string** | Mart information | [optional]
 **isGuest** | **bool** | Indicates a guest customer | [optional]
 **shippingInfo** | [**\Walmart\Models\MP\US\Orders\ShippingInfoType**](ShippingInfoType.md) |  |
-**orderLines** | [**\Walmart\Models\MP\US\Orders\CancelLinesType**](CancelLinesType.md) |  |
+**orderLines** | [**\Walmart\Models\MP\US\Orders\RefundLinesType**](RefundLinesType.md) |  |
 **paymentTypes** | **string[]** | Payment Types | [optional]
 **orderSummary** | [**\Walmart\Models\MP\US\Orders\OrderSummary**](OrderSummary.md) |  | [optional]
 **pickupPersons** | [**\Walmart\Models\MP\US\Orders\PickupPerson[]**](PickupPerson.md) | List of pickup persons | [optional]

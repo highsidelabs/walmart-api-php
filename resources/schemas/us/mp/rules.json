@@ -3,7 +3,7 @@
     "info": {
         "title": "Rules Management",
         "description": "Rules Management",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -126,7 +126,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
+                                "$ref": "#\/components\/schemas\/DeleteExceptionRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -182,7 +182,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
+                                "$ref": "#\/components\/schemas\/CreateOverrideExceptionRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -209,7 +209,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/DeleteExceptionResponse"
+                                    "$ref": "#\/components\/schemas\/CreateOverrideExceptionResponse"
                                 },
                                 "example": {
                                     "feedId": "5ED712C698FD43B999EC5EEFD5C63655@ATgBAQA",
@@ -352,7 +352,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
+                                "$ref": "#\/components\/schemas\/UpdateShippingAreaToRulesRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -390,7 +390,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
+                                    "$ref": "#\/components\/schemas\/CreateRuleResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -571,7 +571,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
+                                "$ref": "#\/components\/schemas\/UpdateShippingAreaToRulesRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -604,7 +604,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
+                                    "$ref": "#\/components\/schemas\/CreateRuleResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -668,7 +668,7 @@
                     "content": {
                         "application\/json": {
                             "schema": {
-                                "$ref": "#\/components\/schemas\/InactivateRuleRequest"
+                                "$ref": "#\/components\/schemas\/CreateOverrideExceptionRequest"
                             },
                             "example": {
                                 "ruleHeader": {
@@ -702,7 +702,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/GetAllRulesResponse"
+                                    "$ref": "#\/components\/schemas\/CreateRuleResponse"
                                 },
                                 "example": {
                                     "rules": [
@@ -942,7 +942,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ChangeAssortmentResponse"
+                                    "$ref": "#\/components\/schemas\/GetAllSubCategoriesResponse"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -1035,7 +1035,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/ChangeAssortmentResponse"
+                                    "$ref": "#\/components\/schemas\/GetAllAreasResponse"
                                 },
                                 "example": {
                                     "status": "OK",
@@ -1873,7 +1873,7 @@
                         "content": {
                             "application\/json": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/InactivateRuleResponse"
+                                    "$ref": "#\/components\/schemas\/DeleteRuleResponse"
                                 },
                                 "example": {
                                     "status": "SUCCESS",
@@ -2056,7 +2056,7 @@
                     "rules": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/RuleInfo"
+                            "$ref": "#\/components\/schemas\/RuleResponse"
                         }
                     },
                     "status": {
@@ -2249,7 +2249,7 @@
                     "rules": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/RuleInfo"
+                            "$ref": "#\/components\/schemas\/RuleResponse"
                         }
                     },
                     "status": {

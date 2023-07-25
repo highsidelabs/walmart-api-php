@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **unitOfMeasure** | **string** | Unit of Measure eg. LB |
-**shippingAndHandling** | [**\Walmart\Models\MP\US\Settings\ChargePerItem**](ChargePerItem.md) |  | [optional]
-**chargePerWeight** | [**\Walmart\Models\MP\US\Settings\ChargePerItem**](ChargePerItem.md) |  | [optional]
+**shippingAndHandling** | [**\Walmart\Models\MP\US\Settings\ShippingAndHandling**](ShippingAndHandling.md) |  | [optional]
+**chargePerWeight** | [**\Walmart\Models\MP\US\Settings\ChargePerWeight**](ChargePerWeight.md) |  | [optional]
 **chargePerItem** | [**\Walmart\Models\MP\US\Settings\ChargePerItem**](ChargePerItem.md) |  | [optional]
 
 

@@ -338,7 +338,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getSearchResult()`
 
 ```php
-getSearchResult($query, $upc, $gtin): \Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO
+getSearchResult($query, $upc, $gtin): \Walmart\Models\MP\US\Items\ItemSearch
 ```
 Item Search
 
@@ -384,7 +384,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\ItemsAssociationsResponseDTO**](../../../Models/MP/US/Items/ItemsAssociationsResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\ItemSearch**](../../../Models/MP/US/Items/ItemSearch.md)
 
 ### Authorization
 
@@ -459,7 +459,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getVariantCount()`
 
 ```php
-getVariantCount($variantGroupId): \Walmart\Models\MP\US\Items\TaxonomyResponseDTO
+getVariantCount($variantGroupId): \Walmart\Models\MP\US\Items\VariantCountResponses
 ```
 Get item count by groups
 
@@ -501,7 +501,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Items\TaxonomyResponseDTO**](../../../Models/MP/US/Items/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Items\VariantCountResponses**](../../../Models/MP/US/Items/VariantCountResponses.md)
 
 ### Authorization
 

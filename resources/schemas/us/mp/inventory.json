@@ -3,7 +3,7 @@
     "info": {
         "title": "Inventory Management",
         "description": "Maintaining up-to-date inventory for your items on Walmart.com ensures a great experience for your customers and greater sales opportunities for you.",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -649,7 +649,7 @@
                         "description": "A seller-provided Product ID. Response will have decoded value."
                     },
                     "quantity": {
-                        "$ref": "#\/components\/schemas\/ReservedQty"
+                        "$ref": "#\/components\/schemas\/InputQty"
                     }
                 },
                 "xml": {
@@ -824,7 +824,7 @@
                         "description": "ShipNode Id of the ship node for which the inventory is requested"
                     },
                     "inputQty": {
-                        "$ref": "#\/components\/schemas\/SupplyQuantity"
+                        "$ref": "#\/components\/schemas\/InputQty"
                     }
                 }
             },
@@ -851,7 +851,7 @@
                     "inventories": {
                         "type": "array",
                         "items": {
-                            "$ref": "#\/components\/schemas\/MultiNodeInventoryUpdateResponseDTO"
+                            "$ref": "#\/components\/schemas\/GetAllInventoriesDTO"
                         }
                     }
                 }
@@ -879,13 +879,13 @@
                         "description": "ShipNode Id of the ship node for which the inventory is requested"
                     },
                     "inputQty": {
-                        "$ref": "#\/components\/schemas\/SupplyQuantity"
+                        "$ref": "#\/components\/schemas\/InputQty"
                     },
                     "availToSellQty": {
-                        "$ref": "#\/components\/schemas\/SupplyQuantity"
+                        "$ref": "#\/components\/schemas\/AvailToSellQty"
                     },
                     "reservedQty": {
-                        "$ref": "#\/components\/schemas\/SupplyQuantity"
+                        "$ref": "#\/components\/schemas\/ReservedQty"
                     }
                 }
             },
@@ -939,10 +939,10 @@
                         "description": "ShipNode Id of the ship node for which the inventory is requested"
                     },
                     "inputQty": {
-                        "$ref": "#\/components\/schemas\/SupplyQuantity"
+                        "$ref": "#\/components\/schemas\/InputQty"
                     },
                     "availToSellQty": {
-                        "$ref": "#\/components\/schemas\/SupplyQuantity"
+                        "$ref": "#\/components\/schemas\/AvailToSellQty"
                     },
                     "errors": {
                         "type": "array",
@@ -951,7 +951,7 @@
                         }
                     },
                     "reservedQty": {
-                        "$ref": "#\/components\/schemas\/SupplyQuantity"
+                        "$ref": "#\/components\/schemas\/ReservedQty"
                     }
                 }
             },

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**availableQuantity** | [**\Walmart\Models\MP\US\Fulfillment\CustomerOrderItemQuantityType**](CustomerOrderItemQuantityType.md) |  | [optional]
+**availableQuantity** | [**\Walmart\Models\MP\US\Fulfillment\AvailableQuantity**](AvailableQuantity.md) |  | [optional]
 **fulfillmentChannel** | **string[]** | Fulfillment channel details. For example : 'WFS_FULFILLED' | [optional]
 **lineId** | **string** | The identifier to identify each line, assigned by seller systems. | [optional]
 

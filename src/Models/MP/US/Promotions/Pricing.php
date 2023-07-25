@@ -55,7 +55,7 @@ class Pricing extends BaseModel
         'promoId' => 'string',
         'processMode' => 'string',
         'currentPriceType' => 'string',
-        'currentPrice' => '\Walmart\Models\MP\US\Promotions\ComparisonPrice',
+        'currentPrice' => '\Walmart\Models\MP\US\Promotions\CurrentPrice',
         'comparisonPriceType' => 'string',
         'comparisonPrice' => '\Walmart\Models\MP\US\Promotions\ComparisonPrice',
         'priceDisplayCodes' => 'string'
@@ -463,7 +463,7 @@ class Pricing extends BaseModel
     /**
      * Gets currentPrice
      *
-     * @return \Walmart\Models\MP\US\Promotions\ComparisonPrice
+     * @return \Walmart\Models\MP\US\Promotions\CurrentPrice
     
      */
     public function getCurrentPrice()
@@ -474,7 +474,7 @@ class Pricing extends BaseModel
     /**
      * Sets currentPrice
      *
-     * @param \Walmart\Models\MP\US\Promotions\ComparisonPrice $currentPrice currentPrice
+     * @param \Walmart\Models\MP\US\Promotions\CurrentPrice $currentPrice currentPrice
      *
      * @return self
     

@@ -6,10 +6,12 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 | [**createStrategy()**](#createStrategy) | **POST** /v3/repricer/strategy | Create Repricer Strategy |
 | [**deleteStrategy()**](#deleteStrategy) | **DELETE** /v3/repricer/strategy/{strategyCollectionId} | Delete Repricer Strategy |
 | [**getRepricerFeed()**](#getRepricerFeed) | **POST** /v3/repricerFeeds | Assign/Unassign items to/from Repricer Strategy |
+| [**getRepricerIncentive()**](#getRepricerIncentive) | **GET** /v3/repricer/incentive | List of Incentive Items |
 | [**getStrategies()**](#getStrategies) | **GET** /v3/repricer/strategies | List of Repricer Strategies |
 | [**optCapProgramInPrice()**](#optCapProgramInPrice) | **POST** /v3/cppreference | Set up CAP SKU All |
 | [**priceBulkUploads()**](#priceBulkUploads) | **POST** /v3/feeds | Update bulk prices (Multiple) |
 | [**updatePrice()**](#updatePrice) | **PUT** /v3/price | Update a price |
+| [**updateRepricerIncentive()**](#updateRepricerIncentive) | **PUT** /v3/repricer/incentive | Assign Incentive items to Repricer |
 | [**updateStrategy()**](#updateStrategy) | **PUT** /v3/repricer/strategy/{strategyCollectionId} | Update Repricer Strategy |
 
 
@@ -179,6 +181,72 @@ try {
 ### Return type
 
 [**\Walmart\Models\MP\US\Prices\FeedUploadResponseDTO**](../../../Models/MP/US/Prices/FeedUploadResponseDTO.md)
+
+### Authorization
+
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
+
+## `getRepricerIncentive()`
+
+```php
+getRepricerIncentive($limit, $offset, $sortBy, $sortOrder): \Walmart\Models\MP\US\Prices\RepricerIncentiveCollectionResponse
+```
+List of Incentive Items
+
+Get the list of incentive items
+
+### Example
+
+```php
+<?php
+use Walmart\Configuration;
+use Walmart\Enums\Country;
+use Walmart\Walmart;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
+
+$limit = 25; // int | Specify number of items to return.
+$offset = 0; // int | Specify the offset of item list to be returned.
+$sortBy = 'INCENTIVE_LIMIT'; // string | Specify the sort criteria for items. Examples of the allowed values are INCENTIVE_END_DATE or INCENTIVE_LIMIT
+$sortOrder = 'DESC'; // string | Specify the sort order for given sort criteria. Examples of the allowed values are ASC or DESC
+
+try {
+    $result = $api->getRepricerIncentive($limit, $offset, $sortBy, $sortOrder);
+    print_r($result);
+} catch (Exception $e) {
+    echo "Exception when calling PricesApi->getRepricerIncentive: {$e->getMessage()}\n";
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **limit** | **int**| Specify number of items to return. | [optional] [default to 25] |
+| **offset** | **int**| Specify the offset of item list to be returned. | [optional] [default to 0] |
+| **sortBy** | **string**| Specify the sort criteria for items. Examples of the allowed values are INCENTIVE_END_DATE or INCENTIVE_LIMIT | [optional] [default to 'INCENTIVE_LIMIT'] |
+| **sortOrder** | **string**| Specify the sort order for given sort criteria. Examples of the allowed values are ASC or DESC | [optional] [default to 'DESC'] |
+
+
+### Return type
+
+[**\Walmart\Models\MP\US\Prices\RepricerIncentiveCollectionResponse**](../../../Models/MP/US/Prices/RepricerIncentiveCollectionResponse.md)
 
 ### Authorization
 
@@ -418,6 +486,66 @@ try {
 ### Return type
 
 [**\Walmart\Models\MP\US\Prices\ItemPriceResponse**](../../../Models/MP/US/Prices/ItemPriceResponse.md)
+
+### Authorization
+
+This endpoint requires the following authorization methods:
+
+* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+
+See the [Authorization](../../../../README.md#authorization) section of the README for more information.
+
+
+[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
+[[Back to Model list]](../../../Models/MP/US)
+[[Back to README]](../../../../README.md)
+
+## `updateRepricerIncentive()`
+
+```php
+updateRepricerIncentive($updateRepricerIncentiveRequest): \Walmart\Models\MP\US\Prices\UpdateRepricerIncentiveResponse
+```
+Assign Incentive items to Repricer
+
+Assigns incentive items to the default price incentives strategy, ‘Match Competitive Price’
+
+### Example
+
+```php
+<?php
+use Walmart\Configuration;
+use Walmart\Enums\Country;
+use Walmart\Walmart;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$config = new Walmart\Configuration([
+    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
+    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
+    'country' => Country::US,           // Default Country::US if not set
+]);
+
+$api = Walmart::marketplace($config)->prices();
+
+$updateRepricerIncentiveRequest = new \Walmart\Models\MP\US\Prices\UpdateRepricerIncentiveRequest(); // \Walmart\Models\MP\US\Prices\UpdateRepricerIncentiveRequest
+
+try {
+    $result = $api->updateRepricerIncentive($updateRepricerIncentiveRequest);
+    print_r($result);
+} catch (Exception $e) {
+    echo "Exception when calling PricesApi->updateRepricerIncentive: {$e->getMessage()}\n";
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **updateRepricerIncentiveRequest** | [**\Walmart\Models\MP\US\Prices\UpdateRepricerIncentiveRequest**](../../../Models/MP/US/Prices/UpdateRepricerIncentiveRequest.md)|  | |
+
+
+### Return type
+
+[**\Walmart\Models\MP\US\Prices\UpdateRepricerIncentiveResponse**](../../../Models/MP/US/Prices/UpdateRepricerIncentiveResponse.md)
 
 ### Authorization
 

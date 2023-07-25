@@ -101,11 +101,18 @@ class Configuration
     protected string $channelType;
 
     /**
+     * The partner ID to use in Supplier API request headers
+     *
+     * @var string
+     */
+    protected string $partnerId;
+
+    /**
      * User agent of the HTTP request
      *
      * @var string
      */
-    protected string $userAgent = 'highsidelabs/walmart-api-php/0.4.1';
+    protected string $userAgent = 'highsidelabs/walmart-api-php/0.5.0';
 
     /**
      * Debug switch (default set to false)
@@ -363,6 +370,29 @@ class Configuration
     }
 
     /**
+     * Sets the partner ID to use in Supplier API request headers
+     *
+     * @param string $partnerId The partner ID
+     *
+     * @return $this
+     */
+    public function setPartnerId(string $partnerId): static
+    {
+        $this->partnerId = $partnerId;
+        return $this;
+    }
+
+    /**
+     * Gets the partner ID to use in Supplier API request headers
+     *
+     * @return string The partner ID
+     */
+    public function getPartnerId(): string
+    {
+        return $this->partnerId;
+    }
+
+    /**
      * Sets the host
      *
      * @param string $host Host
@@ -497,7 +527,7 @@ class Configuration
     protected function validateOptions(array $options): void
     {
         $validKeys = [
-            'clientId', 'clientSecret', 'country', 'accessToken', 'privateKey', 'consumerId', 'channelType'
+            'clientId', 'clientSecret', 'country', 'accessToken', 'privateKey', 'consumerId', 'channelType', 'partnerId'
         ];
         $invalid = array_diff(array_keys($options), $validKeys);
 

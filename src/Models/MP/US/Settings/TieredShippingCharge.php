@@ -54,7 +54,7 @@ class TieredShippingCharge extends BaseModel
     protected static array $openAPITypes = [
         'minLimit' => 'float',
         'maxLimit' => 'float',
-        'shipCharge' => '\Walmart\Models\MP\US\Settings\ChargePerItem'
+        'shipCharge' => '\Walmart\Models\MP\US\Settings\ShipCharge'
     ];
 
     /**
@@ -208,7 +208,7 @@ class TieredShippingCharge extends BaseModel
     /**
      * Gets shipCharge
      *
-     * @return \Walmart\Models\MP\US\Settings\ChargePerItem|null
+     * @return \Walmart\Models\MP\US\Settings\ShipCharge|null
     
      */
     public function getShipCharge()
@@ -219,7 +219,7 @@ class TieredShippingCharge extends BaseModel
     /**
      * Sets shipCharge
      *
-     * @param \Walmart\Models\MP\US\Settings\ChargePerItem|null $shipCharge shipCharge
+     * @param \Walmart\Models\MP\US\Settings\ShipCharge|null $shipCharge shipCharge
      *
      * @return self
     

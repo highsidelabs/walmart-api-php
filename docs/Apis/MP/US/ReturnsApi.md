@@ -176,7 +176,7 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->returns();
 
 $returnOrderId = 'returnOrderId_example'; // string | The return order ID
-$refundRequest = {"customerOrderId":"1535274411287","refundLines":[{"returnOrderLineNumber":1}]}; // \Walmart\Models\MP\US\Returns\RefundRequest | File fields
+$refundRequest = {"customerOrderId":"1535274411287","refundLines":[{"returnOrderLineNumber":1,"quantity":{"unitOfMeasure":"EA","measurementValue":2}}]}; // \Walmart\Models\MP\US\Returns\RefundRequest | File fields
 
 try {
     $result = $api->issueRefund($returnOrderId, $refundRequest);

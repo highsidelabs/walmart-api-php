@@ -80,7 +80,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `cancelOrderLinesCA()`
 
 ```php
-cancelOrderLinesCA($purchaseOrderId, $orderShipment): \Walmart\Models\MP\CA\Orders\OrderShipment
+cancelOrderLinesCA($purchaseOrderId, $orderCancellation): \Walmart\Models\MP\CA\Orders\OrderCancellation
 ```
 Cancel Order Lines
 
@@ -107,7 +107,7 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->orders();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | The purchase order ID
-$orderShipment = <?xml version="1.0" encoding="UTF-8"?>
+$orderCancellation = <?xml version="1.0" encoding="UTF-8"?>
 <orderCancellation xmlns="http://walmart.com/mp/v3/orders">
     <orderLines>
         <orderLine>
@@ -124,10 +124,10 @@ $orderShipment = <?xml version="1.0" encoding="UTF-8"?>
             </orderLineStatuses>
         </orderLine>
     </orderLines>
-</orderCancellation>; // \Walmart\Models\MP\CA\Orders\OrderShipment | File fields
+</orderCancellation>; // \Walmart\Models\MP\CA\Orders\OrderCancellation | File fields
 
 try {
-    $result = $api->cancelOrderLinesCA($purchaseOrderId, $orderShipment);
+    $result = $api->cancelOrderLinesCA($purchaseOrderId, $orderCancellation);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->cancelOrderLinesCA: {$e->getMessage()}\n";
@@ -138,12 +138,12 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| The purchase order ID | |
-| **orderShipment** | [**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/Orders/OrderShipment.md)| File fields | |
+| **orderCancellation** | [**\Walmart\Models\MP\CA\Orders\OrderCancellation**](../../../Models/MP/CA/Orders/OrderCancellation.md)| File fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\OrderShipment**](../../../Models/MP/CA/Orders/OrderShipment.md)
+[**\Walmart\Models\MP\CA\Orders\OrderCancellation**](../../../Models/MP/CA/Orders/OrderCancellation.md)
 
 ### Authorization
 
@@ -315,7 +315,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllWFSOrders()`
 
 ```php
-getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset): \Walmart\Models\MP\CA\Orders\OrdersListType
+getAllWFSOrders($createdStartDate, $customerOrderId, $status, $createdEndDate, $limit, $offset): \Walmart\Models\MP\CA\Orders\WFSOrdersListType
 ```
 Get all WFS orders
 
@@ -369,7 +369,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\OrdersListType**](../../../Models/MP/CA/Orders/OrdersListType.md)
+[**\Walmart\Models\MP\CA\Orders\WFSOrdersListType**](../../../Models/MP/CA/Orders/WFSOrdersListType.md)
 
 ### Authorization
 

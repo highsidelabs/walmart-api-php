@@ -51,7 +51,7 @@ class OrderLineAck extends BaseModel
       */
     protected static array $openAPITypes = [
         'lineNumber' => 'string',
-        'orderLineStatuses' => '\Walmart\Models\MP\MX\Orders\OrderLineStatusesCancel'
+        'orderLineStatuses' => '\Walmart\Models\MP\MX\Orders\OrderLineStatusesAck'
     ];
 
     /**
@@ -164,7 +164,7 @@ class OrderLineAck extends BaseModel
     /**
      * Gets orderLineStatuses
      *
-     * @return \Walmart\Models\MP\MX\Orders\OrderLineStatusesCancel|null
+     * @return \Walmart\Models\MP\MX\Orders\OrderLineStatusesAck|null
     
      */
     public function getOrderLineStatuses()
@@ -175,7 +175,7 @@ class OrderLineAck extends BaseModel
     /**
      * Sets orderLineStatuses
      *
-     * @param \Walmart\Models\MP\MX\Orders\OrderLineStatusesCancel|null $orderLineStatuses orderLineStatuses
+     * @param \Walmart\Models\MP\MX\Orders\OrderLineStatusesAck|null $orderLineStatuses orderLineStatuses
      *
      * @return self
     

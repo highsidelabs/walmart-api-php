@@ -129,7 +129,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getDepartmentList()`
 
 ```php
-getDepartmentList(): \Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO
+getDepartmentList(): \Walmart\Models\MP\US\Utilities\GetDepartmentList
 ```
 All Departments
 
@@ -168,7 +168,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Utilities\TaxonomyResponseDTO**](../../../Models/MP/US/Utilities/TaxonomyResponseDTO.md)
+[**\Walmart\Models\MP\US\Utilities\GetDepartmentList**](../../../Models/MP/US/Utilities/GetDepartmentList.md)
 
 ### Authorization
 

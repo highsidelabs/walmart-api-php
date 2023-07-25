@@ -1,0 +1,239 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Cost Management",
+        "description": "This API allows DSV to update cost for items in bulk.",
+        "version": "0.4.1"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        },
+        {
+            "url": "https:\/\/sandbox.walmartapis.com",
+            "description": "Sandbox URL"
+        }
+    ],
+    "paths": {
+        "\/v3\/feeds": {
+            "post": {
+                "tags": [
+                    "DSV Cost"
+                ],
+                "summary": "This API allows DSV to update cost for items in bulk.",
+                "description": "This API allows DSV to update cost for items in bulk.",
+                "operationId": "updateBulkCost",
+                "parameters": [
+                    {
+                        "name": "feedType",
+                        "in": "query",
+                        "description": "Includes details of each entity in the feed. Do not set this parameter to true.",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "cost"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "File fields",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/DsvCostUpdateRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/DsvCostUpdateResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signatureScheme": [],
+                        "consumerIdScheme": [],
+                        "accessTokenScheme": [],
+                        "partnerScheme": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "DsvCostUpdateResponse": {
+                "type": "object",
+                "properties": {
+                    "feedId": {
+                        "type": "string",
+                        "description": "A unique ID, returned from the Bulk Upload API, used for tracking the Feed File."
+                    },
+                    "additionalAttributes": {
+                        "type": "string"
+                    },
+                    "error": {
+                        "type": "string"
+                    }
+                }
+            },
+            "DsvCostUpdateRequest": {
+                "type": "object",
+                "properties": {
+                    "header": {
+                        "$ref": "#\/components\/schemas\/Header"
+                    },
+                    "Cost": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemCost"
+                        }
+                    }
+                }
+            },
+            "Header": {
+                "type": "object",
+                "properties": {
+                    "version": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ItemCost": {
+                "type": "object",
+                "properties": {
+                    "sku": {
+                        "type": "string",
+                        "description": "An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item."
+                    },
+                    "shipNode": {
+                        "type": "string",
+                        "description": "This parameter specifies the Distributor ID for which the data should be updated"
+                    },
+                    "unitCost": {
+                        "$ref": "#\/components\/schemas\/UnitCost"
+                    }
+                }
+            },
+            "UnitCost": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "number",
+                        "description": "The currency of the cost. Example: USD for US Dollars"
+                    },
+                    "currency": {
+                        "type": "string",
+                        "description": "The numerical value of the cost. Example: 9.99"
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "accessTokenScheme": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "consumerIdScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.ID",
+                "description": "Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor."
+            },
+            "partnerScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_PARTNER.ID",
+                "description": "Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor."
+            },
+            "signatureScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_SEC.AUTH_SIGNATURE",
+                "description": "Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor."
+            }
+        }
+    }
+}

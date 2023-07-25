@@ -142,7 +142,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
+getCarrierPackageTypes($carrierShortName, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse
 ```
 Supported carrier package types
 
@@ -186,7 +186,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/InternationalShipping/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse**](../../../Models/MP/MX/InternationalShipping/CommonResponseListCarrierPackageResponse.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
+getLabel($purchaseOrderId, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx
 ```
 Labels detail by purchase order id
 
@@ -310,7 +310,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx**](../../../Models/MP/MX/InternationalShipping/CommonResponseLabelGenerationResponseMx.md)
+[**\Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx**](../../../Models/MP/MX/InternationalShipping/CommonResponseListLabelGenerationResponseMx.md)
 
 ### Authorization
 

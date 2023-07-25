@@ -15,7 +15,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getCategoriesList()`
 
 ```php
-getCategoriesList($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
+getCategoriesList($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset): \Walmart\Models\MP\US\Insights\GetListingQualityScore
 ```
 Item count with listing quality issues
 
@@ -67,7 +67,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/Insights/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetListingQualityScore**](../../../Models/MP/US/Insights/GetListingQualityScore.md)
 
 ### Authorization
 
@@ -85,7 +85,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getListingQualityScore()`
 
 ```php
-getListingQualityScore($viewTrendingItems, $wfsFlag): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
+getListingQualityScore($viewTrendingItems, $wfsFlag): \Walmart\Models\MP\US\Insights\GetListingQualityScore
 ```
 Seller Listing Quality Score
 
@@ -129,7 +129,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount**](../../../Models/MP/US/Insights/GetUnpublishedItemsCount.md)
+[**\Walmart\Models\MP\US\Insights\GetListingQualityScore**](../../../Models/MP/US/Insights/GetListingQualityScore.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@
     "info": {
         "title": "Item Management",
         "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
-        "version": "0.3.0"
+        "version": "0.4.1"
     },
     "servers": [
         {
@@ -1032,15 +1032,15 @@
             }
         },
         "securitySchemes": {
-            "basicScheme": {
-                "type": "http",
-                "scheme": "basic",
-                "description": "Basic authentication with a Walmart Client ID and Client Secret"
-            },
             "accessTokenScheme": {
                 "type": "http",
                 "scheme": "bearer",
                 "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "basicScheme": {
+                "type": "http",
+                "scheme": "basic",
+                "description": "Basic authentication with a Walmart Client ID and Client Secret"
             }
         }
     }

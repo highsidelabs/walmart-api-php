@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **customNodeId** | **string** | Custom node identifier provided by seller. Allowed values are alphanumeric | String | [optional]
 **postalAddress** | [**\Walmart\Models\MP\US\Settings\PostalAddress**](PostalAddress.md) |  | [optional]
 **shippingDetails** | [**\Walmart\Models\MP\US\Settings\ShippingDetails[]**](ShippingDetails.md) | Shipping Details. | [optional]
-**calendarDayConfiguration** | [**\Walmart\Models\MP\US\Settings\CalendarDayConfigurationResponseCreate**](CalendarDayConfigurationResponseCreate.md) |  | [optional]
+**calendarDayConfiguration** | [**\Walmart\Models\MP\US\Settings\CalendarDayConfigurationRequest**](CalendarDayConfigurationRequest.md) |  | [optional]
 
 
 [[Back to Model list]](./) [[Back to API list]](../../../../../README.md#supported-apis) [[Back to README]](../../../../../README.md)

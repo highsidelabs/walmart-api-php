@@ -53,7 +53,7 @@ class LabelV2RequestWrapper extends BaseModel
         'shipmentId' => 'string',
         'labelSize' => 'string',
         'labelFormat' => 'string',
-        'loadTypes' => '\Walmart\Models\MP\US\Fulfillment\LoadType[]'
+        'loadTypes' => '\Walmart\Models\MP\US\Fulfillment\LoadTypeDetails[]'
     ];
 
     /**
@@ -239,7 +239,7 @@ class LabelV2RequestWrapper extends BaseModel
     /**
      * Gets loadTypes
      *
-     * @return \Walmart\Models\MP\US\Fulfillment\LoadType[]|null
+     * @return \Walmart\Models\MP\US\Fulfillment\LoadTypeDetails[]|null
     
      */
     public function getLoadTypes()
@@ -250,7 +250,7 @@ class LabelV2RequestWrapper extends BaseModel
     /**
      * Sets loadTypes
      *
-     * @param \Walmart\Models\MP\US\Fulfillment\LoadType[]|null $loadTypes loadTypes
+     * @param \Walmart\Models\MP\US\Fulfillment\LoadTypeDetails[]|null $loadTypes loadTypes
      *
      * @return self
     

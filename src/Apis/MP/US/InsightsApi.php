@@ -66,7 +66,7 @@ class InsightsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
+     * @return \Walmart\Models\MP\US\Insights\GetListingQualityScore
      */
     public function getCategoriesList(
         ?bool $viewTrendingItems = true,
@@ -75,7 +75,7 @@ class InsightsApi extends BaseApi
         ?string $type = null,
         ?int $limit = null,
         ?int $offset = 0
-    ): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount {
+    ): \Walmart\Models\MP\US\Insights\GetListingQualityScore {
         return $this->getCategoriesListWithHttpInfo($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset);
     }
 
@@ -93,7 +93,7 @@ class InsightsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
+     * @return \Walmart\Models\MP\US\Insights\GetListingQualityScore
      */
     protected function getCategoriesListWithHttpInfo(
         ?bool $viewTrendingItems = true,
@@ -102,7 +102,7 @@ class InsightsApi extends BaseApi
         ?string $type = null,
         ?int $limit = null,
         ?int $offset = 0,
-    ): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount {
+    ): \Walmart\Models\MP\US\Insights\GetListingQualityScore {
         $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -152,19 +152,19 @@ class InsightsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Insights\GetListingQualityScore' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Insights\GetListingQualityScore' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Insights\GetListingQualityScore', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount';
+            $returnType = '\Walmart\Models\MP\US\Insights\GetListingQualityScore';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -180,7 +180,7 @@ class InsightsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount',
+                        '\Walmart\Models\MP\US\Insights\GetListingQualityScore',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -246,7 +246,7 @@ class InsightsApi extends BaseApi
         ?int $limit = null,
         ?int $offset = 0,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount';
+        $returnType = '\Walmart\Models\MP\US\Insights\GetListingQualityScore';
         $request = $this->getCategoriesListRequest($viewTrendingItems, $wfsFlag, $hasIssue, $type, $limit, $offset);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -438,12 +438,12 @@ class InsightsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
+     * @return \Walmart\Models\MP\US\Insights\GetListingQualityScore
      */
     public function getListingQualityScore(
         ?bool $viewTrendingItems = null,
         ?string $wfsFlag = null
-    ): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount {
+    ): \Walmart\Models\MP\US\Insights\GetListingQualityScore {
         return $this->getListingQualityScoreWithHttpInfo($viewTrendingItems, $wfsFlag);
     }
 
@@ -457,12 +457,12 @@ class InsightsApi extends BaseApi
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount
+     * @return \Walmart\Models\MP\US\Insights\GetListingQualityScore
      */
     protected function getListingQualityScoreWithHttpInfo(
         ?bool $viewTrendingItems = null,
         ?string $wfsFlag = null,
-    ): \Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount {
+    ): \Walmart\Models\MP\US\Insights\GetListingQualityScore {
         $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
@@ -512,19 +512,19 @@ class InsightsApi extends BaseApi
             }
             switch ($statusCode) {
                 case 200:
-                    if ('\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount' === '\SplFileObject') {
+                    if ('\Walmart\Models\MP\US\Insights\GetListingQualityScore' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount' !== 'string') {
+                        if ('\Walmart\Models\MP\US\Insights\GetListingQualityScore' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Insights\GetListingQualityScore', $response->getHeaders());
             }
 
-            $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount';
+            $returnType = '\Walmart\Models\MP\US\Insights\GetListingQualityScore';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -540,7 +540,7 @@ class InsightsApi extends BaseApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount',
+                        '\Walmart\Models\MP\US\Insights\GetListingQualityScore',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -590,7 +590,7 @@ class InsightsApi extends BaseApi
         ?bool $viewTrendingItems = null,
         ?string $wfsFlag = null,
     ): PromiseInterface {
-        $returnType = '\Walmart\Models\MP\US\Insights\GetUnpublishedItemsCount';
+        $returnType = '\Walmart\Models\MP\US\Insights\GetListingQualityScore';
         $request = $this->getListingQualityScoreRequest($viewTrendingItems, $wfsFlag);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());

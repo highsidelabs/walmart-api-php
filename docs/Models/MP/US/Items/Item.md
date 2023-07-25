@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **isMarketPlaceItem** | **bool** | Specifies whether or not this item is available by other sellers in the Marketplace. | [optional]
 **images** | [**\Walmart\Models\MP\US\Items\Image[]**](Image.md) | Provides images associated with the item product listing. | [optional]
 **customerRating** | **string** |  | [optional]
-**price** | [**\Walmart\Models\MP\US\Items\Money**](Money.md) |  | [optional]
+**price** | [**\Walmart\Models\MP\US\Items\ItemSearchPrice**](ItemSearchPrice.md) |  | [optional]
 **description** | **string** | Specifies the catalog item description. | [optional]
 **title** | **string** | Provides the seller-specified alphanumeric string that uniquely identifies the product name. Example: 'Sterling Silver Blue Diamond Heart Pendant with 18in Chain'. | [optional]
 **brand** | **string** | Specifies the item brand. | [optional]

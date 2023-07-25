@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**headers** | [**\Walmart\Models\MP\US\Fulfillment\PaginationMetadata**](PaginationMetadata.md) |  | [optional]
+**headers** | [**\Walmart\Models\MP\US\Fulfillment\Headers**](Headers.md) |  | [optional]
 **payload** | [**\Walmart\Models\MP\US\Fulfillment\GetInventoryLogsResponsePayload**](GetInventoryLogsResponsePayload.md) |  | [optional]
 
 

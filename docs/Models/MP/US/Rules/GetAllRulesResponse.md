@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rules** | [**\Walmart\Models\MP\US\Rules\RuleInfo[]**](RuleInfo.md) |  | [optional]
+**rules** | [**\Walmart\Models\MP\US\Rules\RuleResponse[]**](RuleResponse.md) |  | [optional]
 **status** | **string** | status | [optional]
 
 

@@ -1,14 +1,13 @@
 {
     "name": "highsidelabs/walmart-api",
-    "version": "0.4.1",
-    "description": "A PHP client for Walmart's Marketplace, Content Provider, Drop Ship Vendor, and Warehouse Supplier APIs.",
+    "version": "0.5.0",
+    "description": "A PHP client for Walmart's Marketplace, 1P Supplier, and Content Provider APIs.",
     "keywords": [
         "walmart",
         "walmart-api",
         "walmart-marketplace-api",
         "walmart-content-providers-api",
-        "walmart-drop-ship-vendors-api",
-        "walmart-warehouse-suppliers-api",
+        "walmart-1p-suppliers-api",
         "ecommerce",
         "sdk",
         "rest",

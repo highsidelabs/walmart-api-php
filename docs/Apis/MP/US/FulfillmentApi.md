@@ -31,7 +31,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `cancelFulfillment()`
 
 ```php
-cancelFulfillment($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
+cancelFulfillment($cancelCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsResponseWrapperDTO
 ```
 Cancel Customer Order
 
@@ -55,10 +55,10 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$createCustomerOrderRequestWrapper = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"sellerOrderId":"301878911210253","orderItems":[{"sellerLineId":"1232456","qty":{"unitOfMeasure":"EACH","measurementValue":2}}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper | Request fields
+$cancelCustomerOrderRequestWrapper = {"header":{"headerAttributes":{"buId":"0","martId":"202"}},"payload":{"sellerOrderId":"301878911210253","orderItems":[{"sellerLineId":"1232456","qty":{"unitOfMeasure":"EACH","measurementValue":2}}]}}; // \Walmart\Models\MP\US\Fulfillment\CancelCustomerOrderRequestWrapper | Request fields
 
 try {
-    $result = $api->cancelFulfillment($createCustomerOrderRequestWrapper);
+    $result = $api->cancelFulfillment($cancelCustomerOrderRequestWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->cancelFulfillment: {$e->getMessage()}\n";
@@ -68,12 +68,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/Fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **cancelCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CancelCustomerOrderRequestWrapper**](../../../Models/MP/US/Fulfillment/CancelCustomerOrderRequestWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderDetailsResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `createFulfillment()`
 
 ```php
-createFulfillment($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
+createFulfillment($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsResponseWrapperDTO
 ```
 Create Customer Order
 
@@ -375,7 +375,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderDetailsResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderDetailsResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -577,7 +577,7 @@ getCarrierRateQuote($shipmentId, $mode): \Walmart\Models\MP\US\Fulfillment\GetRa
 ```
 Get Carrier Rate Quote
 
-The purpose of this service is for seller to void the carrier shipping charges, within 24 hours after the estimated carrier charges have been accepted by the seller.
+The purpose of this service is to get the carrier rate quotes for WFS Preferred Carrier Program - FedEx parcel solution, when inbounding seller items from seller pickup point to Walmart fulfillment centers.
 
 ### Example
 
@@ -713,7 +713,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getInboundOrderErrors()`
 
 ```php
-getInboundOrderErrors($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
+getInboundOrderErrors($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\InboundShipmentErrorResponseWrapperDTO
 ```
 Get Inbound Shipment errors
 
@@ -759,7 +759,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/Fulfillment/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentErrorResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/InboundShipmentErrorResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -777,7 +777,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getInboundShipmentItems()`
 
 ```php
-getInboundShipmentItems($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
+getInboundShipmentItems($offset, $limit, $shipmentId): \Walmart\Models\MP\US\Fulfillment\InboundShipmentErrorResponseWrapperDTO
 ```
 Get Inbound Shipment Items
 
@@ -823,7 +823,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/Fulfillment/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentErrorResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/InboundShipmentErrorResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -841,7 +841,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getInboundShipments()`
 
 ```php
-getInboundShipments($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate): \Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper
+getInboundShipments($offset, $limit, $inboundOrderId, $shipmentId, $status, $fromCreateDate, $toCreateDate): \Walmart\Models\MP\US\Fulfillment\InboundShipmentErrorResponseWrapperDTO
 ```
 Get Shipments
 
@@ -895,7 +895,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InventoryLogResponseWrapper**](../../../Models/MP/US/Fulfillment/InventoryLogResponseWrapper.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentErrorResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/InboundShipmentErrorResponseWrapperDTO.md)
 
 ### Authorization
 
@@ -1048,7 +1048,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `inboundPreview()`
 
 ```php
-inboundPreview($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO
+inboundPreview($inboundPreviewWrapper): \Walmart\Models\MP\US\Fulfillment\InboundPreviewResponseWrapper
 ```
 Fetch Inbound Preview
 
@@ -1072,10 +1072,10 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$createCustomerOrderRequestWrapper = {"header":{"headerAttributes":{"buId":"0","martId":"0"}},"payload":{"inboundOrderId":"WFS_P132398111-ITS1011","returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"US","postalCode":"94086"},"orderItems":[{"productId":"06484856148873","productType":"GTIN","sku":"SKU-06476211912694","itemDesc":"tennis ball","itemQty":5,"vendorPackQty":5,"innerPackQty":1,"expectedDeliveryDate":"2023-05-25T15:33:33-07:00","addOnServices":[{"serviceType":"LABEL"}]}]}}; // \Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper | Request fields
+$inboundPreviewWrapper = {"header":{"headerAttributes":{"buId":"0","martId":"0"}},"payload":{"inboundOrderId":"WFS_P132398111-ITS1011","returnAddress":{"addressLine1":"860 W California Ave","addressLine2":"","city":"Sunnyvale","stateCode":"CA","countryCode":"US","postalCode":"94086"},"orderItems":[{"productId":"06484856148873","productType":"GTIN","sku":"SKU-06476211912694","itemDesc":"tennis ball","itemQty":5,"vendorPackQty":5,"innerPackQty":1,"expectedDeliveryDate":"2023-05-25T15:33:33-07:00","addOnServices":[{"serviceType":"LABEL"}]}]}}; // \Walmart\Models\MP\US\Fulfillment\InboundPreviewWrapper | Request fields
 
 try {
-    $result = $api->inboundPreview($createCustomerOrderRequestWrapper);
+    $result = $api->inboundPreview($inboundPreviewWrapper);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->inboundPreview: {$e->getMessage()}\n";
@@ -1085,12 +1085,12 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **createCustomerOrderRequestWrapper** | [**\Walmart\Models\MP\US\Fulfillment\CreateCustomerOrderRequestWrapper**](../../../Models/MP/US/Fulfillment/CreateCustomerOrderRequestWrapper.md)| Request fields | |
+| **inboundPreviewWrapper** | [**\Walmart\Models\MP\US\Fulfillment\InboundPreviewWrapper**](../../../Models/MP/US/Fulfillment/InboundPreviewWrapper.md)| Request fields | |
 
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\InboundShipmentCreateResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/InboundShipmentCreateResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\InboundPreviewResponseWrapper**](../../../Models/MP/US/Fulfillment/InboundPreviewResponseWrapper.md)
 
 ### Authorization
 
@@ -1170,7 +1170,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `promiseFulfillments()`
 
 ```php
-promiseFulfillments($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO
+promiseFulfillments($createCustomerOrderRequestWrapper): \Walmart\Models\MP\US\Fulfillment\PromiseOrderResponseWrapper
 ```
 Fetch Delivery Promise Details
 
@@ -1212,7 +1212,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\US\Fulfillment\CustomerOrderResponseWrapperDTO**](../../../Models/MP/US/Fulfillment/CustomerOrderResponseWrapperDTO.md)
+[**\Walmart\Models\MP\US\Fulfillment\PromiseOrderResponseWrapper**](../../../Models/MP/US/Fulfillment/PromiseOrderResponseWrapper.md)
 
 ### Authorization
 

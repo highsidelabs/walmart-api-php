@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**unitOfMeasure** | **string** | The unit of measure in the item's weight (e.g., 'POUND' or 'OUNCE') |
+**unitOfMeasure** | **string** | The unit of measure in the item's weight (e.g., 'EACH' or 'EA') |
 **measurementValue** | **float** | The quantity of the unit of measure for the item |
 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gmv** | [**\Walmart\Models\MP\US\Insights\Gmv**](Gmv.md) |  | [optional]
+**gmv** | [**\Walmart\Models\MP\US\Insights\TotalGmvAmount**](TotalGmvAmount.md) |  | [optional]
 **pageViews** | **string** |  | [optional]
 **orders** | **string** |  | [optional]
 **conversionRate** | **string** |  | [optional]
