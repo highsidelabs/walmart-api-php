@@ -42,26 +42,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "Specifies the returned data format in the response.\n\nValid values are:\n\napplication\/xml\n\napplication\/json",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/xml"
-                    },
-                    {
-                        "name": "WM_PARTNER.ID",
-                        "in": "header",
-                        "description": "Specifies an account identifier for the supplier.\n\nThis identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "10001126675"
                     }
                 ],
                 "requestBody": {
@@ -223,7 +203,8 @@
                     {
                         "signatureScheme": [],
                         "consumerIdScheme": [],
-                        "accessTokenScheme": []
+                        "accessTokenScheme": [],
+                        "partnerScheme": []
                     }
                 ]
             }
@@ -254,26 +235,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "Specifies the returned data format in the response.\n\nValid values are:\n\napplication\/xml\n\napplication\/json",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/xml"
-                    },
-                    {
-                        "name": "WM_PARTNER.ID",
-                        "in": "header",
-                        "description": "Specifies an account identifier for the supplier.\n\nThis identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "10001126675"
                     }
                 ],
                 "requestBody": {
@@ -421,7 +382,8 @@
                     {
                         "signatureScheme": [],
                         "consumerIdScheme": [],
-                        "accessTokenScheme": []
+                        "accessTokenScheme": [],
+                        "partnerScheme": []
                     }
                 ]
             }
@@ -452,26 +414,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "Specifies the returned data format in the response.\n\nValid values are:\n\napplication\/xml\n\napplication\/json",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/xml"
-                    },
-                    {
-                        "name": "WM_PARTNER.ID",
-                        "in": "header",
-                        "description": "Specifies an account identifier for the supplier.\n\nThis identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "10001126675"
                     }
                 ],
                 "responses": {
@@ -618,7 +560,8 @@
                     {
                         "signatureScheme": [],
                         "consumerIdScheme": [],
-                        "accessTokenScheme": []
+                        "accessTokenScheme": [],
+                        "partnerScheme": []
                     }
                 ]
             }
@@ -732,26 +675,6 @@
                             "type": "string",
                             "default": "false"
                         }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "Specifies the returned data format in the response.\n\nValid values are:\n\napplication\/xml\n\napplication\/json",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/xml"
-                    },
-                    {
-                        "name": "WM_PARTNER.ID",
-                        "in": "header",
-                        "description": "Specifies an account identifier for the supplier.\n\nThis identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "10001126675"
                     }
                 ],
                 "responses": {
@@ -979,7 +902,8 @@
                     {
                         "signatureScheme": [],
                         "consumerIdScheme": [],
-                        "accessTokenScheme": []
+                        "accessTokenScheme": [],
+                        "partnerScheme": []
                     }
                 ]
             }
@@ -1020,26 +944,6 @@
                             "type": "string",
                             "default": "true"
                         }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "Specifies the returned data format in the response.\n\nValid values are:\n\napplication\/xml\n\napplication\/json",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/xml"
-                    },
-                    {
-                        "name": "WM_PARTNER.ID",
-                        "in": "header",
-                        "description": "Specifies an account identifier for the supplier.\n\nThis identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "10001126675"
                     }
                 ],
                 "responses": {
@@ -1186,7 +1090,8 @@
                     {
                         "signatureScheme": [],
                         "consumerIdScheme": [],
-                        "accessTokenScheme": []
+                        "accessTokenScheme": [],
+                        "partnerScheme": []
                     }
                 ]
             }
@@ -1291,26 +1196,6 @@
                             "type": "string",
                             "default": "false"
                         }
-                    },
-                    {
-                        "name": "Accept",
-                        "in": "header",
-                        "description": "Specifies the returned data format in the response.\n\nValid values are:\n\napplication\/xml\n\napplication\/json",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/xml"
-                    },
-                    {
-                        "name": "WM_PARTNER.ID",
-                        "in": "header",
-                        "description": "Specifies an account identifier for the supplier.\n\nThis identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "10001126675"
                     }
                 ],
                 "responses": {
@@ -1634,7 +1519,8 @@
                     {
                         "signatureScheme": [],
                         "consumerIdScheme": [],
-                        "accessTokenScheme": []
+                        "accessTokenScheme": [],
+                        "partnerScheme": []
                     }
                 ]
             }
@@ -2930,6 +2816,12 @@
                 "in": "header",
                 "name": "WM_CONSUMER.ID",
                 "description": "Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor."
+            },
+            "partnerScheme": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_PARTNER.ID",
+                "description": "Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor."
             },
             "signatureScheme": {
                 "type": "apiKey",

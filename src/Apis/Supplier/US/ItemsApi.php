@@ -55,8 +55,6 @@ class ItemsApi extends BaseApi
      *
      * All items
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $nextCursor Used for paginated results - use the nextCursor response element from the prior API call. (optional, default to '*')
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (optional)
      *
@@ -65,12 +63,10 @@ class ItemsApi extends BaseApi
      * @return \Walmart\Models\Supplier\US\Items\ItemResponses
      */
     public function getAllItems(
-        string $accept,
-        string $wMPARTNERID,
         ?string $nextCursor = '*',
         ?string $sku = null
     ): \Walmart\Models\Supplier\US\Items\ItemResponses {
-        return $this->getAllItemsWithHttpInfo($accept, $wMPARTNERID, $nextCursor, $sku);
+        return $this->getAllItemsWithHttpInfo($nextCursor, $sku);
     }
 
     /**
@@ -78,8 +74,6 @@ class ItemsApi extends BaseApi
      *
      * All items
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $nextCursor Used for paginated results - use the nextCursor response element from the prior API call. (optional, default to '*')
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (optional)
      *
@@ -88,12 +82,10 @@ class ItemsApi extends BaseApi
      * @return \Walmart\Models\Supplier\US\Items\ItemResponses
      */
     protected function getAllItemsWithHttpInfo(
-        string $accept,
-        string $wMPARTNERID,
         ?string $nextCursor = '*',
         ?string $sku = null,
     ): \Walmart\Models\Supplier\US\Items\ItemResponses {
-        $request = $this->getAllItemsRequest($accept, $wMPARTNERID, $nextCursor, $sku);
+        $request = $this->getAllItemsRequest($nextCursor, $sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -187,8 +179,6 @@ class ItemsApi extends BaseApi
      *
      * All items
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $nextCursor Used for paginated results - use the nextCursor response element from the prior API call. (optional, default to '*')
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (optional)
      *
@@ -196,12 +186,10 @@ class ItemsApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAllItemsAsync(
-        string $accept,
-        string $wMPARTNERID,
         ?string $nextCursor = '*',
         ?string $sku = null
     ): PromiseInterface {
-        return $this->getAllItemsAsyncWithHttpInfo($accept, $wMPARTNERID, $nextCursor, $sku)
+        return $this->getAllItemsAsyncWithHttpInfo($nextCursor, $sku)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -214,8 +202,6 @@ class ItemsApi extends BaseApi
      *
      * All items
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $nextCursor Used for paginated results - use the nextCursor response element from the prior API call. (optional, default to '*')
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (optional)
      *
@@ -223,13 +209,11 @@ class ItemsApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function getAllItemsAsyncWithHttpInfo(
-        string $accept,
-        string $wMPARTNERID,
         ?string $nextCursor = '*',
         ?string $sku = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Items\ItemResponses';
-        $request = $this->getAllItemsRequest($accept, $wMPARTNERID, $nextCursor, $sku);
+        $request = $this->getAllItemsRequest($nextCursor, $sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -274,8 +258,6 @@ class ItemsApi extends BaseApi
     /**
      * Create request for operation 'getAllItems'
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $nextCursor Used for paginated results - use the nextCursor response element from the prior API call. (optional, default to '*')
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (optional)
      *
@@ -283,25 +265,11 @@ class ItemsApi extends BaseApi
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function getAllItemsRequest(
-        string $accept,
-        string $wMPARTNERID,
         ?string $nextCursor = '*',
         ?string $sku = null,
     ): Request {
         $contentType = self::contentTypes['getAllItems'];
 
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getAllItems'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling getAllItems'
-            );
-        }
         $resourcePath = '/v3/items';
         $formParams = [];
         $queryParams = [];
@@ -329,14 +297,6 @@ class ItemsApi extends BaseApi
                 false // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/xml'],
@@ -387,6 +347,15 @@ class ItemsApi extends BaseApi
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        }
+
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
             'path' => $resourcePath,
             'method' => $method,
@@ -418,19 +387,15 @@ class ItemsApi extends BaseApi
      * An Item (v3)
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\Supplier\US\Items\ItemResponse
      */
     public function getAnItem(
-        string $sku,
-        string $accept,
-        string $wMPARTNERID
+        string $sku
     ): \Walmart\Models\Supplier\US\Items\ItemResponse {
-        return $this->getAnItemWithHttpInfo($sku, $accept, $wMPARTNERID);
+        return $this->getAnItemWithHttpInfo($sku);
     }
 
     /**
@@ -439,8 +404,6 @@ class ItemsApi extends BaseApi
      * An Item (v3)
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -448,10 +411,8 @@ class ItemsApi extends BaseApi
      */
     protected function getAnItemWithHttpInfo(
         string $sku,
-        string $accept,
-        string $wMPARTNERID,
     ): \Walmart\Models\Supplier\US\Items\ItemResponse {
-        $request = $this->getAnItemRequest($sku, $accept, $wMPARTNERID);
+        $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -546,18 +507,14 @@ class ItemsApi extends BaseApi
      * An Item (v3)
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAnItemAsync(
-        string $sku,
-        string $accept,
-        string $wMPARTNERID
+        string $sku
     ): PromiseInterface {
-        return $this->getAnItemAsyncWithHttpInfo($sku, $accept, $wMPARTNERID)
+        return $this->getAnItemAsyncWithHttpInfo($sku)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -571,19 +528,15 @@ class ItemsApi extends BaseApi
      * An Item (v3)
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function getAnItemAsyncWithHttpInfo(
         string $sku,
-        string $accept,
-        string $wMPARTNERID,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Items\ItemResponse';
-        $request = $this->getAnItemRequest($sku, $accept, $wMPARTNERID);
+        $request = $this->getAnItemRequest($sku);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -629,16 +582,12 @@ class ItemsApi extends BaseApi
      * Create request for operation 'getAnItem'
      *
      * @param  string $sku An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function getAnItemRequest(
         string $sku,
-        string $accept,
-        string $wMPARTNERID,
     ): Request {
         $contentType = self::contentTypes['getAnItem'];
 
@@ -648,18 +597,6 @@ class ItemsApi extends BaseApi
                 'Missing the required parameter $sku when calling getAnItem'
             );
         }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getAnItem'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling getAnItem'
-            );
-        }
         $resourcePath = '/v3/items/{sku}';
         $formParams = [];
         $queryParams = [];
@@ -667,14 +604,6 @@ class ItemsApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'GET';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         // path params
         if ($sku !== null) {
@@ -734,6 +663,15 @@ class ItemsApi extends BaseApi
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        }
+
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
             'path' => $resourcePath,
             'method' => $method,
@@ -765,8 +703,6 @@ class ItemsApi extends BaseApi
      * An Item (v4)
      *
      * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
      * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
      *
@@ -776,12 +712,10 @@ class ItemsApi extends BaseApi
      */
     public function getAnItemV4(
         string $productId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $productIdType = 'GTIN',
         ?string $includeFullItemDetails = 'NO'
     ): \Walmart\Models\Supplier\US\Items\Response {
-        return $this->getAnItemV4WithHttpInfo($productId, $accept, $wMPARTNERID, $productIdType, $includeFullItemDetails);
+        return $this->getAnItemV4WithHttpInfo($productId, $productIdType, $includeFullItemDetails);
     }
 
     /**
@@ -790,8 +724,6 @@ class ItemsApi extends BaseApi
      * An Item (v4)
      *
      * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
      * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
      *
@@ -801,12 +733,10 @@ class ItemsApi extends BaseApi
      */
     protected function getAnItemV4WithHttpInfo(
         string $productId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $productIdType = 'GTIN',
         ?string $includeFullItemDetails = 'NO',
     ): \Walmart\Models\Supplier\US\Items\Response {
-        $request = $this->getAnItemV4Request($productId, $accept, $wMPARTNERID, $productIdType, $includeFullItemDetails);
+        $request = $this->getAnItemV4Request($productId, $productIdType, $includeFullItemDetails);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -958,8 +888,6 @@ class ItemsApi extends BaseApi
      * An Item (v4)
      *
      * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
      * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
      *
@@ -968,12 +896,10 @@ class ItemsApi extends BaseApi
      */
     public function getAnItemV4Async(
         string $productId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $productIdType = 'GTIN',
         ?string $includeFullItemDetails = 'NO'
     ): PromiseInterface {
-        return $this->getAnItemV4AsyncWithHttpInfo($productId, $accept, $wMPARTNERID, $productIdType, $includeFullItemDetails)
+        return $this->getAnItemV4AsyncWithHttpInfo($productId, $productIdType, $includeFullItemDetails)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -987,8 +913,6 @@ class ItemsApi extends BaseApi
      * An Item (v4)
      *
      * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
      * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
      *
@@ -997,13 +921,11 @@ class ItemsApi extends BaseApi
      */
     protected function getAnItemV4AsyncWithHttpInfo(
         string $productId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $productIdType = 'GTIN',
         ?string $includeFullItemDetails = 'NO',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Items\Response';
-        $request = $this->getAnItemV4Request($productId, $accept, $wMPARTNERID, $productIdType, $includeFullItemDetails);
+        $request = $this->getAnItemV4Request($productId, $productIdType, $includeFullItemDetails);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1049,8 +971,6 @@ class ItemsApi extends BaseApi
      * Create request for operation 'getAnItemV4'
      *
      * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
      * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
      *
@@ -1059,8 +979,6 @@ class ItemsApi extends BaseApi
      */
     protected function getAnItemV4Request(
         string $productId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $productIdType = 'GTIN',
         ?string $includeFullItemDetails = 'NO',
     ): Request {
@@ -1070,18 +988,6 @@ class ItemsApi extends BaseApi
         if ($productId === null || (is_array($productId) && count($productId) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $productId when calling getAnItemV4'
-            );
-        }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getAnItemV4'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling getAnItemV4'
             );
         }
         $resourcePath = '/v4/items/{productId}';
@@ -1111,14 +1017,6 @@ class ItemsApi extends BaseApi
                 false // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         // path params
         if ($productId !== null) {
@@ -1178,6 +1076,15 @@ class ItemsApi extends BaseApi
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        }
+
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
             'path' => $resourcePath,
             'method' => $method,
@@ -1209,8 +1116,6 @@ class ItemsApi extends BaseApi
      * Bulk Item Setup
      *
      * @param  string $feedType The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \SplFileObject $file Feed file to upload (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -1219,11 +1124,9 @@ class ItemsApi extends BaseApi
      */
     public function itemBulkUploads(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \SplFileObject $file
     ): \Walmart\Models\Supplier\US\Items\FeedId {
-        return $this->itemBulkUploadsWithHttpInfo($feedType, $accept, $wMPARTNERID, $file);
+        return $this->itemBulkUploadsWithHttpInfo($feedType, $file);
     }
 
     /**
@@ -1232,8 +1135,6 @@ class ItemsApi extends BaseApi
      * Bulk Item Setup
      *
      * @param  string $feedType The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \SplFileObject $file Feed file to upload (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -1242,11 +1143,9 @@ class ItemsApi extends BaseApi
      */
     protected function itemBulkUploadsWithHttpInfo(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \SplFileObject $file,
     ): \Walmart\Models\Supplier\US\Items\FeedId {
-        $request = $this->itemBulkUploadsRequest($feedType, $accept, $wMPARTNERID, $file);
+        $request = $this->itemBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1341,8 +1240,6 @@ class ItemsApi extends BaseApi
      * Bulk Item Setup
      *
      * @param  string $feedType The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \SplFileObject $file Feed file to upload (required)
      *
      * @throws \InvalidArgumentException
@@ -1350,11 +1247,9 @@ class ItemsApi extends BaseApi
      */
     public function itemBulkUploadsAsync(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \SplFileObject $file
     ): PromiseInterface {
-        return $this->itemBulkUploadsAsyncWithHttpInfo($feedType, $accept, $wMPARTNERID, $file)
+        return $this->itemBulkUploadsAsyncWithHttpInfo($feedType, $file)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1368,8 +1263,6 @@ class ItemsApi extends BaseApi
      * Bulk Item Setup
      *
      * @param  string $feedType The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \SplFileObject $file Feed file to upload (required)
      *
      * @throws \InvalidArgumentException
@@ -1377,12 +1270,10 @@ class ItemsApi extends BaseApi
      */
     protected function itemBulkUploadsAsyncWithHttpInfo(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \SplFileObject $file,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Items\FeedId';
-        $request = $this->itemBulkUploadsRequest($feedType, $accept, $wMPARTNERID, $file);
+        $request = $this->itemBulkUploadsRequest($feedType, $file);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1428,8 +1319,6 @@ class ItemsApi extends BaseApi
      * Create request for operation 'itemBulkUploads'
      *
      * @param  string $feedType The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \SplFileObject $file Feed file to upload (required)
      *
      * @throws \InvalidArgumentException
@@ -1437,8 +1326,6 @@ class ItemsApi extends BaseApi
      */
     protected function itemBulkUploadsRequest(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \SplFileObject $file,
     ): Request {
         $contentType = self::contentTypes['itemBulkUploads'];
@@ -1447,18 +1334,6 @@ class ItemsApi extends BaseApi
         if ($feedType === null || (is_array($feedType) && count($feedType) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $feedType when calling itemBulkUploads'
-            );
-        }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling itemBulkUploads'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling itemBulkUploads'
             );
         }
         // verify the required parameter 'file' is set
@@ -1486,14 +1361,6 @@ class ItemsApi extends BaseApi
                 true // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         // form params
         if ($file !== null) {
@@ -1557,6 +1424,15 @@ class ItemsApi extends BaseApi
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        }
+
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
             'path' => $resourcePath,
             'method' => $method,
@@ -1588,8 +1464,6 @@ class ItemsApi extends BaseApi
      * Rich Media
      *
      * @param  string $feedType The feed Type (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $body (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -1598,11 +1472,9 @@ class ItemsApi extends BaseApi
      */
     public function updateRichMediaOfItem(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         string $body
     ): \Walmart\Models\Supplier\US\Items\FeedId {
-        return $this->updateRichMediaOfItemWithHttpInfo($feedType, $accept, $wMPARTNERID, $body);
+        return $this->updateRichMediaOfItemWithHttpInfo($feedType, $body);
     }
 
     /**
@@ -1611,8 +1483,6 @@ class ItemsApi extends BaseApi
      * Rich Media
      *
      * @param  string $feedType The feed Type (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $body (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -1621,11 +1491,9 @@ class ItemsApi extends BaseApi
      */
     protected function updateRichMediaOfItemWithHttpInfo(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         string $body,
     ): \Walmart\Models\Supplier\US\Items\FeedId {
-        $request = $this->updateRichMediaOfItemRequest($feedType, $accept, $wMPARTNERID, $body);
+        $request = $this->updateRichMediaOfItemRequest($feedType, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1720,8 +1588,6 @@ class ItemsApi extends BaseApi
      * Rich Media
      *
      * @param  string $feedType The feed Type (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1729,11 +1595,9 @@ class ItemsApi extends BaseApi
      */
     public function updateRichMediaOfItemAsync(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         string $body
     ): PromiseInterface {
-        return $this->updateRichMediaOfItemAsyncWithHttpInfo($feedType, $accept, $wMPARTNERID, $body)
+        return $this->updateRichMediaOfItemAsyncWithHttpInfo($feedType, $body)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1747,8 +1611,6 @@ class ItemsApi extends BaseApi
      * Rich Media
      *
      * @param  string $feedType The feed Type (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1756,12 +1618,10 @@ class ItemsApi extends BaseApi
      */
     protected function updateRichMediaOfItemAsyncWithHttpInfo(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         string $body,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Items\FeedId';
-        $request = $this->updateRichMediaOfItemRequest($feedType, $accept, $wMPARTNERID, $body);
+        $request = $this->updateRichMediaOfItemRequest($feedType, $body);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1807,8 +1667,6 @@ class ItemsApi extends BaseApi
      * Create request for operation 'updateRichMediaOfItem'
      *
      * @param  string $feedType The feed Type (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $body (required)
      *
      * @throws \InvalidArgumentException
@@ -1816,8 +1674,6 @@ class ItemsApi extends BaseApi
      */
     protected function updateRichMediaOfItemRequest(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         string $body,
     ): Request {
         $contentType = self::contentTypes['updateRichMediaOfItem'];
@@ -1826,18 +1682,6 @@ class ItemsApi extends BaseApi
         if ($feedType === null || (is_array($feedType) && count($feedType) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $feedType when calling updateRichMediaOfItem'
-            );
-        }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling updateRichMediaOfItem'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling updateRichMediaOfItem'
             );
         }
         // verify the required parameter 'body' is set
@@ -1865,14 +1709,6 @@ class ItemsApi extends BaseApi
                 true // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/xml'],
@@ -1928,6 +1764,15 @@ class ItemsApi extends BaseApi
         ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+        }
+
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
         }
 
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [

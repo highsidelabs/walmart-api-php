@@ -33,10 +33,12 @@ function customizeSchema(
         CONSUMER_ID_HEADER,
         AUTH_SIG_HEADER,
         MARKET_HEADER,
+        PARTNER_HEADER,
         'WM_QOS.CORRELATION_ID',
         'WM_SVC.NAME',
         'WM_CONSUMER.CHANNEL.TYPE',
         'WM_SEC.TIMESTAMP',
+        'Accept',
     ];
 
     $schema = json_decode(file_get_contents($path), true);
@@ -65,6 +67,12 @@ function customizeSchema(
             'in' => 'header',
             'name' => CONSUMER_ID_HEADER,
             'description' => 'Header authentication with your Walmart consumer ID, which is passed in the ' . CONSUMER_ID_HEADER . ' header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.',
+        ],
+        SecurityScheme::PARTNER => [
+            'type' => 'apiKey',
+            'in' => 'header',
+            'name' => PARTNER_HEADER,
+            'description' => 'Header authentication with your Walmart partner ID, which is passed in the ' . PARTNER_HEADER . ' header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.',
         ],
         SecurityScheme::SIGNATURE => [
             'type' => 'apiKey',
@@ -108,6 +116,7 @@ function customizeSchema(
                             BASIC_SCHEME_HEADER => SecurityScheme::BASIC,
                             CHANNEL_TYPE_HEADER => SecurityScheme::CHANNEL_TYPE,
                             CONSUMER_ID_HEADER => SecurityScheme::CONSUMER_ID,
+                            PARTNER_HEADER => SecurityScheme::PARTNER,
                             default => false,
                         };
 

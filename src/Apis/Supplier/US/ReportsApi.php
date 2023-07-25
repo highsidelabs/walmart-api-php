@@ -53,8 +53,6 @@ class ReportsApi extends BaseApi
      *
      * @param  string $type Use this to mention the type of report. Use type=vendor_item for fetching Item Report for DSVs (required)
      * @param  string $version Use this parameter(version = 2) to access the latest version of the DSV report. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -62,11 +60,9 @@ class ReportsApi extends BaseApi
      */
     public function getItemReport(
         string $type,
-        string $version,
-        string $accept,
-        string $wMPARTNERID
+        string $version
     ): \Walmart\Models\Supplier\US\Reports\ReportDTO {
-        return $this->getItemReportWithHttpInfo($type, $version, $accept, $wMPARTNERID);
+        return $this->getItemReportWithHttpInfo($type, $version);
     }
 
     /**
@@ -76,8 +72,6 @@ class ReportsApi extends BaseApi
      *
      * @param  string $type Use this to mention the type of report. Use type=vendor_item for fetching Item Report for DSVs (required)
      * @param  string $version Use this parameter(version = 2) to access the latest version of the DSV report. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -86,10 +80,8 @@ class ReportsApi extends BaseApi
     protected function getItemReportWithHttpInfo(
         string $type,
         string $version,
-        string $accept,
-        string $wMPARTNERID,
     ): \Walmart\Models\Supplier\US\Reports\ReportDTO {
-        $request = $this->getItemReportRequest($type, $version, $accept, $wMPARTNERID);
+        $request = $this->getItemReportRequest($type, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -185,19 +177,15 @@ class ReportsApi extends BaseApi
      *
      * @param  string $type Use this to mention the type of report. Use type=vendor_item for fetching Item Report for DSVs (required)
      * @param  string $version Use this parameter(version = 2) to access the latest version of the DSV report. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getItemReportAsync(
         string $type,
-        string $version,
-        string $accept,
-        string $wMPARTNERID
+        string $version
     ): PromiseInterface {
-        return $this->getItemReportAsyncWithHttpInfo($type, $version, $accept, $wMPARTNERID)
+        return $this->getItemReportAsyncWithHttpInfo($type, $version)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,8 +200,6 @@ class ReportsApi extends BaseApi
      *
      * @param  string $type Use this to mention the type of report. Use type=vendor_item for fetching Item Report for DSVs (required)
      * @param  string $version Use this parameter(version = 2) to access the latest version of the DSV report. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -221,11 +207,9 @@ class ReportsApi extends BaseApi
     protected function getItemReportAsyncWithHttpInfo(
         string $type,
         string $version,
-        string $accept,
-        string $wMPARTNERID,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Reports\ReportDTO';
-        $request = $this->getItemReportRequest($type, $version, $accept, $wMPARTNERID);
+        $request = $this->getItemReportRequest($type, $version);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -272,8 +256,6 @@ class ReportsApi extends BaseApi
      *
      * @param  string $type Use this to mention the type of report. Use type=vendor_item for fetching Item Report for DSVs (required)
      * @param  string $version Use this parameter(version = 2) to access the latest version of the DSV report. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -281,8 +263,6 @@ class ReportsApi extends BaseApi
     protected function getItemReportRequest(
         string $type,
         string $version,
-        string $accept,
-        string $wMPARTNERID,
     ): Request {
         $contentType = self::contentTypes['getItemReport'];
 
@@ -296,18 +276,6 @@ class ReportsApi extends BaseApi
         if ($version === null || (is_array($version) && count($version) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $version when calling getItemReport'
-            );
-        }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getItemReport'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling getItemReport'
             );
         }
         $resourcePath = '/v3/getReport';
@@ -337,14 +305,6 @@ class ReportsApi extends BaseApi
                 true // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/xml'],
@@ -393,6 +353,15 @@ class ReportsApi extends BaseApi
         ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+        }
+
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
         }
 
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [

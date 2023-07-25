@@ -13,7 +13,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getAllItems()`
 
 ```php
-getAllItems($accept, $wMPARTNERID, $nextCursor, $sku): \Walmart\Models\Supplier\US\Items\ItemResponses
+getAllItems($nextCursor, $sku): \Walmart\Models\Supplier\US\Items\ItemResponses
 ```
 All items
 
@@ -39,13 +39,11 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::supplier($config)->items();
 
-$accept = application/xml; // string | Specifies the returned data format in the response.  Valid values are:  application/xml  application/json
-$wMPARTNERID = 10001126675; // string | Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.
 $nextCursor = '*'; // string | Used for paginated results - use the nextCursor response element from the prior API call.
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded.
 
 try {
-    $result = $api->getAllItems($accept, $wMPARTNERID, $nextCursor, $sku);
+    $result = $api->getAllItems($nextCursor, $sku);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getAllItems: {$e->getMessage()}\n";
@@ -55,8 +53,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Specifies the returned data format in the response.  Valid values are:  application/xml  application/json | |
-| **wMPARTNERID** | **string**| Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. | |
 | **nextCursor** | **string**| Used for paginated results - use the nextCursor response element from the prior API call. | [optional] [default to '*'] |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. | [optional] |
 
@@ -70,6 +66,7 @@ try {
 This endpoint requires the following authorization methods:
 
 * `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
 * `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
@@ -83,7 +80,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAnItem()`
 
 ```php
-getAnItem($sku, $accept, $wMPARTNERID): \Walmart\Models\Supplier\US\Items\ItemResponse
+getAnItem($sku): \Walmart\Models\Supplier\US\Items\ItemResponse
 ```
 An Item (v3)
 
@@ -110,11 +107,9 @@ $config = new Walmart\Configuration([
 $api = Walmart::supplier($config)->items();
 
 $sku = 'sku_example'; // string | An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded.
-$accept = application/xml; // string | Specifies the returned data format in the response.  Valid values are:  application/xml  application/json
-$wMPARTNERID = 10001126675; // string | Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.
 
 try {
-    $result = $api->getAnItem($sku, $accept, $wMPARTNERID);
+    $result = $api->getAnItem($sku);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getAnItem: {$e->getMessage()}\n";
@@ -125,8 +120,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **sku** | **string**| An arbitrary alphanumeric unique ID, specified by the DSV, which identifies each item. This will be used by the DSV in the XSD file to refer to each item. Special characters in the sku needing encoding are: ':', '/', '?', '#', '[', ']', '@', '!', '$', '&', \"'\", '(', ')', '*', '+', ',', ';', '=', as well as '%' itself. Other characters don't need to be encoded. | |
-| **accept** | **string**| Specifies the returned data format in the response.  Valid values are:  application/xml  application/json | |
-| **wMPARTNERID** | **string**| Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. | |
 
 
 ### Return type
@@ -138,6 +131,7 @@ try {
 This endpoint requires the following authorization methods:
 
 * `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
 * `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
@@ -151,7 +145,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAnItemV4()`
 
 ```php
-getAnItemV4($productId, $accept, $wMPARTNERID, $productIdType, $includeFullItemDetails): \Walmart\Models\Supplier\US\Items\Response
+getAnItemV4($productId, $productIdType, $includeFullItemDetails): \Walmart\Models\Supplier\US\Items\Response
 ```
 An Item (v4)
 
@@ -178,13 +172,11 @@ $config = new Walmart\Configuration([
 $api = Walmart::supplier($config)->items();
 
 $productId = 00012345678905; // string | Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905
-$accept = application/json; // string | Specifies the returned data format in the response.  Valid values are:  application/json
-$wMPARTNERID = 10001126675; // string | Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.
 $productIdType = 'GTIN'; // string | Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC
 $includeFullItemDetails = 'NO'; // string | Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES
 
 try {
-    $result = $api->getAnItemV4($productId, $accept, $wMPARTNERID, $productIdType, $includeFullItemDetails);
+    $result = $api->getAnItemV4($productId, $productIdType, $includeFullItemDetails);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->getAnItemV4: {$e->getMessage()}\n";
@@ -195,8 +187,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **productId** | **string**| Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 | |
-| **accept** | **string**| Specifies the returned data format in the response.  Valid values are:  application/json | |
-| **wMPARTNERID** | **string**| Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. | |
 | **productIdType** | **string**| Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC | [optional] [default to 'GTIN'] |
 | **includeFullItemDetails** | **string**| Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES | [optional] [default to 'NO'] |
 
@@ -210,6 +200,7 @@ try {
 This endpoint requires the following authorization methods:
 
 * `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
 * `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
@@ -223,7 +214,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `itemBulkUploads()`
 
 ```php
-itemBulkUploads($feedType, $accept, $wMPARTNERID, $file): \Walmart\Models\Supplier\US\Items\FeedId
+itemBulkUploads($feedType, $file): \Walmart\Models\Supplier\US\Items\FeedId
 ```
 Bulk Item Setup
 
@@ -250,12 +241,10 @@ $config = new Walmart\Configuration([
 $api = Walmart::supplier($config)->items();
 
 $feedType = 'SUPPLIER_FULL_ITEM'; // string | The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM.
-$accept = application/xml; // string | Specifies the returned data format in the response.  Valid values are:  application/xml  application/json  multipart/form-data
-$wMPARTNERID = 10001126675; // string | Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.
 $file = "/path/to/file.txt"; // \SplFileObject | Feed file to upload
 
 try {
-    $result = $api->itemBulkUploads($feedType, $accept, $wMPARTNERID, $file);
+    $result = $api->itemBulkUploads($feedType, $file);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->itemBulkUploads: {$e->getMessage()}\n";
@@ -266,8 +255,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The Drop Ship Vendor Feed type. Must be SUPPLIER_FULL_ITEM. | [default to 'SUPPLIER_FULL_ITEM'] |
-| **accept** | **string**| Specifies the returned data format in the response.  Valid values are:  application/xml  application/json  multipart/form-data | |
-| **wMPARTNERID** | **string**| Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. | |
 | **file** | **\SplFileObject****\SplFileObject**| Feed file to upload | |
 
 
@@ -280,6 +267,7 @@ try {
 This endpoint requires the following authorization methods:
 
 * `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
 * `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
@@ -293,7 +281,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `updateRichMediaOfItem()`
 
 ```php
-updateRichMediaOfItem($feedType, $accept, $wMPARTNERID, $body): \Walmart\Models\Supplier\US\Items\FeedId
+updateRichMediaOfItem($feedType, $body): \Walmart\Models\Supplier\US\Items\FeedId
 ```
 Rich Media
 
@@ -320,8 +308,6 @@ $config = new Walmart\Configuration([
 $api = Walmart::supplier($config)->items();
 
 $feedType = 'item'; // string | The feed Type
-$accept = application/xml; // string | Specifies the returned data format in the response.  Valid values are:  application/xml  multipart/form-data
-$wMPARTNERID = 10001126675; // string | Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier.
 $body = <?xml version="1.0" encoding="UTF-8"?>
 <RichMediaFeed xmlns="http://walmart.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://walmart.com/ RichMediaFeed.xsd ">
     <RichMediaFeedHeader>
@@ -548,7 +534,7 @@ $body = <?xml version="1.0" encoding="UTF-8"?>
 ; // string
 
 try {
-    $result = $api->updateRichMediaOfItem($feedType, $accept, $wMPARTNERID, $body);
+    $result = $api->updateRichMediaOfItem($feedType, $body);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling ItemsApi->updateRichMediaOfItem: {$e->getMessage()}\n";
@@ -559,8 +545,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **feedType** | **string**| The feed Type | [default to 'item'] |
-| **accept** | **string**| Specifies the returned data format in the response.  Valid values are:  application/xml  multipart/form-data | |
-| **wMPARTNERID** | **string**| Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. | |
 | **body** | **string**|  | |
 
 
@@ -573,6 +557,7 @@ try {
 This endpoint requires the following authorization methods:
 
 * `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
 * `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
 * `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 

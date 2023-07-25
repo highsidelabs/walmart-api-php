@@ -52,8 +52,6 @@ class DSVCostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -62,11 +60,9 @@ class DSVCostApi extends BaseApi
      */
     public function updateBulkCost(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest
     ): \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateResponse {
-        return $this->updateBulkCostWithHttpInfo($feedType, $accept, $wMPARTNERID, $dsvCostUpdateRequest);
+        return $this->updateBulkCostWithHttpInfo($feedType, $dsvCostUpdateRequest);
     }
 
     /**
@@ -75,8 +71,6 @@ class DSVCostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest File fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -85,11 +79,9 @@ class DSVCostApi extends BaseApi
      */
     protected function updateBulkCostWithHttpInfo(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest,
     ): \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateResponse {
-        $request = $this->updateBulkCostRequest($feedType, $accept, $wMPARTNERID, $dsvCostUpdateRequest);
+        $request = $this->updateBulkCostRequest($feedType, $dsvCostUpdateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -184,8 +176,6 @@ class DSVCostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest File fields (required)
      *
      * @throws \InvalidArgumentException
@@ -193,11 +183,9 @@ class DSVCostApi extends BaseApi
      */
     public function updateBulkCostAsync(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest
     ): PromiseInterface {
-        return $this->updateBulkCostAsyncWithHttpInfo($feedType, $accept, $wMPARTNERID, $dsvCostUpdateRequest)
+        return $this->updateBulkCostAsyncWithHttpInfo($feedType, $dsvCostUpdateRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -211,8 +199,6 @@ class DSVCostApi extends BaseApi
      * This API allows DSV to update cost for items in bulk.
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest File fields (required)
      *
      * @throws \InvalidArgumentException
@@ -220,12 +206,10 @@ class DSVCostApi extends BaseApi
      */
     protected function updateBulkCostAsyncWithHttpInfo(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateResponse';
-        $request = $this->updateBulkCostRequest($feedType, $accept, $wMPARTNERID, $dsvCostUpdateRequest);
+        $request = $this->updateBulkCostRequest($feedType, $dsvCostUpdateRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -271,8 +255,6 @@ class DSVCostApi extends BaseApi
      * Create request for operation 'updateBulkCost'
      *
      * @param  string $feedType Includes details of each entity in the feed. Do not set this parameter to true. (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/json  multipart/form-data (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest File fields (required)
      *
      * @throws \InvalidArgumentException
@@ -280,8 +262,6 @@ class DSVCostApi extends BaseApi
      */
     protected function updateBulkCostRequest(
         string $feedType,
-        string $accept,
-        string $wMPARTNERID,
         \Walmart\Models\Supplier\US\DSVCost\DsvCostUpdateRequest $dsvCostUpdateRequest,
     ): Request {
         $contentType = self::contentTypes['updateBulkCost'];
@@ -290,18 +270,6 @@ class DSVCostApi extends BaseApi
         if ($feedType === null || (is_array($feedType) && count($feedType) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $feedType when calling updateBulkCost'
-            );
-        }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling updateBulkCost'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling updateBulkCost'
             );
         }
         // verify the required parameter 'dsvCostUpdateRequest' is set
@@ -329,14 +297,6 @@ class DSVCostApi extends BaseApi
                 true // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -392,6 +352,15 @@ class DSVCostApi extends BaseApi
         ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+        }
+
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
         }
 
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [

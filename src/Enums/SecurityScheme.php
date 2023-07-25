@@ -10,5 +10,6 @@ final class SecurityScheme extends AbstractEnum
     public const CHANNEL_TYPE = 'channelTypeScheme';
     public const CONSUMER_ID = 'consumerIdScheme';
     public const MARKET = 'marketScheme';
+    public const PARTNER = 'partnerScheme';
     public const SIGNATURE = 'signatureScheme';
 }

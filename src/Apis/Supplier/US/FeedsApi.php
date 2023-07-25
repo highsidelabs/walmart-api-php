@@ -52,8 +52,6 @@ class FeedsApi extends BaseApi
      *
      * Feed status
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (optional)
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -63,13 +61,11 @@ class FeedsApi extends BaseApi
      * @return \Walmart\Models\Supplier\US\Feeds\FeedRecordResponse
      */
     public function getAllFeedStatuses(
-        string $accept,
-        string $wMPARTNERID,
         ?string $feedId = null,
         ?string $offset = '0',
         ?string $limit = '50'
     ): \Walmart\Models\Supplier\US\Feeds\FeedRecordResponse {
-        return $this->getAllFeedStatusesWithHttpInfo($accept, $wMPARTNERID, $feedId, $offset, $limit);
+        return $this->getAllFeedStatusesWithHttpInfo($feedId, $offset, $limit);
     }
 
     /**
@@ -77,8 +73,6 @@ class FeedsApi extends BaseApi
      *
      * Feed status
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (optional)
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -88,13 +82,11 @@ class FeedsApi extends BaseApi
      * @return \Walmart\Models\Supplier\US\Feeds\FeedRecordResponse
      */
     protected function getAllFeedStatusesWithHttpInfo(
-        string $accept,
-        string $wMPARTNERID,
         ?string $feedId = null,
         ?string $offset = '0',
         ?string $limit = '50',
     ): \Walmart\Models\Supplier\US\Feeds\FeedRecordResponse {
-        $request = $this->getAllFeedStatusesRequest($accept, $wMPARTNERID, $feedId, $offset, $limit);
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -188,8 +180,6 @@ class FeedsApi extends BaseApi
      *
      * Feed status
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (optional)
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -198,13 +188,11 @@ class FeedsApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getAllFeedStatusesAsync(
-        string $accept,
-        string $wMPARTNERID,
         ?string $feedId = null,
         ?string $offset = '0',
         ?string $limit = '50'
     ): PromiseInterface {
-        return $this->getAllFeedStatusesAsyncWithHttpInfo($accept, $wMPARTNERID, $feedId, $offset, $limit)
+        return $this->getAllFeedStatusesAsyncWithHttpInfo($feedId, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -217,8 +205,6 @@ class FeedsApi extends BaseApi
      *
      * Feed status
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (optional)
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -227,14 +213,12 @@ class FeedsApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function getAllFeedStatusesAsyncWithHttpInfo(
-        string $accept,
-        string $wMPARTNERID,
         ?string $feedId = null,
         ?string $offset = '0',
         ?string $limit = '50',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Feeds\FeedRecordResponse';
-        $request = $this->getAllFeedStatusesRequest($accept, $wMPARTNERID, $feedId, $offset, $limit);
+        $request = $this->getAllFeedStatusesRequest($feedId, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -279,8 +263,6 @@ class FeedsApi extends BaseApi
     /**
      * Create request for operation 'getAllFeedStatuses'
      *
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (optional)
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -289,26 +271,12 @@ class FeedsApi extends BaseApi
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function getAllFeedStatusesRequest(
-        string $accept,
-        string $wMPARTNERID,
         ?string $feedId = null,
         ?string $offset = '0',
         ?string $limit = '50',
     ): Request {
         $contentType = self::contentTypes['getAllFeedStatuses'];
 
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getAllFeedStatuses'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling getAllFeedStatuses'
-            );
-        }
         $resourcePath = '/v3/feeds';
         $formParams = [];
         $queryParams = [];
@@ -344,14 +312,6 @@ class FeedsApi extends BaseApi
                 false // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/xml'],
@@ -402,6 +362,15 @@ class FeedsApi extends BaseApi
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
         }
 
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        }
+
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
             'path' => $resourcePath,
             'method' => $method,
@@ -433,8 +402,6 @@ class FeedsApi extends BaseApi
      * Feed item status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -445,13 +412,11 @@ class FeedsApi extends BaseApi
      */
     public function getFeedItemStatus(
         string $feedId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $includeDetails = 'false',
         ?string $offset = '0',
         ?string $limit = '50'
     ): \Walmart\Models\Supplier\US\Feeds\PartnerFeedResponse {
-        return $this->getFeedItemStatusWithHttpInfo($feedId, $accept, $wMPARTNERID, $includeDetails, $offset, $limit);
+        return $this->getFeedItemStatusWithHttpInfo($feedId, $includeDetails, $offset, $limit);
     }
 
     /**
@@ -460,8 +425,6 @@ class FeedsApi extends BaseApi
      * Feed item status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -472,13 +435,11 @@ class FeedsApi extends BaseApi
      */
     protected function getFeedItemStatusWithHttpInfo(
         string $feedId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $includeDetails = 'false',
         ?string $offset = '0',
         ?string $limit = '50',
     ): \Walmart\Models\Supplier\US\Feeds\PartnerFeedResponse {
-        $request = $this->getFeedItemStatusRequest($feedId, $accept, $wMPARTNERID, $includeDetails, $offset, $limit);
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -573,8 +534,6 @@ class FeedsApi extends BaseApi
      * Feed item status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -584,13 +543,11 @@ class FeedsApi extends BaseApi
      */
     public function getFeedItemStatusAsync(
         string $feedId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $includeDetails = 'false',
         ?string $offset = '0',
         ?string $limit = '50'
     ): PromiseInterface {
-        return $this->getFeedItemStatusAsyncWithHttpInfo($feedId, $accept, $wMPARTNERID, $includeDetails, $offset, $limit)
+        return $this->getFeedItemStatusAsyncWithHttpInfo($feedId, $includeDetails, $offset, $limit)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -604,8 +561,6 @@ class FeedsApi extends BaseApi
      * Feed item status
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -615,14 +570,12 @@ class FeedsApi extends BaseApi
      */
     protected function getFeedItemStatusAsyncWithHttpInfo(
         string $feedId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $includeDetails = 'false',
         ?string $offset = '0',
         ?string $limit = '50',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\Supplier\US\Feeds\PartnerFeedResponse';
-        $request = $this->getFeedItemStatusRequest($feedId, $accept, $wMPARTNERID, $includeDetails, $offset, $limit);
+        $request = $this->getFeedItemStatusRequest($feedId, $includeDetails, $offset, $limit);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -668,8 +621,6 @@ class FeedsApi extends BaseApi
      * Create request for operation 'getFeedItemStatus'
      *
      * @param  string $feedId A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789). (required)
-     * @param  string $accept Specifies the returned data format in the response.  Valid values are:  application/xml  application/json (required)
-     * @param  string $wMPARTNERID Specifies an account identifier for the supplier.  This identifier is provided during Walmart account creation. If this is an API submission made by a third-party service provider, then the identifier is required to correctly associate the submission with the supplier. (required)
      * @param  string $includeDetails Includes details of each entity in the feed. Do not set this parameter to true. (optional, default to 'false')
      * @param  string $offset The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true. (optional, default to '0')
      * @param  string $limit The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true. (optional, default to '50')
@@ -679,8 +630,6 @@ class FeedsApi extends BaseApi
      */
     protected function getFeedItemStatusRequest(
         string $feedId,
-        string $accept,
-        string $wMPARTNERID,
         ?string $includeDetails = 'false',
         ?string $offset = '0',
         ?string $limit = '50',
@@ -691,18 +640,6 @@ class FeedsApi extends BaseApi
         if ($feedId === null || (is_array($feedId) && count($feedId) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $feedId when calling getFeedItemStatus'
-            );
-        }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getFeedItemStatus'
-            );
-        }
-        // verify the required parameter 'wMPARTNERID' is set
-        if ($wMPARTNERID === null || (is_array($wMPARTNERID) && count($wMPARTNERID) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $wMPARTNERID when calling getFeedItemStatus'
             );
         }
         $resourcePath = '/v3/feeds/{feedId}';
@@ -740,14 +677,6 @@ class FeedsApi extends BaseApi
                 false // required
             ) ?? [],
         );
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
-        if ($wMPARTNERID !== null) {
-            $headerParams['WM_PARTNER.ID'] = ObjectSerializer::toHeaderValue($wMPARTNERID);
-        }
 
         // path params
         if ($feedId !== null) {
@@ -805,6 +734,15 @@ class FeedsApi extends BaseApi
         ]);
         if ($signatureSchemeApiKey !== null) {
             $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+        }
+
+        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
+        ]);
+        if ($partnerSchemeApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
         }
 
         $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
