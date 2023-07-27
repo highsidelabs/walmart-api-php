@@ -395,7 +395,7 @@ function findMatchingComponent(array $properties, string|array $relatedStrings, 
              */
             $levenshteins = array_map(fn ($s) => levenshtein($lcComponentName, $s, 1, 1, 0), $relatedStrings);
             $levenshtein = array_sum($levenshteins) / count($levenshteins);
-            
+
             // Sometimes for XML inline schemas, there is a matching component that is not marked as
             // XML-specific, but is the only matching schema. If we don't find a full match, we'll
             // use the component that is not marked as XML-specific, but only if we haven't already

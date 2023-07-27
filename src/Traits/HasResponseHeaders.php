@@ -28,7 +28,7 @@ trait HasResponseHeaders
      *
      * @return self
      */
-    public function setHeaders(array $headers): static
+    public function setHeaders(array $headers): self
     {
         $this->headers = $headers;
         return $this;

@@ -161,7 +161,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setApiKey(string $apiKeyIdentifier, string $key): static
+    public function setApiKey(string $apiKeyIdentifier, string $key): self
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
         return $this;
@@ -194,7 +194,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setAccessToken(?AccessToken $accessToken): static
+    public function setAccessToken(?AccessToken $accessToken): self
     {
         if (!($accessToken instanceof AccessToken)) {
             throw new InvalidArgumentException('Invalid access token: must be an instance of ' . AccessToken::class);
@@ -232,7 +232,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setClientId(string $clientId): static
+    public function setClientId(string $clientId): self
     {
         $this->clientId = $clientId;
         return $this;
@@ -255,7 +255,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setClientSecret(string $clientSecret): static
+    public function setClientSecret(string $clientSecret): self
     {
         $this->clientSecret = $clientSecret;
         return $this;
@@ -278,7 +278,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setCountry(string $country): static
+    public function setCountry(string $country): self
     {
         if (!is_string($country)) {
             throw new InvalidArgumentException('Invalid country passed: must be a string');
@@ -307,7 +307,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setPrivateKey(string $privateKey): static
+    public function setPrivateKey(string $privateKey): self
     {
         $this->privateKey = $privateKey;
         return $this;
@@ -330,7 +330,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setConsumerId(string $consumerId): static
+    public function setConsumerId(string $consumerId): self
     {
         $this->consumerId = $consumerId;
         return $this;
@@ -353,7 +353,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setChannelType(string $channelType): static
+    public function setChannelType(string $channelType): self
     {
         $this->channelType = $channelType;
         return $this;
@@ -376,7 +376,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setPartnerId(string $partnerId): static
+    public function setPartnerId(string $partnerId): self
     {
         $this->partnerId = $partnerId;
         return $this;
@@ -399,7 +399,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setHost(string $host): static
+    public function setHost(string $host): self
     {
         $this->host = $host;
         return $this;
@@ -450,7 +450,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setDebug(bool $debug = true): static
+    public function setDebug(bool $debug = true): self
     {
         $this->debug = $debug;
         return $this;
@@ -473,7 +473,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setDebugFile(string $debugFile): static
+    public function setDebugFile(string $debugFile): self
     {
         $this->debugFile = $debugFile;
         return $this;
