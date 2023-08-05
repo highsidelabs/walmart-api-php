@@ -54,7 +54,7 @@
         ],
         "version-update": "@generate --supporting-files-only",
         "clean": "rm -rf docs src/Models/*/* src/Apis/*/*/*",
-        "lint": "./vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
+        "lint": "php vendor/bin/php-cs-fixer fix --allow-risky=yes -vvv"
     },
     "autoload": {
         "psr-4": { "Walmart\\" : "src/" }

@@ -161,7 +161,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setApiKey(string $apiKeyIdentifier, string $key): self
+    public function setApiKey(string $apiKeyIdentifier, string $key): static
     {
         $this->apiKeys[$apiKeyIdentifier] = $key;
         return $this;
@@ -194,7 +194,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setAccessToken(?AccessToken $accessToken): self
+    public function setAccessToken(?AccessToken $accessToken): static
     {
         if (!($accessToken instanceof AccessToken)) {
             throw new InvalidArgumentException('Invalid access token: must be an instance of ' . AccessToken::class);
@@ -232,7 +232,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setClientId(string $clientId): self
+    public function setClientId(string $clientId): static
     {
         $this->clientId = $clientId;
         return $this;
@@ -255,7 +255,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setClientSecret(string $clientSecret): self
+    public function setClientSecret(string $clientSecret): static
     {
         $this->clientSecret = $clientSecret;
         return $this;
@@ -278,11 +278,11 @@ class Configuration
      *
      * @return $this
      */
-    public function setCountry(string $country): self
+    public function setCountry(string $country): static
     {
         if (!is_string($country)) {
             throw new InvalidArgumentException('Invalid country passed: must be a string');
-        } elseif (!Country::isValid($country)) {
+        } else if (!Country::isValid($country)) {
             throw new InvalidArgumentException('Invalid country passed: ' . $country . '. Valid countries are: ' . implode(', ', Country::all()));
         }
 
@@ -307,7 +307,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setPrivateKey(string $privateKey): self
+    public function setPrivateKey(string $privateKey): static
     {
         $this->privateKey = $privateKey;
         return $this;
@@ -330,7 +330,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setConsumerId(string $consumerId): self
+    public function setConsumerId(string $consumerId): static
     {
         $this->consumerId = $consumerId;
         return $this;
@@ -353,7 +353,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setChannelType(string $channelType): self
+    public function setChannelType(string $channelType): static
     {
         $this->channelType = $channelType;
         return $this;
@@ -376,7 +376,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setPartnerId(string $partnerId): self
+    public function setPartnerId(string $partnerId): static
     {
         $this->partnerId = $partnerId;
         return $this;
@@ -399,7 +399,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setHost(string $host): self
+    public function setHost(string $host): static
     {
         $this->host = $host;
         return $this;
@@ -450,7 +450,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setDebug(bool $debug = true): self
+    public function setDebug(bool $debug = true): static
     {
         $this->debug = $debug;
         return $this;
@@ -473,7 +473,7 @@ class Configuration
      *
      * @return $this
      */
-    public function setDebugFile(string $debugFile): self
+    public function setDebugFile(string $debugFile): static
     {
         $this->debugFile = $debugFile;
         return $this;
