@@ -254,13 +254,13 @@ This is an exhaustive list of all the APIs supported by this library, organized 
 
 _Note_: The 1P Supplier APIs are currently only available in the US.
 
-* [Cost API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/CostApi.md): `Walmart::supplier($config)->cost()`
-* [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/FeedsApi.md): `Walmart::supplier($config)->feeds()`
-* [Inventory API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/InventoryApi.md): `Walmart::supplier($config)->inventory()`
-* [Items API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/ItemsApi.md): `Walmart::supplier($config)->items()`
-* [Lag Time API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/LagTimeApi.md): `Walmart::supplier($config)->lagTime()`
-* [Orders API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/OrdersApi.md): `Walmart::supplier($config)->orders()`
-* [Reports API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/DSV/US/ReportsApi.md): `Walmart::supplier($config)->reports()`
+* [Cost API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/Supplier/US/CostApi.md): `Walmart::supplier($config)->cost()`
+* [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/Supplier/US/FeedsApi.md): `Walmart::supplier($config)->feeds()`
+* [Inventory API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/Supplier/US/InventoryApi.md): `Walmart::supplier($config)->inventory()`
+* [Items API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/Supplier/US/ItemsApi.md): `Walmart::supplier($config)->items()`
+* [Lag Time API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/Supplier/US/LagTimeApi.md): `Walmart::supplier($config)->lagTime()`
+* [Orders API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/Supplier/US/OrdersApi.md): `Walmart::supplier($config)->orders()`
+* [Reports API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/Supplier/US/ReportsApi.md): `Walmart::supplier($config)->reports()`
 
 #### Content Provider
 

@@ -112,7 +112,7 @@ class Configuration
      *
      * @var string
      */
-    protected string $userAgent = 'highsidelabs/walmart-api-php/0.5.0';
+    protected string $userAgent = 'highsidelabs/walmart-api-php/0.6.1';
 
     /**
      * Debug switch (default set to false)
@@ -282,7 +282,7 @@ class Configuration
     {
         if (!is_string($country)) {
             throw new InvalidArgumentException('Invalid country passed: must be a string');
-        } elseif (!Country::isValid($country)) {
+        } else if (!Country::isValid($country)) {
             throw new InvalidArgumentException('Invalid country passed: ' . $country . '. Valid countries are: ' . implode(', ', Country::all()));
         }
 

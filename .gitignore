@@ -1,6 +1,8 @@
 vendor/
 resources/specs
 
+composer.lock
+
 # Log files
 **/*.log
 
