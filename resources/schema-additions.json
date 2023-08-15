@@ -1,0 +1,61 @@
+{
+  "us": {
+    "mp": {
+      "orders": {
+        "paths": {
+          "\/v3\/orders": {
+            "get": {
+              "parameters": [
+                {
+                  "name": "hasMoreElements",
+                  "in": "query",
+                  "description": "hasMoreElements",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "soIndex",
+                  "in": "query",
+                  "description": "Sales order index. This should only be populated from a next token",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "poIndex",
+                  "in": "query",
+                  "description": "Purchase order index. This should only be populated from a next token",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "partnerId",
+                  "in": "query",
+                  "description": "partnerId",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "name": "sellerId",
+                  "in": "query",
+                  "description": "sellerId",
+                  "required": false,
+                  "schema": {
+                    "type": "string"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

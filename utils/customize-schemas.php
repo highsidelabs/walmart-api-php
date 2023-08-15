@@ -456,6 +456,16 @@ function fixSchema(array $schema, string $country, string $category, string $cod
         );
     }
 
+    $allAdditions = json_decode(file_get_contents(SCHEMA_ADDITIONS_FILE), true);
+    $additions = $allAdditions[$country][$category][$code] ?? [];
+
+    if (isset($additions['paths'])) {
+        $schema['paths'] = array_merge_recursive(
+            $schema['paths'],
+            $additions['paths']
+        );
+    }
+
     return $schema;
 }
 
