@@ -22,9 +22,8 @@ namespace Walmart;
 use BadMethodCallException;
 use RuntimeException;
 use Walmart\Apis\CP\ContentProviderApi;
-use Walmart\Apis\DSV\DropShipVendorApi;
 use Walmart\Apis\MP\MarketplaceApi;
-use Walmart\Apis\WS\WarehouseSupplierApi;
+use Walmart\Apis\Supplier\SupplierApi;
 use Walmart\Configuration;
 
 abstract class Walmart
@@ -98,14 +97,14 @@ abstract class Walmart
     }
 
     /**
-     * Return an instance of the Drop Ship Vendor API provider.
+     * Return an instance of the 1P Supplier API provider.
      *
      * @param Configuration $config
-     * @return DropShipVendorApi
+     * @return SupplierApi
      */
-    public static function dropShipVendor(Configuration $config): DropShipVendorApi
+    public static function supplier(Configuration $config): SupplierApi
     {
-        return new DropShipVendorApi($config);
+        return new SupplierApi($config);
     }
 
     /**
@@ -117,16 +116,5 @@ abstract class Walmart
     public static function marketplace(Configuration $config): MarketplaceApi
     {
         return new MarketplaceApi($config);
-    }
-
-    /**
-     * Return an instance of the Warehouse Supplier API provider.
-     *
-     * @param Configuration $config
-     * @return WarehouseSupplierApi
-     */
-    public static function warehouseSupplier(Configuration $config): WarehouseSupplierApi
-    {
-        return new WarehouseSupplierApi($config);
     }
 }
