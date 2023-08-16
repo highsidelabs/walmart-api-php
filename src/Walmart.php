@@ -29,7 +29,7 @@ use Walmart\Configuration;
 
 abstract class Walmart
 {
-    public const VERSION = '0.6.1';
+    public const VERSION = '0.6.2';
 
     /**
      * The configuration for this client.
