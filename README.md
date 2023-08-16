@@ -61,6 +61,7 @@ The existing Walmart client libraries for PHP are either incomplete, outdated, o
         * [Marketplace](#marketplace)
         * [1P Supplier](#1p-supplier)
         * [Content Provider](#content-provider)
+    * [Contributing](#contributing)
 
 
 ## Getting Started
@@ -267,3 +268,14 @@ _Note_: The 1P Supplier APIs are currently only available in the US.
 _Note_: The Content Provider APIs are currently only available in the US.
 
 * [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/CP/US/FeedsApi.md): `Walmart::contentProvider($config)->feeds()`
+
+
+## Contributing
+
+Thanks for making it all the way down here! We welcome your contributions...the open-source world runs on people like you.
+
+## Pull requests
+
+Please ask (via an issue) before submitting a pull request for any significant feature work. It sucks to put a lot of effort into something only to have it rejected for reasons other than the quality of your code. (_Author's note: don't ask me how I know._) That said, we're open to contributions from anyone, and we'll do our best to get your code merged. Please be patient – we're not ignoring you, but it might take us some time to get to your PR.
+
+Before submitting a PR, please format your code with `composer lint`.

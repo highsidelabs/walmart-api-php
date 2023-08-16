@@ -154,8 +154,8 @@ function libVersion(): string
  * Merge two arrays recursively, overwriting keys in the first array with keys from the second array.
  * Poached from https://www.php.net/manual/en/function.array-merge-recursive.php#92195
  *
- * @param array $array1 
- * @param array $array2 
+ * @param array $array1
+ * @param array $array2
  * @return array 
  */
 function array_merge_recursive_distinct(array &$array1, array &$array2): array
