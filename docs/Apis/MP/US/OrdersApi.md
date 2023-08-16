@@ -137,7 +137,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllOrders()`
 
 ```php
-getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
+getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, $hasMoreElements, $soIndex, $poIndex, $partnerId, $sellerId): \Walmart\Models\MP\US\Orders\PurchaseOrderTypeV3
 ```
 All orders
 
@@ -177,9 +177,14 @@ $shipNodeType = 'SellerFulfilled'; // string | Specifies the type of shipNode. A
 $shippingProgramType = 'shippingProgramType_example'; // string | Specifies the type of program. Allowed value is TWO_DAY.
 $replacementInfo = 'false'; // string | Provides additional attributes - originalCustomerOrderID, orderType - related to Replacement order, in response, if available. Allowed values are true or false.
 $orderType = 'orderType_example'; // string | Specifies if the order is a regular order or replacement order. Possible values are REGULAR or REPLACEMENT. Provided in response only if query parameter replacementInfo=true.
+$hasMoreElements = 'hasMoreElements_example'; // string | hasMoreElements
+$soIndex = 'soIndex_example'; // string | Sales order index. This should only be populated from a next token
+$poIndex = 'poIndex_example'; // string | Purchase order index. This should only be populated from a next token
+$partnerId = 'partnerId_example'; // string | partnerId
+$sellerId = 'sellerId_example'; // string | sellerId
 
 try {
-    $result = $api->getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType);
+    $result = $api->getAllOrders($sku, $customerOrderId, $purchaseOrderId, $status, $createdStartDate, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $lastModifiedStartDate, $lastModifiedEndDate, $limit, $productInfo, $shipNodeType, $shippingProgramType, $replacementInfo, $orderType, $hasMoreElements, $soIndex, $poIndex, $partnerId, $sellerId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling OrdersApi->getAllOrders: {$e->getMessage()}\n";
@@ -205,6 +210,11 @@ try {
 | **shippingProgramType** | **string**| Specifies the type of program. Allowed value is TWO_DAY. | [optional] |
 | **replacementInfo** | **string**| Provides additional attributes - originalCustomerOrderID, orderType - related to Replacement order, in response, if available. Allowed values are true or false. | [optional] [default to 'false'] |
 | **orderType** | **string**| Specifies if the order is a regular order or replacement order. Possible values are REGULAR or REPLACEMENT. Provided in response only if query parameter replacementInfo=true. | [optional] |
+| **hasMoreElements** | **string**| hasMoreElements | [optional] |
+| **soIndex** | **string**| Sales order index. This should only be populated from a next token | [optional] |
+| **poIndex** | **string**| Purchase order index. This should only be populated from a next token | [optional] |
+| **partnerId** | **string**| partnerId | [optional] |
+| **sellerId** | **string**| sellerId | [optional] |
 
 
 ### Return type

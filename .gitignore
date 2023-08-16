@@ -17,6 +17,7 @@ composer.lock
 
 # IDE
 .vscode
+.idea/
 
 # OS X
 **/.DS_Store

@@ -14,6 +14,7 @@ const DEFAULT_MODEL_DIR = 'Model';
 
 const LOGFILE = __DIR__ . '/../generate.log';
 const SCHEMA_FIXES_FILE = RESOURCE_DIR . '/schema-corrections.json';
+const SCHEMA_ADDITIONS_FILE = RESOURCE_DIR . '/schema-additions.json';
 
 const ACCESS_TOKEN_HEADER = 'WM_SEC.ACCESS_TOKEN';
 const AUTH_SIG_HEADER = 'WM_SEC.AUTH_SIGNATURE';
