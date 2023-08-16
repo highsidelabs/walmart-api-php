@@ -57,10 +57,10 @@ class MarketplaceApi extends Walmart
             Country::MX => MX\OrdersApi::class,
             Country::US => US\OrdersApi::class,
         ],
-        'price' => [
-            Country::CA => CA\PriceApi::class,
-            Country::MX => MX\PriceApi::class,
-            Country::US => US\PriceApi::class,
+        'prices' => [
+            Country::CA => CA\PricesApi::class,
+            Country::MX => MX\PricesApi::class,
+            Country::US => US\PricesApi::class,
         ],
         'promotion' => [
             Country::CA => CA\PromotionApi::class,
