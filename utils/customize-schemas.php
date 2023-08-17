@@ -446,6 +446,10 @@ function chooseContentType(array $content): string
  */
 function fixSchema(array $schema, string $country, string $category, string $code): array
 {
+    $allDeletions = json_decode(file_get_contents(SCHEMA_DELETIONS_FILE), true);
+    $deletions = $allDeletions[$country][$category][$code] ?? [];
+    array_forget($schema, $deletions);
+
     $allReplacements = json_decode(file_get_contents(SCHEMA_REPLACEMENTS_FILE), true);
     $replacements = $allReplacements[$country][$category][$code] ?? [];
 

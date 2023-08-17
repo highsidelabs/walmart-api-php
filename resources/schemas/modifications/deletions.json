@@ -1,0 +1,16 @@
+{
+  "mx": {
+    "mp": {
+      "auth": [
+        "paths.\/v3\/token.post.responses.200.content.application\/json.example"
+      ]  
+    }
+  },
+  "us": {
+    "mp": {
+      "auth": [
+        "paths.\/v3\/token.post.responses.200.content.application\/json.example"
+      ]
+    }
+  }
+}

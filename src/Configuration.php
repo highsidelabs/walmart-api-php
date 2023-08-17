@@ -551,12 +551,14 @@ class Configuration
         }
 
         foreach ($validKeys as $key) {
-            if (!isset($options[$key]) || $options[$key] === null) continue;
+            if (!isset($options[$key]) || $options[$key] === null) {
+                continue;
+            }
             $this->{'set' . ucfirst($key)}($options[$key]);
         }
     }
 
-     /**
+    /**
      * Sign the request with the user's private key
      *
      * @param string $path The path to the endpoint being called

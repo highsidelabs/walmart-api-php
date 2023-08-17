@@ -19,6 +19,8 @@ const LOGFILE = __DIR__ . '/../generate.log';
 const SCHEMA_ADDITIONS_FILE = MODEL_MODIFICATIONS_DIR . '/additions.json';
 // The attributes in this file replace any corresponding attributes in the models
 const SCHEMA_REPLACEMENTS_FILE = MODEL_MODIFICATIONS_DIR . '/replacements.json';
+// The attributes in this file are removed from the models
+const SCHEMA_DELETIONS_FILE = MODEL_MODIFICATIONS_DIR . '/deletions.json';
 
 const ACCESS_TOKEN_HEADER = 'WM_SEC.ACCESS_TOKEN';
 const AUTH_SIG_HEADER = 'WM_SEC.AUTH_SIGNATURE';
