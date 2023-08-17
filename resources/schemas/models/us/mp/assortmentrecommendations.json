@@ -1,0 +1,1650 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Assortment Recommendations",
+        "description": "Assortment growth recommendations help sellers onboard the in-demand catalog. We leverage customer demand signals to generate personalized catalog recommendations for the sellers.\n\nSome of these signals include- \n*   Internal and external search \n*   Walmart Best Sellers\n*   Top trending items\n\nSellers can shortlist and download the recommendations using filters such as brand, category, pricing and item availability status on Walmart. Sellers can then proceed to set up the items based on these recommendations using the Item Setup APIs.\n",
+        "version": "0.6.3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        },
+        {
+            "url": "https:\/\/sandbox.walmartapis.com",
+            "description": "Sandbox URL"
+        }
+    ],
+    "security": [
+        {
+            "basicScheme": []
+        }
+    ],
+    "paths": {
+        "\/v3\/growth\/assortment\/recommendations\/rejections": {
+            "put": {
+                "tags": [
+                    "Assortment Recommendations"
+                ],
+                "summary": "Reject Recommendations",
+                "description": "You can reject a list of recommendations that are recommended for you. \n \nUsing ITEM as a recommendationType,\n*   You can reject specific item recommendations using the filterCriteria or by providing the list of itemRecommendationUniqueIds. \n*   You will need to provide valid rejection code(s) while submitting the reject request. You are required to send the custom rejection message if the rejection code is OTHER_REASON \n\n\n",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/us-mp\/us-mp-assortmentrecommendations\/#12965"
+                },
+                "operationId": "rejectAssortmentRecommendations",
+                "parameters": [],
+                "requestBody": {
+                    "description": "Request payload",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/RejectRecommendationRequest"
+                            },
+                            "examples": {
+                                "Reject item recommendations based on filters": {
+                                    "value": {
+                                        "recommendationType": "ITEM",
+                                        "filterCriteria": {
+                                            "searchText": "and",
+                                            "multiValueFilter": [
+                                                {
+                                                    "parameter": "BRAND",
+                                                    "values": [
+                                                        "Florida Atlantic University",
+                                                        "maximalpower",
+                                                        "delsit"
+                                                    ]
+                                                },
+                                                {
+                                                    "parameter": "CATEGORY",
+                                                    "values": [
+                                                        "TOPS SPORTSWEAR ECOMM MENS",
+                                                        "TODDLER FURNITURE",
+                                                        "FLOORCARE"
+                                                    ]
+                                                }
+                                            ],
+                                            "enumFilter": [
+                                                {
+                                                    "parameter": "ITEM_AVAILABILITY_STATUS",
+                                                    "values": [
+                                                        "NEW_TO_WALMART",
+                                                        "EXISTING_IN_WALMART"
+                                                    ]
+                                                },
+                                                {
+                                                    "parameter": "SHOPPING_TRENDS",
+                                                    "values": [
+                                                        "MOST_SEARCHED_FOR",
+                                                        "BEST_SELLERS",
+                                                        "DEAL_ITEMS"
+                                                    ]
+                                                }
+                                            ],
+                                            "rangeFilter": [
+                                                {
+                                                    "parameter": "PRICE",
+                                                    "from": "10.0",
+                                                    "to": "80.5"
+                                                }
+                                            ]
+                                        },
+                                        "rejectionCodes": [
+                                            "NOT_SELLING_THESE_ITEMS",
+                                            "OTHER_REASON"
+                                        ],
+                                        "customRejectionMessage": "Removal of this item from other marketplace is in progress"
+                                    }
+                                },
+                                "Reject item recommendations based on unique identifier": {
+                                    "value": {
+                                        "recommendationType": "ITEM",
+                                        "itemRecommendationUniqueIds": [
+                                            "000166eb-7e67-4a20-96f0-9242db499q1c",
+                                            "47044c4f-ccb0-4b4e-8f05-20d34209fd13"
+                                        ],
+                                        "rejectionCodes": [
+                                            "NOT_SELLING_THESE_ITEMS"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "message": "The selected items will be removed shortly from the recommendations."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/growth\/assortment\/recommendations": {
+            "post": {
+                "tags": [
+                    "Assortment Recommendations"
+                ],
+                "summary": "Get Recommendations",
+                "description": "You can fetch the list of recommendations that are recommended for you. \n \nUsing ITEM as a recommendationType,\n*   You can get the list of ITEM recommendations. You can apply filters to fetch selective item recommendations. \n \n\n",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/us-mp\/us-mp-assortmentrecommendations\/#12957"
+                },
+                "operationId": "getAssortmentRecommendations",
+                "parameters": [],
+                "requestBody": {
+                    "description": "Request payload",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/RecommendationRequest"
+                            },
+                            "examples": {
+                                "All item recommendations": {
+                                    "value": {
+                                        "recommendationType": "ITEM",
+                                        "meta": {
+                                            "limit": 2
+                                        }
+                                    }
+                                },
+                                "Item recommendations based on filter": {
+                                    "value": {
+                                        "recommendationType": "ITEM",
+                                        "meta": {
+                                            "limit": 4,
+                                            "nextCursor": "AoRYPgVANXFt6AeR8QUAAAAAAAAAADkxMDEwMDMwNTZBTkRBTkRCMDg3WVYxOU05"
+                                        },
+                                        "filterCriteria": {
+                                            "searchText": "and",
+                                            "multiValueFilter": [
+                                                {
+                                                    "parameter": "BRAND",
+                                                    "values": [
+                                                        "Florida Atlantic University",
+                                                        "maximalpower",
+                                                        "delsit"
+                                                    ]
+                                                },
+                                                {
+                                                    "parameter": "CATEGORY",
+                                                    "values": [
+                                                        "TOPS SPORTSWEAR ECOMM MENS",
+                                                        "TODDLER FURNITURE",
+                                                        "FLOORCARE"
+                                                    ]
+                                                }
+                                            ],
+                                            "enumFilter": [
+                                                {
+                                                    "parameter": "ITEM_AVAILABILITY_STATUS",
+                                                    "values": [
+                                                        "NEW_TO_WALMART",
+                                                        "EXISTING_IN_WALMART"
+                                                    ]
+                                                },
+                                                {
+                                                    "parameter": "SHOPPING_TRENDS",
+                                                    "values": [
+                                                        "MOST_SEARCHED_FOR",
+                                                        "BEST_SELLERS",
+                                                        "DEAL_ITEMS"
+                                                    ]
+                                                }
+                                            ],
+                                            "rangeFilter": [
+                                                {
+                                                    "parameter": "PRICE",
+                                                    "from": "10.0",
+                                                    "to": "80.5"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse"
+                                },
+                                "examples": {
+                                    "All item recommendations": {
+                                        "value": {
+                                            "payload": {
+                                                "recommendationType": "ITEM",
+                                                "meta": {
+                                                    "totalRecords": 45747,
+                                                    "recordsFetched": 2,
+                                                    "limit": 2,
+                                                    "nextCursor": "AoRYPgVAkFauFHrhSAU\/5cbOnJbgPT04MDZBTkQ4Mjk4MTIyMTMxQU5EQjAxTkNYSkJQOQ=="
+                                                },
+                                                "records": [
+                                                    {
+                                                        "itemRecommendationUniqueId": "806AND8707224727ANDB06XCG9QPJ",
+                                                        "itemDetails": {
+                                                            "title": "Allurez Heart and Diamond Initials Lariat Pendant Y-Necklace in 14k Rose Gold",
+                                                            "brand": "Allurez",
+                                                            "category": "DIAMOND JEWELRY ECOMM WOMENS",
+                                                            "gtin": "06651291438962",
+                                                            "upc": "0665129143896",
+                                                            "itemAvailabilityStatus": "EXISTING_IN_WALMART",
+                                                            "potentialSales": "$100K+",
+                                                            "shoppingTrends": [
+                                                                "MOST_SEARCHED_FOR",
+                                                                "BEST_SELLERS"
+                                                            ],
+                                                            "walmart": {
+                                                                "itemId": "707224727",
+                                                                "url": "www.walmart.com\/ip\/707224727",
+                                                                "itemPrice": {
+                                                                    "amount": 299.99,
+                                                                    "currency": "USD"
+                                                                },
+                                                                "shippingPrice": {
+                                                                    "amount": 0,
+                                                                    "currency": "USD"
+                                                                }
+                                                            },
+                                                            "competitors": [
+                                                                {
+                                                                    "itemId": "B06XCG9QPJ",
+                                                                    "url": "www.amazon.com\/dp\/B06XCG9QPJ",
+                                                                    "itemPrice": {
+                                                                        "amount": 1192,
+                                                                        "currency": "USD"
+                                                                    },
+                                                                    "shippingPrice": {
+                                                                        "amount": 0,
+                                                                        "currency": "USD"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "itemRecommendationUniqueId": "806AND8298122131ANDB01NCXJBP9",
+                                                        "itemDetails": {
+                                                            "title": "Three-Stone Leverback Diamond Earrings 14k Yellow Gold (0.50ct)",
+                                                            "brand": "Allurez",
+                                                            "category": "DIAMOND JEWELRY ECOMM WOMENS",
+                                                            "gtin": "04692981221312",
+                                                            "upc": "0469298122131",
+                                                            "itemAvailabilityStatus": "EXISTING_IN_WALMART",
+                                                            "potentialSales": "$50K-$100K",
+                                                            "shoppingTrends": [
+                                                                "BEST_SELLERS"
+                                                            ],
+                                                            "walmart": {
+                                                                "itemId": "298122131",
+                                                                "url": "www.walmart.com\/ip\/298122131",
+                                                                "itemPrice": {
+                                                                    "amount": 777,
+                                                                    "currency": "USD"
+                                                                },
+                                                                "shippingPrice": {
+                                                                    "amount": 0,
+                                                                    "currency": "USD"
+                                                                }
+                                                            },
+                                                            "competitors": [
+                                                                {
+                                                                    "itemId": "B01NCXJBP9",
+                                                                    "url": "www.amazon.com\/dp\/B01NCXJBP9",
+                                                                    "itemPrice": {
+                                                                        "amount": 670,
+                                                                        "currency": "USD"
+                                                                    },
+                                                                    "shippingPrice": {
+                                                                        "amount": 0,
+                                                                        "currency": "USD"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "Item recommendations based on filter": {
+                                        "value": {
+                                            "payload": {
+                                                "recommendationType": "ITEM",
+                                                "meta": {
+                                                    "totalRecords": 45747,
+                                                    "recordsFetched": 2,
+                                                    "limit": 2,
+                                                    "nextCursor": "AoRYPgVAkFauFHrhSAU\/5cbOnJbgPT04MDZBTkQ4Mjk4MTIyMTMxQU5EQjAxTkNYSkJQOQ=="
+                                                },
+                                                "records": [
+                                                    {
+                                                        "itemRecommendationUniqueId": "acca7a9b-07dd-4ba3-970a-6a404e9e8240",
+                                                        "itemDetails": {
+                                                            "title": "MaximalPower Replacement Vacuum Filter For EUREKA DCF-4 DCF-18 Washable and Reusable Replaces Eureka GE DCF1 DCF4 DCF18 28608-1 28608B-1 62132 63073 61770 3690 18505 - 2 PACK",
+                                                            "brand": "maximalpower",
+                                                            "category": "FLOORCARE",
+                                                            "gtin": "00797518364449",
+                                                            "upc": "0072819436444",
+                                                            "ean": "51985410715",
+                                                            "itemAvailabilityStatus": "EXISTING_IN_WALMART",
+                                                            "potentialSales": "$100K+",
+                                                            "shoppingTrends": [
+                                                                "MOST_SEARCHED_FOR",
+                                                                "BEST_SELLERS"
+                                                            ],
+                                                            "walmart": {
+                                                                "itemId": "810058003",
+                                                                "url": "www.walmart.com\/ip\/810058003",
+                                                                "itemPrice": {
+                                                                    "amount": 28.49,
+                                                                    "currency": "USD"
+                                                                },
+                                                                "shippingPrice": {
+                                                                    "amount": 0,
+                                                                    "currency": "USD"
+                                                                }
+                                                            },
+                                                            "competitors": [
+                                                                {
+                                                                    "itemId": "B075LXQF2B",
+                                                                    "url": "www.amazon.com\/dp\/B075LXQF2B",
+                                                                    "itemPrice": {
+                                                                        "amount": 15.97,
+                                                                        "currency": "USD"
+                                                                    },
+                                                                    "shippingPrice": {
+                                                                        "amount": 0,
+                                                                        "currency": "USD"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    },
+                                                    {
+                                                        "itemRecommendationUniqueId": "660c6344-0106-4412-a993-9ffc93937f9c",
+                                                        "itemDetails": {
+                                                            "title": "Florida Atlantic University Official State Shape and Unisex Adult Tank Top",
+                                                            "brand": "Florida Atlantic University",
+                                                            "category": "TOPS SPORTSWEAR ECOMM MENS",
+                                                            "itemAvailabilityStatus": "NEW_TO_WALMART",
+                                                            "potentialSales": "$50K-$100K",
+                                                            "shoppingTrends": [
+                                                                "BEST_SELLERS"
+                                                            ],
+                                                            "competitors": [
+                                                                {
+                                                                    "itemId": "B0800Y7PSW",
+                                                                    "url": "www.amazon.com\/dp\/B0800Y7PSW",
+                                                                    "itemPrice": {
+                                                                        "amount": 19.99,
+                                                                        "currency": "USD"
+                                                                    },
+                                                                    "shippingPrice": {
+                                                                        "amount": 0,
+                                                                        "currency": "USD"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/growth\/assortment\/recommendations\/fileOnRequest": {
+            "post": {
+                "tags": [
+                    "Assortment Recommendations"
+                ],
+                "summary": "Download Recommendations",
+                "description": "You can create a request to download the item recommendations created for you. \n Currently you can create a file having maximum 50,000 recommendations. \n \nUsing ITEM as a recommendationType,\n*   Here you can create a request to get a file having the item recommendations. \n \n\n",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/us-mp\/us-mp-assortmentrecommendations\/#12963"
+                },
+                "operationId": "createFileOnRequest",
+                "parameters": [],
+                "requestBody": {
+                    "description": "Request payload",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/FileOnRequestPayload"
+                            },
+                            "examples": {
+                                "Download all item recommendations": {
+                                    "value": {
+                                        "recommendationType": "ITEM"
+                                    }
+                                },
+                                "Download item recommendations based on filter": {
+                                    "value": {
+                                        "recommendationType": "ITEM",
+                                        "filterCriteria": {
+                                            "searchText": "and",
+                                            "multiValueFilter": [
+                                                {
+                                                    "parameter": "BRAND",
+                                                    "values": [
+                                                        "Florida Atlantic University",
+                                                        "maximalpower",
+                                                        "delsit"
+                                                    ]
+                                                },
+                                                {
+                                                    "parameter": "CATEGORY",
+                                                    "values": [
+                                                        "TOPS SPORTSWEAR ECOMM MENS",
+                                                        "TODDLER FURNITURE",
+                                                        "FLOORCARE"
+                                                    ]
+                                                }
+                                            ],
+                                            "enumFilter": [
+                                                {
+                                                    "parameter": "ITEM_AVAILABILITY_STATUS",
+                                                    "values": [
+                                                        "NEW_TO_WALMART",
+                                                        "EXISTING_IN_WALMART"
+                                                    ]
+                                                },
+                                                {
+                                                    "parameter": "SHOPPING_TRENDS",
+                                                    "values": [
+                                                        "MOST_SEARCHED_FOR",
+                                                        "BEST_SELLERS",
+                                                        "DEAL_ITEMS"
+                                                    ]
+                                                }
+                                            ],
+                                            "rangeFilter": [
+                                                {
+                                                    "parameter": "PRICE",
+                                                    "from": "10.0",
+                                                    "to": "80.5"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/RejectRecommendationsResponse"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "requestId": "bbb24ee7-efc1-4f93-851a-8410f6cf46e3",
+                                        "recommendationType": "ITEM",
+                                        "status": "RECEIVED",
+                                        "submissionDate": "2023-04-13T04:52:22",
+                                        "requestVersion": "v1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/growth\/assortment\/recommendations\/categorization\/counts": {
+            "post": {
+                "tags": [
+                    "Assortment Recommendations"
+                ],
+                "summary": "Get Categorization",
+                "description": "You can get the list of brands or categories associated with the items recommendations that are recommended for you.\n \nUsing BRAND as a categorizationType\n*   You can get the list of brands sorted by the number of item recommendations associated with it. This is then sorted in lexicographic order of brand name. \n \n\nUsing CATEGORY as a categorizationType\n*   You can get the list of categories sorted by the number of item recommendations associated with it. This is then sorted in lexicographic order of category name.  \n \n\n",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/us-mp\/us-mp-assortmentrecommendations\/#12960"
+                },
+                "operationId": "getCategorizationDetailsOfAssortmentRecommendations",
+                "parameters": [],
+                "requestBody": {
+                    "description": "Request payload",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/CategorizationRequest"
+                            },
+                            "examples": {
+                                "All brands associated with the item recommendations": {
+                                    "value": {
+                                        "categorizationType": "BRAND",
+                                        "meta": {
+                                            "limit": 2
+                                        }
+                                    }
+                                },
+                                "Brands based on filter associated with the item recommendations": {
+                                    "value": {
+                                        "categorizationType": "BRAND",
+                                        "meta": {
+                                            "limit": 2,
+                                            "nextCursor": "categorizationType=BRAND&limit=2&offset=2"
+                                        },
+                                        "filterCriteria": {
+                                            "searchText": "and",
+                                            "multiValueFilter": [
+                                                {
+                                                    "parameter": "CATEGORY",
+                                                    "values": [
+                                                        "FINE GEMSTONE JEWELRY ECOMM WOMENS",
+                                                        "FASHION JEWELRY ECOMM WOMENS"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                "All categories associated with the item recommendations": {
+                                    "value": {
+                                        "categorizationType": "CATEGORY",
+                                        "meta": {
+                                            "limit": 2
+                                        }
+                                    }
+                                },
+                                "Categories based on filter associated with the item recommendations": {
+                                    "value": {
+                                        "categorizationType": "CATEGORY",
+                                        "meta": {
+                                            "limit": 2,
+                                            "nextCursor": "categorizationType=CATEGORY&limit=2&offset=2"
+                                        },
+                                        "filterCriteria": {
+                                            "searchText": "ecomm",
+                                            "multiValueFilter": [
+                                                {
+                                                    "parameter": "BRAND",
+                                                    "values": [
+                                                        "Swarovsk and Co.",
+                                                        "Kate Spade and Co."
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/CategorizationResponse"
+                                },
+                                "examples": {
+                                    "All brands associated with the item recommendations": {
+                                        "value": {
+                                            "payload": {
+                                                "categorizationType": "BRAND",
+                                                "meta": {
+                                                    "totalRecords": 4,
+                                                    "recordsFetched": 2,
+                                                    "limit": 2,
+                                                    "nextCursor": "categorizationType=BRAND&limit=2&offset=2"
+                                                },
+                                                "records": [
+                                                    {
+                                                        "name": "Swarovsk and Co.",
+                                                        "numberOfItemRecommendations": 51
+                                                    },
+                                                    {
+                                                        "name": "Kate Spade and Co.",
+                                                        "numberOfItemRecommendations": 30
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "Brands based on filter associated with the item recommendations": {
+                                        "value": {
+                                            "payload": {
+                                                "categorizationType": "BRAND",
+                                                "meta": {
+                                                    "totalRecords": 10,
+                                                    "recordsFetched": 2,
+                                                    "limit": 2,
+                                                    "nextCursor": "categorizationType=BRAND&limit=2&offset=2"
+                                                },
+                                                "records": [
+                                                    {
+                                                        "name": "Swarovsk and Co.",
+                                                        "numberOfItemRecommendations": 51
+                                                    },
+                                                    {
+                                                        "name": "Kate Spade and Co.",
+                                                        "numberOfItemRecommendations": 30
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "All categories associated with the item recommendations": {
+                                        "value": {
+                                            "payload": {
+                                                "categorizationType": "CATEGORY",
+                                                "meta": {
+                                                    "totalRecords": 18,
+                                                    "recordsFetched": 2,
+                                                    "limit": 2,
+                                                    "nextCursor": "categorizationType=CATEGORY&limit=2&offset=4"
+                                                },
+                                                "records": [
+                                                    {
+                                                        "name": "FINE GEMSTONE JEWELRY ECOMM WOMENS",
+                                                        "numberOfItemRecommendations": 50
+                                                    },
+                                                    {
+                                                        "name": "FASHION JEWELRY ECOMM WOMENS",
+                                                        "numberOfItemRecommendations": 45
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "Categories based on filter associated with the item recommendations": {
+                                        "value": {
+                                            "payload": {
+                                                "categorizationType": "CATEGORY",
+                                                "meta": {
+                                                    "totalRecords": 20,
+                                                    "recordsFetched": 2,
+                                                    "limit": 2,
+                                                    "nextCursor": "categorizationType=CATEGORY&limit=2&offset=4"
+                                                },
+                                                "records": [
+                                                    {
+                                                        "name": "FINE GEMSTONE JEWELRY ECOMM WOMENS",
+                                                        "numberOfItemRecommendations": 50
+                                                    },
+                                                    {
+                                                        "name": "FASHION JEWELRY ECOMM WOMENS",
+                                                        "numberOfItemRecommendations": 45
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/growth\/assortment\/recommendations\/fileOnRequest\/{requestId}": {
+            "get": {
+                "tags": [
+                    "Assortment Recommendations"
+                ],
+                "summary": "Get Download Request Status",
+                "description": "You can fetch status and other details of a request by providing a requestID.\n",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/us-mp\/us-mp-assortmentrecommendations\/#12963"
+                },
+                "operationId": "getFileOnRequestStatus",
+                "parameters": [
+                    {
+                        "name": "requestId",
+                        "in": "path",
+                        "description": "Automated ID generated by system that uniquely identifies the request.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/RequestStatusResponseObj"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "requestId": "bbb24ee7-efc1-4f93-851a-8410f6cf46e3",
+                                        "recommendationType": "ITEM",
+                                        "status": "READY",
+                                        "submissionDate": "2023-04-13T04:52:22",
+                                        "totalNoOfRecords": 50000,
+                                        "requestVersion": "v1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/growth\/assortment\/recommendations\/download\/{requestId}": {
+            "get": {
+                "tags": [
+                    "Assortment Recommendations"
+                ],
+                "summary": "Get Download URL",
+                "description": "You can fetch URL to download a generated file which corresponds to the requested ID. \n\nYou can fetch download URL for the request created in the last 30 days only. \n\nOnce the URL is fetched, it will be active for 15 minutes during which the user should download the file. If the user fails to download within the 15 minutes, a new download URL could be fetched using this API again. \n",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/us-mp\/us-mp-assortmentrecommendations\/#12963"
+                },
+                "operationId": "downloadFileAsPerTheRequestId",
+                "parameters": [
+                    {
+                        "name": "requestId",
+                        "in": "path",
+                        "description": "Automated ID generated by system that uniquely identifies the request.",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/FileDownloadDetailResponsePayload"
+                                },
+                                "example": {
+                                    "payload": {
+                                        "requestId": "9356b4bc-2c8b-4ebd-b93c-9749f283e8f9",
+                                        "recommendationType": "ITEM",
+                                        "status": "READY",
+                                        "submissionDate": "2023-04-13T04:52:22",
+                                        "totalNoOfRecords": 50000,
+                                        "downloadURL": "https:\/\/marketplace.walmartapis.com\/v3\/growth\/assortment\/recommendations\/files\/8\/9356b4bc-2c8b-4ebd-b93c-9749f283e8f9\/Assortment_Recommendations_20230413_045222_UTC.zip?Expires=1681362656&Signature=P34JI0ACha7lIFE%2FHExu0mzIEOW0xbIEhrVXbu6vnr8yr6swSOVJOndBUuSSEFzM%2FVhAY1iFx48e8f6yVZCiFCVkVT7XxhVww7W0N9pKBjcbTKiOfMtUjnegcvM5AtKuIgvyGRllJsk9nP3mAdgugvvmv1qlfQz3vuCJtwgJ3MCXl%2BpPbarbIkbH9NidTL%2B62gEqb8HVOoEaXhw%2Bn2jofvT5xYDnVYUJLI81ovJPSDWgn4fY67o%2BU2n9b%2FwjHnz6KgUUq%2F0lKSm4Q1khgUGEGJBQKJ%2BBwu8eJp2uEUkCYgQAd06XimzU1yt23OCOqGYmuaSL7m%2FK%2FJSLB%2FiA%3D%3D",
+                                        "downloadURLExpirationTime": "2023-04-13T05:10:56",
+                                        "requestVersion": "v1"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "RejectRecommendationsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/RejectRecommendationsResponsePayload"
+                    }
+                }
+            },
+            "RejectRecommendationsResponsePayload": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "description": "Message confirming the rejection of the recommendations."
+                    }
+                },
+                "description": "Payload in the response for rejecting recommendations."
+            },
+            "EnumFilterCriteria": {
+                "type": "object",
+                "properties": {
+                    "parameter": {
+                        "type": "string",
+                        "description": "To apply an enum filter based on the predefined parameter. \n\n| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM_AVAILABILITY_STATUS | To filter based on whether the items which are new to Walmart or existing in Walmart. | string |\n| SHOPPING_TRENDS | Indicates the demand types identified in the market for an item. An item can have more than one value for this parameter. | string |",
+                        "enum": [
+                            "ITEM_AVAILABILITY_STATUS"
+                        ]
+                    },
+                    "values": {
+                        "type": "array",
+                        "description": "Values correspond to the parameter for applying filter on the response. The data in values[] are predefined. OR operator is used between the values. \n\n| Attribute | Associated parameter of enumFilter | Description | Data Type |\n| --- | ----------- | ----------- | ------- |\n| EXISTING_IN_WALMART | ITEM_AVAILABILITY_STATUS | To filters based on the items which are existing in Walmart. | string |\n| NEW_TO_WALMART | ITEM_AVAILABILITY_STATUS | To filters based on the items which are new to Walmart. | string |\n| MOST_SEARCHED_FOR | SHOPPING_TRENDS | Item is most searched for in the market. | string |\n| BEST_SELLERS | SHOPPING_TRENDS | Item is best seller in the market.  | string |\n| DEAL_ITEMS | SHOPPING_TRENDS | Item is in demand and is a part of deals in the other marketplaces. | string |\n",
+                        "items": {
+                            "type": "string",
+                            "description": "Values correspond to the parameter for applying filter on the response. The data in values[] are predefined. OR operator is used between the values. \n\n| Attribute | Associated parameter of enumFilter | Description | Data Type |\n| --- | ----------- | ----------- | ------- |\n| EXISTING_IN_WALMART | ITEM_AVAILABILITY_STATUS | To filters based on the items which are existing in Walmart. | string |\n| NEW_TO_WALMART | ITEM_AVAILABILITY_STATUS | To filters based on the items which are new to Walmart. | string |\n| MOST_SEARCHED_FOR | SHOPPING_TRENDS | Item is most searched for in the market. | string |\n| BEST_SELLERS | SHOPPING_TRENDS | Item is best seller in the market.  | string |\n| DEAL_ITEMS | SHOPPING_TRENDS | Item is in demand and is a part of deals in the other marketplaces. | string |\n",
+                            "enum": [
+                                "EXISTING_IN_WALMART",
+                                "NEW_TO_WALMART",
+                                "MOST_SEARCHED_FOR",
+                                "BEST_SELLERS",
+                                "DEAL_ITEMS"
+                            ]
+                        },
+                        "enum": [
+                            "EXISTING_IN_WALMART",
+                            "NEW_TO_WALMART",
+                            "MOST_SEARCHED_FOR",
+                            "BEST_SELLERS",
+                            "DEAL_ITEMS"
+                        ]
+                    }
+                },
+                "description": "Filter based on preset parameters and their associated values is possible with EnumFilter.  \nNo parameter should be repeated."
+            },
+            "MultiValueFilterCriteria": {
+                "required": [
+                    "parameter"
+                ],
+                "type": "object",
+                "properties": {
+                    "parameter": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| BRAND | To filter based on list of brands which are associated with the assortment recommendations | string |\n| CATEGORY | To filter based on list of categories which are associated with the assortment recommendations | string |",
+                        "enum": [
+                            "BRAND",
+                            "CATEGORY"
+                        ]
+                    },
+                    "values": {
+                        "type": "array",
+                        "description": "A list of values corresponds to the parameter in the filter. The values in the list should not be null or blank. Maximum size of the list should be 7.",
+                        "items": {
+                            "type": "string",
+                            "description": "A list of values corresponds to the parameter in the filter. The values in the list should not be null or blank. Maximum size of the list should be 7."
+                        }
+                    }
+                },
+                "description": "Filters based on multiple values associated with a specific parameter. \nNo parameter should be repeated."
+            },
+            "RangeFilterCriteria": {
+                "type": "object",
+                "properties": {
+                    "parameter": {
+                        "type": "string",
+                        "description": "To apply a range filter based on the predefined parameter. \n\n| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| PRICE | To filter based on the price. | string |",
+                        "enum": [
+                            "PRICE"
+                        ]
+                    },
+                    "from": {
+                        "type": "string",
+                        "description": "Filter range start"
+                    },
+                    "to": {
+                        "type": "string",
+                        "description": "Filter range end"
+                    }
+                },
+                "description": "Filter based on a range with RangeFilter. You must also pass a parameter along with any of the beginning or the ending points or both. \nNo parameter should be repeated."
+            },
+            "RecommendationRequestFilter": {
+                "type": "object",
+                "properties": {
+                    "searchText": {
+                        "minLength": 3,
+                        "type": "string",
+                        "description": "To filter with a search text having a word that can be part of the recommended data. "
+                    },
+                    "multiValueFilter": {
+                        "type": "array",
+                        "description": "Filters based on multiple values associated with a specific parameter. \nNo parameter should be repeated.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/MultiValueFilterCriteria"
+                        }
+                    },
+                    "enumFilter": {
+                        "type": "array",
+                        "description": "Filter based on preset parameters and their associated values is possible with EnumFilter.  \nNo parameter should be repeated.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/EnumFilterCriteria"
+                        }
+                    },
+                    "rangeFilter": {
+                        "type": "array",
+                        "description": "Filter based on a range with RangeFilter. You must also pass a parameter along with any of the beginning or the ending points or both. \nNo parameter should be repeated.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/RangeFilterCriteria"
+                        }
+                    }
+                },
+                "description": "Different type of filters can be passed in this object."
+            },
+            "RejectRecommendationRequest": {
+                "required": [
+                    "recommendationType",
+                    "rejectionCodes"
+                ],
+                "type": "object",
+                "properties": {
+                    "recommendationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM | To reject list of recommended items | string |",
+                        "enum": [
+                            "ITEM"
+                        ]
+                    },
+                    "filterCriteria": {
+                        "$ref": "#\/components\/schemas\/RecommendationRequestFilter"
+                    },
+                    "itemRecommendationUniqueIds": {
+                        "type": "array",
+                        "description": "List of item recommendation unique ids to reject. \nThe size of the list should not exceed 100. \nYou cannot add filter criteria along with the itemRecommendationUniqueIds list",
+                        "items": {
+                            "type": "string",
+                            "description": "List of item recommendation unique ids to reject. \nThe size of the list should not exceed 100. \nYou cannot add filter criteria along with the itemRecommendationUniqueIds list"
+                        }
+                    },
+                    "rejectionCodes": {
+                        "type": "array",
+                        "description": "List of rejection codes \n\n| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| NOT_SELLING_THESE_ITEMS | As a seller, I don\u2019t intend to sell these items on Walmart  | string |\n| NOT_SELLING_THESE_BRANDS | As a seller, I don\u2019t intend to sell these brands on Walmart  | string |\n| NOT_SELLING_THESE_CATEGORIES | As a seller, I don\u2019t intend to sell these categories on Walmart  | string |\n| LIMITED_TO_OTHER_MARKETPLACE | As a seller, I intend to sell the rejected items only on other marketplaces  | string |\n| ALREADY_SELLING_ON_WALMART | I am already selling these items on Walmart  | string |\n| OTHER_REASON | Other reason for rejecting the items. customRejectionMessage is mandatory to pass if rejectionCode is OTHER_REASON.  | string |",
+                        "items": {
+                            "type": "string",
+                            "description": "List of rejection codes \n\n| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| NOT_SELLING_THESE_ITEMS | As a seller, I don\u2019t intend to sell these items on Walmart  | string |\n| NOT_SELLING_THESE_BRANDS | As a seller, I don\u2019t intend to sell these brands on Walmart  | string |\n| NOT_SELLING_THESE_CATEGORIES | As a seller, I don\u2019t intend to sell these categories on Walmart  | string |\n| LIMITED_TO_OTHER_MARKETPLACE | As a seller, I intend to sell the rejected items only on other marketplaces  | string |\n| ALREADY_SELLING_ON_WALMART | I am already selling these items on Walmart  | string |\n| OTHER_REASON | Other reason for rejecting the items. customRejectionMessage is mandatory to pass if rejectionCode is OTHER_REASON.  | string |",
+                            "enum": [
+                                "NOT_SELLING_THESE_ITEMS",
+                                "NOT_SELLING_THESE_BRANDS",
+                                "NOT_SELLING_THESE_CATEGORIES",
+                                "LIMITED_TO_OTHER_MARKETPLACE",
+                                "ALREADY_SELLING_ON_WALMART",
+                                "OTHER_REASON"
+                            ]
+                        },
+                        "enum": [
+                            "NOT_SELLING_THESE_ITEMS",
+                            "NOT_SELLING_THESE_BRANDS",
+                            "NOT_SELLING_THESE_CATEGORIES",
+                            "LIMITED_TO_OTHER_MARKETPLACE",
+                            "ALREADY_SELLING_ON_WALMART",
+                            "OTHER_REASON"
+                        ]
+                    },
+                    "customRejectionMessage": {
+                        "type": "string",
+                        "description": "Custom rejection message if the rejection code is OTHER_REASON. This is required only when the rejectionCodes has OTHER_REASON in the list. Maximum length of the message is 500"
+                    }
+                }
+            },
+            "CompetitorItemInfo": {
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "type": "string",
+                        "description": "Competitor item id."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "Competitor item url."
+                    },
+                    "itemPrice": {
+                        "$ref": "#\/components\/schemas\/Price"
+                    },
+                    "shippingPrice": {
+                        "$ref": "#\/components\/schemas\/Price"
+                    }
+                },
+                "description": "Competitor's item information"
+            },
+            "ItemRecommendationDetails": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "Title of the recommended item"
+                    },
+                    "brand": {
+                        "type": "string",
+                        "description": "Brand of the recommended item"
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Category of the recommended item"
+                    },
+                    "gtin": {
+                        "type": "string",
+                        "description": "GTIN of the recommended item"
+                    },
+                    "upc": {
+                        "type": "string",
+                        "description": "UPC of the recommended item"
+                    },
+                    "isbn": {
+                        "type": "string",
+                        "description": "ISBN of the recommended item"
+                    },
+                    "ean": {
+                        "type": "string",
+                        "description": "EAN of the recommended item"
+                    },
+                    "itemAvailabilityStatus": {
+                        "type": "string",
+                        "description": "Item availability status of the recommended item. \n\n| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| EXISTING_IN_WALMART | Indicates that item is existing in Walmart. | string |\n| NEW_TO_WALMART | Indicates that item is new to Walmart. | string |",
+                        "enum": [
+                            "EXISTING_IN_WALMART",
+                            "NEW_TO_WALMART"
+                        ]
+                    },
+                    "potentialSales": {
+                        "type": "string",
+                        "description": "Indicates the potential revenue the recommended item can bring in over a year. \nThis field does not promise the numbers indicated."
+                    },
+                    "shoppingTrends": {
+                        "type": "array",
+                        "description": "Indicates the demand type for an item. \n\n| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| MOST_SEARCHED_FOR | Item is most searched for in the market. | string |\n| BEST_SELLERS | Item is best seller in the market. | string |\n| DEAL_ITEMS | Item is in demand and is a part of deals in the other marketplaces. | string |",
+                        "items": {
+                            "type": "string",
+                            "description": "Indicates the demand type for an item. \n\n| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| MOST_SEARCHED_FOR | Item is most searched for in the market. | string |\n| BEST_SELLERS | Item is best seller in the market. | string |\n| DEAL_ITEMS | Item is in demand and is a part of deals in the other marketplaces. | string |",
+                            "enum": [
+                                "MOST_SEARCHED_FOR",
+                                "BEST_SELLERS",
+                                "DEAL_ITEMS"
+                            ]
+                        },
+                        "enum": [
+                            "MOST_SEARCHED_FOR",
+                            "BEST_SELLERS",
+                            "DEAL_ITEMS"
+                        ]
+                    },
+                    "walmart": {
+                        "$ref": "#\/components\/schemas\/WalmartItemInfo"
+                    },
+                    "competitors": {
+                        "type": "array",
+                        "description": "Competitor's item information",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/CompetitorItemInfo"
+                        }
+                    }
+                },
+                "description": "Details of the recommended item."
+            },
+            "ItemRecommendationPayload": {
+                "type": "object",
+                "properties": {
+                    "itemRecommendationUniqueId": {
+                        "type": "string",
+                        "description": "Unique identifier for the recommended item."
+                    },
+                    "itemDetails": {
+                        "$ref": "#\/components\/schemas\/ItemRecommendationDetails"
+                    }
+                },
+                "description": "Information related to the item recommendations."
+            },
+            "MetaDataResponse": {
+                "type": "object",
+                "properties": {
+                    "totalRecords": {
+                        "type": "integer",
+                        "description": "The total number of records are present for the requested categorization type along with filters.",
+                        "format": "int32"
+                    },
+                    "recordsFetched": {
+                        "type": "integer",
+                        "description": "The number of records fetched in the response.",
+                        "format": "int32"
+                    },
+                    "limit": {
+                        "maximum": 200,
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "Number of records expected in the request",
+                        "format": "int32",
+                        "default": 200
+                    },
+                    "nextCursor": {
+                        "type": "string",
+                        "description": "The string returned from the initial API call to indicate nextCursor. Specify nextCursor value to retrieve the next set of records."
+                    }
+                },
+                "description": "Meta information for the response."
+            },
+            "Price": {
+                "type": "object",
+                "properties": {
+                    "amount": {
+                        "type": "number",
+                        "description": "The numerical amount of the price. Example: 9.99",
+                        "format": "double"
+                    },
+                    "currency": {
+                        "type": "string",
+                        "description": "Currency associated with the price of the item recommendation."
+                    }
+                },
+                "description": "Competitor's item shipping price details of the item recommendation."
+            },
+            "RecommendationResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/RecommendationResponsePayload"
+                    }
+                }
+            },
+            "RecommendationResponsePayload": {
+                "required": [
+                    "recommendationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "recommendationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM | To get list of recommended items | string |",
+                        "enum": [
+                            "ITEM"
+                        ]
+                    },
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/MetaDataResponse"
+                    },
+                    "records": {
+                        "type": "array",
+                        "description": "Information related to the item recommendations.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemRecommendationPayload"
+                        }
+                    }
+                },
+                "description": "Payload in the response having the details about the item recommendations."
+            },
+            "WalmartItemInfo": {
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "type": "string",
+                        "description": "Walmart item id."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "Walmart item url."
+                    },
+                    "wfsIndicator": {
+                        "type": "boolean",
+                        "description": "Walmart fulfilment service indicator."
+                    },
+                    "itemPrice": {
+                        "$ref": "#\/components\/schemas\/Price"
+                    },
+                    "shippingPrice": {
+                        "$ref": "#\/components\/schemas\/Price"
+                    }
+                },
+                "description": "Walmart's item information"
+            },
+            "MetaDataRequest": {
+                "type": "object",
+                "properties": {
+                    "limit": {
+                        "maximum": 200,
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "Number of records expected in the request",
+                        "format": "int32",
+                        "default": 200
+                    },
+                    "nextCursor": {
+                        "type": "string",
+                        "description": "Used for pagination when more than 200 records are retrieved. The nextCursor value of the response includes a marker which needs to be passed in next call which retrieves the next page of results."
+                    }
+                },
+                "description": "Meta information for the request."
+            },
+            "RecommendationRequest": {
+                "required": [
+                    "recommendationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "recommendationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM | To get list of recommended items | string |",
+                        "enum": [
+                            "ITEM"
+                        ]
+                    },
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/MetaDataRequest"
+                    },
+                    "filterCriteria": {
+                        "$ref": "#\/components\/schemas\/RecommendationRequestFilter"
+                    }
+                }
+            },
+            "FileResponsePayload": {
+                "required": [
+                    "recommendationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "requestId": {
+                        "type": "string",
+                        "description": "Automated ID generated by system that uniquely identifies the request.",
+                        "format": "uuid"
+                    },
+                    "recommendationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM | To get list of recommended items | string |",
+                        "enum": [
+                            "ITEM"
+                        ]
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status of the request.",
+                        "enum": [
+                            "RECEIVED",
+                            "INPROGRESS",
+                            "READY",
+                            "ERROR"
+                        ]
+                    },
+                    "submissionDate": {
+                        "type": "string",
+                        "description": "Date and time on which the request is submitted."
+                    },
+                    "requestVersion": {
+                        "type": "string",
+                        "description": "Version of request. Example, v1."
+                    }
+                },
+                "description": "Payload in the response for requested file."
+            },
+            "RequestedFileResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/FileResponsePayload"
+                    }
+                }
+            },
+            "FileOnRequestPayload": {
+                "required": [
+                    "recommendationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "recommendationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM | To get list of recommended items | string |",
+                        "enum": [
+                            "ITEM"
+                        ]
+                    },
+                    "filterCriteria": {
+                        "$ref": "#\/components\/schemas\/RecommendationRequestFilter"
+                    }
+                }
+            },
+            "CategorizationFacet": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the brand or category as per the categorizationType."
+                    },
+                    "numberOfItemRecommendations": {
+                        "type": "integer",
+                        "description": "The number of item recommendations associated with the name. The name can be associated with the categorization type.",
+                        "format": "int64"
+                    }
+                },
+                "description": "Information of item recommendations based on the categorizationType."
+            },
+            "CategorizationResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/CategorizationResponsePayload"
+                    }
+                }
+            },
+            "CategorizationResponsePayload": {
+                "type": "object",
+                "properties": {
+                    "categorizationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| BRAND | To get list of brands which are associated with the assortment recommendations | string |\n| CATEGORY | To get list of categories which are associated with the assortment recommendations | string |",
+                        "enum": [
+                            "BRAND",
+                            "CATEGORY"
+                        ]
+                    },
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/MetaDataResponse"
+                    },
+                    "records": {
+                        "type": "array",
+                        "description": "Information of item recommendations based on the categorizationType.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/CategorizationFacet"
+                        }
+                    }
+                },
+                "description": "Payload in the response having the categorization details about the item recommendations."
+            },
+            "CategorizationRequest": {
+                "required": [
+                    "categorizationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "categorizationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| BRAND | To get list of brands which are associated with the assortment recommendations | string |\n| CATEGORY | To get list of categories which are associated with the assortment recommendations | string |",
+                        "enum": [
+                            "BRAND",
+                            "CATEGORY"
+                        ]
+                    },
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/MetaDataRequest"
+                    },
+                    "filterCriteria": {
+                        "$ref": "#\/components\/schemas\/CategorizationRequestFilter"
+                    }
+                }
+            },
+            "CategorizationRequestFilter": {
+                "type": "object",
+                "properties": {
+                    "searchText": {
+                        "minLength": 3,
+                        "type": "string",
+                        "description": "To filter with a search text having a word that can be part of the categorization data. "
+                    },
+                    "multiValueFilter": {
+                        "type": "array",
+                        "description": "Filters based on multiple values associated with a specific parameter. \nNo parameter should be repeated.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/MultiValueFilterCriteriaForCategorization"
+                        }
+                    }
+                },
+                "description": "Different type of filters can be passed in this object."
+            },
+            "MultiValueFilterCriteriaForCategorization": {
+                "required": [
+                    "parameter"
+                ],
+                "type": "object",
+                "properties": {
+                    "parameter": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| BRAND | To filter based on list of brands which are associated with the assortment recommendations. This is allowed when the categorization type is CATEGORY | string |\n| CATEGORY | To filter based on list of categories which are associated with the assortment recommendations. This is allowed when the categorization type is BRAND | string |",
+                        "enum": [
+                            "CATEGORY",
+                            "BRAND"
+                        ]
+                    },
+                    "values": {
+                        "type": "array",
+                        "description": "A list of values corresponds to the parameter in the filter. The values in the list should not be null or blank. Maximum 7 values are allowed in the list.",
+                        "items": {
+                            "type": "string",
+                            "description": "A list of values corresponds to the parameter in the filter. The values in the list should not be null or blank. Maximum 7 values are allowed in the list."
+                        }
+                    }
+                },
+                "description": "Filters based on multiple values associated with a specific parameter. \nNo parameter should be repeated."
+            },
+            "RequestStatusResponseObj": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/RequestStatusResponsePayload"
+                    }
+                }
+            },
+            "RequestStatusResponsePayload": {
+                "required": [
+                    "recommendationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "requestId": {
+                        "type": "string",
+                        "description": "Automated ID generated by system that uniquely identifies the request.",
+                        "format": "uuid"
+                    },
+                    "recommendationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM | To get list of recommended items | string |",
+                        "enum": [
+                            "ITEM"
+                        ]
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status of the request.",
+                        "enum": [
+                            "RECEIVED",
+                            "INPROGRESS",
+                            "READY",
+                            "ERROR"
+                        ]
+                    },
+                    "submissionDate": {
+                        "type": "string",
+                        "description": "Date and time on which the request is submitted."
+                    },
+                    "requestVersion": {
+                        "type": "string",
+                        "description": "Version of request. Example, v1."
+                    },
+                    "totalNoOfRecords": {
+                        "type": "integer",
+                        "description": "Total number of records expected in the file.",
+                        "format": "int32"
+                    }
+                },
+                "description": "Payload in the response for requested file."
+            },
+            "FileDownloadDetailResponse": {
+                "required": [
+                    "recommendationType"
+                ],
+                "type": "object",
+                "properties": {
+                    "requestId": {
+                        "type": "string",
+                        "description": "Automated ID generated by system that uniquely identifies the request.",
+                        "format": "uuid"
+                    },
+                    "recommendationType": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM | To get list of recommended items | string |",
+                        "enum": [
+                            "ITEM"
+                        ]
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status of the request.",
+                        "enum": [
+                            "RECEIVED",
+                            "INPROGRESS",
+                            "READY",
+                            "ERROR"
+                        ]
+                    },
+                    "submissionDate": {
+                        "type": "string",
+                        "description": "Date and time on which the request is submitted."
+                    },
+                    "requestVersion": {
+                        "type": "string",
+                        "description": "Version of request. Example, v1."
+                    },
+                    "totalNoOfRecords": {
+                        "type": "integer",
+                        "description": "Total number of records expected in the file.",
+                        "format": "int32"
+                    },
+                    "downloadURL": {
+                        "type": "string",
+                        "description": "URL to be used to download the file."
+                    },
+                    "downloadURLExpirationTime": {
+                        "type": "string",
+                        "description": "Time till when the URL to download the file will be valid."
+                    }
+                },
+                "description": "Payload in the response for having download url along with status details for the requested file."
+            },
+            "FileDownloadDetailResponsePayload": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/FileDownloadDetailResponse"
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "accessToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            }
+        }
+    }
+}

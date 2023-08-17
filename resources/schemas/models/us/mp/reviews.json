@@ -1,0 +1,1018 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Reviews Acceleration",
+        "description": "The Reviews Acceleration API provides sellers with capability to view and enroll items into review accelerator programs:\n\n*   Sellers can view their eligible product catalog that can be enrolled into Review Accelerator program(RAP) using Get RAP post-purchase items API\n*   Sellers can view their currently enrolled products using Get RAP post-purchase items API\n*   Sellers can leverage Get RAP post-purchase items API to get all products that have attained target reviews after enrolment into the program\n*   Sellers can filter the products on the basis of category and price. They can also sort based on item priority and search using product name and SKU\n*   Sellers can enroll a product\/multiple products into the program using update item status API\n",
+        "version": "0.6.3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        },
+        {
+            "url": "https:\/\/sandbox.walmartapis.com",
+            "description": "Sandbox URL"
+        }
+    ],
+    "security": [
+        {
+            "basicScheme": []
+        }
+    ],
+    "paths": {
+        "\/v3\/growth\/reviews-accelerator\/items\/status": {
+            "put": {
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Bulk update item status",
+                "description": "To enroll a product in\/out of the Reviews acceleration post-purchase program.",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/mp\/us-mp-reviews\/#11535"
+                },
+                "operationId": "bulkUpdateItemStatus",
+                "parameters": [],
+                "requestBody": {
+                    "description": "Request fields",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/BulkItemStatusUpdateRequest"
+                            },
+                            "examples": {
+                                "Enrol Items": {
+                                    "value": {
+                                        "status": "ENROLL",
+                                        "items": [
+                                            {
+                                                "itemId": "2719243"
+                                            },
+                                            {
+                                                "itemId": "2719255"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "Dis-Enrol Items": {
+                                    "value": {
+                                        "status": "DISENROLL",
+                                        "items": [
+                                            {
+                                                "itemId": "2719243"
+                                            },
+                                            {
+                                                "itemId": "2719255"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/BulkItemUpdateResponse"
+                                },
+                                "examples": {
+                                    "Enrol Items": {
+                                        "value": {
+                                            "statusCode": 200,
+                                            "payload": {
+                                                "success": {
+                                                    "items": [
+                                                        {
+                                                            "itemId": "2719243",
+                                                            "itemDescription": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel",
+                                                            "sku": "NK-WHT2XL"
+                                                        }
+                                                    ]
+                                                },
+                                                "failure": {
+                                                    "items": [
+                                                        {
+                                                            "itemId": "2719255",
+                                                            "errorCode": "400.INVALID_ITEMID.001",
+                                                            "errorDescription": "Invalid itemId",
+                                                            "severity": "ERROR",
+                                                            "category": "DATA"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "Dis-Enrol Items": {
+                                        "value": {
+                                            "statusCode": 200,
+                                            "payload": {
+                                                "success": {
+                                                    "items": [
+                                                        {
+                                                            "itemId": "2719243",
+                                                            "itemDescription": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel",
+                                                            "sku": "NK-WHT2XL"
+                                                        },
+                                                        {
+                                                            "itemId": "2719255",
+                                                            "itemDescription": "Strikeforce Men's Flyer Medium and Wide Width Bowling Shoe",
+                                                            "sku": "NK-WHT78S"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/growth\/reviews-accelerator\/items": {
+            "post": {
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Get RAP post-purchase items",
+                "description": " To get all eligible products that can be enrolled into the Reviews accelerator post-purchase program. To get all products that are currently enrolled into the program. To get all products that have attained target reviews after enrolment into the program. Products can be filtered by category and price. Products can be sorted by Walmart-recommended item priorities. Searched using wildcards matching the product name and SKU.\n",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/mp\/us-mp-reviews\/#11533"
+                },
+                "operationId": "getIrpItems",
+                "parameters": [
+                    {
+                        "name": "scrollId",
+                        "in": "query",
+                        "description": "Optional parameter specifying the scrollId to return the next set of results.",
+                        "required": true,
+                        "allowReserved": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "*"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Request payload",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/GetIrpItemsRequest"
+                            },
+                            "examples": {
+                                "Get Eligible Items": {
+                                    "value": {
+                                        "filter": {
+                                            "itemStatus": "ELIGIBLE"
+                                        }
+                                    }
+                                },
+                                "Get Enrolled Items": {
+                                    "value": {
+                                        "filter": {
+                                            "itemStatus": "ENROLLED"
+                                        }
+                                    }
+                                },
+                                "Get Complete Items": {
+                                    "value": {
+                                        "filter": {
+                                            "itemStatus": "COMPLETE"
+                                        }
+                                    }
+                                },
+                                "Filter sort and search Items": {
+                                    "value": {
+                                        "filter": {
+                                            "itemStatus": "ELIGIBLE",
+                                            "dateRange": "7DAYS",
+                                            "category": [
+                                                "32 JEWELRY",
+                                                "SHOES"
+                                            ],
+                                            "price": {
+                                                "minimum": 10,
+                                                "maximum": 100
+                                            }
+                                        },
+                                        "search": [
+                                            {
+                                                "value": "kids",
+                                                "field": "ITEM_NAME"
+                                            }
+                                        ],
+                                        "sort": [
+                                            {
+                                                "field": "ITEM_PRIORITY",
+                                                "order": "ASC",
+                                                "priority": 1
+                                            },
+                                            {
+                                                "field": "PRICE",
+                                                "order": "DESC",
+                                                "priority": 2
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/GetIrpItemsResponse"
+                                },
+                                "examples": {
+                                    "Get Eligible Items": {
+                                        "value": {
+                                            "statusCode": 200,
+                                            "payload": {
+                                                "totalItems": 1,
+                                                "fetchedItems": 1,
+                                                "dateRange": "7DAYS",
+                                                "scrollId": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAACUyUsWamJiNUxwcDJUU0dxbHBObmJvRUF2UQ==",
+                                                "items": [
+                                                    {
+                                                        "itemId": "100015964",
+                                                        "itemName": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel",
+                                                        "sales": 231232,
+                                                        "currentReviews": 3,
+                                                        "impressions": 214231,
+                                                        "currentPageViews": 2342,
+                                                        "reviewsCollected": 0,
+                                                        "sku": "NK-WHT2XL",
+                                                        "itemStatus": "ELIGIBLE",
+                                                        "itemPriority": 1
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "Get Enrolled Items": {
+                                        "value": {
+                                            "statusCode": 200,
+                                            "payload": {
+                                                "totalItems": 1,
+                                                "fetchedItems": 1,
+                                                "dateRange": "7DAYS",
+                                                "scrollId": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAACUyUsWamJiNUxwcDJUU0dxbHBObmJvRUF2UQ==",
+                                                "items": [
+                                                    {
+                                                        "itemId": "100015964",
+                                                        "itemName": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel",
+                                                        "sales": 32,
+                                                        "currentReviews": 5,
+                                                        "impressions": 214231,
+                                                        "currentPageViews": 2342,
+                                                        "reviewsCollected": 2,
+                                                        "sku": "NK-WHT2XL",
+                                                        "itemStatus": "ENROLLED",
+                                                        "itemPriority": 1
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "Get Complete Items": {
+                                        "value": {
+                                            "statusCode": 200,
+                                            "payload": {
+                                                "totalItems": 1,
+                                                "fetchedItems": 1,
+                                                "dateRange": "7DAYS",
+                                                "scrollId": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAACUyUsWamJiNUxwcDJUU0dxbHBObmJvRUF2UQ==",
+                                                "items": [
+                                                    {
+                                                        "itemId": "100015964",
+                                                        "itemName": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel",
+                                                        "sales": 132,
+                                                        "currentReviews": 10,
+                                                        "impressions": 2231,
+                                                        "currentPageViews": 232,
+                                                        "reviewsCollected": 7,
+                                                        "sku": "NK-WHT2XL",
+                                                        "itemStatus": "COMPLETE",
+                                                        "itemPriority": 1
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "Filter sort and search Items": {
+                                        "value": {
+                                            "statusCode": 200,
+                                            "payload": {
+                                                "totalItems": 1,
+                                                "fetchedItems": 1,
+                                                "dateRange": "7DAYS",
+                                                "scrollId": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAACUyUsWamJiNUxwcDJUU0dxbHBObmJvRUF2UQ==",
+                                                "items": [
+                                                    {
+                                                        "itemId": "100015964",
+                                                        "itemName": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel",
+                                                        "sales": 122,
+                                                        "currentReviews": 3,
+                                                        "impressions": 81421,
+                                                        "currentPageViews": 2342,
+                                                        "reviewsCollected": 0,
+                                                        "sku": "NK-WHT2XL",
+                                                        "itemStatus": "ELIGIBLE",
+                                                        "itemPriority": 1
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/growth\/reviews-accelerator\/categories": {
+            "post": {
+                "tags": [
+                    "Reviews"
+                ],
+                "summary": "Get categories",
+                "description": "To get the set of categories the RAP post-purchase items belong to.",
+                "externalDocs": {
+                    "description": "View Guide",
+                    "url": "\/doc\/us\/mp\/us-mp-reviews\/#11539"
+                },
+                "operationId": "getIrpCategories",
+                "parameters": [],
+                "requestBody": {
+                    "description": "Request payload",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/GetCategoriesRequest"
+                            },
+                            "examples": {
+                                "Get categories with status": {
+                                    "value": {
+                                        "itemStatus": [
+                                            "ENROLLED",
+                                            "ELIGIBLE",
+                                            "COMPLETE"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/GetCategoriesResponse"
+                                },
+                                "examples": {
+                                    "Get categories with status": {
+                                        "value": {
+                                            "statusCode": 200,
+                                            "payload": {
+                                                "itemStatus": [
+                                                    "ENROLLED",
+                                                    "ELIGIBLE",
+                                                    "COMPLETE"
+                                                ],
+                                                "categories": [
+                                                    "HARDLINES",
+                                                    "HOME",
+                                                    "APPAREL"
+                                                ]
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "accessToken": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "BulkItemStatusUpdateResponsePayload": {
+                "type": "object",
+                "properties": {
+                    "success": {
+                        "$ref": "#\/components\/schemas\/Success"
+                    },
+                    "failure": {
+                        "$ref": "#\/components\/schemas\/Failure"
+                    }
+                },
+                "description": "Response payload."
+            },
+            "BulkItemUpdateResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/BulkItemStatusUpdateResponsePayload"
+                    },
+                    "statusCode": {
+                        "type": "integer",
+                        "description": "Status code for the request.",
+                        "format": "int32",
+                        "example": 200
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Error"
+                        }
+                    }
+                }
+            },
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string",
+                        "description": "Error code.",
+                        "example": "400.INVALID_REQUEST.003"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Error description.",
+                        "example": "The request payload is either invalid or is improperly formatted. Check the payload values and try again."
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Error category.",
+                        "example": "DATA"
+                    },
+                    "severity": {
+                        "type": "string",
+                        "description": "Error severity.",
+                        "example": "ERROR"
+                    }
+                }
+            },
+            "Failure": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "description": "Items.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemsFailureResponse"
+                        }
+                    }
+                },
+                "description": "Items failed."
+            },
+            "ItemsFailureResponse": {
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "type": "string",
+                        "description": "Specifies the item identifier.",
+                        "example": "100015964"
+                    },
+                    "errorCode": {
+                        "type": "string",
+                        "description": "Error code.",
+                        "example": "400.INVALID_ITEM_ID.001"
+                    },
+                    "errorDescription": {
+                        "type": "string",
+                        "description": "Error description.",
+                        "example": "The request payload has an invalid ItemId. Check the values and try again."
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Error category.",
+                        "example": "DATA"
+                    },
+                    "severity": {
+                        "type": "string",
+                        "description": "Error severity.",
+                        "example": "ERROR"
+                    }
+                },
+                "description": "Items."
+            },
+            "ItemsSuccessResponse": {
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "type": "string",
+                        "description": "Specifies the item identifier.",
+                        "example": "100015964"
+                    },
+                    "itemDescription": {
+                        "type": "string",
+                        "description": "Description of the item.",
+                        "example": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel"
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "Specifies the item identified. This value is defined by the seller.",
+                        "example": "NK-WHT2XL"
+                    }
+                },
+                "description": "Items."
+            },
+            "Success": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "description": "Items.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemsSuccessResponse"
+                        }
+                    }
+                },
+                "description": "Items succeeded."
+            },
+            "BulkItemStatusUpdateRequest": {
+                "required": [
+                    "items",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ENROLL | To enroll items into the program | string |\n| DISENROLL | To opt out items from the program | string |",
+                        "enum": [
+                            "ENROLL",
+                            "DISENROLL"
+                        ]
+                    },
+                    "items": {
+                        "type": "array",
+                        "description": "Items",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemsRequest"
+                        }
+                    }
+                }
+            },
+            "ItemsRequest": {
+                "required": [
+                    "itemId"
+                ],
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "type": "string",
+                        "description": "Specifies the item identifier.",
+                        "example": "100015964"
+                    },
+                    "targetReviews": {
+                        "type": "integer",
+                        "description": "Custom target number of reviews requested to be collected for the item. Default is 5.",
+                        "format": "int32",
+                        "example": 15
+                    }
+                },
+                "description": "Items"
+            },
+            "GetIrpItemsResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/GetIrpItemsResponsePayload"
+                    },
+                    "statusCode": {
+                        "type": "integer",
+                        "description": "Status code for the request.",
+                        "format": "int32",
+                        "example": 200
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Error"
+                        }
+                    }
+                }
+            },
+            "GetIrpItemsResponsePayload": {
+                "type": "object",
+                "properties": {
+                    "totalItems": {
+                        "type": "integer",
+                        "description": "The total of items found.",
+                        "format": "int32",
+                        "example": 2348
+                    },
+                    "fetchedItems": {
+                        "type": "integer",
+                        "description": "The total of items fetched.",
+                        "format": "int32",
+                        "example": 200
+                    },
+                    "dateRange": {
+                        "type": "string",
+                        "description": "Date range to filter impressions, page views and sales.",
+                        "default": "7DAYS",
+                        "enum": [
+                            "7DAYS",
+                            "14DAYS",
+                            "30DAYS"
+                        ]
+                    },
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemsPayload"
+                        }
+                    },
+                    "scrollId": {
+                        "type": "string",
+                        "description": "Specifies the searchId to fetch the subsequent set of results.",
+                        "example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAACUyUsWamJiNUxwcDJUU0dxbHBObmJvRUF2UQ=="
+                    }
+                },
+                "description": "Response payload."
+            },
+            "ItemsPayload": {
+                "type": "object",
+                "properties": {
+                    "itemId": {
+                        "type": "string",
+                        "description": "Specifies the item identifier.",
+                        "example": "100015964"
+                    },
+                    "itemName": {
+                        "type": "string",
+                        "description": "Name of the item.",
+                        "example": "View-Master Discovery Kids 3D Marine Life Toy Viewfinder Reel"
+                    },
+                    "sales": {
+                        "type": "integer",
+                        "description": "Units sold during the specified date range. Defaults range is for last 7 days.",
+                        "format": "int32",
+                        "example": 45
+                    },
+                    "currentReviews": {
+                        "type": "integer",
+                        "description": "Current number of reviews on the item.",
+                        "format": "int32",
+                        "example": 0
+                    },
+                    "impressions": {
+                        "type": "integer",
+                        "description": "The number of times item showed up in search results in the requested date range. Defaults to last 7 days.",
+                        "format": "int32",
+                        "example": 1937
+                    },
+                    "currentPageViews": {
+                        "type": "integer",
+                        "description": "The number of views on the item page in the requested date range. Defaults to last 7 days.",
+                        "format": "int32",
+                        "example": 900
+                    },
+                    "reviewsCollected": {
+                        "type": "integer",
+                        "description": "The number of reviews collected for the item through IRP.",
+                        "format": "int32",
+                        "example": 0
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "Specifies the item identified. This value is defined by the seller.",
+                        "example": "NK-WHT2XL"
+                    },
+                    "itemStatus": {
+                        "type": "string",
+                        "description": "Current status of the item in IRP.",
+                        "enum": [
+                            "COMPLETE",
+                            "ELIGIBLE",
+                            "ENROLLED"
+                        ]
+                    },
+                    "itemPriority": {
+                        "type": "integer",
+                        "description": "Priority of the item as recommended by Walmart.",
+                        "format": "int32",
+                        "example": 1
+                    }
+                }
+            },
+            "FilterRequest": {
+                "required": [
+                    "itemStatus"
+                ],
+                "type": "object",
+                "properties": {
+                    "itemStatus": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ELIGIBLE | To get items which are eligible for the program | string |\n| ENROLLED | To get items which are currently enrolled into the program | string |\n| COMPLETE | To get items which have attained target reviews through the program | string |",
+                        "enum": [
+                            "ELIGIBLE",
+                            "ENROLLED",
+                            "COMPLETE"
+                        ]
+                    },
+                    "dateRange": {
+                        "type": "string",
+                        "description": "Date range to filter impressions, page views and sales.",
+                        "default": "7DAYS",
+                        "enum": [
+                            "7DAYS",
+                            "14DAYS",
+                            "30DAYS"
+                        ]
+                    },
+                    "category": {
+                        "type": "string",
+                        "description": "Category of the items.",
+                        "example": "HARDLINES"
+                    },
+                    "price": {
+                        "$ref": "#\/components\/schemas\/PriceRequest"
+                    }
+                },
+                "description": "Filter request."
+            },
+            "GetIrpItemsRequest": {
+                "required": [
+                    "filter"
+                ],
+                "type": "object",
+                "properties": {
+                    "search": {
+                        "type": "array",
+                        "description": "Search request.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/SearchRequest"
+                        }
+                    },
+                    "filter": {
+                        "$ref": "#\/components\/schemas\/FilterRequest"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "description": "Sort request.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/SortRequest"
+                        }
+                    }
+                }
+            },
+            "PriceRequest": {
+                "type": "object",
+                "properties": {
+                    "minimum": {
+                        "type": "number",
+                        "description": "Minimum price of the item.",
+                        "format": "double",
+                        "example": 10
+                    },
+                    "maximum": {
+                        "type": "number",
+                        "description": "Maximum price of the item.",
+                        "format": "double",
+                        "example": 1000
+                    }
+                },
+                "description": "Price range of the items."
+            },
+            "SearchRequest": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM_NAME | Product name | string |\n| SKU | Specifies the item identified. This value is defined by the seller. | string |",
+                        "enum": [
+                            "ITEM_NAME",
+                            "SKU"
+                        ]
+                    },
+                    "value": {
+                        "type": "string"
+                    }
+                },
+                "description": "Search request."
+            },
+            "SortRequest": {
+                "type": "object",
+                "properties": {
+                    "field": {
+                        "type": "string",
+                        "description": "| Attribute | Description | Data Type |\n| --- | ----------- | ------- |\n| ITEM_PRIORITY | Recommended priority of the item by Walmart. | integer |\n| PRICE | Item price | integer |",
+                        "enum": [
+                            "ITEM_PRIORITY",
+                            "PRICE"
+                        ]
+                    },
+                    "order": {
+                        "type": "string",
+                        "enum": [
+                            "ASC",
+                            "DESC"
+                        ]
+                    },
+                    "priority": {
+                        "type": "integer",
+                        "description": "Sort priority of the specified field.",
+                        "format": "int32",
+                        "example": 1
+                    }
+                },
+                "description": "Sort request."
+            },
+            "GetCategoriesResponse": {
+                "type": "object",
+                "properties": {
+                    "payload": {
+                        "$ref": "#\/components\/schemas\/GetCategoriesResponsePayload"
+                    },
+                    "statusCode": {
+                        "type": "integer",
+                        "description": "Status code for the request.",
+                        "format": "int32",
+                        "example": 200
+                    },
+                    "errors": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Error"
+                        }
+                    }
+                }
+            },
+            "GetCategoriesResponsePayload": {
+                "type": "object",
+                "properties": {
+                    "itemStatus": {
+                        "type": "array",
+                        "description": "IRP status of the items.",
+                        "items": {
+                            "type": "string",
+                            "description": "IRP status of the items.",
+                            "enum": [
+                                "ENROLLED",
+                                "ELIGIBLE",
+                                "COMPLETE"
+                            ]
+                        },
+                        "enum": [
+                            "ENROLLED",
+                            "ELIGIBLE",
+                            "COMPLETE"
+                        ]
+                    },
+                    "categories": {
+                        "type": "array",
+                        "description": "Category of the items in requested item status.",
+                        "example": "APPAREL",
+                        "items": {
+                            "type": "string",
+                            "description": "Category of the items in requested item status.",
+                            "example": "APPAREL"
+                        }
+                    }
+                },
+                "description": "Response payload."
+            },
+            "GetCategoriesRequest": {
+                "type": "object",
+                "properties": {
+                    "itemStatus": {
+                        "type": "array",
+                        "description": "IRP status of the items.",
+                        "items": {
+                            "type": "string",
+                            "description": "IRP status of the items.",
+                            "enum": [
+                                "ENROLLED",
+                                "ELIGIBLE",
+                                "COMPLETE"
+                            ]
+                        },
+                        "enum": [
+                            "ENROLLED",
+                            "ELIGIBLE",
+                            "COMPLETE"
+                        ]
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "accessToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            }
+        }
+    }
+}

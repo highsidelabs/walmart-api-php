@@ -29,7 +29,7 @@ If you've found any of our packages useful, please consider [becoming a Sponsor]
 
 ## Features
 
-* Supports all Walmart API operations for Marketplace Sellers, 1P Suppliers, and Content Providers as of 7/24/2023 ([see here](#supported-api-segments) for links to documentation for all calls)
+* Supports all Walmart API operations for Marketplace Sellers, 1P Suppliers, and Content Providers as of 8/17/2023 ([see here](#supported-api-segments) for links to documentation for all calls)
 * Supports the United States, Canada, and Mexico marketplaces
 * Automatically handles all forms of authentication used by Walmart (basic auth, access tokens, and request signatures) with minimal configuration
 
@@ -229,6 +229,7 @@ This is an exhaustive list of all the APIs supported by this library, organized 
 
 #### Marketplace
 
+* [Assortment Recommendations API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/AssortmentRecommendationsApi.md): `Walmart::marketplace($config)->assortmentRecommendations()` (US only)
 * [Authentication API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/AuthenticationApi.md): `Walmart::marketplace($config)->auth()` (MX, US)
 * [Events API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/CA/Api.md): `Walmart::marketplace($config)->events()` (CA only)
 * [Feeds API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/FeedsApi.md): `Walmart::marketplace($config)->feeds()` (CA, MX, US)
@@ -246,6 +247,7 @@ This is an exhaustive list of all the APIs supported by this library, organized 
 * [Promotions API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/PromotionsApi.md): `Walmart::marketplace($config)->promotions()` (CA, US)
 * [Reports API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/ReportsApi.md): `Walmart::marketplace($config)->reports()` (CA, MX, US)
 * [Returns API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/ReturnsApi.md): `Walmart::marketplace($config)->returns()` (MX, US)
+* [Reviews API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/ReviewsApi.md): `Walmart::marketplace($config)->reviews()` (US only)
 * [Rules API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/RulesApi.md): `Walmart::marketplace($config)->rules()` (US only)
 * [Settings API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/SettingsApi.md): `Walmart::marketplace($config)->settings()` (US only)
 * [Utilities API](https://github.com/highsidelabs/walmart-api-php/blob/main/docs/Apis/MP/US/UtilitiesApi.md): `Walmart::marketplace($config)->utilities()` (US only)

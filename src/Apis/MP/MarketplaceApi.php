@@ -15,6 +15,9 @@ class MarketplaceApi extends Walmart
      * @var array<string, string[]>
      */
     protected static array $countryApiMap = [
+        'assortmentRecommendations' => [
+            Country::US => US\AssortmentRecommendationsApi::class,
+        ],
         'auth' => [
             Country::MX => MX\AuthenticationApi::class,
             Country::US => US\AuthenticationApi::class,
@@ -75,6 +78,9 @@ class MarketplaceApi extends Walmart
         'returns' => [
             Country::MX => MX\ReturnsApi::class,
             Country::US => US\ReturnsApi::class,
+        ],
+        'reviews' => [
+            Country::US => US\ReviewsApi::class,
         ],
         'internationalShipping' => [
             Country::CA => CA\InternationalShippingApi::class,
