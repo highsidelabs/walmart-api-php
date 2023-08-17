@@ -3,7 +3,8 @@
 const VALID_OPTS = ['category::', 'country::', 'api-code::', 'help'];
 
 const RESOURCE_DIR = __DIR__ . '/../resources';
-const SCHEMA_DIR = RESOURCE_DIR . '/schemas';
+const MODEL_DIR = RESOURCE_DIR . '/schemas/models';
+const MODEL_MODIFICATIONS_DIR = RESOURCE_DIR . '/schemas/modifications';
 const TEMPLATE_DIR = RESOURCE_DIR . '/templates';
 const DOCS_DIR = __DIR__ . '/../docs';
 
@@ -13,8 +14,11 @@ const DEFAULT_API_DIR = 'Api';
 const DEFAULT_MODEL_DIR = 'Model';
 
 const LOGFILE = __DIR__ . '/../generate.log';
-const SCHEMA_FIXES_FILE = RESOURCE_DIR . '/schema-corrections.json';
-const SCHEMA_ADDITIONS_FILE = RESOURCE_DIR . '/schema-additions.json';
+
+// The attributes in this file are merged with any corresponding attributes in the models
+const SCHEMA_ADDITIONS_FILE = MODEL_MODIFICATIONS_DIR . '/additions.json';
+// The attributes in this file replace any corresponding attributes in the models
+const SCHEMA_REPLACEMENTS_FILE = MODEL_MODIFICATIONS_DIR . '/replacements.json';
 
 const ACCESS_TOKEN_HEADER = 'WM_SEC.ACCESS_TOKEN';
 const AUTH_SIG_HEADER = 'WM_SEC.AUTH_SIGNATURE';

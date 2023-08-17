@@ -40,7 +40,7 @@ function generateApis(array $categories, array $countries, array $apiCodes): voi
 function openApiGenerator(string $code, string $name, string $category, string $country): void
 {
     $version = libVersion();
-    $schemaPath = SCHEMA_DIR . "/$country/$category/$code.json";
+    $schemaPath = MODEL_DIR . "/$country/$category/$code.json";
     $configPath = RESOURCE_DIR . '/generator-config.json';
 
     $categoryNamespace = $category === ApiCategory::SUPPLIER ? ucfirst($category) : strtoupper($category);
@@ -116,7 +116,7 @@ function generateSupportingFiles(): void
     $version = libVersion();
     $configPath = RESOURCE_DIR . '/generator-config.json';
     // Static path -- this won't actually be used since we're only generating supporting files
-    $schemaPath = SCHEMA_DIR . '/us/mp/auth.json';
+    $schemaPath = MODEL_DIR . '/us/mp/auth.json';
 
     setPrettifyEnv();
 

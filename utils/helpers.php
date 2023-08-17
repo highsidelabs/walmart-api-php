@@ -74,7 +74,7 @@ function schemas(?array $categories, ?array $countries, ?array $apiCodes): array
                 }
 
                 $paths[] = [
-                    'path' => SCHEMA_DIR . "/$ctry/$cat/$api.json",
+                    'path' => MODEL_DIR . "/$ctry/$cat/$api.json",
                     'category' => $cat,
                     'country' => $ctry,
                     'api' => [
@@ -171,4 +171,47 @@ function array_merge_recursive_distinct(array &$array1, array &$array2): array
     }
 
     return $merged;
+}
+
+/**
+ * Remove one or many array items from a given array using "dot" notation.
+ * Adapted from Laravel's Illuminate\Support\Arr::forget() method.
+ *
+ * @param  array  $array
+ * @param  array|string|int|float  $keys
+ * @return void
+ */
+function array_forget(&$array, $keys)
+{
+    $original = &$array;
+    $keys = (array) $keys;
+
+    if (count($keys) === 0) {
+        return;
+    }
+
+    foreach ($keys as $key) {
+        // If the exact key exists in the top-level, remove it
+        if (array_key_exists($key, $array)) {
+            unset($array[$key]);
+            continue;
+        }
+
+        $parts = explode('.', $key);
+
+        // Clean up before each pass
+        $array = &$original;
+
+        while (count($parts) > 1) {
+            $part = array_shift($parts);
+
+            if (isset($array[$part]) && is_array($array[$part])) {
+                $array = &$array[$part];
+            } else {
+                continue 2;
+            }
+        }
+
+        unset($array[array_shift($parts)]);
+    }
 }

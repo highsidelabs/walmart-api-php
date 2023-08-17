@@ -1,0 +1,1047 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Item Management",
+        "description": "The Item Management APIs enable you to set up and manage items on Walmart.com. Once you have completed Registration and have access to your Consumer ID and Private Key, you can get started with the integration process",
+        "version": "0.6.3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        },
+        {
+            "url": "https:\/\/sandbox.walmartapis.com",
+            "description": "Sandbox URL"
+        }
+    ],
+    "security": [
+        {
+            "basicScheme": []
+        }
+    ],
+    "paths": {
+        "\/v3\/feeds": {
+            "post": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Bulk Item Setup",
+                "description": "You can update 10,000 items at once; updates with more than 10,000 items are not supported. Keep feed sizes below 10 MB to ensure optimal feed processing time.\nYou can use the Bulk Item Setup API for any of the following item spec versions, just specify the corresponding feed type as a query parameter. Please ensure the WFS onboarding is complete before using WFS Specs or converting items to WFS\n*   Item spec feed type: item\n*   WFS Item spec feed type: OMNI_WFSSETUP \n* Item spec feed type for 4.x spec: MP_ITEM_INTL \n*   Convert an existing item to WFS feed type : OMNI_WFSCONVERT \n",
+                "operationId": "bulkItemSetup",
+                "parameters": [
+                    {
+                        "name": "feedType",
+                        "in": "query",
+                        "description": "The feed Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart\/form-data": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "description": "Feed file to upload",
+                                        "format": "binary"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "MP_ITEM_INTL": {
+                                    "value": {
+                                        "MPItemFeedHeader": {
+                                            "subCategory": "medical_aids",
+                                            "sellingChannel": "marketplace",
+                                            "processMode": "REPLACE",
+                                            "mart": "WALMART_MEXICO",
+                                            "locale": "es",
+                                            "version": "3.11",
+                                            "subset": "EXTERNAL"
+                                        },
+                                        "MPItem": [
+                                            {
+                                                "Orderable": {
+                                                    "sku": "Equipo_0601_V003",
+                                                    "brand": "ISI Marked",
+                                                    "keyFeatures": [
+                                                        "Small Parts Warning"
+                                                    ],
+                                                    "shortDescription": "Glitter glue pens in a fun mini version V2",
+                                                    "manufacturer": "Vpul Kithani",
+                                                    "ProductTaxCode": 20396990,
+                                                    "ShippingDimensionsWidth": {
+                                                        "measure": 10,
+                                                        "unit": "cm"
+                                                    },
+                                                    "ShippingDimensionsHeight": {
+                                                        "measure": 10,
+                                                        "unit": "cm"
+                                                    },
+                                                    "ShippingDimensionsDepth": {
+                                                        "measure": 10,
+                                                        "unit": "cm"
+                                                    },
+                                                    "ShippingWeight": {
+                                                        "measure": 10,
+                                                        "unit": "kg"
+                                                    },
+                                                    "shippingDiscount": 0.5,
+                                                    "countryOfOriginAssembly": [
+                                                        "Brasil"
+                                                    ],
+                                                    "hazardousMaterialsInd": "S\u00ed",
+                                                    "hasNomCertification": "No",
+                                                    "itemsIncluded": "Box",
+                                                    "features": [
+                                                        "Additional Features (+)"
+                                                    ],
+                                                    "batteryTechnologyType": "Carb\u00f3n zinc",
+                                                    "condition": "Reacondicionado",
+                                                    "keywords": "Test",
+                                                    "isTemperatureSensitive": "No",
+                                                    "isChemical": "S\u00ed",
+                                                    "isAerosol": "S\u00ed",
+                                                    "isPesticide": "S\u00ed",
+                                                    "electronicsIndicator": "S\u00ed",
+                                                    "warrantyText": "Warranty Text",
+                                                    "warrantyURL": "https:\/\/google.com",
+                                                    "manufacturerPartNumber": "MH05vipu",
+                                                    "price": 220,
+                                                    "productSecondaryImageURL": [
+                                                        "https:\/\/i5-qa.walmartimages.com\/asr\/07c3b586-c008-4171-b21c-a7a04d355b21.3c10c6068ba76634dcfdda0aebb08a58.png"
+                                                    ],
+                                                    "productIdentifiers": {
+                                                        "productIdType": "GTIN",
+                                                        "productId": "06104895314205"
+                                                    },
+                                                    "productName": "Equipo",
+                                                    "mainImageUrl": "https:\/\/i5-qa.walmartimages.com\/asr\/63814fac-ae27-4088-867a-9c134cfbe942.a3a8d9b3e63400c147a289ca77fad35a.jpeg"
+                                                },
+                                                "Visible": {
+                                                    "Equipo M\u00e9dico": {
+                                                        "countPerPack": 3,
+                                                        "colorCategory": [
+                                                            "Caf\u00e9"
+                                                        ],
+                                                        "size": "G",
+                                                        "assembledProductLength": {
+                                                            "measure": 10,
+                                                            "unit": "cm"
+                                                        },
+                                                        "assembledProductWidth": {
+                                                            "measure": 20,
+                                                            "unit": "cm"
+                                                        },
+                                                        "assembledProductHeight": {
+                                                            "measure": 30,
+                                                            "unit": "cm"
+                                                        },
+                                                        "assembledProductWeight": {
+                                                            "measure": 40,
+                                                            "unit": "kg"
+                                                        },
+                                                        "material": "Plastic",
+                                                        "gender": "Mujer",
+                                                        "modelNumber": "62465DX",
+                                                        "count": "100",
+                                                        "pieceCount": 100,
+                                                        "color": [
+                                                            "red"
+                                                        ],
+                                                        "healthConcerns": [
+                                                            "Quemaduras"
+                                                        ],
+                                                        "collection": "Halo",
+                                                        "bodyParts": [
+                                                            "Paella"
+                                                        ],
+                                                        "shape": "Circle",
+                                                        "isLatexFree": "S\u00ed",
+                                                        "isWaterproof": "S\u00ed",
+                                                        "isPowered": "S\u00ed",
+                                                        "powerType": "Continua",
+                                                        "isFoldable": "S\u00ed",
+                                                        "isInflatable": "S\u00ed",
+                                                        "isIndustrial": "S\u00ed",
+                                                        "isSet": "S\u00ed",
+                                                        "isTravelSize": "S\u00ed",
+                                                        "isPortable": "S\u00ed",
+                                                        "isReusable": "S\u00ed",
+                                                        "isDisposable": "S\u00ed",
+                                                        "cleaningCareAndMaintenance": "Test",
+                                                        "driveSystem": "Test",
+                                                        "minimumWeight": {
+                                                            "measure": 10,
+                                                            "unit": "lb"
+                                                        },
+                                                        "maximumWeight": {
+                                                            "measure": 20,
+                                                            "unit": "kg"
+                                                        },
+                                                        "diameter": {
+                                                            "measure": 30,
+                                                            "unit": "ft"
+                                                        },
+                                                        "ageGroup": [
+                                                            "Adolescentes y adultos"
+                                                        ],
+                                                        "fabricContent": [
+                                                            {
+                                                                "materialName": "Organic",
+                                                                "materialPercentage": 90
+                                                            }
+                                                        ],
+                                                        "fabricCareInstructions": [
+                                                            "Test"
+                                                        ],
+                                                        "recommendedUses": [
+                                                            "Test bhai"
+                                                        ],
+                                                        "compatibleBrands": [
+                                                            "VIP"
+                                                        ],
+                                                        "medicineStrength": "325 mg"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "Orderable": {
+                                                    "sku": "Equipo_0601_V003",
+                                                    "brand": "ISI Marked",
+                                                    "keyFeatures": [
+                                                        "Small Parts Warning"
+                                                    ],
+                                                    "shortDescription": "Glitter glue pens in a fun mini version V2",
+                                                    "manufacturer": "Vpul Kithani",
+                                                    "ProductTaxCode": 20396990,
+                                                    "ShippingDimensionsWidth": {
+                                                        "measure": 10,
+                                                        "unit": "cm"
+                                                    },
+                                                    "ShippingDimensionsHeight": {
+                                                        "measure": 10,
+                                                        "unit": "cm"
+                                                    },
+                                                    "ShippingDimensionsDepth": {
+                                                        "measure": 10,
+                                                        "unit": "cm"
+                                                    },
+                                                    "ShippingWeight": {
+                                                        "measure": 10,
+                                                        "unit": "kg"
+                                                    },
+                                                    "shippingDiscount": 0.5,
+                                                    "countryOfOriginAssembly": [
+                                                        "Brasil"
+                                                    ],
+                                                    "hazardousMaterialsInd": "S\u00ed",
+                                                    "hasNomCertification": "No",
+                                                    "itemsIncluded": "Box",
+                                                    "features": [
+                                                        "Additional Features (+)"
+                                                    ],
+                                                    "batteryTechnologyType": "Carb\u00f3n zinc",
+                                                    "condition": "Reacondicionado",
+                                                    "keywords": "Test",
+                                                    "isTemperatureSensitive": "No",
+                                                    "isChemical": "S\u00ed",
+                                                    "isAerosol": "S\u00ed",
+                                                    "isPesticide": "S\u00ed",
+                                                    "electronicsIndicator": "S\u00ed",
+                                                    "warrantyText": "Warranty Text",
+                                                    "warrantyURL": "https:\/\/google.com",
+                                                    "manufacturerPartNumber": "MH05vipu",
+                                                    "price": 220,
+                                                    "productSecondaryImageURL": [
+                                                        "https:\/\/i5-qa.walmartimages.com\/asr\/07c3b586-c008-4171-b21c-a7a04d355b21.3c10c6068ba76634dcfdda0aebb08a58.png"
+                                                    ],
+                                                    "productIdentifiers": {
+                                                        "productIdType": "GTIN",
+                                                        "productId": "06104895314205"
+                                                    },
+                                                    "productName": "Equipo",
+                                                    "mainImageUrl": "https:\/\/i5-qa.walmartimages.com\/asr\/63814fac-ae27-4088-867a-9c134cfbe942.a3a8d9b3e63400c147a289ca77fad35a.jpeg"
+                                                },
+                                                "Visible": {
+                                                    "Equipo M\u00e9dico": {
+                                                        "countPerPack": 3,
+                                                        "colorCategory": [
+                                                            "Caf\u00e9"
+                                                        ],
+                                                        "size": "G",
+                                                        "assembledProductLength": {
+                                                            "measure": 10,
+                                                            "unit": "cm"
+                                                        },
+                                                        "assembledProductWidth": {
+                                                            "measure": 20,
+                                                            "unit": "cm"
+                                                        },
+                                                        "assembledProductHeight": {
+                                                            "measure": 30,
+                                                            "unit": "cm"
+                                                        },
+                                                        "assembledProductWeight": {
+                                                            "measure": 40,
+                                                            "unit": "kg"
+                                                        },
+                                                        "material": "Plastic",
+                                                        "gender": "Mujer",
+                                                        "modelNumber": "62465DX",
+                                                        "count": "100",
+                                                        "pieceCount": 100,
+                                                        "color": [
+                                                            "red"
+                                                        ],
+                                                        "healthConcerns": [
+                                                            "Quemaduras"
+                                                        ],
+                                                        "collection": "Halo",
+                                                        "bodyParts": [
+                                                            "Paella"
+                                                        ],
+                                                        "shape": "Circle",
+                                                        "isLatexFree": "S\u00ed",
+                                                        "isWaterproof": "S\u00ed",
+                                                        "isPowered": "S\u00ed",
+                                                        "powerType": "Continua",
+                                                        "isFoldable": "S\u00ed",
+                                                        "isInflatable": "S\u00ed",
+                                                        "isIndustrial": "S\u00ed",
+                                                        "isSet": "S\u00ed",
+                                                        "isTravelSize": "S\u00ed",
+                                                        "isPortable": "S\u00ed",
+                                                        "isReusable": "S\u00ed",
+                                                        "isDisposable": "S\u00ed",
+                                                        "cleaningCareAndMaintenance": "Test",
+                                                        "driveSystem": "Test",
+                                                        "minimumWeight": {
+                                                            "measure": 10,
+                                                            "unit": "lb"
+                                                        },
+                                                        "maximumWeight": {
+                                                            "measure": 20,
+                                                            "unit": "kg"
+                                                        },
+                                                        "diameter": {
+                                                            "measure": 30,
+                                                            "unit": "ft"
+                                                        },
+                                                        "ageGroup": [
+                                                            "Adolescentes y adultos"
+                                                        ],
+                                                        "fabricContent": [
+                                                            {
+                                                                "materialName": "Organic",
+                                                                "materialPercentage": 90
+                                                            }
+                                                        ],
+                                                        "fabricCareInstructions": [
+                                                            "Test"
+                                                        ],
+                                                        "recommendedUses": [
+                                                            "Test bhai"
+                                                        ],
+                                                        "compatibleBrands": [
+                                                            "VIP"
+                                                        ],
+                                                        "medicineStrength": "325 mg"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                "xml": {
+                                    "value": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<MPItemFeed\n        xmlns=\"http:\/\/walmart.com\/\">\n    <MPItemFeedHeader>\n        <version>3.2<\/version>\n        <mart>WALMART_MEXICO<\/mart>\n        <locale>es_MX<\/locale>\n    <\/MPItemFeedHeader>\n    <MPItem>\n        <processMode>CREATE<\/processMode>\n        <sku>test_65654345244529<\/sku>\n        <productIdentifiers>\n            <productIdentifier>\n                <productIdType>GTIN<\/productIdType>\n                <productId>65654345244529<\/productId>\n            <\/productIdentifier>\n        <\/productIdentifiers>\n        <MPProduct>\n            <productName>Test Cellphones Product<\/productName>\n            <category>\n                <Electronics>\n                    <CellPhones>\n                        <shortDescription>test<\/shortDescription>\n                        <keyFeatures>\n                            <keyFeaturesValue>test<\/keyFeaturesValue>\n                        <\/keyFeatures>\n                        <brand>test<\/brand>\n                        <mainImageUrl>https:\/\/i5-qa.walmartimages.com\/asr\/195ba240-631f-444a-8c6f-fdf6bfaef25f.c08b76c73d735d0bcb8657512b930c6a.jpeg<\/mainImageUrl>\n                        <productSecondaryImageURL>\n                            <productSecondaryImageURLValue>https:\/\/i5-qa.walmartimages.com\/asr\/b2eeff43-43ed-4b9f-bc7d-444e137e595c.d505ba2ee4fb4874960f6e65db1f8f0c.jpeg<\/productSecondaryImageURLValue>\n                        <\/productSecondaryImageURL>\n                        <color>Rojo<\/color>\n                        <screenSize>\n                            <measure>4.08<\/measure>\n                            <unit>Pulgadas<\/unit>\n                        <\/screenSize>\n                        <cellPhoneServiceProvider>test<\/cellPhoneServiceProvider>\n                        <hardDriveCapacity>\n                            <measure>10<\/measure>\n                            <unit>KB<\/unit>\n                        <\/hardDriveCapacity>\n                        <variantGroupId>test_group<\/variantGroupId>\n                        <variantAttributeNames>\n                            <variantAttributeName>color<\/variantAttributeName>\n                        <\/variantAttributeNames>\n                        <isPrimaryVariant>S\u00ed<\/isPrimaryVariant>\n                        <ramMemory>\n                            <measure>120<\/measure>\n                            <unit>GB<\/unit>\n                        <\/ramMemory>\n                        <assembledProductHeight>\n                            <measure>10<\/measure>\n                            <unit>cm<\/unit>\n                        <\/assembledProductHeight>\n                        <assembledProductWidth>\n                            <measure>10<\/measure>\n                            <unit>cm<\/unit>\n                        <\/assembledProductWidth>\n                        <itemsIncluded>test<\/itemsIncluded>\n                        <assembledProductLength>\n                            <measure>10<\/measure>\n                            <unit>cm<\/unit>\n                        <\/assembledProductLength>\n                        <processorType>\n                            <processorTypeValue>test<\/processorTypeValue>\n                        <\/processorType>\n                        <assembledProductWeight>\n                            <measure>10<\/measure>\n                            <unit>kg<\/unit>\n                        <\/assembledProductWeight>\n                        <countryOfOriginAssembly>M\u00e9xico<\/countryOfOriginAssembly>\n                        <wireless>S\u00ed<\/wireless>\n                        <modelStyleType>test<\/modelStyleType>\n                        <plugType>\n                            <plugTypeValue>Americano<\/plugTypeValue>\n                        <\/plugType>\n                    <\/CellPhones>\n                <\/Electronics>\n            <\/category>\n        <\/MPProduct>\n        <MPOffer>\n            <price>1000<\/price>\n            <ShippingWeight>\n                <measure>10<\/measure>\n                <unit>kg<\/unit>\n            <\/ShippingWeight>\n            <ProductTaxCode>10101<\/ProductTaxCode>\n            <ShippingDimensionsHeight>\n                <measure>10<\/measure>\n                <unit>cm<\/unit>\n            <\/ShippingDimensionsHeight>\n            <ShippingDimensionsDepth>\n                <measure>10<\/measure>\n                <unit>cm<\/unit>\n            <\/ShippingDimensionsDepth>\n            <ShippingDimensionsWidth>\n                <measure>10<\/measure>\n                <unit>cm<\/unit>\n            <\/ShippingDimensionsWidth>\n            <sellerWarranty>test<\/sellerWarranty>\n            <sellerWarrantyPeriod>4<\/sellerWarrantyPeriod>\n            <shippingCountryOfOrigin>M\u00e9xico<\/shippingCountryOfOrigin>\n            <msiEligible>S\u00ed<\/msiEligible>\n        <\/MPOffer>\n    <\/MPItem>\n<\/MPItemFeed>"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/FeedId"
+                                },
+                                "example": {
+                                    "feedId": "3B6F0372F68949A0AB2DD89CE0726FCB@AQkBAQA"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/items": {
+            "get": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Get all items",
+                "description": "Displays a list of all items by using either nextCursor or offset and limit query parameters",
+                "operationId": "getAllItems",
+                "parameters": [
+                    {
+                        "name": "nextCursor",
+                        "in": "query",
+                        "description": "Used for pagination when more than 200 items are retrieved.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "*"
+                        }
+                    },
+                    {
+                        "name": "sku",
+                        "in": "query",
+                        "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "20"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ItemResponses"
+                                },
+                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:ItemResponses xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>sku-test3<\/ns2:sku>\n        <ns2:wpid>5I5XS1SDJAQ5<\/ns2:wpid>\n        <ns2:gtin>05662357960175<\/ns2:gtin>\n        <ns2:productName>LG 55\\&quot; Class final 1028<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>1555.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04251039101213<\/ns2:sku>\n        <ns2:wpid>49TF8CG5JDV5<\/ns2:wpid>\n        <ns2:gtin>04251039101213<\/ns2:gtin>\n        <ns2:productName>Celi<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>10987.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04431291168296<\/ns2:sku>\n        <ns2:wpid>4WCKQR67KB4O<\/ns2:wpid>\n        <ns2:gtin>04431291168296<\/ns2:gtin>\n        <ns2:productName>LG 55&quot; Class final<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>1555.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04265279285251<\/ns2:sku>\n        <ns2:wpid>64L0745N1N0N<\/ns2:wpid>\n        <ns2:gtin>04265279285251<\/ns2:gtin>\n        <ns2:productName>Celi<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>10987.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04749831118404<\/ns2:sku>\n        <ns2:wpid>24Y5GZIYVOTY<\/ns2:wpid>\n        <ns2:gtin>04749831118404<\/ns2:gtin>\n        <ns2:productName>LG 55&quot; Class final<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>1555.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04906390152571<\/ns2:sku>\n        <ns2:wpid>5VPAM1X3TF0J<\/ns2:wpid>\n        <ns2:gtin>04906390152571<\/ns2:gtin>\n        <ns2:productName>Celi<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>10987.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04199966180638<\/ns2:sku>\n        <ns2:wpid>7H7G0Z8BHNUX<\/ns2:wpid>\n        <ns2:gtin>04199966180638<\/ns2:gtin>\n        <ns2:productName>LG 55&quot; Class final<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>1555.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>05692565538910<\/ns2:sku>\n        <ns2:wpid>2HZGY9VWQAS6<\/ns2:wpid>\n        <ns2:gtin>05692565538910<\/ns2:gtin>\n        <ns2:productName>TV Samsung 50<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>9999.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04968355259176<\/ns2:sku>\n        <ns2:wpid>13HC962496U3<\/ns2:wpid>\n        <ns2:gtin>04968355259176<\/ns2:gtin>\n        <ns2:productName>TV Samsung 50<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>9999.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04476684222605<\/ns2:sku>\n        <ns2:wpid>2SQFV5CJA0IP<\/ns2:wpid>\n        <ns2:gtin>04476684222605<\/ns2:gtin>\n        <ns2:productName>Iphone XR<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>16000.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04338904144794<\/ns2:sku>\n        <ns2:wpid>17Z9SLKGQXR1<\/ns2:wpid>\n        <ns2:gtin>04338904144794<\/ns2:gtin>\n        <ns2:productName>TV Samsung 50<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>9999.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04360747214198<\/ns2:sku>\n        <ns2:wpid>4GLGOESXL34H<\/ns2:wpid>\n        <ns2:gtin>04360747214198<\/ns2:gtin>\n        <ns2:productName>Iphone XR<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>16000.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04570802182236<\/ns2:sku>\n        <ns2:wpid>1U257J0E9DGW<\/ns2:wpid>\n        <ns2:gtin>04570802182236<\/ns2:gtin>\n        <ns2:productName>TV Samsung 50<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>9999.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04945655257927<\/ns2:sku>\n        <ns2:wpid>74U1ZURP60V6<\/ns2:wpid>\n        <ns2:gtin>04945655257927<\/ns2:gtin>\n        <ns2:productName>Iphone XR<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>16000.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04963111296495<\/ns2:sku>\n        <ns2:wpid>0VPFVD1PT7C2<\/ns2:wpid>\n        <ns2:gtin>04963111296495<\/ns2:gtin>\n        <ns2:productName>Iphone XR<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>16000.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>IN_PROGRESS<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04518833231882<\/ns2:sku>\n        <ns2:wpid>5KF5R1PSKMRT<\/ns2:wpid>\n        <ns2:gtin>04518833231882<\/ns2:gtin>\n        <ns2:productName>TV Samsung 50<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>9999.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04822133173705<\/ns2:sku>\n        <ns2:wpid>3HQO3FYDC9AW<\/ns2:wpid>\n        <ns2:gtin>04822133173705<\/ns2:gtin>\n        <ns2:productName>Iphone XR<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>16000.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>04268368249677<\/ns2:sku>\n        <ns2:wpid>1K626YF4NCQO<\/ns2:wpid>\n        <ns2:gtin>04268368249677<\/ns2:gtin>\n        <ns2:productName>TV Samsung 50<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>9999.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>TV51<\/ns2:sku>\n        <ns2:wpid>4H5IZWY32Z4P<\/ns2:wpid>\n        <ns2:upc>849813011168<\/ns2:upc>\n        <ns2:gtin>00849813011168<\/ns2:gtin>\n        <ns2:productName>Pantalla<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>755999.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>UNPUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>sku-spec-demoTest-Sep26<\/ns2:sku>\n        <ns2:wpid>3DS0THBEVY6Q<\/ns2:wpid>\n        <ns2:upc>129119211210<\/ns2:upc>\n        <ns2:gtin>00129119211210<\/ns2:gtin>\n        <ns2:productName>Smart TV&amp;nbsp;<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>10000.0<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:totalItems>20<\/ns2:totalItems>\n<\/ns2:ItemResponses>"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/items\/{sku}": {
+            "get": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Get an item",
+                "description": "Retrieves an item and displays the item details.",
+                "operationId": "getAnItem",
+                "parameters": [
+                    {
+                        "name": "sku",
+                        "in": "path",
+                        "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. ",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ItemResponse"
+                                },
+                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:ItemResponses xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:ItemResponse>\n        <ns2:mart>WALMART_MEXICO<\/ns2:mart>\n        <ns2:sku>sku-test3<\/ns2:sku>\n        <ns2:wpid>5I5XS1SDJAQ5<\/ns2:wpid>\n        <ns2:gtin>05662357960175<\/ns2:gtin>\n        <ns2:productName>LG 55\\&quot; Class final 1028<\/ns2:productName>\n        <ns2:shelf>UNNAV<\/ns2:shelf>\n        <ns2:price>\n            <ns2:currency>MXN<\/ns2:currency>\n            <ns2:amount>17.7<\/ns2:amount>\n        <\/ns2:price>\n        <ns2:publishedStatus>PUBLISHED<\/ns2:publishedStatus>\n    <\/ns2:ItemResponse>\n    <ns2:totalItems>1<\/ns2:totalItems>\n<\/ns2:ItemResponses>"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/items\/{SKU}": {
+            "delete": {
+                "tags": [
+                    "Items"
+                ],
+                "summary": "Retire an item",
+                "description": "Completely deactivates and un-publishes an item from the site.",
+                "operationId": "retireAnItem",
+                "parameters": [
+                    {
+                        "name": "SKU",
+                        "in": "path",
+                        "description": "SKU",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ItemRetireResponseV2"
+                                },
+                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:ItemRetireResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:sku>sku-test3<\/ns2:sku>\n    <ns2:message>Thank you.  Your item has been submitted for retirement from Walmart Catalog.  Please note that it can take up to 48 hours for items to be retired from our catalog.<\/ns2:message>\n<\/ns2:ItemRetireResponse>"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "FeedId": {
+                "type": "object",
+                "properties": {
+                    "feedId": {
+                        "type": "string",
+                        "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
+                    },
+                    "additionalAttributes": {
+                        "type": "object",
+                        "nullable": true
+                    },
+                    "errors": {
+                        "type": "object",
+                        "nullable": true
+                    }
+                }
+            },
+            "Cause": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "xml": {
+                    "name": "Cause"
+                }
+            },
+            "GatewayError": {
+                "required": [
+                    "code"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "info": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "string",
+                        "enum": [
+                            "INFO",
+                            "WARN",
+                            "ERROR"
+                        ]
+                    },
+                    "category": {
+                        "type": "string",
+                        "enum": [
+                            "APPLICATION",
+                            "SYSTEM",
+                            "REQUEST",
+                            "DATA"
+                        ]
+                    },
+                    "causes": {
+                        "type": "array",
+                        "xml": {
+                            "wrapped": true
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Cause"
+                        }
+                    },
+                    "errorIdentifiers": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "object"
+                        }
+                    },
+                    "component": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "serviceName": {
+                        "type": "string"
+                    },
+                    "gatewayErrorCategory": {
+                        "type": "string",
+                        "enum": [
+                            "INTERNAL_DATA_ERROR",
+                            "EXTERNAL_DATA_ERROR",
+                            "SYSTEM_ERROR"
+                        ]
+                    }
+                },
+                "xml": {
+                    "name": "GatewayError"
+                }
+            },
+            "ItemResponse": {
+                "type": "object",
+                "properties": {
+                    "mart": {
+                        "type": "string",
+                        "description": "The marketplace name. Example: 'WALMART_CA'",
+                        "enum": [
+                            "WALMART_US",
+                            "WALMART_CA",
+                            "ASDA_GM",
+                            "WALMART_MEXICO"
+                        ]
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "Unique identifier for the item"
+                    },
+                    "wpid": {
+                        "type": "string",
+                        "description": "An alphanumeric Product ID generated by Walmart"
+                    },
+                    "upc": {
+                        "type": "string",
+                        "description": "The 12-digit bar code used extensively for retail packaging in the United States"
+                    },
+                    "gtin": {
+                        "type": "string",
+                        "description": "The GTIN-compatible Product ID (i.e. UPC or EAN). UPCs must be 12 or 14 digitis in length. EANs must be 13 digits in length."
+                    },
+                    "productName": {
+                        "type": "string",
+                        "description": "A seller-specified, alphanumeric string uniquely identifying the product name. Example: 'Sterling Silver Blue Diamond Heart Pendant with 18in Chain'"
+                    },
+                    "shelf": {
+                        "type": "string",
+                        "description": "Walmart assigned item shelf name"
+                    },
+                    "productType": {
+                        "type": "string",
+                        "description": "A seller-specified, alphanumeric string uniquely identifying the Product Type. Example: 'Diamond'"
+                    },
+                    "price": {
+                        "$ref": "#\/components\/schemas\/Money"
+                    },
+                    "publishedStatus": {
+                        "type": "string",
+                        "description": "The published status of an item describes where the item is in the submission process. Examples of allowed values are PUBLISHED, UNPUBLISHED."
+                    }
+                },
+                "xml": {
+                    "name": "ItemResponse"
+                }
+            },
+            "ItemResponses": {
+                "required": [
+                    "itemResponse"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
+                    },
+                    "itemResponse": {
+                        "type": "array",
+                        "description": "Items included in the response list",
+                        "xml": {
+                            "name": "ItemResponse"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ItemResponse"
+                        }
+                    },
+                    "totalItems": {
+                        "type": "integer",
+                        "description": "Total Items for the query",
+                        "format": "int64"
+                    },
+                    "nextCursor": {
+                        "type": "string",
+                        "description": "Used for pagination when more than 200 items are retrieved. The nextCursor value of the response includes a link to another GET call which retrieves the next page of results."
+                    }
+                },
+                "xml": {
+                    "name": "ItemResponses"
+                }
+            },
+            "Money": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "type": "string",
+                        "description": "The currency of the item price",
+                        "enum": [
+                            "AED",
+                            "AFN",
+                            "ALL",
+                            "AMD",
+                            "ANG",
+                            "AOA",
+                            "ARS",
+                            "AUD",
+                            "AWG",
+                            "AZN",
+                            "BAM",
+                            "BBD",
+                            "BDT",
+                            "BGN",
+                            "BHD",
+                            "BIF",
+                            "BMD",
+                            "BND",
+                            "BOB",
+                            "BRL",
+                            "BSD",
+                            "BTN",
+                            "BWP",
+                            "BYR",
+                            "BZD",
+                            "CAD",
+                            "CDF",
+                            "CHF",
+                            "CLP",
+                            "CNY",
+                            "COP",
+                            "CRC",
+                            "CUP",
+                            "CVE",
+                            "CZK",
+                            "DJF",
+                            "DKK",
+                            "DOP",
+                            "DZD",
+                            "EGP",
+                            "ERN",
+                            "ETB",
+                            "EUR",
+                            "FJD",
+                            "FKP",
+                            "GBP",
+                            "GEL",
+                            "GHS",
+                            "GIP",
+                            "GMD",
+                            "GNF",
+                            "GTQ",
+                            "GYD",
+                            "HKD",
+                            "HNL",
+                            "HRK",
+                            "HTG",
+                            "HUF",
+                            "IDR",
+                            "ILS",
+                            "INR",
+                            "IQD",
+                            "IRR",
+                            "ISK",
+                            "JMD",
+                            "JOD",
+                            "JPY",
+                            "KES",
+                            "KGS",
+                            "KHR",
+                            "KMF",
+                            "KPW",
+                            "KRW",
+                            "KWD",
+                            "KYD",
+                            "KZT",
+                            "LAK",
+                            "LBP",
+                            "LKR",
+                            "LRD",
+                            "LSL",
+                            "LTL",
+                            "LVL",
+                            "LYD",
+                            "MAD",
+                            "MDL",
+                            "MGA",
+                            "MKD",
+                            "MMK",
+                            "MNT",
+                            "MOP",
+                            "MRO",
+                            "MUR",
+                            "MVR",
+                            "MWK",
+                            "MXN",
+                            "MYR",
+                            "MZN",
+                            "NAD",
+                            "NGN",
+                            "NIO",
+                            "NOK",
+                            "NPR",
+                            "NZD",
+                            "OMR",
+                            "PAB",
+                            "PEN",
+                            "PGK",
+                            "PHP",
+                            "PKR",
+                            "PLN",
+                            "PYG",
+                            "QAR",
+                            "RON",
+                            "RSD",
+                            "RUB",
+                            "RUR",
+                            "RWF",
+                            "SAR",
+                            "SBD",
+                            "SCR",
+                            "SDG",
+                            "SEK",
+                            "SGD",
+                            "SHP",
+                            "SLL",
+                            "SOS",
+                            "SRD",
+                            "STD",
+                            "SYP",
+                            "SZL",
+                            "THB",
+                            "TJS",
+                            "TMT",
+                            "TND",
+                            "TOP",
+                            "TRY",
+                            "TTD",
+                            "TWD",
+                            "TZS",
+                            "UAH",
+                            "UGX",
+                            "USD",
+                            "UYU",
+                            "UZS",
+                            "VEF",
+                            "VND",
+                            "VUV",
+                            "WST",
+                            "XAF",
+                            "XAG",
+                            "XAU",
+                            "XBA",
+                            "XBB",
+                            "XBC",
+                            "XBD",
+                            "XCD",
+                            "XDR",
+                            "XFU",
+                            "XOF",
+                            "XPD",
+                            "XPF",
+                            "XPT",
+                            "XTS",
+                            "XXX",
+                            "YER",
+                            "ZAR",
+                            "ZMK",
+                            "ZWL"
+                        ]
+                    },
+                    "amount": {
+                        "type": "number",
+                        "description": "The numerical amount of the price. Example: 9.99"
+                    }
+                },
+                "description": "The current price of the item"
+            },
+            "ItemRetireResponseV2": {
+                "required": [
+                    "sku"
+                ],
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item."
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "Message confirming the deletion or retirement of an item from the Walmart Catalog"
+                    }
+                },
+                "xml": {
+                    "name": "ItemRetireResponse"
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "accessToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "basic": {
+                "type": "http",
+                "scheme": "basic",
+                "description": "Basic authentication with a Walmart Client ID and Client Secret"
+            }
+        }
+    }
+}

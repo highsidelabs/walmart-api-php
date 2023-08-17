@@ -29,7 +29,7 @@ function downloadSchemas(?array $categories, ?array $countries, ?array $apiCodes
         $country = $schema['country'];
         $apiCode = $schema['api']['code'];
 
-        $savePath = SCHEMA_DIR . "/$country/{$category}";
+        $savePath = MODEL_DIR . "/$country/{$category}";
         if (!file_exists($savePath)) {
             mkdir($savePath, 0755, true);
         }

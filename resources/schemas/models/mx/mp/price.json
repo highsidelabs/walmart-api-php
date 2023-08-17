@@ -1,0 +1,378 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Price Management",
+        "description": "The price is a fundamental building block for your listing on Walmart.com. You can use the price management APIs to set up and manage the price for a given item",
+        "version": "0.6.3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        },
+        {
+            "url": "https:\/\/sandbox.walmartapis.com",
+            "description": "Sandbox URL"
+        }
+    ],
+    "security": [
+        {
+            "basicScheme": []
+        }
+    ],
+    "paths": {
+        "\/v3\/price": {
+            "put": {
+                "tags": [
+                    "Prices"
+                ],
+                "summary": "Update a price",
+                "description": "Updates the regular price for a given item.",
+                "operationId": "updatePrice",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application\/xml": {
+                            "schema": {
+                                "type": "string"
+                            },
+                            "example": "<Price xmlns=\"http:\/\/walmart.com\/\">\n   <itemIdentifier>\n       <sku>04743020220299<\/sku>\n   <\/itemIdentifier>\n   <pricingList>\n       <pricing>\n            <currentPrice>\n              <value currency=\"MXN\" amount=\"223.00\"\/>\n            <\/currentPrice>\n           <currentPriceType>BASE<\/currentPriceType>\n       <\/pricing>\n   <\/pricingList>\n<\/Price>"
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/PartnerPriceResponse"
+                                },
+                                "example": {
+                                    "ItemPriceResponse": {
+                                        "mart": 7,
+                                        "message": "Thank you. Your price has been updated. Please allow up to five minutes for this change to be reflected on the site.",
+                                        "sku": "04743020220299"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/feeds": {
+            "post": {
+                "tags": [
+                    "Prices"
+                ],
+                "summary": "Updates price in bulk",
+                "description": "In one Feed you can update items in bulk when the feedtype is price. Helps Sellers to set up their SKU for an individual item\u2019s competitive price adjustment with feedtype = CPT_SELLER_ELIGIBILITY",
+                "operationId": "updateBulkPrices",
+                "parameters": [
+                    {
+                        "name": "feedType",
+                        "in": "query",
+                        "description": "The feed Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "default": "price"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "multipart\/form-data": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "description": "Feed file to upload",
+                                        "format": "binary"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "xml1": {
+                                    "value": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<PriceFeed xmlns=\"http:\/\/walmart.com\/\">\n\t<PriceHeader>\n\t\t<version>1.5.1<\/version>\n\t<\/PriceHeader>\n\t<Price>\n\t\t<itemIdentifier>\n\t\t\t<sku>Mi56iEMS3iOnijO<\/sku>\n\t\t<\/itemIdentifier>\n\t\t<pricingList>\n\t\t\t<pricing>\n\t\t\t\t<currentPrice>\n\t\t\t\t\t<value currency=\"MXN\" amount=\"321.0\" \/>\n\t\t\t\t<\/currentPrice>\n\t\t\t<\/pricing>\n\t\t<\/pricingList>\n\t<\/Price>\n\t<Price>\n\t\t<itemIdentifier>\n\t\t\t<sku>Ur6DT0RbDO5LpA0<\/sku>\n\t\t<\/itemIdentifier>\n\t\t<pricingList>\n\t\t\t<pricing>\n\t\t\t\t<currentPrice>\n\t\t\t\t\t<value currency=\"MXN\" amount=\"19.0\" \/>\n\t\t\t\t<\/currentPrice>\n\t\t\t<\/pricing>\n\t\t<\/pricingList>\n\t<\/Price>\n<\/PriceFeed>"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/FeedId"
+                                },
+                                "example": {
+                                    "feedId": "970302799B194D309B4DBA5471DCEF19@AQYBCgA"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Cause": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "xml": {
+                    "name": "Cause"
+                }
+            },
+            "GatewayError": {
+                "required": [
+                    "code"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "info": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "string",
+                        "enum": [
+                            "INFO",
+                            "WARN",
+                            "ERROR"
+                        ]
+                    },
+                    "category": {
+                        "type": "string",
+                        "enum": [
+                            "APPLICATION",
+                            "SYSTEM",
+                            "REQUEST",
+                            "DATA"
+                        ]
+                    },
+                    "causes": {
+                        "type": "array",
+                        "xml": {
+                            "wrapped": true
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Cause"
+                        }
+                    },
+                    "errorIdentifiers": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "object"
+                        }
+                    },
+                    "component": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "serviceName": {
+                        "type": "string"
+                    },
+                    "gatewayErrorCategory": {
+                        "type": "string",
+                        "enum": [
+                            "INTERNAL_DATA_ERROR",
+                            "EXTERNAL_DATA_ERROR",
+                            "SYSTEM_ERROR"
+                        ]
+                    }
+                },
+                "xml": {
+                    "name": "GatewayError"
+                }
+            },
+            "PartnerPriceResponse": {
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
+                    },
+                    "statusCode": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "mart": {
+                        "type": "string",
+                        "description": "Marketplace name. Example: mart: 7",
+                        "xml": {
+                            "namespace": "http:\/\/walmart.com\/"
+                        }
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item.",
+                        "xml": {
+                            "namespace": "http:\/\/walmart.com\/"
+                        }
+                    },
+                    "message": {
+                        "type": "string",
+                        "description": "A message of acknowledgement for a price update",
+                        "xml": {
+                            "namespace": "http:\/\/walmart.com\/"
+                        }
+                    }
+                },
+                "xml": {
+                    "name": "ItemPriceResponse",
+                    "namespace": "http:\/\/walmart.com\/"
+                }
+            },
+            "FeedId": {
+                "type": "object",
+                "properties": {
+                    "feedId": {
+                        "type": "string",
+                        "description": "A unique ID, returned from the Bulk Upload API, used for tracking the feed file"
+                    },
+                    "additionalAttributes": {
+                        "type": "object",
+                        "nullable": true
+                    },
+                    "errors": {
+                        "type": "object",
+                        "nullable": true
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "accessToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "basic": {
+                "type": "http",
+                "scheme": "basic",
+                "description": "Basic authentication with a Walmart Client ID and Client Secret"
+            }
+        }
+    }
+}

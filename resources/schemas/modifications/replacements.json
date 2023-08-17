@@ -1,0 +1,48 @@
+{
+  "mx": {
+    "mp": {
+      "auth": {
+        "components": {
+          "schemas": {
+            "Scopes": {
+              "default": { "reports": "view_only" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "us": {
+    "mp": {
+      "auth": {
+        "components": {
+          "schemas": {
+            "Scopes": {
+              "default": { "reports": "view_only" }
+            }
+          }
+        }
+      },
+      "items": {
+        "paths": {
+          "\/v3\/items\/{id}": {
+            "get": {
+              "responses": {
+                "200": {
+                  "content": {
+                    "application\/json": {
+                      "schema": {
+                        "$ref": "#\/components\/schemas\/ItemResponses"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "schemas": {}
+      }
+    }
+  }
+}

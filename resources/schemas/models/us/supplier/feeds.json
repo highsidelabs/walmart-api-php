@@ -1,0 +1,605 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Feed Management",
+        "description": "Feeds are constructed to handle bulk functions. A feed consists of an HTTP request with an attached file. The attached file contains the XML representing the objects that need to be created or updated.",
+        "version": "0.6.3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/api-gateway.walmart.com",
+            "description": "Production URL"
+        }
+    ],
+    "paths": {
+        "\/v3\/feeds": {
+            "get": {
+                "tags": [
+                    "Feeds"
+                ],
+                "summary": "Feed status",
+                "description": "Displays an item status for a specific Feed ID. Use the Feed ID returned from the DSV Bulk Upload API.",
+                "operationId": "getAllFeedStatuses",
+                "parameters": [
+                    {
+                        "name": "feedId",
+                        "in": "query",
+                        "description": "A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789).",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "50"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/FeedRecordResponse"
+                                },
+                                "example": "<list>\n    <totalresults>1<\/totalresults>\n    <offset>0<\/offset>\n    <limit>50<\/limit>\n    <results>\n        <feed>\n            <feedid>2D4DB32BC1174C7491720C9EBEB56163@AQMBAAA<\/feedid>\n            <feedsource>WALMART_SC<\/feedsource>\n            <feedtype>SUPPLIER_FULL_ITEM<\/feedtype>\n            <partnerid>721407<\/partnerid>\n            <itemsreceived>1<\/itemsreceived>\n            <itemssucceeded>1<\/itemssucceeded>\n            <itemsfailed>0<\/itemsfailed>\n            <itemsprocessing>0<\/itemsprocessing>\n            <feedstatus>PROCESSED<\/feedstatus>\n            <feeddate>2017-03-16T21:37:41.686Z<\/feeddate>\n            <batchid>HP_SHUTDOWN_HOOK_PQA_AM_009<\/batchid>\n            <modifieddtm>2017-03-16T21:37:47.509Z<\/modifieddtm>\n            <filename>Clothing_XSD_0_13_fromHarshal.XML<\/filename>\n            <itemdataerrorcount>0<\/itemdataerrorcount>\n            <itemsystemerrorcount>0<\/itemsystemerrorcount>\n            <itemtimeouterrorcount>0<\/itemtimeouterrorcount>\n        <\/feed>\n    <\/results>\n<\/list>\n"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signature": [],
+                        "consumerId": [],
+                        "accessToken": [],
+                        "partner": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/feeds\/{feedId}": {
+            "get": {
+                "tags": [
+                    "Feeds"
+                ],
+                "summary": "Feed item status",
+                "description": "Returns the status of all items for a specific feedId.\n\nWe do not recommend using this call when includeDetails is set to true because discrepancies may occur between the header and the item details (i.e., the item details may be incorrect).",
+                "operationId": "getFeedItemStatus",
+                "parameters": [
+                    {
+                        "name": "feedId",
+                        "in": "path",
+                        "description": "A unique ID returned from the Bulk Upload API, used for tracking the Feed File. Special characters must be escaped. (e.g., feedId: '...3456@789...' must be entered in the URL as '...3456%40789).",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "includeDetails",
+                        "in": "query",
+                        "description": "Includes details of each entity in the feed. Do not set this parameter to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "false"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The object response to start with, where 0 is the first entity that can be requested. It can only be used when includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of entities to be returned. It cannot be more than 50 entities. Use it only when the includeDetails is set to true.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "50"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/xml": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/PartnerFeedResponse"
+                                },
+                                "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n<ns2:PartnerFeedResponse xmlns:ns2=\"http:\/\/walmart.com\/\">\n    <ns2:feedId>B99CF2503C894C388C5D1AECC486386C@ARcBAQA<\/ns2:feedId>\n    <ns2:feedStatus>PROCESSED<\/ns2:feedStatus>\n    <ns2:feedSubmissionDate>2018-02-23T18:08:57.910Z<\/ns2:feedSubmissionDate>\n    <ns2:ingestionErrors\/>\n    <ns2:itemsReceived>1<\/ns2:itemsReceived>\n    <ns2:itemsSucceeded>1<\/ns2:itemsSucceeded>\n    <ns2:itemsFailed>0<\/ns2:itemsFailed>\n    <ns2:itemsProcessing>0<\/ns2:itemsProcessing>\n    <ns2:offset>0<\/ns2:offset>\n    <ns2:limit>50<\/ns2:limit>\n    <ns2:itemDetails>\n        <ns2:itemIngestionStatus>\n            <ns2:martId>0<\/ns2:martId>\n            <ns2:sku>MS95-005-076-03<\/ns2:sku>\n            <ns2:wpid>7FB26Z1GC3GK<\/ns2:wpid>\n            <ns2:index>0<\/ns2:index>\n            <ns2:itemid>340712325<\/ns2:itemid>\n            <ns2:productIdentifiers>\n                <ns2:productIdentifier>\n                    <ns2:productIdType>GTIN<\/ns2:productIdType>\n                    <ns2:productId>06959576601002<\/ns2:productId>\n                <\/ns2:productIdentifier>\n            <\/ns2:productIdentifiers>\n            <ns2:ingestionStatus>SUCCESS<\/ns2:ingestionStatus>\n            <ns2:ingestionErrors\/>\n        <\/ns2:itemIngestionStatus>\n    <\/ns2:itemDetails>\n<\/ns2:PartnerFeedResponse>\n"
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "signature": [],
+                        "consumerId": [],
+                        "accessToken": [],
+                        "partner": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Cause": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    }
+                },
+                "xml": {
+                    "name": "Cause"
+                }
+            },
+            "FeedRecord": {
+                "type": "object",
+                "properties": {
+                    "feedId": {
+                        "type": "string",
+                        "description": "A unique ID used for tracking the Feed File"
+                    },
+                    "feedSource": {
+                        "type": "string",
+                        "description": "The source of the feed"
+                    },
+                    "feedType": {
+                        "type": "string",
+                        "description": "The feed type"
+                    },
+                    "partnerId": {
+                        "type": "string",
+                        "description": "The seller ID"
+                    },
+                    "itemsReceived": {
+                        "type": "integer",
+                        "description": "The number of items received",
+                        "format": "int64"
+                    },
+                    "itemsSucceeded": {
+                        "type": "integer",
+                        "description": "The number of items in the feed that have successfully processed",
+                        "format": "int64"
+                    },
+                    "itemsFailed": {
+                        "type": "integer",
+                        "description": "The number of items in the feed that failed due to a data or system error",
+                        "format": "int64"
+                    },
+                    "itemsProcessing": {
+                        "type": "integer",
+                        "description": "The number of items in the feed that are still in progress",
+                        "format": "int64"
+                    },
+                    "feedStatus": {
+                        "type": "string",
+                        "description": "Can be one of the following: RECEIVED, INPROGRESS, PROCESSED, or ERROR. For details, see the definitions listed under 'Feed Statuses' at the beginning of this section."
+                    },
+                    "feedDate": {
+                        "type": "string",
+                        "description": "The date and time the feed was submitted. Format: yyyymmddThh:mm:ss.xxxz",
+                        "format": "date-time"
+                    },
+                    "batchId": {
+                        "type": "string",
+                        "description": "The batch ID for the feed, if provided"
+                    },
+                    "modifiedDtm": {
+                        "type": "string",
+                        "description": "The most recent time the feed was modified. Format: yyyymmddThh:mm:ss.xxxz",
+                        "format": "date-time"
+                    }
+                },
+                "description": "Information about the individual feed",
+                "xml": {
+                    "name": "feed"
+                }
+            },
+            "FeedRecordResponse": {
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
+                    },
+                    "totalResults": {
+                        "type": "integer",
+                        "description": "Total number of feeds returned",
+                        "format": "int64"
+                    },
+                    "offset": {
+                        "type": "integer",
+                        "description": "The object response to the starting number, where 0 is the first available",
+                        "format": "int64"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "description": "The number of items to be returned",
+                        "format": "int32"
+                    },
+                    "results": {
+                        "type": "array",
+                        "xml": {
+                            "wrapped": true
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/FeedRecord"
+                        }
+                    }
+                },
+                "xml": {
+                    "name": "list"
+                }
+            },
+            "GatewayError": {
+                "required": [
+                    "code"
+                ],
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "info": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "string",
+                        "enum": [
+                            "INFO",
+                            "WARN",
+                            "ERROR"
+                        ]
+                    },
+                    "category": {
+                        "type": "string",
+                        "enum": [
+                            "APPLICATION",
+                            "SYSTEM",
+                            "REQUEST",
+                            "DATA"
+                        ]
+                    },
+                    "causes": {
+                        "type": "array",
+                        "xml": {
+                            "wrapped": true
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Cause"
+                        }
+                    },
+                    "errorIdentifiers": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "object"
+                        }
+                    },
+                    "component": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "serviceName": {
+                        "type": "string"
+                    },
+                    "gatewayErrorCategory": {
+                        "type": "string",
+                        "enum": [
+                            "INTERNAL_DATA_ERROR",
+                            "EXTERNAL_DATA_ERROR",
+                            "SYSTEM_ERROR"
+                        ]
+                    }
+                },
+                "xml": {
+                    "name": "GatewayError"
+                }
+            },
+            "IngestionError": {
+                "required": [
+                    "code",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "description": "Error Type",
+                        "enum": [
+                            "DATA_ERROR",
+                            "SYSTEM_ERROR",
+                            "TIMEOUT_ERROR"
+                        ]
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Error code"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Error description"
+                    }
+                }
+            },
+            "IngestionErrors": {
+                "type": "object",
+                "properties": {
+                    "ingestionError": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/IngestionError"
+                        }
+                    }
+                },
+                "description": "List of errors for an item"
+            },
+            "ItemDetails": {
+                "type": "object",
+                "properties": {
+                    "itemIngestionStatus": {
+                        "type": "array",
+                        "description": "The ingestion status of an individual item",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/PartnerItemIngestionStatus"
+                        }
+                    }
+                },
+                "description": "List of ingestion status details for items in the feed"
+            },
+            "PartnerFeedResponse": {
+                "type": "object",
+                "properties": {
+                    "errors": {
+                        "type": "array",
+                        "xml": {
+                            "name": "error"
+                        },
+                        "items": {
+                            "$ref": "#\/components\/schemas\/GatewayError"
+                        }
+                    },
+                    "feedId": {
+                        "type": "string",
+                        "description": "A unique ID used for tracking the Feed File"
+                    },
+                    "feedStatus": {
+                        "type": "string",
+                        "description": "Can be one of the following: RECEIVED, INPROGRESS, PROCESSED, or ERROR",
+                        "enum": [
+                            "RECEIVED",
+                            "INPROGRESS",
+                            "PROCESSED",
+                            "ERROR"
+                        ]
+                    },
+                    "ingestionErrors": {
+                        "$ref": "#\/components\/schemas\/IngestionErrors"
+                    },
+                    "itemsReceived": {
+                        "type": "integer",
+                        "description": "The number of items received in the feed",
+                        "format": "int32"
+                    },
+                    "itemsSucceeded": {
+                        "type": "integer",
+                        "description": "The number of items in the feed that processed successfully",
+                        "format": "int32"
+                    },
+                    "itemsFailed": {
+                        "type": "integer",
+                        "description": "The number of items in the feed that failed due to a data or system error",
+                        "format": "int32"
+                    },
+                    "itemsProcessing": {
+                        "type": "integer",
+                        "description": "The number of items in the feed that are still processing",
+                        "format": "int32"
+                    },
+                    "offset": {
+                        "type": "integer",
+                        "description": "The object response to the starting number, where 0 is the first entity available for request",
+                        "format": "int32"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "description": "The number of items returned. Cannot be greater than 1000.",
+                        "format": "int32"
+                    },
+                    "itemDetails": {
+                        "$ref": "#\/components\/schemas\/ItemDetails"
+                    }
+                },
+                "xml": {
+                    "name": "PartnerFeedResponse"
+                }
+            },
+            "PartnerItemIngestionStatus": {
+                "required": [
+                    "ingestionStatus"
+                ],
+                "type": "object",
+                "properties": {
+                    "martId": {
+                        "type": "integer",
+                        "description": "Mart ID that a user or seller uses for a marketplace",
+                        "format": "int32"
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "An arbitrary alphanumeric unique ID, seller-specified, identifying each item."
+                    },
+                    "wpid": {
+                        "type": "string",
+                        "description": "An alphanumeric product ID, generated by Walmart"
+                    },
+                    "index": {
+                        "type": "integer",
+                        "description": "index of items in the feed",
+                        "format": "int32"
+                    },
+                    "ingestionStatus": {
+                        "type": "string",
+                        "description": "Can be one of the following: DATA_ERROR, SYSTEM_ERROR, TIMEOUT_ERROR, or INPROGRESS",
+                        "enum": [
+                            "INPROGRESS",
+                            "SUCCESS",
+                            "DATA_ERROR",
+                            "SYSTEM_ERROR",
+                            "TIMEOUT_ERROR"
+                        ]
+                    },
+                    "ingestionErrors": {
+                        "$ref": "#\/components\/schemas\/IngestionErrors"
+                    }
+                },
+                "description": "The ingestion status of an individual item"
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "accessToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "consumerId": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.ID",
+                "description": "Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor."
+            },
+            "partner": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_PARTNER.ID",
+                "description": "Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor."
+            },
+            "signature": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_SEC.AUTH_SIGNATURE",
+                "description": "Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor."
+            }
+        }
+    }
+}

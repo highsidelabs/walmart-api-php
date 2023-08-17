@@ -446,24 +446,30 @@ function chooseContentType(array $content): string
  */
 function fixSchema(array $schema, string $country, string $category, string $code): array
 {
-    $allFixes = json_decode(file_get_contents(SCHEMA_FIXES_FILE), true);
-    $fixes = $allFixes[$country][$category][$code] ?? [];
+    $allReplacements = json_decode(file_get_contents(SCHEMA_REPLACEMENTS_FILE), true);
+    $replacements = $allReplacements[$country][$category][$code] ?? [];
 
-    if (isset($fixes['paths'])) {
-        $schema['paths'] = array_merge_recursive_distinct(
-            $schema['paths'],
-            $fixes['paths']
-        );
+    foreach ($replacements as $key => $value) {
+        if (isset($schema[$key])) {
+            $schema[$key] = array_merge_recursive_distinct(
+                $schema[$key],
+                $value
+            );
+        }
     }
 
     $allAdditions = json_decode(file_get_contents(SCHEMA_ADDITIONS_FILE), true);
     $additions = $allAdditions[$country][$category][$code] ?? [];
 
-    if (isset($additions['paths'])) {
-        $schema['paths'] = array_merge_recursive(
-            $schema['paths'],
-            $additions['paths']
-        );
+    foreach ($additions as $key => $value) {
+        if (isset($schema[$key])) {
+            $schema[$key] = array_merge_recursive(
+                $schema[$key],
+                $value
+            );
+        } else {
+            $schema[$key] = $value;
+        }
     }
 
     return $schema;

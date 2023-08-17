@@ -1,0 +1,726 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Event Management",
+        "description": "The Event Management APIs are built to enable sellers to participate in the Promotional Events hosted on Seller Center Canada Ecommerce Website. These events are set up by our Business Teams and sellers can participate voluntarily to promote their SKUs at a promotional price for certain time period.",
+        "version": "0.6.3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        }
+    ],
+    "paths": {
+        "\/v3\/ca\/promotion\/bulkAddItems": {
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Bulk Add Item",
+                "description": "Once the seller has filled the template file downloaded with Download Template API, they can upload it for any event using this API.Any repeated upload will overwrite the previous details, hence in order to make any modifications sellers will have to provide the complete file along with the necessary amendments.\nThis API will require the details of the event the seller wishes to participate in, sellers can fetch this information with Get Event API.",
+                "operationId": "bulkAddItem",
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "multipart\/form-data": {
+                            "schema": {
+                                "required": [
+                                    "eventId",
+                                    "eventName",
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "description": "Feed file to upload",
+                                        "format": "binary"
+                                    },
+                                    "eventId": {
+                                        "type": "string"
+                                    },
+                                    "eventName": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/UploadResponse"
+                                },
+                                "example": {
+                                    "response": "Promo Items Uploaded Successfully"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/promotion\/autoUploadPromoSpec": {
+            "post": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Auto Upload Promo Spec",
+                "description": "This will be an automated procedure, which needs to be triggered from the seller end to confirm their participation.\nOnce they trigger this API, all their selected SKUs will be taken up for the promotional events.\nIf a seller misses out on this step, then despite the above procedure, their items won't be hosted under the promotional event.",
+                "operationId": "autoUploadPromoSpec",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "query",
+                        "description": "The Event Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/UploadResponse"
+                                },
+                                "example": {
+                                    "response": "Feed Uploaded Successfully, feed ID: 6D4B0EDB4A3B4DD2B422B098F8ACFC4E@AREBAwA"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/promotion\/template": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Download Template",
+                "description": "Once the seller has visibility into the upcoming events, they can submit their items for promotion via this template file.\nThis API will return an Excel file, where in the sellers can fill in the required details.",
+                "operationId": "downloadTemplate",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/promotion\/items\/count": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Get Total Item Count",
+                "description": "A summary of the total item count under various subcategories can be viewed using this API.",
+                "operationId": "getTotalItemCount",
+                "parameters": [
+                    {
+                        "name": "eventId",
+                        "in": "query",
+                        "description": "The Event Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ItemCountResponse"
+                                },
+                                "example": {
+                                    "eventId": "a7f561e2-5f5f-450f-8c58-5b022f680ec0",
+                                    "partnerId": "10900014406",
+                                    "submitted": 6,
+                                    "processed": 0,
+                                    "failed": 0,
+                                    "rejected": 0,
+                                    "selected": 0,
+                                    "all": 6,
+                                    "lastUpdatedTime": 1667886191346
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/promotion\/getpromoitems": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Get Selected Promo Item",
+                "description": "Once the Item upload is complete, the sellers can view only selective uploaded items using this API",
+                "operationId": "getAPromoItem",
+                "parameters": [
+                    {
+                        "name": "eventID",
+                        "in": "query",
+                        "description": "The Event Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/PromoItemResponse"
+                                },
+                                "example": {
+                                    "eventId": "718012a5-a4a6-40d8-a8be-4b8e6b3ac08b",
+                                    "id": "f01deb74-9bac-4db6-a733-dbfd4ef5a26f",
+                                    "partnerId": "10900014406",
+                                    "sellerSkuId": "ARTnCRAFT_27042022_B003",
+                                    "eventName": "EventTestingEvent",
+                                    "eventType": "seasonal",
+                                    "createdDate": "2022-09-27 07:31:02",
+                                    "status": "selected",
+                                    "currentRetailPrice": "230.00",
+                                    "price": "150.00",
+                                    "eligibleStartDate": "2022-10-11 15:36:00",
+                                    "eligibleEndDate": "2022-10-20 15:36:00",
+                                    "walmartSkuId": null,
+                                    "inventory": "5",
+                                    "wmtExclusive": "y",
+                                    "lastUpdatedDate": "2022-09-27 07:31:02",
+                                    "confirmedEventStartDate": "2022-10-11 15:36:00",
+                                    "confirmedEventEndDate": "2022-10-20 15:36:00",
+                                    "feedback": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/promotion\/getPromoSpec": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Download Promo Spec",
+                "description": "This API lets sellers download a file constituting all the items they upload for a particular promotional event, along with their status and business feedback.",
+                "operationId": "getPromoSpec",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "The API returns file response.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "file"
+                        }
+                    },
+                    {
+                        "name": "eventId",
+                        "in": "query",
+                        "description": "The Event Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation"
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/promotion\/events": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Get Event by Partner ID",
+                "description": "This API is the primary source of information for all the current active events in which the seller is eligible to participate along with their details.",
+                "operationId": "getEvent",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/EventResponse"
+                                },
+                                "example": {
+                                    "lastupdateddate": "",
+                                    "id": "9428ca46-7666-4c59-924d-f3e102cf87fb",
+                                    "title": "Christmas Bonanza weekly deal",
+                                    "type": "weekly",
+                                    "submissionStartDate": "2022-10-13 00:00:00",
+                                    "submissionEndDate": "2022-10-18 00:00:00",
+                                    "eventStartDate": "2022-10-19 00:00:00",
+                                    "eventEndDate": "2023-10-19 00:00:00",
+                                    "description": "<p>Christmas Bonanza weekly deal<\/p>\n"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/ca\/promotion\/allPromoItems": {
+            "get": {
+                "tags": [
+                    "Events"
+                ],
+                "summary": "Get All Promo Items",
+                "description": "Once the Item upload is complete, the sellers can view their uploaded items using this API. \nOn the backend, the business will be reviewing each seller's submissions and approving\/rejecting the items based on certain criteria (mentioned as the feedback in the API response).This activity will change the state of a particular item uploaded for promotion.",
+                "operationId": "getAllPromoItems",
+                "parameters": [
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "The API returns json response.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "json"
+                        }
+                    },
+                    {
+                        "name": "eventID",
+                        "in": "query",
+                        "description": "The Event Id",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/PromoItemResponse"
+                                },
+                                "example": {
+                                    "eventId": "e44631ea-ccc5-44b6-99c0-d0364607be2d",
+                                    "id": "fad290df-3157-45b0-bc11-fda1e69a02d3",
+                                    "partnerId": "10900014406",
+                                    "sellerSkuId": "SKU_4567",
+                                    "eventName": "Test daily event phase II",
+                                    "eventType": "daily",
+                                    "createdDate": "2022-10-11 05:28:21",
+                                    "status": "submitted",
+                                    "currentRetailPrice": null,
+                                    "price": "12.00",
+                                    "eligibleStartDate": "2022-10-17 00:00:00",
+                                    "eligibleEndDate": "2022-10-30 00:00:00",
+                                    "walmartSkuId": null,
+                                    "inventory": "10",
+                                    "wmtExclusive": "y",
+                                    "lastUpdatedDate": "2022-10-11 05:28:21",
+                                    "confirmedEventStartDate": null,
+                                    "confirmedEventEndDate": null,
+                                    "feedback": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "channelType": [],
+                        "signature": [],
+                        "consumerId": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "UploadResponse": {
+                "type": "object",
+                "properties": {
+                    "response": {
+                        "type": "string"
+                    }
+                },
+                "xml": {
+                    "name": "UploadResponse"
+                }
+            },
+            "ItemCountResponse": {
+                "type": "object",
+                "properties": {
+                    "eventId": {
+                        "type": "string",
+                        "description": "The Event ID"
+                    },
+                    "partnerId": {
+                        "type": "string",
+                        "description": "The Partner ID"
+                    },
+                    "submitted": {
+                        "type": "integer",
+                        "description": "The submitted number of items",
+                        "format": "int32"
+                    },
+                    "processed": {
+                        "type": "integer",
+                        "description": "The processed number of items",
+                        "format": "int32"
+                    },
+                    "failed": {
+                        "type": "integer",
+                        "description": "The failed number of items",
+                        "format": "int32"
+                    },
+                    "rejected": {
+                        "type": "integer",
+                        "description": "Rejected count of items",
+                        "format": "int32"
+                    },
+                    "selected": {
+                        "type": "integer",
+                        "description": "The selected count of items",
+                        "format": "int32"
+                    },
+                    "all": {
+                        "type": "integer",
+                        "description": "Full count",
+                        "format": "int32"
+                    },
+                    "lastUpdatedTime": {
+                        "type": "integer",
+                        "description": "The last time of update for items",
+                        "format": "int32"
+                    }
+                },
+                "xml": {
+                    "name": "ItemCountResponse"
+                }
+            },
+            "PromoItemResponse": {
+                "type": "object",
+                "properties": {
+                    "eventId": {
+                        "type": "string",
+                        "description": "The Event ID"
+                    },
+                    "id": {
+                        "type": "string",
+                        "description": "The response ID"
+                    },
+                    "partnerId": {
+                        "type": "string",
+                        "description": "Partner ID with seller"
+                    },
+                    "sellerSkuId": {
+                        "type": "string",
+                        "description": "Unique ID for seller"
+                    },
+                    "eventName": {
+                        "type": "string",
+                        "description": "The Event Name is unique and setup by the business"
+                    },
+                    "eventType": {
+                        "type": "string",
+                        "description": "The type of event",
+                        "enum": [
+                            "Flash",
+                            "Daily",
+                            "Weekly",
+                            "Seasonal"
+                        ]
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "description": "The date and time for the created Event",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "The status of the Event",
+                        "enum": [
+                            "Submitted",
+                            "Failed",
+                            "Selected",
+                            "Rejected"
+                        ]
+                    },
+                    "currentRetailPrice": {
+                        "type": "number",
+                        "description": "The Current retails price for the item"
+                    },
+                    "price": {
+                        "type": "number",
+                        "description": "The price for item"
+                    },
+                    "eligibleStartDate": {
+                        "type": "string",
+                        "description": "The eligible start date for event",
+                        "format": "date-time"
+                    },
+                    "eligibleEndDate": {
+                        "type": "string",
+                        "description": "The end date for Event",
+                        "format": "date-time"
+                    },
+                    "walmartSkuId": {
+                        "type": "string",
+                        "description": "SKU Id assigned to a product by walmart"
+                    },
+                    "inventory": {
+                        "type": "string",
+                        "description": "The count of items in inventory"
+                    },
+                    "wmtExclusive": {
+                        "type": "string",
+                        "description": "If the Item is Walmart exclusive"
+                    },
+                    "lastUpdatedDate": {
+                        "type": "string",
+                        "description": "The [last updated date for Event]",
+                        "format": "date-time"
+                    },
+                    "confirmedEventStartDate": {
+                        "type": "string",
+                        "description": "The start date of Event",
+                        "format": "date-time"
+                    },
+                    "confirmedEventEndDate": {
+                        "type": "string",
+                        "description": "The end date for Event",
+                        "format": "date-time"
+                    },
+                    "feedback": {
+                        "type": "string",
+                        "description": "The Feedback"
+                    }
+                },
+                "xml": {
+                    "name": "PromoItemResponse"
+                }
+            },
+            "EventResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "The Event ID"
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The Event Name"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "The Event Type",
+                        "enum": [
+                            "Flash",
+                            "Daily",
+                            "Weekly",
+                            "Seasonal"
+                        ]
+                    },
+                    "submissionStartDate": {
+                        "type": "string",
+                        "description": "Start date from when a seller can submit their item details for participating in the event",
+                        "format": "date-time",
+                        "xml": {
+                            "name": "dateTime"
+                        }
+                    },
+                    "submissionEndDate": {
+                        "type": "string",
+                        "description": "Last date for sellers to submit their items",
+                        "format": "date-time"
+                    },
+                    "eventStartDate": {
+                        "type": "string",
+                        "description": "The day when the event will go live on the ecommerce website",
+                        "format": "date-time"
+                    },
+                    "eventEndDate": {
+                        "type": "string",
+                        "description": "Last day of the live event.",
+                        "format": "date-time"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "The overall description of the event"
+                    },
+                    "lastUpdatedDate": {
+                        "type": "string",
+                        "description": "Last Updated date",
+                        "format": "date-time"
+                    }
+                },
+                "xml": {
+                    "name": "EventResponse"
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "channelType": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "description": "Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor."
+            },
+            "consumerId": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_CONSUMER.ID",
+                "description": "Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor."
+            },
+            "signature": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "WM_SEC.AUTH_SIGNATURE",
+                "description": "Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor."
+            }
+        }
+    }
+}

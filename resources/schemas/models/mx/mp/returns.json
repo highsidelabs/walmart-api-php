@@ -1,0 +1,2562 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "Returns Management",
+        "description": "Returns can be initiated from Walmart.com, even for items purchased from marketplace sellers (Except for HAZMAT or FREIGHT items).",
+        "version": "0.6.3"
+    },
+    "servers": [
+        {
+            "url": "https:\/\/marketplace.walmartapis.com",
+            "description": "Production URL"
+        },
+        {
+            "url": "https:\/\/sandbox.walmartapis.com",
+            "description": "Sandbox URL"
+        }
+    ],
+    "security": [
+        {
+            "basicScheme": []
+        }
+    ],
+    "paths": {
+        "\/v3\/returns\/{returnOrderId}\/refund": {
+            "post": {
+                "tags": [
+                    "Returns"
+                ],
+                "summary": "Refund Order Lines",
+                "description": "Refunds one or more order lines that have been shipped. The response to a successful call contains the order with the refunded line item",
+                "operationId": "refundOrderLines",
+                "parameters": [
+                    {
+                        "name": "returnOrderId",
+                        "in": "path",
+                        "description": "returnOrderId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "OrderRefund request body",
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/OrderRefundRequest"
+                            },
+                            "example": {
+                                "orderRefund": {
+                                    "orderLines": {
+                                        "orderLine": [
+                                            {
+                                                "lineNumber": "1",
+                                                "orderLineStatuses": {
+                                                    "orderLineStatus": [
+                                                        {
+                                                            "status": "Received",
+                                                            "statusQuantity": {
+                                                                "unitOfMeasurement": "EACH",
+                                                                "amount": "2"
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "202": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "string",
+                                    "x-expose-headers": true
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failure Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Failure Operation 500",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/returns": {
+            "get": {
+                "tags": [
+                    "Returns"
+                ],
+                "summary": "Get Returns",
+                "description": "Retrieves the details of all return orders for the specified filter criteria. The same API can be used to search a single order based on returnOrderId\/ customerOrderId This API supports only upto an offset of 1000 in response with max limit 100 orders. If you want to fetch more than 1000 then you can use the cursor API.",
+                "operationId": "getReturns",
+                "parameters": [
+                    {
+                        "name": "returnCreationStartDate",
+                        "in": "query",
+                        "description": "Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. Use URI encoded time format.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "NOW-180DAYS"
+                        }
+                    },
+                    {
+                        "name": "returnCreationEndDate",
+                        "in": "query",
+                        "description": "End Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. Use URI encoded time format.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "NOW"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of orders to be returned. Cannot be greater than 100.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "10"
+                        }
+                    },
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "description": "The starting offset of the first order required in the response. Cannot be greater than 1000",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "0"
+                        }
+                    },
+                    {
+                        "name": "customerOrderId",
+                        "in": "query",
+                        "description": "The customer order ID.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "returnOrderId",
+                        "in": "query",
+                        "description": "The return order ID.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "statusCodeFilter",
+                        "in": "query",
+                        "description": "The status code filter to apply. Valid values will be Initiated, Completed and Cancelled.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "isWFSEnabled",
+                        "in": "query",
+                        "description": "Flag to get WFS returns. Valid value is Y",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponse"
+                                },
+                                "example": {
+                                    "meta": {
+                                        "totalCount": 5,
+                                        "limit": 10
+                                    },
+                                    "returnOrders": [
+                                        {
+                                            "returnOrderId": "R100643236",
+                                            "customerEmail": "danduaparna9@gmail.com",
+                                            "customerName": {
+                                                "firstName": "Aparna",
+                                                "lastName": "Dandu"
+                                            },
+                                            "customerOrderId": "100050881383",
+                                            "returnOrderDate": "2021-12-28T02:41:54.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "2",
+                                                    "primeLineNumber": "2",
+                                                    "returnReason": "Pedido extraviado por Courrier",
+                                                    "reasonCode": "COURIER_LOST",
+                                                    "purchaseOrderId": "P100569002",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00019065300019",
+                                                        "offerId": "9C9EAAE97E724107981A8F67D8E12C6A",
+                                                        "productName": "DT110",
+                                                        "sku": "SKU_28072021"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "COUPON_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "SHIP_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "13.93"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "IEPS_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "STATE_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-12-28T02:42:03.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "100050881383-2-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778549936",
+                                                    "status": "IN_TRANSIT",
+                                                    "trackingNumber": "6930427755"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100578675",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "202111030001",
+                                            "returnOrderDate": "2021-11-17T08:45:25.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "10",
+                                                    "primeLineNumber": "10",
+                                                    "returnReason": "Duda de entrega\/Entrega no reconocida",
+                                                    "reasonCode": "DELIVERY_DOUBT",
+                                                    "purchaseOrderId": "P100557201",
+                                                    "purchaseOrderLineNumber": "2",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-11-17T08:45:33.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "202111030001-10-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778485077",
+                                                    "status": "IN_TRANSIT",
+                                                    "trackingNumber": "794686913065",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794686913065"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100575598",
+                                            "customerEmail": "danduaparna9@gmail.com",
+                                            "customerName": {
+                                                "firstName": "Aparna",
+                                                "lastName": "Dandu"
+                                            },
+                                            "customerOrderId": "100050879225",
+                                            "returnOrderDate": "2021-11-15T11:33:53.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "1",
+                                                    "primeLineNumber": "1",
+                                                    "returnReason": "Error del Cliente",
+                                                    "reasonCode": "CUSTOMER_ERROR",
+                                                    "purchaseOrderId": "P100568938",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "0E93281A7BF64DBFA66EC2442B93B191",
+                                                        "productName": "HISENSE 32 H",
+                                                        "sku": "SKU_02082021_10900030838"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "COUPON_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "SHIP_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "275.86"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "IEPS_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "STATE_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "2000"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-11-15T11:34:09.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "2000"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "100050879225-1-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778482197",
+                                                    "status": "IN_TRANSIT",
+                                                    "trackingNumber": "794685789973",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794685789973"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100535977",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "20211020003",
+                                            "returnOrderDate": "2021-10-20T04:46:32.000-05:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "1",
+                                                    "primeLineNumber": "1",
+                                                    "returnReason": "Actividad Sospechosa",
+                                                    "reasonCode": "SUSPICIOUS_ACTIVITY",
+                                                    "purchaseOrderId": "P100535817",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-10-20T04:46:37.000-05:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "20211020003-1-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "R100535977_SHIP_1",
+                                                    "status": "IN_TRANSIT"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100535949",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "20211020002",
+                                            "returnOrderDate": "2021-10-20T04:39:41.000-05:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "1",
+                                                    "primeLineNumber": "1",
+                                                    "returnReason": "Actividad Sospechosa",
+                                                    "reasonCode": "SUSPICIOUS_ACTIVITY",
+                                                    "purchaseOrderId": "P100535812",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "20"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-10-20T04:39:49.000-05:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "2000"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "20211020002-1-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "R100535949_SHIP_1",
+                                                    "status": "DELIVERED"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failure Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Failure Operation 500",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        },
+        "\/v3\/returns\/cursor": {
+            "get": {
+                "tags": [
+                    "Returns"
+                ],
+                "summary": "Get all returns with cursor mark",
+                "description": "Retrieves the details of all return orders for the specified filter criteria. With this API you can get all orders in response, it returns nextCursorMark for the next 100 orders so on and so forth upto the last order. The same API can be used to search a single order based on returnOrderId\/ customerOrderId.",
+                "operationId": "getAllReturnsUsingCursor",
+                "parameters": [
+                    {
+                        "name": "returnCreationStartDate",
+                        "in": "query",
+                        "description": "Start Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. If passed must be in the format - 'yyyy-MM-dd'T'HH:mm:ss.SSSXXX' (Ex. 2022-01-29T10:53:12.355-09:30 ). Use URI encoded time format.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "NOW-180DAYS"
+                        }
+                    },
+                    {
+                        "name": "returnCreationEndDate",
+                        "in": "query",
+                        "description": "End Date for querying all return orders after that date. Either both the returnCreationStartDate, returnCreationEndDate must be present in the query params or none present. If passed must be in the format - 'yyyy-MM-dd'T'HH:mm:ss.SSSXXX' (Ex. 2022-01-29T10:53:12.355-09:30 ). Use URI encoded time format.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "NOW"
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "The number of orders to be returned. Cannot be greater than 100.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "10"
+                        }
+                    },
+                    {
+                        "name": "cursorMark",
+                        "in": "query",
+                        "description": "The cursor from which next set of records to be retrieved.",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "default": "*"
+                        }
+                    },
+                    {
+                        "name": "customerOrderId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "returnOrderId",
+                        "in": "query",
+                        "description": "The return order ID.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "statusCodeFilter",
+                        "in": "query",
+                        "description": "The status code filter to apply. Valid values will be Initiated, Completed and Cancelled.",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "isWFSEnabled",
+                        "in": "query",
+                        "description": "Flag to get WFS returns. Valid value is Y",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/GetReturnOrdersResponseWithCursor"
+                                },
+                                "example": {
+                                    "meta": {
+                                        "totalCount": 29,
+                                        "limit": 10,
+                                        "nextCursorMark": "AoJ4vrKqkv0CMzYxNjA1ODk1MjM2NDM2Nzk3NzA="
+                                    },
+                                    "returnOrders": [
+                                        {
+                                            "returnOrderId": "R100643236",
+                                            "customerEmail": "danduaparna9@gmail.com",
+                                            "customerName": {
+                                                "firstName": "Aparna",
+                                                "lastName": "Dandu"
+                                            },
+                                            "customerOrderId": "100050881383",
+                                            "returnOrderDate": "2021-12-28T02:41:54.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "2",
+                                                    "primeLineNumber": "2",
+                                                    "returnReason": "Pedido extraviado por Courrier",
+                                                    "reasonCode": "COURIER_LOST",
+                                                    "purchaseOrderId": "P100569002",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00019065300019",
+                                                        "offerId": "9C9EAAE97E724107981A8F67D8E12C6A",
+                                                        "productName": "DT110",
+                                                        "sku": "SKU_28072021"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "COUPON_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "SHIP_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "13.93"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "IEPS_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "STATE_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-12-28T02:42:03.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "100050881383-2-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778549936",
+                                                    "status": "IN_TRANSIT",
+                                                    "trackingNumber": "6930427755"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100589300",
+                                            "customerEmail": "danduaparna9@gmail.com",
+                                            "customerName": {
+                                                "firstName": "Aparna",
+                                                "lastName": "Dandu"
+                                            },
+                                            "customerOrderId": "100050883094",
+                                            "returnOrderDate": "2021-11-24T03:51:31.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "1",
+                                                    "primeLineNumber": "1",
+                                                    "returnReason": "Duda de entrega\/Entrega no reconocida",
+                                                    "reasonCode": "DELIVERY_DOUBT",
+                                                    "purchaseOrderId": "P100569524",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00019065300019",
+                                                        "offerId": "9C9EAAE97E724107981A8F67D8E12C6A",
+                                                        "productName": "DT110",
+                                                        "sku": "SKU_28072021"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "COUPON_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "SHIP_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "13.93"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "IEPS_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "STATE_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Completed",
+                                                    "statusTime": "2021-11-24T03:53:12.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "100050883094-1-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778495111",
+                                                    "status": "DELIVERED",
+                                                    "trackingNumber": "794689364702",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794689364702"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100578675",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "202111030001",
+                                            "returnOrderDate": "2021-11-17T08:45:25.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "10",
+                                                    "primeLineNumber": "10",
+                                                    "returnReason": "Duda de entrega\/Entrega no reconocida",
+                                                    "reasonCode": "DELIVERY_DOUBT",
+                                                    "purchaseOrderId": "P100557201",
+                                                    "purchaseOrderLineNumber": "2",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-11-17T08:45:33.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "202111030001-10-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778485077",
+                                                    "status": "IN_TRANSIT",
+                                                    "trackingNumber": "794686913065",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794686913065"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100578674",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "202111030001",
+                                            "returnOrderDate": "2021-11-17T08:42:54.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "10",
+                                                    "primeLineNumber": "10",
+                                                    "returnReason": "Duda de entrega\/Entrega no reconocida",
+                                                    "reasonCode": "DELIVERY_DOUBT",
+                                                    "purchaseOrderId": "P100557201",
+                                                    "purchaseOrderLineNumber": "2",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "0"
+                                                    },
+                                                    "status": "Cancelled",
+                                                    "statusTime": "2021-11-17T08:44:13.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "0"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "202111030001-10-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778485076",
+                                                    "trackingNumber": "794686909176",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794686909176"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100578673",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "202111030001",
+                                            "returnOrderDate": "2021-11-17T08:40:53.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "3",
+                                                    "primeLineNumber": "3",
+                                                    "returnReason": "Llego Tarde (fecha promesa excedida)",
+                                                    "reasonCode": "ARRIVED_LATE",
+                                                    "purchaseOrderId": "P100557201",
+                                                    "purchaseOrderLineNumber": "5",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "0"
+                                                    },
+                                                    "status": "Cancelled",
+                                                    "statusTime": "2021-11-17T08:44:40.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "0"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "202111030001-3-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778485075",
+                                                    "trackingNumber": "794686906199",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794686906199"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100578672",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "202111030001",
+                                            "returnOrderDate": "2021-11-17T08:38:21.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "4",
+                                                    "primeLineNumber": "4",
+                                                    "returnReason": "Duda de entrega\/Entrega no reconocida",
+                                                    "reasonCode": "DELIVERY_DOUBT",
+                                                    "purchaseOrderId": "P100557201",
+                                                    "purchaseOrderLineNumber": "3",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "0"
+                                                    },
+                                                    "status": "Cancelled",
+                                                    "statusTime": "2021-11-17T08:44:27.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "0"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "202111030001-4-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778485074",
+                                                    "trackingNumber": "794686902837",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794686902837"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100576704",
+                                            "customerEmail": "alka.dubey@walmart.com",
+                                            "customerName": {
+                                                "firstName": "fname",
+                                                "lastName": "lname"
+                                            },
+                                            "customerOrderId": "202111030001",
+                                            "returnOrderDate": "2021-11-16T04:47:35.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "1",
+                                                    "primeLineNumber": "1",
+                                                    "returnReason": "Duda de entrega\/Entrega no reconocida",
+                                                    "reasonCode": "DELIVERY_DOUBT",
+                                                    "purchaseOrderId": "P100557201",
+                                                    "purchaseOrderLineNumber": "8",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "00694214743438",
+                                                        "productName": "HISENSE 32 H"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Completed",
+                                                    "statusTime": "2021-11-17T02:00:07.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "100"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "202111030001-1-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778483255",
+                                                    "status": "DELIVERED",
+                                                    "trackingNumber": "794686083641",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794686083641"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100575600",
+                                            "customerEmail": "danduaparna9@gmail.com",
+                                            "customerName": {
+                                                "firstName": "Aparna",
+                                                "lastName": "Dandu"
+                                            },
+                                            "customerOrderId": "100050881383",
+                                            "returnOrderDate": "2021-11-15T11:47:26.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "3",
+                                                    "primeLineNumber": "3",
+                                                    "returnReason": "Pedido llego incompleto",
+                                                    "reasonCode": "ORDER_INCOMPLETE",
+                                                    "purchaseOrderId": "P100569002",
+                                                    "purchaseOrderLineNumber": "3",
+                                                    "item": {
+                                                        "upc": "00019065300019",
+                                                        "offerId": "9C9EAAE97E724107981A8F67D8E12C6A",
+                                                        "productName": "DT110",
+                                                        "sku": "SKU_28072021"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "COUPON_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "SHIP_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "IEPS_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "STATE_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "0"
+                                                    },
+                                                    "status": "Cancelled",
+                                                    "statusTime": "2021-12-28T02:40:10.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "0"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "100050881383-3-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778482201",
+                                                    "trackingNumber": "794685795111",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794685795111"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100575599",
+                                            "customerEmail": "danduaparna9@gmail.com",
+                                            "customerName": {
+                                                "firstName": "Aparna",
+                                                "lastName": "Dandu"
+                                            },
+                                            "customerOrderId": "100050881383",
+                                            "returnOrderDate": "2021-11-15T11:44:48.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "2",
+                                                    "primeLineNumber": "2",
+                                                    "returnReason": "Defecto de f\u00e1brica",
+                                                    "reasonCode": "FACTORY_DEFECT",
+                                                    "purchaseOrderId": "P100569002",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00019065300019",
+                                                        "offerId": "9C9EAAE97E724107981A8F67D8E12C6A",
+                                                        "productName": "DT110",
+                                                        "sku": "SKU_28072021"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "COUPON_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "SHIP_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "IEPS_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "STATE_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "101"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "0"
+                                                    },
+                                                    "status": "Cancelled",
+                                                    "statusTime": "2021-12-28T02:40:29.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "0"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "100050881383-2-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778482200",
+                                                    "trackingNumber": "794685794527",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794685794527"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "returnOrderId": "R100575598",
+                                            "customerEmail": "danduaparna9@gmail.com",
+                                            "customerName": {
+                                                "firstName": "Aparna",
+                                                "lastName": "Dandu"
+                                            },
+                                            "customerOrderId": "100050879225",
+                                            "returnOrderDate": "2021-11-15T11:33:53.000-06:00",
+                                            "returnOrderLines": [
+                                                {
+                                                    "returnOrderLineNumber": "1",
+                                                    "primeLineNumber": "1",
+                                                    "returnReason": "Error del Cliente",
+                                                    "reasonCode": "CUSTOMER_ERROR",
+                                                    "purchaseOrderId": "P100568938",
+                                                    "purchaseOrderLineNumber": "1",
+                                                    "item": {
+                                                        "upc": "00694214743438",
+                                                        "offerId": "0E93281A7BF64DBFA66EC2442B93B191",
+                                                        "productName": "HISENSE 32 H",
+                                                        "sku": "SKU_02082021_10900030838"
+                                                    },
+                                                    "charges": [
+                                                        {
+                                                            "chargeType": "SHIPPING",
+                                                            "chargeName": "SHIPPING_CH",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            },
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "SHIP_IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "COUPON_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "DISCOUNT",
+                                                            "chargeName": "SHIP_DISC",
+                                                            "chargeAmount": {
+                                                                "currency": "MXN",
+                                                                "amount": "0"
+                                                            }
+                                                        },
+                                                        {
+                                                            "chargeType": "PRODUCT",
+                                                            "chargeName": "ItemPrice",
+                                                            "tax": [
+                                                                {
+                                                                    "taxName": "IVA_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "275.86"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "IEPS_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "taxName": "STATE_TAX",
+                                                                    "taxAmount": {
+                                                                        "currency": "MXN",
+                                                                        "amount": "0"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "unitPrice": {
+                                                        "currency": "MXN",
+                                                        "amount": "2000"
+                                                    },
+                                                    "quantity": {
+                                                        "unitOfMeasurement": "EACH",
+                                                        "amount": "1"
+                                                    },
+                                                    "status": "Initiated",
+                                                    "statusTime": "2021-11-15T11:34:09.000-06:00",
+                                                    "refundAmount": {
+                                                        "currency": "MXN",
+                                                        "amount": "2000"
+                                                    },
+                                                    "soPrimeLineSubLineNo": "100050879225-1-1",
+                                                    "isWFSEnabled": "N"
+                                                }
+                                            ],
+                                            "returnOrderShipments": [
+                                                {
+                                                    "shipmentNo": "778482197",
+                                                    "status": "IN_TRANSIT",
+                                                    "trackingNumber": "794685789973",
+                                                    "trackingUrl": "https:\/\/www.fedex.com\/apps\/fedextrack\/?cntry_code=mx&tab=1&tracknums=794685789973"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failure Operation",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Failure Operation 500",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "$ref": "#\/components\/schemas\/ErrorResponse"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "basic": [],
+                        "accessToken": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Error": {
+                "type": "object",
+                "properties": {
+                    "code": {
+                        "type": "string"
+                    },
+                    "field": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "info": {
+                        "type": "string"
+                    },
+                    "severity": {
+                        "type": "string"
+                    },
+                    "category": {
+                        "type": "string"
+                    },
+                    "errorIdentifiers": {
+                        "$ref": "#\/components\/schemas\/ErrorIdentifiers"
+                    }
+                }
+            },
+            "ErrorIdentifiers": {
+                "type": "object",
+                "properties": {
+                    "entry": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "ErrorResponse": {
+                "type": "object",
+                "properties": {
+                    "error": {
+                        "$ref": "#\/components\/schemas\/Error"
+                    }
+                }
+            },
+            "OrderLineStatusType": {
+                "required": [
+                    "status",
+                    "statusQuantity"
+                ],
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "PROCUREMENT_PURCHASE_ORDER_SHIPPED",
+                            "PROCUREMENT_TRANSFER_ORDER_SHIPPED",
+                            "BACK_ORDERED_FROM_NODE",
+                            "RESERVED_AWAITING_ACCEPTANCE",
+                            "HELD",
+                            "DRAFT_ORDER_RESERVED_AWAITING_ACCEPTANCE",
+                            "RECEIPT_CLOSED",
+                            "CARRIED",
+                            "RECEIVED_AS_COMPONENTS",
+                            "SHIPMENT_DELAYED",
+                            "SHORTED",
+                            "WORK_ORDER_COMPLETED",
+                            "AWAITING_SHIPMENT_CONSOLIDATION",
+                            "AWAITING_WMS_INTERFACE",
+                            "RETURN_RECEIVED",
+                            "ORDER_DELIVERED",
+                            "PROCUREMENT_TRANSFER_ORDER_RECEIVED",
+                            "CUSTOMER_PICKED_UP",
+                            "MEMBERSHIP_PICKED_UP",
+                            "SHIPPED",
+                            "DELIVERED",
+                            "READY_FOR_CUSTOMER",
+                            "PACK_COMPLETE",
+                            "READY_FOR_PACKING",
+                            "SYNCHED",
+                            "RETURN_CREATED",
+                            "SENT_FOR_FULFILLMENT",
+                            "PROCUREMENT_TRANSFER_ORDER_DELIVERED",
+                            "PICKED_UP_BY_CUSTOMER",
+                            "DRAFT_ORDER_CREATED",
+                            "DRAFT_ORDER_RESERVED",
+                            "CREATED",
+                            "RESERVED",
+                            "BEING_NEGOTIATED",
+                            "ACCEPTED",
+                            "BACK_ORDERED",
+                            "UNSCHEDULED",
+                            "SCHEDULED",
+                            "AWAITING_CHAINED_ORDER_CREATION",
+                            "CHAINED_ORDER_CREATED",
+                            "PROCUREMENT_PURCHASE_ORDER_CREATED",
+                            "WORK_ORDER_CREATED",
+                            "PROCUREMENT_TRANSFER_ORDER_CREATED",
+                            "RELEASED",
+                            "SENT_TO_NODE",
+                            "INCLUDED_IN_SHIPMENT",
+                            "CANCELLED",
+                            "AWAITING_PROCUREMENT_PURCHASE_ORDER_CREATION",
+                            "AWAITING_PROCUREMENT_TRANSFER_ORDER_CREATION",
+                            "RECEIVED"
+                        ]
+                    },
+                    "statusQuantity": {
+                        "$ref": "#\/components\/schemas\/QuantityType"
+                    }
+                }
+            },
+            "OrderLineStatusesType": {
+                "required": [
+                    "orderLineStatus"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderLineStatus": {
+                        "$ref": "#\/components\/schemas\/OrderLineStatusType"
+                    }
+                }
+            },
+            "OrderLineType": {
+                "required": [
+                    "lineNumber",
+                    "orderLineStatuses"
+                ],
+                "type": "object",
+                "properties": {
+                    "lineNumber": {
+                        "type": "string"
+                    },
+                    "orderLineStatuses": {
+                        "$ref": "#\/components\/schemas\/OrderLineStatusesType"
+                    }
+                }
+            },
+            "OrderLinesType": {
+                "type": "object",
+                "properties": {
+                    "orderLine": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/OrderLineType"
+                        }
+                    }
+                }
+            },
+            "OrderRefundRequest": {
+                "type": "object",
+                "properties": {
+                    "orderRefund": {
+                        "$ref": "#\/components\/schemas\/OrderRefundType"
+                    }
+                }
+            },
+            "OrderRefundType": {
+                "required": [
+                    "orderLines"
+                ],
+                "type": "object",
+                "properties": {
+                    "orderLines": {
+                        "$ref": "#\/components\/schemas\/OrderLinesType"
+                    }
+                }
+            },
+            "QuantityType": {
+                "required": [
+                    "amount",
+                    "unitOfMeasurement"
+                ],
+                "type": "object",
+                "properties": {
+                    "unitOfMeasurement": {
+                        "type": "string"
+                    },
+                    "amount": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Charge": {
+                "type": "object",
+                "properties": {
+                    "chargeType": {
+                        "type": "string",
+                        "description": "The category type. (e.g., 'PRODUCT' or 'FEE')"
+                    },
+                    "chargeName": {
+                        "type": "string",
+                        "description": "If chargeType is PRODUCT, chargeName is Item Price. If chargeType is SHIPPING, chargeName is Shipping"
+                    },
+                    "chargeAmount": {
+                        "$ref": "#\/components\/schemas\/ChargeAmount"
+                    },
+                    "tax": {
+                        "type": "array",
+                        "description": "Taxes for each charge",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Tax"
+                        }
+                    }
+                },
+                "description": "Information relating to the charge for the orderLine"
+            },
+            "ChargeAmount": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "type": "string",
+                        "description": "Currency information"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "description": "Amount to be refunded. It can be upto two decimal points."
+                    }
+                },
+                "description": "The details about the charges for the line item"
+            },
+            "ChargeTotal": {
+                "required": [
+                    "name",
+                    "value"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Charge Names: lineUnitPrice, lineProductTaxes, lineTotalTaxes, lineRestockingFee, lineShippingFee, lineSubTotal, lineTotal."
+                    },
+                    "value": {
+                        "$ref": "#\/components\/schemas\/ChargeAmount"
+                    }
+                },
+                "description": "Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges)."
+            },
+            "CustomerName": {
+                "type": "object",
+                "properties": {
+                    "firstName": {
+                        "type": "string",
+                        "description": "Customer first name"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "description": "Customer last name"
+                    }
+                },
+                "description": "Customer information"
+            },
+            "GetReturnOrdersResponse": {
+                "required": [
+                    "meta",
+                    "returnOrders"
+                ],
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/MetaWithoutCursor"
+                    },
+                    "returnOrders": {
+                        "type": "array",
+                        "description": "List of returns for the seller.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ReturnOrder"
+                        }
+                    }
+                }
+            },
+            "Item": {
+                "type": "object",
+                "properties": {
+                    "upc": {
+                        "type": "string"
+                    },
+                    "offerId": {
+                        "type": "string"
+                    },
+                    "productName": {
+                        "type": "string",
+                        "description": "The name of the product associated with the line item. Example: 'Kenmore CF1' or '2086883 Canister Secondary Filter Generic 2 Pack'"
+                    },
+                    "sku": {
+                        "type": "string",
+                        "description": "An arbitrary alphanumeric unique ID, specified by the seller, which identifies each item. This will be used by the seller in the XSD file to refer to each item. Special characters hyphen (-), space ( ), and period (.) are not allowed."
+                    }
+                },
+                "description": "Details of the item to be returned"
+            },
+            "Measurement": {
+                "type": "object",
+                "properties": {
+                    "unitOfMeasurement": {
+                        "type": "string",
+                        "description": "The unit with which the orderLine is measured"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "description": "The amount with witch the orderLine is measured along with unitofMeasurement"
+                    }
+                },
+                "description": "The quantity associated with the shipment line"
+            },
+            "MetaWithoutCursor": {
+                "required": [
+                    "limit",
+                    "totalCount"
+                ],
+                "type": "object",
+                "properties": {
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "Money": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "type": "string",
+                        "description": "Currency information"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "description": "Amount to be refunded. It can be upto two decimal points."
+                    }
+                },
+                "description": "Price of One unit of item, in this order line"
+            },
+            "Quantity": {
+                "type": "object",
+                "properties": {
+                    "unitOfMeasurement": {
+                        "type": "string",
+                        "description": "The unit of measure in the item's weight (e.g., 'POUND' or 'OUNCE')"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "description": "The quantity of the unit of measure for the item"
+                    }
+                },
+                "description": "Total quantity returned in this return line"
+            },
+            "RefundAmount": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "type": "string",
+                        "description": "Currency information"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "description": "Amount to be refunded. It can be upto two decimal points."
+                    }
+                },
+                "description": "Refunded Amount without charges."
+            },
+            "ReturnOrder": {
+                "type": "object",
+                "properties": {
+                    "returnOrderId": {
+                        "type": "string",
+                        "description": "Return order identifier of the return order. This is the same as RMA number."
+                    },
+                    "customerEmail": {
+                        "type": "string",
+                        "description": "Customer email address"
+                    },
+                    "customerName": {
+                        "$ref": "#\/components\/schemas\/CustomerName"
+                    },
+                    "customerOrderId": {
+                        "type": "string",
+                        "description": "A unique ID associated with the sales order for specified customer"
+                    },
+                    "returnOrderDate": {
+                        "type": "string",
+                        "description": "Date for return order date"
+                    },
+                    "returnOrderLines": {
+                        "type": "array",
+                        "description": "A list of order lines in the return order",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ReturnOrderLine"
+                        }
+                    },
+                    "returnOrderShipments": {
+                        "type": "array",
+                        "description": "The shipments for return orders",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Shipment"
+                        }
+                    }
+                },
+                "description": "List of returns for the seller."
+            },
+            "ReturnOrderLine": {
+                "type": "object",
+                "properties": {
+                    "returnOrderLineNumber": {
+                        "type": "string",
+                        "description": "The returns order line number for that return"
+                    },
+                    "primeLineNumber": {
+                        "type": "string",
+                        "description": "The purchase order line number for the return created"
+                    },
+                    "returnReason": {
+                        "type": "string",
+                        "description": "Gives the reason that was selected during the return creation.",
+                        "enum": [
+                            "Cliente no satisfecho\/Garant\u00eda al cliente",
+                            "Da\u00f1o durante el traslado",
+                            "Defecto de f\u00e1brica",
+                            "Duda de entrega\/Entrega no reconocida",
+                            "Error al crear la venta",
+                            "Error de caracter\u00edsticas en el sitio",
+                            "Error del Cliente",
+                            "Excepci\u00f3n de entrega\/ No se pudo entregar",
+                            "Modelo surtido no corresponde al comprado",
+                            "No respeta parcializaci\u00f3n a MSI",
+                            "Pedido extraviado por Courier",
+                            "Pedido llego incompleto",
+                            "Pedido robado",
+                            "Problema al aplicar cup\u00f3n o promocion",
+                            "Robo o extrav\u00edo de mercanc\u00eda en tienda",
+                            "Retraso de Surtido",
+                            "Actividad Sospechosa",
+                            "Error de Precio",
+                            "Retraso en Entrega (fecha promesa excedida)",
+                            "Lleg\u00f3 Tarde (fecha promesa excedida)",
+                            "Sin Inventario"
+                        ]
+                    },
+                    "reasonCode": {
+                        "type": "string",
+                        "description": "Gives the return reason code associated with returnReason",
+                        "enum": [
+                            "CUSTOMER_GUARANTEE",
+                            "DAMAGED_TRANSFER",
+                            "FACTORY_DEFECT",
+                            "DELIVERY_DOUBT",
+                            "SALES_ERROR",
+                            "SITE_FEATURE",
+                            "CUSTOMER_ERROR",
+                            "DELIVERY_EXCEPTION",
+                            "ASSORTED_MODEL",
+                            "WITHOUT_INTEREST",
+                            "COURIER_LOST",
+                            "ORDER_INCOMPLETE",
+                            "COURIER_STOLEN",
+                            "PROMO_PROBLEM",
+                            "STORE_LOST",
+                            "DELAY_FULFILLMENT",
+                            "SUSPICIOUS_ACTIVITY",
+                            "PRICE ERROR",
+                            "DELAY_DELIVERY",
+                            "ARRIVED_LATE",
+                            "NO_INVENTORY"
+                        ]
+                    },
+                    "purchaseOrderId": {
+                        "type": "string",
+                        "description": "The purchase order ID for the return created"
+                    },
+                    "purchaseOrderLineNumber": {
+                        "type": "string",
+                        "description": "The purchase order line number for the return created"
+                    },
+                    "item": {
+                        "$ref": "#\/components\/schemas\/Item"
+                    },
+                    "charges": {
+                        "type": "array",
+                        "description": "Information relating to the charge for the orderLine",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/Charge"
+                        }
+                    },
+                    "unitPrice": {
+                        "$ref": "#\/components\/schemas\/RefundAmount"
+                    },
+                    "chargeTotals": {
+                        "type": "array",
+                        "description": "Contains name value pairs of calculated charges for the line. Eg: if order line has 3 Qty, this will have a shipping charge = 3 * shipping charge per unit (This is present in the line level charges).",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ChargeTotal"
+                        }
+                    },
+                    "quantity": {
+                        "$ref": "#\/components\/schemas\/QuantityType"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Current status of return. (e.g., 'INITIATED')"
+                    },
+                    "statusTime": {
+                        "type": "string",
+                        "description": "Timestamp of listed status change"
+                    },
+                    "refundAmount": {
+                        "$ref": "#\/components\/schemas\/RefundAmount"
+                    },
+                    "soPrimeLineSubLineNo": {
+                        "type": "string"
+                    },
+                    "isWFSEnabled": {
+                        "type": "string",
+                        "description": "Determines Walmart Fulfilled vs Seller Fulfilled returns. Valid values are: Y, N"
+                    }
+                },
+                "description": "A list of order lines in the return order"
+            },
+            "Shipment": {
+                "type": "object",
+                "properties": {
+                    "shipmentLines": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ShipmentLine"
+                        }
+                    },
+                    "shipmentNo": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "packageNo": {
+                        "type": "string"
+                    },
+                    "isSellerOwnedShipment": {
+                        "type": "string"
+                    },
+                    "shipDateTime": {
+                        "type": "string"
+                    },
+                    "carrier": {
+                        "type": "string"
+                    },
+                    "methodCode": {
+                        "type": "string"
+                    },
+                    "carrierMethodCode": {
+                        "type": "string"
+                    },
+                    "trackingNumber": {
+                        "type": "string"
+                    },
+                    "trackingUrl": {
+                        "type": "string"
+                    },
+                    "shipmentAdditionalDate": {
+                        "$ref": "#\/components\/schemas\/ShipmentAdditionalDate"
+                    }
+                },
+                "description": "The shipments for return orders"
+            },
+            "ShipmentAdditionalDate": {
+                "type": "object",
+                "properties": {
+                    "shipmentActualCreatedDate": {
+                        "type": "string"
+                    },
+                    "expectedShipmentACKDate": {
+                        "type": "string"
+                    },
+                    "shipmentACKDate": {
+                        "type": "string"
+                    },
+                    "expectedShipmentShippedDate": {
+                        "type": "string"
+                    },
+                    "shipmentShippedDate": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ShipmentLine": {
+                "type": "object",
+                "properties": {
+                    "primeLineNo": {
+                        "type": "string",
+                        "description": "The number to identify the associated order line for the shipment line. Example: 'primeLineNo=1 means the shipment line is associated with orderLine having primeLineNumber=1'"
+                    },
+                    "shipmentLineNo": {
+                        "type": "string",
+                        "description": "The unique number for the shipment line in a given shipment"
+                    },
+                    "quantity": {
+                        "$ref": "#\/components\/schemas\/QuantityType"
+                    }
+                }
+            },
+            "Tax": {
+                "type": "object",
+                "properties": {
+                    "taxName": {
+                        "type": "string",
+                        "description": "Name of the tax"
+                    },
+                    "taxAmount": {
+                        "$ref": "#\/components\/schemas\/TaxAmount"
+                    }
+                },
+                "description": "Taxes for each charge"
+            },
+            "TaxAmount": {
+                "type": "object",
+                "properties": {
+                    "currency": {
+                        "type": "string",
+                        "description": "Currency information"
+                    },
+                    "amount": {
+                        "type": "string",
+                        "description": "Amount to be refunded. It can be upto two decimal points."
+                    }
+                },
+                "description": "Actual tax amount"
+            },
+            "GetReturnOrdersResponseWithCursor": {
+                "required": [
+                    "meta",
+                    "returnOrders"
+                ],
+                "type": "object",
+                "properties": {
+                    "meta": {
+                        "$ref": "#\/components\/schemas\/Meta"
+                    },
+                    "returnOrders": {
+                        "type": "array",
+                        "description": "List of returns for the seller.",
+                        "items": {
+                            "$ref": "#\/components\/schemas\/ReturnOrder"
+                        }
+                    }
+                }
+            },
+            "Meta": {
+                "required": [
+                    "limit",
+                    "nextCursor",
+                    "totalCount"
+                ],
+                "type": "object",
+                "properties": {
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "nextCursor": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "parameters": {
+            "authorization": {
+                "name": "Authorization",
+                "in": "header",
+                "description": "Basic authorization header. Base 64 encodes the Client ID and Client Secret retrieved in step two of the integration steps.",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Basic YzcyOTFjNmItNzI5MC00...."
+            },
+            "accessToken": {
+                "name": "WM_SEC.ACCESS_TOKEN",
+                "in": "header",
+                "description": "The access token retrieved in the Token API call",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "eyJraWQiOiIzZjVhYTFmNS1hYWE5LTQzM....."
+            },
+            "channelType": {
+                "name": "WM_CONSUMER.CHANNEL.TYPE",
+                "in": "header",
+                "description": "A unique ID to track the consumer request by channel. Use the Consumer Channel Type received during onboarding",
+                "required": false,
+                "schema": {
+                    "type": "string"
+                }
+            },
+            "correlationId": {
+                "name": "WM_QOS.CORRELATION_ID",
+                "in": "header",
+                "description": "A unique ID which identifies each API call and used to track and debug issues; use a random generated GUID for this ID",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "b3261d2d-028a-4ef7-8602-633c23200af6"
+            },
+            "svcName": {
+                "name": "WM_SVC.NAME",
+                "in": "header",
+                "description": "Walmart Service Name",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "Walmart Service Name"
+            },
+            "accept": {
+                "name": "Accept",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            },
+            "content-type": {
+                "name": "Content-Type",
+                "in": "header",
+                "description": "Only supported Media Type : application\/json",
+                "required": true,
+                "schema": {
+                    "type": "string"
+                },
+                "example": "application\/json"
+            }
+        },
+        "securitySchemes": {
+            "accessToken": {
+                "type": "http",
+                "scheme": "bearer",
+                "description": "Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header"
+            },
+            "basic": {
+                "type": "http",
+                "scheme": "basic",
+                "description": "Basic authentication with a Walmart Client ID and Client Secret"
+            }
+        }
+    }
+}
