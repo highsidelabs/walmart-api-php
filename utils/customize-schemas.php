@@ -38,6 +38,7 @@ function customizeSchema(
         'WM_CONSUMER.CHANNEL.TYPE',
         'WM_SEC.TIMESTAMP',
         'WM_MARKET',
+        'Content-Type',
         'Accept',
     ];
 
@@ -169,12 +170,16 @@ function customizeSchema(
             foreach ($verb['responses'] as $code => $response) {
                 if (isset($response['content'])) {
                     $contentType = chooseContentType($response['content']);
-                    $response['content'] = [$contentType => $response['content'][$contentType]];
+                    // Set all responses to use JSON content type. This is a little sketchy, but as far
+                    // as I can tell all endpoints will return JSON if asked, and it's much simpler to
+                    // not have to support multiple response types
+                    $response['content'] = ['application/json' => $response['content'][$contentType]];
 
-                    // All responses need to have their headers accessible, but the JSON models don't typically include headers
-                    // as one of the properties of the response model, so we mark the responses with a custom attribute that tells
-                    // the generator to expose a headers attribute
-                    $response['content'][$contentType]['schema']['x-expose-headers'] = true;
+                    // All responses need to have their headers accessible, but the JSON models don't
+                    // typically include headers as one of the properties of the response model, so
+                    // we mark the responses with a custom attribute that tells the generator to expose
+                    // a headers attribute
+                    $response['content']['application/json']['schema']['x-expose-headers'] = true;
                 }
 
                 $verb['responses'][$code] = $response;

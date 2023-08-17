@@ -213,16 +213,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "in": "header",
-                        "name": "Content-Type",
-                        "description": "Only supported Media Type : application\/json",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
                     }
                 ],
                 "requestBody": {

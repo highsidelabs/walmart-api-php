@@ -30,16 +30,6 @@
                             "type": "boolean",
                             "default": false
                         }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
                     }
                 ],
                 "requestBody": {
@@ -158,16 +148,6 @@
                             "type": "integer",
                             "format": "int32"
                         }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
                     }
                 ],
                 "responses": {
@@ -207,18 +187,7 @@
                 "summary": "Create consolidation",
                 "description": "Use this API to consolidate shipments. Provide the list of packages that form part of the consolidation and its corresponding domestic tracking number and carrier. The synchronous API call returns the status of the operation and a correlation ID in response. Use the correlation ID to connect via email to the IMD team in case of issues pertaining to the consolidation call. In case of any failure, the client has to retry.",
                 "operationId": "createConsolidation",
-                "parameters": [
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "description": "Consolidation Request",
                     "content": {
@@ -285,16 +254,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
                     }
                 ],
                 "responses": {
@@ -345,18 +304,7 @@
                 "summary": "Supported carriers",
                 "description": "This API retrieves all carriers supported by Ship With Walmart.",
                 "operationId": "getCarriers",
-                "parameters": [
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
-                    }
-                ],
+                "parameters": [],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
@@ -413,23 +361,13 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
                     }
                 ],
                 "responses": {
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/pdf": {
+                            "application\/json": {
                                 "schema": {
                                     "type": "string",
                                     "format": "binary",
@@ -472,16 +410,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
                     }
                 ],
                 "responses": {
@@ -525,16 +453,6 @@
                         "schema": {
                             "type": "string"
                         }
-                    },
-                    {
-                        "name": "Content-Type",
-                        "in": "header",
-                        "description": "Content-Type Header",
-                        "required": true,
-                        "schema": {
-                            "type": "string"
-                        },
-                        "example": "application\/json"
                     }
                 ],
                 "responses": {

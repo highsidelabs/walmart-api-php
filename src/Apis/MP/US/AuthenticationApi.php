@@ -52,16 +52,13 @@ class AuthenticationApi extends BaseApi
      *
      * Token Detail
      *
-     * @param  string $contentType Content type of the request body. (required)
-     *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Authentication\TokenDetailResponse
      */
-    public function getTokenDetail(
-        string $contentType
-    ): \Walmart\Models\MP\US\Authentication\TokenDetailResponse {
-        return $this->getTokenDetailWithHttpInfo($contentType);
+    public function getTokenDetail(): \Walmart\Models\MP\US\Authentication\TokenDetailResponse
+    {
+        return $this->getTokenDetailWithHttpInfo();
     }
 
     /**
@@ -69,16 +66,13 @@ class AuthenticationApi extends BaseApi
      *
      * Token Detail
      *
-     * @param  string $contentType Content type of the request body. (required)
-     *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\US\Authentication\TokenDetailResponse
      */
-    protected function getTokenDetailWithHttpInfo(
-        string $contentType,
-    ): \Walmart\Models\MP\US\Authentication\TokenDetailResponse {
-        $request = $this->getTokenDetailRequest($contentType);
+    protected function getTokenDetailWithHttpInfo(): \Walmart\Models\MP\US\Authentication\TokenDetailResponse
+    {
+        $request = $this->getTokenDetailRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -172,15 +166,12 @@ class AuthenticationApi extends BaseApi
      *
      * Token Detail
      *
-     * @param  string $contentType Content type of the request body. (required)
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getTokenDetailAsync(
-        string $contentType
     ): PromiseInterface {
-        return $this->getTokenDetailAsyncWithHttpInfo($contentType)
+        return $this->getTokenDetailAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -193,16 +184,13 @@ class AuthenticationApi extends BaseApi
      *
      * Token Detail
      *
-     * @param  string $contentType Content type of the request body. (required)
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getTokenDetailAsyncWithHttpInfo(
-        string $contentType,
-    ): PromiseInterface {
+    protected function getTokenDetailAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\US\Authentication\TokenDetailResponse';
-        $request = $this->getTokenDetailRequest($contentType);
+        $request = $this->getTokenDetailRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -247,22 +235,13 @@ class AuthenticationApi extends BaseApi
     /**
      * Create request for operation 'getTokenDetail'
      *
-     * @param  string $contentType Content type of the request body. (required)
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getTokenDetailRequest(
-        string $contentType,
-    ): Request {
+    protected function getTokenDetailRequest(): Request
+    {
         $contentType = self::contentTypes['getTokenDetail'];
 
-        // verify the required parameter 'contentType' is set
-        if ($contentType === null || (is_array($contentType) && count($contentType) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $contentType when calling getTokenDetail'
-            );
-        }
         $resourcePath = '/v3/token/detail';
         $formParams = [];
         $queryParams = [];
@@ -270,11 +249,6 @@ class AuthenticationApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'GET';
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -344,7 +318,6 @@ class AuthenticationApi extends BaseApi
      *
      * Token API
      *
-     * @param  string $contentType Content type of the request body. (required)
      * @param  string $grantType Type of grant requested. <br /> **Available grant types:** authorization_code, refresh_token and client_credentials (required)
      * @param  string $code Authorization code obtained by your client app when the seller authorizes your app to access the seller resource. <br /> This field is required when **grant_type: authorization_code** (optional, default to '65CA5DA313A549D49D15D3119D9AD85D')
      * @param  string $redirectUri This should be same as one of your client app URIs provided while registering the app. <br /> This field is required when **grant_type: authorization_code** (optional, default to 'https://example-client-app.com')
@@ -355,13 +328,12 @@ class AuthenticationApi extends BaseApi
      * @return \Walmart\Models\MP\US\Authentication\OAuthToken
      */
     public function tokenAPI(
-        string $contentType,
         string $grantType,
         ?string $code = '65CA5DA313A549D49D15D3119D9AD85D',
         ?string $redirectUri = 'https://example-client-app.com',
         ?string $refreshToken = 'APXcIoTpKMH9OQN.....'
     ): \Walmart\Models\MP\US\Authentication\OAuthToken {
-        return $this->tokenAPIWithHttpInfo($contentType, $grantType, $code, $redirectUri, $refreshToken);
+        return $this->tokenAPIWithHttpInfo($grantType, $code, $redirectUri, $refreshToken);
     }
 
     /**
@@ -369,7 +341,6 @@ class AuthenticationApi extends BaseApi
      *
      * Token API
      *
-     * @param  string $contentType Content type of the request body. (required)
      * @param  string $grantType Type of grant requested. <br /> **Available grant types:** authorization_code, refresh_token and client_credentials (required)
      * @param  string $code Authorization code obtained by your client app when the seller authorizes your app to access the seller resource. <br /> This field is required when **grant_type: authorization_code** (optional, default to '65CA5DA313A549D49D15D3119D9AD85D')
      * @param  string $redirectUri This should be same as one of your client app URIs provided while registering the app. <br /> This field is required when **grant_type: authorization_code** (optional, default to 'https://example-client-app.com')
@@ -380,13 +351,12 @@ class AuthenticationApi extends BaseApi
      * @return \Walmart\Models\MP\US\Authentication\OAuthToken
      */
     protected function tokenAPIWithHttpInfo(
-        string $contentType,
         string $grantType,
         ?string $code = '65CA5DA313A549D49D15D3119D9AD85D',
         ?string $redirectUri = 'https://example-client-app.com',
         ?string $refreshToken = 'APXcIoTpKMH9OQN.....',
     ): \Walmart\Models\MP\US\Authentication\OAuthToken {
-        $request = $this->tokenAPIRequest($contentType, $grantType, $code, $redirectUri, $refreshToken);
+        $request = $this->tokenAPIRequest($grantType, $code, $redirectUri, $refreshToken);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -480,7 +450,6 @@ class AuthenticationApi extends BaseApi
      *
      * Token API
      *
-     * @param  string $contentType Content type of the request body. (required)
      * @param  string $grantType Type of grant requested. <br /> **Available grant types:** authorization_code, refresh_token and client_credentials (required)
      * @param  string $code Authorization code obtained by your client app when the seller authorizes your app to access the seller resource. <br /> This field is required when **grant_type: authorization_code** (optional, default to '65CA5DA313A549D49D15D3119D9AD85D')
      * @param  string $redirectUri This should be same as one of your client app URIs provided while registering the app. <br /> This field is required when **grant_type: authorization_code** (optional, default to 'https://example-client-app.com')
@@ -490,13 +459,12 @@ class AuthenticationApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function tokenAPIAsync(
-        string $contentType,
         string $grantType,
         ?string $code = '65CA5DA313A549D49D15D3119D9AD85D',
         ?string $redirectUri = 'https://example-client-app.com',
         ?string $refreshToken = 'APXcIoTpKMH9OQN.....'
     ): PromiseInterface {
-        return $this->tokenAPIAsyncWithHttpInfo($contentType, $grantType, $code, $redirectUri, $refreshToken)
+        return $this->tokenAPIAsyncWithHttpInfo($grantType, $code, $redirectUri, $refreshToken)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -509,7 +477,6 @@ class AuthenticationApi extends BaseApi
      *
      * Token API
      *
-     * @param  string $contentType Content type of the request body. (required)
      * @param  string $grantType Type of grant requested. <br /> **Available grant types:** authorization_code, refresh_token and client_credentials (required)
      * @param  string $code Authorization code obtained by your client app when the seller authorizes your app to access the seller resource. <br /> This field is required when **grant_type: authorization_code** (optional, default to '65CA5DA313A549D49D15D3119D9AD85D')
      * @param  string $redirectUri This should be same as one of your client app URIs provided while registering the app. <br /> This field is required when **grant_type: authorization_code** (optional, default to 'https://example-client-app.com')
@@ -519,14 +486,13 @@ class AuthenticationApi extends BaseApi
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function tokenAPIAsyncWithHttpInfo(
-        string $contentType,
         string $grantType,
         ?string $code = '65CA5DA313A549D49D15D3119D9AD85D',
         ?string $redirectUri = 'https://example-client-app.com',
         ?string $refreshToken = 'APXcIoTpKMH9OQN.....',
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Authentication\OAuthToken';
-        $request = $this->tokenAPIRequest($contentType, $grantType, $code, $redirectUri, $refreshToken);
+        $request = $this->tokenAPIRequest($grantType, $code, $redirectUri, $refreshToken);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -571,7 +537,6 @@ class AuthenticationApi extends BaseApi
     /**
      * Create request for operation 'tokenAPI'
      *
-     * @param  string $contentType Content type of the request body. (required)
      * @param  string $grantType Type of grant requested. <br /> **Available grant types:** authorization_code, refresh_token and client_credentials (required)
      * @param  string $code Authorization code obtained by your client app when the seller authorizes your app to access the seller resource. <br /> This field is required when **grant_type: authorization_code** (optional, default to '65CA5DA313A549D49D15D3119D9AD85D')
      * @param  string $redirectUri This should be same as one of your client app URIs provided while registering the app. <br /> This field is required when **grant_type: authorization_code** (optional, default to 'https://example-client-app.com')
@@ -581,7 +546,6 @@ class AuthenticationApi extends BaseApi
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function tokenAPIRequest(
-        string $contentType,
         string $grantType,
         ?string $code = '65CA5DA313A549D49D15D3119D9AD85D',
         ?string $redirectUri = 'https://example-client-app.com',
@@ -589,12 +553,6 @@ class AuthenticationApi extends BaseApi
     ): Request {
         $contentType = self::contentTypes['tokenAPI'];
 
-        // verify the required parameter 'contentType' is set
-        if ($contentType === null || (is_array($contentType) && count($contentType) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $contentType when calling tokenAPI'
-            );
-        }
         // verify the required parameter 'grantType' is set
         if ($grantType === null || (is_array($grantType) && count($grantType) === 0)) {
             throw new \InvalidArgumentException(
@@ -608,11 +566,6 @@ class AuthenticationApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'POST';
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
 
         // form params
         if ($grantType !== null) {

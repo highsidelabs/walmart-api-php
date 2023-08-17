@@ -355,7 +355,6 @@ class OnRequestReportsApi extends BaseApi
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
-     * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -365,10 +364,9 @@ class OnRequestReportsApi extends BaseApi
     public function generateReport(
         string $reportType,
         string $reportVersion,
-        string $contentType,
         ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null
     ): \Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse {
-        return $this->generateReportWithHttpInfo($reportType, $reportVersion, $contentType, $generateReportPayload);
+        return $this->generateReportWithHttpInfo($reportType, $reportVersion, $generateReportPayload);
     }
 
     /**
@@ -378,7 +376,6 @@ class OnRequestReportsApi extends BaseApi
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
-     * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -388,10 +385,9 @@ class OnRequestReportsApi extends BaseApi
     protected function generateReportWithHttpInfo(
         string $reportType,
         string $reportVersion,
-        string $contentType,
         ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null,
     ): \Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse {
-        $request = $this->generateReportRequest($reportType, $reportVersion, $contentType, $generateReportPayload);
+        $request = $this->generateReportRequest($reportType, $reportVersion, $generateReportPayload);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -487,7 +483,6 @@ class OnRequestReportsApi extends BaseApi
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
-     * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \InvalidArgumentException
@@ -496,10 +491,9 @@ class OnRequestReportsApi extends BaseApi
     public function generateReportAsync(
         string $reportType,
         string $reportVersion,
-        string $contentType,
         ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null
     ): PromiseInterface {
-        return $this->generateReportAsyncWithHttpInfo($reportType, $reportVersion, $contentType, $generateReportPayload)
+        return $this->generateReportAsyncWithHttpInfo($reportType, $reportVersion, $generateReportPayload)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -514,7 +508,6 @@ class OnRequestReportsApi extends BaseApi
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
-     * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \InvalidArgumentException
@@ -523,11 +516,10 @@ class OnRequestReportsApi extends BaseApi
     protected function generateReportAsyncWithHttpInfo(
         string $reportType,
         string $reportVersion,
-        string $contentType,
         ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\OnRequestReports\GenerateReportResponse';
-        $request = $this->generateReportRequest($reportType, $reportVersion, $contentType, $generateReportPayload);
+        $request = $this->generateReportRequest($reportType, $reportVersion, $generateReportPayload);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -574,7 +566,6 @@ class OnRequestReportsApi extends BaseApi
      *
      * @param  string $reportType Specifies the report type for the request. For example, reportType=ITEM creates an Item Report. (required)
      * @param  string $reportVersion Version of report for which the request is created. Supported versions for each report type are currently 'reportVersion=v1' for the following reportType(s): INVENTORY, CANCELLATION, DELIVERY_DEFECT, ITEM_PERFORMANCE, PROMO, RETURN_OVERRIDES, CPA, SHIPPING_CONFIGURATION, SHIPPING_PROGRAM, FITMENT_MISSING_ATTR, FITMENT_ACES_COVERAGE, BUYBOX and 'reportVersion=v1', 'reportVersion=v2', 'reportVersion=v3', 'reportVersion=v4' for the following reportType(s): ITEM. (required)
-     * @param  string $contentType Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload Request body (optional)
      *
      * @throws \InvalidArgumentException
@@ -583,7 +574,6 @@ class OnRequestReportsApi extends BaseApi
     protected function generateReportRequest(
         string $reportType,
         string $reportVersion,
-        string $contentType,
         ?\Walmart\Models\MP\US\OnRequestReports\GenerateReportPayload $generateReportPayload = null,
     ): Request {
         $contentType = self::contentTypes['generateReport'];
@@ -598,12 +588,6 @@ class OnRequestReportsApi extends BaseApi
         if ($reportVersion === null || (is_array($reportVersion) && count($reportVersion) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $reportVersion when calling generateReport'
-            );
-        }
-        // verify the required parameter 'contentType' is set
-        if ($contentType === null || (is_array($contentType) && count($contentType) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $contentType when calling generateReport'
             );
         }
         $resourcePath = '/v3/reports/reportRequests';
@@ -633,11 +617,6 @@ class OnRequestReportsApi extends BaseApi
                 true // required
             ) ?? [],
         );
-
-        // header params
-        if ($contentType !== null) {
-            $headerParams['Content-Type'] = ObjectSerializer::toHeaderValue($contentType);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],

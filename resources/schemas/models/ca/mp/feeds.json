@@ -118,7 +118,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/xml": {
+                            "application\/json": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/FeedId"
                                 },
@@ -189,7 +189,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/xml": {
+                            "application\/json": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/PartnerFeedResponse"
                                 },

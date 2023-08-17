@@ -420,7 +420,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/octet-stream": {
+                            "application\/json": {
                                 "schema": {
                                     "type": "string",
                                     "x-expose-headers": true
@@ -2415,7 +2415,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/octet-stream": {
+                            "application\/json": {
                                 "schema": {
                                     "type": "string",
                                     "x-expose-headers": true

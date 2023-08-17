@@ -10,7 +10,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `getTokenDetail()`
 
 ```php
-getTokenDetail($contentType): \Walmart\Models\MP\MX\Authentication\TokenDetailResponse
+getTokenDetail(): \Walmart\Models\MP\MX\Authentication\TokenDetailResponse
 ```
 Token Detail
 
@@ -34,10 +34,9 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->authentication();
 
-$contentType = application/x-www-form-urlencoded; // string | Content type of the request body.
 
 try {
-    $result = $api->getTokenDetail($contentType);
+    $result = $api->getTokenDetail();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling AuthenticationApi->getTokenDetail: {$e->getMessage()}\n";
@@ -45,9 +44,7 @@ try {
 ```
 
 ### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **contentType** | **string**| Content type of the request body. | |
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -70,7 +67,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `tokenAPI()`
 
 ```php
-tokenAPI($contentType, $grantType, $code, $redirectUri, $refreshToken): \Walmart\Models\MP\MX\Authentication\OAuthToken
+tokenAPI($grantType, $code, $redirectUri, $refreshToken): \Walmart\Models\MP\MX\Authentication\OAuthToken
 ```
 Token API
 
@@ -94,14 +91,13 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->authentication();
 
-$contentType = application/x-www-form-urlencoded; // string | Content type of the request body.
 $grantType = 'client_credentials'; // string | Type of grant requested. <br /> **Available grant types:** authorization_code, refresh_token and client_credentials
 $code = '65CA5DA313A549D49D15D3119D9AD85D'; // string | Authorization code obtained by your client app when the seller authorizes your app to access the seller resource. <br /> This field is required when **grant_type: authorization_code**
 $redirectUri = 'https://example-client-app.com'; // string | This should be same as one of your client app URIs provided while registering the app. <br /> This field is required when **grant_type: authorization_code**
 $refreshToken = 'APXcIoTpKMH9OQN.....'; // string | Refresh token received as response of Authentication API with authorization_code grant type, to be used to refresh the access token. <br /> This field is required when **grant_type: refresh_token**
 
 try {
-    $result = $api->tokenAPI($contentType, $grantType, $code, $redirectUri, $refreshToken);
+    $result = $api->tokenAPI($grantType, $code, $redirectUri, $refreshToken);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling AuthenticationApi->tokenAPI: {$e->getMessage()}\n";
@@ -111,7 +107,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contentType** | **string**| Content type of the request body. | |
 | **grantType** | **string**| Type of grant requested. <br /> **Available grant types:** authorization_code, refresh_token and client_credentials | [default to 'client_credentials'] |
 | **code** | **string**| Authorization code obtained by your client app when the seller authorizes your app to access the seller resource. <br /> This field is required when **grant_type: authorization_code** | [optional] [default to '65CA5DA313A549D49D15D3119D9AD85D'] |
 | **redirectUri** | **string**| This should be same as one of your client app URIs provided while registering the app. <br /> This field is required when **grant_type: authorization_code** | [optional] [default to 'https://example-client-app.com'] |

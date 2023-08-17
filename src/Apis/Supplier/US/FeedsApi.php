@@ -314,7 +314,7 @@ class FeedsApi extends BaseApi
         );
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/xml'],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -683,7 +683,7 @@ class FeedsApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/xml'],
+            ['application/json'],
             $contentType,
             $multipart
         );

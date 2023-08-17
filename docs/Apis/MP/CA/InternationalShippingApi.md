@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createConsolidation()`
 
 ```php
-createConsolidation($contentType, $consolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
+createConsolidation($consolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
 ```
 Create consolidation
 
@@ -42,11 +42,10 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$contentType = application/json; // string | Content-Type Header
 $consolidationRequest = {"domesticCarrierId":1000,"domesticTrackingNo":"20128590000367","shipmentIds":["875F143972000000CA8020EA"]}; // \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest | Consolidation Request
 
 try {
-    $result = $api->createConsolidation($contentType, $consolidationRequest);
+    $result = $api->createConsolidation($consolidationRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createConsolidation: {$e->getMessage()}\n";
@@ -56,7 +55,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contentType** | **string**| Content-Type Header | |
 | **consolidationRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest**](../../../Models/MP/CA/InternationalShipping/ConsolidationRequest.md)| Consolidation Request | |
 
 
@@ -82,7 +80,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `createLabel()`
 
 ```php
-createLabel($contentType, $labelGenerationRequestCa, $wMTESTMODE): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+createLabel($labelGenerationRequestCa, $wMTESTMODE): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Create label
 
@@ -108,12 +106,11 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$contentType = application/json; // string | Content-Type Header
 $labelGenerationRequestCa = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY","labelSize":"A6"}; // \Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa | Label fields
 $wMTESTMODE = false; // bool | For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned.
 
 try {
-    $result = $api->createLabel($contentType, $labelGenerationRequestCa, $wMTESTMODE);
+    $result = $api->createLabel($labelGenerationRequestCa, $wMTESTMODE);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createLabel: {$e->getMessage()}\n";
@@ -123,7 +120,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **contentType** | **string**| Content-Type Header | |
 | **labelGenerationRequestCa** | [**\Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa**](../../../Models/MP/CA/InternationalShipping/LabelGenerationRequestCa.md)| Label fields | |
 | **wMTESTMODE** | **bool**| For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned. | [optional] [default to false] |
 
@@ -150,7 +146,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `discardLabel()`
 
 ```php
-discardLabel($carrierShortName, $trackingNo, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+discardLabel($carrierShortName, $trackingNo): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Discard label
 
@@ -178,10 +174,9 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
-$contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->discardLabel($carrierShortName, $trackingNo, $contentType);
+    $result = $api->discardLabel($carrierShortName, $trackingNo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->discardLabel: {$e->getMessage()}\n";
@@ -193,7 +188,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
-| **contentType** | **string**| Content-Type Header | |
 
 
 ### Return type
@@ -218,7 +212,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse
+getCarrierPackageTypes($carrierShortName): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse
 ```
 Supported carrier package types
 
@@ -245,10 +239,9 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers
-$contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getCarrierPackageTypes($carrierShortName, $contentType);
+    $result = $api->getCarrierPackageTypes($carrierShortName);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarrierPackageTypes: {$e->getMessage()}\n";
@@ -259,7 +252,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers | |
-| **contentType** | **string**| Content-Type Header | |
 
 
 ### Return type
@@ -284,7 +276,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarriers()`
 
 ```php
-getCarriers($contentType): \Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse
+getCarriers(): \Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse
 ```
 Supported carriers
 
@@ -310,10 +302,9 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getCarriers($contentType);
+    $result = $api->getCarriers();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarriers: {$e->getMessage()}\n";
@@ -321,9 +312,7 @@ try {
 ```
 
 ### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **contentType** | **string**| Content-Type Header | |
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -348,7 +337,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getConsolidation()`
 
 ```php
-getConsolidation($domesticTrackingNo, $domesticCarrierId, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
+getConsolidation($domesticTrackingNo, $domesticCarrierId): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
 ```
 Get consolidation details
 
@@ -376,10 +365,9 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $domesticTrackingNo = 'domesticTrackingNo_example'; // string | Domestic TrackingNo.
 $domesticCarrierId = 56; // int | Domestic CarrierId.
-$contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getConsolidation($domesticTrackingNo, $domesticCarrierId, $contentType);
+    $result = $api->getConsolidation($domesticTrackingNo, $domesticCarrierId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getConsolidation: {$e->getMessage()}\n";
@@ -391,7 +379,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domesticTrackingNo** | **string**| Domestic TrackingNo. | |
 | **domesticCarrierId** | **int**| Domestic CarrierId. | |
-| **contentType** | **string**| Content-Type Header | |
 
 
 ### Return type
@@ -416,7 +403,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa
+getLabel($purchaseOrderId): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa
 ```
 Labels by purchase order id
 
@@ -443,10 +430,9 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->internationalShipping();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getLabel($purchaseOrderId, $contentType);
+    $result = $api->getLabel($purchaseOrderId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabel: {$e->getMessage()}\n";
@@ -457,7 +443,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **contentType** | **string**| Content-Type Header | |
 
 
 ### Return type
@@ -482,7 +467,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabelByTrackingAndCarrier()`
 
 ```php
-getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $contentType): \SplFileObject
+getLabelByTrackingAndCarrier($carrierShortName, $trackingNo): \SplFileObject
 ```
 Download label
 
@@ -510,10 +495,9 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
-$contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $contentType);
+    $result = $api->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabelByTrackingAndCarrier: {$e->getMessage()}\n";
@@ -525,7 +509,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
-| **contentType** | **string**| Content-Type Header | |
 
 
 ### Return type

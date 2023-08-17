@@ -2694,7 +2694,7 @@ class OrdersApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/octet-stream', 'application/json'],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -3039,7 +3039,7 @@ class OrdersApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/octet-stream', 'application/json'],
+            ['application/json'],
             $contentType,
             $multipart
         );

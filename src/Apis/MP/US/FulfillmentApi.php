@@ -2102,7 +2102,7 @@ class FulfillmentApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/pdf'],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2389,7 +2389,7 @@ class FulfillmentApi extends BaseApi
         $method = 'POST';
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/pdf'],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -4807,7 +4807,7 @@ class FulfillmentApi extends BaseApi
         $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/octet-stream'],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -5874,7 +5874,7 @@ class FulfillmentApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/pdf'],
+            ['application/json'],
             $contentType,
             $multipart
         );

@@ -658,7 +658,7 @@ class FeedsApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/octet-stream'],
+            ['application/json'],
             $contentType,
             $multipart
         );

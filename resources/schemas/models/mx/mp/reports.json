@@ -47,7 +47,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/octet-stream": {
+                            "application\/json": {
                                 "schema": {
                                     "type": "string",
                                     "description": "The data will be streamed in a .CSV file in your folder. A zip file will be downloaded in your folder with the .csv",

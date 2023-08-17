@@ -2083,7 +2083,7 @@ class RulesApi extends BaseApi
         $method = 'GET';
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/octet-stream'],
+            ['application/json'],
             $contentType,
             $multipart
         );
@@ -2402,7 +2402,7 @@ class RulesApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/octet-stream'],
+            ['application/json'],
             $contentType,
             $multipart
         );
