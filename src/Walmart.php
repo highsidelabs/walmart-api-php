@@ -31,6 +31,11 @@ abstract class Walmart
     public const VERSION = '0.6.3';
 
     /**
+     * The base URL for all API requests. This can be overridden in child classes.
+     */
+    public const HOST = 'https://marketplace.walmartapis.com';
+
+    /**
      * The configuration for this client.
      * @var Configuration
      */
@@ -46,11 +51,57 @@ abstract class Walmart
      * Create a new Walmart client.
      *
      * @param Configuration $config The configuration for this client.
-     * @param ?string $country The country to use for this client.
+     * @param bool $clone If false, the configuration object will be used as-is. If true, the
+     *                    configuration object will be cloned before use. Default is true.
      */
-    public function __construct(Configuration $config)
+    public function __construct(Configuration $config, protected bool $clone = true)
     {
-        $this->config = $config;
+        // We clone $config so that if the same Configuration object is used for multiple API
+        // instances, the host changes made in the ::contentProvider(), ::marketplace(), and
+        // ::supplier() methods don't affect the other API instances.
+        if ($this->clone) {
+            $this->config = clone $config;
+        } else {
+            $this->config = $config;
+        }
+
+        $config->setHost(static::HOST);
+    }
+
+    /**
+     * Return an instance of the Content Provider API provider.
+     *
+     * @param Configuration $config
+     * @param bool $clone
+     * @return ContentProviderApi
+     */
+    public static function contentProvider(Configuration $config, bool $clone = true): ContentProviderApi
+    {
+        return new ContentProviderApi($config, $clone);
+    }
+
+    /**
+     * Return an instance of the Marketplace API provider.
+     *
+     * @param Configuration $config
+     * @param bool $clone
+     * @return MarketplaceApi
+     */
+    public static function marketplace(Configuration $config, bool $clone = true): MarketplaceApi
+    {
+        return new MarketplaceApi($config, $clone);
+    }
+
+    /**
+     * Return an instance of the 1P Supplier API provider.
+     *
+     * @param Configuration $config
+     * @param bool $clone
+     * @return SupplierApi
+     */
+    public static function supplier(Configuration $config, bool $clone = true): SupplierApi
+    {
+        return new SupplierApi($config, $clone);
     }
 
     /**
@@ -83,38 +134,5 @@ abstract class Walmart
 
         $apiClass = static::$countryApiMap[$name][$this->config->getCountry()];
         return new $apiClass($this->config);
-    }
-
-    /**
-     * Return an instance of the Content Provider API provider.
-     *
-     * @param Configuration $config
-     * @return ContentProviderApi
-     */
-    public static function contentProvider(Configuration $config): ContentProviderApi
-    {
-        return new ContentProviderApi($config);
-    }
-
-    /**
-     * Return an instance of the 1P Supplier API provider.
-     *
-     * @param Configuration $config
-     * @return SupplierApi
-     */
-    public static function supplier(Configuration $config): SupplierApi
-    {
-        return new SupplierApi($config);
-    }
-
-    /**
-     * Return an instance of the Marketplace API provider.
-     *
-     * @param Configuration $config
-     * @return MarketplaceApi
-     */
-    public static function marketplace(Configuration $config): MarketplaceApi
-    {
-        return new MarketplaceApi($config);
     }
 }
