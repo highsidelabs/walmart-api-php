@@ -530,16 +530,24 @@ class {{classname}} extends BaseApi
                 $httpBody = ObjectSerializer::buildQuery($formParams);
             }
         }
-        {{#each authMethods}}
-        {{#if isApiKey~}}
-        ${{name}}ApiKey = $this->config->getApiKey('{{name}}', [
+
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+        {{#each authMethods}}
+        {{#if isApiKey~}}
+        ${{name}}ApiKey = $this->config->getApiKey('{{name}}', $requestInfo);
         if (${{name}}ApiKey !== null) {
             {{#if isKeyInHeader}}$headers['{{keyParamName}}'] = ${{name}}ApiKey;{{/if~}}
-            {{#if isKeyInQuery}}$queryParams['{{keyParamName}}'] = ${{name}}ApiKey;{{/if}}
+            {{#if isKeyInQuery~}}
+            $queryParams['{{keyParamName}}'] = ${{name}}ApiKey;
+            $query = ObjectSerializer::buildQuery($queryParams);
+            $requestInfo['query'] = $query;
+            {{~/if}}
         }
         {{/if~}}
         {{#if isBasic~}}
@@ -566,7 +574,6 @@ class {{classname}} extends BaseApi
         {{/if~}}
         {{/each}}
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

@@ -23,7 +23,6 @@ use InvalidArgumentException;
 use phpseclib3\Crypt\RSA;
 use RuntimeException;
 use Walmart\Enums\Country;
-use Walmart\Enums\SecurityScheme;
 
 /**
  * Configuration Class Doc Comment
@@ -163,7 +162,12 @@ class Configuration
      */
     public function setApiKey(string $apiKeyIdentifier, string $key): static
     {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
+        $method = 'set' . ucfirst($apiKeyIdentifier);
+        if (!method_exists(static::class, $method)) {
+            throw new InvalidArgumentException("Invalid API key identifier: $apiKeyIdentifier");
+        }
+
+        $this->{$method}($key);
         return $this;
     }
 
@@ -171,20 +175,19 @@ class Configuration
      * Gets API key by auth scheme name
      *
      * @param string $apiKeyIdentifier API key identifier (authentication scheme name)
-     * @param array $requestInfo Request information to use when retrieving the API key.
-     *                           Includes the request path, HTTP method, and millisecond timestamp.
+     * @param array $requestInfo Request information to use when retrieving the API key. Includes the request path,
+     *                           HTTP method, millisecond timestamp, and query string.
      *
      * @return null|string API key or token
      */
     public function getApiKey(string $apiKeyIdentifier, array $requestInfo): ?string
     {
-        // The signature header has to be generated in real-time, since it requires request info
-        if ($apiKeyIdentifier === SecurityScheme::SIGNATURE) {
-            $signature = $this->sign(...$requestInfo);
-            $this->setApiKey($apiKeyIdentifier, $signature);
+        $method = 'get' . ucfirst($apiKeyIdentifier);
+        if (!method_exists(static::class, $method)) {
+            throw new InvalidArgumentException("Invalid API key identifier: $apiKeyIdentifier");
         }
 
-        return isset($this->apiKeys[$apiKeyIdentifier]) ? $this->apiKeys[$apiKeyIdentifier] : null;
+        return $this->{$method}($requestInfo);
     }
 
     /**
@@ -321,6 +324,18 @@ class Configuration
     public function getPrivateKey(): string
     {
         return $this->privateKey;
+    }
+
+    /**
+     * Generates a request signature
+     *
+     * @return string The private key
+     */
+    public function getSignature(array $requestInfo): string
+    {
+        // The signature header has to be generated in real-time, since it requires request info
+        $signature = $this->sign(...$requestInfo);
+        return $signature;
     }
 
     /**
@@ -536,38 +551,45 @@ class Configuration
         }
 
         foreach ($validKeys as $key) {
-            if (!isset($options[$key]) || $options[$key] === null) {
-                continue;
-            }
+            if (!isset($options[$key]) || $options[$key] === null) continue;
             $this->{'set' . ucfirst($key)}($options[$key]);
         }
     }
 
-    /**
+     /**
      * Sign the request with the user's private key
      *
      * @param string $path The path to the endpoint being called
      * @param string $method The HTTP method being used to call the endpoint
      * @param int $timestamp The timestamp of the request, to millisecond precision
+     * @param string $query The querystring of the request, if any
      *
      * @throws RuntimeException 
      * @return string The request signature
      */
-    protected function sign(string $path, string $method, int $timestamp): string
+    protected function sign(string $path, string $method, int $timestamp, string $query = ''): string
     {
         if (!$this->isSignatureAuthReady()) {
             throw new RuntimeException('Consumer ID and private key must be set to generate a signature');
         }
 
+        $fullPath = $path;
+        if ($query !== '') {
+            $fullPath .= '?' . $query;
+        }
+
         $_method = strtoupper($method);
-        $stringToSign = "{$this->getConsumerId()}\n{$this->getHost()}{$path}\n{$_method}\n{$timestamp}";
+        $stringToSign = "{$this->getConsumerId()}\n{$this->getHost()}{$fullPath}\n{$_method}\n{$timestamp}\n";
 
         $decoded = base64_decode($this->getPrivateKey(), true);
-        $rsa = RSA::loadFormat('PKCS8', $decoded);
-        if (!$rsa) {
+        $key = RSA::loadFormat('PKCS8', $decoded);
+        if (!$key) {
             throw new RuntimeException('Unable to load private key');
-        }        
-        $signature = $rsa->withHash('sha256')->sign($stringToSign);
+        }
+
+        $signature = $key->withPadding(RSA::SIGNATURE_PKCS1)
+            ->withHash('sha256')
+            ->sign($stringToSign);
 
         return base64_encode($signature);
     }

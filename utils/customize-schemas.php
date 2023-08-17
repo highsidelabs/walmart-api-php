@@ -32,12 +32,12 @@ function customizeSchema(
         ACCESS_TOKEN_HEADER,
         CONSUMER_ID_HEADER,
         AUTH_SIG_HEADER,
-        MARKET_HEADER,
         PARTNER_HEADER,
         'WM_QOS.CORRELATION_ID',
         'WM_SVC.NAME',
         'WM_CONSUMER.CHANNEL.TYPE',
         'WM_SEC.TIMESTAMP',
+        'WM_MARKET',
         'Accept',
     ];
 

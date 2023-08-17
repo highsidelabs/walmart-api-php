@@ -43,7 +43,6 @@ function openApiGenerator(string $code, string $name, string $category, string $
     $schemaPath = SCHEMA_DIR . "/$country/$category/$code.json";
     $configPath = RESOURCE_DIR . '/generator-config.json';
 
-    $categoryCaps = strtoupper($category);
     $categoryNamespace = $category === ApiCategory::SUPPLIER ? ucfirst($category) : strtoupper($category);
     $categoryCode = ApiCategory::asCategoryName($category);
     $countryCaps = strtoupper($country);
