@@ -16,7 +16,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createConsolidation()`
 
 ```php
-createConsolidation($accept, $contentType, $consolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
+createConsolidation($contentType, $consolidationRequest): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
 ```
 Create consolidation
 
@@ -42,12 +42,11 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 $consolidationRequest = {"domesticCarrierId":1000,"domesticTrackingNo":"20128590000367","shipmentIds":["875F143972000000CA8020EA"]}; // \Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest | Consolidation Request
 
 try {
-    $result = $api->createConsolidation($accept, $contentType, $consolidationRequest);
+    $result = $api->createConsolidation($contentType, $consolidationRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createConsolidation: {$e->getMessage()}\n";
@@ -57,7 +56,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 | **consolidationRequest** | [**\Walmart\Models\MP\CA\InternationalShipping\ConsolidationRequest**](../../../Models/MP/CA/InternationalShipping/ConsolidationRequest.md)| Consolidation Request | |
 
@@ -70,9 +68,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -84,7 +82,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `createLabel()`
 
 ```php
-createLabel($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+createLabel($contentType, $labelGenerationRequestCa, $wMTESTMODE): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Create label
 
@@ -110,13 +108,12 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 $labelGenerationRequestCa = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY","labelSize":"A6"}; // \Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa | Label fields
 $wMTESTMODE = false; // bool | For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned.
 
 try {
-    $result = $api->createLabel($accept, $contentType, $labelGenerationRequestCa, $wMTESTMODE);
+    $result = $api->createLabel($contentType, $labelGenerationRequestCa, $wMTESTMODE);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createLabel: {$e->getMessage()}\n";
@@ -126,7 +123,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 | **labelGenerationRequestCa** | [**\Walmart\Models\MP\CA\InternationalShipping\LabelGenerationRequestCa**](../../../Models/MP/CA/InternationalShipping/LabelGenerationRequestCa.md)| Label fields | |
 | **wMTESTMODE** | **bool**| For sellers/clients who are in the process of on boarding or already on boarded to IMD platforms, this feature allows them to test the API integration to SWW international label generation API. Sellers get a response which maps their request attributes with some additional static information like tracking and label. The label returned is corresponding to the carrier configured for each seller, in case if the configuration is still in progress a sample Fedex Express label is returned. | [optional] [default to false] |
@@ -140,9 +136,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -154,7 +150,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `discardLabel()`
 
 ```php
-discardLabel($carrierShortName, $trackingNo, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
+discardLabel($carrierShortName, $trackingNo, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseLabelGenerationResponseCa
 ```
 Discard label
 
@@ -182,11 +178,10 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->discardLabel($carrierShortName, $trackingNo, $accept, $contentType);
+    $result = $api->discardLabel($carrierShortName, $trackingNo, $contentType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->discardLabel: {$e->getMessage()}\n";
@@ -198,7 +193,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 
 
@@ -210,9 +204,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -224,7 +218,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse
+getCarrierPackageTypes($carrierShortName, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListCarrierPackageResponse
 ```
 Supported carrier package types
 
@@ -251,11 +245,10 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getCarrierPackageTypes($carrierShortName, $accept, $contentType);
+    $result = $api->getCarrierPackageTypes($carrierShortName, $contentType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarrierPackageTypes: {$e->getMessage()}\n";
@@ -266,7 +259,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers | |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 
 
@@ -278,9 +270,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -292,7 +284,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarriers()`
 
 ```php
-getCarriers($accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse
+getCarriers($contentType): \Walmart\Models\MP\CA\InternationalShipping\CarrierCommonResponseListCarrierResponse
 ```
 Supported carriers
 
@@ -318,11 +310,10 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getCarriers($accept, $contentType);
+    $result = $api->getCarriers($contentType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarriers: {$e->getMessage()}\n";
@@ -332,7 +323,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 
 
@@ -344,9 +334,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -358,7 +348,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getConsolidation()`
 
 ```php
-getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
+getConsolidation($domesticTrackingNo, $domesticCarrierId, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseConsolidationResponse
 ```
 Get consolidation details
 
@@ -386,11 +376,10 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $domesticTrackingNo = 'domesticTrackingNo_example'; // string | Domestic TrackingNo.
 $domesticCarrierId = 56; // int | Domestic CarrierId.
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getConsolidation($domesticTrackingNo, $domesticCarrierId, $accept, $contentType);
+    $result = $api->getConsolidation($domesticTrackingNo, $domesticCarrierId, $contentType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getConsolidation: {$e->getMessage()}\n";
@@ -402,7 +391,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **domesticTrackingNo** | **string**| Domestic TrackingNo. | |
 | **domesticCarrierId** | **int**| Domestic CarrierId. | |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 
 
@@ -414,9 +402,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -428,7 +416,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $accept, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa
+getLabel($purchaseOrderId, $contentType): \Walmart\Models\MP\CA\InternationalShipping\CommonResponseListLabelGenerationResponseCa
 ```
 Labels by purchase order id
 
@@ -455,11 +443,10 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->internationalShipping();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getLabel($purchaseOrderId, $accept, $contentType);
+    $result = $api->getLabel($purchaseOrderId, $contentType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabel: {$e->getMessage()}\n";
@@ -470,7 +457,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 
 
@@ -482,9 +468,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -496,7 +482,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabelByTrackingAndCarrier()`
 
 ```php
-getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $accept, $contentType): \SplFileObject
+getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $contentType): \SplFileObject
 ```
 Download label
 
@@ -524,11 +510,10 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
-$accept = application/json; // string | Accept Header
 $contentType = application/json; // string | Content-Type Header
 
 try {
-    $result = $api->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $accept, $contentType);
+    $result = $api->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $contentType);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabelByTrackingAndCarrier: {$e->getMessage()}\n";
@@ -540,7 +525,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
-| **accept** | **string**| Accept Header | |
 | **contentType** | **string**| Content-Type Header | |
 
 
@@ -552,9 +536,9 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `channelTypeScheme`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `channelType`: Header authentication with your Walmart channel type, which is passed in the WM_CONSUMER.CHANNEL.TYPE header. When using endpoints that require channel type authentication, you must pass the `channelType` option to the `Configuration` constructor.
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 

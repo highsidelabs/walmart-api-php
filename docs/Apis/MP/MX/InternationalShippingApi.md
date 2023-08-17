@@ -14,7 +14,7 @@ All URIs are relative to https://marketplace.walmartapis.com, except if the oper
 ## `createLabel()`
 
 ```php
-createLabel($accept, $labelGenerationRequestMx): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
+createLabel($labelGenerationRequestMx): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
 ```
 Create label
 
@@ -38,11 +38,10 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$accept = application/json; // string | Only supported Media Type : application/json
 $labelGenerationRequestMx = {"packageType":"CUSTOM_PACKAGE","boxDimensions":{"boxDimensionUnit":"IN","boxWeightUnit":"LB","boxWeight":1,"boxLength":100,"boxWidth":1,"boxHeight":1},"boxItems":[{"sku":"SKU_28072021","quantity":1,"countryOfOrigin":"US"}],"fromAddress":{"contactName":"Test","companyName":"Walmart","addressLine1":"Add1","addressLine2":"Add2","city":"Anchorage","state":"AK","postalCode":"99501","country":"US","phone":"12253","email":"test@walmart.com"},"purchaseOrderId":"P100569013","carrierName":"FedEx","carrierServiceType":"FEDEX_INTERNATIONAL_ECONOMY"}; // \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx | Label fields
 
 try {
-    $result = $api->createLabel($accept, $labelGenerationRequestMx);
+    $result = $api->createLabel($labelGenerationRequestMx);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->createLabel: {$e->getMessage()}\n";
@@ -52,7 +51,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Only supported Media Type : application/json | |
 | **labelGenerationRequestMx** | [**\Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx**](../../../Models/MP/MX/InternationalShipping/LabelGenerationRequestMx.md)| Label fields | |
 
 
@@ -64,8 +62,8 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `basic`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -77,7 +75,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `discardLabel()`
 
 ```php
-discardLabel($carrierShortName, $trackingNo, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
+discardLabel($carrierShortName, $trackingNo): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
 ```
 Discard label
 
@@ -103,10 +101,9 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
-$accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $api->discardLabel($carrierShortName, $trackingNo, $accept);
+    $result = $api->discardLabel($carrierShortName, $trackingNo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->discardLabel: {$e->getMessage()}\n";
@@ -118,7 +115,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
-| **accept** | **string**| Only supported Media Type : application/json | |
 
 
 ### Return type
@@ -129,8 +125,8 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `basic`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -142,7 +138,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarrierPackageTypes()`
 
 ```php
-getCarrierPackageTypes($carrierShortName, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse
+getCarrierPackageTypes($carrierShortName): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse
 ```
 Supported carrier package types
 
@@ -167,10 +163,9 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers
-$accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $api->getCarrierPackageTypes($carrierShortName, $accept);
+    $result = $api->getCarrierPackageTypes($carrierShortName);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarrierPackageTypes: {$e->getMessage()}\n";
@@ -181,7 +176,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers | |
-| **accept** | **string**| Only supported Media Type : application/json | |
 
 
 ### Return type
@@ -192,8 +186,8 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `basic`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -205,7 +199,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getCarriers()`
 
 ```php
-getCarriers($accept): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse
+getCarriers(): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse
 ```
 Supported carriers
 
@@ -229,10 +223,9 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->internationalShipping();
 
-$accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $api->getCarriers($accept);
+    $result = $api->getCarriers();
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getCarriers: {$e->getMessage()}\n";
@@ -240,9 +233,7 @@ try {
 ```
 
 ### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Only supported Media Type : application/json | |
+This endpoint does not need any parameter.
 
 
 ### Return type
@@ -253,8 +244,8 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `basic`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -266,7 +257,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabel()`
 
 ```php
-getLabel($purchaseOrderId, $accept): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx
+getLabel($purchaseOrderId): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx
 ```
 Labels detail by purchase order id
 
@@ -291,10 +282,9 @@ $config = new Walmart\Configuration([
 $api = Walmart::marketplace($config)->internationalShipping();
 
 $purchaseOrderId = 'purchaseOrderId_example'; // string | purchaseOrderId
-$accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $api->getLabel($purchaseOrderId, $accept);
+    $result = $api->getLabel($purchaseOrderId);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabel: {$e->getMessage()}\n";
@@ -305,7 +295,6 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **purchaseOrderId** | **string**| purchaseOrderId | |
-| **accept** | **string**| Only supported Media Type : application/json | |
 
 
 ### Return type
@@ -316,8 +305,8 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `basic`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -329,7 +318,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getLabelByTrackingAndCarrier()`
 
 ```php
-getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $accept): \SplFileObject
+getLabelByTrackingAndCarrier($carrierShortName, $trackingNo): \SplFileObject
 ```
 Download label
 
@@ -355,10 +344,9 @@ $api = Walmart::marketplace($config)->internationalShipping();
 
 $carrierShortName = 'carrierShortName_example'; // string | carrierShortName from getCarriers API
 $trackingNo = 'trackingNo_example'; // string | trackingNo
-$accept = application/json; // string | Only supported Media Type : application/json
 
 try {
-    $result = $api->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo, $accept);
+    $result = $api->getLabelByTrackingAndCarrier($carrierShortName, $trackingNo);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling InternationalShippingApi->getLabelByTrackingAndCarrier: {$e->getMessage()}\n";
@@ -370,7 +358,6 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **carrierShortName** | **string**| carrierShortName from getCarriers API | |
 | **trackingNo** | **string**| trackingNo | |
-| **accept** | **string**| Only supported Media Type : application/json | |
 
 
 ### Return type
@@ -381,8 +368,8 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `basicScheme`: Basic authentication with a Walmart Client ID and Client Secret
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `basic`: Basic authentication with a Walmart Client ID and Client Secret
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 

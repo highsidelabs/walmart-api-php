@@ -45,7 +45,6 @@ class ItemsApi extends BaseApi
     public const contentTypes = [
         'getAllItems' => 'application/json',
         'getAnItem' => 'application/json',
-        'getAnItemV4' => 'application/json',
         'itemBulkUploads' => 'multipart/form-data',
         'updateRichMediaOfItem' => 'application/xml',
     ];
@@ -338,31 +337,27 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -372,7 +367,6 @@ class ItemsApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -654,31 +648,27 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -688,420 +678,6 @@ class ItemsApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            $method,
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getAnItemV4
-     *
-     * An Item (v4)
-     *
-     * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
-     * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
-     *
-     * @throws \Walmart\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Walmart\Models\Supplier\US\Items\Response|\Walmart\Models\Supplier\US\Items\ErrorResponse400|\Walmart\Models\Supplier\US\Items\ErrorResponse401|\Walmart\Models\Supplier\US\Items\ErrorResponse404
-     */
-    public function getAnItemV4(
-        string $productId,
-        ?string $productIdType = 'GTIN',
-        ?string $includeFullItemDetails = 'NO'
-    ): \Walmart\Models\Supplier\US\Items\Response {
-        return $this->getAnItemV4WithHttpInfo($productId, $productIdType, $includeFullItemDetails);
-    }
-
-    /**
-     * Operation getAnItemV4WithHttpInfo
-     *
-     * An Item (v4)
-     *
-     * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
-     * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
-     *
-     * @throws \Walmart\ApiException on non-2xx response
-     * @throws \InvalidArgumentException
-     * @return \Walmart\Models\Supplier\US\Items\Response|\Walmart\Models\Supplier\US\Items\ErrorResponse400|\Walmart\Models\Supplier\US\Items\ErrorResponse401|\Walmart\Models\Supplier\US\Items\ErrorResponse404
-     */
-    protected function getAnItemV4WithHttpInfo(
-        string $productId,
-        ?string $productIdType = 'GTIN',
-        ?string $includeFullItemDetails = 'NO',
-    ): \Walmart\Models\Supplier\US\Items\Response {
-        $request = $this->getAnItemV4Request($productId, $productIdType, $includeFullItemDetails);
-        $this->writeDebug($request);
-        $this->writeDebug((string) $request->getBody());
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-                $this->writeDebug($response);
-                $this->writeDebug((string) $response->getBody());
-            } catch (RequestException $e) {
-                $hasResponse = !empty($e->hasResponse());
-                $body = (string) ($hasResponse ? $e->getResponse()->getBody() : '[NULL response]');
-                $this->writeDebug($e->getResponse());
-                $this->writeDebug($body);
-
-                throw new ApiException(
-                    "[{$e->getCode()}] {$body}",
-                    (int) $e->getCode(),
-                    $hasResponse ? $e->getResponse()->getHeaders() : null,
-                    $body
-                );
-            } catch (ConnectException $e) {
-                $this->writeDebug($e->getMessage());
-
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-            switch ($statusCode) {
-                case 200:
-                    if ('\Walmart\Models\Supplier\US\Items\Response' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Walmart\Models\Supplier\US\Items\Response' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\Supplier\US\Items\Response', $response->getHeaders());
-                case 400:
-                    if ('\Walmart\Models\Supplier\US\Items\ErrorResponse400' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Walmart\Models\Supplier\US\Items\ErrorResponse400' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\Supplier\US\Items\ErrorResponse400', $response->getHeaders());
-                case 401:
-                    if ('\Walmart\Models\Supplier\US\Items\ErrorResponse401' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Walmart\Models\Supplier\US\Items\ErrorResponse401' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\Supplier\US\Items\ErrorResponse401', $response->getHeaders());
-                case 404:
-                    if ('\Walmart\Models\Supplier\US\Items\ErrorResponse404' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\Walmart\Models\Supplier\US\Items\ErrorResponse404' !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\Supplier\US\Items\ErrorResponse404', $response->getHeaders());
-            }
-
-            $returnType = '\Walmart\Models\Supplier\US\Items\Response';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    $content = json_decode($content);
-                }
-            }
-
-            return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Walmart\Models\Supplier\US\Items\Response',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Walmart\Models\Supplier\US\Items\ErrorResponse400',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Walmart\Models\Supplier\US\Items\ErrorResponse401',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\Walmart\Models\Supplier\US\Items\ErrorResponse404',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            $this->writeDebug($e);
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getAnItemV4Async
-     *
-     * An Item (v4)
-     *
-     * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
-     * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getAnItemV4Async(
-        string $productId,
-        ?string $productIdType = 'GTIN',
-        ?string $includeFullItemDetails = 'NO'
-    ): PromiseInterface {
-        return $this->getAnItemV4AsyncWithHttpInfo($productId, $productIdType, $includeFullItemDetails)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getAnItemV4AsyncWithHttpInfo
-     *
-     * An Item (v4)
-     *
-     * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
-     * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    protected function getAnItemV4AsyncWithHttpInfo(
-        string $productId,
-        ?string $productIdType = 'GTIN',
-        ?string $includeFullItemDetails = 'NO',
-    ): PromiseInterface {
-        $returnType = '\Walmart\Models\Supplier\US\Items\Response';
-        $request = $this->getAnItemV4Request($productId, $productIdType, $includeFullItemDetails);
-        $this->writeDebug($request);
-        $this->writeDebug((string) $request->getBody());
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    $this->writeDebug($response);
-                    $this->writeDebug((string) $response->getBody());
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return ObjectSerializer::deserialize($content, $returnType, $response->getHeaders());
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $hasResponse = !empty($response);
-                    $body = (string) ($hasResponse ? $response->getBody() : '[NULL response]');
-                    $this->writeDebug($response);
-                    $statusCode = $hasResponse ? $response->getStatusCode() : $exception->getCode();
-
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        $body,
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getAnItemV4'
-     *
-     * @param  string $productId Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 (required)
-     * @param  string $productIdType Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC (optional, default to 'GTIN')
-     * @param  string $includeFullItemDetails Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES (optional, default to 'NO')
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    protected function getAnItemV4Request(
-        string $productId,
-        ?string $productIdType = 'GTIN',
-        ?string $includeFullItemDetails = 'NO',
-    ): Request {
-        $contentType = self::contentTypes['getAnItemV4'];
-
-        // verify the required parameter 'productId' is set
-        if ($productId === null || (is_array($productId) && count($productId) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $productId when calling getAnItemV4'
-            );
-        }
-        $resourcePath = '/v4/items/{productId}';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-        $method = 'GET';
-
-        // query params
-        $queryParams = array_merge(
-            ObjectSerializer::toQueryValue(
-                $productIdType,
-                'productIdType', // param base name
-                'string', // openApiType
-                'form', // style
-                true, // explode
-                false // required
-            ) ?? [],
-            ObjectSerializer::toQueryValue(
-                $includeFullItemDetails,
-                'includeFullItemDetails', // param base name
-                'string', // openApiType
-                'form', // style
-                true, // explode
-                false // required
-            ) ?? [],
-        );
-
-        // path params
-        if ($productId !== null) {
-            $resourcePath = str_replace(
-                '{' . 'productId' . '}',
-                ObjectSerializer::toPathValue($productId),
-                $resourcePath
-            );
-        }
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
-            $contentType,
-            $multipart
-        );
-
-        $defaultHeaders = parent::getDefaultHeaders();
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
-        }
-
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
-        }
-
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
-        }
-
-        // this endpoint requires Bearer authentication (access token)
-        $token = $this->config->getAccessToken();
-        if ($token) {
-            $headers['WM_SEC.ACCESS_TOKEN'] = $token->accessToken;
-        }
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1415,31 +991,27 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -1449,7 +1021,6 @@ class ItemsApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1734,7 +1305,7 @@ class ItemsApi extends BaseApi
             } else {
                 $httpBody = $body;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1757,31 +1328,27 @@ class ItemsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -1791,7 +1358,6 @@ class ItemsApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

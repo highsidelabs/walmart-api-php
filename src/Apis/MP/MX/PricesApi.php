@@ -352,6 +352,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -364,7 +372,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -621,7 +628,7 @@ class PricesApi extends BaseApi
             } else {
                 $httpBody = $body;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -644,6 +651,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -656,7 +671,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

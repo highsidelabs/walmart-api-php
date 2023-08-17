@@ -303,7 +303,7 @@ class PricesApi extends BaseApi
             } else {
                 $httpBody = $repricerEntityRequest;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -326,6 +326,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -333,7 +341,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -615,6 +622,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -622,7 +637,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -879,7 +893,7 @@ class PricesApi extends BaseApi
             } else {
                 $httpBody = $feedUploadRequestDTO;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -902,6 +916,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -909,7 +931,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1242,6 +1263,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -1249,7 +1278,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1501,6 +1529,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -1508,7 +1544,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1765,7 +1800,7 @@ class PricesApi extends BaseApi
             } else {
                 $httpBody = $statusInfo;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1788,6 +1823,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -1795,7 +1838,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2109,6 +2151,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -2116,7 +2166,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2373,7 +2422,7 @@ class PricesApi extends BaseApi
             } else {
                 $httpBody = $price;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2396,6 +2445,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -2403,7 +2460,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2660,7 +2716,7 @@ class PricesApi extends BaseApi
             } else {
                 $httpBody = $updateRepricerIncentiveRequest;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2683,6 +2739,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -2690,7 +2754,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2972,7 +3035,7 @@ class PricesApi extends BaseApi
             } else {
                 $httpBody = $repricerEntityRequest;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2995,6 +3058,14 @@ class PricesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -3002,7 +3073,6 @@ class PricesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

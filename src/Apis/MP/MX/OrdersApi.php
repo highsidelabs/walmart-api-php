@@ -365,7 +365,7 @@ class OrdersApi extends BaseApi
             } else {
                 $httpBody = $orderAckRequest;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -388,6 +388,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -400,7 +408,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -720,7 +727,7 @@ class OrdersApi extends BaseApi
             } else {
                 $httpBody = $orderCancellationRequest;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -743,6 +750,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -755,7 +770,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1075,7 +1089,7 @@ class OrdersApi extends BaseApi
             } else {
                 $httpBody = $deliver;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1098,6 +1112,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -1110,7 +1132,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1535,6 +1556,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -1547,7 +1576,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1978,6 +2006,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -1990,7 +2026,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2359,6 +2394,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -2371,7 +2414,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2691,6 +2733,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -2703,7 +2753,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3013,7 +3062,7 @@ class OrdersApi extends BaseApi
             } else {
                 $httpBody = $shippingLabelRequest;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -3036,6 +3085,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -3048,7 +3105,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3368,7 +3424,7 @@ class OrdersApi extends BaseApi
             } else {
                 $httpBody = $shipmentMx;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -3391,6 +3447,14 @@ class OrdersApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -3403,7 +3467,6 @@ class OrdersApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

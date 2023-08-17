@@ -292,6 +292,14 @@ class UtilitiesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -299,7 +307,6 @@ class UtilitiesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -581,6 +588,14 @@ class UtilitiesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -588,7 +603,6 @@ class UtilitiesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -840,6 +854,14 @@ class UtilitiesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -847,7 +869,6 @@ class UtilitiesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1144,6 +1165,14 @@ class UtilitiesApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -1151,7 +1180,6 @@ class UtilitiesApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

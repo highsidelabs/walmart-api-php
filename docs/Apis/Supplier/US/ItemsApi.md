@@ -1,11 +1,10 @@
 # Walmart\Apis\Supplier\US\ItemsApi  
-All URIs are relative to https://marketplace.walmartapis.com, except if the operation defines another base path.
+All URIs are relative to https://api-gateway.walmart.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**getAllItems()**](#getAllItems) | **GET** /v3/items | All items |
 | [**getAnItem()**](#getAnItem) | **GET** /v3/items/{sku} | An Item (v3) |
-| [**getAnItemV4()**](#getAnItemV4) | **GET** /v4/items/{productId} | An Item (v4) |
 | [**itemBulkUploads()**](#itemBulkUploads) | **POST** /v3/feeds | Bulk Item Setup |
 | [**updateRichMediaOfItem()**](#updateRichMediaOfItem) | **POST** /v2/feeds | Rich Media |
 
@@ -65,10 +64,10 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `partner`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -130,79 +129,10 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
-
-See the [Authorization](../../../../README.md#authorization) section of the README for more information.
-
-
-[[Back to top]](#) [[Back to API list]](../../../../README.md#supported-apis)
-[[Back to Model list]](../../../Models/Supplier/US)
-[[Back to README]](../../../../README.md)
-
-## `getAnItemV4()`
-
-```php
-getAnItemV4($productId, $productIdType, $includeFullItemDetails): \Walmart\Models\Supplier\US\Items\Response
-```
-An Item (v4)
-
-<a id=\"Location_Eligibility\" style=\"color:red; font-size:larger\">GET <baseUrl>/v4/items/{productId}</a>   This request retrieves one item.  ## Example  This request retrieves one item with the product ID of GTIN-14 *00012345678905*.   The additional properties are not being requested, and the product ID is in the default GTIN-14 format.<br>  GET `https://api-gateway.walmart.com/v4/items/06631267783982`<br>   This request retrieves one item with the product ID of SKU *XYZ12348*.   The additional properties are being requested, and the product ID is in the SKU format is being used.<br>  GET `https://api-gateway.walmart.com/v4/items/06631267783982?productIdType=SKU&includeFullItemDetails=YES`
-
-### Example
-
-```php
-<?php
-use Walmart\Configuration;
-use Walmart\Enums\Country;
-use Walmart\Walmart;
-
-require_once __DIR__ . '/vendor/autoload.php';
-
-$config = new Walmart\Configuration([
-    'clientId' => 'CLIENT_ID',          // May not be necessary for all endpoints, particularly outside the US
-    'clientSecret' => 'CLIENT_SECRET',  // Ditto above
-    'country' => Country::US,           // Default Country::US if not set
-    'privateKey' => 'PRIVATE_KEY',
-    'consumerId' => 'CONSUMER_ID',
-]);
-
-$api = Walmart::supplier($config)->items();
-
-$productId = 00012345678905; // string | Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905
-$productIdType = 'GTIN'; // string | Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC
-$includeFullItemDetails = 'NO'; // string | Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES
-
-try {
-    $result = $api->getAnItemV4($productId, $productIdType, $includeFullItemDetails);
-    print_r($result);
-} catch (Exception $e) {
-    echo "Exception when calling ItemsApi->getAnItemV4: {$e->getMessage()}\n";
-}
-```
-
-### Parameters
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **productId** | **string**| Specifies the product by productId.  The `productId` format by default is GTIN-14.  Other formats, for example SKU or EAN, may be specified with the query parameter `productIdType`. For more details, see the query parameter `productIdType`.  Example: 00012345678905 | |
-| **productIdType** | **string**| Specifies the product ID type.  The path parameter productId must also be specified.  Valid values are:  | Value | Meaning | | --- | ----------- | | EAN | European article number | | GTIN | Global trade item number. This is the default `productIdType`. This uses the GTIN-14 format. | | ISBN | International standard book number | | SKU | Stock keeping unit | | UPC | Universal product code. This is the GTIN-12 which consists of twelve numeric characters that identifies a company's individual product. | | WIN | Walmart identification number | | ITEM_ID | Appears at the end of the Walmart.com item page URL |   Example: UPC | [optional] [default to 'GTIN'] |
-| **includeFullItemDetails** | **string**| Specifies to return additional information fields.  The additional information fields are the following:  *   walmartOrderAttributes  *   itemConfigurations  *   attributeContentInsights  *   variantGroupInfo  *   additionalProductAttributes   If `YES`, all of the additional information fields are returned. It is not possible to specify only selected ones.  If `NO`, the additional information fields are not returned.  Example: YES | [optional] [default to 'NO'] |
-
-
-### Return type
-
-[**\Walmart\Models\Supplier\US\Items\Response**](../../../Models/Supplier/US/Items/Response.md)
-
-### Authorization
-
-This endpoint requires the following authorization methods:
-
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `partner`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -266,10 +196,10 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `partner`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -556,10 +486,10 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `signatureScheme`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
-* `partnerScheme`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
-* `consumerIdScheme`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `partner`: Header authentication with your Walmart partner ID, which is passed in the WM_PARTNER.ID header. Required by Supplier API endpoints. When using endpoints that require partner ID authentication, you must pass the `partnerId` option to the `Configuration` constructor.
+* `signature`: Request signature authentication. Request signatures are generated using a combination of request info, a timestamp, and your Walmart consumer ID and private key. The signature is passed in the WM_SEC.AUTH_SIGNATURE header. This is always used in tandem with consumer ID authentication (above). When using endpoints that require signature authentication, you must pass the `privateKey` and `consumerId` options to the `Configuration` constructor.
+* `consumerId`: Header authentication with your Walmart consumer ID, which is passed in the WM_CONSUMER.ID header. This is always used in tandem with signature authentication (below). When using endpoints that require consumer ID authentication, you must pass the `consumerId` option to the `Configuration` constructor.
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 

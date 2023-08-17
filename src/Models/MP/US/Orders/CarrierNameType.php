@@ -122,6 +122,8 @@ class CarrierNameType extends BaseModel
 
     public const CARRIER_DHL_ECOMMERCE___US = 'DHL Ecommerce - US';
 
+    public const CARRIER_DHL = 'DHL';
+
     public const CARRIER_LS = 'LS';
 
     public const CARRIER_UDS = 'UDS';
@@ -236,6 +238,7 @@ class CarrierNameType extends BaseModel
             self::CARRIER_AIRBORNE,
             self::CARRIER_ON_TRAC,
             self::CARRIER_DHL_ECOMMERCE___US,
+            self::CARRIER_DHL,
             self::CARRIER_LS,
             self::CARRIER_UDS,
             self::CARRIER_UPSMI,
@@ -366,7 +369,7 @@ class CarrierNameType extends BaseModel
     /**
      * Sets carrier
      *
-     * @param string|null $carrier The package shipment carrier. Valid entries are: UPS, USPS, FedEx, Airborne, OnTrac, DHL Ecommerce - US, LS (LaserShip), UDS (United Delivery Service), UPSMI (UPS Mail Innovations), FDX, PILOT, ESTES, SAIA, FDS Express, Seko Worldwide, HIT Delivery, FEDEXSP (FedEx SmartPost), RL Carriers, Metropolitan Warehouse & Delivery, China Post, YunExpress,Yellow Freight Sys, AIT Worldwide Logistics, Chukou1, Sendle, Landmark Global, Sunyou, Yanwen, 4PX, GLS, OSM Worldwide, FIRST MILE, AM Trucking, CEVA, India Post, SF Express, CNE, TForce Freight, AxleHire, LSO, Royal Mail, ABF Freight System, WanB, Roadrunner Freight, Meyer Distribution, AAA Cooper, Canada Post, Southeastern Freight Lines, Japan Post, Correos de Mexico, XPO Logistics, JD Logistics, YDH, JCEX, Flyt, Deutsche Post.
+     * @param string|null $carrier The package shipment carrier. Valid entries are: UPS, USPS, FedEx, Airborne, OnTrac, DHL Ecommerce - US, DHL, LS (LaserShip), UDS (United Delivery Service), UPSMI (UPS Mail Innovations), FDX, PILOT, ESTES, SAIA, FDS Express, Seko Worldwide, HIT Delivery, FEDEXSP (FedEx SmartPost), RL Carriers, Metropolitan Warehouse & Delivery, China Post, YunExpress,Yellow Freight Sys, AIT Worldwide Logistics, Chukou1, Sendle, Landmark Global, Sunyou, Yanwen, 4PX, GLS, OSM Worldwide, FIRST MILE, AM Trucking, CEVA, India Post, SF Express, CNE, TForce Freight, AxleHire, LSO, Royal Mail, ABF Freight System, WanB, Roadrunner Freight, Meyer Distribution, AAA Cooper, Canada Post, Southeastern Freight Lines, Japan Post, Correos de Mexico, XPO Logistics, JD Logistics, YDH, JCEX, Flyt, Deutsche Post.
      *
      * @return self
     

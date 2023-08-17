@@ -367,31 +367,27 @@ class DSVInventoryApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -401,7 +397,6 @@ class DSVInventoryApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -729,31 +724,27 @@ class DSVInventoryApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -763,7 +754,6 @@ class DSVInventoryApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1066,7 +1056,7 @@ class DSVInventoryApi extends BaseApi
             } else {
                 $httpBody = $inventoryFeedV2;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1089,31 +1079,27 @@ class DSVInventoryApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -1123,7 +1109,6 @@ class DSVInventoryApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1408,7 +1393,7 @@ class DSVInventoryApi extends BaseApi
             } else {
                 $httpBody = $inventory;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1431,31 +1416,27 @@ class DSVInventoryApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $partnerApiKey = $this->config->getApiKey('partner', $requestInfo);
+        if ($partnerApiKey !== null) {
+            $headers['WM_PARTNER.ID'] = $partnerApiKey;
         }
 
-        $partnerSchemeApiKey = $this->config->getApiKey('partnerScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($partnerSchemeApiKey !== null) {
-            $headers['WM_PARTNER.ID'] = $partnerSchemeApiKey;
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         // this endpoint requires Bearer authentication (access token)
@@ -1465,7 +1446,6 @@ class DSVInventoryApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

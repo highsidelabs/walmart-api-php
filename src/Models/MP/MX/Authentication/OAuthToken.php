@@ -1,7 +1,7 @@
 <?php
 
 /**
- * OAuthTokenDTO
+ * OAuthToken
  *
  * PHP version 7.4
  *
@@ -19,12 +19,12 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Models\MP\US\Authentication;
+namespace Walmart\Models\MP\MX\Authentication;
 
 use Walmart\Models\BaseModel;
 
 /**
- * OAuthTokenDTO Class Doc Comment
+ * OAuthToken Class Doc Comment
  *
  * @category Class
 
@@ -33,7 +33,7 @@ use Walmart\Models\BaseModel;
  * @link     https://highsidelabs.co
  * @email    jesse@highsidelabs.co
  */
-class OAuthTokenDTO extends BaseModel
+class OAuthToken extends BaseModel
 {
     public const DISCRIMINATOR = null;
 
@@ -42,7 +42,7 @@ class OAuthTokenDTO extends BaseModel
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OAuthTokenDTO';
+    protected static string $openAPIModelName = 'OAuthToken';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -89,9 +89,9 @@ class OAuthTokenDTO extends BaseModel
      * @var string[]
      */
     protected static array $attributeMap = [
-        'accessToken' => 'accessToken',
-        'tokenType' => 'tokenType',
-        'expiresIn' => 'expiresIn',
+        'accessToken' => 'access_token',
+        'tokenType' => 'token_type',
+        'expiresIn' => 'expires_in',
         'refreshToken' => 'refresh_token'
     ];
 
@@ -127,10 +127,10 @@ class OAuthTokenDTO extends BaseModel
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('accessToken', $data ?? [], null);
-        $this->setIfExists('tokenType', $data ?? [], null);
-        $this->setIfExists('expiresIn', $data ?? [], null);
-        $this->setIfExists('refreshToken', $data ?? [], null);
+        $this->setIfExists('accessToken', $data ?? [], 'eyJraWQiOiI1MWY3MjM0Ny0wYWY5LTRhZ....');
+        $this->setIfExists('tokenType', $data ?? [], 'Bearer');
+        $this->setIfExists('expiresIn', $data ?? [], 900);
+        $this->setIfExists('refreshToken', $data ?? [], 'APXcIoTpKMH9OQN…….');
     }
 
     /**
@@ -144,6 +144,12 @@ class OAuthTokenDTO extends BaseModel
 
         if ($this->container['accessToken'] === null) {
             $invalidProperties[] = "'accessToken' can't be null";
+        }
+        if ($this->container['tokenType'] === null) {
+            $invalidProperties[] = "'tokenType' can't be null";
+        }
+        if ($this->container['expiresIn'] === null) {
+            $invalidProperties[] = "'expiresIn' can't be null";
         }
 
         return $invalidProperties;
@@ -181,7 +187,7 @@ class OAuthTokenDTO extends BaseModel
     /**
      * Gets tokenType
      *
-     * @return string|null
+     * @return string
     
      */
     public function getTokenType()
@@ -192,7 +198,7 @@ class OAuthTokenDTO extends BaseModel
     /**
      * Sets tokenType
      *
-     * @param string|null $tokenType Type of token according to user. (e.g., 'BEARER')
+     * @param string $tokenType Type of token according to user. (e.g., 'BEARER')
      *
      * @return self
     
@@ -210,7 +216,7 @@ class OAuthTokenDTO extends BaseModel
     /**
      * Gets expiresIn
      *
-     * @return int|null
+     * @return int
     
      */
     public function getExpiresIn()
@@ -221,7 +227,7 @@ class OAuthTokenDTO extends BaseModel
     /**
      * Sets expiresIn
      *
-     * @param int|null $expiresIn Expiry time of access token in seconds
+     * @param int $expiresIn Expiry time of access token in seconds
      *
      * @return self
     

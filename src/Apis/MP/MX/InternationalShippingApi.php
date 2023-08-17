@@ -56,7 +56,6 @@ class InternationalShippingApi extends BaseApi
      *
      * Create label
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx Label fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -64,10 +63,9 @@ class InternationalShippingApi extends BaseApi
      * @return \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
      */
     public function createLabel(
-        string $accept,
         \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        return $this->createLabelWithHttpInfo($accept, $labelGenerationRequestMx);
+        return $this->createLabelWithHttpInfo($labelGenerationRequestMx);
     }
 
     /**
@@ -75,7 +73,6 @@ class InternationalShippingApi extends BaseApi
      *
      * Create label
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx Label fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -83,10 +80,9 @@ class InternationalShippingApi extends BaseApi
      * @return \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx
      */
     protected function createLabelWithHttpInfo(
-        string $accept,
         \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        $request = $this->createLabelRequest($accept, $labelGenerationRequestMx);
+        $request = $this->createLabelRequest($labelGenerationRequestMx);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -180,17 +176,15 @@ class InternationalShippingApi extends BaseApi
      *
      * Create label
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx Label fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function createLabelAsync(
-        string $accept,
         \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx
     ): PromiseInterface {
-        return $this->createLabelAsyncWithHttpInfo($accept, $labelGenerationRequestMx)
+        return $this->createLabelAsyncWithHttpInfo($labelGenerationRequestMx)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -203,18 +197,16 @@ class InternationalShippingApi extends BaseApi
      *
      * Create label
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx Label fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function createLabelAsyncWithHttpInfo(
-        string $accept,
         \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx';
-        $request = $this->createLabelRequest($accept, $labelGenerationRequestMx);
+        $request = $this->createLabelRequest($labelGenerationRequestMx);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -259,24 +251,16 @@ class InternationalShippingApi extends BaseApi
     /**
      * Create request for operation 'createLabel'
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx Label fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function createLabelRequest(
-        string $accept,
         \Walmart\Models\MP\MX\InternationalShipping\LabelGenerationRequestMx $labelGenerationRequestMx,
     ): Request {
         $contentType = self::contentTypes['createLabel'];
 
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling createLabel'
-            );
-        }
         // verify the required parameter 'labelGenerationRequestMx' is set
         if ($labelGenerationRequestMx === null || (is_array($labelGenerationRequestMx) && count($labelGenerationRequestMx) === 0)) {
             throw new \InvalidArgumentException(
@@ -290,11 +274,6 @@ class InternationalShippingApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'POST';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -320,7 +299,7 @@ class InternationalShippingApi extends BaseApi
             } else {
                 $httpBody = $labelGenerationRequestMx;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -343,6 +322,14 @@ class InternationalShippingApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -355,7 +342,6 @@ class InternationalShippingApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -371,7 +357,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -379,10 +364,9 @@ class InternationalShippingApi extends BaseApi
      */
     public function discardLabel(
         string $carrierShortName,
-        string $trackingNo,
-        string $accept
+        string $trackingNo
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        return $this->discardLabelWithHttpInfo($carrierShortName, $trackingNo, $accept);
+        return $this->discardLabelWithHttpInfo($carrierShortName, $trackingNo);
     }
 
     /**
@@ -392,7 +376,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -401,9 +384,8 @@ class InternationalShippingApi extends BaseApi
     protected function discardLabelWithHttpInfo(
         string $carrierShortName,
         string $trackingNo,
-        string $accept,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx {
-        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept);
+        $request = $this->discardLabelRequest($carrierShortName, $trackingNo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -499,17 +481,15 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function discardLabelAsync(
         string $carrierShortName,
-        string $trackingNo,
-        string $accept
+        string $trackingNo
     ): PromiseInterface {
-        return $this->discardLabelAsyncWithHttpInfo($carrierShortName, $trackingNo, $accept)
+        return $this->discardLabelAsyncWithHttpInfo($carrierShortName, $trackingNo)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -524,7 +504,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -532,10 +511,9 @@ class InternationalShippingApi extends BaseApi
     protected function discardLabelAsyncWithHttpInfo(
         string $carrierShortName,
         string $trackingNo,
-        string $accept,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseLabelGenerationResponseMx';
-        $request = $this->discardLabelRequest($carrierShortName, $trackingNo, $accept);
+        $request = $this->discardLabelRequest($carrierShortName, $trackingNo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -582,7 +560,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -590,7 +567,6 @@ class InternationalShippingApi extends BaseApi
     protected function discardLabelRequest(
         string $carrierShortName,
         string $trackingNo,
-        string $accept,
     ): Request {
         $contentType = self::contentTypes['discardLabel'];
 
@@ -606,12 +582,6 @@ class InternationalShippingApi extends BaseApi
                 'Missing the required parameter $trackingNo when calling discardLabel'
             );
         }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling discardLabel'
-            );
-        }
         $resourcePath = '/v3/shipping/labels/carriers/{carrierShortName}/trackings/{trackingNo}';
         $formParams = [];
         $queryParams = [];
@@ -619,11 +589,6 @@ class InternationalShippingApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'DELETE';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($carrierShortName !== null) {
@@ -681,6 +646,14 @@ class InternationalShippingApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -693,7 +666,6 @@ class InternationalShippingApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -708,17 +680,15 @@ class InternationalShippingApi extends BaseApi
      * Supported carrier package types
      *
      * @param  string $carrierShortName carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse
      */
     public function getCarrierPackageTypes(
-        string $carrierShortName,
-        string $accept
+        string $carrierShortName
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse {
-        return $this->getCarrierPackageTypesWithHttpInfo($carrierShortName, $accept);
+        return $this->getCarrierPackageTypesWithHttpInfo($carrierShortName);
     }
 
     /**
@@ -727,7 +697,6 @@ class InternationalShippingApi extends BaseApi
      * Supported carrier package types
      *
      * @param  string $carrierShortName carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -735,9 +704,8 @@ class InternationalShippingApi extends BaseApi
      */
     protected function getCarrierPackageTypesWithHttpInfo(
         string $carrierShortName,
-        string $accept,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse {
-        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept);
+        $request = $this->getCarrierPackageTypesRequest($carrierShortName);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -832,16 +800,14 @@ class InternationalShippingApi extends BaseApi
      * Supported carrier package types
      *
      * @param  string $carrierShortName carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getCarrierPackageTypesAsync(
-        string $carrierShortName,
-        string $accept
+        string $carrierShortName
     ): PromiseInterface {
-        return $this->getCarrierPackageTypesAsyncWithHttpInfo($carrierShortName, $accept)
+        return $this->getCarrierPackageTypesAsyncWithHttpInfo($carrierShortName)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -855,17 +821,15 @@ class InternationalShippingApi extends BaseApi
      * Supported carrier package types
      *
      * @param  string $carrierShortName carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function getCarrierPackageTypesAsyncWithHttpInfo(
         string $carrierShortName,
-        string $accept,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseListCarrierPackageResponse';
-        $request = $this->getCarrierPackageTypesRequest($carrierShortName, $accept);
+        $request = $this->getCarrierPackageTypesRequest($carrierShortName);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -911,14 +875,12 @@ class InternationalShippingApi extends BaseApi
      * Create request for operation 'getCarrierPackageTypes'
      *
      * @param  string $carrierShortName carrierShortName received from getCarrier API or pass 'ALL' to fetch all supported package types of different carriers (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function getCarrierPackageTypesRequest(
         string $carrierShortName,
-        string $accept,
     ): Request {
         $contentType = self::contentTypes['getCarrierPackageTypes'];
 
@@ -928,12 +890,6 @@ class InternationalShippingApi extends BaseApi
                 'Missing the required parameter $carrierShortName when calling getCarrierPackageTypes'
             );
         }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getCarrierPackageTypes'
-            );
-        }
         $resourcePath = '/v3/shipping/labels/carriers/{carrierShortName}/package-types';
         $formParams = [];
         $queryParams = [];
@@ -941,11 +897,6 @@ class InternationalShippingApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'GET';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($carrierShortName !== null) {
@@ -996,6 +947,14 @@ class InternationalShippingApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -1008,7 +967,6 @@ class InternationalShippingApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1022,16 +980,13 @@ class InternationalShippingApi extends BaseApi
      *
      * Supported carriers
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
-     *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse
      */
-    public function getCarriers(
-        string $accept
-    ): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse {
-        return $this->getCarriersWithHttpInfo($accept);
+    public function getCarriers(): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse
+    {
+        return $this->getCarriersWithHttpInfo();
     }
 
     /**
@@ -1039,16 +994,13 @@ class InternationalShippingApi extends BaseApi
      *
      * Supported carriers
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
-     *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse
      */
-    protected function getCarriersWithHttpInfo(
-        string $accept,
-    ): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse {
-        $request = $this->getCarriersRequest($accept);
+    protected function getCarriersWithHttpInfo(): \Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse
+    {
+        $request = $this->getCarriersRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1142,15 +1094,12 @@ class InternationalShippingApi extends BaseApi
      *
      * Supported carriers
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getCarriersAsync(
-        string $accept
     ): PromiseInterface {
-        return $this->getCarriersAsyncWithHttpInfo($accept)
+        return $this->getCarriersAsyncWithHttpInfo()
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1163,16 +1112,13 @@ class InternationalShippingApi extends BaseApi
      *
      * Supported carriers
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    protected function getCarriersAsyncWithHttpInfo(
-        string $accept,
-    ): PromiseInterface {
+    protected function getCarriersAsyncWithHttpInfo(): PromiseInterface
+    {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CarrierCommonResponseListCarrierResponse';
-        $request = $this->getCarriersRequest($accept);
+        $request = $this->getCarriersRequest();
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1217,22 +1163,13 @@ class InternationalShippingApi extends BaseApi
     /**
      * Create request for operation 'getCarriers'
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
-     *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function getCarriersRequest(
-        string $accept,
-    ): Request {
+    protected function getCarriersRequest(): Request
+    {
         $contentType = self::contentTypes['getCarriers'];
 
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getCarriers'
-            );
-        }
         $resourcePath = '/v3/shipping/labels/carriers';
         $formParams = [];
         $queryParams = [];
@@ -1240,11 +1177,6 @@ class InternationalShippingApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'GET';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -1286,6 +1218,14 @@ class InternationalShippingApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -1298,7 +1238,6 @@ class InternationalShippingApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1313,17 +1252,15 @@ class InternationalShippingApi extends BaseApi
      * Labels detail by purchase order id
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx
      */
     public function getLabel(
-        string $purchaseOrderId,
-        string $accept
+        string $purchaseOrderId
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx {
-        return $this->getLabelWithHttpInfo($purchaseOrderId, $accept);
+        return $this->getLabelWithHttpInfo($purchaseOrderId);
     }
 
     /**
@@ -1332,7 +1269,6 @@ class InternationalShippingApi extends BaseApi
      * Labels detail by purchase order id
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1340,9 +1276,8 @@ class InternationalShippingApi extends BaseApi
      */
     protected function getLabelWithHttpInfo(
         string $purchaseOrderId,
-        string $accept,
     ): \Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx {
-        $request = $this->getLabelRequest($purchaseOrderId, $accept);
+        $request = $this->getLabelRequest($purchaseOrderId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1437,16 +1372,14 @@ class InternationalShippingApi extends BaseApi
      * Labels detail by purchase order id
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLabelAsync(
-        string $purchaseOrderId,
-        string $accept
+        string $purchaseOrderId
     ): PromiseInterface {
-        return $this->getLabelAsyncWithHttpInfo($purchaseOrderId, $accept)
+        return $this->getLabelAsyncWithHttpInfo($purchaseOrderId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1460,17 +1393,15 @@ class InternationalShippingApi extends BaseApi
      * Labels detail by purchase order id
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function getLabelAsyncWithHttpInfo(
         string $purchaseOrderId,
-        string $accept,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\MX\InternationalShipping\CommonResponseListLabelGenerationResponseMx';
-        $request = $this->getLabelRequest($purchaseOrderId, $accept);
+        $request = $this->getLabelRequest($purchaseOrderId);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1516,14 +1447,12 @@ class InternationalShippingApi extends BaseApi
      * Create request for operation 'getLabel'
      *
      * @param  string $purchaseOrderId purchaseOrderId (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function getLabelRequest(
         string $purchaseOrderId,
-        string $accept,
     ): Request {
         $contentType = self::contentTypes['getLabel'];
 
@@ -1533,12 +1462,6 @@ class InternationalShippingApi extends BaseApi
                 'Missing the required parameter $purchaseOrderId when calling getLabel'
             );
         }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getLabel'
-            );
-        }
         $resourcePath = '/v3/shipping/labels/purchase-orders/{purchaseOrderId}';
         $formParams = [];
         $queryParams = [];
@@ -1546,11 +1469,6 @@ class InternationalShippingApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'GET';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($purchaseOrderId !== null) {
@@ -1601,6 +1519,14 @@ class InternationalShippingApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -1613,7 +1539,6 @@ class InternationalShippingApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1629,7 +1554,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1637,10 +1561,9 @@ class InternationalShippingApi extends BaseApi
      */
     public function getLabelByTrackingAndCarrier(
         string $carrierShortName,
-        string $trackingNo,
-        string $accept
+        string $trackingNo
     ): \SplFileObject {
-        return $this->getLabelByTrackingAndCarrierWithHttpInfo($carrierShortName, $trackingNo, $accept);
+        return $this->getLabelByTrackingAndCarrierWithHttpInfo($carrierShortName, $trackingNo);
     }
 
     /**
@@ -1650,7 +1573,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -1659,9 +1581,8 @@ class InternationalShippingApi extends BaseApi
     protected function getLabelByTrackingAndCarrierWithHttpInfo(
         string $carrierShortName,
         string $trackingNo,
-        string $accept,
     ): \SplFileObject {
-        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept);
+        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1757,17 +1678,15 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function getLabelByTrackingAndCarrierAsync(
         string $carrierShortName,
-        string $trackingNo,
-        string $accept
+        string $trackingNo
     ): PromiseInterface {
-        return $this->getLabelByTrackingAndCarrierAsyncWithHttpInfo($carrierShortName, $trackingNo, $accept)
+        return $this->getLabelByTrackingAndCarrierAsyncWithHttpInfo($carrierShortName, $trackingNo)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1782,7 +1701,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -1790,10 +1708,9 @@ class InternationalShippingApi extends BaseApi
     protected function getLabelByTrackingAndCarrierAsyncWithHttpInfo(
         string $carrierShortName,
         string $trackingNo,
-        string $accept,
     ): PromiseInterface {
         $returnType = '\SplFileObject';
-        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo, $accept);
+        $request = $this->getLabelByTrackingAndCarrierRequest($carrierShortName, $trackingNo);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -1840,7 +1757,6 @@ class InternationalShippingApi extends BaseApi
      *
      * @param  string $carrierShortName carrierShortName from getCarriers API (required)
      * @param  string $trackingNo trackingNo (required)
-     * @param  string $accept Only supported Media Type : application/json (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -1848,7 +1764,6 @@ class InternationalShippingApi extends BaseApi
     protected function getLabelByTrackingAndCarrierRequest(
         string $carrierShortName,
         string $trackingNo,
-        string $accept,
     ): Request {
         $contentType = self::contentTypes['getLabelByTrackingAndCarrier'];
 
@@ -1864,12 +1779,6 @@ class InternationalShippingApi extends BaseApi
                 'Missing the required parameter $trackingNo when calling getLabelByTrackingAndCarrier'
             );
         }
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling getLabelByTrackingAndCarrier'
-            );
-        }
         $resourcePath = '/v3/shipping/labels/carriers/{carrierShortName}/trackings/{trackingNo}';
         $formParams = [];
         $queryParams = [];
@@ -1877,11 +1786,6 @@ class InternationalShippingApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'GET';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         // path params
         if ($carrierShortName !== null) {
@@ -1939,6 +1843,14 @@ class InternationalShippingApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires HTTP basic authentication
         if (!empty($this->config->getClientId()) || !(empty($this->config->getClientSecret()))) {
             $headers['Authorization'] = 'Basic ' . base64_encode($this->config->getClientId() . ":" . $this->config->getClientSecret());
@@ -1951,7 +1863,6 @@ class InternationalShippingApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

@@ -354,26 +354,25 @@ class FeedsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -694,26 +693,25 @@ class FeedsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1053,26 +1051,25 @@ class FeedsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1357,7 +1354,7 @@ class FeedsApi extends BaseApi
             } else {
                 $httpBody = $body;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1380,26 +1377,25 @@ class FeedsApi extends BaseApi
             }
         }
 
-        $signatureSchemeApiKey = $this->config->getApiKey('signatureScheme', [
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
             'path' => $resourcePath,
             'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($signatureSchemeApiKey !== null) {
-            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureSchemeApiKey;
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
+        $signatureApiKey = $this->config->getApiKey('signature', $requestInfo);
+        if ($signatureApiKey !== null) {
+            $headers['WM_SEC.AUTH_SIGNATURE'] = $signatureApiKey;
         }
 
-        $consumerIdSchemeApiKey = $this->config->getApiKey('consumerIdScheme', [
-            'path' => $resourcePath,
-            'method' => $method,
-            'timestamp' => $defaultHeaders['WM_TIMESTAMP'],
-        ]);
-        if ($consumerIdSchemeApiKey !== null) {
-            $headers['WM_CONSUMER.ID'] = $consumerIdSchemeApiKey;
+        $consumerIdApiKey = $this->config->getApiKey('consumerId', $requestInfo);
+        if ($consumerIdApiKey !== null) {
+            $headers['WM_CONSUMER.ID'] = $consumerIdApiKey;
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

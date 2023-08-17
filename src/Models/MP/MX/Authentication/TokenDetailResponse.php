@@ -19,7 +19,7 @@
  * Do not edit the class manually.
  */
 
-namespace Walmart\Models\MP\US\Authentication;
+namespace Walmart\Models\MP\MX\Authentication;
 
 use Walmart\Models\BaseModel;
 
@@ -50,7 +50,7 @@ class TokenDetailResponse extends BaseModel
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'scopes' => '\Walmart\Models\MP\US\Authentication\Scopes',
+        'scopes' => '\Walmart\Models\MP\MX\Authentication\Scopes',
         'expireAt' => 'string',
         'issuedAt' => 'string',
         'isValid' => 'bool',
@@ -171,7 +171,7 @@ class TokenDetailResponse extends BaseModel
     /**
      * Gets scopes
      *
-     * @return \Walmart\Models\MP\US\Authentication\Scopes
+     * @return \Walmart\Models\MP\MX\Authentication\Scopes
     
      */
     public function getScopes()
@@ -182,7 +182,7 @@ class TokenDetailResponse extends BaseModel
     /**
      * Sets scopes
      *
-     * @param \Walmart\Models\MP\US\Authentication\Scopes $scopes scopes
+     * @param \Walmart\Models\MP\MX\Authentication\Scopes $scopes scopes
      *
      * @return self
     

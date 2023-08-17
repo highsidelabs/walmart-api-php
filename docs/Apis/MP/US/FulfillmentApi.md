@@ -79,7 +79,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -139,7 +139,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -199,7 +199,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -261,7 +261,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -321,7 +321,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -381,7 +381,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -441,7 +441,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -501,7 +501,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -561,7 +561,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -623,7 +623,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -701,7 +701,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -765,7 +765,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -829,7 +829,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -901,7 +901,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -958,7 +958,7 @@ This endpoint does not need any parameter.
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1036,7 +1036,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1096,7 +1096,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1158,7 +1158,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1218,7 +1218,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1278,7 +1278,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1338,7 +1338,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1398,7 +1398,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 
@@ -1410,7 +1410,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `wercsFeedback()`
 
 ```php
-wercsFeedback($accept, $wercsFeedbackRequest): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
+wercsFeedback($wercsFeedbackRequest): \Walmart\Models\MP\US\Fulfillment\ServiceResponse
 ```
 Hazmat Items On hold
 
@@ -1434,11 +1434,10 @@ $config = new Walmart\Configuration([
 
 $api = Walmart::marketplace($config)->fulfillment();
 
-$accept = application/json; // string | Only supported Media Type : application/json
 $wercsFeedbackRequest = {"query":{"field":"gtin","value":"06154035330299"},"filters":[{"field":"status","op":"equals","values":["PROHIBITED","IN_REVIEW","ACTION_NEEDED"]}],"sort":{"field":"updatedAt","order":"DESC"}}; // \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest | Request fields
 
 try {
-    $result = $api->wercsFeedback($accept, $wercsFeedbackRequest);
+    $result = $api->wercsFeedback($wercsFeedbackRequest);
     print_r($result);
 } catch (Exception $e) {
     echo "Exception when calling FulfillmentApi->wercsFeedback: {$e->getMessage()}\n";
@@ -1448,7 +1447,6 @@ try {
 ### Parameters
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **accept** | **string**| Only supported Media Type : application/json | |
 | **wercsFeedbackRequest** | [**\Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest**](../../../Models/MP/US/Fulfillment/WercsFeedbackRequest.md)| Request fields | |
 
 
@@ -1460,7 +1458,7 @@ try {
 
 This endpoint requires the following authorization methods:
 
-* `accessTokenScheme`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
+* `accessToken`: Header authentication with a Walmart access token, which is automatically generated using your Client ID and Client Secret. The token is valid for 15 minutes, and will be passed in the WM_SEC.ACCESS_TOKEN header
 
 See the [Authorization](../../../../README.md#authorization) section of the README for more information.
 

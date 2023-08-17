@@ -63,6 +63,7 @@ class OrderLineType extends BaseModel
         'originalCarrierMethod' => 'string',
         'referenceLineId' => 'string',
         'fulfillment' => '\Walmart\Models\MP\US\Orders\FulfillmentType',
+        'serialNumbers' => 'string[]',
         'intentToCancel' => 'string',
         'configId' => 'string',
         'sellerOrderId' => 'string'
@@ -87,6 +88,7 @@ class OrderLineType extends BaseModel
         'originalCarrierMethod' => null,
         'referenceLineId' => null,
         'fulfillment' => null,
+        'serialNumbers' => null,
         'intentToCancel' => null,
         'configId' => null,
         'sellerOrderId' => null
@@ -109,6 +111,7 @@ class OrderLineType extends BaseModel
         'originalCarrierMethod' => false,
         'referenceLineId' => false,
         'fulfillment' => false,
+        'serialNumbers' => false,
         'intentToCancel' => false,
         'configId' => false,
         'sellerOrderId' => false
@@ -132,6 +135,7 @@ class OrderLineType extends BaseModel
         'originalCarrierMethod' => 'originalCarrierMethod',
         'referenceLineId' => 'referenceLineId',
         'fulfillment' => 'fulfillment',
+        'serialNumbers' => 'serialNumbers',
         'intentToCancel' => 'intentToCancel',
         'configId' => 'configId',
         'sellerOrderId' => 'sellerOrderId'
@@ -154,6 +158,7 @@ class OrderLineType extends BaseModel
         'originalCarrierMethod' => 'setOriginalCarrierMethod',
         'referenceLineId' => 'setReferenceLineId',
         'fulfillment' => 'setFulfillment',
+        'serialNumbers' => 'setSerialNumbers',
         'intentToCancel' => 'setIntentToCancel',
         'configId' => 'setConfigId',
         'sellerOrderId' => 'setSellerOrderId'
@@ -176,6 +181,7 @@ class OrderLineType extends BaseModel
         'originalCarrierMethod' => 'getOriginalCarrierMethod',
         'referenceLineId' => 'getReferenceLineId',
         'fulfillment' => 'getFulfillment',
+        'serialNumbers' => 'getSerialNumbers',
         'intentToCancel' => 'getIntentToCancel',
         'configId' => 'getConfigId',
         'sellerOrderId' => 'getSellerOrderId'
@@ -200,6 +206,7 @@ class OrderLineType extends BaseModel
         $this->setIfExists('originalCarrierMethod', $data ?? [], null);
         $this->setIfExists('referenceLineId', $data ?? [], null);
         $this->setIfExists('fulfillment', $data ?? [], null);
+        $this->setIfExists('serialNumbers', $data ?? [], null);
         $this->setIfExists('intentToCancel', $data ?? [], null);
         $this->setIfExists('configId', $data ?? [], null);
         $this->setIfExists('sellerOrderId', $data ?? [], null);
@@ -552,6 +559,35 @@ class OrderLineType extends BaseModel
         }
 
         $this->container['fulfillment'] = $fulfillment;
+        return $this;
+    }
+
+    /**
+     * Gets serialNumbers
+     *
+     * @return string[]|null
+    
+     */
+    public function getSerialNumbers()
+    {
+        return $this->container['serialNumbers'];
+    }
+
+    /**
+     * Sets serialNumbers
+     *
+     * @param string[]|null $serialNumbers Unique identifier assigned by a manufacturer to an individual item, to uniquely identify it. This number helps with record-keeping, accuracy and compliance
+     *
+     * @return self
+    
+     */
+    public function setSerialNumbers($serialNumbers)
+    {
+        if (is_null($serialNumbers)) {
+            throw new \InvalidArgumentException('non-nullable serialNumbers cannot be null');
+        }
+
+        $this->container['serialNumbers'] = $serialNumbers;
         return $this;
     }
 

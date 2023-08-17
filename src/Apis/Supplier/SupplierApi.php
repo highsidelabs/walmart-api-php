@@ -8,6 +8,8 @@ use Walmart\Walmart;
 
 class SupplierApi extends Walmart
 {
+    public const HOST = 'https://api-gateway.walmart.com';
+
     /**
      * The country to API class map
      * @var array<string, string[]>

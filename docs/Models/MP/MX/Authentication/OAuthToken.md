@@ -1,4 +1,4 @@
-# Walmart\Models\MP\US\Authentication\OAuthToken
+# Walmart\Models\MP\MX\Authentication\OAuthToken
 
 ## Properties
 

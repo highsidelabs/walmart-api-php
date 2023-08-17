@@ -316,7 +316,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $cancelCustomerOrderRequestWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -339,6 +339,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -346,7 +354,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -628,6 +635,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -635,7 +650,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -892,7 +906,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $carrierQuoteConfirmRequestWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -915,6 +929,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -922,7 +944,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1236,6 +1257,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -1243,7 +1272,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1500,7 +1528,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $carrierQuoteRequestV2Wrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1523,6 +1551,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -1530,7 +1566,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -1787,7 +1822,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $createCustomerOrderRequestWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -1810,6 +1845,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -1817,7 +1860,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2099,6 +2141,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -2106,7 +2156,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2363,7 +2412,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $labelV2RequestWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2386,6 +2435,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -2393,7 +2450,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2650,7 +2706,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $inboundShipmentRequestWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -2673,6 +2729,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -2680,7 +2744,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -2985,6 +3048,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -2992,7 +3063,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3451,6 +3521,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -3458,7 +3536,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -3773,6 +3850,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -3780,7 +3865,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4095,6 +4179,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -4102,7 +4194,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4489,6 +4580,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -4496,7 +4595,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -4748,6 +4846,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -4755,7 +4861,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5202,6 +5307,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -5209,7 +5322,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5466,7 +5578,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $inboundPreviewWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -5489,6 +5601,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -5496,7 +5616,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -5778,7 +5897,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $carrierLabelRequestWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -5801,6 +5920,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -5808,7 +5935,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6065,7 +6191,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $createCustomerOrderRequestWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -6088,6 +6214,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -6095,7 +6229,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6352,7 +6485,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $inboundShipmentUpdateQtyWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -6375,6 +6508,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -6382,7 +6523,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6639,7 +6779,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $trackingInfoWrapper;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -6662,6 +6802,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -6669,7 +6817,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6951,6 +7098,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -6958,7 +7113,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
@@ -6972,7 +7126,6 @@ class FulfillmentApi extends BaseApi
      *
      * Hazmat Items On hold
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -6980,10 +7133,9 @@ class FulfillmentApi extends BaseApi
      * @return \Walmart\Models\MP\US\Fulfillment\ServiceResponse
      */
     public function wercsFeedback(
-        string $accept,
         \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest
     ): \Walmart\Models\MP\US\Fulfillment\ServiceResponse {
-        return $this->wercsFeedbackWithHttpInfo($accept, $wercsFeedbackRequest);
+        return $this->wercsFeedbackWithHttpInfo($wercsFeedbackRequest);
     }
 
     /**
@@ -6991,7 +7143,6 @@ class FulfillmentApi extends BaseApi
      *
      * Hazmat Items On hold
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest Request fields (required)
      *
      * @throws \Walmart\ApiException on non-2xx response
@@ -6999,10 +7150,9 @@ class FulfillmentApi extends BaseApi
      * @return \Walmart\Models\MP\US\Fulfillment\ServiceResponse
      */
     protected function wercsFeedbackWithHttpInfo(
-        string $accept,
         \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest,
     ): \Walmart\Models\MP\US\Fulfillment\ServiceResponse {
-        $request = $this->wercsFeedbackRequest($accept, $wercsFeedbackRequest);
+        $request = $this->wercsFeedbackRequest($wercsFeedbackRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -7096,17 +7246,15 @@ class FulfillmentApi extends BaseApi
      *
      * Hazmat Items On hold
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     public function wercsFeedbackAsync(
-        string $accept,
         \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest
     ): PromiseInterface {
-        return $this->wercsFeedbackAsyncWithHttpInfo($accept, $wercsFeedbackRequest)
+        return $this->wercsFeedbackAsyncWithHttpInfo($wercsFeedbackRequest)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -7119,18 +7267,16 @@ class FulfillmentApi extends BaseApi
      *
      * Hazmat Items On hold
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
     protected function wercsFeedbackAsyncWithHttpInfo(
-        string $accept,
         \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest,
     ): PromiseInterface {
         $returnType = '\Walmart\Models\MP\US\Fulfillment\ServiceResponse';
-        $request = $this->wercsFeedbackRequest($accept, $wercsFeedbackRequest);
+        $request = $this->wercsFeedbackRequest($wercsFeedbackRequest);
         $this->writeDebug($request);
         $this->writeDebug((string) $request->getBody());
 
@@ -7175,24 +7321,16 @@ class FulfillmentApi extends BaseApi
     /**
      * Create request for operation 'wercsFeedback'
      *
-     * @param  string $accept Only supported Media Type : application/json (required)
      * @param  \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest Request fields (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
     protected function wercsFeedbackRequest(
-        string $accept,
         \Walmart\Models\MP\US\Fulfillment\WercsFeedbackRequest $wercsFeedbackRequest,
     ): Request {
         $contentType = self::contentTypes['wercsFeedback'];
 
-        // verify the required parameter 'accept' is set
-        if ($accept === null || (is_array($accept) && count($accept) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $accept when calling wercsFeedback'
-            );
-        }
         // verify the required parameter 'wercsFeedbackRequest' is set
         if ($wercsFeedbackRequest === null || (is_array($wercsFeedbackRequest) && count($wercsFeedbackRequest) === 0)) {
             throw new \InvalidArgumentException(
@@ -7206,11 +7344,6 @@ class FulfillmentApi extends BaseApi
         $httpBody = '';
         $multipart = false;
         $method = 'POST';
-
-        // header params
-        if ($accept !== null) {
-            $headerParams['Accept'] = ObjectSerializer::toHeaderValue($accept);
-        }
 
         $headers = $this->headerSelector->selectHeaders(
             ['application/json'],
@@ -7236,7 +7369,7 @@ class FulfillmentApi extends BaseApi
             } else {
                 $httpBody = $wercsFeedbackRequest;
             }
-        } elseif (count($formParams) > 0) {
+        } else if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
                 foreach ($formParams as $formParamName => $formParamValue) {
@@ -7259,6 +7392,14 @@ class FulfillmentApi extends BaseApi
             }
         }
 
+        $query = ObjectSerializer::buildQuery($queryParams);
+        $requestInfo = [
+            'path' => $resourcePath,
+            'method' => $method,
+            'timestamp' => $defaultHeaders['WM_SEC.TIMESTAMP'],
+            'query' => $query,
+        ];
+
         // this endpoint requires Bearer authentication (access token)
         $token = $this->config->getAccessToken();
         if ($token) {
@@ -7266,7 +7407,6 @@ class FulfillmentApi extends BaseApi
         }
 
         $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             $method,
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),

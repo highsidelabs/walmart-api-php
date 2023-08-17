@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **originalCarrierMethod** | **string** | Ship method stamped at order line level when order is placed | [optional]
 **referenceLineId** | **string** | Reference line Id | [optional]
 **fulfillment** | [**\Walmart\Models\MP\US\Orders\FulfillmentType**](FulfillmentType.md) |  | [optional]
+**serialNumbers** | **string[]** | Unique identifier assigned by a manufacturer to an individual item, to uniquely identify it. This number helps with record-keeping, accuracy and compliance | [optional]
 **intentToCancel** | **string** |  | [optional]
 **configId** | **string** | Sets ConfigID for Personalised orders | [optional]
 **sellerOrderId** | **string** | A unique ID associated with the sales order for specified Seller; gives Sellers the ability to print their own custom order ID on the return label; limit of 30 characters | [optional]
