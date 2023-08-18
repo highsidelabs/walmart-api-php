@@ -163,7 +163,7 @@ See the [Authorization](../../../../README.md#authorization) section of the READ
 ## `getAllOrders()`
 
 ```php
-getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\OrdersListType
+getAllOrders($createdStartDate, $sku, $customerOrderId, $purchaseOrderId, $status, $createdEndDate, $fromExpectedShipDate, $toExpectedShipDate, $limit, $productInfo): \Walmart\Models\MP\CA\Orders\WFSOrdersListType
 ```
 Get all orders
 
@@ -225,7 +225,7 @@ try {
 
 ### Return type
 
-[**\Walmart\Models\MP\CA\Orders\OrdersListType**](../../../Models/MP/CA/Orders/OrdersListType.md)
+[**\Walmart\Models\MP\CA\Orders\WFSOrdersListType**](../../../Models/MP/CA/Orders/WFSOrdersListType.md)
 
 ### Authorization
 

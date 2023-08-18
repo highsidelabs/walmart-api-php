@@ -313,7 +313,7 @@ class PricesApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );
@@ -609,7 +609,7 @@ class PricesApi extends BaseApi
         $method = 'PUT';
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );

@@ -117,7 +117,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/FeedId"
                                 },
@@ -188,7 +188,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/ItemResponses"
                                 },
@@ -229,7 +229,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/ItemResponse"
                                 },
@@ -270,7 +270,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/ItemRetireResponseV2"
                                 },

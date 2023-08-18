@@ -249,7 +249,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/pdf": {
                                 "schema": {
                                     "type": "string",
                                     "x-expose-headers": true
@@ -1433,7 +1433,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/pdf": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/ServiceResponse"
                                 }
@@ -1599,7 +1599,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/octet-stream": {
                                 "schema": {
                                     "type": "string",
                                     "description": "The data will be returned in a .csv file in your folder.\nThe response to a successful call includes a header as an attachment called Content-Disposition.\nThe Content-Disposition header contains the name of the report. As an example, attachment: filename=WFSInventoryHealthReport_2021-07-15T06_42_13.766Z.csv. The title includes the timestamp when the file was generated.\nThe attachment contains the report in a csv format.\nThe java code example demonstrates the use of the header and the body when processing the response\nThe report is regenerated periodically. We recommend that you not retrieve the report more frequently than once every one hour.",
@@ -1875,7 +1875,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/pdf": {
                                 "schema": {
                                     "type": "string",
                                     "x-expose-headers": true

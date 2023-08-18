@@ -285,7 +285,7 @@ class InventoryApi extends BaseApi
         );
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );
@@ -622,7 +622,7 @@ class InventoryApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );
@@ -946,7 +946,7 @@ class InventoryApi extends BaseApi
         );
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );

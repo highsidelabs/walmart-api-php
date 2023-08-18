@@ -35,7 +35,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/InventoryV2"
                                 },
@@ -86,7 +86,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/InventoryV2"
                                 },
@@ -152,7 +152,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/FeedId"
                                 },

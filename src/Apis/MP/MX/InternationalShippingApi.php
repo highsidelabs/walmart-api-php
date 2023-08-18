@@ -1804,7 +1804,7 @@ class InternationalShippingApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/pdf'],
             $contentType,
             $multipart
         );

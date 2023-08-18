@@ -912,7 +912,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/octet-stream": {
                                 "schema": {
                                     "x-expose-headers": true
                                 }
@@ -1003,7 +1003,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/octet-stream": {
                                 "schema": {
                                     "type": "string",
                                     "description": "The data will be streamed in CSV format.",

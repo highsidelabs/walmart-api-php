@@ -46,7 +46,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/ReportDTO"
                                 }

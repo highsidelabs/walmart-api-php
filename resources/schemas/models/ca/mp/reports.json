@@ -45,7 +45,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "x-expose-headers": true
                                 }

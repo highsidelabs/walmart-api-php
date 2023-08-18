@@ -367,7 +367,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/pdf": {
                                 "schema": {
                                     "type": "string",
                                     "format": "binary",

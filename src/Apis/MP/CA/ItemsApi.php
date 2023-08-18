@@ -315,7 +315,7 @@ class ItemsApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );
@@ -671,7 +671,7 @@ class ItemsApi extends BaseApi
         );
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );
@@ -976,7 +976,7 @@ class ItemsApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );
@@ -1281,7 +1281,7 @@ class ItemsApi extends BaseApi
         }
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/xml'],
             $contentType,
             $multipart
         );

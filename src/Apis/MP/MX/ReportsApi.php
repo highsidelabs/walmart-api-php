@@ -283,7 +283,7 @@ class ReportsApi extends BaseApi
         );
 
         $headers = $this->headerSelector->selectHeaders(
-            ['application/json'],
+            ['application/octet-stream'],
             $contentType,
             $multipart
         );

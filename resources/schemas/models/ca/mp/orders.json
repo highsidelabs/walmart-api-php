@@ -47,7 +47,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/Order"
                                 },
@@ -100,7 +100,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/Order"
                                 },
@@ -153,7 +153,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/OrderCancellation"
                                 },
@@ -194,7 +194,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/Order"
                                 },
@@ -316,9 +316,9 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
-                                    "$ref": "#\/components\/schemas\/OrdersListType"
+                                    "$ref": "#\/components\/schemas\/WFSOrdersListType"
                                 },
                                 "example": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>\n<list\n  xmlns:ns2=\"http:\/\/walmart.com\/mp\/orders\"\n  xmlns:ns3=\"http:\/\/walmart.com\/mp\/v3\/orders\"\n  xmlns:ns4=\"http:\/\/walmart.com\/\">\n    <meta>\n        <totalCount>367<\/totalCount>\n        <limit>10<\/limit>\n        <nextCursor>?limit=10&amp;hasMoreElements=true&amp;soIndex=2&amp;poIndex=2&amp;sellerId=10&amp;status=Created&amp;createdStartDate=2016-01-01&amp;createdEndDate=2016-06-03T22:45:16.377Z<\/nextCursor>\n    <\/meta>\n    <elements>\n        <order>\n            <purchaseOrderId>2575263094491<\/purchaseOrderId>\n            <customerOrderId>4091603648841<\/customerOrderId>\n            <customerEmailId>gsingh@walmartlabs.com<\/customerEmailId>\n            <orderDate>2016-05-18T16:53:14.000Z<\/orderDate>\n            <shippingInfo>\n                <phone>2342423234<\/phone>\n                <estimatedDeliveryDate>2016-06-22T06:00:00.000Z<\/estimatedDeliveryDate>\n                <estimatedShipDate>2016-06-15T06:00:00.000Z<\/estimatedShipDate>\n                <methodCode>Standard<\/methodCode>\n                <postalAddress>\n                    <name>PGOMS Walmart<\/name>\n                    <address1>850 Cherry Avenue<\/address1>\n                    <address2>Floor 5<\/address2>\n                    <city>San Bruno<\/city>\n                    <state>CA<\/state>\n                    <postalCode>94066<\/postalCode>\n                    <country>USA<\/country>\n                    <addressType>RESIDENTIAL<\/addressType>\n                <\/postalAddress>\n            <\/shippingInfo>\n            <orderLines>\n                <orderLine>\n                    <lineNumber>4<\/lineNumber>\n                    <item>\n                        <productName>Kenmore CF1 or 2086883 Canister Secondary Filter Generic 2 Pack<\/productName>\n                        <sku>RCA-OF-444gku444<\/sku>\n                    <\/item>\n                    <charges>\n                        <charge>\n                            <chargeType>PRODUCT<\/chargeType>\n                            <chargeName>ItemPrice<\/chargeName>\n                            <chargeAmount>\n                                <currency>USD<\/currency>\n                                <amount>25.00<\/amount>\n                            <\/chargeAmount>\n                            <tax>\n                                <taxName>Tax1<\/taxName>\n                                <taxAmount>\n                                    <currency>USD<\/currency>\n                                    <amount>1.87<\/amount>\n                                <\/taxAmount>\n                            <\/tax>\n                        <\/charge>\n                    <\/charges>\n                    <orderLineQuantity>\n                        <unitOfMeasurement>EACH<\/unitOfMeasurement>\n                        <amount>1<\/amount>\n                    <\/orderLineQuantity>\n                    <statusDate>2016-05-18T17:01:26.000Z<\/statusDate>\n                    <orderLineStatuses>\n                        <orderLineStatus>\n                            <status>Created<\/status>\n                            <statusQuantity>\n                                <unitOfMeasurement>EACH<\/unitOfMeasurement>\n                                <amount>1<\/amount>\n                            <\/statusQuantity>\n                        <\/orderLineStatus>\n                    <\/orderLineStatuses>\n                <\/orderLine>\n            <\/orderLines>\n        <\/order>\n        <order>\n            <purchaseOrderId>2575263094492<\/purchaseOrderId>\n            <customerOrderId>4091603648841<\/customerOrderId>\n            <customerEmailId>gsingh@walmartlabs.com<\/customerEmailId>\n            <orderDate>2016-05-18T16:53:14.000Z<\/orderDate>\n            <shippingInfo>\n                <phone>2342423234<\/phone>\n                <estimatedDeliveryDate>2016-06-22T06:00:00.000Z<\/estimatedDeliveryDate>\n                <estimatedShipDate>2016-06-15T06:00:00.000Z<\/estimatedShipDate>\n                <methodCode>Standard<\/methodCode>\n                <postalAddress>\n                    <name>PGOMS Walmart<\/name>\n                    <address1>850 Cherry Avenue<\/address1>\n                    <address2>Floor 5<\/address2>\n                    <city>San Bruno<\/city>\n                    <state>CA<\/state>\n                    <postalCode>94066<\/postalCode>\n                    <country>USA<\/country>\n                    <addressType>RESIDENTIAL<\/addressType>\n                <\/postalAddress>\n            <\/shippingInfo>\n            <orderLines>\n                <orderLine>\n                    <lineNumber>1<\/lineNumber>\n                    <item>\n                        <productName>Kenmore CF1 or 2086883 Canister Secondary Filter Generic 2 Pack<\/productName>\n                        <sku>RCA-OF-444gku444<\/sku>\n                    <\/item>\n                    <charges>\n                        <charge>\n                            <chargeType>PRODUCT<\/chargeType>\n                            <chargeName>ItemPrice<\/chargeName>\n                            <chargeAmount>\n                                <currency>USD<\/currency>\n                                <amount>25.00<\/amount>\n                            <\/chargeAmount>\n                            <tax>\n                                <taxName>Tax1<\/taxName>\n                                <taxAmount>\n                                    <currency>USD<\/currency>\n                                    <amount>1.89<\/amount>\n                                <\/taxAmount>\n                            <\/tax>\n                        <\/charge>\n                    <\/charges>\n                    <orderLineQuantity>\n                        <unitOfMeasurement>EACH<\/unitOfMeasurement>\n                        <amount>1<\/amount>\n                    <\/orderLineQuantity>\n                    <statusDate>2016-05-18T17:01:26.000Z<\/statusDate>\n                    <orderLineStatuses>\n                        <orderLineStatus>\n                            <status>Created<\/status>\n                            <statusQuantity>\n                                <unitOfMeasurement>EACH<\/unitOfMeasurement>\n                                <amount>1<\/amount>\n                            <\/statusQuantity>\n                        <\/orderLineStatus>\n                    <\/orderLineStatuses>\n                    <originalCarrierMethod>91<\/originalCarrierMethod>\n                <\/orderLine>\n            <\/orderLines>\n        <\/order>\n    <\/elements>\n<\/list>"
                             }
@@ -366,7 +366,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/Order"
                                 },
@@ -520,7 +520,7 @@
                     "200": {
                         "description": "Successful Operation",
                         "content": {
-                            "application\/json": {
+                            "application\/xml": {
                                 "schema": {
                                     "$ref": "#\/components\/schemas\/WFSOrdersListType"
                                 },
