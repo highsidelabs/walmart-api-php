@@ -28,7 +28,7 @@ use Walmart\Configuration;
 
 abstract class Walmart
 {
-    public const VERSION = '0.6.3';
+    public const VERSION = '0.7.0';
 
     /**
      * The base URL for all API requests. This can be overridden in child classes.

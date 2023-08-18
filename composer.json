@@ -1,6 +1,6 @@
 {
     "name": "highsidelabs/walmart-api",
-    "version": "0.6.3",
+    "version": "0.7.0",
     "description": "A PHP client for Walmart's Marketplace, 1P Supplier, and Content Provider APIs.",
     "keywords": [
         "walmart",
