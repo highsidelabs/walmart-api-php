@@ -62,7 +62,7 @@ class GetOrderResponseRecord extends BaseModel
         'mart' => 'string',
         'isGuest' => 'bool',
         'shippingInfo' => '\Walmart\Models\MP\US\Orders\ShippingInfoType',
-        'orderLines' => '\Walmart\Models\MP\US\Orders\RefundLinesType',
+        'orderLines' => '\Walmart\Models\MP\US\Orders\OrderLinesType',
         'paymentTypes' => 'string[]',
         'orderSummary' => '\Walmart\Models\MP\US\Orders\OrderSummary',
         'pickupPersons' => '\Walmart\Models\MP\US\Orders\PickupPerson[]',
@@ -536,7 +536,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Gets orderLines
      *
-     * @return \Walmart\Models\MP\US\Orders\RefundLinesType
+     * @return \Walmart\Models\MP\US\Orders\OrderLinesType
     
      */
     public function getOrderLines()
@@ -547,7 +547,7 @@ class GetOrderResponseRecord extends BaseModel
     /**
      * Sets orderLines
      *
-     * @param \Walmart\Models\MP\US\Orders\RefundLinesType $orderLines orderLines
+     * @param \Walmart\Models\MP\US\Orders\OrderLinesType $orderLines orderLines
      *
      * @return self
     
