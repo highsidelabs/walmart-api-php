@@ -140,7 +140,7 @@ class ObjectSerializer
     public static function sanitizeTimestamp(string $timestamp): \DateTime
     {
         if (is_numeric($timestamp)) {
-            return \DateTime::createFromFormat('U', $timestamp);
+            return \DateTime::createFromFormat('U', (int)($timestamp / 1000));
         }
 
         return new \DateTime(preg_replace('/(:\d{2}.\d{6})\d*/', '$1', $timestamp));
