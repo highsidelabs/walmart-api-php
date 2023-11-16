@@ -1926,7 +1926,7 @@ class OrdersApi extends BaseApi
                         }
                     }
 
-                    return ObjectSerializer::deserialize($content, '\Walmart\Models\MP\US\Orders\Order', $response->getHeaders());
+                    return ObjectSerializer::deserialize($content->order, '\Walmart\Models\MP\US\Orders\Order', $response->getHeaders());
             }
 
             $returnType = '\Walmart\Models\MP\US\Orders\Order';
