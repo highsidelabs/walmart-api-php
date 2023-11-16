@@ -519,9 +519,6 @@ class ObjectSerializer
                 }
             }
 
-            dump($data);
-            dump($class);
-
             /** @var ModelInterface $instance */
             $instance = new $class();
             foreach ($instance::openAPITypes() as $property => $type) {
@@ -535,9 +532,7 @@ class ObjectSerializer
                     if ($instance::isNullable($property)) {
                         $instance->$propertySetter(null);
                     }
-                    dump('--' . $instance::attributeMap()[$property]);
 
-                    dump('22');
                     continue;
                 }
 
