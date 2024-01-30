@@ -15,6 +15,8 @@ const DEFAULT_MODEL_DIR = 'Model';
 
 const LOGFILE = __DIR__ . '/../generate.log';
 
+const OPENAPI_GENERATOR = "node_modules/.bin/openapi-generator-cli";
+
 // The attributes in this file are merged with any corresponding attributes in the models
 const SCHEMA_ADDITIONS_FILE = MODEL_MODIFICATIONS_DIR . '/additions.json';
 // The attributes in this file replace any corresponding attributes in the models

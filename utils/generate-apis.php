@@ -52,7 +52,7 @@ function openApiGenerator(string $code, string $name, string $category, string $
     setPrettifyEnv();
 
     $compressedSchemaName = str_replace(' ', '', $name);
-    $generateCmd = "openapi-generator generate \
+    $generateCmd = OPENAPI_GENERATOR . " generate \
         --input-spec $schemaPath \
         --template-dir " . TEMPLATE_DIR . " \
         --generator-name php \
@@ -61,8 +61,8 @@ function openApiGenerator(string $code, string $name, string $category, string $
         --global-property apis,models \
         --enable-post-process-file \
         --http-user-agent highsidelabs/walmart-api-php/$version \
-        --api-package \"Apis\\$categoryNamespace\\$countryCaps\" \
-        --model-package \"Models\\$categoryNamespace\\$countryCaps\\$compressedSchemaName\" \
+        --api-package 'Apis\\\\$categoryNamespace\\\\$countryCaps' \
+        --model-package 'Models\\\\$categoryNamespace\\\\$countryCaps\\\\$compressedSchemaName' \
         --additional-properties=\"x-walmart-api-category=$categoryNamespace,x-walmart-country=$countryCaps,x-walmart-category-code=$categoryCode,x-walmart-api-accessor=$nameAccessor,x-walmart-api-name=$nameStr\" \
         2>&1";
 
@@ -120,7 +120,7 @@ function generateSupportingFiles(): void
 
     setPrettifyEnv();
 
-    $generateCmd = "openapi-generator generate \
+    $generateCmd = OPENAPI_GENERATOR . " generate \
         --input-spec $schemaPath \
         --template-dir " . TEMPLATE_DIR . " \
         --generator-name php \
@@ -146,6 +146,7 @@ function generateSupportingFiles(): void
  */
 function execAndLog(string $cmd): void
 {
+    file_put_contents(LOGFILE, $cmd . "\n", FILE_APPEND);
     $resultCode = 0;
     $output = [];
     exec($cmd, $output, $resultCode);

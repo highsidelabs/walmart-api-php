@@ -276,6 +276,24 @@ _Note_: The Content Provider APIs are currently only available in the US.
 
 Thanks for making it all the way down here! We welcome your contributions...the open-source world runs on people like you.
 
+## Building
+
+To set up the build environment, make sure you have Composer, Java 15 or earlier and node.js installed. 
+Then run `composer install` to install the PHP dependencies, and `npm install` to install the 
+JavaScript dependencies.
+
+There are a number of scripts in the `package.json` file that you can use to lint, test, and build the package, which can be run using `composer run <script-name>`. The most important ones are:
+
+* `download-schemas`: Fetch the schema files from Walmart's API documentation
+* `customize-schemas`: Apply customizations to the schemas
+* `generate`: Generate the API classes 
+* `refresh-schemas`: Download and customise the schemas
+* `make`: Download, customise, and generate the schemas
+* `version-update`: Generate only the supporting files
+* `clean`: Delete generated files
+* `lint`: Run all linters
+
+
 ## Pull requests
 
 Please ask (via an issue) before submitting a pull request for any significant feature work. It sucks to put a lot of effort into something only to have it rejected for reasons other than the quality of your code. (_Author's note: don't ask me how I know._) That said, we're open to contributions from anyone, and we'll do our best to get your code merged. Please be patient – we're not ignoring you, but it might take us some time to get to your PR.
