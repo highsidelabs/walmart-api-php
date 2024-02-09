@@ -31,11 +31,6 @@ abstract class Walmart
     public const VERSION = '0.7.0';
 
     /**
-     * The base URL for all API requests. This can be overridden in child classes.
-     */
-    public const HOST = 'https://marketplace.walmartapis.com';
-
-    /**
      * The configuration for this client.
      * @var Configuration
      */
@@ -64,8 +59,6 @@ abstract class Walmart
         } else {
             $this->config = $config;
         }
-
-        $config->setHost(static::HOST);
     }
 
     /**
