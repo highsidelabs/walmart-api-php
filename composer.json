@@ -29,7 +29,6 @@
         "guzzlehttp/guzzle": "^7.4",
         "guzzlehttp/psr7": "^1.7 || ^2.0",
         "ramsey/uuid": "^4.7",
-        "symfony/uid": "^6.1",
         "phpseclib/phpseclib": "^3.0"
     },
     "require-dev": {
